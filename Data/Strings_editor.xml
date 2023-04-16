@@ -2,15 +2,15 @@
 <Strings>
   <!--[EDITOR COMMAND INSERT]-->
   <EString nkey="InsCmd_Default_Msg" wpfControl="">
-    <val lang="jap">スクリプト行をクリックすると画面に反映されます</val>
+    <val lang="jap">スクリプト行をクリックすると画面に反映されます。</val>
     <val lang="eng">clicking on the script will apply to screen</val>
   </EString>
   <EString nkey="InsCmd_Msg_NoPreview" wpfControl="">
-    <val lang="jap">リアルタイムプレビュー未作動中です</val>
+    <val lang="jap">リアルタイムプレビュー解除中です。</val>
     <val lang="eng">realtime preview is off</val>
   </EString>
   <EString nkey="InsCmd_PlayMode_Msg" wpfControl="">
-    <val lang="jap">テストプレイ中。スクリプト修正は反映されません。(F5で解除)</val>
+    <val lang="jap">テストプレイ中。スクリプト修正は終了後に反映されます。(F5で終了)</val>
     <val lang="eng">test playing. script changes not saved. (F5 to end)</val>
   </EString>
   <!--command divider-->
@@ -71,7 +71,7 @@
     <val lang="eng">state：edit（F5 to start test play）</val>
   </EString>
   <EString nkey="vnstatePlay" wpfControl="">
-    <val lang="jap">作品状態：テストプレイ（開始行：{0}. スクリプト編集は適用されません）</val>
+    <val lang="jap">作品状態：テストプレイ（開始行：{0}. スクリプト編集は終了後に反映されます）</val>
     <val lang="eng">state：test play（start line：{0}. script changes not saved）</val>
   </EString>
   <EString nkey="fpsDisplay" wpfControl="">
@@ -87,7 +87,7 @@
     <val lang="eng">edit line：{0}</val>
   </EString>
   <EString nkey="curScriptSaved" wpfControl="">
-    <val lang="jap">[現在スクリプト：既保存]</val>
+    <val lang="jap">[現在スクリプト：保存済]</val>
     <val lang="eng">[script：saved]</val>
   </EString>
   <EString nkey="curScriptNotSaved" wpfControl="">

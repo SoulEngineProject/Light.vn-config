@@ -25,3 +25,5 @@ PRs will be talked over, and once merged, will be published together with Light.
 
 - `Commands.xml`: Light.vn's script commands, and explanations of each command displayed in LightEditor.exe
 - `Strings_editor.xml`: Strings used in LightEditor.exe
+
+test

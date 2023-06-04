@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!--note: &#xA; refers to line break-->
 <!--just make separate xml for each language?-->
 <ScriptStrings>
@@ -195,6 +195,9 @@
       </option>
       <option name="noBacklogAddition">
         <val lang="jap" value="バックログ登録禁止"/>
+      </option>
+      <option name="inBacklog">
+        <val lang="jap" value="バックログ登録"/>
       </option>
       <option name="freeOnReturnToMain">
         <val lang="jap" value="原点回帰時解除"/>
@@ -522,6 +525,28 @@
                    &#xA;Note: if 'on_camera' is set, will ignore camera。	
                    &#xA;Suffix:'0'will display entity as alpha: 0。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#sound_cg">
+      </explanation>
+    </Command>
+    <Command cmd="ninecg">
+      <explanation lang="jap" name="九絵" syntax="九絵 [名前] [ファイル名 / 登録済みアニメ名] [x座標] [y座標] [laye(r)] [横x1] [横x2] [縦y1] [縦y2] [表示横幅] [表示縦幅] (カメラオプション)"
+                   details="ex. 九絵 ex1 waku.png 450 200 1 33 66 33 66 200 200
+                   &#xA;	
+                   &#xA;指定された画像を、
+                   &#xA;	[横x1] [横x2] [縦y1] [縦y2]に添って横三つ、縦三つ、合わせて九つの領域に切って、
+                   &#xA;指定されたサイズに中央領域を伸ばして表示。
+                   &#xA;	
+                   &#xA;注: カメラオプション例。カメラ付着 (カメラ操作の影響を無視)	
+                   &#xA;他の「カメラオプション」はコマンド目録の「カメラオプション」から確認可能。	
+                   &#xA;注:コマンドに'0'を付けると透明度0の状態で表示される。	
+                   &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
+                   reference="https://wikiwiki.jp/lightvn/commands/image#ninecg">
+      </explanation>
+      <explanation lang="eng" name="cg" syntax="ninecg [name] [filename / animation name] [x] [y] [layer] [cut_x1] [cut_x2] [cut_y1] [cut_y2] [sizex] [sizey] (on_camera)"
+                   details="ex. ninecg ex1 waku.png 450 200 1 33 66 33 66 200 200
+                   &#xA;	
+                   &#xA;Note: if 'on_camera' is set, will ignore camera。	
+                   &#xA;Suffix:'0'will display entity as alpha: 0。"
+                   reference="https://wikiwiki.jp/lightvn/commands/image#ninecg">
       </explanation>
     </Command>
     <Command cmd="flow_cg">
@@ -1162,7 +1187,7 @@
     </Command>
     <Command cmd="textbox">
       <explanation lang="jap" name="文字窓 （テキストボックス）"
-                   syntax="文字窓 [名前] [x座標] [y座標] [laye(r)] [幅] [高さ] [フォント名] [フォントサイズ] (カメラオプション) (&quot;[文字列:文章内容]&quot;)"
+                   syntax="文字窓 [名前] [x座標] [y座標] [laye(r)] [幅] [高さ] [フォント名] [フォントサイズ] (カメラオプション) [&quot;文字列:文章内容&quot;] (バックログ登録)"
                    details="ex. 文字窓 textbox1 0 400 81 800 200 r-mplus-1c-m.ttf 24	
                    &#xA;	
                    &#xA;注:コマンドに'0'を付けると透明度0の状態で表示される。	
@@ -1190,7 +1215,7 @@
     <Command cmd="text">
       <explanation lang="jap" name="文字"
                    syntax="文字 [名前] [x座標] [y座標] [laye(r)] [フォント名] [文字サイズ(px)] 	
-                   &#xA;(方向：横・縦) (整列：左/右/中央) (文章最大長さ) (カメラオプション) &quot;[文字列:文章内容]&quot;"
+                   &#xA;(方向：横・縦) (整列：左/右/中央) (文章最大長さ) (カメラオプション) &quot;[文字列:文章内容]&quot; (バックログ登録)"
                    details="ex. 文字 msg_str 370 223 106  r-mplus-1c-m.ttf 24 &quot;内容! &quot;	
                    &#xA;	
                    &#xA;注：「文字」の場合は文字窓のテキストと違って流れず、全テキストが一瞬で表示される。	
@@ -4344,6 +4369,7 @@
                    &#xA;ちゃんと保存させてから実行させよう。
                    &#xA;	
                    &#xA;注：ジャンプ先としてスクリプトを指定する場合、「変数」も初期化される。
+                   &#xA;(ジャンプ先が同一スクリプトであっても)
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#jump">
       </explanation>
@@ -4406,13 +4432,17 @@
     </Command>
     <Command cmd="script">
       <explanation lang="jap" name="スクリプト"
-                   syntax="スクリプト [呼ぶスクリプト] (読み込みを開始する栞)"
+                   syntax="スクリプト [呼ぶスクリプト / 現在] (読み込みを開始する栞)"
                    details="ex. スクリプト textbox.txt (bookmark1)	
                    &#xA;ex. スクリプト lua/lua_script.lua	
+                   &#xA;ex. スクリプト 現在 これを実行
                    &#xA;	
                    &#xA;今のスクリプトの上に、指定のスクリプトを開き読み込みを開始させる。	
                    &#xA;スクリプトの読み込みが終われば、上からスクリプトを外し、	
                    &#xA;呼び出した元のスクリプトに戻り読み込みを続行させる。
+                   &#xA;	
+                   &#xA;スクリプト名として「現在」と指定する場合、
+                   &#xA;	コマンドが実行される現在のスクリプトを読み込む。
                    &#xA;	
                    &#xA;注：別スクリプトに飛ぶ場合、読み込まれるスクリプトは
                    &#xA;ディスクに保存されてあるファイルになる。
@@ -5535,6 +5565,24 @@
                    reference="https://wikiwiki.jp/lightvn/commands/var#saveSystemVars">
       </explanation>
     </Command>
+    <Command cmd="eraseVars">
+      <explanation lang="jap" name="変数消去"
+                   syntax="変数消去 [変数名 (複数可)]"
+                   details="ex. 変数消去 変数名1, 変数名2, 変数名3
+                   &#xA;	
+                   &#xA;(実験中機能)
+                   &#xA;該当変数名の変数値をundefinedに戻す。
+                   &#xA;システム変数は対象に出来ない。
+                   &#xA;	
+                   &#xA;	"
+                   reference="https://wikiwiki.jp/lightvn/commands/var#eraseVars">
+      </explanation>
+      <explanation lang="eng" name="eraseVars"
+                   syntax="eraseVars [var names]"
+                   details=""
+                   reference="https://wikiwiki.jp/lightvn/commands/var#eraseVars">
+      </explanation>
+    </Command>
     <Command cmd="clearVars">
       <explanation lang="jap" name="変数クリア"
                    syntax="変数クリア (タイプ)"
@@ -6107,6 +6155,8 @@
                    syntax="開く [ファイル名 / URL]"
                    details="ex. 開く movie.mp4 	
                    &#xA;ex. 開く http:lightvn.net	
+                   &#xA;	
+                   &#xA;ファイル名の場合、Data/の下に存在する必要がある。	
                    &#xA;	
                    &#xA;参考：settings.xmlの「disallowOpen」がtrueの場合、ダイアログメッセージが表示される。	
                    &#xA;（表示されるのはCommands.xmlのMsg_disallowOpen）	
@@ -7092,6 +7142,24 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvNumberToString">
       </explanation>
     </Command>
+    <Command name="lvSubstringCount">
+      <explanation lang="jap" name="lvSubstringCount"
+                   syntax="lvSubstringCount(文字列：対象, 文字列：検索)"
+                   details="ex. lvSubstringCount(&quot;asas&quot;, &quot;as&quot;)	-> 2
+                   &#xA;	
+                   &#xA;対象の文字列中に、検索文字列が何回含まれてあるかを返還。
+                   &#xA;	
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvSubstringCount">
+      </explanation>
+      <explanation lang="eng" name="lvSubstringCount"
+                   syntax="lvSubstringCount(string: target, string: search_term)"
+                   details="ex. lvSubstringCount(&quot;asas&quot;, &quot;as&quot;)	-> 2
+                   &#xA;	
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvSubstringCount">
+      </explanation>
+    </Command>
     <Command name="lvCopyDeep">
       <explanation lang="jap" name="lvCopyDeep"
                    syntax="lvCopyDeep(変数)"
@@ -7381,6 +7449,7 @@
                    details="ex. lvIsEmpty(鞄)	
                    &#xA;	
                    &#xA;対象変数名が、List又はHashMapの場合、中身がなければtrue。
+                   &#xA;Stringの場合は長さゼロの場合true。
                    &#xA;それ以外の変数タイプはfalse。
                    &#xA;	
                    &#xA;return: bool"
@@ -7400,6 +7469,7 @@
                    details="ex. lvSize(鞄)	
                    &#xA;	
                    &#xA;対象変数名が、List又はHashMapの場合、中身の大きさを返還。
+                   &#xA;Stringの場合は、長さ。
                    &#xA;	
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSize">
@@ -7500,6 +7570,42 @@
                    &#xA;	
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvText">
+      </explanation>
+    </Command>
+    <Command name="lvTextBoundsW">
+      <explanation lang="jap" name="lvTextBoundsW"
+                   syntax="lvTextBoundsW(文字列：文字・文字窓名)"
+                   details="ex. lvTextBoundsW(&quot;文字王&quot;)	
+                   &#xA;	
+                   &#xA;対象の文字・文字窓のバウンディングボックスの横幅を返還。
+                   &#xA;	
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextBoundsW">
+      </explanation>
+      <explanation lang="eng" name="lvTextBoundsW"
+                   syntax="lvTextBoundsW(name)"
+                   details="ex. lvTextBoundsW(&quot;fufu&quot;)	
+                   &#xA;	
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextBoundsW">
+      </explanation>
+    </Command
+    <Command name="lvTextBoundsH">
+      <explanation lang="jap" name="lvTextBoundsH"
+                   syntax="lvTextBoundsH(文字列：文字・文字窓名)"
+                   details="ex. lvTextBoundsH(&quot;文字王&quot;)	
+                   &#xA;	
+                   &#xA;対象の文字・文字窓のバウンディングボックスの縦幅を返還。
+                   &#xA;	
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextBoundsH">
+      </explanation>
+      <explanation lang="eng" name="lvTextBoundsH"
+                   syntax="lvTextBoundsH(name)"
+                   details="ex. lvTextBoundsH(&quot;fufu&quot;)	
+                   &#xA;	
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextBoundsH">
       </explanation>
     </Command>
     <Command name="lvMediaOffset">

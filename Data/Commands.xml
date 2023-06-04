@@ -7589,7 +7589,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvTextBoundsW">
       </explanation>
-    </Command
+    </Command>
     <Command name="lvTextBoundsH">
       <explanation lang="jap" name="lvTextBoundsH"
                    syntax="lvTextBoundsH(文字列：文字・文字窓名)"

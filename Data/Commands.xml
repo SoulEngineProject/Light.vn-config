@@ -1187,7 +1187,8 @@
     </Command>
     <Command cmd="textbox">
       <explanation lang="jap" name="文字窓 （テキストボックス）"
-                   syntax="文字窓 [名前] [x座標] [y座標] [laye(r)] [幅] [高さ] [フォント名] [フォントサイズ] (カメラオプション) [&quot;文字列:文章内容&quot;] (バックログ登録)"
+                   syntax="文字窓 [名前] [x座標] [y座標] [laye(r)] [幅] [高さ] [フォント名] [フォントサイズ] (カメラオプション) (&quot;文字列:文章内容&quot;) (バックログ登録)"
+
                    details="ex. 文字窓 textbox1 0 400 81 800 200 r-mplus-1c-m.ttf 24	
                    &#xA;	
                    &#xA;注:コマンドに'0'を付けると透明度0の状態で表示される。	

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Strings>
+<<<<<<< HEAD
   <!--[preview messages]-->
   <EString nkey="PreviewMsg_Default" wpfControl="">
     <val lang="jap">スクリプト行をクリックすると画面に反映されます。</val>
@@ -18,6 +19,18 @@
     <val lang="eng">shift + mouse wheel pushed: move. mouse wheel: zoom (during testplay)</val>
   </EString>
   <EString nkey="PreviewMsg_PlayMode" wpfControl="">
+=======
+  <!--[EDITOR COMMAND INSERT]-->
+  <EString nkey="InsCmd_Default_Msg" wpfControl="">
+    <val lang="jap">スクリプト行をクリックすると画面に反映されます。</val>
+    <val lang="eng">clicking on the script will apply to screen</val>
+  </EString>
+  <EString nkey="InsCmd_Msg_NoPreview" wpfControl="">
+    <val lang="jap">リアルタイムプレビュー解除中です。</val>
+    <val lang="eng">realtime preview is off</val>
+  </EString>
+  <EString nkey="InsCmd_PlayMode_Msg" wpfControl="">
+>>>>>>> 78a005b8903aa21aaffff3768e33679b384d7ee9
     <val lang="jap">テストプレイ中。スクリプト修正は終了後に反映されます。(F5で終了)</val>
     <val lang="eng">test playing. script changes not saved. (F5 to end)</val>
   </EString>
@@ -68,6 +81,30 @@
   </EString>
 
   <!--[EDITOR BOTTOM INFORMATION]-->
+<<<<<<< HEAD
+=======
+  <EString nkey="MainParserStateDisplay_MScript" wpfControl="">
+    <val lang="jap">スクリプト状態</val>
+    <val lang="eng">script state</val>
+  </EString>
+  <EString nkey="MainParserStateDisplay_State2" wpfControl="">
+    <val lang="jap">読み込み終了</val>
+    <val lang="eng">read complete</val>
+  </EString>
+  <EString nkey="MainParserStateDisplay_State1" wpfControl="">
+    <val lang="jap">読み込み中..</val>
+    <val lang="eng">reading..</val>
+  </EString>
+  <!--[EDITOR BOTTOM INFORMATION]-->
+  <EString nkey="vnstateEdit" wpfControl="statGameState">
+    <val lang="jap">作品状態：編集（F5を押せばテストプレイを開始します）</val>
+    <val lang="eng">state：edit（F5 to start test play）</val>
+  </EString>
+  <EString nkey="vnstatePlay" wpfControl="">
+    <val lang="jap">作品状態：テストプレイ（開始行：{0}. スクリプト編集は終了後に反映されます）</val>
+    <val lang="eng">state：test play（start line：{0}. script changes not saved）</val>
+  </EString>
+>>>>>>> 78a005b8903aa21aaffff3768e33679b384d7ee9
   <EString nkey="fpsDisplay" wpfControl="">
     <val lang="jap">FPS ( アップデート: {0} , render: {1} )</val>
     <val lang="eng">FPS ( update: {0} , render: {1} )</val>
@@ -76,9 +113,26 @@
     <val lang="jap">マウス位置： ( {0} , {1} )</val>
     <val lang="eng">mouse pos： ( {0} , {1} )</val>
   </EString>
+<<<<<<< HEAD
   
   <!--[header top right: script management (v2 confirmed)]-->
   <EString nkey="btn_newscript" wpfControl="">
+=======
+  <EString nkey="editLine" wpfControl="">
+    <val lang="jap">編集行：{0}</val>
+    <val lang="eng">edit line：{0}</val>
+  </EString>
+  <EString nkey="curScriptSaved" wpfControl="">
+    <val lang="jap">[現在スクリプト：保存済]</val>
+    <val lang="eng">[script：saved]</val>
+  </EString>
+  <EString nkey="curScriptNotSaved" wpfControl="">
+    <val lang="jap">[現在スクリプト：未保存]</val>
+    <val lang="eng">[script：unsaved]</val>
+  </EString>
+  <!--[EDITOR TOPRIGHT SCRIPT MANAGEMENT]-->
+  <EString nkey="newScript" wpfControl="">
+>>>>>>> 78a005b8903aa21aaffff3768e33679b384d7ee9
     <val lang="jap">新規スクリプト</val>
     <val lang="eng">New Script</val>
   </EString>

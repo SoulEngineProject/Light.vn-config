@@ -563,25 +563,18 @@
       </explanation>
     </Command>
     <Command cmd="ninecg">
-<<<<<<< HEAD
       <explanation lang="jap" name="九絵" 
                    syntax="九絵 [名前] [ファイル名 / 登録済みアニメ名] [x座標] [y座標] [laye(r)] [横x1] [横x2] [縦y1] [縦y2] [表示横幅] [表示縦幅] (拡張形式：0(デフォルト)) (カメラオプション)"
-=======
-      <explanation lang="jap" name="九絵" syntax="九絵 [名前] [ファイル名 / 登録済みアニメ名] [x座標] [y座標] [laye(r)] [横x1] [横x2] [縦y1] [縦y2] [表示横幅] [表示縦幅] (カメラオプション)"
->>>>>>> 78a005b8903aa21aaffff3768e33679b384d7ee9
                    details="ex. 九絵 ex1 waku.png 450 200 1 33 66 33 66 200 200
                    &#xA;	
                    &#xA;指定された画像を、
                    &#xA;	[横x1] [横x2] [縦y1] [縦y2]に添って横三つ、縦三つ、合わせて九つの領域に切って、
                    &#xA;指定されたサイズに中央領域を伸ばして表示。
-<<<<<<< HEAD
                    &#xA;
                    &#xA;拡張形式
                    &#xA;0: 中央部分を指定したサイズに合うように伸ばす。
                    &#xA;1: 中央部分をタイルとして扱う。指定したサイズがタイルを置くに足りない場合は、九絵の中央サイズがタイルの倍数になるようにサイズを大きくする。
                    &#xA;2: 中央部分をタイルとして扱う。指定したサイズがタイルを置くに足りない場合は、タイル部分が縮小・拡大される。
-=======
->>>>>>> 78a005b8903aa21aaffff3768e33679b384d7ee9
                    &#xA;	
                    &#xA;注: カメラオプション例。カメラ付着 (カメラ操作の影響を無視)	
                    &#xA;他の「カメラオプション」はコマンド目録の「カメラオプション」から確認可能。	
@@ -589,7 +582,6 @@
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#ninecg">
       </explanation>
-<<<<<<< HEAD
       <explanation lang="eng" name="cg" 
                    syntax="ninecg [name] [filename / animation name] [x] [y] [layer] [cut_x1] [cut_x2] [cut_y1] [cut_y2] [sizex] [sizey] (scale_type: 0(default)) (on_camera)"
                    details="ex. ninecg ex1 waku.png 450 200 1 33 66 33 66 200 200
@@ -1276,12 +1268,7 @@
     </Command>
     <Command cmd="textbox">
       <explanation lang="jap" name="文字窓 （テキストボックス）"
-<<<<<<< HEAD
                    syntax="文字窓 [名前] [x座標] [y座標] [laye(r)] [幅] [高さ] [フォント名] [フォントサイズ] [超過無視] (カメラオプション) [&quot;文字列:文章内容&quot;] (バックログ登録)"
-=======
-                   syntax="文字窓 [名前] [x座標] [y座標] [laye(r)] [幅] [高さ] [フォント名] [フォントサイズ] (カメラオプション) (&quot;文字列:文章内容&quot;) (バックログ登録)"
-
->>>>>>> 78a005b8903aa21aaffff3768e33679b384d7ee9
                    details="ex. 文字窓 textbox1 0 400 81 800 200 r-mplus-1c-m.ttf 24	
                    &#xA;	
                    &#xA;超過無視）をつけると、台詞が文字窓の範囲を超えてもエラーが発生しない。
@@ -1314,11 +1301,7 @@
     </Command>
     <Command cmd="text">
       <explanation lang="jap" name="文字"
-<<<<<<< HEAD
                    syntax="文字 [名前] [x座標] [y座標] [laye(r)] [フォント名] [文字サイズ(px)] (行サイズ)	
-=======
-                   syntax="文字 [名前] [x座標] [y座標] [laye(r)] [フォント名] [文字サイズ(px)] 	
->>>>>>> 78a005b8903aa21aaffff3768e33679b384d7ee9
                    &#xA;(方向：横・縦) (整列：左/右/中央) (文章最大長さ) (カメラオプション) &quot;[文字列:文章内容]&quot; (バックログ登録)"
                    details="ex. 文字 msg_str 370 223 106  r-mplus-1c-m.ttf 24 &quot;内容! &quot;	
                    &#xA;	
@@ -4529,17 +4512,12 @@
                    &#xA;従い、エディター上でスクリプトを編集中の場合は、
                    &#xA;ちゃんと保存させてから実行させよう。
                    &#xA;	
-<<<<<<< HEAD
                    &#xA;注：ジャンプ先としてスクリプトを指定する場合、以下が初期化される。
                    &#xA;(ジャンプ先が同一スクリプトであっても)
                    &#xA;	
                    &#xA;- 変数
                    &#xA;- マクロ反映
                    &#xA;	
-=======
-                   &#xA;注：ジャンプ先としてスクリプトを指定する場合、「変数」も初期化される。
-                   &#xA;(ジャンプ先が同一スクリプトであっても)
->>>>>>> 78a005b8903aa21aaffff3768e33679b384d7ee9
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#jump">
       </explanation>

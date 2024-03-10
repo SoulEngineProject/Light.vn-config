@@ -196,6 +196,9 @@
       <option name="noBacklogAddition">
         <val lang="jap" value="バックログ登録禁止"/>
       </option>
+      <option name="inBacklog">
+        <val lang="jap" value="バックログ登録"/>
+      </option>
       <option name="freeOnReturnToMain">
         <val lang="jap" value="原点回帰時解除"/>
       </option>
@@ -213,6 +216,9 @@
       </option>
       <option name="current">
         <val lang="jap" value="現在"/>
+      </option>
+      <option name="ignoreOverflow">
+        <val lang="jap" value="超過無視"/>
       </option>
     </CmdOptions>
   </Keywords>
@@ -308,6 +314,30 @@
                    reference="https://wikiwiki.jp/lightvn/commands/var#var">
       </explanation>
     </Command>
+    <Command name="--[描画順]--">
+      <explanation lang="jap" name="--[描画順]--"
+                   syntax=""
+                   details="描画順は以下の流れで計算される：
+                   &#xA;
+                   &#xA;- z計算：個体の描画中心zが高い方が前に表示
+                   &#xA; - 同一の場合：個体の下段yが高い方が前に表示
+                   &#xA; - 同一の場合：個体の描画中心yが高い方が前に表示
+                   &#xA;
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/var#var">
+      </explanation>
+      <explanation lang="eng" name="--[render order]--"
+                   syntax=""
+                   details="render order:
+                   &#xA;	
+                   &#xA;- z：higher center z displayed in front
+                   &#xA; - if same: bottom y higher displayed in front
+                   &#xA; - if same: center y higher displayed in front
+                   &#xA;
+                   &#xA;	"
+                   reference="https://wikiwiki.jp/lightvn/commands/var#var">
+      </explanation>
+    </Command>
     <Command name="--[カメラオプション]--">
       <explanation lang="jap" name="--[カメラオプション]--"
                    syntax=""
@@ -396,7 +426,8 @@
       <explanation lang="eng" name="--[image commands]--"></explanation>
     </Command>
     <Command cmd="empty">
-      <explanation lang="jap" name="個体" syntax="個体 [名前] [x座標] [y座標] [laye(r)] (カメラオプション)"
+      <explanation lang="jap" name="個体" 
+                   syntax="個体 [名前] [x座標] [y座標] [laye(r)] (カメラオプション)"
                    details="ex. 個体 id0 150 30 50 	
                    &#xA;指定位置に名前：id0の個体をつくる。	
                    &#xA;主に「親子」コマンドの親としての便利個体としての使用を想定されている。	
@@ -412,7 +443,8 @@
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#empty">
       </explanation>
-      <explanation lang="eng" name="empty" syntax="empty [name] [x] [y] [layer] (on_camera)"
+      <explanation lang="eng" name="empty" 
+                   syntax="empty [name] [x] [y] [layer] (on_camera)"
                    details="ex. empty id0 100 100 80	
                    &#xA;	
                    &#xA;Note: if 'on_camera' is set, will ignore camera。	
@@ -421,7 +453,8 @@
       </explanation>
     </Command>
     <Command cmd="bg">
-      <explanation lang="jap" name="背景" syntax="背景 [名前] [ファイル名 / 登録済みアニメ名] (x座標) (y座標) (laye(r)) (カメラオプション)"
+      <explanation lang="jap" name="背景"
+                   syntax="背景 [名前] [ファイル名 / 登録済みアニメ名] (x座標) (y座標) (laye(r)) (カメラオプション)"
                    details="ex. 背景 bg1 scenery.png 	
                    &#xA;背景に名前'bg1'を与え、画像'scenery.png'を使用し表示する.	
                    &#xA;	
@@ -440,7 +473,8 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/image#bg">
       </explanation>
-      <explanation lang="eng" name="bg" syntax="bg [name] [filename / animation name]"
+      <explanation lang="eng" name="bg" 
+                   syntax="bg [name] [filename / animation name]"
                    details="ex. bg bg1 scenery.png 	
                    &#xA;the background image 'scenery.png' is shown with name 'bg1'.	
                    &#xA;	
@@ -454,7 +488,8 @@
       </explanation>
     </Command>
     <Command cmd="cg">
-      <explanation lang="jap" name="絵" syntax="絵 [名前] [ファイル名 / 登録済みアニメ名] [x座標] [y座標] [laye(r)] (カメラオプション)"
+      <explanation lang="jap" name="絵" 
+                   syntax="絵 [名前] [ファイル名 / 登録済みアニメ名] [x座標] [y座標] [laye(r)] (カメラオプション)"
                    details="ex. 絵 alice2 alice.png 150 30 50 	
                    &#xA;絵に名前'alice2'を与え、画像'alice.png'を使用し、座標：「150 30」、レイヤ：50に表示する.	
                    &#xA;	
@@ -467,7 +502,8 @@
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#cg">
       </explanation>
-      <explanation lang="eng" name="cg" syntax="cg [name] [filename / animation name] [x] [y] [layer] (on_camera)"
+      <explanation lang="eng" name="cg" 
+                   syntax="cg [name] [filename / animation name] [x] [y] [layer] (on_camera)"
                    details="ex. cg alice2 alice.png 150 30 50 	
                    &#xA;cg is displayed with name: alice2, image: 'alice.png' at coords: [150 30], layer: 50	
                    &#xA;	
@@ -480,7 +516,8 @@
       </explanation>
     </Command>
     <Command cmd="sound_cg">
-      <explanation lang="jap" name="音声絵" syntax="音声絵 [名前] [通常画像・アニメ名] [x] [y] [laye(r)] [音声対象名] [次回判断までの時間] (変化タイプ) (音量最小1) (表示画像1) (...) (取得音量の時間ずれ:ms)"
+      <explanation lang="jap" name="音声絵" 
+                   syntax="音声絵 [名前] [通常画像・アニメ名] [x] [y] [laye(r)] [音声対象名] [次回判断までの時間] (変化タイプ) (音量最小1) (表示画像1) (...) (取得音量の時間ずれ:ms) (カメラオプション)"
                    details="ex. 音声絵 hisia mouth0.png 400 200 90 id0 100 30 mouth1.png 60 mouth2.png 90 mouth3.png 120 mouth4.png	
                    &#xA;	
                    &#xA;音声ファイルのデーターの音量に沿って画像を表示させる。	
@@ -516,7 +553,8 @@
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#sound_cg">
       </explanation>
-      <explanation lang="eng" name="sound_cg" syntax="sound_cg [name] [x] [y] [layer] [name] [filename / animation name] [x] [y] [layer] [move per second] (on_camera)"
+      <explanation lang="eng" name="sound_cg" 
+                   syntax="sound_cg [name] [x] [y] [layer] [name] [filename / animation name] [x] [y] [layer] [move per second] (on_camera)"
                    details="ex. sound_cg hisia mouth0.png 400 200 90 id0 100 30 mouth1.png 60 mouth2.png 90 mouth3.png 120 mouth4.png	
                    &#xA;	
                    &#xA;Note: if 'on_camera' is set, will ignore camera。	
@@ -524,8 +562,43 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#sound_cg">
       </explanation>
     </Command>
+    <Command cmd="ninecg">
+      <explanation lang="jap" name="九絵" 
+                   syntax="九絵 [名前] [ファイル名 / 登録済みアニメ名] [x座標] [y座標] [laye(r)] [横x1] [横x2] [縦y1] [縦y2] [表示横幅] [表示縦幅] (拡張形式：0(デフォルト)) (カメラオプション)"
+                   details="ex. 九絵 ex1 waku.png 450 200 1 33 66 33 66 200 200
+                   &#xA;	
+                   &#xA;指定された画像を、
+                   &#xA;	[横x1] [横x2] [縦y1] [縦y2]に添って横三つ、縦三つ、合わせて九つの領域に切って、
+                   &#xA;指定されたサイズに中央領域を伸ばして表示。
+                   &#xA;
+                   &#xA;拡張形式
+                   &#xA;0: 中央部分を指定したサイズに合うように伸ばす。
+                   &#xA;1: 中央部分をタイルとして扱う。指定したサイズがタイルを置くに足りない場合は、九絵の中央サイズがタイルの倍数になるようにサイズを大きくする。
+                   &#xA;2: 中央部分をタイルとして扱う。指定したサイズがタイルを置くに足りない場合は、タイル部分が縮小・拡大される。
+                   &#xA;	
+                   &#xA;注: カメラオプション例。カメラ付着 (カメラ操作の影響を無視)	
+                   &#xA;他の「カメラオプション」はコマンド目録の「カメラオプション」から確認可能。	
+                   &#xA;注:コマンドに'0'を付けると透明度0の状態で表示される。	
+                   &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
+                   reference="https://wikiwiki.jp/lightvn/commands/image#ninecg">
+      </explanation>
+      <explanation lang="eng" name="cg" 
+                   syntax="ninecg [name] [filename / animation name] [x] [y] [layer] [cut_x1] [cut_x2] [cut_y1] [cut_y2] [sizex] [sizey] (scale_type: 0(default)) (on_camera)"
+                   details="ex. ninecg ex1 waku.png 450 200 1 33 66 33 66 200 200
+                   &#xA;	
+                   &#xA;scale_type
+                   &#xA;0: scale center to fit 
+                   &#xA;1: apply center as tile. ninecg's size is largened in the event middle size isn't a multiple of the tile's w/h.
+                   &#xA;2: apply center as tile. the tile's w/h is scaled to fit the size specified.
+                   &#xA;	
+                   &#xA;Note: if 'on_camera' is set, will ignore camera。	
+                   &#xA;Suffix:'0'will display entity as alpha: 0。"
+                   reference="https://wikiwiki.jp/lightvn/commands/image#ninecg">
+      </explanation>
+    </Command>
     <Command cmd="flow_cg">
-      <explanation lang="jap" name="回転絵" syntax="回転絵 [名前] [ファイル名 / 登録済みアニメ名] [x座標] [y座標] [laye(r)] [一秒間のpx移動値] (縦) (ずれ:px) (カメラオプション)"
+      <explanation lang="jap" name="回転絵" 
+                   syntax="回転絵 [名前] [ファイル名 / 登録済みアニメ名] [x座標] [y座標] [laye(r)] [一秒間のpx移動値] (縦) (ずれ:px) (カメラオプション)"
                    details="ex. 回転絵 bg_effect scrolling_background.png 0 0 10 60	
                    &#xA;一秒間の移動値にそって、画像が移動する。	
                    &#xA;	
@@ -538,7 +611,8 @@
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg">
       </explanation>
-      <explanation lang="eng" name="flow_cg" syntax="flow_cg [name] [filename / animation name] [x] [y] [layer] [move per second] (on_camera)"
+      <explanation lang="eng" name="flow_cg" 
+                   syntax="flow_cg [name] [filename / animation name] [x] [y] [layer] [move per second] (on_camera)"
                    details="ex. flow_cg bg_effect scrolling_background.png 0 0 10 60	
                    &#xA;	
                    &#xA;Note: if 'on_camera' is set, will ignore camera。	
@@ -547,7 +621,8 @@
       </explanation>
     </Command>
     <Command cmd="model">
-      <explanation lang="jap" name="モデル" syntax="モデル [名前] [ファイル名] [x座標] [y座標] [r座標] (カメラオプション)"
+      <explanation lang="jap" name="モデル" 
+                   syntax="モデル [名前] [ファイル名] [x座標] [y座標] [r座標] (カメラオプション)"
                    details="ex. モデル stairs stairs.glb 0 400 0	
                    &#xA;	
                    &#xA;注: カメラオプション例。カメラ付着 (カメラ操作の影響を無視)	
@@ -556,7 +631,8 @@
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#model">
       </explanation>
-      <explanation lang="eng" name="model" syntax="model [name] [filename] [x] [y] [layer] (on_camera)"
+      <explanation lang="eng" name="model" 
+                   syntax="model [name] [filename] [x] [y] [layer] (on_camera)"
                    details="ex. model stairs stairs.glb 0 400 0	
                    &#xA;	
                    &#xA;Note: if 'on_camera' is set, will ignore camera。	
@@ -565,7 +641,8 @@
       </explanation>
     </Command>
     <Command cmd="sky">
-      <explanation lang="jap" name="空" syntax="空 [ファイル名: 上] [ファイル名: 下] [ファイル名: 前] [ファイル名: 後ろ] [ファイル名: 左] [ファイル名: 右]"
+      <explanation lang="jap" name="空" 
+                   syntax="空 [ファイル名: 上] [ファイル名: 下] [ファイル名: 前] [ファイル名: 後ろ] [ファイル名: 左] [ファイル名: 右]"
                    details="ex. 空 skybox/top.jpg skybox/bottom.jpg skybox/front.jpg skybox/back.jpg skybox/left.jpg skybox/right.jpg	
                    &#xA;カメラから永遠に離れているかのような空を作成する。	
                    &#xA;(カメラ位置の影響をうけない。)	
@@ -574,7 +651,8 @@
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#sky">
       </explanation>
-      <explanation lang="eng" name="sky" syntax="sky [filename: top] [filename: bottom] [filename: front] [filename: back] [filename: left] [filename: right]"
+      <explanation lang="eng" name="sky" 
+                   syntax="sky [filename: top] [filename: bottom] [filename: front] [filename: back] [filename: left] [filename: right]"
                    details="ex. sky skybox/top.jpg skybox/bottom.jpg skybox/front.jpg skybox/back.jpg skybox/left.jpg skybox/right.jpg	
                    &#xA;	
                    &#xA;Suffix:'0'will display entity as alpha: 0。"
@@ -582,7 +660,8 @@
       </explanation>
     </Command>
     <Command cmd="light">
-      <explanation lang="jap" name="ライト" syntax="ライト [名前] [x座標] [y座標] [r座標] (カメラオプション)"
+      <explanation lang="jap" name="ライト" 
+                   syntax="ライト [名前] [x座標] [y座標] [r座標] (カメラオプション)"
                    details="ex. ライト light0 100 100 80	
                    &#xA;	
                    &#xA;反映されるには、「ライトモード 1」にする必要がある。	
@@ -593,7 +672,8 @@
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#light">
       </explanation>
-      <explanation lang="eng" name="light" syntax="light [name] [filename] [x] [y] [layer] (on_camera)"
+      <explanation lang="eng" name="light" 
+                   syntax="light [name] [filename] [x] [y] [layer] (on_camera)"
                    details="ex. model stairs stairs.glb 0 400 0	
                    &#xA;	
                    &#xA;Note: if 'on_camera' is set, will ignore camera。	
@@ -602,7 +682,8 @@
       </explanation>
     </Command>
     <Command cmd="lightMode">
-      <explanation lang="jap" name="ライトモード" syntax="ライトモード [モード]"
+      <explanation lang="jap" name="ライトモード" 
+                   syntax="ライトモード [モード]"
                    details="ex. ライトモード 1	
                    &#xA;	
                    &#xA;モード）	
@@ -615,12 +696,32 @@
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#lightMode">
       </explanation>
-      <explanation lang="eng" name="lightMode" syntax="lightMode [mode]"
+      <explanation lang="eng" name="lightMode" 
+                   syntax="lightMode [mode]"
                    details="ex. lightMode 1	
                    &#xA;	
                    &#xA;Note: if 'on_camera' is set, will ignore camera。	
                    &#xA;Suffix:'0'will display entity as alpha: 0。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#lightMode">
+      </explanation>
+    </Command>
+    <Command cmd="lightApply">
+      <explanation lang="jap" name="ライト反映" 
+                   syntax="ライト反映 [対象名 (複数可)] [true/false]"
+                   details="ex. ライト反映 alice true
+                   &#xA;	
+                   &#xA;falseの場合、	「ライトモード」1以上の場合ライトの影響を受けないようになる。
+                   &#xA;	
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/image#lightApply">
+      </explanation>
+      <explanation lang="eng" name="lightApply" 
+                   syntax="lightApply [name(s)] [true/false]"
+                   details="ex. lightApply alice true
+                   &#xA;	
+                   &#xA;if [false] and [lightMode] at least 1, do not apply effects from lights.
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/image#lightApply">
       </explanation>
     </Command>
     <!--[MAP RELATED FUNCTIONS]-->
@@ -747,7 +848,7 @@
     </Command>
     <Command cmd="tileMoveX">
       <explanation lang="jap" name="タイル移動x"
-                   syntax="タイル移動x [対象名] [タイル] (所要時間/速度(ups)) [移動開始時コマンド] [移動終了時コマンド] (スキップ禁止)"
+                   syntax="タイル移動x [対象名] [タイル] (所要時間/速度(ups)) [移動開始時コマンド] [移動終了時コマンド] (画面領域範囲) (スキップ禁止)"
                    details="ex. タイル移動x npc -1 5ups &quot;image npc walk_left&quot; &quot;image npc idle_left&quot;
                    &#xA;	
                    &#xA;x方向で-1のタイルに5upsの速度で移動する。	
@@ -773,7 +874,7 @@
     </Command>
     <Command cmd="tileMoveY">
       <explanation lang="jap" name="タイル移動y"
-                   syntax="タイル移動y [対象名] [タイル] (所要時間/速度(ups)) [移動開始時コマンド] [移動終了時コマンド] (スキップ禁止)"
+                   syntax="タイル移動y [対象名] [タイル] (所要時間/速度(ups)) [移動開始時コマンド] [移動終了時コマンド] (画面領域範囲) (スキップ禁止)"
                    details="ex. タイル移動y npc -1 5ups &quot;image npc walk_left&quot; &quot;image npc idle_left&quot;
                    &#xA;	
                    &#xA;y方向で-1のタイルに5upsの速度で移動する。	
@@ -986,7 +1087,7 @@
     <Command cmd="highlight_if">
       <explanation lang="jap" name="ハイライト条件"
                    syntax="ハイライト条件 [ボタン名前] [活性条件：文字列]"
-                   details="ex. ハイライト条件 btn0 &quot;vn_sysWindowMode == 2&quot;	
+                   details="ex. ハイライト条件 btn0 &quot;lvSystem::WindowMode() == 2&quot;	
                    &#xA;	
                    &#xA;ボタンが活性になる条件を指定する。	
                    &#xA;指定された場合、一般的なボタンみたいにユーザータッチによりタッチ状態が決まるのではなく、	
@@ -995,7 +1096,7 @@
       </explanation>
       <explanation lang="eng" name="highlight_if"
                    syntax="highlight_if [button name] [condition: string] [y from original top-left] [width] [height]"
-                   details="ex. highlight_if btn0 &quot;vn_sysWindowMode == 2&quot;	
+                   details="ex. highlight_if btn0 &quot;lvSystem::WindowMode() == 2&quot;	
                    &#xA;	
                    &#xA;defines the condition for which button will show active"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#highlight_if">
@@ -1162,16 +1263,22 @@
     </Command>
     <Command cmd="textbox">
       <explanation lang="jap" name="文字窓 （テキストボックス）"
-                   syntax="文字窓 [名前] [x座標] [y座標] [laye(r)] [幅] [高さ] [フォント名] [フォントサイズ] (カメラオプション) (&quot;[文字列:文章内容]&quot;)"
+                   syntax="文字窓 [名前] [x座標] [y座標] [laye(r)] [幅] [高さ] [フォント名] [フォントサイズ] [超過無視] (カメラオプション) [&quot;文字列:文章内容&quot;] (バックログ登録)"
                    details="ex. 文字窓 textbox1 0 400 81 800 200 r-mplus-1c-m.ttf 24	
+                   &#xA;	
+                   &#xA;超過無視）をつけると、台詞が文字窓の範囲を超えてもエラーが発生しない。
+                   &#xA;	
                    &#xA;	
                    &#xA;注:コマンドに'0'を付けると透明度0の状態で表示される。	
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textbox">
       </explanation>
       <explanation lang="eng" name="textbox"
-                   syntax="textbox [name] [x] [y] [layer] [width] [height] [font filename] [font size] (on_camera) (string)"
-                   details="ex. textbox textbox1 0 400 81 800 200 r-mplus-1c-m.ttf 24"
+                   syntax="textbox [name] [x] [y] [layer] [width] [height] [font filename] [font size] [ignoreOverflow] (on_camera) (string)"
+                   details="ex. textbox textbox1 0 400 81 800 200 r-mplus-1c-m.ttf 24
+                   &#xA;	
+                   &#xA;	
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textbox">
       </explanation>
     </Command>
@@ -1189,8 +1296,8 @@
     </Command>
     <Command cmd="text">
       <explanation lang="jap" name="文字"
-                   syntax="文字 [名前] [x座標] [y座標] [laye(r)] [フォント名] [文字サイズ(px)] 	
-                   &#xA;(方向：横・縦) (整列：左/右/中央) (文章最大長さ) (カメラオプション) &quot;[文字列:文章内容]&quot;"
+                   syntax="文字 [名前] [x座標] [y座標] [laye(r)] [フォント名] [文字サイズ(px)] (行サイズ)	
+                   &#xA;(方向：横・縦) (整列：左/右/中央) (文章最大長さ) (カメラオプション) &quot;[文字列:文章内容]&quot; (バックログ登録)"
                    details="ex. 文字 msg_str 370 223 106  r-mplus-1c-m.ttf 24 &quot;内容! &quot;	
                    &#xA;	
                    &#xA;注：「文字」の場合は文字窓のテキストと違って流れず、全テキストが一瞬で表示される。	
@@ -1199,7 +1306,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#text">
       </explanation>
       <explanation lang="eng" name="text"
-                   syntax="text [name] [x] [y] [layer] [font filename] [font size(px)] (alignment：左/右/中央) (max text length) (on_camera) &quot;[string:text]&quot;"
+                   syntax="text [name] [x] [y] [layer] [font filename] [font size(px)] (line size(px)) (alignment：左/右/中央) (max text length) (on_camera) &quot;[string:text]&quot;"
                    details="ex. text msg_str 370 223 106  r-mplus-1c-m.ttf 24 &quot;hello world! &quot;	
                    &#xA;	
                    &#xA;注：「text」, unilke textbox, does not have flowing text and displays all text at once"
@@ -1409,9 +1516,14 @@
     <Command cmd="textColour">
       <explanation lang="jap" name="文字色"
                    syntax="1. 文字色 (対象名) [r:0-255] [g:0-255] [b:0-255] (a:0-255)	
-                   &#xA;2. 文字色 (文字窓名前) #[HEX rgb / rgba色]"
+                   &#xA;2. 文字色 (対象名) #[HEX rgb / rgba色]
+                   &#xA;3. 文字色 (対象名) #[HEX rgb / rgba色1] [色1反映度]% #[HEX rgb / rgba色2]
+                   &#xA;"
                    details="ex. 文字色 255 150 0 	
                    &#xA;ex. 文字色 #1f1f1f1f 	
+                   &#xA;	
+                   &#xA;ex. 文字色 #ff0000ff 50% #0000ffff
+                   &#xA;	#ff0000ff を上から50%まで反映し、それ以降#0000ffffになるまで徐々にグラデーションがかかる。
                    &#xA;	
                    &#xA;注: 対象名: 正規表現可	
                    &#xA;注: '対象名'指定の場合は対象全体のテキストに即時反映されます。未指定時は、現使用文字窓の次のテキストに反映されます。"
@@ -1422,6 +1534,8 @@
                    &#xA;2. textColour (target name) #[HEX色]"
                    details="ex. 文字色 255 150 0 	
                    &#xA;ex. 文字色 #1f1f1f 	
+                   &#xA;	
+                   &#xA;ex. 文字色 #ff0000ff 50% #0000ffff
                    &#xA;	
                    &#xA;Note: When 'target name' is set, settings will be applied to whole current text. If not, will be applied to next texts"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textColour">
@@ -1503,7 +1617,8 @@
                    syntax="文字速度 (対象名) [速度:ms/字]"
                    details="ex. 文字速度 400	
                    &#xA;	
-                   &#xA; 「文字速度 設定反映」にするとまたユーザー設定(vn_sysTextSpeed)に従うように戻ります。	
+                   &#xA; 「文字速度 設定反映」にすると ユーザー設定(vn_sysTextSpeed)に従うように戻る。	
+                   &#xA; 「文字速度 オート設定反映」にすると ユーザー設定(vn_sysAutoSpeed)に従う。	
                    &#xA;	
                    &#xA;注: 対象名: 正規表現可"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textSpeed">
@@ -1512,8 +1627,10 @@
                    syntax="textSpeed (target name) [speed:ms/letter]"
                    details="ex. textSpeed 400	
                    &#xA;	
-                   &#xA; 「textSpeed followSystem」makes text follow user settings (vn_sysTextSpeed)"
-                   reference="https://wikiwiki.jp/lightvn/commands/text#textShadow">
+                   &#xA; 「textSpeed followSystem」makes text follow user settings (vn_sysTextSpeed)
+                   &#xA; 「textSpeed followSystemAuto」makes text follow user settings (vn_sysAutoSpeed)
+                   &#xA;	"
+                   reference="https://wikiwiki.jp/lightvn/commands/text#textSpeed">
       </explanation>
     </Command>
     <Command cmd="textWordWrap">
@@ -1786,6 +1903,31 @@
                    syntax="textReadAlpha (target) [alpha] (time:ms)"
                    details="ex. textReadAlpha 125 300"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textReadAlpha">
+      </explanation>
+    </Command>
+    <Command cmd="textOverflowAutoWait">
+      <explanation lang="jap" name="文字超過自動待機 "
+                   syntax="文字超過自動待機 [true/false]"
+                   details="ex. 文字超過自動待機 true 	
+                   &#xA;	
+                   &#xA;trueの場合、
+                   &#xA;&quot; -&quot;などで文字列トを文字窓に当てようとして、文字列が枠を超える場合、
+                   &#xA;枠内に入れるまでの文字列を出力し、
+                   &#xA;スクリプトが自動で待機モードに切り替わり、
+                   &#xA;次の続行、時に後ろの文字列の出力を再開させる。
+                   &#xA;	
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/text#textOverflowAutoWait">
+      </explanation>
+      <explanation lang="eng" name="textOverflowAutoWait"
+                   syntax="textOverflowAutoWait [true/false]"
+                   details="ex. textOverflowAutoWait true	
+                   &#xA;	
+                   &#xA;if true,
+                   &#xA;whenever text overflows a textbox, the textbox will auto wait. 	
+                   &#xA;	
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/text#textOverflowAutoWait">
       </explanation>
     </Command>
     <Command cmd="textAutoWait">
@@ -2155,6 +2297,27 @@
                    syntax="parentChild [parent name] [child(ren)]"
                    details="ex. parentChild parent child1, child2, child3"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#parentChild">
+      </explanation>
+    </Command>
+    <Command cmd="autoOnCamera">
+      <explanation lang="jap" name="自動カメラ付着"
+                   syntax="自動カメラ付着 [true/false]"
+                   details="ex. 自動カメラ付着 true
+                   &#xA;
+                   &#xA;trueの場合、
+                   &#xA;現在スクリプト中、コマンド実行後の全ての個体に「カメラ付着」を自動反映。
+                   &#xA;
+                   &#xA;UI画面などに使うと便利。
+                   &#xA;
+                   &#xA;注：現在スクリプトが別のスクリプトにジャンプする場合にも初期化される。
+                   &#xA;
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#autoOnCamera">
+      </explanation>
+      <explanation lang="eng" name="autoOnCamera"
+                   syntax="autoOnCamera [true/false]"
+                   details="ex. autoOnCamera true"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#autoOnCamera">
       </explanation>
     </Command>
     <Command cmd="animation">
@@ -2719,7 +2882,7 @@
                    &#xA;注：基本、zが高ければ高いほど前に表示。	
                    &#xA;複数対象が同じzに存在する場合、描画順が保証されない。	
                    &#xA;	
-                   &#xA;注：z軸の1単位は、laye(r)の1/100に該当する	
+                   &#xA;注：基本、z = laye(r) * 100 に当たる。
                    &#xA;	
                    &#xA;注: 演出コマンドの対象名に正規表現による複数指定が可能です。	
                    &#xA;注: 画面領域範囲：全画面領域、同階層画面領域。何もつけない場合、現画面領域の個体のみ拾う。
@@ -3928,22 +4091,23 @@
                    reference="https://wikiwiki.jp/lightvn/commands/physics#runPhysics">
       </explanation>
     </Command>
-    <Command cmd="intersectAllowance">
-      <explanation lang="jap" name="衝突許可単位"
-                   syntax="衝突許可単位 [数字]"
-                   details="ex. 衝突許可単位 1
+    <Command cmd="entryAllowance">
+      <explanation lang="jap" name="侵入許可単位"
+                   syntax="侵入許可単位 [数字]"
+                   details="ex. 侵入許可単位 1
                    &#xA;	
                    &#xA;注：実験段階のコマンドである。
                    &#xA;	
-                   &#xA;衝突と判定された際に、何ピクセル分の衝突状態を維持させるかを指定。
+                   &#xA;侵入禁止衝突と判定された際に、
+                   &#xA;何ピクセル分の衝突状態を維持させるかを指定。
                    &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/physics#intersectAllowance">
+                   reference="https://wikiwiki.jp/lightvn/commands/physics#entryAllowance">
       </explanation>
-      <explanation lang="eng" name="intersectAllowance"
-                   syntax="intersectAllowance [unit]"
-                   details="ex. intersectAllowance 1
+      <explanation lang="eng" name="entryAllowance"
+                   syntax="entryAllowance [unit]"
+                   details="ex. entryAllowance 1
                    &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/physics#intersectAllowance">
+                   reference="https://wikiwiki.jp/lightvn/commands/physics#entryAllowance">
       </explanation>
     </Command>
     <Command cmd="colliderRect">
@@ -4343,7 +4507,12 @@
                    &#xA;従い、エディター上でスクリプトを編集中の場合は、
                    &#xA;ちゃんと保存させてから実行させよう。
                    &#xA;	
-                   &#xA;注：ジャンプ先としてスクリプトを指定する場合、「変数」も初期化される。
+                   &#xA;注：ジャンプ先としてスクリプトを指定する場合、以下が初期化される。
+                   &#xA;(ジャンプ先が同一スクリプトであっても)
+                   &#xA;	
+                   &#xA;- 変数
+                   &#xA;- マクロ反映
+                   &#xA;	
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#jump">
       </explanation>
@@ -4406,13 +4575,17 @@
     </Command>
     <Command cmd="script">
       <explanation lang="jap" name="スクリプト"
-                   syntax="スクリプト [呼ぶスクリプト] (読み込みを開始する栞)"
+                   syntax="スクリプト [呼ぶスクリプト / 現在] (読み込みを開始する栞)"
                    details="ex. スクリプト textbox.txt (bookmark1)	
                    &#xA;ex. スクリプト lua/lua_script.lua	
+                   &#xA;ex. スクリプト 現在 これを実行
                    &#xA;	
                    &#xA;今のスクリプトの上に、指定のスクリプトを開き読み込みを開始させる。	
                    &#xA;スクリプトの読み込みが終われば、上からスクリプトを外し、	
                    &#xA;呼び出した元のスクリプトに戻り読み込みを続行させる。
+                   &#xA;	
+                   &#xA;スクリプト名として「現在」と指定する場合、
+                   &#xA;	コマンドが実行される現在のスクリプトを読み込む。
                    &#xA;	
                    &#xA;注：別スクリプトに飛ぶ場合、読み込まれるスクリプトは
                    &#xA;ディスクに保存されてあるファイルになる。
@@ -4828,6 +5001,8 @@
                    syntax="マクロ反映 [true/false]"
                    details="ex. マクロ反映 false
                    &#xA;	
+                   &#xA;現在スクリプトにて、マクロを反映させるかを指定。
+                   &#xA;	
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#macroApply">
       </explanation>
@@ -4911,7 +5086,18 @@
                    syntax="lua [ルアコマンド]"
                    details="ex. lua custom_func(&quot;alice&quot;, &quot;ice cream&quot;, &quot;puppy&quot;)	
                    &#xA;	
-                   &#xA;Luaスクリプトの読み込みは「スクリプト」コマンドで可能。"
+                   &#xA;注意：
+                   &#xA;「lua」コマンドの右側全部が「lua」言語の行として実行される。
+                   &#xA;lua言語はLight.vnのスクリプト言語とは異なる。
+                   &#xA;	
+                   &#xA;Light.vnからLuaに引数を渡す方法：
+                   &#xA;上記を踏まえ、Light.vnでは&quot;{{ 変数名 }} &quot;の形でのみ直接引数を渡せられる。
+                   &#xA; lua内部からはlvGetVarを通して変数を参照する形も可能。
+                   &#xA;	
+                   &#xA;参考：
+                   &#xA;Luaスクリプトの読み込みは「スクリプト」コマンドで可能。
+                   &#xA;	
+                   &#xA;	"
                    reference="https://wikiwiki.jp/lightvn/commands/script#lua">
       </explanation>
       <explanation lang="eng" name="lua"
@@ -4977,7 +5163,7 @@
     </Command>
     <Command cmd="bgm">
       <explanation lang="jap" name="背景音"
-                   syntax="背景音 [ファイル名] (反復)"
+                   syntax="背景音 (個体名) [ファイル名] (反復)"
                    details="ex. 背景音 bgm1.ogg 反復 	
                    &#xA;	
                    &#xA;背景音の個体名：vn_sysBGM	
@@ -5248,8 +5434,8 @@
                    syntax="1. 動画クロマキー [対象名] [色: rgb/HEX] [類似度: 0~1] [滑らかさ: 0~1] [流出: 0~1] (デバッグ: true/false)
                    &#xA;2. 動画クロマキー [対象名] [使用: true/false]
                    &#xA;"
-                   details="ex. movieChromakey movie #00ff00 0.99 0.2 0.2
-                   &#xA;ex. movieChromakey movie false
+                   details="ex. 動画クロマキー movie #00ff00 0.99 0.2 0.2
+                   &#xA;ex. 動画クロマキー movie false
                    &#xA;	
                    &#xA;動画のクロマキーを指定して、背景などを透明にする。	
                    &#xA;緑(#00ff00)背景の場合は、上記の指定例でおおむね事足りる。
@@ -5275,8 +5461,12 @@
                    syntax="背景音自動継続 [true / false]"
                    details="ex. 背景音自動継続 true	
                    &#xA;	
-                   &#xA;trueの場合、「背景音」コマンドで今流れている曲と同一ファイル名の曲を再生させようとする際に、	
-                   &#xA;コマンドを発動させず、既存の曲の再生を続ける。"
+                   &#xA;trueの場合、「背景音」コマンド実行時に
+                   &#xA;	
+                   &#xA;	- 同じ個体名の背景音を再作成
+                   &#xA;	- 同一ファイル名の曲を再生させようとする際に、	
+                   &#xA;	
+                   &#xA;個体の再作成を行わず、既存の曲の再生を続ける。"
                    reference="https://wikiwiki.jp/lightvn/commands/media#bgmAutoContinue">
       </explanation>
       <explanation lang="eng" name="bgmAutoContinue"
@@ -5508,7 +5698,7 @@
     </Command>
     <Command cmd="systemvar">
       <explanation lang="jap" name="システム変数"
-                   syntax="システム [変数名] [指定・演算] [数値/変数名/random x]"
+                   syntax="システム変数 [変数名] [指定・演算] [数値/変数名/random x]"
                    details="変数コマンドと同等の使用法。	
                    &#xA;ただ、「システム」として指定できる変数はあくまでSettings.xmlのGameSettings内のもののみ。	
                    &#xA;保存もSettings.xmlにされる。
@@ -5533,6 +5723,24 @@
                    syntax="saveSystemVars"
                    details="saves all systemvars"
                    reference="https://wikiwiki.jp/lightvn/commands/var#saveSystemVars">
+      </explanation>
+    </Command>
+    <Command cmd="eraseVars">
+      <explanation lang="jap" name="変数消去"
+                   syntax="変数消去 [変数名 (複数可)]"
+                   details="ex. 変数消去 変数名1, 変数名2, 変数名3
+                   &#xA;	
+                   &#xA;(実験中機能)
+                   &#xA;該当変数名の変数値をundefinedに戻す。
+                   &#xA;システム変数は対象に出来ない。
+                   &#xA;	
+                   &#xA;	"
+                   reference="https://wikiwiki.jp/lightvn/commands/var#eraseVars">
+      </explanation>
+      <explanation lang="eng" name="eraseVars"
+                   syntax="eraseVars [var names]"
+                   details=""
+                   reference="https://wikiwiki.jp/lightvn/commands/var#eraseVars">
       </explanation>
     </Command>
     <Command cmd="clearVars">
@@ -5727,8 +5935,6 @@
                    &#xA;vn_sysAutoWait : オート時の待機速度 (数字)	
                    &#xA;vn_sysTextSkipMethod : スキップ速度 (数字)	
                    &#xA;vn_sysVoicePlayType : ボイス再生形式 (数字)	
-                   &#xA;	
-                   &#xA;vn_sysWindowMode : スクリーンモード (数字)	
                    &#xA;	
                    &#xA;vn_mouse_x：ユーザーのゲーム上マウス位置x（数字）	
                    &#xA;vn_mouse_y：ユーザーのゲーム上マウス位置y（数字）	
@@ -6108,6 +6314,8 @@
                    details="ex. 開く movie.mp4 	
                    &#xA;ex. 開く http:lightvn.net	
                    &#xA;	
+                   &#xA;ファイル名の場合、Data/の下に存在する必要がある。	
+                   &#xA;	
                    &#xA;参考：settings.xmlの「disallowOpen」がtrueの場合、ダイアログメッセージが表示される。	
                    &#xA;（表示されるのはCommands.xmlのMsg_disallowOpen）	
                    &#xA;"
@@ -6194,6 +6402,25 @@
                    &#xA;
                    &#xA;注: 画面領域範囲：全画面領域、同階層画面領域。何もつけない場合、現画面領域の個体のみ拾う。
                    &#xA;
+                   &#xA;Tip: 場面が切り替わる境目等にこまめに使うことを推奨。
+                   &#xA;
+                   &#xA;「以下の設定も初期化」
+                   &#xA;
+                   &#xA;カメラ初期化
+                   &#xA;
+                   &#xA;キートリガー初期化
+                   &#xA;
+                   &#xA;個体深度計算
+                   &#xA;カメラ基準個体描画
+                   &#xA;ライトモード
+                   &#xA;描画基準個体
+                   &#xA;衝突基準個体
+                   &#xA;
+                   &#xA;特殊効果自動反映
+                   &#xA;マスク自動反映
+                   &#xA;
+                   &#xA;物理処理
+                   &#xA;侵入許可単位
                    &#xA;衝突チェックも全て初期化。
                    &#xA;
                    &#xA;"
@@ -6442,6 +6669,26 @@
                    reference="https://wikiwiki.jp/lightvn/commands/system#textureCreate">
       </explanation>
     </Command>
+    <Command cmd="textureCreateRect">
+      <explanation lang="jap" name="方形画像登録"
+                   syntax="1. 方形画像登録 [登録名] [横] [縦] [r] [g] [b] (a)
+                   &#xA;2. 方形画像登録 [登録名] [横] [縦] [HEX色]"
+                   details="ex. 方形画像登録 new_texture 100 100 #000000	
+                   &#xA;	
+                   &#xA;指定した色の方形画像を作成する。
+                   &#xA;	
+                   &#xA;参考：作られた画像は、/Images/登録名、として	
+                   &#xA;まるでImages/フォルダー内の実際の画像として扱われる。	
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#textureCreateRect">
+      </explanation>
+      <explanation lang="eng" name="textureCreateRect"
+                   syntax="textureCreateRect [w] [h] [r] [g] [b] (a)
+                   &#xA;textureCreateRect [w] [h] [hex colour]"
+                   details="ex. textureCreateRect new_texture 100 100 #000000"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#textureCreateRect">
+      </explanation>
+    </Command>
     <Command cmd="breakpoint">
       <explanation lang="jap" name="breakpoint"
                    syntax="breakpoint"
@@ -6672,7 +6919,7 @@
                    syntax="lvPositionCenterXYZ(string: name)"
                    details="ex. lvPositionCenterXYZ(&quot;fufu&quot;)	
                    &#xA;	
-                   &#xA;return: number"
+                   &#xA;return: list"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvPositionCenterXYZ">
       </explanation>
     </Command>
@@ -7092,6 +7339,24 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvNumberToString">
       </explanation>
     </Command>
+    <Command name="lvSubstringCount">
+      <explanation lang="jap" name="lvSubstringCount"
+                   syntax="lvSubstringCount(文字列：対象, 文字列：検索)"
+                   details="ex. lvSubstringCount(&quot;asas&quot;, &quot;as&quot;)	-> 2
+                   &#xA;	
+                   &#xA;対象の文字列中に、検索文字列が何回含まれてあるかを返還。
+                   &#xA;	
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvSubstringCount">
+      </explanation>
+      <explanation lang="eng" name="lvSubstringCount"
+                   syntax="lvSubstringCount(string: target, string: search_term)"
+                   details="ex. lvSubstringCount(&quot;asas&quot;, &quot;as&quot;)	-> 2
+                   &#xA;	
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvSubstringCount">
+      </explanation>
+    </Command>
     <Command name="lvCopyDeep">
       <explanation lang="jap" name="lvCopyDeep"
                    syntax="lvCopyDeep(変数)"
@@ -7381,6 +7646,7 @@
                    details="ex. lvIsEmpty(鞄)	
                    &#xA;	
                    &#xA;対象変数名が、List又はHashMapの場合、中身がなければtrue。
+                   &#xA;Stringの場合は長さゼロの場合true。
                    &#xA;それ以外の変数タイプはfalse。
                    &#xA;	
                    &#xA;return: bool"
@@ -7400,6 +7666,7 @@
                    details="ex. lvSize(鞄)	
                    &#xA;	
                    &#xA;対象変数名が、List又はHashMapの場合、中身の大きさを返還。
+                   &#xA;Stringの場合は、長さ。
                    &#xA;	
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSize">
@@ -7502,6 +7769,42 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvText">
       </explanation>
     </Command>
+    <Command name="lvTextBoundsW">
+      <explanation lang="jap" name="lvTextBoundsW"
+                   syntax="lvTextBoundsW(文字列：文字・文字窓名)"
+                   details="ex. lvTextBoundsW(&quot;文字王&quot;)	
+                   &#xA;	
+                   &#xA;対象の文字・文字窓のバウンディングボックスの横幅を返還。
+                   &#xA;	
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextBoundsW">
+      </explanation>
+      <explanation lang="eng" name="lvTextBoundsW"
+                   syntax="lvTextBoundsW(name)"
+                   details="ex. lvTextBoundsW(&quot;fufu&quot;)	
+                   &#xA;	
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextBoundsW">
+      </explanation>
+    </Command>
+    <Command name="lvTextBoundsH">
+      <explanation lang="jap" name="lvTextBoundsH"
+                   syntax="lvTextBoundsH(文字列：文字・文字窓名)"
+                   details="ex. lvTextBoundsH(&quot;文字王&quot;)	
+                   &#xA;	
+                   &#xA;対象の文字・文字窓のバウンディングボックスの縦幅を返還。
+                   &#xA;	
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextBoundsH">
+      </explanation>
+      <explanation lang="eng" name="lvTextBoundsH"
+                   syntax="lvTextBoundsH(name)"
+                   details="ex. lvTextBoundsH(&quot;fufu&quot;)	
+                   &#xA;	
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextBoundsH">
+      </explanation>
+    </Command>
     <Command name="lvMediaOffset">
       <explanation lang="jap" name="lvMediaOffset"
                    syntax="lvMediaOffset(string: 個体名)"
@@ -7572,6 +7875,45 @@
                    &#xA;	
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvHasState">
+      </explanation>
+    </Command>
+    <Command name="lvGetNames">
+      <explanation lang="jap" name="lvGetNames"
+                   syntax="lvGetNames(string: 個体名の正規表現)"
+                   details="ex. lvGetNames(&quot;対象.*&quot;)	
+                   &#xA;	
+                   &#xA;「個体名の正規表現」に合致する対象名を持つ個体名のリストを返還。
+                   &#xA;	
+                   &#xA;return: list"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvGetNames">
+      </explanation>
+      <explanation lang="eng" name="lvGetNames"
+                   syntax="lvGetNames(regex)"
+                   details="ex. lvGetNames(&quot;target.*&quot;)	
+                   &#xA;	
+                   &#xA;return: list"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvGetNames">
+      </explanation>
+    </Command>
+    <Command name="lvGetClosestObjWithName">
+      <explanation lang="jap" name="lvGetClosestObjWithName"
+                   syntax="lvGetClosestObjWithName(string: 基準個体名, string: 個体名の正規表現)"
+                   details="ex. lvGetClosestObjWithName(&quot;基準&quot;, &quot;対象.*&quot;)	
+                   &#xA;	
+                   &#xA;「個体名の正規表現」に合致する対象名を持つ個体の内、
+                   &#xA;	「基準個体名」の個体に一番近い個体名をリストとして返還。
+                   &#xA;
+                   &#xA;	(ない場合はsize 0のリストが返還される)
+                   &#xA;	
+                   &#xA;return: list"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvGetClosestObjWithName">
+      </explanation>
+      <explanation lang="eng" name="lvGetClosestObjWithName"
+                   syntax="lvGetClosestObjWithName(regex)"
+                   details="ex. lvGetClosestObjWithName(&quot;me&quot;, &quot;target.*&quot;)	
+                   &#xA;	
+                   &#xA;return: list"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvGetClosestObjWithName">
       </explanation>
     </Command>
     <Command name="lvSaveExists">
@@ -7941,6 +8283,64 @@
                    &#xA;	
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_InputType">
+      </explanation>
+    </Command>
+    <Command name="lvSystem::WindowMode">
+      <explanation lang="jap" name="lvSystem::WindowMode"
+                   syntax="lvSystem::WindowMode()"
+                   details="ex. lvSystem::WindowMode()	
+                   &#xA;	
+                   &#xA;現在ウインドモードを返還。
+                   &#xA;	
+                   &#xA;0) フルスクリーン
+                   &#xA;1) ウインドウ
+                   &#xA;2) フルスクリーン (横縦比維持)
+                   &#xA;	
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_WindowMode">
+      </explanation>
+      <explanation lang="eng" name="lvSystem::WindowMode"
+                   syntax="lvSystem::WindowMode()"
+                   details="ex. lvSystem::WindowMode()	
+                   &#xA;	
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_WindowMode">
+      </explanation>
+    </Command>
+    <Command name="lvSystem::WindowSize">
+      <explanation lang="jap" name="lvSystem::WindowSize"
+                   syntax="lvSystem::WindowSize()"
+                   details="ex. lvSystem::WindowSize()	
+                   &#xA;	
+                   &#xA;現在ウインドウサイズのリスト(横幅、高幅)を返還。
+                   &#xA;	
+                   &#xA;return: list"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_WindowSize">
+      </explanation>
+      <explanation lang="eng" name="lvSystem::WindowSize"
+                   syntax="lvSystem::WindowSize()"
+                   details="ex. lvSystem::WindowSize()	
+                   &#xA;	
+                   &#xA;return: list"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_WindowSize">
+      </explanation>
+    </Command>
+    <Command name="lvSystem::ViewportSize">
+      <explanation lang="jap" name="lvSystem::ViewportSize"
+                   syntax="lvSystem::ViewportSize()"
+                   details="ex. lvSystem::ViewportSize()	
+                   &#xA;	
+                   &#xA;現在作品解像度のリスト(横幅、高幅)を返還。
+                   &#xA;	
+                   &#xA;return: list"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_ViewportSize">
+      </explanation>
+      <explanation lang="eng" name="lvSystem::ViewportSize"
+                   syntax="lvSystem::ViewportSize()"
+                   details="ex. lvSystem::ViewportSize()	
+                   &#xA;	
+                   &#xA;return: list"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_ViewportSize">
       </explanation>
     </Command>
     <Command name="lvSystem::IsFixedWindowSize">

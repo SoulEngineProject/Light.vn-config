@@ -426,7 +426,7 @@
       <explanation lang="eng" name="--[image commands]--"></explanation>
     </Command>
     <Command cmd="empty">
-      <explanation lang="jap" name="個体" 
+      <explanation lang="jap" name="個体"
                    syntax="個体 [名前] [x座標] [y座標] [laye(r)] (カメラオプション)"
                    details="ex. 個体 id0 150 30 50  
                    &#xA;指定位置に名前：id0の個体をつくる。 
@@ -443,7 +443,7 @@
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#empty">
       </explanation>
-      <explanation lang="eng" name="empty" 
+      <explanation lang="eng" name="empty"
                    syntax="empty [name] [x] [y] [layer] (on_camera)"
                    details="ex. empty id0 100 100 80  
                    &#xA;  
@@ -473,7 +473,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/image#bg">
       </explanation>
-      <explanation lang="eng" name="bg" 
+      <explanation lang="eng" name="bg"
                    syntax="bg [name] [filename / animation name]"
                    details="ex. bg bg1 scenery.png  
                    &#xA;the background image 'scenery.png' is shown with name 'bg1'.  
@@ -488,7 +488,7 @@
       </explanation>
     </Command>
     <Command cmd="cg">
-      <explanation lang="jap" name="絵" 
+      <explanation lang="jap" name="絵"
                    syntax="絵 [名前] [ファイル名 / 登録済みアニメ名] [x座標] [y座標] [laye(r)] (カメラオプション)"
                    details="ex. 絵 alice2 alice.png 150 30 50  
                    &#xA;絵に名前'alice2'を与え、画像'alice.png'を使用し、座標：「150 30」、レイヤ：50に表示する.  
@@ -502,7 +502,7 @@
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#cg">
       </explanation>
-      <explanation lang="eng" name="cg" 
+      <explanation lang="eng" name="cg"
                    syntax="cg [name] [filename / animation name] [x] [y] [layer] (on_camera)"
                    details="ex. cg alice2 alice.png 150 30 50   
                    &#xA;cg is displayed with name: alice2, image: 'alice.png' at coords: [150 30], layer: 50  
@@ -516,7 +516,7 @@
       </explanation>
     </Command>
     <Command cmd="sound_cg">
-      <explanation lang="jap" name="音声絵" 
+      <explanation lang="jap" name="音声絵"
                    syntax="音声絵 [名前] [通常画像・アニメ名] [x] [y] [laye(r)] [音声対象名] [次回判断までの時間] (変化タイプ) (音量最小1) (表示画像1) (...) (取得音量の時間ずれ:ms) (カメラオプション)"
                    details="ex. 音声絵 hisia mouth0.png 400 200 90 id0 100 30 mouth1.png 60 mouth2.png 90 mouth3.png 120 mouth4.png  
                    &#xA;  
@@ -553,7 +553,7 @@
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#sound_cg">
       </explanation>
-      <explanation lang="eng" name="sound_cg" 
+      <explanation lang="eng" name="sound_cg"
                    syntax="sound_cg [name] [x] [y] [layer] [name] [filename / animation name] [x] [y] [layer] [move per second] (on_camera)"
                    details="ex. sound_cg hisia mouth0.png 400 200 90 id0 100 30 mouth1.png 60 mouth2.png 90 mouth3.png 120 mouth4.png 
                    &#xA;  
@@ -563,7 +563,7 @@
       </explanation>
     </Command>
     <Command cmd="ninecg">
-      <explanation lang="jap" name="九絵" 
+      <explanation lang="jap" name="九絵"
                    syntax="九絵 [名前] [ファイル名 / 登録済みアニメ名] [x座標] [y座標] [laye(r)] [横x1] [横x2] [縦y1] [縦y2] [表示横幅] [表示縦幅] (拡張形式：0(デフォルト)) (カメラオプション)"
                    details="ex. 九絵 ex1 waku.png 450 200 1 33 66 33 66 200 200
                    &#xA;  
@@ -582,7 +582,7 @@
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#ninecg">
       </explanation>
-      <explanation lang="eng" name="cg" 
+      <explanation lang="eng" name="cg"
                    syntax="ninecg [name] [filename / animation name] [x] [y] [layer] [cut_x1] [cut_x2] [cut_y1] [cut_y2] [sizex] [sizey] (scale_type: 0(default)) (on_camera)"
                    details="ex. ninecg ex1 waku.png 450 200 1 33 66 33 66 200 200
                    &#xA;  
@@ -597,7 +597,7 @@
       </explanation>
     </Command>
     <Command cmd="flow_cg">
-      <explanation lang="jap" name="回転絵" 
+      <explanation lang="jap" name="回転絵"
                    syntax="回転絵 [名前] [ファイル名 / 登録済みアニメ名] [x座標] [y座標] [laye(r)] [一秒間のpx移動値] (縦) (ずれ:px) (カメラオプション)"
                    details="ex. 回転絵 bg_effect scrolling_background.png 0 0 10 60  
                    &#xA;一秒間の移動値にそって、画像が移動する。  
@@ -611,7 +611,7 @@
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg">
       </explanation>
-      <explanation lang="eng" name="flow_cg" 
+      <explanation lang="eng" name="flow_cg"
                    syntax="flow_cg [name] [filename / animation name] [x] [y] [layer] [move per second] (on_camera)"
                    details="ex. flow_cg bg_effect scrolling_background.png 0 0 10 60  
                    &#xA;  
@@ -621,7 +621,7 @@
       </explanation>
     </Command>
     <Command cmd="model">
-      <explanation lang="jap" name="モデル" 
+      <explanation lang="jap" name="モデル"
                    syntax="モデル [名前] [ファイル名] [x座標] [y座標] [r座標] (カメラオプション)"
                    details="ex. モデル stairs stairs.glb 0 400 0 
                    &#xA;  
@@ -631,7 +631,7 @@
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#model">
       </explanation>
-      <explanation lang="eng" name="model" 
+      <explanation lang="eng" name="model"
                    syntax="model [name] [filename] [x] [y] [layer] (on_camera)"
                    details="ex. model stairs stairs.glb 0 400 0 
                    &#xA;  
@@ -641,7 +641,7 @@
       </explanation>
     </Command>
     <Command cmd="sky">
-      <explanation lang="jap" name="空" 
+      <explanation lang="jap" name="空"
                    syntax="空 [ファイル名: 上] [ファイル名: 下] [ファイル名: 前] [ファイル名: 後ろ] [ファイル名: 左] [ファイル名: 右]"
                    details="ex. 空 skybox/top.jpg skybox/bottom.jpg skybox/front.jpg skybox/back.jpg skybox/left.jpg skybox/right.jpg  
                    &#xA;カメラから永遠に離れているかのような空を作成する。 
@@ -651,7 +651,7 @@
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#sky">
       </explanation>
-      <explanation lang="eng" name="sky" 
+      <explanation lang="eng" name="sky"
                    syntax="sky [filename: top] [filename: bottom] [filename: front] [filename: back] [filename: left] [filename: right]"
                    details="ex. sky skybox/top.jpg skybox/bottom.jpg skybox/front.jpg skybox/back.jpg skybox/left.jpg skybox/right.jpg  
                    &#xA;  
@@ -660,7 +660,7 @@
       </explanation>
     </Command>
     <Command cmd="light">
-      <explanation lang="jap" name="ライト" 
+      <explanation lang="jap" name="ライト"
                    syntax="ライト [名前] [x座標] [y座標] [r座標] (カメラオプション)"
                    details="ex. ライト light0 100 100 80 
                    &#xA;  
@@ -672,7 +672,7 @@
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#light">
       </explanation>
-      <explanation lang="eng" name="light" 
+      <explanation lang="eng" name="light"
                    syntax="light [name] [filename] [x] [y] [layer] (on_camera)"
                    details="ex. model stairs stairs.glb 0 400 0 
                    &#xA;  
@@ -682,7 +682,7 @@
       </explanation>
     </Command>
     <Command cmd="lightMode">
-      <explanation lang="jap" name="ライトモード" 
+      <explanation lang="jap" name="ライトモード"
                    syntax="ライトモード [モード]"
                    details="ex. ライトモード 1  
                    &#xA;  
@@ -696,7 +696,7 @@
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#lightMode">
       </explanation>
-      <explanation lang="eng" name="lightMode" 
+      <explanation lang="eng" name="lightMode"
                    syntax="lightMode [mode]"
                    details="ex. lightMode 1 
                    &#xA;  
@@ -706,7 +706,7 @@
       </explanation>
     </Command>
     <Command cmd="lightApply">
-      <explanation lang="jap" name="ライト反映" 
+      <explanation lang="jap" name="ライト反映"
                    syntax="ライト反映 [対象名 (複数可)] [true/false]"
                    details="ex. ライト反映 alice true
                    &#xA;  
@@ -715,7 +715,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/image#lightApply">
       </explanation>
-      <explanation lang="eng" name="lightApply" 
+      <explanation lang="eng" name="lightApply"
                    syntax="lightApply [name(s)] [true/false]"
                    details="ex. lightApply alice true
                    &#xA;  

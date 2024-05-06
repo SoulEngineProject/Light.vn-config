@@ -1,0 +1,22 @@
+# For VS Code user, install: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+# For Sublime Text user, install: https://github.com/sindresorhus/editorconfig-sublime#readme
+# See https://editorconfig.org/ for more information about Editor Config.
+
+# Usage:
+# Visual Studio) ctrl+k, ctrl+d 
+# (https://learn.microsoft.com/en-us/visualstudio/ide/create-portable-custom-editor-options?view=vs-2022)
+
+# top-most EditorConfig file
+root = true
+
+[*]
+indent_style = space
+insert_final_newline = true
+indent_size = 2
+
+[*.xml]
+trim_trailing_whitespace = true
+insert_final_newline = false
+
+[*.md]
+trim_trailing_whitespace = false

@@ -1251,6 +1251,7 @@
                    &#xA;現在対応されているコマンド）
                    &#xA;ruby 文字列：ルビを単語にふる。
                    &#xA;rubyAt 数字：ルビの表示位置を指定する。
+                   &#xA;rubyFont 文字列：ルビのフォントを指定する。
                    &#xA;"
                    >
       </explanation>
@@ -1539,6 +1540,40 @@
                    &#xA;  
                    &#xA;Note: When 'target name' is set, settings will be applied to whole current text. If not, will be applied to next texts"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textColour">
+      </explanation>
+    </Command>
+    <Command cmd="textColourSkippable">
+      <explanation lang="jap" name="文字色既読"
+                   syntax="1. 文字色既読 (対象名) [r:0-255] [g:0-255] [b:0-255] (a:0-255) 
+                   &#xA;2. 文字色既読 (対象名) #[HEX rgb / rgba色]
+                   &#xA;3. 文字色既読 (対象名) #[HEX rgb / rgba色1] [色1反映度]% #[HEX rgb / rgba色2]
+                   &#xA;"
+                   details="ex. 文字色既読 #1f1f1f1f
+                   &#xA;
+                   &#xA;文字・文字窓のテキストが既読判定され、
+                   &#xA; + 文字・文字窓に指定された文字色と同じ色をしている場合
+                   &#xA;
+                   &#xA;指定した色にする。
+                   &#xA;
+                   &#xA;つまり、文字色既読を文字・文字窓に指定しても、
+                   &#xA;文字・文字窓の文字色が0 0 0で、
+                   &#xA;&lt;文字色 255 0 0&gt;特殊テキスト&lt;/&gt;
+                   &#xA;などのテキストに関しては既読判定されてもそのまま赤と特殊指定した色のまま表示される。
+                   &#xA;  
+                   &#xA;注: 対象名: 正規表現可 
+                   &#xA;注: '対象名'指定の場合は対象全体のテキストに即時反映されます。未指定時は、現使用文字窓の次のテキストに反映されます。"
+                   reference="https://wikiwiki.jp/lightvn/commands/text#textColourSkippable">
+      </explanation>
+      <explanation lang="eng" name="textColourSkippable"
+                   syntax="1. textColourSkippable (target name) [r:0-255] [g:0-255] [b:0-255] (a:0-255)  
+                   &#xA;2. textColourSkippable (target name) #[HEX色]"
+                   details="ex. textColourSkippable 255 150 0   
+                   &#xA;ex. textColourSkippable #1f1f1f   
+                   &#xA;  
+                   &#xA;ex. textColourSkippable #ff0000ff 50% #0000ffff
+                   &#xA;  
+                   &#xA;Note: When 'target name' is set, settings will be applied to whole current text. If not, will be applied to next texts"
+                   reference="https://wikiwiki.jp/lightvn/commands/text#textColourSkippable">
       </explanation>
     </Command>
     <Command cmd="textBold">
@@ -6883,6 +6918,25 @@
                    &#xA;  
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvRemoveSuffix">
+      </explanation>
+    </Command>
+    <Command name="lvStringRemoveFormat">
+      <explanation lang="jap" name="lvStringRemoveFormat"
+                   syntax="lvStringRemoveFormat(string: 文字列)"
+                   details="ex. lvStringRemoveFormat(&quot;&lt;textSize 20&gt;装飾される文字列&lt;/&gt;がここに！&quot;) 
+                   &#xA;  
+                   &#xA;文字列のテキスト装飾部分を除いた文字列を返還。
+                   &#xA;上記の場合、結果：&quot;装飾される文字列がここに！&quot;
+                   &#xA;  
+                   &#xA;return: string"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvStringRemoveFormat">
+      </explanation>
+      <explanation lang="eng" name="lvStringRemoveFormat"
+                   syntax="lvStringRemoveFormat(string: name)"
+                   details="ex. lvStringRemoveFormat(&quot;&lt;textSize 20&gt;装飾される文字列&lt;/&gt;&quot;) 
+                   &#xA;  
+                   &#xA;return: string"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvStringRemoveFormat">
       </explanation>
     </Command>
     <Command name="lvPositionCenter">

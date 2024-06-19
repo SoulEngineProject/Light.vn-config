@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Strings>
+  <!--[messages]-->
+  <EString nkey="messageEditorClose" wpfControl="">
+    <val lang="jap">
+      Light.vn エディターを終了します。
+      作業中のスクリプトを全部保存しますか？
+    </val>
+    <val lang="eng">
+      Closing the Light.vn editor.
+      Save all the current scripts?
+    </val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="messageStopTestPlay" wpfControl="">
+    <val lang="jap">テストプレイを終了しますか?</val>
+    <val lang="eng">Stop Test Play?</val>
+    <val lang="zh_cn"></val>
+  </EString>
+
   <!--[preview messages]-->
   <EString nkey="PreviewMsg_Default" wpfControl="">
     <val lang="jap">スクリプト行をクリックすると画面に反映されます。</val>
@@ -67,19 +85,19 @@
   </EString>
   <!--command divider-->
   <EString nkey="InsCmdSystemMessage_ScriptCmd" wpfControl="">
-    <val lang="jap">~システムメッセージ &quot;メッセージを表示します。&quot;</val>
-    <val lang="eng">~SystemMessage &quot;Show this message.&quot;</val>
-    <val lang="zh_cn">~系统消息 &quot;显示此消息</val>
+    <val lang="jap">メッセージを表示します。</val>
+    <val lang="eng">Show this message.</val>
+    <val lang="zh_cn">显示此消息</val>
   </EString>
   <EString nkey="InsCmdSystemError_ScriptCmd" wpfControl="">
-    <val lang="jap">~システムエラ &quot;エラーを表示させます。&quot;</val>
-    <val lang="eng">~SystemError &quot;Show error message.&quot;</val>
-    <val lang="zh_cn">~系统异常 &quot;显示发生错误</val>
+    <val lang="jap">エラーを表示させます。</val>
+    <val lang="eng">Show error message.</val>
+    <val lang="zh_cn">显示发生错误</val>
   </EString>
   <EString nkey="InsCmdSystemLog_ScriptCmd" wpfControl="">
-    <val lang="jap">~システムログ &quot;ログに記録されるぜ。&quot;</val>
-    <val lang="eng">~SystemLog &quot;Log messages.&quot;</val>
-    <val lang="zh_cn">~系统日志 &quot;被记录在了日志中</val>
+    <val lang="jap">ログに記録されるぜ。</val>
+    <val lang="eng">Log messages.</val>
+    <val lang="zh_cn">被记录在了日志中</val>
   </EString>
 
   <!--[EDITOR BOTTOM INFORMATION]-->

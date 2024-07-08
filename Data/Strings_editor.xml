@@ -52,6 +52,26 @@
 
   <!--[EDITOR COMMAND INSERT]-->
   <!--command divider-->
+  <EString nkey="InsCmd_instruction_position" wpfControl="">
+    <val lang="jap">移動：マウス</val>
+    <val lang="eng">move: mouse</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="InsCmd_instruction_scale" wpfControl="">
+    <val lang="jap">拡大：スクロール</val>
+    <val lang="eng">zoom: scroll</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="InsCmd_instruction_confirm" wpfControl="">
+    <val lang="jap">確定：左クリック</val>
+    <val lang="eng">confirm: left click</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="InsCmd_sky_error_texture_count" wpfControl="">
+    <val lang="jap">6枚の画像を選ぶ必要があるのだ！</val>
+    <val lang="eng">You need to choose 6 textures!</val>
+    <val lang="zh_cn"></val>
+  </EString>
   <EString nkey="InsCmd_TextSample" wpfControl="">
     <val lang="jap">吾輩は文字王である。</val>
     <val lang="eng">I'm a master of letters.</val>
@@ -82,6 +102,16 @@
     <val lang="jap">選択肢</val>
     <val lang="eng">choice</val>
     <val lang="zh_cn">选择分支</val>
+  </EString>
+  <EString nkey="InsCmdChoice_notice_texture" wpfControl="">
+    <val lang="jap">選択肢ボタンの画像をお選びください</val>
+    <val lang="eng">Choose the texture for the button</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="InsCmdChoice_notice_font" wpfControl="">
+    <val lang="jap">選択肢ボタンのフォントをお選びください</val>
+    <val lang="eng">Choose the font for the button</val>
+    <val lang="zh_cn"></val>
   </EString>
   <!--command divider-->
   <EString nkey="InsCmdSystemMessage_ScriptCmd" wpfControl="">
@@ -859,6 +889,177 @@
     <val lang="jap">TIP: スクリプト中のコマンドをダブルクリックすると、説明が表示されます。</val>
     <val lang="eng">TIP: Double-click on any command for details.</val>
     <val lang="zh_cn">提示：在脚本中双击任何命令可以显示其说明。</val>
+  </EString>
+
+  <!--[find and replace]-->
+  <EString nkey="findreplace_title" wpfControl="">
+    <val lang="jap">検索・置換対象</val>
+    <val lang="eng">Find and Replace</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="findreplace_find" wpfControl="">
+    <val lang="jap">検索式</val>
+    <val lang="eng">Find</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="findreplace_replace" wpfControl="">
+    <val lang="jap">置換式</val>
+    <val lang="eng">Replace</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="findreplace_direction" wpfControl="">
+    <val lang="jap">方向</val>
+    <val lang="eng">Direction</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="findreplace_down" wpfControl="">
+    <val lang="jap">下</val>
+    <val lang="eng">down</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="findreplace_up" wpfControl="">
+    <val lang="jap">上</val>
+    <val lang="eng">up</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="findreplace_option" wpfControl="">
+    <val lang="jap">オプション</val>
+    <val lang="eng">Options</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="findreplace_option_case" wpfControl="">
+    <val lang="jap">大小文字区分</val>
+    <val lang="eng">Case Sensitve</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="findreplace_option_whole_words" wpfControl="">
+    <val lang="jap">独立単語のみ</val>
+    <val lang="eng">Whole Words Only</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="findreplace_option_regex" wpfControl="">
+    <val lang="jap">検索式を正規表現として</val>
+    <val lang="eng">Find as Regex</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="findreplace_btn_search" wpfControl="">
+    <val lang="jap">検索</val>
+    <val lang="eng">Find</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="findreplace_btn_replace_next" wpfControl="">
+    <val lang="jap">置換（次）</val>
+    <val lang="eng">Replace (next)</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="findreplace_btn_replace_all" wpfControl="">
+    <val lang="jap">置換（全部）</val>
+    <val lang="eng">Replace (all)</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="findreplace_message_replace_done" wpfControl="">
+    <val lang="jap">代替成功</val>
+    <val lang="eng">Replace Success</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="findreplace_message_replace_none" wpfControl="">
+    <val lang="jap">代替該当項目なし</val>
+    <val lang="eng">Search term matched nowhere</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="findreplace_message_replace_count" wpfControl="">
+    <val lang="jap">置換数</val>
+    <val lang="eng">Replace Count</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="findreplace_message_term_request" wpfControl="">
+    <val lang="jap">検索式をいれてください。</val>
+    <val lang="eng">Enter the Search Term</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="findreplace_message_term_regex_error" wpfControl="">
+    <val lang="jap">検索式の正規表現に問題あり</val>
+    <val lang="eng">Search Term Regex has Issues</val>
+    <val lang="zh_cn"></val>
+  </EString>
+
+  <!--[dialog]-->
+  <EString nkey="char_name_lam" wpfControl="">
+    <val lang="jap">ラム</val>
+    <val lang="eng">Lam</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="char_name_vale" wpfControl="">
+    <val lang="jap">バーレ</val>
+    <val lang="eng">Vale</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="char_support" wpfControl="">
+    <val lang="jap">サポート</val>
+    <val lang="eng">Support</val>
+    <val lang="zh_cn"></val>
+  </EString>
+
+  <!--[alarms]-->
+  <EString nkey="lvn_alarm_init_read_write_different" wpfControl="">
+    <val lang="jap">書き込みフォルダーが外部のもの: '{}' になってるよ。注意してね。</val>
+    <val lang="eng">the write directory: '{}' is external. be careful.</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="lvn_alarm_handle_insert_command_sky" wpfControl="">
+    <val lang="jap">6枚の画像を選ぶ必要があるのだ！</val>
+    <val lang="eng">we need 6 textures!</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="lvn_alarm_handle_BtnNewScript_directory_error" wpfControl="">
+    <val lang="jap">{} か、{} の中に作るのだよ~</val>
+    <val lang="eng">Choose from either {}, or {}</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="lvn_alarm_is_valid_filename_invalid" wpfControl="">
+    <val lang="jap">スクリプト: '{}' は読み込みできるファイルではないみたいなのだ！</val>
+    <val lang="eng">Script: '{}' doesn't seem like a readable file!</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="lvn_alarm_handle_BtnOpenScript_invalid_directory" wpfControl="">
+    <val lang="jap">{} &#xA;&#xA;または&#xA;&#xA; {} &#xA;&#xA;の中から選ぶなのだ！</val>
+    <val lang="eng">Choose between&#xA;&#xA;{}&#xA;&#xA;or&#xA;&#xA;{}!</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="lvn_alarm_readScript_error" wpfControl="">
+    <val lang="jap">スクリプト: '{}' の読み込みに失敗したのだ。きっと誰かが食べたなのだ！</val>
+    <val lang="eng">Script: '{}' could not be read. Someone might have eaten it!</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="lvn_alarm_saveScript_error_noexist" wpfControl="">
+    <val lang="jap">スクリプト: '{}' がDiskに存在しないのだ！ 保存を試してみるけど、何かが怪しいのだ・・・</val>
+    <val lang="eng">Script: '{}' does not exist on Disk! Will save, but something is odd...</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="lvn_alarm_saveScript_overwrite_blank" wpfControl="">
+    <val lang="jap">スクリプト: '{}' を空に上書きしようとしている。このまま進める？</val>
+    <val lang="eng">Script: '{}' will be overwritten with blank contents. Continue?</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="lvn_alarm_saveScript_error_commit" wpfControl="">
+    <val lang="jap">スクリプト: '{}' の保存に失敗したぞ！ ファイルが読み取り専用、或いは誰かが開いているかもしれない・・・。</val>
+    <val lang="eng">Script: '{}' failed to save! The file might be read only, or someone might have it open...</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="lvn_alarm_handle_file_external_change" wpfControl="">
+    <val lang="jap">スクリプト: '{}' が外部から修正されたよ。また読み込む？</val>
+    <val lang="eng">Script: '{}' has been modified externally. Read again?</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="lvn_alarm_handle_tabClose_not_saved" wpfControl="">
+    <val lang="jap">'{}'はまだ保存されてないよ。保存してから閉じようか？</val>
+    <val lang="eng">'{}' has yet to be saved. Shall we save, then close?</val>
+    <val lang="zh_cn"></val>
+  </EString>
+  <EString nkey="lvn_alarm_is_toggleplay_possible_error_during_command_insert" wpfControl="">
+    <val lang="jap">コマンド挿入中にはテストプレイへ切り替えないのだ！</val>
+    <val lang="eng">We cannot toggle to testplay while trying to insert a command!</val>
+    <val lang="zh_cn"></val>
   </EString>
 
 </Strings>

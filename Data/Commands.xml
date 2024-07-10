@@ -5621,7 +5621,7 @@
     </Command>
     <Command cmd="volume">
       <explanation lang="jap" name="音量"
-                   syntax="音量 [対象] [音量:%] (加速度: a0~a18)"
+                   syntax="音量 [対象] [音量:%] (所要時間:ms) (加速度: a0~a18)"
                    details="ex. 音量 背景音 10%  
                    &#xA;デフォルト: 100% 
                    &#xA;  
@@ -5633,7 +5633,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#volume">
       </explanation>
       <explanation lang="eng" name="volume"
-                   syntax="volume [target] [volume:%] (acceleration: a0~a18)"
+                   syntax="volume [target] [volume:%] (time(ms)) (acceleration: a0~a18)"
                    details="ex. volume bgm 10%  
                    &#xA;default volume：100% 
                    &#xA;  

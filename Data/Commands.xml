@@ -193,6 +193,9 @@
       <option name="ignoreOverflow">
         <val lang="jap" value="超過無視"/>
       </option>
+      <option name="async">
+        <val lang="jap" value="非同期"/>
+      </option>
     </CmdOptions>
   </Keywords>
   <!--[COMMANDS]-->
@@ -216,7 +219,7 @@
                    details="[　]: required parameters, ( ): optional parameters。 
                    &#xA;  
                    &#xA;Frequently used input:  
-                   &#xA;(on_camera): if (on_camera)is set, the object is 'stuck' to the camera, thus no longer affected by camera movement。 
+                   &#xA;(camera_option): if (camera_option)is set, the object is 'stuck' to the camera, thus no longer affected by camera movement。 
                    &#xA;  
                    &#xA;Note: all filenames can also be expressed as strings  
                    &#xA; (ex. cg alice2 &quot;scg.png&quot; 150 30 50)  
@@ -281,7 +284,9 @@
       <explanation lang="eng" name="--[script comments]--"
                    syntax=""
                    details="how to write comments:
-                   &#xA;  
+                   &#xA;1. //
+                   &#xA;
+                   &#xA;2. multiline comments: /* */
                    &#xA;  
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/var#var">
@@ -334,11 +339,22 @@
       </explanation>
       <explanation lang="eng" name="--[camera options]--"
                    syntax=""
-                   details="scripts are processed per line through the following steps: 
-                   &#xA;1. apply macros 
-                   &#xA;2. apply {{ }}  
-                   &#xA;3. calc ()  
-                   &#xA;4. try run as Light vn command"
+                   details="
+                   &#xA;on_camera)
+                   &#xA;display regardless of camera movement (as if the object is 'on' the camera)
+                   &#xA;
+                   &#xA;2DView)
+                   &#xA;display as if object is within [camera_mode 0]
+                   &#xA;
+                   &#xA;3DView)
+                   &#xA;display as if object is within [camera_mode 3]
+                   &#xA;
+                   &#xA;lock_y)
+                   &#xA;display as if the object's y axis is always facing the camera.
+                   &#xA;
+                   &#xA;lock_xy)
+                   &#xA;display as if the object's x,y axis is always facing the camera.
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/command#command1a5">
       </explanation>
     </Command>
@@ -361,6 +377,14 @@
       <explanation lang="eng" name="--[screen space options]--"
                    syntax=""
                    details="
+                   &#xA;allScreenSpaces)
+                   &#xA;all screenspaces
+                   &#xA;
+                   &#xA;sameLevelScreenSpaces)
+                   &#xA;command [screenSpaceStart] will start and push a new screenspace on
+                   &#xA;top of the current screenspace stack.
+                   &#xA;command [screenSpaceOverwrite] will overwrite the top-most screenspace.
+                   &#xA;this option, signifies all the screenspaces on the same level in the stack.
                    &#xA;
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/command#command1a5">
@@ -427,7 +451,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#empty">
       </explanation>
       <explanation lang="eng" name="empty"
-                   syntax="empty [name] [x] [y] [layer] (on_camera)"
+                   syntax="empty [name] [x] [y] [layer] (camera_option)"
                    details="ex. empty id0 100 100 80  
                    &#xA;  
                    &#xA;Note: if 'on_camera' is set, will ignore camera。  
@@ -457,7 +481,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#bg">
       </explanation>
       <explanation lang="eng" name="bg"
-                   syntax="bg [name] [filename / animation name]"
+                   syntax="bg [name] [filename / animation name] (camera_option)"
                    details="ex. bg bg1 scenery.png  
                    &#xA;the background image 'scenery.png' is shown with name 'bg1'.  
                    &#xA;  
@@ -486,7 +510,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#cg">
       </explanation>
       <explanation lang="eng" name="cg"
-                   syntax="cg [name] [filename / animation name] [x] [y] [layer] (on_camera)"
+                   syntax="cg [name] [filename / animation name] [x] [y] [layer] (camera_option)"
                    details="ex. cg alice2 alice.png 150 30 50   
                    &#xA;cg is displayed with name: alice2, image: 'alice.png' at coords: [150 30], layer: 50  
                    &#xA;  
@@ -537,7 +561,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#sound_cg">
       </explanation>
       <explanation lang="eng" name="sound_cg"
-                   syntax="sound_cg [name] [x] [y] [layer] [name] [filename / animation name] [x] [y] [layer] [move per second] (on_camera)"
+                   syntax="sound_cg [name] [x] [y] [layer] [name] [filename / animation name] [x] [y] [layer] [move per second] (camera_option)"
                    details="ex. sound_cg hisia mouth0.png 400 200 90 id0 100 30 mouth1.png 60 mouth2.png 90 mouth3.png 120 mouth4.png 
                    &#xA;  
                    &#xA;Note: if 'on_camera' is set, will ignore camera。  
@@ -566,7 +590,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#ninecg">
       </explanation>
       <explanation lang="eng" name="cg"
-                   syntax="ninecg [name] [filename / animation name] [x] [y] [layer] [cut_x1] [cut_x2] [cut_y1] [cut_y2] [sizex] [sizey] (scale_type: 0(default)) (on_camera)"
+                   syntax="ninecg [name] [filename / animation name] [x] [y] [layer] [cut_x1] [cut_x2] [cut_y1] [cut_y2] [sizex] [sizey] (scale_type: 0(default)) (camera_option)"
                    details="ex. ninecg ex1 waku.png 450 200 1 33 66 33 66 200 200
                    &#xA;  
                    &#xA;scale_type
@@ -595,7 +619,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg">
       </explanation>
       <explanation lang="eng" name="flow_cg"
-                   syntax="flow_cg [name] [filename / animation name] [x] [y] [layer] [move per second] (on_camera)"
+                   syntax="flow_cg [name] [filename / animation name] [x] [y] [layer] [move per second] (camera_option)"
                    details="ex. flow_cg bg_effect scrolling_background.png 0 0 10 60  
                    &#xA;  
                    &#xA;Note: if 'on_camera' is set, will ignore camera。  
@@ -615,7 +639,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#model">
       </explanation>
       <explanation lang="eng" name="model"
-                   syntax="model [name] [filename] [x] [y] [layer] (on_camera)"
+                   syntax="model [name] [filename] [x] [y] [layer] (camera_option)"
                    details="ex. model stairs stairs.glb 0 400 0 
                    &#xA;  
                    &#xA;Note: if 'on_camera' is set, will ignore camera。  
@@ -656,7 +680,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#light">
       </explanation>
       <explanation lang="eng" name="light"
-                   syntax="light [name] [filename] [x] [y] [layer] (on_camera)"
+                   syntax="light [name] [filename] [x] [y] [layer] (camera_option)"
                    details="ex. model stairs stairs.glb 0 400 0 
                    &#xA;  
                    &#xA;Note: if 'on_camera' is set, will ignore camera。  
@@ -808,8 +832,9 @@
       </explanation>
       <explanation lang="eng" name="defaultWalkSpeed"
                    syntax="defaultWalkSpeed [speed]"
-                   details="ex. defaultWalkSpeed 1.1ups
-                   &#xA;  
+                   details="ex. defaultWalkSpeed 500
+                   &#xA;
+                   &#xA;[speed]: ms required to move 1 tile
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/Map#defaultWalkSpeed">
       </explanation>
@@ -826,8 +851,9 @@
       </explanation>
       <explanation lang="eng" name="walkSpeed"
                    syntax="walkSpeed [target name] [speed]"
-                   details="ex. walkSpeed 1.1ups
-                   &#xA;  
+                   details="ex. walkSpeed 500
+                   &#xA;
+                   &#xA;[speed]: ms required to move 1 tile
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/Map#walkSpeed">
       </explanation>
@@ -950,7 +976,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#button">
       </explanation>
       <explanation lang="eng" name="button"
-                   syntax="button [name] (untouched image) (touched image) (clicked image) [x] [y] [layer] (ignoreTrans) (on_camera) (Light.vn command)"
+                   syntax="button [name] (untouched image) (touched image) (clicked image) [x] [y] [layer] (ignoreTrans) (camera_option) (Light.vn command)"
                    details="ex. button button1 untouched-image.png touched-image.png clicked-image.png 300 400 200 on_camera jump tut.txt 
                    &#xA;  
                    &#xA;Suffix:'0'will display object as alpha: 0。  
@@ -1124,19 +1150,24 @@
     </Command>
     <Command cmd="touchStateForce">
       <explanation lang="jap" name="タッチ状態強制"
-                   syntax="タッチ状態強制 [個体名] [状態：0, 1, 2]"
+                   syntax="1. タッチ状態強制 [個体名] [状態：0, 1, 2]
+                   &#xA;2. タッチ状態強制 [個体名] false"
                    details="ex. タッチ状態強制 btn1 1
                    &#xA;  
                    &#xA;状態： 
                    &#xA;0) 未タッチ
                    &#xA;1) タッチ
                    &#xA;2) クリック
-                   &#xA;  
+                   &#xA;
+                   &#xA;ex. タッチ状態強制 btn1 false
+                   &#xA;タッチ状態強制を解除する。
+                   &#xA;
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchStateForce">
       </explanation>
       <explanation lang="eng" name="touchStateForce"
-                   syntax="touchStateForce [name] [state]"
+                   syntax="touchStateForce [name] [state]
+                   &#xA;2. touchStateForce [name] false"
                    details="ex. touchStateForce btn1 1
                    &#xA;
                    &#xA;states:
@@ -1144,6 +1175,8 @@
                    &#xA;1) touched
                    &#xA;2) clicked
                    &#xA;
+                   &#xA;ex. touchStateForce btn1 false
+                   &#xA;clears touchStateForce
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchStateForce">
       </explanation>
@@ -1172,7 +1205,8 @@
                    syntax="touchableRes [untouched image] [touched image] [clicked image] (touched sfx) (clicked sfx)"
                    details="ex. touchableRes untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg  
                    &#xA;  
-                   &#xA;Defines default settings for 「all buttons」created after this line。If buttons don't define their resources, they will auto use the ones defined here。  
+                   &#xA;Defines default settings for 「all buttons」created after this line.
+                   &#xA;If buttons don't define their resources, they will auto use the ones defined here。  
                    &#xA;  
                    &#xA;Note: image sizes need to be the same.  
                    &#xA;"
@@ -1219,7 +1253,8 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#trackbar">
       </explanation>
       <explanation lang="eng" name="trackbar"
-                   syntax="trackbar [name] [x] [y] [layer] [width] [variable name] [left val] [right val]"
+                   syntax="trackbar [name] [x] [y] [layer] [width] [variable name] [left val] [right val]
+                   &#xA;(ignoreTrans) (camera_option) (command to trigger on value change complete)"
                    details="ex. trackbar trackbar 370 246 105 530 vn_sysMasterVolume 0 100 sys_trackball.png  
                    &#xA;creates a trackbar which controls the variable 'vn_sysMasterVolume'
                    &#xA;"
@@ -1262,7 +1297,7 @@
     </Command>
     <Command cmd="textbox">
       <explanation lang="jap" name="文字窓 （テキストボックス）"
-                   syntax="文字窓 [名前] [x座標] [y座標] [laye(r)] [幅] [高さ] [フォント名] [フォントサイズ] [超過無視] (カメラオプション) [&quot;文字列:文章内容&quot;] (バックログ登録)"
+                   syntax="文字窓 [名前] [x座標] [y座標] [laye(r)] [幅] [高さ] [フォント名] [フォントサイズ] (超過無視) (カメラオプション) [&quot;文字列:文章内容&quot;] (バックログ登録)"
                    details="ex. 文字窓 textbox1 0 400 81 800 200 r-mplus-1c-m.ttf 24 
                    &#xA;  
                    &#xA;超過無視）をつけると、台詞が文字窓の範囲を超えてもエラーが発生しない。
@@ -1273,7 +1308,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textbox">
       </explanation>
       <explanation lang="eng" name="textbox"
-                   syntax="textbox [name] [x] [y] [layer] [width] [height] [font filename] [font size] [ignoreOverflow] (on_camera) (string)"
+                   syntax="textbox [name] [x] [y] [layer] [width] [height] [font filename] [font size] (ignoreOverflow) (camera_option) [string] ()"
                    details="ex. textbox textbox1 0 400 81 800 200 r-mplus-1c-m.ttf 24
                    &#xA;  
                    &#xA;  
@@ -1311,7 +1346,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#text">
       </explanation>
       <explanation lang="eng" name="text"
-                   syntax="text [name] [x] [y] [layer] [font filename] [font size(px)] (line size(px)) (alignment：左/右/中央) (max text length) (on_camera) &quot;[string:text]&quot;"
+                   syntax="text [name] [x] [y] [layer] [font filename] [font size(px)] (line size(px)) (alignment：left/right/middle) (max text length) (camera_option) &quot;[string:text]&quot;"
                    details="ex. text msg_str 370 223 106  r-mplus-1c-m.ttf 24 &quot;hello world! &quot; 
                    &#xA;  
                    &#xA;注：「text」, unilke textbox, does not have flowing text and displays all text at once"
@@ -2015,7 +2050,7 @@
                    &#xA;「タイプ番号」 
                    &#xA;0: 自動待機しない  
                    &#xA;1: シナリオ行が終わる度に  
-                   &#xA;2: 空白のシナリオ行が現れる度に 
+                   &#xA;2: 空白のシナリオ行が現れる度に(連続空行の場合、一度のみ) 
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textAutoWait">
       </explanation>
@@ -2026,7 +2061,7 @@
                    &#xA;[type]  
                    &#xA;0: don't use  
                    &#xA;1: auto waits on each sceario line  
-                   &#xA;2: auto waits on each blank scenario line 
+                   &#xA;2: auto waits on each blank scenario line (if consecutive blank lines, only once)
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textAutoWait">
       </explanation>
@@ -2434,8 +2469,6 @@
                    &#xA;
                    &#xA;UI画面などに使うと便利。
                    &#xA;
-                   &#xA;注：現在スクリプトが別のスクリプトにジャンプする場合にも初期化される。
-                   &#xA;
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#autoOnCamera">
       </explanation>
@@ -2447,19 +2480,17 @@
                    &#xA;apply the [on_camera] setting to all new objects created in the current script
                    &#xA;
                    &#xA;Useful for UI screens, etc.
-                   &#xA;
-                   &#xA;Note: resets upon the [jump] command to a different script
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#autoOnCamera">
       </explanation>
     </Command>
     <Command cmd="animation">
       <explanation lang="jap" name="アニメ登録"
-                   syntax="アニメ登録 [登録名] [ループ種類: 0/1/2] (x:反復回数) [表示画像] [表示時間] (表示画像) (表示時間) ..... (変化タイプ)"
+                   syntax="アニメ登録 [登録名] [ループ種類: 0/1/2] (x:反復回数) [表示画像] [表示時間] (表示画像) (表示時間) ..... (変化タイプ) (非同期)"
                    details="「ループ種類」 
-                   &#xA; 0: ループしない。 
-                   &#xA; 1: コマンドが終わると、最初値に戻りまた再生  
-                   &#xA; 2: コマンドが終わると、最小値に向けてまた逆再生を繰り返す 
+                   &#xA;0: ループしない。 
+                   &#xA;1: コマンドが終わると、最初値に戻りまた再生  
+                   &#xA;2: コマンドが終わると、最小値に向けてまた逆再生を繰り返す 
                    &#xA;(「いったりきたり」するから'2'）  
                    &#xA;  
                    &#xA;ex. アニメ登録 anim1 2 x2 scg2.png 500 scg1.png 1500 !cg_test001.png 500   
@@ -2467,7 +2498,11 @@
                    &#xA;  
                    &#xA;「変化タイプ」 
                    &#xA;0: そのまま 
-                   &#xA;1: 滑らか (前後画像を補間: デフォルト) 
+                   &#xA;1: 滑らか (前後画像を補間: デフォルト)
+                   &#xA;
+                   &#xA;「非同期」
+                   &#xA;指定される場合、素材がバックグラウンドで読み込まれる。
+                   &#xA;特定の区間内に全ての素材を読み込んだ方が演出上自然な場合、使用しないように。
                    &#xA;  
                    &#xA;ex. アニメ登録 anim1 2 x2 scg2.png 500 scg1.png 1500 !cg_test001.png &quot;lvRandom(1000, 4000)&quot;  
                    &#xA;参考：表示時間にLightvnのlvRandomを入れると、
@@ -2478,11 +2513,19 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animation">
       </explanation>
       <explanation lang="eng" name="animation"
-                   syntax="animation [name] [loop type: 0/1/2] (x:repeat count) [filename] [time] (filename) (time) ....."
-                   details="「loop type」 
-                   &#xA; 0: no loop 
-                   &#xA; 1: repeat command from start 
-                   &#xA; 2: repeat back and forth 
+                   syntax="animation [name] [loop type: 0/1/2] (x:repeat count) [filename] [time] (filename) (time) ..... (transition type) (async)"
+                   details="[loop type] 
+                   &#xA;0: no loop 
+                   &#xA;1: repeat command from start 
+                   &#xA;2: repeat back and forth
+                   &#xA;
+                   &#xA;[transition type]
+                   &#xA;0: none
+                   &#xA;1: smooth
+                   &#xA;
+                   &#xA;[async]
+                   &#xA;if set, will load resources in the background.
+                   &#xA;in most situations, you may actually want to guarantee all resources are loaded within a specific period. in which case, don't use.
                    &#xA;  
                    &#xA;ex. animation anim1 2 x2 scg2.png 500 scg1.png 1500 !cg_test001.png 500   
                    &#xA; register an animation called 'anim1'。can be used in cg, bg, etc. x'2': repeat twice"
@@ -2492,7 +2535,7 @@
     <Command cmd="animationEx">
       <explanation lang="jap" name="アニメ登録簡易"
                    syntax="アニメ登録簡易 [登録名] [ループ種類: 0/1/2] (x:反復回数) [ファイル形式]   
-                   &#xA;[ファイル番号最小] [ファイル番号最大] [実行番号最初] [実行番号最終] [画像間隔] [各画像表示時間] (変化タイプ)"
+                   &#xA;[ファイル番号最小] [ファイル番号最大] [実行番号最初] [実行番号最終] [画像間隔] [各画像表示時間] (変化タイプ) (非同期)"
                    details="「ループ種類」 
                    &#xA; 0: ループしない。 
                    &#xA; 1: コマンドが終わると、最初値に戻りまた再生  
@@ -2500,7 +2543,7 @@
                    &#xA;(「いったりきたり」するから'2'）  
                    &#xA;  
                    &#xA;「ファイル形式」  
-                   &#xA;C++のsprintf書き方に準ずる。 
+                   &#xA;C++のprintf書き方に準ずる。 
                    &#xA;  
                    &#xA;ex. アニメ登録簡易 apple 1 apple/apple%04d.png 0 44 12 24 1 120  
                    &#xA;apple/apple%04d.pngの形式のファイル名を、  
@@ -2520,16 +2563,33 @@
                    &#xA;  
                    &#xA;「変化タイプ」 
                    &#xA;0: そのまま 
-                   &#xA;1: 滑らか (前後画像を補間: デフォルト) 
+                   &#xA;1: 滑らか (前後画像を補間: デフォルト)
+                   &#xA;
+                   &#xA;「非同期」
+                   &#xA;指定される場合、素材がバックグラウンドで読み込まれる。
+                   &#xA;特定の区間内に全ての素材を読み込んだ方が演出上自然な場合、使用しないように。
+                   &#xA;  
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animationEx">
       </explanation>
       <explanation lang="eng" name="animationEx"
-                   syntax="animation [name] [loop type: 0/1/2] (x:repeat count) [file format] [filerange min] [file range max] [run frame start] [run frame end] [frame increments] [time per frame]"
+                   syntax="animation [name] [loop type: 0/1/2] (x:repeat count) [file format] [filerange min] [file range max] [run frame start] [run frame end] [frame increments] [time per frame] (transition type) (async)"
                    details="「loop type」 
                    &#xA; 0: no loop 
                    &#xA; 1: repeat command from start 
-                   &#xA; 2: repeat back and forth 
+                   &#xA; 2: repeat back and forth
+                   &#xA;
+                   &#xA;「file format」
+                   &#xA;follows the syntax of c++'s printf function:
+                   &#xA;https://en.cppreference.com/w/cpp/io/c/fwprintf  
+                   &#xA;
+                   &#xA;「transition type」
+                   &#xA;0: none
+                   &#xA;1: smooth
+                   &#xA;
+                   &#xA;「async」
+                   &#xA;if set, will load resources in the background.
+                   &#xA;in most situations, you may actually want to guarantee all resources are loaded within a specific period. in which case, don't use.
                    &#xA;  
                    &#xA;ex. animationEx apple 1 apple/apple%04d.png 0 44 0 44 1 120 
                    &#xA;"
@@ -2851,7 +2911,8 @@
                    details="ex. アウト albert2 1500  
                    &#xA;ex. アウト alice1, albert2 1500  
                    &#xA;ex. アウト btn.* 1500  
-                   &#xA;  
+                   &#xA;
+                   &#xA;注: アウトの結果、個体自体が消滅する。
                    &#xA;注: アウトをかけた瞬間から他演出コマンドを該当個体にあてることが出来なくなる。  
                    &#xA;注: イン/アウトは全てのリソースに適用できます。(絵、文字窓、・・・)  
                    &#xA;注: 演出コマンドの対象名に正規表現による複数指定が可能です。 
@@ -2867,7 +2928,8 @@
                    details="ex. fadeout albert2 1500  
                    &#xA;ex. fadein alice1, albert2 1500 
                    &#xA;ex. fadein btn.* 1500 
-                   &#xA;  
+                   &#xA;
+                   &#xA;Note: fadeout results in the object itself being destroyed.
                    &#xA;Note: fadein/out can be applied to all targets. (cg, textbox, ...)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#fadeout">
       </explanation>
@@ -3708,7 +3770,7 @@
                    details="ex. camera_mode 3　  
                    &#xA;  
                    &#xA;type) 
-                   &#xA;0: default vn camera  
+                   &#xA;0: default 2d vn camera  
                    &#xA;3: 3d perspective camera  
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#camera_mode">
@@ -3718,13 +3780,15 @@
       <explanation lang="jap" name="カメラ初期化"
                    syntax="カメラ初期化"
                    details="ex. カメラ初期化　 
-                   &#xA;カメラの位置・拡大・回転を元に戻す。"
+                   &#xA;カメラの位置・拡大・回転などを元に戻す。
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraReset">
       </explanation>
       <explanation lang="eng" name="cameraReset"
                    syntax="cameraReset"
                    details="ex. cameraReset　  
-                   &#xA;resets camera position, zoom, rotation."
+                   &#xA;resets camera position, zoom, rotation, etc.
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraReset">
       </explanation>
     </Command>
@@ -4698,8 +4762,9 @@
                    &#xA;「ダイアログ結果」コマンドを待つ。 
                    &#xA;ex. 待機 メッセージ選択  
                    &#xA;  
-                   &#xA;- 待機 動画終了 
-                   &#xA;再生中の動画が終了、又は「続行」コマンドを待つ。  
+                   &#xA;- 待機 動画終了 (干渉可能)
+                   &#xA;再生中の動画が終了することを待つ。
+                   &#xA;干渉可能を付ける場合、「続行」コマンドで動画終了及びスクリプト継続。  
                    &#xA;ex. 待機 動画終了 
                    &#xA;  
                    &#xA;- 待機 文字入力完了 
@@ -4720,16 +4785,61 @@
                    &#xA;  
                    &#xA;- 待機 個体消滅 [対象名] 
                    &#xA;指定された対象が消滅されるまでまつ。  
-                   &#xA;既に完了している場合、或いは対象がない場合、何もしない。  
+                   &#xA;既に完了している場合、或いは対象がない場合、何もしない。
+                   &#xA;ex. 待機 個体消滅 obj1
                    &#xA;  
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/script#wait">
       </explanation>
       <explanation lang="eng" name="wait"
                    syntax="wait (options)"
-                   details="ex. wait
-                   &#xA;ex. wait 1500 
-                   &#xA;wait 1500(designated duration:ms)"
+                   details="- wait
+                   &#xA;waits for the [continueRead] command
+                   &#xA;ex. wait
+                   &#xA;
+                   &#xA;- wait [duration: ms]
+                   &#xA;waits for [duration] and continues to read next line
+                   &#xA;ex. wait 1500
+                   &#xA;
+                   &#xA;- wait preventContinueRead
+                   &#xA;prevents the script from moving to the next line
+                   &#xA;due to the [preventContinueRead] command.
+                   &#xA;ex. wait preventContinueRead
+                   &#xA;
+                   &#xA;- wait buttonSelect [button name prefix]
+                   &#xA;waits for a click from a button with [button name prefix]
+                   &#xA;ex. wait buttonSelect choice_
+                   &#xA;
+                   &#xA;- wait msgboxSelect
+                   &#xA;waits for the [dialogResult] command
+                   &#xA;ex. wait msgboxSelect
+                   &#xA;  
+                   &#xA;- wait movieFin (userCanEnd)
+                   &#xA;waits for a [movie] object to complete
+                   &#xA;if (userCanEnd) added, [continueRead] will finish the movie and also continue script reading.
+                   &#xA;
+                   &#xA;- wait textInputFin
+                   &#xA;wait for text input to finish through key: [Enter]
+                   &#xA;ex. wait textInputFin
+                   &#xA;  
+                   &#xA;- wait textDisplayFin
+                   &#xA;waits for the current [useTextbox] to finish displaying text.
+                   &#xA;if already finished, does nothing.
+                   &#xA;ex. wait textDisplayFin
+                   &#xA;
+                   &#xA;- wait tween_finish [object name(s)]
+                   &#xA;waits for [object name(s)] to finish tweening
+                   &#xA;(excludes tweens that run forever)
+                   &#xA;if all have already complete, does nothing.
+                   &#xA;ex. wait tween_finish obj1
+                   &#xA;ex. wait tween_finish obj1, obj2, obj3
+                   &#xA;
+                   &#xA;- wait obj_destroy [object name]
+                   &#xA;waits for [object name] to destroy.
+                   &#xA;if already done, or object does not exist, does nothing.
+                   &#xA;ex. wait obj_destroy obj1
+                   &#xA;
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#wait">
       </explanation>
     </Command>
@@ -4761,6 +4871,7 @@
                    &#xA;  
                    &#xA;- 変数
                    &#xA;- マクロ反映
+                   &#xA;- 自動カメラ付着
                    &#xA;  
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#jump">
@@ -4773,13 +4884,21 @@
                    &#xA;ex. jump bookmark1  
                    &#xA;ex. jump script2.txt  
                    &#xA;  
-                   &#xA;jumps from current script to designated script/bookmark and restarts reading."
+                   &#xA;jumps from current script to designated script/bookmark and restarts reading.
+                   &#xA;
+                   &#xA;Note: the following settings are reset when jump is supplied a [target script]:
+                   &#xA;- var
+                   &#xA;- macroApply
+                   &#xA;- autoOnCamera
+                   &#xA;
+                   &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/script#jump">
       </explanation>
     </Command>
     <Command cmd="finaljump">
       <explanation lang="jap" name="最終ジャンプ"
-                   syntax="最終ジャンプ [目的スクリプト/現在スクリプト栞] (目的スクリプト栞)"
+                   syntax="1. 最終ジャンプ [目的スクリプト] (目的スクリプト栞)
+                   &#xA;2. 最終ジャンプ [現在スクリプト栞]"
                    details="ex. 最終ジャンプ script.txt bookmark1   
                    &#xA;  
                    &#xA;注: 一般ジャンプとは違い、コマンド実行の時点で読み込みが終わっていないスクリプト全て 
@@ -4797,7 +4916,8 @@
                    reference="https://wikiwiki.jp/lightvn/">
       </explanation>
       <explanation lang="eng" name="finaljump"
-                   syntax="finaljump [target script/current script bookmark] (target bookmark)"
+                   syntax="1. finaljump [target script] (target bookmark)
+                   &#xA;2. finaljump [bookmark within current script]"
                    details="ex. finaljump script.txt bookmark1  
                    &#xA;  
                    &#xA;Note: finaljump, unlike jump, will also remove all pushed scripts on current script stack and make the dest script the only script"
@@ -4826,8 +4946,8 @@
     </Command>
     <Command cmd="script">
       <explanation lang="jap" name="スクリプト"
-                   syntax="スクリプト [呼ぶスクリプト / 現在] (読み込みを開始する栞)"
-                   details="ex. スクリプト textbox.txt (bookmark1) 
+                   syntax="スクリプト [呼ぶスクリプト / 現在] (読み込みを開始する栞) (引数...)"
+                   details="ex. スクリプト textbox.txt 次へ
                    &#xA;ex. スクリプト lua/lua_script.lua  
                    &#xA;ex. スクリプト 現在 これを実行
                    &#xA;  
@@ -4842,16 +4962,26 @@
                    &#xA;ディスクに保存されてあるファイルになる。
                    &#xA;従い、エディター上でスクリプトを編集中の場合は、
                    &#xA;ちゃんと保存させてから実行させよう。
+                   &#xA;
+                   &#xA;注：(引数...)を渡される場合、
+                   &#xA;呼び先の栞に定義された引数として登録される。
+                   &#xA;  
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/script#script">
       </explanation>
       <explanation lang="eng" name="script"
-                   syntax="script [script filename] (bookmark to read starting)"
+                   syntax="script [script filename / current] (bookmark to read starting) (custom arguments...)"
                    details="ex. script textbox.txt (bookmark1)  
                    &#xA;ex. script lua/lua_script.lua 
                    &#xA;  
                    &#xA;pushes designated script on top of script stack and starts reading. 
-                   &#xA;once designated script read completed, pops off script stack and continues reading original script."
+                   &#xA;once designated script read completed, pops off script stack and continues reading original script.
+                   &#xA;
+                   &#xA;if (custom arguments...) is given:
+                   &#xA;will be allocated as the input defined by user next to target bookmark
+                   &#xA;
+                   &#xA;
+                   &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/script#script">
       </explanation>
     </Command>
@@ -5055,6 +5185,8 @@
       <explanation lang="eng" name="keyDown"
                    syntax="keyDown [trigger name] (Light.vn command to run)"
                    details="ex. keyDown r.click jump start.txt    
+                   &#xA;
+                   &#xA;Triggers [command] the moment the key is down
                    &#xA;  
                    &#xA;key triggers) https://wikiwiki.jp/lightvn/commands/script#keyDown 
                    &#xA;  
@@ -5084,7 +5216,9 @@
       </explanation>
       <explanation lang="eng" name="keyUp"
                    syntax="keyUp [trigger name] (Light.vn command to run)"
-                   details="ex. keyUp r.click jump start.txt    
+                   details="ex. keyUp r.click jump start.txt
+                   &#xA;
+                   &#xA;Triggers [command] the moment the key is up
                    &#xA;  
                    &#xA;key triggers) https://wikiwiki.jp/lightvn/commands/script#keyDown 
                    &#xA;  
@@ -5115,7 +5249,9 @@
       </explanation>
       <explanation lang="eng" name="keyPress"
                    syntax="keyPress [trigger name] (Light.vn command to run)"
-                   details="ex. keyPress r.click jump start.txt     
+                   details="ex. keyPress r.click jump start.txt
+                   &#xA;
+                   &#xA;Triggers [command] during the period the key is pressed
                    &#xA;  
                    &#xA;key triggers) https://wikiwiki.jp/lightvn/commands/script#keyDown 
                    &#xA;  
@@ -5167,8 +5303,10 @@
       </explanation>
       <explanation lang="eng" name="inputLock"
                    syntax="inputLock [true / false]"
-                   details="ex. inputLock   
-                   &#xA;activates / deactives triggering of key triggers, ui, etc."
+                   details="ex. inputLock true
+                   &#xA;  
+                   &#xA;activates / deactives triggering of key triggers, ui, etc.
+                   &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/script#inputLock">
       </explanation>
     </Command>
@@ -5556,7 +5694,7 @@
     </Command>
     <Command cmd="setAutoVoice">
       <explanation lang="jap" name="自動ボイス登録"
-                   syntax="自動ボイス登録 [自動ボイス登録名] [再生ファイル形式] [始まる番号] (音量数値変数)"
+                   syntax="自動ボイス登録 [自動ボイス登録名] [再生ファイル形式] [始まる番号] (音量数値変数) (on/off変数：true/false)"
                    details="ex. 自動ボイス指定 voice_ace voice_ace_%03d.ogg 0  
                    &#xA;  
                    &#xA;注：「再生ファイル形式」は、c++のprintf形式に従います。  
@@ -5565,9 +5703,11 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#setAutoVoice">
       </explanation>
       <explanation lang="eng" name="setAutoVoice"
-                   syntax="setAutoVoice [register name] [file format] [first play number] (volume-var)"
-                   details="ex. setAutoVoice voice_ace voice_ace_%03d.ogg 0 
+                   syntax="setAutoVoice [register name] [file format] [first play number] (volume-var) (volume on-off variable)"
+                   details="ex. setAutoVoice voice_ace voice_ace_%03d.ogg 0
                    &#xA;  
+                   &#xA;Note: [file format] follows the syntax of c++'s printf function:
+                   &#xA;https://en.cppreference.com/w/cpp/io/c/fwprintf  
                    &#xA;  
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/media#setAutoVoice">
@@ -5580,16 +5720,23 @@
                    &#xA;  
                    &#xA;「登録済み自動ボイス名」の情報に従い、「個体名」という名のボイスを再生します。 
                    &#xA;再生後、登録上の番号が+1され、次回呼ばれる際に次の番号のボイスを再生します。 
-                   &#xA;  
+                   &#xA;
+                   &#xA;注:コマンドに'0'を付けると音量0の状態再生されます。  
+                   &#xA; (ex. 背景音0 bgm.ogg) 
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/media#autoVoice">
       </explanation>
       <explanation lang="eng" name="autoVoice"
-                   syntax="autoVoice [object name] [registered auto voice name]"
+                   syntax="autoVoice [name] [registered auto voice name]"
                    details="ex. autoVoice voice0 voice_ace  
+                   &#xA;
+                   &#xA;Following the settings from [setAutoVoice],
+                   &#xA;creates a voice with [name].
+                   &#xA;Upon which we +1 the internal record,
+                   &#xA;to play the next number when this command is called next.
                    &#xA;  
-                   &#xA;  
-                   &#xA;"
+                   &#xA;Suffix:'0' starts play at volume 0。 
+                   &#xA; (ex. bgm0 bgm.ogg)"
                    reference="https://wikiwiki.jp/lightvn/commands/media#autoVoice">
       </explanation>
     </Command>
@@ -5621,7 +5768,7 @@
     </Command>
     <Command cmd="volume">
       <explanation lang="jap" name="音量"
-                   syntax="音量 [対象] [音量:%] (加速度: a0~a18)"
+                   syntax="音量 [対象] [音量:%] (所要時間:ms) (加速度: a0~a18)"
                    details="ex. 音量 背景音 10%  
                    &#xA;デフォルト: 100% 
                    &#xA;  
@@ -5633,7 +5780,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#volume">
       </explanation>
       <explanation lang="eng" name="volume"
-                   syntax="volume [target] [volume:%] (acceleration: a0~a18)"
+                   syntax="volume [target] [volume:%] (time(ms)) (acceleration: a0~a18)"
                    details="ex. volume bgm 10%  
                    &#xA;default volume：100% 
                    &#xA;  
@@ -5655,7 +5802,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#movie">
       </explanation>
       <explanation lang="eng" name="movie"
-                   syntax="movie [name] [filename] [x] [y] [layer] (repeat) (camera option)"
+                   syntax="movie [name] [filename] [x] [y] [laye(r)] (repeat) (camera option)"
                    details="ex. movie movie1 test.mp4 0 0 70  
                    &#xA;  
                    &#xA;Suffix: '0' will start play at alpha + volume: 0.   
@@ -5729,7 +5876,11 @@
                    &#xA;2. movieChromakey [name] [use: true/false]"
                    details="ex. movieChromakey movie #00ff00 0.99 0.2 0.2
                    &#xA;ex. movieChromakey movie false
-                   &#xA;  
+                   &#xA;
+                   &#xA;sets the chroma key of the movie, [name]:
+                   &#xA;thus making ex. the background transparent.
+                   &#xA;
+                   &#xA;debug:true, will display a debug view of the transparent pixels and non-transparent pixels.
                    &#xA;
                    &#xA; "
                    reference="https://wikiwiki.jp/lightvn/commands/media#movieChromakey">
@@ -5752,7 +5903,9 @@
                    syntax="bgmAutoContinue [true / false]"
                    details="ex. bgmAutoContinue true  
                    &#xA;  
-                   &#xA;if true, [bgm] command not executed if trying to play same music as current.  
+                   &#xA;if true, [bgm] command will not execute,
+                   &#xA;if trying to play the same filename as the current [bgm] object.
+                   &#xA;(thus continuing the current bgm)
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/media#bgmAutoContinue">
       </explanation>
@@ -5878,7 +6031,23 @@
       </explanation>
       <explanation lang="eng" name="--[variable commands]--"
                    syntax=""
-                   details=""
+                   details="
+                   &#xA;Operators:
+                   &#xA;+ (ex. 3 + 2: 5)  
+                   &#xA;- (ex. 3 - 2: 1)  
+                   &#xA;* (ex. 3 * 2: 6)  
+                   &#xA;/ (ex. 4 / 2: 2)  
+                   &#xA;** (ex. 4 ** 2: 16) 
+                   &#xA;||  (ex. true || false: true) 
+                   &#xA;&#38;&#38; (ex. true &#38;&#38; true: true) 
+                   &#xA;  
+                   &#xA;Bit Operators:
+                   &#xA;| (ex. 2 | 1: 3)  
+                   &#xA;&#38; (ex. 2 &#38; 1: 0)  
+                   &#xA;&gt;&gt; (ex. 4 &gt;&gt; 1: 2)  
+                   &#xA;&lt;&lt; (ex. 4 &lt;&lt; 1: 8)  
+                   &#xA;
+                   &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/var#var">
       </explanation>
     </Command>
@@ -5894,7 +6063,7 @@
                    &#xA;  
                    &#xA;変数の有効期間）  
                    &#xA;「変数」コマンドで登録された変数は、スクリプト終了時にまで有効となる。
-                   &#xA;(厳密に言えば、スクリプトスタックの最上位スクリプト内にのみ登録される）
+                   &#xA;
                    &#xA; "
                    reference="https://wikiwiki.jp/lightvn/commands/var#var">
       </explanation>
@@ -5902,10 +6071,13 @@
                    syntax="var [name] [operator] [value]"
                    details="operators：+= -= *= /= 
                    &#xA;ex. var answer = 0  
-                   &#xA;registers var 'answer' with value '0' 
+                   &#xA;registers var 'answer' with value '0'
+                   &#xA;  
                    &#xA;ex. var answer += 1   
                    &#xA;takes registered var 'answer' and += 1  
-                   &#xA;  
+                   &#xA;
+                   &#xA;scope)
+                   &#xA;the lifetime of the variable is only valid until the end of the script it was declared on.
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/var#var">
       </explanation>
@@ -6022,7 +6194,10 @@
       </explanation>
       <explanation lang="eng" name="eraseVars"
                    syntax="eraseVars [var name(s)]"
-                   details=""
+                   details="ex. eraseVars var1, var2, var3
+                   &#xA;
+                   &#xA;
+                   &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/var#eraseVars">
       </explanation>
     </Command>
@@ -6254,8 +6429,32 @@
       <explanation lang="eng" name="--[Light vn system variable list]--"
                    syntax=""
                    details="  
+                   &#xA;vn_system_name： 
+                   &#xA;Windows）&quot;Windows&quot; 
+                   &#xA;Browser）&quot;Browser&quot; 
+                   &#xA;Android）&quot;Android&quot;
+                   &#xA;iOS）&quot;iOS&quot;
                    &#xA;  
+                   &#xA;vn_sysMasterVolume : master volume (number)  
+                   &#xA;vn_sysBgmVolume : bgm volume (number) 
+                   &#xA;vn_sysSfxVolume : sound effects' volume (number)  
+                   &#xA;vn_sysVoiceVolume : voice volume (number)  
                    &#xA;  
+                   &#xA;vn_sysMasterVolumeOn : master volume on/off (globalvar：true/false)  
+                   &#xA;vn_sysBgmVolumeOn : bgm volume on/off (globalvar：true/false) 
+                   &#xA;vn_sysSfxVolumeOn : sound effects' volume on/off (globalvar：true/false)  
+                   &#xA;vn_sysVoiceVolumeOn : voice volume on/off (globalvar：true/false)  
+                   &#xA;  
+                   &#xA;vn_sysTextSpeed : text speed (number) 
+                   &#xA;vn_sysAutoSpeed : auto speed (number)  
+                   &#xA;vn_sysAutoWait : wait speed on auto (number) 
+                   &#xA;vn_sysTextSkipMethod : skip speed (number)  
+                   &#xA;vn_sysVoicePlayType : voice play type (number)  
+                   &#xA;  
+                   &#xA;vn_mouse_x：mouse x in game coordinates（number）  
+                   &#xA;vn_mouse_y：mouse y in game coordinates（number）  
+                   &#xA;  
+                   &#xA;vn_save_time_format：save data time format（string） 
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#var">
       </explanation>
@@ -6302,7 +6501,7 @@
                    details="ex. preLoad Movies/movie.mp4  
                    &#xA;filename requires whole directory. Ex：Images/scg_animation.png
                    &#xA;
-                   &#xA;- forever will keep the file in cache until program end
+                   &#xA;'forever' will keep the file in cache until program end
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/system#preLoad">
       </explanation>
@@ -6353,15 +6552,39 @@
     </Command>
     <Command cmd="voicePlayType">
       <explanation lang="jap" name="ボイス再生形式"
-                   syntax="ボイス再生形式 [0/1]"
-                   details="0: 次のテキストを表示する際にボイス再生を強制終了  
-                   &#xA;1: テキスト表示と関係なく再生続行 "
+                   syntax="ボイス再生形式 [オプション]"
+                   details="
+                   &#xA;- 0 (アウトミリ秒):
+                   &#xA;次のテキストを表示する際に、既存のボイス全部の再生を強制終了
+                   &#xA;ex. ボイス再生形式 0 200
+                   &#xA;
+                   &#xA;- 1:
+                   &#xA;テキスト表示と関係なく再生続行
+                   &#xA;ex. ボイス再生形式 1
+                   &#xA;
+                   &#xA;- 2 (アウトミリ秒):
+                   &#xA;「ボイス」コマンド実行時に、既存のボイス全部の再生を強制終了
+                   &#xA;ex. ボイス再生形式 2 200
+                   &#xA;
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#voicePlayTyoe">
       </explanation>
       <explanation lang="eng" name="voicePlayType"
-                   syntax="voicePlayType [0/1]"
-                   details="0: fades out voices upon reading of next text   
-                   &#xA;1: plays voice files until the end regardless of text progression "
+                   syntax="voicePlayType [option]"
+                   details="
+                   &#xA;- 0 (fadeout:ms):
+                   &#xA;upon read completion of text, fade out all existing voices
+                   &#xA;ex. voicePlayType 0 200
+                   &#xA;
+                   &#xA;- 1:
+                   &#xA;plays voice files until the end regardless of text progression
+                   &#xA;ex. voicePlayType 1
+                   &#xA;
+                   &#xA;- 2 (fadeout:ms):
+                   &#xA;on [voice], fades out all existing voices
+                   &#xA;ex. voicePlayType 2 200
+                   &#xA;
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#voicePlayType">
       </explanation>
     </Command>
@@ -6402,18 +6625,25 @@
     </Command>
     <Command cmd="save">
       <explanation lang="jap" name="セーブ"
-                   syntax="セーブ [スロット番号] [保存スクリーンショット横幅] [保存スクリーンショット横幅 縦幅]"
+                   syntax="セーブ [スロット番号] (保存スクショ 横幅) (保存スクショ 縦幅)"
                    details="ex. セーブ 5 245 130 
                    &#xA;  
-                   &#xA;既にセーブファイルが存在する場合、上書きを確認するダイアログを生成。  
+                   &#xA;既にセーブファイルが存在する場合、上書きを確認するダイアログを生成。
+                   &#xA;
+                   &#xA;注：(保存スクショ 横幅) (保存スクショ 縦幅)が指定されない場合、
+                   &#xA;スクリーンショットが保存されない。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#save">
       </explanation>
       <explanation lang="eng" name="save"
-                   syntax="save [slot number] [screenshot save width] [screenshot save height]"
+                   syntax="save [slot number] (screenshot save width) (screenshot save height)"
                    details="ex. save 5  
                    &#xA;  
-                   &#xA;if save file already exists, brings up a dialog to check overwrite"
+                   &#xA;if save file already exists, brings up a dialog to check overwrite
+                   &#xA;
+                   &#xA;Note: if screenshot width, height not specified
+                   &#xA;will not save screenshot
+                   &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/system#save">
       </explanation>
     </Command>
@@ -6750,22 +6980,56 @@
                    &#xA;カメラ基準個体描画
                    &#xA;ライトモード
                    &#xA;描画基準個体
-                   &#xA;衝突基準個体
                    &#xA;
                    &#xA;特殊効果自動反映
                    &#xA;マスク自動反映
                    &#xA;
+                   &#xA;衝突基準個体
                    &#xA;物理処理
                    &#xA;侵入許可単位
-                   &#xA;衝突チェックも全て初期化。
+                   &#xA;衝突チェック
                    &#xA;
+                   &#xA;自動ボイス
+                   &#xA;
+                   &#xA;合成画像登録
+                   &#xA;アニメーション登録
+                   &#xA;
+                   &#xA;マクロ全種類
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#clear">
       </explanation>
       <explanation lang="eng" name="clear"
                    syntax="clear (screenspace range)"
                    details="ex. clear 
-                   &#xA;clears all previous resources（cg, bg, buttons, bgm, ...）"
+                   &#xA;clears all previous resources（cg, bg, buttons, bgm, ...）
+                   &#xA;
+                   &#xA;[Also clears settings below]
+                   &#xA;
+                   &#xA;camera
+                   &#xA;
+                   &#xA;key triggers
+                   &#xA;
+                   &#xA;objectDepthTest
+                   &#xA;objectSortByCameraZ
+                   &#xA;lightMode
+                   &#xA;renderFilterObj
+                   &#xA;
+                   &#xA;shaderEffectAuto
+                   &#xA;autoApplyMask
+                   &#xA;
+                   &#xA;collisionFilterObj
+                   &#xA;runPhysics
+                   &#xA;entryAllowance
+                   &#xA;collision checks
+                   &#xA;
+                   &#xA;auto voice
+                   &#xA;
+                   &#xA;textureCreate
+                   &#xA;animation registry
+                   &#xA;
+                   &#xA;macro registry
+                   &#xA;
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#clear">
       </explanation>
     </Command>
@@ -7029,8 +7293,8 @@
                    reference="https://wikiwiki.jp/lightvn/commands/system#textureCreateRect">
       </explanation>
       <explanation lang="eng" name="textureCreateRect"
-                   syntax="textureCreateRect [w] [h] [r] [g] [b] (a)
-                   &#xA;textureCreateRect [w] [h] [hex colour]"
+                   syntax="1. textureCreateRect [w] [h] [r] [g] [b] (a)
+                   &#xA;2. textureCreateRect [w] [h] [hex colour]"
                    details="ex. textureCreateRect new_texture 100 100 #000000
                    &#xA;
                    &#xA;create a rectangular texture

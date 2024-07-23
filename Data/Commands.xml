@@ -60,7 +60,7 @@
       </option>
       <option name="on_camera">
         <val lang="jap" value="カメラ付着"/>
-        <val lang="zh_cn" value="视角附着"/>
+        <val lang="zh_cn" value="绑定视角"/>
       </option>
       <option name="lock_y">
         <val lang="jap" value="y軸固定"/>
@@ -141,10 +141,6 @@
       <option name="ignoreTrans">
         <val lang="jap" value="透明無視"/>
         <val lang="zh_cn" value="忽略透明"/>
-      </option>
-      <option name="else">
-        <val lang="jap" value="違ったら"/>
-        <val lang="zh_cn" value="否则"/>
       </option>
       <option name="reset">
         <val lang="jap" value="初期化"/>
@@ -228,7 +224,7 @@
       </option>
       <option name="startAtTarget">
         <val lang="jap" value="対象位置から"/>
-        <val lang="zh_cn" value="从目标位置开始"/>
+        <val lang="zh_cn" value="从目标位置"/>
       </option>
       <option name="preventEntry">
         <val lang="jap" value="侵入禁止"/>
@@ -3614,7 +3610,7 @@
                    details="例如：自动绑定视角 true
                    &#xA;
                    &#xA;如果为true，
-                   &#xA;在当前脚本中，执行命令后的所有个体将自动绑定到视角。
+                   &#xA;在当前脚本中，执行命令后的所有个体将自动 [绑定视角]。
                    &#xA;
                    &#xA;在UI界面中使用非常方便。
                    &#xA;
@@ -5926,7 +5922,7 @@
                    details="例如：基于视角的对象绘制 true
                    &#xA;
                    &#xA;true)
-                   &#xA;根据与视角的距离顺序绘制对象。
+                   &#xA;根据与视角的距离(z)顺序绘制对象。
                    &#xA;
                    &#xA;false)
                    &#xA;根据图层顺序绘制对象。
@@ -7125,16 +7121,16 @@
                    &#xA;if [wait ]"
                    reference="https://wikiwiki.jp/lightvn/commands/script#continueRead">
       </explanation>
-      <explanation lang="zh_cn" name="继续读取"
-                   syntax="继续读取 (Light.vn命令)"
-                   details="例如：继续读取
+      <explanation lang="zh_cn" name="继续"
+                   syntax="继续 (Light.vn命令)"
+                   details="例如：继续
                    &#xA;
                    &#xA;a. 如果文本正在滚动：显示完整文本。
-                   &#xA;b. 如果文本未滚动：继续读取最高优先级脚本。
+                   &#xA;b. 如果文本未滚动：继续 最高优先级脚本。
                    &#xA;
                    &#xA;如果是“禁止继续”命令，则无效。
                    &#xA;
-                   &#xA;如果指定了“Light.vn命令”，当继续读取最高优先级脚本时执行。
+                   &#xA;如果指定了“Light.vn命令”，当 继续 最高优先级脚本时执行。
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/script#continueRead">
       </explanation>
@@ -7268,7 +7264,7 @@
                    &#xA;等待“对话框结果”命令。
                    &#xA;例如：等待 消息框选择
                    &#xA;
-                   &#xA;- 等待 视频结束
+                   &#xA;- 等待 视频结束 (允许用户终止)
                    &#xA;等待正在播放的视频结束，或等待“继续”命令。
                    &#xA;例如：等待 视频结束
                    &#xA;
@@ -7636,8 +7632,16 @@
                    reference="https://wikiwiki.jp/lightvn/commands/script#scriptReadType">
       </explanation>
       <explanation lang="eng" name="scriptReadType"
-                   syntax="scriptReadType 0/1"
-                   details="ex. scriptReadType 1  
+                   syntax="scriptReadType [type]"
+                   details="ex. scriptReadType 1
+                   &#xA;
+                   &#xA;type)
+                   &#xA;0 (default)
+                   &#xA;most natural visual effects. visual effects render while parsing scripts.
+                   &#xA;
+                   &#xA;1
+                   &#xA;don't allow rendering while resource loading, etc. 
+                   &#xA;  
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/script#scriptReadType">
       </explanation>
@@ -7774,7 +7778,7 @@
                    &#xA;移除所有在堆栈底部脚本之上的脚本，并继续读取底部脚本。
                    &#xA;（如果当前脚本是第一个脚本，则不执行任何操作。）
                    &#xA;
-                   &#xA;注意：屏幕区域也将恢复到没有设置[freeOnReturnToMain]的最上层屏幕区域。
+                   &#xA;注意：屏幕区域也将恢复到没有设置[返回主界面时释放]的最上层屏幕区域。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#script_fin_return_to_main">
       </explanation>

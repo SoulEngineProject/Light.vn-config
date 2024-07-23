@@ -1,4 +1,4 @@
-## 修正の理由
+## Reason for change
 
-- <ここに理由を作成>
+- write reason here
 

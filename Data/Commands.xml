@@ -176,11 +176,11 @@
       </option>
       <option name="followSystem">
         <val lang="jap" value="設定反映"/>
-        <val lang="zh_cn" value="跟随"/>
+        <val lang="zh_cn" value="跟随系统"/>
       </option>
       <option name="followSystemAuto">
         <val lang="jap" value="オート設定反映"/>
-        <val lang="zh_cn" value="自动跟随"/>
+        <val lang="zh_cn" value="跟随系统自动"/>
       </option>
       <option name="show">
         <val lang="jap" value="表示"/>
@@ -481,10 +481,10 @@
                    &#xA;视角附着
                    &#xA;不受视角变化影响的显示。（好像实体粘在视角上一样）
                    &#xA;
-                   &#xA;2D 视角
+                   &#xA;2D视图
                    &#xA;显示为“视角模式 0”状态下的实体。
                    &#xA;
-                   &#xA;3D 视角
+                   &#xA;3D视图
                    &#xA;显示为“视角模式 3”状态下的实体。
                    &#xA;
                    &#xA;锁定Y轴
@@ -673,7 +673,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#bg">
       </explanation>
       <explanation lang="zh_cn" name="背景"
-                   syntax="背景 [名称] [文件名 / 动画名称]"
+                   syntax="背景 [名称] [文件名 / 动画名称] (视角选项)"
                    details="例如：背景 bg1 scenery.png
                    &#xA;使用名称为 'bg1' 的背景图片 'scenery.png'。
                    &#xA;
@@ -773,6 +773,7 @@
       <explanation lang="zh_cn" name="音效立绘"
                    syntax="音效立绘 [名称] [文件名 / 动画名称] [x] [y] [r] [音效目标名称] [判断间隔时间] (变化类型) (最小音量1) (显示图像1) (...) (获取音量的时间延迟:ms) (视角选项)"
                    details="例如：音效立绘 hisia mouth0.png 400 200 90 id0 100 30 mouth1.png 60 mouth2.png 90 mouth3.png 120 mouth4.png
+                   &#xA;  
                    &#xA;根据音效文件的音量数据显示图像。
                    &#xA;在此示例中：
                    &#xA;计算名为id0的音效目标（例如：语音）的音量，每100毫秒计算一次，并显示相应的图像。
@@ -833,6 +834,7 @@
       <explanation lang="zh_cn" name="九格立绘"
                    syntax="九格立绘 [名称] [文件名 / 动画名称] [x] [y] [r] [分割_x1] [分割_x2] [分割_y1] [分割_y2] [宽度] [高度] (缩放类型: 0(默认)) (视角选项)"
                    details="例如：九格立绘 ex1 waku.png 450 200 1 33 66 33 66 200 200
+                   &#xA;  
                    &#xA;指定的图像沿着[分割_x1] [分割_x2] [分割_y1] [分割_y2]分割成九个区域，并在中心区域拉伸以适应指定的大小。
                    &#xA;缩放类型
                    &#xA;0: 缩放中心以适应。
@@ -871,6 +873,7 @@
       <explanation lang="zh_cn" name="流动图"
                    syntax="流动图 [名称] [文件名 / 动画名称] [x] [y] [r] [每秒移动] (垂直) (偏移:px) (视角选项)"
                    details="例如：流动图 bg_effect scrolling_background.png 0 0 10 60
+                   &#xA;  
                    &#xA;图像根据每秒的移动值移动。
                    &#xA;注：如果设置了“垂直”选项，则垂直流动。
                    &#xA;注：建议使用的图像在流动方向上的尺寸与屏幕相同或更大。
@@ -903,6 +906,7 @@
       <explanation lang="zh_cn" name="模型"
                    syntax="模型 [名称] [文件名] [x] [y] [r] (视角选项)"
                    details="例如：模型 stairs stairs.glb 0 400 0
+                   &#xA;  
                    &#xA;注：视角选项示例：视角附着（不受视角操作影响）
                    &#xA;其他“视角选项”请参阅命令手册中的“视角选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
@@ -931,6 +935,7 @@
       <explanation lang="zh_cn" name="天空盒"
                    syntax="天空盒 [文件名: 上] [文件名: 下] [文件名: 前] [文件名: 后] [文件名: 左] [文件名: 右]"
                    details="例如：天空盒 skybox/top.jpg skybox/bottom.jpg skybox/front.jpg skybox/back.jpg skybox/left.jpg skybox/right.jpg
+                   &#xA;  
                    &#xA;创建一个看起来离视角无限远的天空盒。
                    &#xA;（不受视角位置影响。）
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
@@ -962,6 +967,7 @@
       <explanation lang="zh_cn" name="灯光"
                    syntax="灯光 [名称] [x] [y] [r] (视角选项)"
                    details="例如：灯光 light0 100 100 80
+                   &#xA;  
                    &#xA;要使其生效，必须将灯光模式设置为1或更高。
                    &#xA;注：视角选项示例：视角附着（不受视角操作影响）
                    &#xA;其他“视角选项”请参阅命令手册中的“视角选项”。
@@ -996,6 +1002,7 @@
       <explanation lang="zh_cn" name="灯光模式"
                    syntax="灯光模式 [模式]"
                    details="例如：灯光模式 1
+                   &#xA;  
                    &#xA;模式：
                    &#xA;0: 不使用灯光。模型不受灯光的影响。（默认）
                    &#xA;1: 使用灯光。
@@ -1027,6 +1034,7 @@
       <explanation lang="zh_cn" name="应用灯光"
                syntax="应用灯光 [名称 (多选)] [true/false]"
                details="例如：应用灯光 alice true
+               &#xA;  
                &#xA;如果为 false 并且灯光模式至少为 1，则不应用灯光效果。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#lightApply">
       </explanation>
@@ -1035,6 +1043,7 @@
     <Command name="--[マップ 関連コマンド]--">
       <explanation lang="jap" name="--[マップ関連コマンド]--"></explanation>
       <explanation lang="eng" name="--[Map commands]--"></explanation>
+      <explanation lang="zh_cn" name="--[地图相关命令]--"></explanation>
     </Command>
     <Command cmd="tilemap">
       <explanation lang="jap" name="タイルマップ"
@@ -1059,6 +1068,7 @@
       <explanation lang="zh_cn" name="瓦片地图"
                    syntax="瓦片地图 [名称] [x] [y] [r] [每层r间隔]"
                    details="例如：瓦片地图 map map0.json 3050 2850 0 2
+                   &#xA;
                    &#xA;可加载格式：“Tiled”的json格式。
                    &#xA;使用方法参考：
                    &#xA;https://docs.google.com/document/d/17orkWCk2DAll6uFnELs_E-OeNX8V19HeaOgCOXChbIo
@@ -1087,6 +1097,7 @@
       <explanation lang="zh_cn" name="移动区域"
                    syntax="移动区域 [目标名称]"
                    details="例如：移动区域 map_1_walkable
+                   &#xA;
                    &#xA;指定要用作移动区域的瓦片地图图层名称。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/Map#walkArea">
@@ -1117,6 +1128,7 @@
       <explanation lang="zh_cn" name="移动区域立绘"
                    syntax="移动区域立绘 [名称] [图像] [瓦片x] [瓦片y] [r] [偏移x] [偏移y]"
                    details="例如：移动区域立绘 npc idle_left 7 2 1 0 -20
+                   &#xA;
                    &#xA;指定要放置在移动区域上的图像。
                    &#xA;偏移x/y：如果是0 0，则图像的中心将放置在瓦片的中心。
                    &#xA;调整这些值以指定图像从瓦片中心偏移的距离。
@@ -1144,9 +1156,10 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/Map#walkAreaTileChar">
       </explanation>
-      <explanation lang="zh_cn" name="瓦片角色移动区域"
-                   syntax="瓦片角色移动区域 [名称] [图像路径] [帧宽度] [帧高度] [瓦片x] [瓦片y] [r] [偏移x] [偏移y] [方向]"
-                   details="例如：瓦片角色移动区域 npc_b maps/tilemap_tut/lam/sheet.png 32 48 47 11 1 0 -15 下
+      <explanation lang="zh_cn" name="移动区域瓦片角色"
+                   syntax="移动区域瓦片角色 [名称] [图像路径] [帧宽度] [帧高度] [瓦片x] [瓦片y] [r] [偏移x] [偏移y] [方向]"
+                   details="例如：移动区域瓦片角色 npc_b maps/tilemap_tut/lam/sheet.png 32 48 47 11 1 0 -15 下
+                   &#xA;
                    &#xA;将符合Light.vn瓦片角色图像格式的实体放置在移动区域的(x, y)瓦片上。
                    &#xA;方向：左、右、下、上
                    &#xA;"
@@ -1175,6 +1188,7 @@
       <explanation lang="zh_cn" name="默认移动速度"
                    syntax="默认移动速度 [速度]"
                    details="例如：默认移动速度 500
+                   &#xA;
                    &#xA;指定需要移动速度的实体的默认值。
                    &#xA;速度：穿越一个瓦片所需的毫秒数
                    &#xA;"
@@ -1202,6 +1216,7 @@
       <explanation lang="zh_cn" name="移动速度"
                    syntax="移动速度 [目标名称] [速度]"
                    details="例如：移动速度 500
+                   &#xA;
                    &#xA;指定目标的移动速度。
                    &#xA;速度：穿越一个瓦片所需的毫秒数
                    &#xA;"
@@ -1236,8 +1251,10 @@
       <explanation lang="zh_cn" name="瓦片移动x"
                    syntax="瓦片移动x [目标名称] [偏移量] (时间/速度(ups)) [开始命令] [结束命令]"
                    details="例如：瓦片移动x npc -1 5ups &quot;image npc walk_left&quot; &quot;image npc idle_left&quot;
+                   &#xA;
                    &#xA;以5ups的速度在x方向上移动到偏移量为-1的瓦片。
                    &#xA;如果无法移动到指定位置，则在原地执行[结束命令]。
+                   &#xA;
                    &#xA;注：仅适用于“移动区域立绘”。
                    &#xA;注：如果未指定时间，则遵循“移动速度”。
                    &#xA;注：在命令后加上'2'表示相对变化值。
@@ -1276,8 +1293,10 @@
       <explanation lang="zh_cn" name="瓦片移动y"
                    syntax="瓦片移动y [目标名称] [偏移量] (时间/速度(ups)) [开始命令] [结束命令]"
                    details="例如：瓦片移动y npc -1 5ups &quot;image npc walk_left&quot; &quot;image npc idle_left&quot;
+                   &#xA;
                    &#xA;以5ups的速度在y方向上移动到偏移量为-1的瓦片。
                    &#xA;如果无法移动到指定位置，则在原地执行[结束命令]。
+                   &#xA;
                    &#xA;注：仅适用于“移动区域立绘”。
                    &#xA;注：如果未指定时间，则遵循“移动速度”。
                    &#xA;注：在命令后加上'2'表示相对变化值。
@@ -1377,6 +1396,7 @@
       <explanation lang="zh_cn" name="按钮"
                    syntax="按钮 [名称] (按钮未触摸图像) (按钮触摸时图像) (按钮点击时图像) [x] [y] [r] (忽略透明) (视角选项) (Light.vn命令)"
                    details="例如：按钮 button1 untouched-image.png touched-image.png clicked-image.png 300 400 200 视角附着 跳转 tut.txt
+                   &#xA;
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）
                    &#xA;注：图像大小需要保持一致。
@@ -1423,7 +1443,9 @@
       <explanation lang="zh_cn" name="按钮文字"
                   syntax="按钮文字 [按钮名称] [字体文件名] [字体大小] [&quot;文本&quot;]"
                   details="例如：按钮文字 button1 r-mplus-1c-m.ttf 24 &quot;触摸我！&quot;
+                  &#xA;
                   &#xA;在指定的按钮中间显示文字。
+                  &#xA;
                   &#xA;详细信息：创建一个名称为[按钮名称 + _text]的文本。
                   &#xA;（例如，在上面的例子中，由于我们针对的按钮名称是[button1]，因此我们创建一个名称为[button1_text]的文本）
                   &#xA;因此，要对按钮文字进行任何额外的更改，只需使用文本命令针对[按钮名称 + _text]。"
@@ -1454,6 +1476,7 @@
       <explanation lang="zh_cn" name="按钮组"
                   syntax="按钮组 [按钮前缀]"
                   details="例如：按钮组 choice_
+                  &#xA;
                   &#xA;将所有以'choice_'开头的按钮分组。
                   &#xA;当分组中的任何一个按钮被触摸时，该组中的所有按钮将不再接受外部输入。
                   &#xA;建议在选择场景中使用，当触摸一个选项时应禁用所有选项。
@@ -1482,6 +1505,7 @@
       <explanation lang="zh_cn" name="触摸区域"
                    syntax="触摸区域 [目标名称] [从左上角的x] [从左上角的y] [宽度] [高度]"
                    details="例如：触摸区域 btn0 0 0 100 100
+                   &#xA;
                    &#xA;定义按钮纹理内的可触摸区域。
                    &#xA;注：目标名称可以使用正则表达式。"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchArea">
@@ -1508,6 +1532,7 @@
       <explanation lang="zh_cn" name="屏幕触摸区域"
                    syntax="屏幕触摸区域 [名称] [从左上角的x] [从左上角的y] [宽度] [高度]"
                    details="例如：屏幕触摸区域 btn0 0 0 100 100
+                   &#xA;
                    &#xA;定义屏幕内的可触摸区域。
                    &#xA;注：目标名称可以使用正则表达式。"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchAreaScreen">
@@ -1534,6 +1559,7 @@
       <explanation lang="zh_cn" name="触摸透明度"
                    syntax="触摸透明度 [目标名称] [最小透明值 (默认: 255)]"
                    details="例如：触摸透明度 btn0 100
+                   &#xA;
                    &#xA;如果目标的透明度大于或等于[最小透明值]，则允许触摸或其他反应。
                    &#xA;注：目标名称可以使用正则表达式。"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchAlpha">
@@ -1559,6 +1585,7 @@
       <explanation lang="zh_cn" name="激活条件"
                    syntax="激活条件 [按钮名称] [激活条件：字符串]"
                    details="例如：激活条件 btn0 &quot;lvSystem::WindowMode() == 2&quot;
+                   &#xA;
                    &#xA;指定按钮激活的条件。
                    &#xA;如果指定，按钮的触摸状态不由用户触摸决定，而是根据指定的条件反映。"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#highlight_if">
@@ -1583,6 +1610,7 @@
       <explanation lang="zh_cn" name="触摸开始时"
                    syntax="触摸开始时 [个体名称] [触摸开始时执行的命令]"
                    details="例如：触摸开始时 btn1 脚本 textbox.txt
+                   &#xA;
                    &#xA;支持的个体类型：
                    &#xA;按钮"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnTouch">
@@ -1607,6 +1635,7 @@
       <explanation lang="zh_cn" name="触摸结束时"
                    syntax="触摸结束时 [按钮名称] [触摸结束时执行的命令]"
                    details="例如：触摸结束时 btn1 脚本 textbox.txt
+                   &#xA;
                    &#xA;支持的个体类型：
                    &#xA;按钮"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnNotTouch">
@@ -1648,6 +1677,7 @@
                    syntax="1. 强制触摸状态 [个体名称] [状态：0, 1, 2]
                    &#xA;2. 强制触摸状态 [个体名称] false"
                    details="例如：强制触摸状态 btn1 1
+                   &#xA;
                    &#xA;状态：
                    &#xA;0) 未触摸
                    &#xA;1) 触摸
@@ -1689,6 +1719,7 @@
       <explanation lang="zh_cn" name="触摸素材"
                    syntax="触摸素材 [UI未触摸图像] [UI触摸时图像] [UI点击时图像] (UI触摸时音效) (UI点击时音效)"
                    details="例如：触摸素材 untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg
+                   &#xA;
                    &#xA;声明“所有之后创建的可触摸个体”（例如：按钮）的默认素材。
                    &#xA;如果在创建个体时未声明特定的使用素材，则使用此处声明的素材。
                    &#xA;可触摸个体)
@@ -1728,7 +1759,9 @@
       <explanation lang="zh_cn" name="触摸处理优先级"
                    syntax="触摸处理优先级 [优先级 (默认：0)]"
                    details="在当前屏幕区域中，当多个可触摸个体（例如：按钮）同时被点击时，设置触摸处理的优先级。
+                   &#xA;
                    &#xA;例如：触摸处理优先级 0
+                   &#xA;
                    &#xA;0) 不优先处理任何内容。允许所有触摸。
                    &#xA;例如：触摸处理优先级 1
                    &#xA;1) 仅允许处理最顶层个体的触摸。"
@@ -1760,8 +1793,11 @@
       <explanation lang="zh_cn" name="轨迹条"
                    syntax="轨迹条 [名称] (轨迹球未触摸素材) (轨迹球触摸素材) (轨迹球点击素材) [x] [y] [r] [水平/垂直] [宽度] [变量名称] [左侧值] [右侧值]"
                    details="例如：轨迹条 trackbar sys_trackball.png 370 246 105 水平 530 bgm 0 100
+                   &#xA;
                    &#xA;创建一个控制背景音乐音量的轨迹条。
+                   &#xA;
                    &#xA;例如：轨迹条 trackbar sys_trackball.png 370 246 105 水平 530 bgm 0 100 音效 test_sound test.ogg
+                   &#xA;
                    &#xA;调整后，执行“音效 test_sound test.ogg”。
                    &#xA;如果未指定素材，则使用“触摸素材设置”配置。"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#trackbar">
@@ -1914,7 +1950,8 @@
     <Command cmd="">
       <explanation lang="jap" name="新しい文章"
                    syntax="&quot;[文章内容]"
-                   details="ex. &quot;新しい文章です!  
+                   details="ex. &quot;新しい文章です!
+                   &#xA;
                    &#xA;以前表示されていたテキストを全て消し新しいテキストを表示します。  
                    &#xA;  
                    &#xA;注: 文章の表示は正当な文字窓、('使用文字窓') 及びフォント、文字大きさの指定を事前に必要とします"
@@ -1930,6 +1967,7 @@
       <explanation lang="zh_cn" name="新文本"
                    syntax="&quot;[文本内容]"
                    details="例如：“新文本内容!
+                   &#xA;
                    &#xA;清除以前显示的所有文本并显示新文本。
                    &#xA;
                    &#xA;注：显示文本需要事先设置有效的文本框（‘使用文本框’），并指定字体和字体大小。"
@@ -1939,19 +1977,22 @@
     <Command cmd="">
       <explanation lang="jap" name="続く文章"
                    syntax="-&quot;[文章内容]"
-                   details="ex. -&quot;これは続く文章です!   
+                   details="ex. -&quot;これは続く文章です!
+                   &#xA;
                    &#xA;既存の文章に続くテキストを表示する際に使います。"
                    reference="https://wikiwiki.jp/lightvn/text">
       </explanation>
       <explanation lang="eng" name="continuing text"
                    syntax="-&quot;[text]"
-                   details="ex. -&quot;this text continues!   
+                   details="ex. -&quot;this text continues!
+                   &#xA;
                    &#xA;displays 'text' appended to previous text"
                    reference="https://wikiwiki.jp/lightvn/text">
       </explanation>
       <explanation lang="zh_cn" name="续文本"
                    syntax="-&quot;[文本内容]"
                    details="例如：-”这是续文本!
+                   &#xA;
                    &#xA;用于在现有文本之后显示追加文本。"
                    reference="https://wikiwiki.jp/lightvn/text">
       </explanation>
@@ -1959,7 +2000,8 @@
     <Command cmd="textTableColumn">
       <explanation lang="jap" name="台詞情報種類"
                    syntax="台詞情報種類 [種類名]"
-                   details="ex. 台詞情報種類 jap  
+                   details="ex. 台詞情報種類 jap
+                   &#xA;
                    &#xA;シナリオテーブルからセリフ表示中の全文字の台詞を、テーブルの「種類名」欄のものに更新。 
                    &#xA;  
                    &#xA;"
@@ -1979,6 +2021,7 @@
       <explanation lang="zh_cn" name="台词类型"
                    syntax="台词类型 [类型名称]"
                    details="例如：台词类型 jap
+                   &#xA;
                    &#xA;将正在显示的所有台词文本从剧本表格中更新为表格中的“类型名称”栏。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableColumn">
@@ -1987,7 +2030,8 @@
     <Command cmd="textTableLoad">
       <explanation lang="jap" name="台詞情報登録"
                    syntax="台詞情報登録 [ファイル経路] [次に読み込む行: 0~]"
-                   details="ex. 台詞情報登録 table.csv 0  
+                   details="ex. 台詞情報登録 table.csv 0
+                   &#xA;
                    &#xA;シナリオテーブルを読み込み、次に表示される行を設定する。  
                    &#xA;  
                    &#xA;注：先に「台詞情報種類」を使用して種類を指定する必要がある。  
@@ -2008,6 +2052,7 @@
       <explanation lang="zh_cn" name="加载台词"
                    syntax="加载台词 [文件路径] [下一行: 0~]"
                    details="加载台词 table.csv 0
+                   &#xA;
                    &#xA;加载剧本表格，并设置下一行要显示的内容。
                    &#xA;
                    &#xA;注：需要先使用“台词类型”来指定类型。"
@@ -2017,7 +2062,8 @@
     <Command cmd="textTableLine">
       <explanation lang="jap" name="台詞情報新文章"
                    syntax="台詞情報新文章 [ファイル経路]"
-                   details="ex. 台詞情報新文章 table.csv   
+                   details="ex. 台詞情報新文章 table.csv
+                   &#xA;
                    &#xA;既に登録されている「ファイル経路」の台詞情報から、 
                    &#xA;現在使用中の文字窓に、次の文章データを、「改ページ文章」として表示させる。 
                    &#xA;  
@@ -2041,6 +2087,7 @@
       <explanation lang="zh_cn" name="新增台词"
                    syntax="新增台词 [文件路径]"
                    details="例如：新增台词 table.csv
+                   &#xA;
                    &#xA;从已经注册的“文件路径”中的台词信息中，
                    &#xA;在当前使用的文本框中显示下一条文本数据，作为“新页面文本”。
                    &#xA;
@@ -2054,7 +2101,8 @@
     <Command cmd="textTableLineCont">
       <explanation lang="jap" name="台詞情報追加文章"
                    syntax="台詞情報追加文章 [ファイル経路]"
-                   details="ex. 台詞情報追加文章 table.csv  
+                   details="ex. 台詞情報追加文章 table.csv
+                   &#xA;
                    &#xA;既に登録された「ファイル経路」の台詞情報から、 
                    &#xA;現在使用中の文字窓に、次の文章データを、「既存の文章に続く文章」として表示させる。 
                    &#xA;  
@@ -2078,8 +2126,10 @@
       <explanation lang="zh_cn" name="追加台词"
                   syntax="追加台词 [文件路径]"
                   details="例如：追加台词 table.csv
+                  &#xA;
                   &#xA;从已经注册的“文件路径”中的台词信息中，
                   &#xA;在当前使用的文本框中显示下一条文本数据，作为“追加文本”。
+                  &#xA;
                   &#xA;注：需要先通过“加载台词”注册[文件路径]。
                   &#xA;注：由于无法设置等待，因此如果需要等待，建议使用
                   &#xA;例如：追加台词 table.csv | 等待
@@ -2134,6 +2184,7 @@
       <explanation lang="zh_cn" name="文本删除"
                   syntax="文本删除 (目标名称) [删除字符数]"
                   details="例如：文本删除 3
+                  &#xA;
                   &#xA;从目标的文本末尾删除“删除字符数”个字符。
                   &#xA;
                   &#xA;注：目标名称可使用正则表达式。
@@ -2447,8 +2498,8 @@
                    syntax="文本速度 (对象名) [速度:ms/字]"
                    details="例如：文本速度 400
                    &#xA;
-                   &#xA; 「文本速度 设置反映」使文本遵循用户设置 (vn_sysTextSpeed)
-                   &#xA; 「文本速度 自动跟随」使文本遵循用户设置 (vn_sysAutoSpeed)
+                   &#xA; 「文本速度 跟随系统」使文本遵循用户设置 (vn_sysTextSpeed)
+                   &#xA; 「文本速度 跟随系统自动」使文本遵循用户设置 (vn_sysAutoSpeed)
                    &#xA;
                    &#xA;注: 对象名允许使用正则表达式"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textSpeed">
@@ -3182,7 +3233,8 @@
       <explanation lang="eng" name="textSkipMode"
                    syntax="textSkipMode [0/1]"
                    details="0: all
-                   &#xA;1: only already read  
+                   &#xA;1: only already read
+                   &#xA;
                    &#xA;ex. textSkipMode 1"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textSkipMode">
       </explanation>
@@ -3338,6 +3390,7 @@
       <explanation lang="zh_cn" name="回溯日志当前名称"
                    syntax="回溯日志当前名称 [字符串]"
                    details="例如：回溯日志当前名称 &quot;ラム\n&quot;
+                   &#xA;
                    &#xA;指定用于在回溯日志中记录带有名字的台词的字符串。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogCurSpeaker">
       </explanation>
@@ -3345,7 +3398,8 @@
     <Command cmd="backlogNewPagePrefix">
       <explanation lang="jap" name="バックログ改ページ接頭辞"
                    syntax="バックログ改ページ接頭辞 [文字列]"
-                   details="ex. バックログ改ページ接頭辭 &quot;\n\n&quot; 
+                   details="ex. バックログ改ページ接頭辭 &quot;\n\n&quot;
+                   &#xA;
                    &#xA;バックログ上に改ページ文章が登録される度に前につける接頭辭"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogNewPagePrefix">
       </explanation>
@@ -3361,6 +3415,7 @@
       <explanation lang="zh_cn" name="回溯日志新页面前缀"
                    syntax="回溯日志新页面前缀 [字符串]"
                    details="例如：回溯日志新页面前缀 &quot;\n\n&quot;
+                   &#xA;
                    &#xA;每次在回溯日志中注册新页面台词时添加的前缀。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogNewPagePrefix">
       </explanation>
@@ -3368,7 +3423,8 @@
     <Command cmd="backlog_scroll">
       <explanation lang="jap" name="バックログスクロール"
                    syntax="バックログスクロール [スクロールさせる行数]"
-                   details="ex. バックログスクロール 1  
+                   details="ex. バックログスクロール 1
+                   &#xA;
                    &#xA;「スクロールさせる行数」 が0より大きいと下へ、0未満だと上へスクロールさせます。
                    &#xA;
                    &#xA;スクロールさせる行数 >= 1の場合、バックログの最後に至った場合、
@@ -3379,7 +3435,8 @@
       </explanation>
       <explanation lang="eng" name="backlog_scroll"
                    syntax="backlog_scroll [lines to scroll]"
-                   details="ex. backlog_scroll 1  
+                   details="ex. backlog_scroll 1
+                   &#xA;
                    &#xA;number of lines to scroll backlog
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlog_scroll">
@@ -3387,6 +3444,7 @@
       <explanation lang="zh_cn" name="回溯日志滚动"
                    syntax="回溯日志滚动 [滚动行数]"
                    details="例如：回溯日志滚动 1
+                   &#xA;
                    &#xA;如果「滚动行数」大于0，则向下滚动，否则向上滚动。
                    &#xA;
                    &#xA;如果滚动行数 >= 1，并且到达回溯日志的末尾，当前脚本处于等待状态，则重新开始加载。
@@ -3397,19 +3455,22 @@
     <Command cmd="backlogAddLines">
       <explanation lang="jap" name="バックログ台詞登録"
                    syntax="バックログ台詞登録 [true/false]"
-                   details="ex. バックログ台詞登録 true  
+                   details="ex. バックログ台詞登録 true
+                   &#xA;
                    &#xA;trueの場合、バックログにシナリオ行が登録されます。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogAddLine">
       </explanation>
       <explanation lang="eng" name="backlogAddLines"
                    syntax="backlogAddLines [true/false]"
-                   details="ex. backlogAddLines true  
+                   details="ex. backlogAddLines true
+                   &#xA;
                    &#xA;if true, scenario lines will be added to the backlog"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogAddLine">
       </explanation>
       <explanation lang="zh_cn" name="回溯日志台词注册"
                    syntax="回溯日志台词注册 [true/false]"
                    details="例如：回溯日志台词注册 true
+                   &#xA;
                    &#xA;如果为true，则在回溯日志中注册剧本行。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogAddLine">
       </explanation>
@@ -3417,14 +3478,16 @@
     <Command cmd="backlogReset">
       <explanation lang="jap" name="バックログリセット"
                    syntax="バックログリセット"
-                   details="ex. バックログリセット 
+                   details="ex. バックログリセット
+                   &#xA;
                    &#xA;バックログの登録台詞をリセット。登録された行数が長くなればなるほど 
                    &#xA;バックログは重くなるため、時々実行させることを推奨。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogReset">
       </explanation>
       <explanation lang="eng" name="backlogReset"
                    syntax="backlogReset"
-                   details="ex. backlogReset  
+                   details="ex. backlogReset
+                   &#xA;
                    &#xA;Resets the recorded lines in the backlog.
                    &#xA;As the backlog becomes more CPU heavy with more lines,
                    &#xA;recommended to use this command every 2~3 scripts"
@@ -3433,6 +3496,7 @@
       <explanation lang="zh_cn" name="回溯日志重置"
                    syntax="回溯日志重置"
                    details="例如：回溯日志重置
+                   &#xA;
                    &#xA;重置回溯日志中的注册台词。随着注册行数的增加，回溯日志会变得更占用内存，建议每2-3个脚本执行一次此命令。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogReset">
       </explanation>
@@ -4059,7 +4123,8 @@
     <Command cmd="image">
       <explanation lang="jap" name="画像"
                    syntax="画像 [対象名 (複数可)] [ファイル名 / 登録済みアニメ名] (所要時間:ms) (アルファ画像) (画面領域範囲)"
-                   details="ex. 画像 albert2 scg1.png   
+                   details="ex. 画像 albert2 scg1.png
+                   &#xA;
                    &#xA;対象の画像を指定したファイルに変更します。 
                    &#xA;  
                    &#xA;正常動作するには、元の画像と指定画像のサイズが同じである必要性があります。 
@@ -4073,7 +4138,8 @@
       </explanation>
       <explanation lang="eng" name="image"
                    syntax="image [target name(s)] [filename] (time(ms)) (alpha filename) (screenspace range)"
-                   details="ex. image albert2 scg1.png  
+                   details="ex. image albert2 scg1.png
+                   &#xA;
                    &#xA;changes target's texture to designated image.   
                    &#xA;  
                    &#xA;to guarantee behaviour, the designated texture and original texture need to be of same size"
@@ -4082,6 +4148,7 @@
       <explanation lang="zh_cn" name="图片"
                    syntax="图片 [目标名称 (可多个)] [文件名 / 注册动画名] (所需时间:毫秒) (alpha文件名) (画面区域范围)"
                    details="例如：图片 albert2 scg1.png
+                   &#xA;
                    &#xA;将目标图片更改为指定文件。
                    &#xA;
                    &#xA;为了确保正常工作，指定的图片和原始图片需要具有相同的尺寸。
@@ -4096,7 +4163,8 @@
     <Command cmd="screenIn">
       <explanation lang="jap" name="スクリーンイン"
                    syntax="スクリーンイン (所要時間:ms) (アルファ画像) (輪郭ぼかし: 0.0以上)"
-                   details="ex. スクリーンイン 800 fade_sun.png  
+                   details="ex. スクリーンイン 800 fade_sun.png
+                   &#xA;
                    &#xA;画面上の全ての個体をフェイドインさせます。 
                    &#xA;  
                    &#xA;ex. スクリーンアウト 800 fade_sun.png 0.1 
@@ -4107,7 +4175,8 @@
       </explanation>
       <explanation lang="eng" name="screenIn"
                    syntax="screenIn (time(ms)) (alpha filename) (blur: at least 0.0)"
-                   details="ex. screenIn 800 fade_sun.png   
+                   details="ex. screenIn 800 fade_sun.png
+                   &#xA;
                    &#xA;fades in the whole screen texture.
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/transition#screenIn">
@@ -4115,6 +4184,7 @@
       <explanation lang="zh_cn" name="屏幕淡入"
                    syntax="屏幕淡入 (所需时间:毫秒) (alpha图像) (轮廓模糊: 0.0以上)"
                    details="例如：屏幕淡入 800 fade_sun.png
+                   &#xA;
                    &#xA;将屏幕上的所有对象淡入。
                    &#xA;
                    &#xA;例如：屏幕淡入 800 fade_sun.png 0.1
@@ -4127,7 +4197,8 @@
     <Command cmd="screenOut">
       <explanation lang="jap" name="スクリーンアウト"
                    syntax="スクリーンアウト (所要時間:ms) (アルファ画像) (輪郭ぼかし: 0.0以上)"
-                   details="ex. スクリーンアウト 800 fade_sun.png   
+                   details="ex. スクリーンアウト 800 fade_sun.png
+                   &#xA;
                    &#xA;画面上の全ての個体をフェイドアウトさせます。  
                    &#xA;  
                    &#xA;ex. スクリーンアウト 800 fade_sun.png 0.1 
@@ -4138,7 +4209,8 @@
       </explanation>
       <explanation lang="eng" name="screenOut"
                    syntax="screenOut (time(ms)) (alpha filename) (blur: at least 0.0)"
-                   details="ex. screenOut 800 fade_sun.png  
+                   details="ex. screenOut 800 fade_sun.png
+                   &#xA;
                    &#xA;fades out the whole screen texture.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#screenOut">
@@ -4146,6 +4218,7 @@
       <explanation lang="zh_cn" name="屏幕淡出"
                    syntax="屏幕淡出 (所需时间:毫秒) (alpha图像) (轮廓模糊: 0.0以上)"
                    details="例如：屏幕淡出 800 fade_sun.png
+                   &#xA;
                    &#xA;将屏幕上的所有对象淡出。
                    &#xA;
                    &#xA;例如：屏幕淡出 800 fade_sun.png 0.1
@@ -4248,7 +4321,8 @@
     <Command cmd="delayedDestroy">
       <explanation lang="jap" name="遅延消滅"
                    syntax="遅延消滅 [対象名・対象種類名 (複数可)] [所要時間:ms] (画面領域範囲)"
-                   details="ex. 遅延消滅 albert2 1500 
+                   details="ex. 遅延消滅 albert2 1500
+                   &#xA;
                    &#xA;所要時間後、個体を消滅させる。
                    &#xA;  
                    &#xA;注: 画面領域範囲：全画面領域、同階層画面領域。何もつけない場合、現画面領域の個体のみ拾う。
@@ -4266,6 +4340,7 @@
       <explanation lang="zh_cn" name="消失延迟"
                    syntax="消失延迟 [目标名・目标类型名 (可多个)] [所需时间:毫秒] (画面区域范围)"
                    details="例如：消失延迟 albert2 1500
+                   &#xA;
                    &#xA;在指定时间后，使对象消失。
                    &#xA;
                    &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
@@ -5101,7 +5176,8 @@
     <Command cmd="speedx">
       <explanation lang="jap" name="速度x"
                    syntax="速度x [対象名 (複数可)] [数値] (所要時間:ms) (加速度: a0~a18) (画面領域範囲)"
-                   details="ex. 速度 albert 30 300 
+                   details="ex. 速度 albert 30 300
+                   &#xA;
                    &#xA;x方向への速度(秒単位でのピクセル)を指定する。  
                    &#xA;  
                    &#xA;注: 演出コマンドの対象名に正規表現による複数指定が可能です。"
@@ -5110,6 +5186,7 @@
       <explanation lang="eng" name="speedx"
                    syntax="speedx [target(s)] [value] (duration:ms) (acceleration) (screenspace range)"
                    details="ex. speedx albert 30 300
+                   &#xA;
                    &#xA;defines the speed
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#speedx">
@@ -5117,6 +5194,7 @@
       <explanation lang="zh_cn" name="速度x"
                    syntax="速度x [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：速度 albert 30 300
+                   &#xA;
                    &#xA;指定x方向的速度（每秒像素数）。
                    &#xA;
                    &#xA;注：动画命令的目标名可以使用正则表达式指定多个。"
@@ -5126,7 +5204,8 @@
     <Command cmd="speedy">
       <explanation lang="jap" name="速度y"
                    syntax="速度y [対象名 (複数可)] [数値] (所要時間:ms) (加速度: a0~a18) (画面領域範囲)"
-                   details="ex. 速度y albert 30 300 
+                   details="ex. 速度y albert 30 300
+                   &#xA;
                    &#xA;y方向への速度(秒単位でのピクセル)を指定する。  
                    &#xA;  
                    &#xA;注: 演出コマンドの対象名に正規表現による複数指定が可能です。"
@@ -5135,6 +5214,7 @@
       <explanation lang="eng" name="speedy"
                    syntax="speedy [target(s)] [value] (duration:ms) (acceleration) (screenspace range)"
                    details="ex. speedy albert 30 300
+                   &#xA;
                    &#xA;defines the speed
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#speedy">
@@ -5142,6 +5222,7 @@
       <explanation lang="zh_cn" name="速度y"
                    syntax="速度y [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：速度y albert 30 300
+                   &#xA;
                    &#xA;指定y方向的速度（每秒像素数）。
                    &#xA;
                    &#xA;注：动画命令的目标名可以使用正则表达式指定多个。"
@@ -5151,7 +5232,8 @@
     <Command cmd="speedz">
       <explanation lang="jap" name="速度z"
                    syntax="速度z [対象名 (複数可)] [数値] (所要時間:ms) (加速度: a0~a18) (画面領域範囲)"
-                   details="ex. 速度z albert 30 300 
+                   details="ex. 速度z albert 30 300
+                   &#xA;
                    &#xA;z方向への速度(秒単位でのピクセル)を指定する。  
                    &#xA;  
                    &#xA;注: 演出コマンドの対象名に正規表現による複数指定が可能です。"
@@ -5160,6 +5242,7 @@
       <explanation lang="eng" name="speedz"
                    syntax="speedz [target(s)] [value] (duration:ms) (acceleration) (screenspace range)"
                    details="ex. speedz albert 30 300
+                   &#xA;
                    &#xA;defines the speed
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#speedz">
@@ -5167,6 +5250,7 @@
       <explanation lang="zh_cn" name="速度z"
                    syntax="速度z [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：速度z albert 30 300
+                   &#xA;
                    &#xA;指定z方向的速度（每秒像素数）。
                    &#xA;
                    &#xA;注：动画命令的目标名可以使用正则表达式指定多个。"
@@ -5176,7 +5260,8 @@
     <Command cmd="accelerationx">
       <explanation lang="jap" name="加速度x"
                    syntax="加速度x [対象名 (複数可)] [数値] (所要時間:ms) (加速度: a0~a18) (X衝突時初期化) (Y衝突時初期化) (画面領域範囲)"
-                   details="ex. 加速度x albert 30 300 
+                   details="ex. 加速度x albert 30 300
+                   &#xA;
                    &#xA;x方向への加速度を指定する。  
                    &#xA;  
                    &#xA;X衝突時初期化: 対象に侵入禁止が指定されて + 他の侵入禁止個体とX軸衝突を起こした場合、
@@ -5191,6 +5276,7 @@
       <explanation lang="eng" name="accelerationx"
                    syntax="accelerationx [target(s)] [value] (duration:ms) (acceleration) (screenspace range)"
                    details="ex. accelerationx albert 30 300
+                   &#xA;
                    &#xA;defines the acceleration
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#accelerationx">
@@ -5198,6 +5284,7 @@
       <explanation lang="zh_cn" name="加速度x"
                    syntax="加速度x [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (X碰撞时初始化) (Y碰撞时初始化) (画面区域范围)"
                    details="例如：加速度x albert 30 300
+                   &#xA;
                    &#xA;指定x方向的加速度。
                    &#xA;
                    &#xA;X碰撞时初始化：如果目标设置为不可穿透并在X轴与其他不可穿透对象发生碰撞，
@@ -5213,7 +5300,8 @@
     <Command cmd="accelerationy">
       <explanation lang="jap" name="加速度y"
                    syntax="速度y [対象名 (複数可)] [数値] (所要時間:ms) (加速度: a0~a18) (X衝突時初期化) (Y衝突時初期化) (画面領域範囲)"
-                   details="ex. 加速度y albert 30 300 
+                   details="ex. 加速度y albert 30 300
+                   &#xA;
                    &#xA;y方向への加速度を指定する。  
                    &#xA;  
                    &#xA;X衝突時初期化: 対象に侵入禁止が指定されて + 他の侵入禁止個体とX軸衝突を起こした場合、
@@ -5228,6 +5316,7 @@
       <explanation lang="eng" name="accelerationy"
                    syntax="accelerationy [target(s)] [value] (duration:ms) (acceleration) (screenspace range)"
                    details="ex. accelerationy albert 30 300
+                   &#xA;
                    &#xA;defines the acceleration
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#accelerationy">
@@ -5235,6 +5324,7 @@
       <explanation lang="zh_cn" name="加速度y"
                    syntax="加速度y [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (X碰撞时初始化) (Y碰撞时初始化) (画面区域范围)"
                    details="例如：加速度y albert 30 300
+                   &#xA;
                    &#xA;指定y方向的加速度。
                    &#xA;
                    &#xA;X碰撞时初始化：如果目标设置为不可穿透并在X轴与其他不可穿透对象发生碰撞，
@@ -5250,7 +5340,8 @@
     <Command cmd="accelerationz">
       <explanation lang="jap" name="加速度z"
                    syntax="加速度z [対象名 (複数可)] [数値] (所要時間:ms) (加速度: a0~a18) (画面領域範囲)"
-                   details="ex. 加速度z albert 30 300 
+                   details="ex. 加速度z albert 30 300
+                   &#xA;
                    &#xA;z方向への加速度を指定する。  
                    &#xA;  
                    &#xA;注: 演出コマンドの対象名に正規表現による複数指定が可能です。"
@@ -5259,6 +5350,7 @@
       <explanation lang="eng" name="accelerationz"
                    syntax="accelerationz [target(s)] [value] (duration:ms) (acceleration) (screenspace range)"
                    details="ex. accelerationz albert 30 300
+                   &#xA;
                    &#xA;defines the acceleration
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#accelerationz">
@@ -5266,6 +5358,7 @@
       <explanation lang="zh_cn" name="加速度z"
                    syntax="加速度z [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：加速度z albert 30 300
+                   &#xA;
                    &#xA;指定z方向的加速度。
                    &#xA;
                    &#xA;注：动画命令的目标名可以使用正则表达式指定多个。"
@@ -5275,7 +5368,8 @@
     <Command cmd="origin">
       <explanation lang="jap" name="焦点"
                    syntax="焦点 [対象名 (複数可)] [x: 0.0~1.0] [y: 0.0~1.0] (z: 0.0~1.0)"
-                   details="ex. 焦点 albert 0.0 1.0   
+                   details="ex. 焦点 albert 0.0 1.0
+                   &#xA;
                    &#xA;移動・拡大・回転の中心を指定します。  
                    &#xA;  
                    &#xA;注: 演出コマンドの対象名に正規表現による複数指定が可能です。"
@@ -5283,7 +5377,8 @@
       </explanation>
       <explanation lang="eng" name="origin"
                    syntax="origin [target(s)] [x: 0.0~1.0] [y: 0.0~1.0] (z: 0.0~1.0)"
-                   details="ex. origin albert 0.5 0.5 
+                   details="ex. origin albert 0.5 0.5
+                   &#xA;
                    &#xA;defines the origin for move, rotate, zoom 
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#origin">
@@ -5291,6 +5386,7 @@
       <explanation lang="zh_cn" name="焦点"
                    syntax="焦点 [目标名 (可多个)] [x: 0.0~1.0] [y: 0.0~1.0] (z: 0.0~1.0)"
                    details="例如：焦点 albert 0.0 1.0
+                   &#xA;
                    &#xA;指定移动、缩放、旋转的中心。
                    &#xA;
                    &#xA;注：动画命令的目标名可以使用正则表达式指定多个。"
@@ -5562,14 +5658,16 @@
     <Command cmd="cameraReset">
       <explanation lang="jap" name="カメラ初期化"
                    syntax="カメラ初期化"
-                   details="ex. カメラ初期化　 
+                   details="ex. カメラ初期化
+                   &#xA;
                    &#xA;カメラの位置・拡大・回転などを元に戻す。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraReset">
       </explanation>
       <explanation lang="eng" name="cameraReset"
                    syntax="cameraReset"
-                   details="ex. cameraReset　  
+                   details="ex. cameraReset
+                   &#xA;
                    &#xA;resets camera position, zoom, rotation, etc.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraReset">
@@ -5577,6 +5675,7 @@
       <explanation lang="zh_cn" name="视角重置"
                    syntax="视角重置"
                    details="例如：视角重置
+                   &#xA;
                    &#xA;重置视角位置、缩放和旋转。"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraReset">
       </explanation>
@@ -7634,6 +7733,7 @@
       <explanation lang="zh_cn" name="允许所有脚本"
                    syntax="允许所有脚本"
                    details="例如：允许所有脚本
+                   &#xA;
                    &#xA;移除通过“禁止脚本”添加的所有信息。
                    &#xA;
                    &#xA;"
@@ -7823,19 +7923,22 @@
     <Command cmd="keyTriggerReset">
       <explanation lang="jap" name="キートリガー初期化"
                    syntax="キートリガー初期化"
-                   details="ex. キートリガー初期化   
+                   details="ex. キートリガー初期化
+                   &#xA;
                    &#xA;登録されたキートリガーを全て初期化（解除）"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyTriggerReset">
       </explanation>
       <explanation lang="eng" name="keyTriggerReset"
                    syntax="keyTriggerReset"
-                   details="ex. keyTriggerReset   
+                   details="ex. keyTriggerReset
+                   &#xA;
                    &#xA;unregisters all registered key triggers"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyTriggerReset">
       </explanation>
       <explanation lang="zh_cn" name="重置按键触发器"
                    syntax="重置按键触发器"
                    details="例如：重置按键触发器
+                   &#xA;
                    &#xA;取消注册所有已注册的按键触发器"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyTriggerReset">
       </explanation>
@@ -7843,19 +7946,22 @@
     <Command cmd="keyTriggersActive">
       <explanation lang="jap" name="キートリガー活性化"
                    syntax="キートリガー活性化 [true / false]"
-                   details="ex. キートリガー活性化 true    
+                   details="ex. キートリガー活性化 true
+                   &#xA;
                    &#xA;登録されたキートリガーを全て活性化させるかどうかを指定。"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyTriggerActive">
       </explanation>
       <explanation lang="eng" name="keyTriggersActive"
                    syntax="keyTriggersActive [true / false]"
-                   details="ex. keyTriggerReset   
+                   details="ex. keyTriggerReset
+                   &#xA;
                    &#xA;activates / deactives triggering of key triggers"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyTriggerActive">
       </explanation>
       <explanation lang="zh_cn" name="激活按键触发器"
                    syntax="激活按键触发器 [true / false]"
                    details="例如：激活按键触发器 true
+                   &#xA;
                    &#xA;指定是否激活所有已注册的按键触发器。"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyTriggerActive">
       </explanation>
@@ -7883,6 +7989,7 @@
       <explanation lang="zh_cn" name="输入锁定"
                    syntax="输入锁定 [true / false]"
                    details="例如：输入锁定 true
+                   &#xA;
                    &#xA;使以下输入操作无效：
                    &#xA;包括按钮在内的UI
                    &#xA;按键触发器
@@ -8550,19 +8657,22 @@
     <Command cmd="play">
       <explanation lang="jap" name="再生続行"
                    syntax="再生続行 [対象]"
-                   details="ex. 再生続行 背景音  
+                   details="ex. 再生続行 背景音
+                   &#xA;
                    &#xA;一時停止された対象の再生を続行させます。"
                    reference="https://wikiwiki.jp/lightvn/commands/media#play">
       </explanation>
       <explanation lang="eng" name="play"
                    syntax="play [target name]"
-                   details="ex. play bgm  
+                   details="ex. play bgm
+                   &#xA;
                    &#xA;continues to play targets that were paused"
                    reference="https://wikiwiki.jp/lightvn/commands/media#play">
       </explanation>
       <explanation lang="zh_cn" name="继续播放"
                    syntax="继续播放 [目标]"
                    details="例如：继续播放 背景音乐
+                   &#xA;
                    &#xA;继续播放已暂停的目标。"
                    reference="https://wikiwiki.jp/lightvn/commands/media#play">
       </explanation>
@@ -8570,7 +8680,8 @@
     <Command cmd="volume">
       <explanation lang="jap" name="音量"
                    syntax="音量 [対象] [音量:%] (所要時間:ms) (加速度: a0~a18)"
-                   details="ex. 音量 背景音 10%  
+                   details="ex. 音量 背景音 10%
+                   &#xA;
                    &#xA;デフォルト: 100% 
                    &#xA;  
                    &#xA;注: コマンドに'2'をつけると相対的変化値として反映されます 
@@ -8582,7 +8693,8 @@
       </explanation>
       <explanation lang="eng" name="volume"
                    syntax="volume [target] [volume:%] (time(ms)) (acceleration: a0~a18)"
-                   details="ex. volume bgm 10%  
+                   details="ex. volume bgm 10%
+                   &#xA;
                    &#xA;default volume：100% 
                    &#xA;  
                    &#xA;Suffix: '2' will make this a relative command 
@@ -8592,6 +8704,7 @@
       <explanation lang="zh_cn" name="音量"
                    syntax="音量 [目标] [音量：%] (所需时间：ms) (加速度：a0~a18)"
                    details="例如：音量 背景音乐 10%
+                   &#xA;
                    &#xA;默认：100%
                    &#xA;
                    &#xA;注意：在命令后加'2'，将使其成为相对变化值。
@@ -9005,7 +9118,9 @@
                    syntax="变量 [变量名] [操作] [数值/变量名]"
                    details="当前可用操作：+= -= *= /=
                    &#xA;例如：变量 正确个数 = 0
+                   &#xA;
                    &#xA;注册变量'正确个数'并初始化为0。
+                   &#xA;
                    &#xA;例如：变量 正确个数 += 1
                    &#xA;对已注册的变量'正确个数'进行加1操作。
                    &#xA;
@@ -9593,19 +9708,22 @@
     <Command cmd="endGame">
       <explanation lang="jap" name="ゲームエンド"
                    syntax="ゲームエンド"
-                   details="ex. ゲームエンド  
+                   details="ex. ゲームエンド
+                   &#xA;
                    &#xA;アプリケーションを終了させます。(エディター上では作動しません。)"
                    reference="https://wikiwiki.jp/lightvn/commands/system#endGame">
       </explanation>
       <explanation lang="eng" name="endGame"
                    syntax="endGame"
-                   details="ex. endGame   
+                   details="ex. endGame
+                   &#xA;
                    &#xA;ends the application. (does not work in editor)"
                    reference="https://wikiwiki.jp/lightvn/commands/system#endGame">
       </explanation>
       <explanation lang="zh_cn" name="结束游戏"
                    syntax="结束游戏"
                    details="例如：结束游戏
+                   &#xA;
                    &#xA;结束应用程序。(在编辑器中不起作用。)"
                    reference="https://wikiwiki.jp/lightvn/commands/system#endGame">
       </explanation>
@@ -9613,7 +9731,8 @@
     <Command cmd="preLoad">
       <explanation lang="jap" name="プリーロード"
                    syntax="プリーロード [ファイル名] (永久)"
-                   details="ex. プリーロード /Movies/movie.mp4  
+                   details="ex. プリーロード /Movies/movie.mp4
+                   &#xA;
                    &#xA;ファイル名は全体経路が必要。例：/Images/scg_animation.png 
                    &#xA;  
                    &#xA;該当素材を必要とされる前にキャッシュする。 
@@ -9630,7 +9749,8 @@
       </explanation>
       <explanation lang="eng" name="preLoad"
                    syntax="preLoad [filename] (forever)"
-                   details="ex. preLoad Movies/movie.mp4  
+                   details="ex. preLoad Movies/movie.mp4
+                   &#xA;
                    &#xA;filename requires whole directory. Ex：Images/scg_animation.png
                    &#xA;
                    &#xA;'forever' will keep the file in cache until program end
@@ -9640,6 +9760,7 @@
       <explanation lang="zh_cn" name="预加载"
                    syntax="预加载 [文件名] (永久)"
                    details="例如：预加载 /Movies/movie.mp4
+                   &#xA;
                    &#xA;文件名需要完整路径。例：/Images/scg_animation.png
                    &#xA;
                    &#xA;在需要素材之前进行缓存。
@@ -9658,19 +9779,22 @@
     <Command cmd="releaseUnusedMemory">
       <explanation lang="jap" name="未使用素材開放"
                    syntax="未使用素材開放"
-                   details="ex. 未使用素材開放   
+                   details="ex. 未使用素材開放
+                   &#xA;
                    &#xA;現在使用されてない全ての素材のメモリーを開放します。"
                    reference="https://wikiwiki.jp/lightvn/commands/system#releaseUnusedMemory">
       </explanation>
       <explanation lang="eng" name="releaseUnusedMemory"
                    syntax="releaseUnusedMemory"
-                   details="ex. releaseUnusedMemory   
+                   details="ex. releaseUnusedMemory
+                   &#xA;
                    &#xA;releases unused resources from memory."
                    reference="https://wikiwiki.jp/lightvn/commands/system#releaseUnusedMemory">
       </explanation>
       <explanation lang="zh_cn" name="释放未使用内存"
                    syntax="释放未使用内存"
                    details="例如：释放未使用内存
+                   &#xA;
                    &#xA;释放当前未使用的所有资源的内存。"
                    reference="https://wikiwiki.jp/lightvn/commands/system#releaseUnusedMemory">
       </explanation>
@@ -9701,6 +9825,7 @@
       <explanation lang="eng" name="releaseUnusedMemoryAutoBound"
                    syntax="releaseUnusedMemoryAutoBound [bound]"
                    details="ex. releaseUnusedMemoryAutoBound  300
+                   &#xA;
                    &#xA;releases unused resources from memory if hit the bound"
                    reference="https://wikiwiki.jp/lightvn/commands/system#releaseUnusedMemoryAutoBound">
       </explanation>
@@ -10053,19 +10178,22 @@
     <Command cmd="screenshot">
       <explanation lang="jap" name="スクリーンショット"
                    syntax="スクリーンショット"
-                   details="ex. スクリーンショット   
+                   details="ex. スクリーンショット
+                   &#xA;
                    &#xA;Screenshotsフォルダーにスクリーンショットを保存"
                    reference="https://wikiwiki.jp/lightvn/commands/system#screenshot">
       </explanation>
       <explanation lang="eng" name="screenshot"
                    syntax="screenshot"
-                   details="ex. screenshot  
+                   details="ex. screenshot
+                   &#xA;
                    &#xA;saves screenshot in Screenshots/"
                    reference="https://wikiwiki.jp/lightvn/commands/system#screenshot">
       </explanation>
       <explanation lang="zh_cn" name="截图"
                    syntax="截图"
                    details="例如：截图
+                   &#xA;
                    &#xA;保存截图到Screenshots文件夹中"
                    reference="https://wikiwiki.jp/lightvn/commands/system#screenshot">
       </explanation>
@@ -10273,19 +10401,22 @@
     <Command cmd="dialogResult">
       <explanation lang="jap" name="ダイアログ結果"
                    syntax="ダイアログ結果 [yes/no]"
-                   details="ex. ダイアログ結果 yes 
+                   details="ex. ダイアログ結果 yes
+                   &#xA;
                    &#xA;現在表示中のダイアログの結果を送信します。"
                    reference="https://wikiwiki.jp/lightvn/commands/system#dialogResult">
       </explanation>
       <explanation lang="eng" name="dialogResult"
                    syntax="dialogResult [yes/no]"
-                   details="ex. dialogResult yes  
+                   details="ex. dialogResult yes
+                   &#xA;
                    &#xA;sets result of current displayed dialog"
                    reference="https://wikiwiki.jp/lightvn/commands/system#dialogResult">
       </explanation>
       <explanation lang="zh_cn" name="对话框结果"
                    syntax="对话框结果 [yes/no]"
                    details="例如：对话框结果 yes
+                   &#xA;
                    &#xA;设置当前显示对话框的结果。"
                    reference="https://wikiwiki.jp/lightvn/commands/system#dialogResult">
       </explanation>
@@ -10575,22 +10706,28 @@
     <Command cmd="event">
       <explanation lang="jap" name="イベント"
                    syntax="イベント [イベント名] [前/後] (コマンド)"
-                   details="ex. イベント load 後 スクリプト system/sys_events.txt load_after  
-                   &#xA;ロード後に該当スクリプトを実行する。  
+                   details="ex. イベント load 後 スクリプト system/sys_events.txt load_after
+                   &#xA;
+                   &#xA;ロード後に該当スクリプトを実行する。
+                   &#xA;
                    &#xA;注：コマンドをつけない場合、既存登録コマンドが解除される。"
                    reference="https://wikiwiki.jp/lightvn/commands/system#event">
       </explanation>
       <explanation lang="eng" name="event"
                    syntax="event [event name] [before/after] (command)"
-                   details="ex. event load after script system/sys_events.txt load_after  
-                   &#xA;loads script after load.  
+                   details="ex. event load after script system/sys_events.txt load_after
+                   &#xA;
+                   &#xA;loads script after load.
+                   &#xA;
                    &#xA;Note: no command is the same as unregistering a command for that event"
                    reference="https://wikiwiki.jp/lightvn/commands/system#event">
       </explanation>
       <explanation lang="zh_cn" name="事件"
                    syntax="事件 [事件名] [前/后] (命令)"
                    details="例如：事件 load 后 脚本 system/sys_events.txt load_after
+                   &#xA;
                    &#xA;在加载后执行指定脚本。
+                   &#xA;
                    &#xA;注意：不带命令则表示解除已注册的命令。"
                    reference="https://wikiwiki.jp/lightvn/commands/system#event">
       </explanation>
@@ -10599,19 +10736,22 @@
     <Command cmd="setTitleSuffix">
       <explanation lang="jap" name="タイトル追加文字列"
                    syntax="タイトル追加文字列　[文字列]"
-                   details="ex. タイトル追加文字列 &quot;8月16日 アリス&quot;   
+                   details="ex. タイトル追加文字列 &quot;8月16日 アリス&quot;
+                   &#xA;
                    &#xA;該当文字列をタイトル文字列 (ウインドウ等の) の後に追加します。"
                    reference="https://wikiwiki.jp/lightvn/commands/system#setTitleSuffix">
       </explanation>
       <explanation lang="eng" name="setTitleSuffix"
                    syntax="setTitleSuffix　[string: display message]"
-                   details="ex. setTitleSuffix &quot;hello world!&quot;   
+                   details="ex. setTitleSuffix &quot;hello world!&quot;
+                   &#xA;
                    &#xA;displays suffix after title in ex. window bar"
                    reference="https://wikiwiki.jp/lightvn/commands/system#setTitleSuffix">
       </explanation>
       <explanation lang="zh_cn" name="标题后缀"
                    syntax="标题后缀　[字符串]"
                    details="例如：标题后缀 &quot;8月16日 爱丽丝&quot;
+                   &#xA;
                    &#xA;将指定字符串追加到标题字符串（如窗口标题等）之后。"
                    reference="https://wikiwiki.jp/lightvn/commands/system#setTitleSuffix">
       </explanation>
@@ -10619,19 +10759,22 @@
     <Command cmd="SystemDialog">
       <explanation lang="jap" name="システムダイアログ"
                    syntax="システムダイアログ [文字列] (タイトル)"
-                   details="ex. システムダイアログ &quot;状況が発生しました。&quot;  
+                   details="ex. システムダイアログ &quot;状況が発生しました。&quot;
+                   &#xA;
                    &#xA;該当文字列のメッセージを発生させます。"
                    reference="https://wikiwiki.jp/lightvn/commands/system#SystemDialog">
       </explanation>
       <explanation lang="eng" name="SystemDialog"
                    syntax="SystemDialog [string: display message] (string: title)"
-                   details="ex. SystemDialog &quot;hello world!&quot;   
+                   details="ex. SystemDialog &quot;hello world!&quot;
+                   &#xA;
                    &#xA;displays message"
                    reference="https://wikiwiki.jp/lightvn/commands/system#SystemDialog">
       </explanation>
       <explanation lang="zh_cn" name="系统对话框"
                    syntax="系统对话框 [字符串] (标题)"
                    details="例如：系统对话框 &quot;出现了一些问题。&quot;
+                   &#xA;
                    &#xA;显示指定字符串的消息。"
                    reference="https://wikiwiki.jp/lightvn/commands/system#SystemDialog">
       </explanation>
@@ -10639,7 +10782,8 @@
     <Command cmd="SystemMessage">
       <explanation lang="jap" name="システムメッセージ"
                    syntax="システムメッセージ　[文字列]"
-                   details="ex. システムメッセージ &quot;状況が発生しました。&quot;  
+                   details="ex. システムメッセージ &quot;状況が発生しました。&quot;
+                   &#xA;
                    &#xA;該当文字列のメッセージを発生させる。
                    &#xA;
                    &#xA;スタックトレースが添付される。
@@ -10648,13 +10792,15 @@
       </explanation>
       <explanation lang="eng" name="SystemMessage"
                    syntax="SystemMessage　[string: display message]"
-                   details="ex. SystemMessage &quot;hello world!&quot;  
+                   details="ex. SystemMessage &quot;hello world!&quot;
+                   &#xA;
                    &#xA;displays message"
                    reference="https://wikiwiki.jp/lightvn/commands/system#SystemMessage">
       </explanation>
       <explanation lang="zh_cn" name="系统消息"
                    syntax="系统消息　[字符串]"
                    details="例如：系统消息 &quot;出现了一些问题。&quot;
+                   &#xA;
                    &#xA;显示指定字符串的消息。
                    &#xA;
                    &#xA;将附带堆栈跟踪信息。
@@ -10665,20 +10811,23 @@
     <Command cmd="SystemError">
       <explanation lang="jap" name="システムエラ"
                    syntax="システムエラ　[文字列]"
-                   details="ex. システムエラ &quot;状況が発生しました。&quot;   
+                   details="ex. システムエラ &quot;状況が発生しました。&quot;
+                   &#xA;
                    &#xA;該当文字列のメッセージを発生させます。エディターでのテストプレイ中の場合、 
                    &#xA;テストプレイ終了のオプションも一緒に提示。"
                    reference="https://wikiwiki.jp/lightvn/commands/system#SystemError">
       </explanation>
       <explanation lang="eng" name="SystemError"
                    syntax="SystemError　[string: display message]"
-                   details="ex. SystemError &quot;this is an error!&quot;   
+                   details="ex. SystemError &quot;this is an error!&quot;
+                   &#xA;
                    &#xA;displays message. if during testplay in editor, will also give option to stop testplay."
                    reference="https://wikiwiki.jp/lightvn/commands/system#SystemError">
       </explanation>
       <explanation lang="zh_cn" name="系统错误"
                    syntax="系统错误　[字符串]"
                    details="例如：系统错误 &quot;出现了一些问题。&quot;
+                   &#xA;
                    &#xA;显示指定字符串的错误消息。如果在编辑器中进行测试游戏，还会提供停止测试游戏的选项。"
                    reference="https://wikiwiki.jp/lightvn/commands/system#SystemError">
       </explanation>
@@ -10686,7 +10835,8 @@
     <Command cmd="SystemLog">
       <explanation lang="jap" name="システムログ"
                    syntax="システムログ　[文字列]"
-                   details="ex. システムログ &quot;状況を記録します。&quot;  
+                   details="ex. システムログ &quot;状況を記録します。&quot;
+                   &#xA;
                    &#xA;該当文字列のメッセージをdebug.txtに記録します。  
                    &#xA;
                    &#xA;エディターの場合：「ログ」タブ。
@@ -10696,13 +10846,15 @@
       </explanation>
       <explanation lang="eng" name="SystemLog"
                    syntax="SystemLog　[string: display message]"
-                   details="ex. SystemLog &quot;this is a log&quot;   
+                   details="ex. SystemLog &quot;this is a log&quot;
+                   &#xA;
                    &#xA;records message in debug.txt"
                    reference="https://wikiwiki.jp/lightvn/commands/system#SystemLog">
       </explanation>
       <explanation lang="zh_cn" name="系统日志"
                    syntax="系统日志　[字符串]"
                    details="例如：系统日志 &quot;记录当前状态。&quot;
+                   &#xA;
                    &#xA;将指定字符串的消息记录到debug.txt中。
                    &#xA;
                    &#xA;在编辑器中：“日志”选项卡。

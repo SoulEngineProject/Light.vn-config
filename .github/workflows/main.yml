@@ -1,0 +1,35 @@
+name: CI
+
+# Reference:
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push
+
+on: 
+  pull_request:
+    branches: [main]
+
+# kill previous commit checks for same PR
+# reference:
+# https://stackoverflow.com/a/72408109/1709725
+# https://docs.github.com/en/actions/using-jobs/using-concurrency
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # --------------------------------------------------------------------------------------------------
+  editorconfig:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: editorconfig-checker/action-editorconfig-checker@main
+      - run: editorconfig-checker
+
+  # references:
+  # https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home
+  # https://www.baeldung.com/linux/xmllint
+  xmllint:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get -y install libxml2-utils
+      - run: xmllint ./Data/Commands.xml ./Data/Strings_editor.xml --noout

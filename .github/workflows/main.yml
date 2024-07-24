@@ -3,17 +3,6 @@ name: CI
 # Reference:
 # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push
 
-#on: [push]
-
-# Reference:
-# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request
-# For this to work on PRs from forks, we need to setup permissions
-# Organisation > Settings > Fork pull request workflows in private repositories
-
-# Design Note:
-# I've added 'needs' to some jobs s.t. they run sequentially after one another.
-# This is just to save credits on github actions (s.t. we fail completely without parallel running too many jobs at the same time)
-
 on: 
   pull_request:
     branches: [main]
@@ -35,6 +24,9 @@ jobs:
       - uses: editorconfig-checker/action-editorconfig-checker@main
       - run: editorconfig-checker
 
+  # references:
+  # https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home
+  # https://www.baeldung.com/linux/xmllint
   xmllint:
     runs-on: ubuntu-20.04
     steps:

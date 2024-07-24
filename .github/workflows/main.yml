@@ -28,9 +28,16 @@ concurrency:
 
 jobs:
   # --------------------------------------------------------------------------------------------------
-  lint:
+  editorconfig:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v4
       - uses: editorconfig-checker/action-editorconfig-checker@main
       - run: editorconfig-checker
+
+  xmllint:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get -y install libxml2-utils
+      - run: xmllint ./Data/Commands.xml ./Data/Strings_editor.xml --noout

@@ -1,0 +1,36 @@
+name: CI
+
+# Reference:
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push
+
+#on: [push]
+
+# Reference:
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request
+# For this to work on PRs from forks, we need to setup permissions
+# Organisation > Settings > Fork pull request workflows in private repositories
+
+# Design Note:
+# I've added 'needs' to some jobs s.t. they run sequentially after one another.
+# This is just to save credits on github actions (s.t. we fail completely without parallel running too many jobs at the same time)
+
+on: 
+  pull_request:
+    branches: [main]
+
+# kill previous commit checks for same PR
+# reference:
+# https://stackoverflow.com/a/72408109/1709725
+# https://docs.github.com/en/actions/using-jobs/using-concurrency
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # --------------------------------------------------------------------------------------------------
+  lint:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: editorconfig-checker/action-editorconfig-checker@main
+      - run: editorconfig-checker

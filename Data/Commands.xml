@@ -5785,17 +5785,17 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraFollow3D">
       </explanation>
-      <explanation lang="zh_cn" name="3D视角跟随"
-                   syntax="1. 3D视角跟随 [目标名] [距离] [角度x] [角度y] [角度z] [平移位置x] [平移位置y] (大约完成时间:毫秒) (从目标位置)
-                   &#xA;2. 3D视角跟随 false"
+      <explanation lang="zh_cn" name="视角跟随3D"
+                   syntax="1. 视角跟随3D [目标名] [距离] [角度x] [角度y] [角度z] [平移位置x] [平移位置y] (大约完成时间:毫秒) (从目标位置)
+                   &#xA;2. 视角跟随3D false"
                    details="
-                   &#xA;例如：3D视角跟随 player 5 8 0 0 0 -50 100
-                   &#xA;3D视角的位置（绘制中心）将基于player的位置（绘制中心）移动到指定的参数位置。
+                   &#xA;例如：视角跟随3D player 5 8 0 0 0 -50 100
+                   &#xA;视角跟随3D（绘制中心）将基于player的位置（绘制中心）移动到指定的参数位置。
                    &#xA;
                    &#xA;从目标位置：
-                   &#xA;3D视角会先移动到目标位置，然后开始跟随。
+                   &#xA;视角会先移动到目标位置，然后开始跟随。
                    &#xA;
-                   &#xA;3D视角跟随 false：
+                   &#xA;视角跟随3D false：
                    &#xA;取消跟随。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraFollow3D">

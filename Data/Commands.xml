@@ -14,7 +14,7 @@
       </type>
       <type name="backlog">
         <val lang="jap" value="バックログ"/>
-        <val lang="zh_cn" value=""/>
+        <val lang="zh_cn" value="日志"/>
       </type>
       <type name="camera">
         <val lang="jap" value="カメラ"/>
@@ -104,7 +104,7 @@
       </option>
       <option name="middle">
         <val lang="jap" value="中央"/>
-        <val lang="zh_cn" value="中心"/>
+        <val lang="zh_cn" value="中"/>
       </option>
       <option name="left">
         <val lang="jap" value="左"/>
@@ -1803,7 +1803,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#trackbar">
       </explanation>
       <explanation lang="zh_cn" name="轨迹条"
-                   syntax="轨迹条 [名称] (轨迹球未光标接触素材) (轨迹球光标接触素材) (轨迹球点击素材) [x] [y] [r] [横/竖] [长度] [变量名称] [左侧值] [右侧值]"
+                   syntax="轨迹条 [名称] (轨迹球未光标接触素材) (轨迹球光标接触素材) (轨迹球点击素材) [x] [y] [r] [横/竖] [长度] [变量名称] [左侧值] [右侧值] (忽略透明) (视角选项) (调整后执行的命令)"
                    details="例如：轨迹条 trackbar sys_trackball.png 370 246 105 水平 530 bgm 0 100
                    &#xA;
                    &#xA;创建一个控制背景音乐音量的轨迹条。

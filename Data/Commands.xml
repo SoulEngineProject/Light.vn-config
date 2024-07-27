@@ -592,11 +592,11 @@
                    &#xA;前后移动：ws
                    &#xA;上下移动：rf
                    &#xA;
-                   &#xA;旋转 x,y 轴：按住光标滚轮并移动
+                   &#xA;旋转 x,y 轴：按住鼠标滚轮并移动
                    &#xA;旋转 z 轴：qe
                    &#xA;
-                   &#xA;左右移动：shift + 按住光标滚轮并移动。
-                   &#xA;缩放：光标滚轮（仅限 2D 视角）
+                   &#xA;左右移动：shift + 按住鼠标滚轮并移动。
+                   &#xA;缩放：鼠标滚轮（仅限 2D 视角）
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#var">
       </explanation>

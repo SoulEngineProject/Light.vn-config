@@ -249,6 +249,9 @@
       <option name="async">
         <val lang="jap" value="非同期"/>
       </option>
+      <option name="stateUpdate">
+        <val lang="jap" value="状態更新"/>
+      </option>
     </CmdOptions>
   </Keywords>
   <!--[COMMANDS]-->
@@ -1155,7 +1158,9 @@
                    syntax="walkAreaTileChar [name] [image] [frame-w] [frame-h] [tile-x] [tile-y] [layer] [image-center-x] [image-center-y] [direction]"
                    details="ex. walkAreaTileChar npc_b maps/tilemap_tut/lam/sheet.png 32 48 47 11 1 0 -15 down
                    &#xA;  
-                   &#xA;"
+                   &#xA;direction: left / right / down / up
+                   &#xA;
+                   &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/Map#walkAreaTileChar">
       </explanation>
       <explanation lang="zh_cn" name="移动区域瓦片角色"
@@ -1877,7 +1882,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textbox">
       </explanation>
       <explanation lang="eng" name="textbox"
-                   syntax="textbox [name] [x] [y] [layer] [width] [height] [font filename] [font size] (ignoreOverflow) (camera_option) [string] ()"
+                   syntax="textbox [name] [x] [y] [layer] [width] [height] [font filename] [font size] (ignoreOverflow) (camera_option) [string] (inBacklog)"
                    details="ex. textbox textbox1 0 400 81 800 200 r-mplus-1c-m.ttf 24
                    &#xA;
                    &#xA;ignoreOverflow)
@@ -1935,7 +1940,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#text">
       </explanation>
       <explanation lang="eng" name="text"
-                   syntax="text [name] [x] [y] [layer] [font filename] [font size(px)] (line size(px)) (direction: horizontal/vertical) (alignment：left/right/middle) (max text length) (camera_option) &quot;[string:text]&quot;"
+                   syntax="text [name] [x] [y] [layer] [font filename] [font size(px)] (line size(px)) (direction: horizontal/vertical) (alignment：left/right/middle) (max text length) (camera_option) &quot;[string:text]&quot; (inBacklog)"
                    details="ex. text msg_str 370 223 106  r-mplus-1c-m.ttf 24 &quot;hello world! &quot; 
                    &#xA;  
                    &#xA;注：「text」, unilke textbox, does not have flowing text and displays all text at once"
@@ -5721,7 +5726,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraFollow">
       </explanation>
       <explanation lang="eng" name="cameraFollow"
-                   syntax="1. cameraFollow [target_name] (x) (y) (r) (relative-x) (relative-y) (relative-r) (follow speed)
+                   syntax="1. cameraFollow [target_name] (x) (y) (r) (relative-x) (relative-y) (relative-r) (follow speed) (startAtTarget)
                    &#xA;2. cameraFollow false"
                    details="ex. cameraFollow kojiken x y -640 -360 200
                    &#xA;
@@ -5774,7 +5779,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraFollow3D">
       </explanation>
       <explanation lang="eng" name="cameraFollow3D"
-                   syntax="1. cameraFollow3D [target_name] [distance] [angle:x] [angle:y] [angle:z] [pan:x] [pan:y] (approx_time_to_target_ms)
+                   syntax="1. cameraFollow3D [target_name] [distance] [angle:x] [angle:y] [angle:z] [pan:x] [pan:y] (approx_time_to_target_ms) (startAtTarget)
                    &#xA;2. cameraFollow3D false"
                    details="ex. cameraFollow3D player 5 8 0 0 0 -50 100
                    &#xA;
@@ -7204,6 +7209,9 @@
                    &#xA;指定された対象が消滅されるまでまつ。  
                    &#xA;既に完了している場合、或いは対象がない場合、何もしない。
                    &#xA;ex. 待機 個体消滅 obj1
+                   &#xA;
+                   &#xA;- 待機 状態更新
+                   &#xA;[状態」コマンドによる状態更新を待つ。
                    &#xA;  
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/script#wait">
@@ -7255,6 +7263,9 @@
                    &#xA;waits for [object name] to destroy.
                    &#xA;if already done, or object does not exist, does nothing.
                    &#xA;ex. wait obj_destroy obj1
+                   &#xA;
+                   &#xA;- wait stateUpdate
+                   &#xA;wait for a [state] command to update the state.
                    &#xA;
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#wait">
@@ -7310,7 +7321,7 @@
     </Command>
     <Command cmd="jump">
       <explanation lang="jap" name="ジャンプ"
-                   syntax="1. ジャンプ [目的スクリプト] (目的スクリプト栞)
+                   syntax="1. ジャンプ [目的スクリプト / 現在] (目的スクリプト栞)
                    &#xA;2. ジャンプ [現在スクリプト栞]
                    &#xA;
                    &#xA;  "
@@ -7342,7 +7353,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/script#jump">
       </explanation>
       <explanation lang="eng" name="jump"
-                   syntax="1. jump [target script] (target bookmark)
+                   syntax="1. jump [target script / current] (target bookmark)
                    &#xA;2. jump [current bookmark]
                    &#xA;  "
                    details="ex. jump script.txt bookmark1   
@@ -8628,7 +8639,7 @@
     </Command>
     <Command cmd="autoVoice">
       <explanation lang="jap" name="自動ボイス"
-                   syntax="自動ボイス [個体名] [登録済み自動ボイス名]"
+                   syntax="自動ボイス [個体名] [登録済み自動ボイス名] (バックログ登録禁止)"
                    details="ex. 自動ボイス voice0 voice_ace  
                    &#xA;  
                    &#xA;「登録済み自動ボイス名」の情報に従い、「個体名」という名のボイスを再生します。 
@@ -8640,7 +8651,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#autoVoice">
       </explanation>
       <explanation lang="eng" name="autoVoice"
-                   syntax="autoVoice [name] [registered auto voice name]"
+                   syntax="autoVoice [name] [registered auto voice name] (noBacklogAddition)"
                    details="ex. autoVoice voice0 voice_ace  
                    &#xA;
                    &#xA;Following the settings from [setAutoVoice],
@@ -8653,7 +8664,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#autoVoice">
       </explanation>
       <explanation lang="zh_cn" name="自动语音"
-                   syntax="自动语音 [个体名] [注册的自动语音名]"
+                   syntax="自动语音 [个体名] [注册的自动语音名] (禁止添加到日志)"
                    details="例如：自动语音 voice0 voice_ace
                    &#xA;
                    &#xA;根据“注册的自动语音名”的信息，播放名为“个体名”的语音。

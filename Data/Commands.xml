@@ -14,7 +14,7 @@
       </type>
       <type name="backlog">
         <val lang="jap" value="バックログ"/>
-        <val lang="zh_cn" value="回溯"/>
+        <val lang="zh_cn" value="日志"/>
       </type>
       <type name="camera">
         <val lang="jap" value="カメラ"/>
@@ -72,11 +72,11 @@
       </option>
       <option name="2DView">
         <val lang="jap" value="2D視点"/>
-        <val lang="zh_cn" value="2D视图"/>
+        <val lang="zh_cn" value="2D视角"/>
       </option>
       <option name="3DView">
         <val lang="jap" value="3D視点"/>
-        <val lang="zh_cn" value="3D视图"/>
+        <val lang="zh_cn" value="3D视角"/>
       </option>
       <option name="noSave">
         <val lang="jap" value="セーブ無視"/>
@@ -104,7 +104,7 @@
       </option>
       <option name="middle">
         <val lang="jap" value="中央"/>
-        <val lang="zh_cn" value="中心"/>
+        <val lang="zh_cn" value="中"/>
       </option>
       <option name="left">
         <val lang="jap" value="左"/>
@@ -176,7 +176,7 @@
       </option>
       <option name="followSystemAuto">
         <val lang="jap" value="オート設定反映"/>
-        <val lang="zh_cn" value="跟随系统自动"/>
+        <val lang="zh_cn" value="自动跟随系统"/>
       </option>
       <option name="show">
         <val lang="jap" value="表示"/>
@@ -212,11 +212,11 @@
       </option>
       <option name="noBacklogAddition">
         <val lang="jap" value="バックログ登録禁止"/>
-        <val lang="zh_cn" value="禁止添加到日志"/>
+        <val lang="zh_cn" value="禁止加入日志"/>
       </option>
       <option name="inBacklog">
         <val lang="jap" value="バックログ登録"/>
-        <val lang="zh_cn" value="添加到日志"/>
+        <val lang="zh_cn" value="加入日志"/>
       </option>
       <option name="freeOnReturnToMain">
         <val lang="jap" value="原点回帰時解除"/>
@@ -248,6 +248,7 @@
       </option>
       <option name="async">
         <val lang="jap" value="非同期"/>
+        <val lang="zh_cn" value="异步"/>
       </option>
       <option name="stateUpdate">
         <val lang="jap" value="状態更新"/>
@@ -292,7 +293,7 @@
                &#xA;
                &#xA;常用输入)
                &#xA;- (视角选项)
-               &#xA;如果设置了 (视角附着)，
+               &#xA;如果设置了 (绑定视角)，
                &#xA;实体将附着在视角上，不再受视角移动影响。
                &#xA;
                &#xA;注意：所有文件名也可以表示为字符串
@@ -483,13 +484,13 @@
                    syntax=""
                    details="视角选项：
                    &#xA;
-                   &#xA;视角附着
+                   &#xA;绑定视角
                    &#xA;不受视角变化影响的显示。（好像实体粘在视角上一样）
                    &#xA;
-                   &#xA;2D视图
+                   &#xA;2D视角
                    &#xA;显示为“视角模式 0”状态下的实体。
                    &#xA;
-                   &#xA;3D视图
+                   &#xA;3D视角
                    &#xA;显示为“视角模式 3”状态下的实体。
                    &#xA;
                    &#xA;锁定Y轴
@@ -634,12 +635,20 @@
                    &#xA;Suffix:'0'will display object as alpha: 0。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#empty">
       </explanation>
-      <explanation lang="zh_cn" name="empty"
-                   syntax="empty [名称] [x] [y] [r] (视角选项)"
-                   details="例如：empty id0 100 100 80
+      <explanation lang="zh_cn" name="个体"
+                   syntax="个体 [名字] [x] [y] [r] (视角选项)"
+                   details="例如：个体 id0 150 30 50  
+                   &#xA;在指定位置创建名为id0的个体。 
+                   &#xA;主要用作“父子类”命令中的便利个体。 
+                   &#xA;  
+                   &#xA;具有以下特性：  
+                   &#xA;色调(rgba)  
+                   &#xA;位置、缩放、旋转  
                    &#xA;
-                   &#xA;注意：如果设置了 '视角选项'，则将忽略视角。
-                   &#xA;后缀：'0' 将以 alpha：0 显示实体。"
+                   &#xA;注意：视角选项示例。绑定视角（忽略视角操作的影响）  
+                   &#xA;其他“视角选项”可以在命令目录的“视角选项”中查看。 
+                   &#xA;注意：在命令中添加'0'将以透明度为0的状态显示。 
+                   &#xA; (例如：立绘0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#empty">
       </explanation>
     </Command>
@@ -796,7 +805,7 @@
                    &#xA;0: 原样
                    &#xA;1: 平滑（在图像之间进行插值：默认）
                    &#xA;提示：对于有大量口型同步效果的作品，建议统一调整整体语音音量并重复使用值，以避免过度负担。
-                   &#xA;注：视角选项示例：视角附着（不受视角操作影响）
+                   &#xA;注：视角选项示例：绑定视角（不受视角操作影响）
                    &#xA;其他“视角选项”请参阅命令手册中的“视角选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
@@ -845,7 +854,7 @@
                    &#xA;0: 缩放中心以适应。
                    &#xA;1: 将中心部分作为平铺处理。如果指定尺寸不足以放置平铺，则九格立绘的中心尺寸增大为平铺大小的倍数。
                    &#xA;2: 将中心部分作为平铺处理。如果指定尺寸不足以放置平铺，则平铺区域缩放以适应。
-                   &#xA;注：视角选项示例：视角附着（不受视角操作影响）
+                   &#xA;注：视角选项示例：绑定视角（不受视角操作影响）
                    &#xA;其他“视角选项”请参阅命令手册中的“视角选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
@@ -875,14 +884,14 @@
                    &#xA;Suffix:'0'will display object as alpha: 0。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg">
       </explanation>
-      <explanation lang="zh_cn" name="流动图"
-                   syntax="流动图 [名称] [文件名 / 动画名称] [x] [y] [r] [每秒移动] (垂直) (偏移:px) (视角选项)"
-                   details="例如：流动图 bg_effect scrolling_background.png 0 0 10 60
+      <explanation lang="zh_cn" name="流动图片"
+                   syntax="流动图片 [名称] [文件名 / 动画名称] [x] [y] [r] [每秒移动] (竖) (偏移:px) (视角选项)"
+                   details="例如：流动图片 bg_effect scrolling_background.png 0 0 10 60
                    &#xA;  
                    &#xA;图像根据每秒的移动值移动。
-                   &#xA;注：如果设置了“垂直”选项，则垂直流动。
+                   &#xA;注：如果设置了“竖”选项，则竖流动。
                    &#xA;注：建议使用的图像在流动方向上的尺寸与屏幕相同或更大。
-                   &#xA;注：视角选项示例：视角附着（不受视角操作影响）
+                   &#xA;注：视角选项示例：绑定视角（不受视角操作影响）
                    &#xA;其他“视角选项”请参阅命令手册中的“视角选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
@@ -912,7 +921,7 @@
                    syntax="模型 [名称] [文件名] [x] [y] [r] (视角选项)"
                    details="例如：模型 stairs stairs.glb 0 400 0
                    &#xA;  
-                   &#xA;注：视角选项示例：视角附着（不受视角操作影响）
+                   &#xA;注：视角选项示例：绑定视角（不受视角操作影响）
                    &#xA;其他“视角选项”请参阅命令手册中的“视角选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
@@ -969,12 +978,12 @@
                    &#xA;Suffix:'0'will display object as alpha: 0。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#light">
       </explanation>
-      <explanation lang="zh_cn" name="灯光"
-                   syntax="灯光 [名称] [x] [y] [r] (视角选项)"
-                   details="例如：灯光 light0 100 100 80
+      <explanation lang="zh_cn" name="光源"
+                   syntax="光源 [名称] [x] [y] [r] (视角选项)"
+                   details="例如：光源 light0 100 100 80
                    &#xA;  
-                   &#xA;要使其生效，必须将灯光模式设置为1或更高。
-                   &#xA;注：视角选项示例：视角附着（不受视角操作影响）
+                   &#xA;要使其生效，必须将光源模式设置为1或更高。
+                   &#xA;注：视角选项示例：绑定视角（不受视角操作影响）
                    &#xA;其他“视角选项”请参阅命令手册中的“视角选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
@@ -1004,14 +1013,14 @@
                    &#xA;Suffix:'0'will display object as alpha: 0。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#lightMode">
       </explanation>
-      <explanation lang="zh_cn" name="灯光模式"
-                   syntax="灯光模式 [模式]"
-                   details="例如：灯光模式 1
+      <explanation lang="zh_cn" name="光源模式"
+                   syntax="光源模式 [模式]"
+                   details="例如：光源模式 1
                    &#xA;  
                    &#xA;模式：
-                   &#xA;0: 不使用灯光。模型不受灯光的影响。（默认）
-                   &#xA;1: 使用灯光。
-                   &#xA;注：视角选项示例：视角附着（不受视角操作影响）
+                   &#xA;0: 不使用光源。模型不受光源的影响。（默认）
+                   &#xA;1: 使用光源。
+                   &#xA;注：视角选项示例：绑定视角（不受视角操作影响）
                    &#xA;其他“视角选项”请参阅命令手册中的“视角选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
@@ -1036,11 +1045,11 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/image#lightApply">
       </explanation>
-      <explanation lang="zh_cn" name="应用灯光"
-               syntax="应用灯光 [名称 (多选)] [true/false]"
-               details="例如：应用灯光 alice true
+      <explanation lang="zh_cn" name="光源应用"
+               syntax="光源应用 [名称 (多选)] [true/false]"
+               details="例如：光源应用 alice true
                &#xA;  
-               &#xA;如果为 false 并且灯光模式至少为 1，则不应用灯光效果。"
+               &#xA;如果为 false 并且光源模式至少为 1，则不应用光源效果。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#lightApply">
       </explanation>
     </Command>
@@ -1401,15 +1410,15 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#button">
       </explanation>
       <explanation lang="zh_cn" name="按钮"
-                   syntax="按钮 [名称] (按钮未触摸图像) (按钮触摸时图像) (按钮点击时图像) [x] [y] [r] (忽略透明) (视角选项) (Light.vn命令)"
-                   details="例如：按钮 button1 untouched-image.png touched-image.png clicked-image.png 300 400 200 视角附着 跳转 tut.txt
+                   syntax="按钮 [名称] (按钮常态图像) (光标接触图像) (按钮点击图像) [x] [y] [r] (忽略透明) (视角选项) (Light.vn命令)"
+                   details="例如：按钮 button1 untouched-image.png touched-image.png clicked-image.png 300 400 200 绑定视角 跳转 tut.txt
                    &#xA;
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）
                    &#xA;注：图像大小需要保持一致。
-                   &#xA;注：按钮触摸区域支持按钮的移动和缩放，但当前不支持放大。
-                   &#xA;如果未指定“按钮未触摸图像”等素材，则使用“触摸素材设置”的配置。
-                   &#xA;参考：按钮触摸时播放的音效名称：“vn_ + 按钮名称 + _touchedSound”，例如：vn_button1_touchedSound
+                   &#xA;注：按钮光标接触区域支持按钮的移动和缩放，但当前不支持放大。
+                   &#xA;如果未指定“按钮常态图像”等素材，则使用“光标接触素材设置”的配置。
+                   &#xA;参考：按钮在光标接触时播放的音效名称：“vn_ + 按钮名称 + _touchedSound”，例如：vn_button1_touchedSound
                    &#xA;按钮点击时播放的音效名称：“vn_ + 按钮名称 + _clickedSound”，例如：vn_button1_clickedSound
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#button">
@@ -1449,7 +1458,7 @@
       </explanation>
       <explanation lang="zh_cn" name="按钮文字"
                   syntax="按钮文字 [按钮名称] [字体文件名] [字体大小] [&quot;文本&quot;]"
-                  details="例如：按钮文字 button1 r-mplus-1c-m.ttf 24 &quot;触摸我！&quot;
+                  details="例如：按钮文字 button1 r-mplus-1c-m.ttf 24 &quot;点击我！&quot;
                   &#xA;
                   &#xA;在指定的按钮中间显示文字。
                   &#xA;
@@ -1485,8 +1494,8 @@
                   details="例如：按钮组 choice_
                   &#xA;
                   &#xA;将所有以'choice_'开头的按钮分组。
-                  &#xA;当分组中的任何一个按钮被触摸时，该组中的所有按钮将不再接受外部输入。
-                  &#xA;建议在选择场景中使用，当触摸一个选项时应禁用所有选项。
+                  &#xA;当分组中的任何一个按钮被光标接触住时，该组中的所有按钮将不再接受外部输入。
+                  &#xA;建议在选择场景中使用，当用光标接触在一个选项时应禁用所有选项。
                   &#xA;当组中的所有按钮都被移除时，组将自动解散。"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#setButtonGroup">
       </explanation>
@@ -1509,14 +1518,14 @@
                    &#xA;defines the touchable area inside the button texture"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchArea">
       </explanation>
-      <explanation lang="zh_cn" name="触摸区域"
-                   syntax="触摸区域 [目标名称] [从左上角的x] [从左上角的y] [宽度] [高度]"
-                   details="例如：触摸区域 btn0 0 0 100 100
+      <explanation lang="zh_cn" name="光标接触区域"
+                   syntax="光标接触区域 [目标名称] [从左上角的x] [从左上角的y] [宽度] [高度]"
+                   details="例如：光标接触区域 btn0 0 0 100 100
                    &#xA;
-                   &#xA;定义按钮纹理内的可触摸区域。
+                   &#xA;定义按钮纹理内的可让光标接触的区域。
                    &#xA;注：目标名称可以使用正则表达式。"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchArea">
-      </explanation>
+      </explanation>   
     </Command>
     <Command cmd="touchAreaScreen">
       <explanation lang="jap" name="画面内反応範囲"
@@ -1536,11 +1545,11 @@
                    &#xA;defines the touchable area within the screen"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchAreaScreen">
       </explanation>
-      <explanation lang="zh_cn" name="屏幕触摸区域"
-                   syntax="屏幕触摸区域 [名称] [从左上角的x] [从左上角的y] [宽度] [高度]"
-                   details="例如：屏幕触摸区域 btn0 0 0 100 100
+      <explanation lang="zh_cn" name="屏幕光标接触区域"
+                   syntax="屏幕光标接触区域 [名称] [从左上角的x] [从左上角的y] [宽度] [高度]"
+                   details="例如：屏幕光标接触区域 btn0 0 0 100 100
                    &#xA;
-                   &#xA;定义屏幕内的可触摸区域。
+                   &#xA;定义屏幕内的可用光标接触的区域。
                    &#xA;注：目标名称可以使用正则表达式。"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchAreaScreen">
       </explanation>
@@ -1563,11 +1572,11 @@
                    &#xA;defines the touchable area within the screen"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchAlpha">
       </explanation>
-      <explanation lang="zh_cn" name="触摸透明度"
-                   syntax="触摸透明度 [目标名称] [最小透明值 (默认: 255)]"
-                   details="例如：触摸透明度 btn0 100
+      <explanation lang="zh_cn" name="光标接触透明度"
+                   syntax="光标接触透明度 [目标名称] [最小透明值 (默认: 255)]"
+                   details="例如：光标接触透明度 btn0 100
                    &#xA;
-                   &#xA;如果目标的透明度大于或等于[最小透明值]，则允许触摸或其他反应。
+                   &#xA;如果目标的透明度大于或等于[最小透明值]，则允许光标接触或其他反应。
                    &#xA;注：目标名称可以使用正则表达式。"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchAlpha">
       </explanation>
@@ -1594,7 +1603,7 @@
                    details="例如：激活条件 btn0 &quot;lvSystem::WindowMode() == 2&quot;
                    &#xA;
                    &#xA;指定按钮激活的条件。
-                   &#xA;如果指定，按钮的触摸状态不由用户触摸决定，而是根据指定的条件反映。"
+                   &#xA;如果指定，按钮的光标接触状态不由用户的光标接触决定，而是根据指定的条件反映。"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#highlight_if">
       </explanation>
     </Command>
@@ -1614,9 +1623,9 @@
                    details="ex. onTouchStart btn1 script textbox.txt"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnTouch">
       </explanation>
-      <explanation lang="zh_cn" name="触摸开始时"
-                   syntax="触摸开始时 [个体名称] [触摸开始时执行的命令]"
-                   details="例如：触摸开始时 btn1 脚本 textbox.txt
+      <explanation lang="zh_cn" name="光标接触开始时"
+                   syntax="光标接触开始时 [个体名称] [光标接触开始时执行的命令]"
+                   details="例如：光标接触开始时 btn1 脚本 textbox.txt
                    &#xA;
                    &#xA;支持的个体类型：
                    &#xA;按钮"
@@ -1639,9 +1648,9 @@
                    details="ex. onTouchExit btn1 script textbox.txt"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnNotTouch">
       </explanation>
-      <explanation lang="zh_cn" name="触摸结束时"
-                   syntax="触摸结束时 [按钮名称] [触摸结束时执行的命令]"
-                   details="例如：触摸结束时 btn1 脚本 textbox.txt
+      <explanation lang="zh_cn" name="光标接触结束时"
+                   syntax="光标接触结束时 [按钮名称] [光标接触结束时执行的命令]"
+                   details="例如：光标接触结束时 btn1 脚本 textbox.txt
                    &#xA;
                    &#xA;支持的个体类型：
                    &#xA;按钮"
@@ -1680,14 +1689,14 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchStateForce">
       </explanation>
-      <explanation lang="zh_cn" name="强制触摸状态"
-                   syntax="1. 强制触摸状态 [个体名称] [状态：0, 1, 2]
-                   &#xA;2. 强制触摸状态 [个体名称] false"
-                   details="例如：强制触摸状态 btn1 1
+      <explanation lang="zh_cn" name="强制光标接触状态"
+                   syntax="1. 强制光标接触状态 [个体名称] [状态：0, 1, 2]
+                   &#xA;2. 强制光标接触状态 [个体名称] false"
+                   details="例如：强制光标接触状态 btn1 1
                    &#xA;
                    &#xA;状态：
-                   &#xA;0) 未触摸
-                   &#xA;1) 触摸
+                   &#xA;0) 未在光标接触
+                   &#xA;1) 已在光标接触
                    &#xA;2) 点击"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchStateForce">
       </explanation>
@@ -1723,13 +1732,13 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchableRes">
       </explanation>
-      <explanation lang="zh_cn" name="触摸素材"
-                   syntax="触摸素材 [UI未触摸图像] [UI触摸时图像] [UI点击时图像] (UI触摸时音效) (UI点击时音效)"
-                   details="例如：触摸素材 untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg
+      <explanation lang="zh_cn" name="默认光标接触素材"
+                   syntax="光标接触素材 [UI未光标接触图像] [UI光标接触时图像] [UI点击时图像] (UI光标接触时音效) (UI点击时音效)"
+                   details="例如：光标接触素材 untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg
                    &#xA;
-                   &#xA;声明“所有之后创建的可触摸个体”（例如：按钮）的默认素材。
+                   &#xA;声明“所有之后创建的可让光标接触的个体”（例如：按钮）的默认素材。
                    &#xA;如果在创建个体时未声明特定的使用素材，则使用此处声明的素材。
-                   &#xA;可触摸个体)
+                   &#xA;可让光标接触的个体)
                    &#xA;按钮
                    &#xA;轨迹条
                    &#xA;UI激活时图像) 当“激活条件”为true时。
@@ -1764,15 +1773,15 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchFilterRange">
       </explanation>
-      <explanation lang="zh_cn" name="触摸处理优先级"
-                   syntax="触摸处理优先级 [优先级 (默认：0)]"
-                   details="在当前屏幕区域中，当多个可触摸个体（例如：按钮）同时被点击时，设置触摸处理的优先级。
+      <explanation lang="zh_cn" name="光标接触处理优先级"
+                   syntax="光标接触处理优先级 [优先级 (默认：0)]"
+                   details="在当前屏幕区域中，当多个可光标接触个体（例如：按钮）同时被点击时，设置光标接触处理的优先级。
                    &#xA;
-                   &#xA;例如：触摸处理优先级 0
+                   &#xA;例如：光标接触处理优先级 0
                    &#xA;
-                   &#xA;0) 不优先处理任何内容。允许所有触摸。
-                   &#xA;例如：触摸处理优先级 1
-                   &#xA;1) 仅允许处理最顶层个体的触摸。"
+                   &#xA;0) 不优先处理任何内容。允许所有光标接触。
+                   &#xA;例如：光标接触处理优先级 1
+                   &#xA;1) 仅允许处理最顶层个体的光标接触。"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchFilterRange">
       </explanation>
     </Command>
@@ -1799,7 +1808,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#trackbar">
       </explanation>
       <explanation lang="zh_cn" name="轨迹条"
-                   syntax="轨迹条 [名称] (轨迹球未触摸素材) (轨迹球触摸素材) (轨迹球点击素材) [x] [y] [r] [横/竖] [宽度] [变量名称] [左侧值] [右侧值]"
+                   syntax="轨迹条 [名称] (轨迹球未光标接触素材) (轨迹球光标接触素材) (轨迹球点击素材) [x] [y] [r] [横/竖] [长度] [变量名称] [左侧值] [右侧值] (忽略透明) (视角选项) (调整后执行的命令)"
                    details="例如：轨迹条 trackbar sys_trackball.png 370 246 105 水平 530 bgm 0 100
                    &#xA;
                    &#xA;创建一个控制背景音乐音量的轨迹条。
@@ -1807,7 +1816,7 @@
                    &#xA;例如：轨迹条 trackbar sys_trackball.png 370 246 105 水平 530 bgm 0 100 音效 test_sound test.ogg
                    &#xA;
                    &#xA;调整后，执行“音效 test_sound test.ogg”。
-                   &#xA;如果未指定素材，则使用“触摸素材设置”配置。"
+                   &#xA;如果未指定素材，则使用“光标接触素材设置”配置。"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#trackbar">
       </explanation>
     </Command>
@@ -1892,7 +1901,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textbox">
       </explanation>
       <explanation lang="zh_cn" name="文本框"
-                   syntax="文本框 [名称] [x] [y] [r] [宽度] [高度] [字体文件名] [字体大小] [忽略溢出] (视角选项) [&quot;字符串:文本内容&quot;] (回溯记录)"
+                   syntax="文本框 [名称] [x] [y] [r] [宽度] [高度] [字体文件名] [字体大小] [忽略溢出] (视角选项) [&quot;字符串:文本内容&quot;] (加入日志)"
                    details="例如：文本框 textbox1 0 400 81 800 200 r-mplus-1c-m.ttf 24
                    &#xA;
                    &#xA;忽略溢出：如果设置，则即使文本超出文本框范围也不会报错。
@@ -1948,7 +1957,7 @@
       </explanation>
       <explanation lang="zh_cn" name="文本"
                    syntax="文本 [名称] [x] [y] [r] [字体文件名] [字体大小(px)] (行大小)
-                   &#xA;(方向：横/纵) (对齐：左/右/中) (最大文本长度) (相机选项) &quot;[字符串:文本内容]&quot; (回溯记录)"
+                   &#xA;(方向：横/纵) (对齐：左/右/中) (最大文本长度) (视角选项) &quot;[字符串:文本内容]&quot; (加入日志)"
                    details="例如：文本 msg_str 370 223 106 r-mplus-1c-m.ttf 24 &quot;内容! &quot;
                    &#xA;
                    &#xA;注：“文本”不同于文本框的文本，不会流动，所有文本会立即显示。
@@ -2193,9 +2202,9 @@
                    &#xA;Note: When 'target name' is set, settings will be applied to whole current text. If not, will be applied to next texts"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textPop">
       </explanation>
-      <explanation lang="zh_cn" name="文本删除"
-                  syntax="文本删除 (目标名称) [删除字符数]"
-                  details="例如：文本删除 3
+      <explanation lang="zh_cn" name="文字清除"
+                  syntax="文字清除 (目标名称) [删除字符数]"
+                  details="例如：文字清除 3
                   &#xA;
                   &#xA;从目标的文本末尾删除“删除字符数”个字符。
                   &#xA;
@@ -2361,12 +2370,12 @@
                    &#xA;Note: When 'target name' is set, settings will be applied to whole current text. If not, will be applied to next texts"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textColourSkippable">
       </explanation>
-      <explanation lang="zh_cn" name="已读文字颜色"
-                   syntax="1. 已读文字颜色 (目标名称) [r:0-255] [g:0-255] [b:0-255] (a:0-255)
-                   &#xA;2. 已读文字颜色 (目标名称) #[HEX rgb / rgba]
-                   &#xA;3. 已读文字颜色 (目标名称) #[HEX rgb / rgba1] [颜色1反映度]% #[HEX rgb / rgba2]
+      <explanation lang="zh_cn" name="已读字体颜色"
+                   syntax="1. 已读字体颜色 (目标名称) [r:0-255] [g:0-255] [b:0-255] (a:0-255)
+                   &#xA;2. 已读字体颜色 (目标名称) #[HEX rgb / rgba]
+                   &#xA;3. 已读字体颜色 (目标名称) #[HEX rgb / rgba1] [颜色1反映度]% #[HEX rgb / rgba2]
                    &#xA;"
-                   details="例如：已读文字色 #1f1f1f1f
+                   details="例如：已读字体颜色 #1f1f1f1f
                    &#xA;
                    &#xA;当文字或文字框的文本被判定为已读时，
                    &#xA;如果文字或文字框的颜色与指定的颜色相同，
@@ -2374,7 +2383,7 @@
                    &#xA;
                    &#xA;换句话说，即使文字色已读被指定给文字或文字框，
                    &#xA;如果文字或文字框的颜色是0 0 0，
-                   &#xA;&lt;文字色 255 0 0&gt;特殊文本&lt;/&gt;
+                   &#xA;&lt;文字颜色 255 0 0&gt;特殊文本&lt;/&gt;
                    &#xA;等文本即使被判定为已读，也会保持红色和特殊指定的颜色。
                    &#xA;
                    &#xA;注：目标名称可以是正则表达式
@@ -2732,7 +2741,7 @@
       </explanation>
       <explanation lang="zh_cn" name="文本方向"
                    syntax="文本方向 (对象名) [竖/横:default]"
-                   details="例如：文本方向 縦
+                   details="例如：文本方向 竖
                    &#xA;
                    &#xA;注: 对象名允许使用正则表达式
                    &#xA;注: 如果指定了'对象名'，设置将立即应用于整个当前文本。如果未指定，将应用于下一个文本。"
@@ -2756,8 +2765,8 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textAlignment">
       </explanation>
       <explanation lang="zh_cn" name="文本对齐"
-                   syntax="文本对齐 (对象名) [左:default/右/中央]"
-                   details="例如：文本对齐 中央
+                   syntax="文本对齐 (对象名) [左:default/右/中]"
+                   details="例如：文本对齐 中
                    &#xA;
                    &#xA;注: 对象名允许使用正则表达式
                    &#xA;注: 设置将立即应用于整个当前文本。"
@@ -2785,13 +2794,13 @@
                    &#xA;Detail: Creates a sprite with name: (target name + _skin) as child of textbox."
                    reference="https://wikiwiki.jp/lightvn/commands/text#textboxSkin">
       </explanation>
-      <explanation lang="zh_cn" name="文本框皮肤"
-                   syntax="文本框皮肤 (对象名) [文件名 / 已注册动画名] [x] [y] (缩放比例) (缩放比例 y)"
-                   details="例如：文本框皮肤 skin.png 300 400
-                   &#xA;例如：文本框皮肤 skin.png 300 400 80%
+      <explanation lang="zh_cn" name="文本框材质"
+                   syntax="文本框材质 (对象名) [文件名 / 已注册动画名] [x] [y] (缩放比例) (缩放比例 y)"
+                   details="例如：文本框材质 skin.png 300 400
+                   &#xA;例如：文本框材质 skin.png 300 400 80%
                    &#xA;
                    &#xA;详情：创建一个名为「对象名 + _skin」的图片作为目标文本框的子级。
-                   &#xA;因此，如果要对皮肤进行额外的调整，请将「对象名 + _skin」作为目标。
+                   &#xA;因此，如果要对材质进行额外的调整，请将「对象名 + _skin」作为目标。
                    &#xA;
                    &#xA;注: 对象名允许使用正则表达式"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textboxSkin">
@@ -2920,11 +2929,11 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textRepeat">
       </explanation>
-      <explanation lang="zh_cn" name="重复输出文字"
-                   syntax="重复输出文字 (对象名) [true/false]"
-                   details="例如：重复输出文字 true
+      <explanation lang="zh_cn" name="文本重复输出"
+                   syntax="文本重复输出 (对象名) [true/false]"
+                   details="例如：文本重复输出 true
                    &#xA;
-                   &#xA;指定目标的文字输出结束后反复从头开始输出。
+                   &#xA;指定目标的文字输出结束后循环从头开始输出。
                    &#xA;
                    &#xA;如果文字速度设置为「自动跟随」，则在「vn_sysAutoWait」时间后重复输出。
                    &#xA;
@@ -3319,10 +3328,10 @@
                    &#xA;use textbox:「backlog_textbox」as settings for the backlog."
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogConfig">
       </explanation>
-      <explanation lang="zh_cn" name="回溯日志设置"
-                   syntax="回溯日志设置 [使用文本框] (语音播放按钮文件名) (语音播放按钮触摸时文件名)"
-                   details="例如：回溯日志设置 backlog_textbox sys\sys_log_sound.png sys\sys_log_sound@.png
-                   &#xA;使用文本框「backlog_textbox」作为回溯日志的设置。
+      <explanation lang="zh_cn" name="日志设置"
+                   syntax="日志设置 [使用文本框] (语音播放按钮文件名) (语音播放按钮光标接触时文件名)"
+                   details="例如：日志设置 backlog_textbox sys\sys_log_sound.png sys\sys_log_sound@.png
+                   &#xA;使用文本框「backlog_textbox」作为日志的设置。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogConfig">
       </explanation>
@@ -3349,12 +3358,12 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogVoiceOffset">
       </explanation>
-      <explanation lang="zh_cn" name="回溯日志语音位置"
-                   syntax="回溯日志语音位置 [x] [y]"
-                   details="例如：回溯日志语音位置 10 -10
+      <explanation lang="zh_cn" name="日志语音位置"
+                   syntax="日志语音位置 [x] [y]"
+                   details="例如：日志语音位置 10 -10
                    &#xA;
                    &#xA;默认值：(0, 0)。
-                   &#xA;应用于回溯日志新页面前缀和当前话者反映后的位置。
+                   &#xA;应用于日志新页面前缀和当前发言人反映后的位置。
                    &#xA;x: 文本框左坐标
                    &#xA;y: 行的基准线。
                    &#xA;"
@@ -3380,11 +3389,11 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogVoiceOverwrite">
       </explanation>
-      <explanation lang="zh_cn" name="回溯语音覆盖"
-                   syntax="回溯语音覆盖 [true(默认)/false]"
-                   details="例如：回溯语音覆盖 true
+      <explanation lang="zh_cn" name="日志语音覆盖"
+                   syntax="日志语音覆盖 [true(默认)/false]"
+                   details="例如：日志语音覆盖 true
                    &#xA;
-                   &#xA;如果为true，当通过回溯播放新的语音时，任何正在播放的现有语音都会被覆盖。
+                   &#xA;如果为true，当通过日志播放新的语音时，任何正在播放的现有语音都会被覆盖。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogVoiceOverwrite">
       </explanation>
@@ -3407,11 +3416,11 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogCurSpeaker">
       </explanation>
-      <explanation lang="zh_cn" name="回溯日志当前名称"
-                   syntax="回溯日志当前名称 [字符串]"
-                   details="例如：回溯日志当前名称 &quot;ラム\n&quot;
+      <explanation lang="zh_cn" name="日志当前名称"
+                   syntax="日志当前名称 [字符串]"
+                   details="例如：日志当前名称 &quot;ラム\n&quot;
                    &#xA;
-                   &#xA;指定用于在回溯日志中记录带有名字的台词的字符串。"
+                   &#xA;指定用于在日志中记录带有名字的台词的字符串。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogCurSpeaker">
       </explanation>
     </Command>
@@ -3432,11 +3441,11 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogNewPagePrefix">
       </explanation>
-      <explanation lang="zh_cn" name="回溯日志新页面前缀"
-                   syntax="回溯日志新页面前缀 [字符串]"
-                   details="例如：回溯日志新页面前缀 &quot;\n\n&quot;
+      <explanation lang="zh_cn" name="日志新页面前缀"
+                   syntax="日志新页面前缀 [字符串]"
+                   details="例如：日志新页面前缀 &quot;\n\n&quot;
                    &#xA;
-                   &#xA;每次在回溯日志中注册新页面台词时添加的前缀。"
+                   &#xA;每次在日志中注册新页面台词时添加的前缀。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogNewPagePrefix">
       </explanation>
     </Command>
@@ -3461,13 +3470,13 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlog_scroll">
       </explanation>
-      <explanation lang="zh_cn" name="回溯日志滚动"
-                   syntax="回溯日志滚动 [滚动行数]"
-                   details="例如：回溯日志滚动 1
+      <explanation lang="zh_cn" name="日志滚动"
+                   syntax="日志滚动 [滚动行数]"
+                   details="例如：日志滚动 1
                    &#xA;
                    &#xA;如果「滚动行数」大于0，则向下滚动，否则向上滚动。
                    &#xA;
-                   &#xA;如果滚动行数 >= 1，并且到达回溯日志的末尾，当前脚本处于等待状态，则重新开始加载。
+                   &#xA;如果滚动行数 >= 1，并且到达日志的末尾，当前脚本处于等待状态，则重新开始加载。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlog_scroll">
       </explanation>
@@ -3487,11 +3496,11 @@
                    &#xA;if true, scenario lines will be added to the backlog"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogAddLine">
       </explanation>
-      <explanation lang="zh_cn" name="回溯日志台词注册"
-                   syntax="回溯日志台词注册 [true/false]"
-                   details="例如：回溯日志台词注册 true
+      <explanation lang="zh_cn" name="日志台词注册"
+                   syntax="日志台词注册 [true/false]"
+                   details="例如：日志台词注册 true
                    &#xA;
-                   &#xA;如果为true，则在回溯日志中注册剧本行。"
+                   &#xA;如果为true，则在日志中注册剧本行。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogAddLine">
       </explanation>
     </Command>
@@ -3513,11 +3522,11 @@
                    &#xA;recommended to use this command every 2~3 scripts"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogReset">
       </explanation>
-      <explanation lang="zh_cn" name="回溯日志重置"
-                   syntax="回溯日志重置"
-                   details="例如：回溯日志重置
+      <explanation lang="zh_cn" name="日志重置"
+                   syntax="日志重置"
+                   details="例如：日志重置
                    &#xA;
-                   &#xA;重置回溯日志中的注册台词。随着注册行数的增加，回溯日志会变得更占用内存，建议每2-3个脚本执行一次此命令。"
+                   &#xA;重置日志中的注册台词。随着注册行数的增加，日志会变得更占用内存，建议每2-3个脚本执行一次此命令。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogReset">
       </explanation>
     </Command>
@@ -3538,11 +3547,11 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogAddLineCont">
       </explanation>
-      <explanation lang="zh_cn" name="回溯日志台词追加"
-                   syntax="回溯日志台词追加 [字符串]"
-                   details="例如：回溯日志台词追加 &quot;继续添加这个。&quot;
+      <explanation lang="zh_cn" name="日志台词追加"
+                   syntax="日志台词追加 [字符串]"
+                   details="例如：日志台词追加 &quot;继续添加这个。&quot;
                    &#xA;
-                   &#xA;在回溯日志中追加台词。"
+                   &#xA;在日志中追加台词。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogAddLineCont">
       </explanation>
     </Command>
@@ -3691,7 +3700,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animation">
       </explanation>
       <explanation lang="zh_cn" name="动画注册"
-                   syntax="动画注册 [注册名] [循环类型: 0/1/2] (x:反复次数) [显示图片] [显示时间] (显示图片) (显示时间) ..... (变更类型)"
+                   syntax="动画注册 [注册名] [循环类型: 0/1/2] (x:循环次数) [显示图片] [显示时间] (显示图片) (显示时间) ..... (变更类型)"
                    details="「循环类型」
                    &#xA; 0: 不循环。
                    &#xA; 1: 命令结束后，返回初始值再播放
@@ -3699,7 +3708,7 @@
                    &#xA;(所以来回播放是'2')
                    &#xA;
                    &#xA;例如：动画注册 anim1 2 x2 scg2.png 500 scg1.png 1500 !cg_test001.png 500
-                   &#xA; 注册名为anim1的动画。可用于图片、背景等。x'2': 反复播放2次
+                   &#xA; 注册名为anim1的动画。可用于图片、背景等。x'2': 循环播放2次
                    &#xA;
                    &#xA;「变更类型」
                    &#xA;0: 保持原样
@@ -3777,7 +3786,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animationEx">
       </explanation>
       <explanation lang="zh_cn" name="简易动画注册"
-                   syntax="简易动画注册 [注册名] [循环类型: 0/1/2] (x:反复次数) [文件格式]
+                   syntax="简易动画注册 [注册名] [循环类型: 0/1/2] (x:循环次数) [文件格式]
                    &#xA;[文件编号最小] [文件编号最大] [执行编号开始] [执行编号结束] [图片间隔] [每张图片显示时间] (变更类型)"
                    details="「循环类型」
                    &#xA; 0: 不循环。
@@ -3843,15 +3852,15 @@
                    &#xA; register an animationSheet called 'test_sprite'。can be used in cg, bg, etc. "
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animationSheet">
       </explanation>
-      <explanation lang="zh_cn" name="动画注册"
-                   syntax="动画注册 [注册名] [循环类型: 0/1/2] (x:反复次数) [显示图片] [内部图片宽度] [内部图片高度] [x] [y] [进度方向：横/竖] [帧数] [每帧时间] (变更类型)"
+      <explanation lang="zh_cn" name="动画表注册"
+                   syntax="动画表注册 [注册名] [循环类型: 0/1/2] (x:循环次数) [显示图片] [内部图片宽度] [内部图片高度] [x] [y] [进度方向：横/竖] [帧数] [每帧时间] (变更类型)"
                    details="「循环类型」
                    &#xA; 0: 不循环。
                    &#xA; 1: 命令结束后，返回初始值再播放
                    &#xA; 2: 命令结束后，向最小值反向播放并重复
                    &#xA;(来回播放所以是'2')
                    &#xA;
-                   &#xA;例如：动画注册 test_sprite 1 sprite_test.png 48 48 0 2 横 3 150 1
+                   &#xA;例如：动画表注册 test_sprite 1 sprite_test.png 48 48 0 2 横 3 150 1
                    &#xA; 注册名为test_sprite的动画。可用于图片、背景等。
                    &#xA; 使用文件sprite_test.png，每个单元图片大小为48 x 48。
                    &#xA; 从左上角x: 0, y: 2的图片开始，横向进度，使用3帧动画。
@@ -3957,7 +3966,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#loop">
       </explanation>
       <explanation lang="zh_cn" name="动画循环"
-                   syntax="动画循环 [循环类型: 0/1/2] (x:反复次数)  [循环命令]"
+                   syntax="动画循环 [循环类型: 0/1/2] (x:循环次数)  [循环命令]"
                    details="「循环类型」
                    &#xA; 0: 不循环。
                    &#xA; 1: 命令结束后，返回初始值再播放
@@ -4002,17 +4011,17 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#tweenListAdd">
       </explanation>
-      <explanation lang="zh_cn" name="添加过渡列表"
-                   syntax="添加过渡列表 [目标] [延迟时间(ms)] [执行命令]"
+      <explanation lang="zh_cn" name="动画列表追加"
+                   syntax="动画列表追加 [目标] [延迟时间(ms)] [执行命令]"
                    details="
-                   &#xA;例如：添加过渡列表 id0 300 移动x2 id0 300 3000
+                   &#xA;例如：动画列表追加 id0 300 移动x2 id0 300 3000
                    &#xA;
-                   &#xA;在对象的过渡堆栈中添加一个新的过渡效果。
-                   &#xA;后添加的过渡效果会在前一个过渡效果开始执行后被计算并执行。
+                   &#xA;在个体的动画堆栈中添加新的动画。
+                   &#xA;后添加的动画将在前一个演出信息的执行开始后进行计算和执行。
                    &#xA;
                    &#xA;例如：
-                   &#xA;添加过渡列表 id0 0 移动x2 id0 300 3000
-                   &#xA;添加过渡列表 id0 300 移动y2 id0 300 3000
+                   &#xA;动画列表追加 id0 0 移动x2 id0 300 3000
+                   &#xA;动画列表追加 id0 300 移动y2 id0 300 3000
                    &#xA;
                    &#xA;0毫秒后，“移动x2 id0 300 3000”开始执行。
                    &#xA;300毫秒后，“移动y2 id0 300 3000”开始执行。
@@ -4076,9 +4085,9 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#finishTweens">
       </explanation>
-      <explanation lang="zh_cn" name="完成所有变换"
-                  syntax="完成所有变换"
-                  details="例如：完成所有变换
+      <explanation lang="zh_cn" name="变换完成"
+                  syntax="变换完成"
+                  details="例如：变换完成
                    &#xA;
                    &#xA;将所有正在进行的变换立即结束。
                    &#xA;
@@ -6224,14 +6233,14 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#spawnDelayRange">
       </explanation>
-      <explanation lang="zh_cn" name="生成间隔范围"
-                   syntax="生成间隔范围 [目标名] [最小(ms)] [最大(ms)] (画面范围)"
-                   details="例如：生成间隔范围 maker 0 300
+      <explanation lang="zh_cn" name="生成间隔设置"
+                   syntax="生成间隔设置 [目标名] [最小(ms)] [最大(ms)] (屏幕范围)"
+                   details="例如：生成间隔设置 maker 0 300
                    &#xA;
-                   &#xA;设置生成下一个粒子的时间间隔范围。
+                   &#xA;设置生成下一个粒子的时间间隔范围设置。
                    &#xA;
                    &#xA;注：目标名可使用正则表达式。
-                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前画面范围内的个体。"
+                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#spawnDelayRange">
       </explanation>
     </Command>
@@ -6253,15 +6262,15 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#positionRange">
       </explanation>
-      <explanation lang="zh_cn" name="粒子位置范围"
-                   syntax="粒子位置范围 [目标名] [最小x] [最小 y] [最小r] [最大x] [最大y] [最大r] (画面范围)"
-                   details="例如：粒子位置范围 maker -300 0 0 300 0 0
+      <explanation lang="zh_cn" name="粒子位置设置"
+                   syntax="粒子位置设置 [目标名] [最小x] [最小 y] [最小r] [最大x] [最大y] [最大r] (屏幕范围)"
+                   details="例如：粒子位置设置 maker -300 0 0 300 0 0
                    &#xA;
-                   &#xA;设置相对于粒子生成器的粒子生成位置范围。
+                   &#xA;设置相对于粒子生成器的粒子生成位置设置。
                    &#xA;注：输入的x, y坐标是相对于粒子生成器的“相对”坐标。
                    &#xA;
                    &#xA;注：目标名可使用正则表达式。
-                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前画面范围内的个体。"
+                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#positionRange">
       </explanation>
     </Command>
@@ -6282,14 +6291,14 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#rotationRange">
       </explanation>
-      <explanation lang="zh_cn" name="粒子旋转范围"
-                   syntax="粒子旋转范围 [目标名] [最小旋转] [最大旋转] (画面范围)"
-                   details="例如：粒子旋转范围 maker 30 90
+      <explanation lang="zh_cn" name="粒子旋转设置"
+                   syntax="粒子旋转设置 [目标名] [最小旋转] [最大旋转] (屏幕范围)"
+                   details="例如：粒子旋转设置 maker 30 90
                    &#xA;
-                   &#xA;指定粒子生成器生成粒子的起始和结束时的旋转范围。
+                   &#xA;指定粒子生成器生成粒子的起始和结束时的旋转范围设置。
                    &#xA;
                    &#xA;注：目标名可使用正则表达式。
-                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前画面范围内的个体。"
+                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#rotationRange">
       </explanation>
     </Command>
@@ -6324,27 +6333,27 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#zoomRange">
       </explanation>
-      <explanation lang="zh_cn" name="粒子缩放范围"
-                   syntax="1. 粒子缩放范围 [目标名] [最小缩放] [最大缩放] (画面范围)
-                   &#xA;2. 粒子缩放范围 [目标名] [最小x缩放] [最小y缩放] [最大x缩放] [最大y缩放] (画面范围)
-                   &#xA;3. 粒子缩放范围 [目标名] [最小x缩放] [最小y缩放] [最小z缩放] [最大x缩放] [最大y缩放] [最大z缩放] (画面范围)"
-                   details="例如：粒子缩放范围 maker 30% 30% 150% 150%
+      <explanation lang="zh_cn" name="粒子缩放设置"
+                   syntax="1. 粒子缩放设置 [目标名] [最小缩放] [最大缩放] (屏幕范围)
+                   &#xA;2. 粒子缩放设置 [目标名] [最小x缩放] [最小y缩放] [最大x缩放] [最大y缩放] (屏幕范围)
+                   &#xA;3. 粒子缩放设置 [目标名] [最小x缩放] [最小y缩放] [最小z缩放] [最大x缩放] [最大y缩放] [最大z缩放] (屏幕范围)"
+                   details="例如：粒子缩放设置 maker 30% 30% 150% 150%
                    &#xA;
-                   &#xA;指定粒子生成器生成粒子的起始和结束时的粒子缩放范围。
+                   &#xA;指定粒子生成器生成粒子的起始和结束时的粒子缩放范围设置。
                    &#xA;
                    &#xA;“详细”
-                   &#xA;1. 粒子缩放范围 [目标名] [最小缩放] [最大缩放]
+                   &#xA;1. 粒子缩放设置 [目标名] [最小缩放] [最大缩放]
                    &#xA;对x, y, z使用相同数值。
                    &#xA;
-                   &#xA;2. 粒子缩放范围 [目标名] [最小x缩放] [最小y缩放] [最大x缩放] [最大y缩放]
+                   &#xA;2. 粒子缩放设置 [目标名] [最小x缩放] [最小y缩放] [最大x缩放] [最大y缩放]
                    &#xA;对x, y使用指定数值，z为100%。
                    &#xA;
-                   &#xA;3. 粒子缩放范围 [目标名] [最小x缩放] [最小y缩放] [最小z缩放] [最大x缩放] [最大y缩放] [最大z缩放]
+                   &#xA;3. 粒子缩放设置 [目标名] [最小x缩放] [最小y缩放] [最小z缩放] [最大x缩放] [最大y缩放] [最大z缩放]
                    &#xA;对x, y, z使用指定数值。
                    &#xA;
                    &#xA;注：目标名可使用正则表达式。
-                   &#xA;注：结束粒子缩放范围也将被覆盖为相同数值。
-                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前画面范围内的个体。"
+                   &#xA;注：结束粒子缩放设置也将被覆盖为相同数值。
+                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#zoomRange">
       </explanation>
     </Command>
@@ -6367,16 +6376,16 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#velocityRange">
       </explanation>
-      <explanation lang="zh_cn" name="粒子速度范围"
-                   syntax="粒子速度范围 [目标名] [x最小速度] [y最小速度] [r最小速度] [x最大速度] [y最大速度] [r最大速度] (画面范围)"
-                   details="例如：粒子速度范围 maker 0 10 0 0 30 0
+      <explanation lang="zh_cn" name="粒子速度设置"
+                   syntax="粒子速度设置 [目标名] [x最小速度] [y最小速度] [r最小速度] [x最大速度] [y最大速度] [r最大速度] (屏幕范围)"
+                   details="例如：粒子速度设置 maker 0 10 0 0 30 0
                    &#xA;
-                   &#xA;指定粒子生成器生成粒子的移动粒子速度范围。
+                   &#xA;指定粒子生成器生成粒子的移动粒子速度范围设置。
                    &#xA;速度单位：像素/秒
                    &#xA;（上述例子中，粒子每秒在y方向移动10~30像素）
                    &#xA;
                    &#xA;注：目标名可使用正则表达式。
-                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前画面范围内的个体。"
+                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#velocityRange">
       </explanation>
     </Command>
@@ -6399,14 +6408,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/particle#acceleration">
       </explanation>
       <explanation lang="zh_cn" name="粒子加速度设置"
-                   syntax="粒子加速度设置 [目标名] [x加速度] [y加速度] [r加速度] (画面范围)"
+                   syntax="粒子加速度设置 [目标名] [x加速度] [y加速度] [r加速度] (屏幕范围)"
                    details="例如：粒子加速度设置 maker 0 10 0
                    &#xA;
                    &#xA;指定粒子生成器生成粒子的加速度。
                    &#xA;加速度单位：像素/秒^2
                    &#xA;
                    &#xA;注：目标名可使用正则表达式。
-                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前画面范围内的个体。"
+                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#acceleration">
       </explanation>
     </Command>
@@ -6427,14 +6436,14 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#RGBARange">
       </explanation>
-      <explanation lang="zh_cn" name="粒子颜色范围"
-                   syntax="粒子颜色范围 [目标名] [最小r] [最小g] [最小b] [最小a] [最大r] [最大g] [最大b] [最大a] (画面范围)"
-                   details="例如：粒子颜色范围 maker 255 255 255 0 255 255 255 10
+      <explanation lang="zh_cn" name="粒子颜色设置"
+                   syntax="粒子颜色设置 [目标名] [最小r] [最小g] [最小b] [最小a] [最大r] [最大g] [最大b] [最大a] (屏幕范围)"
+                   details="例如：粒子颜色设置 maker 255 255 255 0 255 255 255 10
                    &#xA;
                    &#xA;指定粒子生成器生成粒子的起始和结束时的颜色。
                    &#xA;
                    &#xA;注：目标名可使用正则表达式。
-                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前画面范围内的个体。"
+                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#RGBARange">
       </explanation>
     </Command>
@@ -6458,14 +6467,14 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#endRotationRange">
       </explanation>
-      <explanation lang="zh_cn" name="粒子结束旋转范围"
-                   syntax="粒子结束旋转范围 [目标名] [最小旋转] [最大旋转] (画面范围)"
-                   details="例如：粒子结束旋转范围 maker 30 90
+      <explanation lang="zh_cn" name="粒子结束旋转设置"
+                   syntax="粒子结束旋转设置 [目标名] [最小旋转] [最大旋转] (屏幕范围)"
+                   details="例如：粒子结束旋转设置 maker 30 90
                    &#xA;
-                   &#xA;指定粒子生成器生成粒子的结束时的旋转范围。
+                   &#xA;指定粒子生成器生成粒子的结束时的旋转范围设置。
                    &#xA;
                    &#xA;注：目标名可使用正则表达式。
-                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前画面范围内的个体。"
+                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#endRotationRange">
       </explanation>
     </Command>
@@ -6503,26 +6512,26 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#endZoomRange">
       </explanation>
-      <explanation lang="zh_cn" name="粒子结束缩放范围"
-                   syntax="1. 粒子结束缩放范围 [目标名] [最小缩放] [最大缩放] (画面范围)
-                   &#xA;2. 粒子结束缩放范围 [目标名] [最小x缩放] [最小y缩放] [最大x缩放] [最大y缩放] (画面范围)
-                   &#xA;3. 粒子结束缩放范围 [目标名] [最小x缩放] [最小y缩放] [最小z缩放] [最大x缩放] [最大y缩放] [最大z缩放] (画面范围)"
-                   details="例如：粒子结束缩放范围 maker 30% 30% 150% 150%
+      <explanation lang="zh_cn" name="粒子结束缩放设置"
+                   syntax="1. 粒子结束缩放设置 [目标名] [最小缩放] [最大缩放] (屏幕范围)
+                   &#xA;2. 粒子结束缩放设置 [目标名] [最小x缩放] [最小y缩放] [最大x缩放] [最大y缩放] (屏幕范围)
+                   &#xA;3. 粒子结束缩放设置 [目标名] [最小x缩放] [最小y缩放] [最小z缩放] [最大x缩放] [最大y缩放] [最大z缩放] (屏幕范围)"
+                   details="例如：粒子结束缩放设置 maker 30% 30% 150% 150%
                    &#xA;
-                   &#xA;指定粒子生成器生成粒子结束时的缩放范围。
+                   &#xA;指定粒子生成器生成粒子结束时的缩放范围设置。
                    &#xA;
                    &#xA;“详细”
-                   &#xA;1. 粒子结束缩放范围 [目标名] [最小缩放] [最大缩放]
+                   &#xA;1. 粒子结束缩放设置 [目标名] [最小缩放] [最大缩放]
                    &#xA;对x, y, z使用相同数值。
                    &#xA;
-                   &#xA;2. 粒子结束缩放范围 [目标名] [最小x缩放] [最小y缩放] [最大x缩放] [最大y缩放]
+                   &#xA;2. 粒子结束缩放设置 [目标名] [最小x缩放] [最小y缩放] [最大x缩放] [最大y缩放]
                    &#xA;对x, y使用指定数值，z为100%。
                    &#xA;
-                   &#xA;3. 粒子结束缩放范围 [目标名] [最小x缩放] [最小y缩放] [最小z缩放] [最大x缩放] [最大y缩放] [最大z缩放]
+                   &#xA;3. 粒子结束缩放设置 [目标名] [最小x缩放] [最小y缩放] [最小z缩放] [最大x缩放] [最大y缩放] [最大z缩放]
                    &#xA;对x, y, z使用指定数值。
                    &#xA;
                    &#xA;注：目标名可使用正则表达式。
-                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前画面范围内的个体。"
+                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#endZoomRange">
       </explanation>
     </Command>
@@ -6545,14 +6554,14 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#endRGBARange">
       </explanation>
-      <explanation lang="zh_cn" name="粒子结束颜色范围"
-                  syntax="粒子结束颜色范围 [目标名] [最小r] [最小g] [最小b] [最小a] [最大r] [最大g] [最大b] [最大a] (画面范围)"
-                  details="例如：粒子结束颜色范围 maker 255 255 255 0 255 255 255 10
+      <explanation lang="zh_cn" name="粒子结束颜色设置"
+                  syntax="粒子结束颜色设置 [目标名] [最小r] [最小g] [最小b] [最小a] [最大r] [最大g] [最大b] [最大a] (屏幕范围)"
+                  details="例如：粒子结束颜色设置 maker 255 255 255 0 255 255 255 10
                   &#xA;
                   &#xA;指定粒子生成器生成粒子的结束时的颜色。
                   &#xA;
                   &#xA;注：目标名可使用正则表达式。
-                  &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前画面范围内的个体。"
+                  &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                   reference="https://wikiwiki.jp/lightvn/commands/particle#endRGBARange">
       </explanation>
     </Command>
@@ -7858,7 +7867,7 @@
                    &#xA;
                    &#xA;注：若要解除按键触发器，请重新注册相同的触发器名称且不带命令。
                    &#xA; (例如：按键触发器 r.click)
-                   &#xA;注：若按钮点击与鼠标按下触发器同时注册，则按钮点击优先。"
+                   &#xA;注：若按钮点击与光标按下触发器同时注册，则按钮点击优先。"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyDown">
       </explanation>
     </Command>
@@ -7901,7 +7910,7 @@
                    &#xA;
                    &#xA;注意：要取消注册按键触发器，只需注册相同的按键但不指定命令
                    &#xA; （例如：按键触发器 r.click）
-                   &#xA;注意：如果在设置鼠标点击按键触发器的同时单击按钮，按钮单击将覆盖。"
+                   &#xA;注意：如果在设置光标点击按键触发器的同时单击按钮，按钮单击将覆盖。"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyUp">
       </explanation>
     </Command>
@@ -8532,7 +8541,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#voice">
       </explanation>
       <explanation lang="zh_cn" name="语音"
-                   syntax="语音 [名字] [文件名] (音量变量) (开/关变量：true/false) (禁止添加到日志)"
+                   syntax="语音 [名字] [文件名] (音量变量) (开/关变量：true/false) (禁止加入日志)"
                    details="例如：语音 voice ep0-3.ogg
                    &#xA;例如：语音 voice ep0-3.ogg char_vol char_vol_on
                    &#xA;
@@ -8909,7 +8918,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/media#bgmAutoContinue">
       </explanation>
-      <explanation lang="zh_cn" name="背景音自动继续"
+      <explanation lang="zh_cn" name="背景音乐自动继续"
                    syntax="背景音乐自动继续 [true / false]"
                    details="例如：背景音乐自动继续 true
                    &#xA;
@@ -9726,8 +9735,8 @@
                    &#xA;vn_sysTextSkipMethod : 跳过速度 (数字)
                    &#xA;vn_sysVoicePlayType : 语音播放类型 (数字)
                    &#xA;
-                   &#xA;vn_mouse_x：用户在游戏中的鼠标位置x（数字）
-                   &#xA;vn_mouse_y：用户在游戏中的鼠标位置y（数字）
+                   &#xA;vn_mouse_x：用户在游戏中的光标位置x（数字）
+                   &#xA;vn_mouse_y：用户在游戏中的光标位置y（数字）
                    &#xA;
                    &#xA;vn_save_time_format：保存数据的保存时间格式（字符串）
                    &#xA;"
@@ -10472,8 +10481,8 @@
                    reference="https://wikiwiki.jp/lightvn/commands/system#timer">
       </explanation>
       <explanation lang="zh_cn" name="计时器"
-                   syntax="计时器 [名字] [时间间隔:ms] (反复) [到时执行命令]"
-                   details="例如：计时器 timer0 1500 反复 脚本 textbox_sample.txt timer_func
+                   syntax="计时器 [名字] [时间间隔:ms] (循环) [到时执行命令]"
+                   details="例如：计时器 timer0 1500 循环 脚本 textbox_sample.txt timer_func
                    &#xA;
                    &#xA;[命令]：如果作为字符串括起来，每次都会重新计算。
                    &#xA;"
@@ -10700,7 +10709,7 @@
                    &#xA;优化命令。
                    &#xA;仅渲染从基准对象“距离”以内的对象（基于渲染中心）。
                    &#xA;
-                   &#xA;注意：[视角附着] 的对象不参与计算。
+                   &#xA;注意：[绑定视角] 的对象不参与计算。
                    &#xA;"
                   reference="https://wikiwiki.jp/lightvn/commands/system#renderFilterObj">
       </explanation>
@@ -13588,7 +13597,7 @@
                    &#xA;返回终端的输入设备类型。
                    &#xA;
                    &#xA;返回值
-                   &#xA;0) 鼠标/键盘
+                   &#xA;0) 光标/键盘
                    &#xA;1) 触摸板
                    &#xA;
                    &#xA;返回：数字"

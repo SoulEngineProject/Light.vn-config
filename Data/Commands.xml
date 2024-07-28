@@ -212,11 +212,11 @@
       </option>
       <option name="noBacklogAddition">
         <val lang="jap" value="バックログ登録禁止"/>
-        <val lang="zh_cn" value="禁止添加到日志"/>
+        <val lang="zh_cn" value="禁止加入日志"/>
       </option>
       <option name="inBacklog">
         <val lang="jap" value="バックログ登録"/>
-        <val lang="zh_cn" value="添加到日志"/>
+        <val lang="zh_cn" value="加入日志"/>
       </option>
       <option name="freeOnReturnToMain">
         <val lang="jap" value="原点回帰時解除"/>
@@ -1896,7 +1896,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textbox">
       </explanation>
       <explanation lang="zh_cn" name="文本框"
-                   syntax="文本框 [名称] [x] [y] [r] [宽度] [高度] [字体文件名] [字体大小] [忽略溢出] (视角选项) [&quot;字符串:文本内容&quot;] (记录)"
+                   syntax="文本框 [名称] [x] [y] [r] [宽度] [高度] [字体文件名] [字体大小] [忽略溢出] (视角选项) [&quot;字符串:文本内容&quot;] (加入日志)"
                    details="例如：文本框 textbox1 0 400 81 800 200 r-mplus-1c-m.ttf 24
                    &#xA;
                    &#xA;忽略溢出：如果设置，则即使文本超出文本框范围也不会报错。
@@ -1952,7 +1952,7 @@
       </explanation>
       <explanation lang="zh_cn" name="文本"
                    syntax="文本 [名称] [x] [y] [r] [字体文件名] [字体大小(px)] (行大小)
-                   &#xA;(方向：横/纵) (对齐：左/右/中) (最大文本长度) (视角选项) &quot;[字符串:文本内容]&quot; (记录)"
+                   &#xA;(方向：横/纵) (对齐：左/右/中) (最大文本长度) (视角选项) &quot;[字符串:文本内容]&quot; (加入日志)"
                    details="例如：文本 msg_str 370 223 106 r-mplus-1c-m.ttf 24 &quot;内容! &quot;
                    &#xA;
                    &#xA;注：“文本”不同于文本框的文本，不会流动，所有文本会立即显示。
@@ -8530,7 +8530,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#voice">
       </explanation>
       <explanation lang="zh_cn" name="语音"
-                   syntax="语音 [名字] [文件名] (音量变量) (开/关变量：true/false) (禁止添加到日志)"
+                   syntax="语音 [名字] [文件名] (音量变量) (开/关变量：true/false) (禁止加入日志)"
                    details="例如：语音 voice ep0-3.ogg
                    &#xA;例如：语音 voice ep0-3.ogg char_vol char_vol_on
                    &#xA;

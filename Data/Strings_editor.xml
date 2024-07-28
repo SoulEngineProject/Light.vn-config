@@ -530,22 +530,22 @@
   <EString nkey="btn_cmd_use_light" wpfControl="">
     <val lang="jap">ライト使用</val>
     <val lang="eng">Lights On</val>
-    <val lang="zh_cn">使用灯光</val>
+    <val lang="zh_cn">使用光源</val>
   </EString>
   <EString nkey="btn_cmd_use_light_false" wpfControl="">
     <val lang="jap">ライト未使用</val>
     <val lang="eng">Lights Off</val>
-    <val lang="zh_cn">关闭灯光</val>
+    <val lang="zh_cn">关闭光源</val>
   </EString>
   <EString nkey="btn_cmd_use2dcamera" wpfControl="">
     <val lang="jap">2Dカメラ使用</val>
     <val lang="eng">Use 2D Camera</val>
-    <val lang="zh_cn">使用2D视图</val>
+    <val lang="zh_cn">使用2D视角</val>
   </EString>
   <EString nkey="btn_cmd_use3dcamera" wpfControl="">
     <val lang="jap">3Dカメラ使用</val>
     <val lang="eng">Use 3D Camera</val>
-    <val lang="zh_cn">使用3D视图</val>
+    <val lang="zh_cn">使用3D视角</val>
   </EString>
   <EString nkey="btn_cmd_choice" wpfControl="">
     <val lang="jap">選択肢</val>

@@ -10247,7 +10247,7 @@
                    details="ex. ロールバック時点自動登録 1
                    &#xA;
                    &#xA;[種類]
-                   &#xA;0: 利用しない
+                   &#xA;0: 利用しない (デフォルト)
                    &#xA;1: テキストが待機する度に、「ロールバック時点」を呼ぶ。
                    &#xA;
                    &#xA;"
@@ -10258,7 +10258,7 @@
                    details="ex. rollback_point_AutoAdd 1
                    &#xA;
                    &#xA;[type]
-                   &#xA;0: don't use
+                   &#xA;0: don't use (default)
                    &#xA;1: on each text wait, internally call [rollback_point]
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#rollback_point_AutoAdd">
@@ -10695,6 +10695,8 @@
                    &#xA;文字自動待機
                    &#xA;文字自動改行
                    &#xA;
+                   &#xA;ロールバック時点自動登録
+                   &#xA;ロールバック時点最大
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#clear">
       </explanation>
@@ -10735,6 +10737,8 @@
                    &#xA;textAutoWait
                    &#xA;textAutoNewline
                    &#xA;
+                   &#xA;rollback_point_AutoAdd
+                   &#xA;rollback_points_max
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#clear">
       </explanation>

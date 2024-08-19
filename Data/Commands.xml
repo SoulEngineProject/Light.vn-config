@@ -176,7 +176,7 @@
       </option>
       <option name="followSystemAuto">
         <val lang="jap" value="オート設定反映"/>
-        <val lang="zh_cn" value="自动跟随系统"/>
+        <val lang="zh_cn" value="跟随系统自动"/>
       </option>
       <option name="show">
         <val lang="jap" value="表示"/>
@@ -249,6 +249,9 @@
       <option name="async">
         <val lang="jap" value="非同期"/>
         <val lang="zh_cn" value="异步"/>
+      </option>
+      <option name="stateUpdate">
+        <val lang="jap" value="状態更新"/>
       </option>
     </CmdOptions>
   </Keywords>
@@ -874,7 +877,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg">
       </explanation>
       <explanation lang="eng" name="flow_cg"
-                   syntax="flow_cg [name] [filename / animation name] [x] [y] [layer] [move per second] (camera_option)"
+                   syntax="flow_cg [name] [filename / animation name] [x] [y] [layer] [move per second] (vertical) (offset) (camera_option)"
                    details="ex. flow_cg bg_effect scrolling_background.png 0 0 10 60  
                    &#xA;  
                    &#xA;Note: if 'on_camera' is set, will ignore camera。  
@@ -893,6 +896,24 @@
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
                    reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg">
+      </explanation>
+    </Command>
+    <Command cmd="flow_cg_set">
+      <explanation lang="jap" name="回転絵更新"
+                   syntax="回転絵更新 [対象名] [一秒間のpx移動値] (縦/横)"
+                   details="ex. 回転絵更新 my_cg 1500 
+                   &#xA;  
+                   &#xA;[対象名]の回転絵を、指定の設定に更新する。
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/media#flow_cg_set">
+      </explanation>
+      <explanation lang="eng" name="flow_cg_set"
+                   syntax="flow_cg_set [target] [move per second] (vertical/horizontal)"
+                   details="ex. flow_cg_set my_cg 1500 
+                   &#xA;  
+                   &#xA;Updates [target] (a flow_cg) with the set values
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/media#flow_cg_set">
       </explanation>
     </Command>
     <Command cmd="model">
@@ -1164,7 +1185,9 @@
                    syntax="walkAreaTileChar [name] [image] [frame-w] [frame-h] [tile-x] [tile-y] [layer] [image-center-x] [image-center-y] [direction]"
                    details="ex. walkAreaTileChar npc_b maps/tilemap_tut/lam/sheet.png 32 48 47 11 1 0 -15 down
                    &#xA;  
-                   &#xA;"
+                   &#xA;direction: left / right / down / up
+                   &#xA;
+                   &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/Map#walkAreaTileChar">
       </explanation>
       <explanation lang="zh_cn" name="移动区域瓦片角色"
@@ -1886,7 +1909,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textbox">
       </explanation>
       <explanation lang="eng" name="textbox"
-                   syntax="textbox [name] [x] [y] [layer] [width] [height] [font filename] [font size] (ignoreOverflow) (camera_option) [string] ()"
+                   syntax="textbox [name] [x] [y] [layer] [width] [height] [font filename] [font size] (ignoreOverflow) (camera_option) [string] (inBacklog)"
                    details="ex. textbox textbox1 0 400 81 800 200 r-mplus-1c-m.ttf 24
                    &#xA;
                    &#xA;ignoreOverflow)
@@ -1944,7 +1967,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#text">
       </explanation>
       <explanation lang="eng" name="text"
-                   syntax="text [name] [x] [y] [layer] [font filename] [font size(px)] (line size(px)) (direction: horizontal/vertical) (alignment：left/right/middle) (max text length) (camera_option) &quot;[string:text]&quot;"
+                   syntax="text [name] [x] [y] [layer] [font filename] [font size(px)] (line size(px)) (direction: horizontal/vertical) (alignment：left/right/middle) (max text length) (camera_option) &quot;[string:text]&quot; (inBacklog)"
                    details="ex. text msg_str 370 223 106  r-mplus-1c-m.ttf 24 &quot;hello world! &quot; 
                    &#xA;  
                    &#xA;注：「text」, unilke textbox, does not have flowing text and displays all text at once"
@@ -2075,13 +2098,16 @@
     </Command>
     <Command cmd="textTableLine">
       <explanation lang="jap" name="台詞情報新文章"
-                   syntax="台詞情報新文章 [ファイル経路]"
+                   syntax="1. 台詞情報新文章 (対象名) [ファイル経路]
+                   &#xA;2. 台詞情報新文章 (対象名) [ファイル経路] (行)"
                    details="ex. 台詞情報新文章 table.csv
                    &#xA;
                    &#xA;既に登録されている「ファイル経路」の台詞情報から、 
                    &#xA;現在使用中の文字窓に、次の文章データを、「改ページ文章」として表示させる。 
                    &#xA;  
-                   &#xA;注：先に[ファイル経路]を「台詞情報登録」で登録する必要あり。 
+                   &#xA;注：先に[ファイル経路]を「台詞情報登録」で登録する必要あり。
+                   &#xA;注：行を指定する場合、先に「台詞情報登録」を呼ぶ必要はない。
+                   &#xA;
                    &#xA;注：待機はかけられないので、必要な場合は  
                    &#xA;ex. 台詞新文章 table.csv | 待機  
                    &#xA;などの形で使用を推奨。 
@@ -2089,11 +2115,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableLine">
       </explanation>
       <explanation lang="eng" name="textTableLine"
-                   syntax="textTableLine [filepath]"
+                   syntax="1. textTableLine (target) [filepath]
+                   &#xA;2. textTableLine (target) [filepath] (row)"
                    details="ex. textTableLine table.csv
                    &#xA;
                    &#xA;takes a registered [filepath] (through textTableLoad)
                    &#xA;and displays the next row as a new page text.
+                   &#xA;
+                   &#xA;note: if (row) is defined, (textTableLoad) does not need to be called first.
                    &#xA;  
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableLine">
@@ -2114,13 +2143,16 @@
     </Command>
     <Command cmd="textTableLineCont">
       <explanation lang="jap" name="台詞情報追加文章"
-                   syntax="台詞情報追加文章 [ファイル経路]"
+                   syntax="1. 台詞情報追加文章 (対象名) [ファイル経路]
+                   &#xA;2. 台詞情報追加文章 (対象名) [ファイル経路] (行)"
                    details="ex. 台詞情報追加文章 table.csv
                    &#xA;
                    &#xA;既に登録された「ファイル経路」の台詞情報から、 
                    &#xA;現在使用中の文字窓に、次の文章データを、「既存の文章に続く文章」として表示させる。 
                    &#xA;  
-                   &#xA;注：先に[ファイル経路]を「台詞情報登録」で登録する必要あり。 
+                   &#xA;注：先に[ファイル経路]を「台詞情報登録」で登録する必要あり。
+                   &#xA;注：行を指定する場合、先に「台詞情報登録」を呼ぶ必要はない。
+                   &#xA;
                    &#xA;注：待機はかけられないので、必要な場合は  
                    &#xA;ex. 台詞追加文章 table.csv | 待機 
                    &#xA;などの形で使用を推奨。 
@@ -2128,12 +2160,15 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableLineCont">
       </explanation>
       <explanation lang="eng" name="textTableLineCont"
-                   syntax="textTableLineCont [filepath]"
+                   syntax="1. textTableLineCont (target) [filepath]
+                   &#xA;2. textTableLineCont (target) [filepath] (row)"
                    details="ex. textTableLineCont table.csv   
                    &#xA;
                    &#xA;takes a registered [filepath] (through textTableLoad)
                    &#xA;and displays the next row as a continue page text.
                    &#xA;
+                   &#xA;note: if (row) is defined, (textTableLoad) does not need to be called first.
+                   &#xA;  
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableLineCont">
       </explanation>
@@ -2966,15 +3001,15 @@
       </explanation>
     </Command>
     <Command cmd="textOverflowAutoWait">
-      <explanation lang="jap" name="文字超過自動待機 "
+      <explanation lang="jap" name="文字超過自動待機"
                    syntax="文字超過自動待機 [true/false]"
                    details="ex. 文字超過自動待機 true   
                    &#xA;  
                    &#xA;trueの場合、
-                   &#xA;&quot; -&quot;などで文字列トを文字窓に当てようとして、文字列が枠を超える場合、
+                   &#xA;&quot; -&quot;などで文字列を文字窓に当てようとして、文字列が枠を超える場合、
                    &#xA;枠内に入れるまでの文字列を出力し、
                    &#xA;スクリプトが自動で待機モードに切り替わり、
-                   &#xA;次の続行、時に後ろの文字列の出力を再開させる。
+                   &#xA;次の[続行]時に後ろの文字列の出力を再開させる。
                    &#xA;  
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textOverflowAutoWait">
@@ -3649,7 +3684,7 @@
     </Command>
     <Command cmd="animation">
       <explanation lang="jap" name="アニメ登録"
-                   syntax="アニメ登録 [登録名] [ループ種類: 0/1/2] (x:反復回数) [表示画像] [表示時間] (表示画像) (表示時間) ..... (変化タイプ) (非同期)"
+                   syntax="アニメ登録 [登録名] [ループ種類: 0/1/2] (x:反復回数) [表示画像] [表示時間] (表示画像) (表示時間) ..... (変化タイプ) (永久) (非同期)"
                    details="「ループ種類」 
                    &#xA;0: ループしない。 
                    &#xA;1: コマンドが終わると、最初値に戻りまた再生  
@@ -3662,6 +3697,10 @@
                    &#xA;「変化タイプ」 
                    &#xA;0: そのまま 
                    &#xA;1: 滑らか (前後画像を補間: デフォルト)
+                   &#xA;
+                   &#xA;「永久」
+                   &#xA;指定される場合、素材が永久キャッシュされる。
+                   &#xA;(アニメーション自体が永久保存されるわけではない)
                    &#xA;
                    &#xA;「非同期」
                    &#xA;指定される場合、素材がバックグラウンドで読み込まれる。
@@ -3676,7 +3715,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animation">
       </explanation>
       <explanation lang="eng" name="animation"
-                   syntax="animation [name] [loop type: 0/1/2] (x:repeat count) [filename] [time] (filename) (time) ..... (transition type) (async)"
+                   syntax="animation [name] [loop type: 0/1/2] (x:repeat count) [filename] [time] (filename) (time) ..... (transition type) (forever) (async)"
                    details="[loop type] 
                    &#xA;0: no loop 
                    &#xA;1: repeat command from start 
@@ -3685,6 +3724,10 @@
                    &#xA;[transition type]
                    &#xA;0: none
                    &#xA;1: smooth
+                   &#xA;
+                   &#xA;[forever]
+                   &#xA;if set, the resources for the animation are cached for the lifetime of the program.
+                   &#xA;note: the animation itself isn't saved forever.
                    &#xA;
                    &#xA;[async]
                    &#xA;if set, will load resources in the background.
@@ -3720,7 +3763,7 @@
     <Command cmd="animationEx">
       <explanation lang="jap" name="アニメ登録簡易"
                    syntax="アニメ登録簡易 [登録名] [ループ種類: 0/1/2] (x:反復回数) [ファイル形式]   
-                   &#xA;[ファイル番号最小] [ファイル番号最大] [実行番号最初] [実行番号最終] [画像間隔] [各画像表示時間] (変化タイプ) (非同期)"
+                   &#xA;[ファイル番号最小] [ファイル番号最大] [実行番号最初] [実行番号最終] [画像間隔] [各画像表示時間] (変化タイプ) (永久) (非同期)"
                    details="「ループ種類」 
                    &#xA; 0: ループしない。 
                    &#xA; 1: コマンドが終わると、最初値に戻りまた再生  
@@ -3750,6 +3793,10 @@
                    &#xA;0: そのまま 
                    &#xA;1: 滑らか (前後画像を補間: デフォルト)
                    &#xA;
+                   &#xA;「永久」
+                   &#xA;指定される場合、素材が永久キャッシュされる。
+                   &#xA;(アニメーション自体が永久保存されるわけではない)
+                   &#xA;
                    &#xA;「非同期」
                    &#xA;指定される場合、素材がバックグラウンドで読み込まれる。
                    &#xA;特定の区間内に全ての素材を読み込んだ方が演出上自然な場合、使用しないように。
@@ -3758,7 +3805,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animationEx">
       </explanation>
       <explanation lang="eng" name="animationEx"
-                   syntax="animation [name] [loop type: 0/1/2] (x:repeat count) [file format] [filerange min] [file range max] [run frame start] [run frame end] [frame increments] [time per frame] (transition type) (async)"
+                   syntax="animation [name] [loop type: 0/1/2] (x:repeat count) [file format] [filerange min] [file range max] [run frame start] [run frame end] [frame increments] [time per frame] (transition type) (forever) (async)"
                    details="「loop type」 
                    &#xA; 0: no loop 
                    &#xA; 1: repeat command from start 
@@ -3771,6 +3818,10 @@
                    &#xA;「transition type」
                    &#xA;0: none
                    &#xA;1: smooth
+                   &#xA;
+                   &#xA;[forever]
+                   &#xA;if set, the resources for the animation are cached for the lifetime of the program.
+                   &#xA;note: the animation itself isn't saved forever.
                    &#xA;
                    &#xA;「async」
                    &#xA;if set, will load resources in the background.
@@ -5730,7 +5781,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraFollow">
       </explanation>
       <explanation lang="eng" name="cameraFollow"
-                   syntax="1. cameraFollow [target_name] (x) (y) (r) (relative-x) (relative-y) (relative-r) (follow speed)
+                   syntax="1. cameraFollow [target_name] (x) (y) (r) (relative-x) (relative-y) (relative-r) (follow speed) (startAtTarget)
                    &#xA;2. cameraFollow false"
                    details="ex. cameraFollow kojiken x y -640 -360 200
                    &#xA;
@@ -5783,7 +5834,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraFollow3D">
       </explanation>
       <explanation lang="eng" name="cameraFollow3D"
-                   syntax="1. cameraFollow3D [target_name] [distance] [angle:x] [angle:y] [angle:z] [pan:x] [pan:y] (approx_time_to_target_ms)
+                   syntax="1. cameraFollow3D [target_name] [distance] [angle:x] [angle:y] [angle:z] [pan:x] [pan:y] (approx_time_to_target_ms) (startAtTarget)
                    &#xA;2. cameraFollow3D false"
                    details="ex. cameraFollow3D player 5 8 0 0 0 -50 100
                    &#xA;
@@ -7213,6 +7264,9 @@
                    &#xA;指定された対象が消滅されるまでまつ。  
                    &#xA;既に完了している場合、或いは対象がない場合、何もしない。
                    &#xA;ex. 待機 個体消滅 obj1
+                   &#xA;
+                   &#xA;- 待機 状態更新
+                   &#xA;[状態」コマンドによる状態更新を待つ。
                    &#xA;  
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/script#wait">
@@ -7264,6 +7318,9 @@
                    &#xA;waits for [object name] to destroy.
                    &#xA;if already done, or object does not exist, does nothing.
                    &#xA;ex. wait obj_destroy obj1
+                   &#xA;
+                   &#xA;- wait stateUpdate
+                   &#xA;wait for a [state] command to update the state.
                    &#xA;
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#wait">
@@ -7319,7 +7376,7 @@
     </Command>
     <Command cmd="jump">
       <explanation lang="jap" name="ジャンプ"
-                   syntax="1. ジャンプ [目的スクリプト] (目的スクリプト栞)
+                   syntax="1. ジャンプ [目的スクリプト / 現在] (目的スクリプト栞)
                    &#xA;2. ジャンプ [現在スクリプト栞]
                    &#xA;
                    &#xA;  "
@@ -7351,7 +7408,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/script#jump">
       </explanation>
       <explanation lang="eng" name="jump"
-                   syntax="1. jump [target script] (target bookmark)
+                   syntax="1. jump [target script / current] (target bookmark)
                    &#xA;2. jump [current bookmark]
                    &#xA;  "
                    details="ex. jump script.txt bookmark1   
@@ -8568,7 +8625,7 @@
     </Command>
     <Command cmd="bgvoice">
       <explanation lang="jap" name="背景ボイス"
-                   syntax="背景ボイス [名前] [ファイル名] (音量数値変数) (音量ゼロ対象の名前の一部)"
+                   syntax="背景ボイス [名前] [ファイル名] (音量数値変数)  (音量ゼロ対象の名前の先頭) (非活性・活性時フェード：ミリ秒)"
                    details="ex. 背景ボイス bgv0 ep0-3.ogg  
                    &#xA;ex. 背景ボイス bgv0 ep0-3.ogg none voice_boy :   
                    &#xA;voice_boyで始まるボイスファイル（ファイル名でなく名前）がプレイされる場合、bgvの音量を一時的にゼロにします。  
@@ -8583,7 +8640,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#bgvoice">
       </explanation>
       <explanation lang="eng" name="bgvoice"
-                   syntax="bgvoice [name] [filename] (volume variable name) (target name prefixes that make volume zero)"
+                   syntax="bgvoice [name] [filename] (volume variable name) (target name prefixes that make volume zero) (off/on state change fade (ms))"
                    details="ex. bgvoice bgv0 ep0-3.ogg  
                    &#xA;ex. bgvoice bgv0 ep0-3.ogg none voice_boy :   
                    &#xA;when voice files that start with 'voice_boy' play, will make this bgvoice's volume temporarily zero 
@@ -8637,7 +8694,7 @@
     </Command>
     <Command cmd="autoVoice">
       <explanation lang="jap" name="自動ボイス"
-                   syntax="自動ボイス [個体名] [登録済み自動ボイス名]"
+                   syntax="自動ボイス [個体名] [登録済み自動ボイス名] (バックログ登録禁止)"
                    details="ex. 自動ボイス voice0 voice_ace  
                    &#xA;  
                    &#xA;「登録済み自動ボイス名」の情報に従い、「個体名」という名のボイスを再生します。 
@@ -8649,7 +8706,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#autoVoice">
       </explanation>
       <explanation lang="eng" name="autoVoice"
-                   syntax="autoVoice [name] [registered auto voice name]"
+                   syntax="autoVoice [name] [registered auto voice name] (noBacklogAddition)"
                    details="ex. autoVoice voice0 voice_ace  
                    &#xA;
                    &#xA;Following the settings from [setAutoVoice],
@@ -8662,7 +8719,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#autoVoice">
       </explanation>
       <explanation lang="zh_cn" name="自动语音"
-                   syntax="自动语音 [个体名] [注册的自动语音名]"
+                   syntax="自动语音 [个体名] [注册的自动语音名] (禁止添加到日志)"
                    details="例如：自动语音 voice0 voice_ace
                    &#xA;
                    &#xA;根据“注册的自动语音名”的信息，播放名为“个体名”的语音。
@@ -8886,23 +8943,23 @@
     </Command>
     <Command cmd="bgmAutoContinue">
       <explanation lang="jap" name="背景音自動継続"
-                   syntax="背景音自動継続 [true / false]"
+                   syntax="背景音自動継続 [true (デフォルト) / false]"
                    details="ex. 背景音自動継続 true  
                    &#xA;  
                    &#xA;trueの場合、「背景音」コマンド実行時に
                    &#xA;  
-                   &#xA;  - 同じ個体名の背景音を再作成
-                   &#xA;  - 同一ファイル名の曲を再生させようとする際に、  
+                   &#xA;  - 同じ個体名
+                   &#xA;  - 同一ファイル名の曲を再生する「背景音」個体が既にある場合、  
                    &#xA;  
                    &#xA;個体の再作成を行わず、既存の曲の再生を続ける。"
                    reference="https://wikiwiki.jp/lightvn/commands/media#bgmAutoContinue">
       </explanation>
       <explanation lang="eng" name="bgmAutoContinue"
-                   syntax="bgmAutoContinue [true / false]"
+                   syntax="bgmAutoContinue [true (default) / false]"
                    details="ex. bgmAutoContinue true  
                    &#xA;  
                    &#xA;if true, [bgm] command will not execute,
-                   &#xA;if trying to play the same filename as the current [bgm] object.
+                   &#xA;if a current [bgm] has the same name and plays the same filename.
                    &#xA;(thus continuing the current bgm)
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/media#bgmAutoContinue">
@@ -8922,7 +8979,7 @@
     </Command>
     <Command cmd="loopRegion">
       <explanation lang="jap" name="反復区間"
-                   syntax="反復区間 [反復開始時点 (ms)] [反復区間の長さ (ms)]"
+                   syntax="反復区間 (対象名) [反復開始時点 (ms)] [反復区間の長さ (ms)]"
                    details="ex. 反復区間 1500 500 
                    &#xA;  
                    &#xA;現在流れている背景音楽が、「反復開始時点」に達したら、 
@@ -8933,7 +8990,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#loopRegion">
       </explanation>
       <explanation lang="eng" name="loopRegion"
-                   syntax="loopRegion [start point (ms)] [length (ms)]"
+                   syntax="loopRegion (target) [start point (ms)] [length (ms)]"
                    details="ex. loopRegion 1500 500 
                    &#xA;  
                    &#xA;starts looping of bgm from start point - length.  
@@ -9258,17 +9315,30 @@
     <Command cmd="saveGlobalVars">
       <explanation lang="jap" name="全域変数保存"
                    syntax="全域変数保存"
-                   details="「全域変数」として指定された変数を全て保存する。"
+                   details="「全域変数」として指定された変数を全て保存する。
+                   &#xA;
+                   &#xA;注意：HDDへの保存となるため、時間がかかる場合がある。
+                   &#xA;ラグが発生しても問題箇所にて実行を推奨。
+                   &#xA;
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#saveGlobalVars">
       </explanation>
       <explanation lang="eng" name="saveGlobalVars"
                    syntax="globalvar"
-                   details="saves all globalvars"
+                   details="saves all globalvars
+                   &#xA;
+                   &#xA;Warning: Can take due to this being a write to the HDD.
+                   &#xA;Recommended to use where lag isn't noticeable by the player.
+                   &#xA;
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#saveGlobalVars">
       </explanation>
       <explanation lang="zh_cn" name="保存全局变量"
                    syntax="保存全局变量"
-                   details="保存所有被指定为“全局变量”的变量。"
+                   details="保存所有被指定为“全局变量”的变量。
+                   &#xA;
+                   &#xA;
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#saveGlobalVars">
       </explanation>
     </Command>
@@ -10130,6 +10200,108 @@
                    reference="https://wikiwiki.jp/lightvn/commands/system#quickLoad">
       </explanation>
     </Command>
+    <Command cmd="rollback">
+      <explanation lang="jap" name="ロールバック"
+                   syntax="ロールバック"
+                   details="ex. ロールバック
+                   &#xA;
+                   &#xA;一つ前の「ロールバック時点」に戻る。
+                   &#xA;注：ロードと同じく、「変数」などは初期化。
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#rollback">
+      </explanation>
+      <explanation lang="eng" name="rollback"
+                   syntax="rollback"
+                   details="ex. rollback
+                   &#xA;
+                   &#xA;return to the previous rollback_point
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#rollback">
+      </explanation>
+    </Command>
+    <Command cmd="rollback_point">
+      <explanation lang="jap" name="ロールバック時点"
+                   syntax="ロールバック時点"
+                   details="ex. ロールバック時点
+                   &#xA;
+                   &#xA;ロールバック時点を追加登録する。
+                   &#xA;
+                   &#xA;注：セーブと同じく、「変数」などは保存されない。
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#rollback_point">
+      </explanation>
+      <explanation lang="eng" name="rollback_point"
+                   syntax="rollback_point"
+                   details="ex. rollback_point
+                   &#xA;
+                   &#xA;adds a rollback_point of the current game state
+                   &#xA;
+                   &#xA;Note: abides to same rules as [save]: [var]s, etc. are not saved.
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#rollback_point">
+      </explanation>
+    </Command>
+    <Command cmd="rollback_point_AutoAdd">
+      <explanation lang="jap" name="ロールバック時点自動登録"
+                   syntax="ロールバック時点自動登録 [種類]"
+                   details="ex. ロールバック時点自動登録 1
+                   &#xA;
+                   &#xA;[種類]
+                   &#xA;0: 利用しない (デフォルト)
+                   &#xA;1: テキストが待機する度に、「ロールバック時点」を呼ぶ。
+                   &#xA;
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#rollback_point_AutoAdd">
+      </explanation>
+      <explanation lang="eng" name="rollback_point_AutoAdd"
+                   syntax="rollback_point_AutoAdd [type]"
+                   details="ex. rollback_point_AutoAdd 1
+                   &#xA;
+                   &#xA;[type]
+                   &#xA;0: don't use (default)
+                   &#xA;1: on each text wait, internally call [rollback_point]
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#rollback_point_AutoAdd">
+      </explanation>
+    </Command>
+    <Command cmd="rollback_points_max">
+      <explanation lang="jap" name="ロールバック時点最大"
+                   syntax="ロールバック時点最大 [数]"
+                   details="ex. ロールバック時点最大 100
+                   &#xA;
+                   &#xA;「ロールバック時点」の最大数を指定。
+                   &#xA;(デフォルト：無限)
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#rollback_points_max">
+      </explanation>
+      <explanation lang="eng" name="rollback_points_max"
+                   syntax="rollback_points_max [max]"
+                   details="ex. rollback_points_max 100
+                   &#xA;
+                   &#xA;set maximum rollback_points
+                   &#xA;(default: infinite)
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#rollback_points_max">
+      </explanation>
+    </Command>
+    <Command cmd="rollback_points_clear">
+      <explanation lang="jap" name="ロールバック時点クリア"
+                   syntax="ロールバック時点クリア"
+                   details="ex. ロールバック時点クリア
+                   &#xA;
+                   &#xA;登録された「ロールバック時点」をクリア
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#rollback_points_clear">
+      </explanation>
+      <explanation lang="eng" name="rollback_points_clear"
+                   syntax="rollback_points_clear"
+                   details="ex. rollback_points_clear
+                   &#xA;
+                   &#xA;clears all registered rollback_points
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#rollback_points_clear">
+      </explanation>
+    </Command>
     <Command cmd="waitSaveDataFetch">
       <explanation lang="jap" name="セーブ情報継承"
                    syntax="セーブ情報継承 [セーブデーター最小] [セーブデーター最大]"
@@ -10373,17 +10545,20 @@
     </Command>
     <Command cmd="mouseCursor">
       <explanation lang="jap" name="マウスカーソル"
-                   syntax="マウスカーソル [ファイル名]"
+                   syntax="1. マウスカーソル [ファイル名]
+                   &#xA;2. マウスカーソル none"
                    details="ex. マウスカーソル sys_wait.png"
                    reference="https://wikiwiki.jp/lightvn/commands/system#mouseCursor">
       </explanation>
       <explanation lang="eng" name="mouseCursor"
-                   syntax="mouseCursor [filename]"
+                   syntax="1. mouseCursor [filename]
+                   &#xA;2. mouseCursor none"
                    details="ex. mouseCursor sys_wait.png"
                    reference="https://wikiwiki.jp/lightvn/commands/system#mouseCursor">
       </explanation>
       <explanation lang="zh_cn" name="鼠标光标"
-                   syntax="鼠标光标 [文件名]"
+                   syntax="1. 鼠标光标 [文件名]
+                   &#xA;2. 鼠标光标 none"
                    details="例如：鼠标光标 sys_wait.png"
                    reference="https://wikiwiki.jp/lightvn/commands/system#mouseCursor">
       </explanation>
@@ -10509,10 +10684,19 @@
                    &#xA;
                    &#xA;自動ボイス
                    &#xA;
+                   &#xA;画像全体品質
                    &#xA;合成画像登録
                    &#xA;アニメーション登録
+                   &#xA;タッチ素材設定
                    &#xA;
                    &#xA;マクロ全種類
+                   &#xA;
+                   &#xA;文字超過自動待機
+                   &#xA;文字自動待機
+                   &#xA;文字自動改行
+                   &#xA;
+                   &#xA;ロールバック時点自動登録
+                   &#xA;ロールバック時点最大
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#clear">
       </explanation>
@@ -10542,11 +10726,19 @@
                    &#xA;
                    &#xA;auto voice
                    &#xA;
+                   &#xA;imageDefaultQuality
                    &#xA;textureCreate
                    &#xA;animation registry
+                   &#xA;touchableRes
                    &#xA;
                    &#xA;macro registry
                    &#xA;
+                   &#xA;textOverflowAutoWait
+                   &#xA;textAutoWait
+                   &#xA;textAutoNewline
+                   &#xA;
+                   &#xA;rollback_point_AutoAdd
+                   &#xA;rollback_points_max
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#clear">
       </explanation>

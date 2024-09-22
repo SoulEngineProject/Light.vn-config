@@ -36,10 +36,11 @@
       </option>
       <option name="tween_finish">
         <val lang="jap" value="演出終了"/>
-        <val lang="zh_cn" value="动画结束"/>
+        <val lang="zh_cn" value="演出结束"/>
       </option>
       <option name="animation_finish">
         <val lang="jap" value="アニメ終了"/>
+        <val lang="zh_cn" value="动画结束"/>
       </option>
       <option name="obj_destroy">
         <val lang="jap" value="個体消滅"/>
@@ -887,9 +888,9 @@
                    &#xA;Suffix:'0'will display object as alpha: 0。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg">
       </explanation>
-      <explanation lang="zh_cn" name="流动图片"
-                   syntax="流动图片 [名称] [文件名 / 动画名称] [x] [y] [r] [每秒移动] (竖) (偏移:px) (视角选项)"
-                   details="例如：流动图片 bg_effect scrolling_background.png 0 0 10 60
+      <explanation lang="zh_cn" name="滚动图片"
+                   syntax="滚动图片 [名称] [文件名 / 动画名称] [x] [y] [r] [每秒移动] (竖) (偏移:px) (视角选项)"
+                   details="例如：滚动图片 bg_effect scrolling_background.png 0 0 10 60
                    &#xA;  
                    &#xA;图像根据每秒的移动值移动。
                    &#xA;注：如果设置了“竖”选项，则竖流动。
@@ -915,6 +916,14 @@
                    details="ex. flow_cg_set my_cg 1500 
                    &#xA;  
                    &#xA;Updates [target] (a flow_cg) with the set values
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/media#flow_cg_set">
+      </explanation>
+      <explanation lang="zh_cn" name="刷新滚动图片"
+                   syntax="刷新滚动图片 [名称] [每秒移动] (横/竖)"
+                   details="ex. 刷新滚动图片 my_cg 1500 
+                   &#xA;  
+                   &#xA;将目标滚动图片重新刷新至指定移动位置
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/media#flow_cg_set">
       </explanation>
@@ -1754,8 +1763,8 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchableRes">
       </explanation>
       <explanation lang="zh_cn" name="默认光标接触素材"
-                   syntax="光标接触素材 [UI未光标接触图像] [UI光标接触时图像] [UI点击时图像] (UI光标接触时音效) (UI点击时音效)"
-                   details="例如：光标接触素材 untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg
+                   syntax="默认光标接触素材 [UI未光标接触图像] [UI光标接触时图像] [UI点击时图像] (UI光标接触时音效) (UI点击时音效)"
+                   details="例如：默认光标接触素材 untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg
                    &#xA;
                    &#xA;声明“所有之后创建的可让光标接触的个体”（例如：按钮）的默认素材。
                    &#xA;如果在创建个体时未声明特定的使用素材，则使用此处声明的素材。
@@ -2131,13 +2140,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableLine">
       </explanation>
       <explanation lang="zh_cn" name="新增台词"
-                   syntax="新增台词 [文件路径]"
+                   syntax="1.新增台词 (目标) [文件路径]
+                   &#xA;2.新增台词 (目标) [文件路径] (行)"
                    details="例如：新增台词 table.csv
                    &#xA;
                    &#xA;从已经注册的“文件路径”中的台词信息中，
                    &#xA;在当前使用的文本框中显示下一条文本数据，作为“新页面文本”。
                    &#xA;
-                   &#xA;注：需要先通过“加载台词”注册[文件路径]。
+                   &#xA;注：需要先通过“加载台词”注册[文件路径]，但如果是(行)指定，则不用。
                    &#xA;注：由于无法设置等待，因此如果需要等待，建议使用
                    &#xA;例如：新增台词 table.csv | 等待
                    &#xA;这样的形式。"
@@ -3028,7 +3038,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textOverflowAutoWait">
       </explanation>
       <explanation lang="zh_cn" name="文本超出自动等待"
-                   syntax="文本超出自动等待 [true/false]"
+                   syntax="文本超出自动等待 [true(默认)/false]"
                    details="例如：文本超出自动等待 true
                    &#xA;
                    &#xA;如果为true，当尝试将文本放入文本框并且文本超出范围时，将输出适合范围的文本，并自动进入等待模式，等待继续输出其余文本。
@@ -3592,7 +3602,7 @@
     <Command name="--[変化関連コマンド]--">
       <explanation lang="jap" name="--[変化関連コマンド]--"></explanation>
       <explanation lang="eng" name="--[change commands]--"></explanation>
-      <explanation lang="zh_cn" name="--[变更相关命令]--"></explanation>
+      <explanation lang="zh_cn" name="--[过渡相关命令]--"></explanation>
     </Command>
     <Command cmd="nameChange">
       <explanation lang="jap" name="名前変更"
@@ -3741,19 +3751,23 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animation">
       </explanation>
       <explanation lang="zh_cn" name="动画注册"
-                   syntax="动画注册 [注册名] [循环类型: 0/1/2] (x:循环次数) [显示图片] [显示时间] (显示图片) (显示时间) ..... (变更类型)"
+                   syntax="动画注册 [注册名] [循环类型: 0/1/2] (x:循环次数) [显示图片] [显示时间] (显示图片) (显示时间) ..... (过渡类型) (永久) (异步)"
                    details="「循环类型」
                    &#xA; 0: 不循环。
                    &#xA; 1: 命令结束后，返回初始值再播放
-                   &#xA; 2: 命令结束后，向最小值反向播放并重复
-                   &#xA;(所以来回播放是'2')
+                   &#xA; 2: 命令结束后，再次反向播放（来回循环）
                    &#xA;
-                   &#xA;例如：动画注册 anim1 2 x2 scg2.png 500 scg1.png 1500 !cg_test001.png 500
-                   &#xA; 注册名为anim1的动画。可用于图片、背景等。x'2': 循环播放2次
+                   &#xA;「过渡类型」
+                   &#xA;0: 无过渡效果
+                   &#xA;1: 平滑过渡（前后图像插值：默认）
                    &#xA;
-                   &#xA;「变更类型」
-                   &#xA;0: 保持原样
-                   &#xA;1: 平滑 (插值前后图片: 默认)
+                   &#xA;「永久」
+                   &#xA;如果指定，动画资源将被永久缓存。
+                   &#xA;注意：动画本身不会被永久保存。
+                   &#xA;
+                   &#xA;「异步」
+                   &#xA;如果指定，资源将在后台加载。
+                   &#xA;注意：如果需要在特定时间内加载所有资源以保证演出效果，请不要使用此选项。
                    &#xA;
                    &#xA;例如：动画注册 anim1 2 x2 scg2.png 500 scg1.png 1500 !cg_test001.png &quot;lvRandom(1000, 4000)&quot;
                    &#xA;参考：如果在显示时间中使用Lightvn的lvRandom，每次播放动画时会重新计算并随机播放。
@@ -3836,12 +3850,12 @@
       </explanation>
       <explanation lang="zh_cn" name="简易动画注册"
                    syntax="简易动画注册 [注册名] [循环类型: 0/1/2] (x:循环次数) [文件格式]
-                   &#xA;[文件编号最小] [文件编号最大] [执行编号开始] [执行编号结束] [图片间隔] [每张图片显示时间] (变更类型)"
+                   &#xA;[文件编号最小] [文件编号最大] [执行编号开始] [执行编号结束] [图片间隔] [每张图片显示时间] (过渡类型)"
                    details="「循环类型」
                    &#xA; 0: 不循环。
                    &#xA; 1: 命令结束后，返回初始值再播放
                    &#xA; 2: 命令结束后，向最小值反向播放并重复
-                   &#xA;(所以来回播放是'2')
+                   &#xA;(所以循环播放是'2')
                    &#xA;
                    &#xA;「文件格式」
                    &#xA;遵循C++的sprintf写法。
@@ -3862,9 +3876,9 @@
                    &#xA;
                    &#xA;可以从中间播放，超过最大值后返回最小值，继续播放到指定的数值。
                    &#xA;
-                   &#xA;「变更类型」
-                   &#xA;0: 保持原样
-                   &#xA;1: 平滑 (插值前后图片: 默认)
+                   &#xA;「过渡类型」
+                   &#xA;0: 无过渡效果
+                   &#xA;1: 平滑过渡（前后图像插值：默认）
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animationEx">
       </explanation>
@@ -3902,12 +3916,12 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animationSheet">
       </explanation>
       <explanation lang="zh_cn" name="动画表注册"
-                   syntax="动画表注册 [注册名] [循环类型: 0/1/2] (x:循环次数) [显示图片] [内部图片宽度] [内部图片高度] [x] [y] [进度方向：横/竖] [帧数] [每帧时间] (变更类型)"
+                   syntax="动画表注册 [注册名] [循环类型: 0/1/2] (x:循环次数) [显示图片] [内部图片宽度] [内部图片高度] [x] [y] [进度方向：横/竖] [帧数] [每帧时间] (过渡类型)"
                    details="「循环类型」
                    &#xA; 0: 不循环。
                    &#xA; 1: 命令结束后，返回初始值再播放
                    &#xA; 2: 命令结束后，向最小值反向播放并重复
-                   &#xA;(来回播放所以是'2')
+                   &#xA;(循环播放所以是'2')
                    &#xA;
                    &#xA;例如：动画表注册 test_sprite 1 sprite_test.png 48 48 0 2 横 3 150 1
                    &#xA; 注册名为test_sprite的动画。可用于图片、背景等。
@@ -3915,9 +3929,9 @@
                    &#xA; 从左上角x: 0, y: 2的图片开始，横向进度，使用3帧动画。
                    &#xA; 每帧显示时间为150毫秒。
                    &#xA;
-                   &#xA;「变更类型」
-                   &#xA;0: 保持原样
-                   &#xA;1: 平滑 (插值前后图片: 默认)
+                   &#xA;「过渡类型」
+                   &#xA;0: 无过渡效果
+                   &#xA;1: 平滑过渡（前后图像插值：默认）
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animationSheet">
       </explanation>
@@ -4020,7 +4034,7 @@
                    &#xA; 0: 不循环。
                    &#xA; 1: 命令结束后，返回初始值再播放
                    &#xA; 2: 命令结束后，向最小值反向播放并重复
-                   &#xA;(所以来回播放是'2')
+                   &#xA;(所以循环播放是'2')
                    &#xA;
                    &#xA;例如：动画循环 2 移动2 alice1 +400 +0 500
                    &#xA;例如：动画循环 1 x6 移动2 alice1 +100 +0 500 "
@@ -4060,17 +4074,17 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#tweenListAdd">
       </explanation>
-      <explanation lang="zh_cn" name="动画列表追加"
-                   syntax="动画列表追加 [目标] [延迟时间(ms)] [执行命令]"
+      <explanation lang="zh_cn" name="演出列表追加"
+                   syntax="演出列表追加 [目标] [延迟时间(ms)] [执行命令]"
                    details="
-                   &#xA;例如：动画列表追加 id0 300 移动x2 id0 300 3000
+                   &#xA;例如：演出列表追加 id0 300 移动x2 id0 300 3000
                    &#xA;
-                   &#xA;在个体的动画堆栈中添加新的动画。
-                   &#xA;后添加的动画将在前一个演出信息的执行开始后进行计算和执行。
+                   &#xA;在个体的演出堆栈中添加新的演出。
+                   &#xA;后添加的演出将在前一个演出信息的执行开始后进行计算和执行。
                    &#xA;
                    &#xA;例如：
-                   &#xA;动画列表追加 id0 0 移动x2 id0 300 3000
-                   &#xA;动画列表追加 id0 300 移动y2 id0 300 3000
+                   &#xA;演出列表追加 id0 0 移动x2 id0 300 3000
+                   &#xA;演出列表追加 id0 300 移动y2 id0 300 3000
                    &#xA;
                    &#xA;0毫秒后，“移动x2 id0 300 3000”开始执行。
                    &#xA;300毫秒后，“移动y2 id0 300 3000”开始执行。
@@ -4103,11 +4117,11 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#tweenEnd">
       </explanation>
-      <explanation lang="zh_cn" name="变换结束"
-                   syntax="变换结束 [目标] (画面区域范围)"
-                   details="例如：变换结束 alice1, textbox0, 摄像头
+      <explanation lang="zh_cn" name="变化结束"
+                   syntax="变化结束 [目标] (画面区域范围)"
+                   details="例如：变化结束 alice1, textbox0, 摄像头
                    &#xA;
-                   &#xA;停止所有当前的变换命令，包括循环效果，使其保持当前状态。
+                   &#xA;停止所有当前的变化命令，包括循环效果，使其保持当前状态。
                    &#xA;
                    &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
                    &#xA;"
@@ -4134,11 +4148,11 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#finishTweens">
       </explanation>
-      <explanation lang="zh_cn" name="变换完成"
-                  syntax="变换完成"
-                  details="例如：变换完成
+      <explanation lang="zh_cn" name="变化完成"
+                  syntax="变化完成"
+                  details="例如：变化完成
                    &#xA;
-                   &#xA;将所有正在进行的变换立即结束。
+                   &#xA;将所有正在进行的变化立即结束。
                    &#xA;
                    &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
                    &#xA;"
@@ -4440,6 +4454,14 @@
                    details="ex. onDestroy albert2 script filename.txt 
                    &#xA;
                    &#xA;run [command] on target destruction. 
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#onDestroy">
+      </explanation>
+      <explanation lang="zh_cn" name="销毁时"
+                   syntax="销毁时 [目标对象名称或类型 (可多个)] [执行命令]"
+                   details="ex. 销毁时 albert2 script filename.txt 
+                   &#xA;
+                   &#xA;当指定的目标对象被销毁时，执行给定的命令。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#onDestroy">
       </explanation>
@@ -7397,6 +7419,8 @@
                    &#xA;- 等待 对象消失 [目标名称]
                    &#xA;等待指定对象消失。如果已完成，或没有目标，则不执行任何操作。
                    &#xA;
+                   &#xA;- 等待 动画结束 [目标名称]
+                   &#xA;如果目标有计划结束的动画，则一直等待到动画结束为止。
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/script#wait">
       </explanation>
@@ -8677,7 +8701,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#bgvoice">
       </explanation>
       <explanation lang="zh_cn" name="背景语音"
-                   syntax="背景语音 [名字] [文件名] (音量变量) (音量为零的目标名字的一部分)"
+                   syntax="背景语音 [名字] [文件名] (音量变量) (音量为零的目标名字的一部分) (非活性/活性时渐变：毫秒)"
                    details="例如：背景语音 bgv0 ep0-3.ogg
                    &#xA;例如：背景语音 bgv0 ep0-3.ogg none voice_boy :
                    &#xA;当播放以'voice_boy'开头的语音文件时，将临时将此背景语音的音量设置为零。
@@ -8992,15 +9016,15 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#bgmAutoContinue">
       </explanation>
       <explanation lang="zh_cn" name="背景音乐自动继续"
-                   syntax="背景音乐自动继续 [true / false]"
+                   syntax="背景音乐自动继续 [true(默认)/ false]"
                    details="例如：背景音乐自动继续 true
                    &#xA;
-                   &#xA;如果为true，且当执行“背景音乐”命令时：
-                   &#xA;
-                   &#xA;  - 重新创建同名背景音乐
-                   &#xA;  - 尝试播放同一文件名的音乐，
-                   &#xA;
-                   &#xA;不会重新创建对象，而是继续播放现有的音乐。"
+                   &#xA;当设置为true，执行‘背景音乐’命令时
+                   &#xA;  
+                   &#xA;  - 同一个体名称
+                   &#xA;  - 如果已经存在同一文件名的曲子作为‘背景音’个体，  
+                   &#xA;  
+                   &#xA;将不重新创建个体，而是继续播放现有的曲子。"
                    reference="https://wikiwiki.jp/lightvn/commands/media#bgmAutoContinue">
       </explanation>
     </Command>
@@ -9025,7 +9049,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#loopRegion">
       </explanation>
       <explanation lang="zh_cn" name="循环区间"
-                   syntax="循环区间 [循环起点(ms)] [循环区间长度(ms)]"
+                   syntax="循环区间 [目标] [循环起点(ms)] [循环区间长度(ms)]"
                    details="例如：循环区间 1500 500
                    &#xA;
                    &#xA;开始循环播放背景音乐，从起点到指定长度。
@@ -9438,14 +9462,15 @@
                    reference="https://wikiwiki.jp/lightvn/commands/var#eraseVars">
       </explanation>
       <explanation lang="zh_cn" name="删除变量"
-                   syntax="删除变量 [变量名（可多个）]"
-                   details="例如：删除变量 变量名1, 变量名2, 变量名3
-                   &#xA;
+                   syntax="1. 删除变量 [变量名 (可多个)]
+                   &#xA;2. 删除变量2 [变量名 (可多个)]"
+                   details="例. 删除变量 变量名1, 变量名2, 变量名3
+                   &#xA;  
                    &#xA;(实验中功能)
-                   &#xA;将指定变量名的变量值恢复为未定义状态。
-                   &#xA;系统变量不能作为目标。
-                   &#xA;
-                   &#xA;  "
+                   &#xA;将相关变量名的变量值重置为undefined。
+                   &#xA;系统变量无法作为对象。
+                   &#xA;  
+                   &#xA;在‘删除变量2’的情况下，可以使用正则表达式作为变量名。"
                    reference="https://wikiwiki.jp/lightvn/commands/var#eraseVars">
       </explanation>
     </Command>
@@ -10221,6 +10246,15 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#rollback">
       </explanation>
+      <explanation lang="zh_cn" name="回滚"
+                   syntax="回滚"
+                   details="ex. 回滚
+                   &#xA;
+                   &#xA;返回到上一个回滚点。
+                   &#xA;注意：类似于加载存档，某些变量可能会被初始化。
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#rollback">
+      </explanation>
     </Command>
     <Command cmd="rollback_point">
       <explanation lang="jap" name="ロールバック時点"
@@ -10240,6 +10274,16 @@
                    &#xA;adds a rollback_point of the current game state
                    &#xA;
                    &#xA;Note: abides to same rules as [save]: [var]s, etc. are not saved.
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#rollback_point">
+      </explanation>
+      <explanation lang="zh_cn" name="设置回滚点"
+                   syntax="设置回滚点"
+                   details="ex. 设置回滚点
+                   &#xA;
+                   &#xA;在当前游戏状态添加一个回滚点。
+                   &#xA;
+                   &#xA;注意：遵循与保存存档相同的规则，某些变量不会被保存。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#rollback_point">
       </explanation>
@@ -10266,6 +10310,17 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#rollback_point_AutoAdd">
       </explanation>
+      <explanation lang="zh_cn" name="自动添加回滚点"
+                   syntax="自动添加回滚点 [类型]"
+                   details="ex. 自动添加回滚点 1
+                   &#xA;
+                   &#xA;[类型]
+                   &#xA;0: 不使用（默认）
+                   &#xA;1: 在每次文本等待时，自动调用[设置回滚点]
+                   &#xA;
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#rollback_point_AutoAdd">
+      </explanation>
     </Command>
     <Command cmd="rollback_points_max">
       <explanation lang="jap" name="ロールバック時点最大"
@@ -10286,6 +10341,15 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#rollback_points_max">
       </explanation>
+      <explanation lang="zh_cn" name="设置最大回滚点数"
+                   syntax="设置最大回滚点数 [数值]"
+                   details="ex. 设置最大回滚点数 100
+                   &#xA;
+                   &#xA;设置可保存的最大回滚点数量。
+                   &#xA;(默认：无限)
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#rollback_points_max">
+      </explanation>
     </Command>
     <Command cmd="rollback_points_clear">
       <explanation lang="jap" name="ロールバック時点クリア"
@@ -10301,6 +10365,14 @@
                    details="ex. rollback_points_clear
                    &#xA;
                    &#xA;clears all registered rollback_points
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#rollback_points_clear">
+      </explanation>
+      <explanation lang="jap" name="清除回滚点"
+                   syntax="清除回滚点"
+                   details="ex. 清除回滚点
+                   &#xA;
+                   &#xA;清除所有已注册的回滚点。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#rollback_points_clear">
       </explanation>
@@ -10588,6 +10660,17 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#mouseCursorAutoHide">
       </explanation>
+      <explanation lang="zh_cn" name="鼠标光标自动隐藏"
+                   syntax="1. 鼠标光标自动隐藏 [隐藏执行前的判断时间：毫秒]
+                   &#xA;2. 鼠标光标自动隐藏 false"
+                   details="例. 鼠标光标自动隐藏 5000
+                   &#xA;
+                   &#xA;如果在5000毫秒内没有移动鼠标光标，则隐藏光标。
+                   &#xA;如果有移动，光标将再次出现。
+                   &#xA;
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#mouseCursorAutoHide">
+      </explanation>
     </Command>
     <Command cmd="setDialogScript">
       <explanation lang="jap" name="ダイアログスクリプト登録"
@@ -10795,6 +10878,9 @@
                    &#xA;物理处理
                    &#xA;允许进入单位
                    &#xA;碰撞检查全部初始化。
+                   &#xA;
+                   &#xA;自动添加回滚点
+                   &#xA;设置最大回滚点数
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#clear">
       </explanation>
@@ -12313,6 +12399,15 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvStringToNumber">
       </explanation>
+      <explanation lang="zh_cn" name="lvStringToNumber"
+                   syntax="lvStringToNumber(字符串)"
+                   details="ex. lvNumberToString(&quot;30&quot;) -> 30
+                   &#xA;  
+                   &#xA;将指定的字符串转换为数字。
+                   &#xA;  
+                   &#xA;返回: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvStringToNumber">
+      </explanation>
     </Command>
     <Command name="lvSubstringCount">
       <explanation lang="jap" name="lvSubstringCount"
@@ -12821,6 +12916,15 @@
                    &#xA;if [key name] exists within [hashmap], delete
                    &#xA;  
                    &#xA;return: HashMap"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvHashMapEraseKey">
+      </explanation>
+      <explanation lang="jap" name="lvHashMapEraseKey"
+                   syntax="lvHashMapEraseKey(HashMap变量, 字符串: 键)"
+                   details="ex. lvHashMapEraseKey(var, &quot;名字&quot;)
+                   &#xA;  
+                   &#xA;如果HashMap变量中存在指定的键，则删除。
+                   &#xA;  
+                   &#xA;返回: HashMap"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvHashMapEraseKey">
       </explanation>
     </Command>

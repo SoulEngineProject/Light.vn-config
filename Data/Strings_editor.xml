@@ -611,6 +611,10 @@
     <val lang="eng">Commands</val>
     <val lang="zh_cn">命令</val>
   </EString>
+  <EString nkey="cmd_search" wpfControl="">
+    <val lang="jap">全体検索</val>
+    <val lang="eng">Full Search</val>
+  </EString>
 
   <!--[tab: script]-->
   <EString nkey="tab_main_scripts" wpfControl="">

@@ -38,6 +38,9 @@
         <val lang="jap" value="演出終了"/>
         <val lang="zh_cn" value="动画结束"/>
       </option>
+      <option name="animation_finish">
+        <val lang="jap" value="アニメ終了"/>
+      </option>
       <option name="obj_destroy">
         <val lang="jap" value="個体消滅"/>
         <val lang="zh_cn" value="对象消失"/>
@@ -566,7 +569,7 @@
                    &#xA;拡大：マウスホイール (2Dカメラ専用)
                    &#xA;
                    &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/var#var">
+                   reference="https://wikiwiki.jp/lightvn/editor/free_camera_usage">
       </explanation>
       <explanation lang="eng" name="--[free camera usage]--"
                    syntax=""
@@ -584,7 +587,7 @@
                    &#xA;zoom：mouse wheel (2D camera only)
                    &#xA;  
                    &#xA;  "
-                   reference="https://wikiwiki.jp/lightvn/commands/var#var">
+                   reference="https://wikiwiki.jp/lightvn/editor/free_camera_usage">
       </explanation>
       <explanation lang="zh_cn" name="--[自由视角操作]--"
                    syntax=""
@@ -601,7 +604,7 @@
                    &#xA;左右移动：shift + 按住鼠标滚轮并移动。
                    &#xA;缩放：鼠标滚轮（仅限 2D 视角）
                    &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/var#var">
+                   reference="https://wikiwiki.jp/lightvn/editor/free_camera_usage">
       </explanation>
     </Command>
     <Command name="--[イメージ表示コマンド]--">
@@ -3002,7 +3005,7 @@
     </Command>
     <Command cmd="textOverflowAutoWait">
       <explanation lang="jap" name="文字超過自動待機"
-                   syntax="文字超過自動待機 [true/false]"
+                   syntax="文字超過自動待機 [true (デフォルト) /false]"
                    details="ex. 文字超過自動待機 true   
                    &#xA;  
                    &#xA;trueの場合、
@@ -3015,7 +3018,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textOverflowAutoWait">
       </explanation>
       <explanation lang="eng" name="textOverflowAutoWait"
-                   syntax="textOverflowAutoWait [true/false]"
+                   syntax="textOverflowAutoWait [true (default) /false]"
                    details="ex. textOverflowAutoWait true 
                    &#xA;  
                    &#xA;if true,
@@ -4421,6 +4424,24 @@
                    &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#delayedDestroy">
+      </explanation>
+    </Command>
+    <Command cmd="onDestroy">
+      <explanation lang="jap" name="消滅時"
+                   syntax="消滅時 [対象名・対象種類名 (複数可)] [実行コマンド]"
+                   details="ex. 消滅時 albert2 script filename.txt 
+                   &#xA;
+                   &#xA;対象が消滅時、コマンドを実行する。
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#onDestroy">
+      </explanation>
+      <explanation lang="eng" name="onDestroy"
+                   syntax="onDestroy [target name(s)] [command]"
+                   details="ex. onDestroy albert2 script filename.txt 
+                   &#xA;
+                   &#xA;run [command] on target destruction. 
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#onDestroy">
       </explanation>
     </Command>
     <Command cmd="move">
@@ -7267,6 +7288,9 @@
                    &#xA;
                    &#xA;- 待機 状態更新
                    &#xA;[状態」コマンドによる状態更新を待つ。
+                   &#xA;
+                   &#xA;- 待機 アニメ終了 [対象名]
+                   &#xA;対象に、終了予定のアニメがあれば、終了時まで待つ。
                    &#xA;  
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/script#wait">
@@ -7321,6 +7345,9 @@
                    &#xA;
                    &#xA;- wait stateUpdate
                    &#xA;wait for a [state] command to update the state.
+                   &#xA;
+                   &#xA;- wait animation_finish [object name]
+                   &#xA;if the object has an animation that is exepcted to finish, wait until finish.
                    &#xA;
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#wait">
@@ -9386,21 +9413,27 @@
     </Command>
     <Command cmd="eraseVars">
       <explanation lang="jap" name="変数消去"
-                   syntax="変数消去 [変数名 (複数可)]"
+                   syntax="1. 変数消去 [変数名 (複数可)]
+                   &#xA;2. 変数消去2 [変数名 (複数可)]"
                    details="ex. 変数消去 変数名1, 変数名2, 変数名3
                    &#xA;  
                    &#xA;(実験中機能)
                    &#xA;該当変数名の変数値をundefinedに戻す。
                    &#xA;システム変数は対象に出来ない。
+                   &#xA;
+                   &#xA;「変数消去2」の場合、変数名として正規表現の使用が可能。
                    &#xA;  
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/var#eraseVars">
       </explanation>
       <explanation lang="eng" name="eraseVars"
-                   syntax="eraseVars [var name(s)]"
+                   syntax="1. eraseVars [var name(s)]
+                   &#xA;2. eraseVars2 [var name(s)]"
                    details="ex. eraseVars var1, var2, var3
                    &#xA;
+                   &#xA;erases the [var name(s)].
                    &#xA;
+                   &#xA;eraseVars2 applies the search of [var name(s)] as each a regex expression.
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/var#eraseVars">
       </explanation>
@@ -9556,36 +9589,6 @@
                    &#xA;仅在前一行的“如果”或“否则如果”为false时执行。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#else">
-      </explanation>
-    </Command>
-    <Command cmd="clearVarContents">
-      <explanation lang="jap" name="配列変数初期化"
-                   syntax="配列変数初期化 [変数名]"
-                   details="ex. 配列変数初期化 ふふ
-                   &#xA;  
-                   &#xA;変数の種類がリスト、又はハッシュマップである場合、
-                   &#xA;中身を全部消す。
-                   &#xA;
-                   &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/var#clearVarContents">
-      </explanation>
-      <explanation lang="eng" name="clearVarContents"
-                   syntax="clearVarContents [name]"
-                   details="ex. clearVarContents var_name
-                   &#xA;
-                   &#xA;if [name] is a list or hashmap, clear contents
-                   &#xA;  
-                   &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/var#clearVarContents">
-      </explanation>
-      <explanation lang="zh_cn" name="清除数组变量内容"
-                   syntax="清除数组变量内容 [变量名]"
-                   details="例如：清除数组变量内容 变量名
-                   &#xA;
-                   &#xA;如果[变量名]是列表或哈希映射，则清除其内容。
-                   &#xA;
-                   &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/var#clearVarContents">
       </explanation>
     </Command>
     <Command cmd="forRun">
@@ -10563,6 +10566,29 @@
                    reference="https://wikiwiki.jp/lightvn/commands/system#mouseCursor">
       </explanation>
     </Command>
+    <Command cmd="mouseCursorAutoHide">
+      <explanation lang="jap" name="マウスカーソル自動隠匿"
+                   syntax="1. マウスカーソル自動隠匿 [隠匿実行までの判断時間：ミリ秒]
+                   &#xA;2. マウスカーソル自動隠匿 false"
+                   details="ex. マウスカーソル自動隠匿 5000
+                   &#xA;
+                   &#xA;5000ミリ秒の間、マウスカーソルの動きがなければ、マウスカーソルを隠す。
+                   &#xA;動きがあれば、また表れる。
+                   &#xA;
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#mouseCursorAutoHide">
+      </explanation>
+      <explanation lang="eng" name="mouseCursorAutoHide"
+                   syntax="1. mouseCursorAutoHide [time to wait until hide (ms)]
+                   &#xA;2. mouseCursorAutoHide false"
+                   details="ex. mouseCursorAutoHide 5000
+                   &#xA;
+                   &#xA;If the mouse cursor has no movement for 5000 ms, hide.
+                   &#xA;Will reappear on movement.
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#mouseCursorAutoHide">
+      </explanation>
+    </Command>
     <Command cmd="setDialogScript">
       <explanation lang="jap" name="ダイアログスクリプト登録"
                    syntax="ダイアログスクリプト登録 [スクリプト名]"
@@ -11412,7 +11438,10 @@
       <explanation lang="eng" name="lvTimeNow"
                    syntax="lvTimeNow(string: time_string)"
                    details="ex. lvTimeNow(&quot;%y&quot;) 
-                   &#xA;  
+                   &#xA;
+                   &#xA;time_format respects the options here:
+                   &#xA;https://en.cppreference.com/w/c/chrono/strftime
+                   &#xA;
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvTimeNow">
       </explanation>
@@ -12238,8 +12267,8 @@
     </Command>
     <Command name="lvNumberToString">
       <explanation lang="jap" name="lvNumberToString"
-                   syntax="a. lvNumberToString(数字)
-                   &#xA;b. lvNumberToString(数字, 小数点以下どこまで)"
+                   syntax="1. lvNumberToString(数字)
+                   &#xA;2. lvNumberToString(数字, 小数点以下どこまで)"
                    details="ex. lvNumberToString(30.123123) -> &quot;30.123123&quot;
                    &#xA;  
                    &#xA;ex. lvNumberToString(30.123123, 3)  -> &quot;30.123&quot;
@@ -12265,6 +12294,24 @@
                    &#xA;
                    &#xA;返回：字符串"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvNumberToString">
+      </explanation>
+    </Command>
+    <Command name="lvStringToNumber">
+      <explanation lang="jap" name="lvStringToNumber"
+                   syntax="lvStringToNumber(文字列)"
+                   details="ex. lvNumberToString(&quot;30&quot;) -> 30
+                   &#xA;  
+                   &#xA;指定された文字列を数字として返還。
+                   &#xA;  
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvStringToNumber">
+      </explanation>
+      <explanation lang="eng" name="lvStringToNumber"
+                   syntax="lvStringToNumber(string)"
+                   details="ex. lvNumberToString(&quot;30&quot;) -> 30
+                   &#xA;  
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvStringToNumber">
       </explanation>
     </Command>
     <Command name="lvSubstringCount">
@@ -12755,6 +12802,26 @@
                    &#xA;
                    &#xA;返回：布尔值"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvHashMapHasKey">
+      </explanation>
+    </Command>
+    <Command name="lvHashMapEraseKey">
+      <explanation lang="jap" name="lvHashMapEraseKey"
+                   syntax="lvHashMapEraseKey(HashMap変数, string: キー)"
+                   details="ex. lvHashMapEraseKey(var, &quot;名前&quot;)  
+                   &#xA;  
+                   &#xA;HashMap変数に「キー」がある場合、削除。
+                   &#xA;  
+                   &#xA;return: HashMap"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvHashMapEraseKey">
+      </explanation>
+      <explanation lang="eng" name="lvHashMapEraseKey"
+                   syntax="lvHashMapEraseKey(hashmap, string: key name)"
+                   details="ex. lvHashMapEraseKey(&quot;name&quot;)
+                   &#xA;
+                   &#xA;if [key name] exists within [hashmap], delete
+                   &#xA;  
+                   &#xA;return: HashMap"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvHashMapEraseKey">
       </explanation>
     </Command>
     <Command name="lvIsEmpty">

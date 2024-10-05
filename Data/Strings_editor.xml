@@ -698,6 +698,10 @@
     <val lang="eng">Name</val>
     <val lang="zh_cn">名称</val>
   </EString>
+  <EString nkey="lvn_objs_tree_type" wpfControl="">
+    <val lang="jap">種類</val>
+    <val lang="eng">Type</val>
+  </EString>
   <EString nkey="lvn_objs_tree_center_x" wpfControl="">
     <val lang="jap">描画中心 x</val>
     <val lang="eng">Center X</val>

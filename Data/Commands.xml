@@ -10712,6 +10712,7 @@
                    &#xA;
                    &#xA;画像全体品質
                    &#xA;合成画像登録
+                   &#xA;方形画像登録
                    &#xA;アニメーション登録
                    &#xA;タッチ素材設定
                    &#xA;
@@ -10754,6 +10755,7 @@
                    &#xA;
                    &#xA;imageDefaultQuality
                    &#xA;textureCreate
+                   &#xA;textureCreateRect
                    &#xA;animation registry
                    &#xA;touchableRes
                    &#xA;
@@ -11202,11 +11204,12 @@
                    reference="https://wikiwiki.jp/lightvn/commands/system#textureCreateRect">
       </explanation>
       <explanation lang="eng" name="textureCreateRect"
-                   syntax="1. textureCreateRect [w] [h] [r] [g] [b] (a)
-                   &#xA;2. textureCreateRect [w] [h] [hex colour]"
-                   details="ex. textureCreateRect new_texture 100 100 #000000
+                   syntax="1. textureCreateRect [register_name] [w] [h] [r] [g] [b] (a)
+                   &#xA;2. textureCreateRect [register_name] [w] [h] [hex colour]"
+                   details="ex. textureCreateRect my_file.png new_texture 100 100 #000000
                    &#xA;
-                   &#xA;create a rectangular texture
+                   &#xA;create a rectangular texture as Images/[register_name]
+                   &#xA;(ex. Images/my_file.png)
                    &#xA;
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#textureCreateRect">
@@ -12728,6 +12731,11 @@
       <explanation lang="eng" name="lvCreateVarHashMap"
                    syntax="lvCreateVarHashMap()"
                    details="ex. lvCreateVarHashMap()  
+                   &#xA;
+                   &#xA;Create a HashMap variable.
+                   &#xA;
+                   &#xA;You can add key/values by ex.
+                   &#xA;price[&quot;flower&quot;] = 300
                    &#xA;  
                    &#xA;return: hashmap var"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvCreateVarHashMap">

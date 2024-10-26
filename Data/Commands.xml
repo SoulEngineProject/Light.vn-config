@@ -3720,7 +3720,7 @@
                    &#xA;
                    &#xA;「軽量積載」
                    &#xA;指定される場合、RAMの使用が抑えられる形で実行される。
-                   &#xA;(代わりに、FPSを消耗する)
+                   &#xA;(代わりに、再生時にFPSを消耗する)
                    &#xA;  
                    &#xA;ex. アニメ登録 anim1 2 x2 scg2.png 500 scg1.png 1500 !cg_test001.png &quot;lvRandom(1000, 4000)&quot;  
                    &#xA;参考：表示時間にLightvnのlvRandomを入れると、
@@ -3747,7 +3747,7 @@
                    &#xA;
                    &#xA;[cacheLight]
                    &#xA;if set, will load resources in a way that reduces overall RAM usage
-                   &#xA;(in exchange, will consume FPS)
+                   &#xA;(in exchange, will consume FPS during animation play)
                    &#xA;  
                    &#xA;ex. animation anim1 2 x2 scg2.png 500 scg1.png 1500 !cg_test001.png 500   
                    &#xA; register an animation called 'anim1'。can be used in cg, bg, etc. x'2': repeat twice"
@@ -3820,7 +3820,7 @@
                    &#xA;
                    &#xA;「軽量積載」
                    &#xA;指定される場合、RAMの使用が抑えられる形で実行される。
-                   &#xA;(代わりに、FPSを消耗する)
+                   &#xA;(代わりに、再生時にFPSを消耗する)
                    &#xA;  
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animationEx">
@@ -3852,7 +3852,7 @@
                    &#xA;
                    &#xA;[cacheLight]
                    &#xA;if set, will load resources in a way that reduces overall RAM usage
-                   &#xA;(in exchange, will consume FPS)
+                   &#xA;(in exchange, will consume FPS during animation play)
                    &#xA;  
                    &#xA;  
                    &#xA;"

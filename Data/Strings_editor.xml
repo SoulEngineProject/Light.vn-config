@@ -20,6 +20,10 @@
     <val lang="eng">Stop Test Play?</val>
     <val lang="zh_cn">结束测试吗？</val>
   </EString>
+  <EString nkey="UpdateMsg_LowFPS" wpfControl="">
+    <val lang="jap">FPSが異常領域に低下。{}以上に調整必要。</val>
+    <val lang="eng">FPS drop to danger levels. Adjust above: {}</val>
+  </EString>
 
   <!--[preview messages]-->
   <EString nkey="PreviewMsg_Default" wpfControl="">
@@ -243,6 +247,10 @@
     <val lang="jap">現在行からテストプレイ開始 on/off</val>
     <val lang="eng">Start/End Test Play from Current Line</val>
     <val lang="zh_cn">从当前行开始/结束测试播放</val>
+  </EString>
+  <EString nkey="action_reload_resources" wpfControl="">
+    <val lang="jap">素材更新</val>
+    <val lang="eng">Reload Resources</val>
   </EString>
   <EString nkey="action_settings" wpfControl="">
     <val lang="jap">設定</val>
@@ -723,6 +731,10 @@
     <val lang="eng">Screenspace (Level)</val>
     <val lang="zh_cn">屏幕区域 (层级)</val>
   </EString>
+  <EString nkey="lvn_objs_tree_created_at" wpfControl="">
+    <val lang="jap">作成元</val>
+    <val lang="eng">Created at</val>
+  </EString>
 
   <!--[tab: variables]-->
   <EString nkey="tab_main_vars" wpfControl="">
@@ -1072,6 +1084,10 @@
     <val lang="jap">コマンド挿入中にはテストプレイへ切り替えないのだ！</val>
     <val lang="eng">We cannot toggle to testplay while trying to insert a command!</val>
     <val lang="zh_cn">在插入命令时无法切换到测试播放！</val>
+  </EString>
+  <EString nkey="lvn_alarm_filepath_spaces" wpfControl="">
+    <val lang="jap">ファイルパスに空白は入れないのだ！</val>
+    <val lang="eng">Filepath cannot contain spaces!</val>
   </EString>
 
 </Strings>

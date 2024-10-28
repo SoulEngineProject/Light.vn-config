@@ -254,6 +254,9 @@
         <val lang="jap" value="非同期"/>
         <val lang="zh_cn" value="异步"/>
       </option>
+      <option name="cacheLight">
+        <val lang="jap" value="軽量積載"/>
+      </option>
       <option name="stateUpdate">
         <val lang="jap" value="状態更新"/>
       </option>
@@ -3697,7 +3700,7 @@
     </Command>
     <Command cmd="animation">
       <explanation lang="jap" name="アニメ登録"
-                   syntax="アニメ登録 [登録名] [ループ種類: 0/1/2] (x:反復回数) [表示画像] [表示時間] (表示画像) (表示時間) ..... (変化タイプ) (永久) (非同期)"
+                   syntax="アニメ登録 [登録名] [ループ種類: 0/1/2] (x:反復回数) [表示画像] [表示時間] (表示画像) (表示時間) ..... (変化タイプ) (永久) (軽量積載)"
                    details="「ループ種類」 
                    &#xA;0: ループしない。 
                    &#xA;1: コマンドが終わると、最初値に戻りまた再生  
@@ -3715,9 +3718,9 @@
                    &#xA;指定される場合、素材が永久キャッシュされる。
                    &#xA;(アニメーション自体が永久保存されるわけではない)
                    &#xA;
-                   &#xA;「非同期」
-                   &#xA;指定される場合、素材がバックグラウンドで読み込まれる。
-                   &#xA;特定の区間内に全ての素材を読み込んだ方が演出上自然な場合、使用しないように。
+                   &#xA;「軽量積載」
+                   &#xA;指定される場合、RAMの使用が抑えられる形で実行される。
+                   &#xA;(代わりに、再生時にFPSを消耗する)
                    &#xA;  
                    &#xA;ex. アニメ登録 anim1 2 x2 scg2.png 500 scg1.png 1500 !cg_test001.png &quot;lvRandom(1000, 4000)&quot;  
                    &#xA;参考：表示時間にLightvnのlvRandomを入れると、
@@ -3728,7 +3731,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animation">
       </explanation>
       <explanation lang="eng" name="animation"
-                   syntax="animation [name] [loop type: 0/1/2] (x:repeat count) [filename] [time] (filename) (time) ..... (transition type) (forever) (async)"
+                   syntax="animation [name] [loop type: 0/1/2] (x:repeat count) [filename] [time] (filename) (time) ..... (transition type) (forever) (cacheLight)"
                    details="[loop type] 
                    &#xA;0: no loop 
                    &#xA;1: repeat command from start 
@@ -3742,16 +3745,16 @@
                    &#xA;if set, the resources for the animation are cached for the lifetime of the program.
                    &#xA;note: the animation itself isn't saved forever.
                    &#xA;
-                   &#xA;[async]
-                   &#xA;if set, will load resources in the background.
-                   &#xA;in most situations, you may actually want to guarantee all resources are loaded within a specific period. in which case, don't use.
+                   &#xA;[cacheLight]
+                   &#xA;if set, will load resources in a way that reduces overall RAM usage
+                   &#xA;(in exchange, will consume FPS during animation play)
                    &#xA;  
                    &#xA;ex. animation anim1 2 x2 scg2.png 500 scg1.png 1500 !cg_test001.png 500   
                    &#xA; register an animation called 'anim1'。can be used in cg, bg, etc. x'2': repeat twice"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animation">
       </explanation>
       <explanation lang="zh_cn" name="动画注册"
-                   syntax="动画注册 [注册名] [循环类型: 0/1/2] (x:循环次数) [显示图片] [显示时间] (显示图片) (显示时间) ..... (过渡类型) (永久) (异步)"
+                   syntax="动画注册 [注册名] [循环类型: 0/1/2] (x:循环次数) [显示图片] [显示时间] (显示图片) (显示时间) ..... (过渡类型) (永久)"
                    details="「循环类型」
                    &#xA; 0: 不循环。
                    &#xA; 1: 命令结束后，返回初始值再播放
@@ -3765,9 +3768,6 @@
                    &#xA;如果指定，动画资源将被永久缓存。
                    &#xA;注意：动画本身不会被永久保存。
                    &#xA;
-                   &#xA;「异步」
-                   &#xA;如果指定，资源将在后台加载。
-                   &#xA;注意：如果需要在特定时间内加载所有资源以保证演出效果，请不要使用此选项。
                    &#xA;
                    &#xA;例如：动画注册 anim1 2 x2 scg2.png 500 scg1.png 1500 !cg_test001.png &quot;lvRandom(1000, 4000)&quot;
                    &#xA;参考：如果在显示时间中使用Lightvn的lvRandom，每次播放动画时会重新计算并随机播放。
@@ -3780,8 +3780,16 @@
     <Command cmd="animationEx">
       <explanation lang="jap" name="アニメ登録簡易"
                    syntax="アニメ登録簡易 [登録名] [ループ種類: 0/1/2] (x:反復回数) [ファイル形式]   
-                   &#xA;[ファイル番号最小] [ファイル番号最大] [実行番号最初] [実行番号最終] [画像間隔] [各画像表示時間] (変化タイプ) (永久) (非同期)"
-                   details="「ループ種類」 
+                   &#xA;[ファイル番号最小] [ファイル番号最大] [実行番号最初] [実行番号最終] [画像間隔] [各画像表示時間(ミリ秒) / fps] (変化タイプ) (永久) (軽量積載)"
+                   details="
+                   &#xA;ex. アニメ登録簡易 apple 1 apple/apple%04d.png 0 44 12 24 1 120  
+                   &#xA;apple/apple%04d.pngの形式のファイル名を、  
+                   &#xA;apple/apple0012.png ~ apple/apple0024.pngに自動変更し、アニメーションとして登録。
+                   &#xA;
+                   &#xA;ex. アニメ登録簡易 apple 1 apple/apple%04d.png 0 44 12 24 1 30fps 
+                   &#xA;ex. アニメ登録簡易 apple 1 apple/apple%04d.png 0 44 12 24 1 &quot;30fps&quot;
+                   &#xA;
+                   &#xA;  「ループ種類」 
                    &#xA; 0: ループしない。 
                    &#xA; 1: コマンドが終わると、最初値に戻りまた再生  
                    &#xA; 2: コマンドが終わると、最小値に向けてまた逆再生を繰り返す 
@@ -3789,10 +3797,6 @@
                    &#xA;  
                    &#xA;「ファイル形式」  
                    &#xA;C++のprintf書き方に準ずる。 
-                   &#xA;  
-                   &#xA;ex. アニメ登録簡易 apple 1 apple/apple%04d.png 0 44 12 24 1 120  
-                   &#xA;apple/apple%04d.pngの形式のファイル名を、  
-                   &#xA;apple/apple0012.png ~ apple/apple0024.pngに自動変更し、アニメーションとして登録。 
                    &#xA;  
                    &#xA;画像間隔) 1以上の数値が必要。
                    &#xA;実行番号最初から実行番号最終に至るまでの画像の内、アニメーションの一部として取り入れる画像の間隔。
@@ -3814,16 +3818,22 @@
                    &#xA;指定される場合、素材が永久キャッシュされる。
                    &#xA;(アニメーション自体が永久保存されるわけではない)
                    &#xA;
-                   &#xA;「非同期」
-                   &#xA;指定される場合、素材がバックグラウンドで読み込まれる。
-                   &#xA;特定の区間内に全ての素材を読み込んだ方が演出上自然な場合、使用しないように。
+                   &#xA;「軽量積載」
+                   &#xA;指定される場合、RAMの使用が抑えられる形で実行される。
+                   &#xA;(代わりに、再生時にFPSを消耗する)
                    &#xA;  
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animationEx">
       </explanation>
       <explanation lang="eng" name="animationEx"
-                   syntax="animation [name] [loop type: 0/1/2] (x:repeat count) [file format] [filerange min] [file range max] [run frame start] [run frame end] [frame increments] [time per frame] (transition type) (forever) (async)"
-                   details="「loop type」 
+                   syntax="animation [name] [loop type: 0/1/2] (x:repeat count) [file format] [filerange min] [file range max] [run frame start] [run frame end] [frame increments] [time per frame(ms) / fps] (transition type) (forever) (cacheLight)"
+                   details="
+                   &#xA;ex. animationEx apple 1 apple/apple%04d.png 0 44 0 44 1 120
+                   &#xA;
+                   &#xA;ex. animationEx apple 1 apple/apple%04d.png 0 44 12 24 1 30fps 
+                   &#xA;ex. animationEx apple 1 apple/apple%04d.png 0 44 12 24 1 &quot;30fps&quot;
+                   &#xA;
+                   &#xA;「loop type」 
                    &#xA; 0: no loop 
                    &#xA; 1: repeat command from start 
                    &#xA; 2: repeat back and forth
@@ -3840,11 +3850,11 @@
                    &#xA;if set, the resources for the animation are cached for the lifetime of the program.
                    &#xA;note: the animation itself isn't saved forever.
                    &#xA;
-                   &#xA;「async」
-                   &#xA;if set, will load resources in the background.
-                   &#xA;in most situations, you may actually want to guarantee all resources are loaded within a specific period. in which case, don't use.
+                   &#xA;[cacheLight]
+                   &#xA;if set, will load resources in a way that reduces overall RAM usage
+                   &#xA;(in exchange, will consume FPS during animation play)
                    &#xA;  
-                   &#xA;ex. animationEx apple 1 apple/apple%04d.png 0 44 0 44 1 120 
+                   &#xA;  
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animationEx">
       </explanation>
@@ -8406,6 +8416,8 @@
                    &#xA;注意：
                    &#xA;「lua」コマンドの右側全部が「lua」言語の行として実行される。
                    &#xA;lua言語はLight.vnのスクリプト言語とは異なる。
+                   &#xA;
+                   &#xA;「.lua」にすると、コマンド実行までに、スクリプトが待つ。
                    &#xA;  
                    &#xA;Light.vnからLuaに引数を渡す方法：
                    &#xA;上記を踏まえ、Light.vnでは&quot;{{ 変数名 }} &quot;の形でのみ直接引数を渡せられる。
@@ -8420,6 +8432,8 @@
       <explanation lang="eng" name="lua"
                    syntax="lua [lua command]"
                    details="ex. lua custom_func(&quot;alice&quot;, &quot;ice cream&quot;, &quot;puppy&quot;)  
+                   &#xA;
+                   &#xA;「.lua」will have the parser wait until the command is executed
                    &#xA;  
                    &#xA;Note：can also load lua files through script command"
                    reference="https://wikiwiki.jp/lightvn/commands/script#lua">
@@ -8543,6 +8557,10 @@
                    details="ex. 背景音 bgm1.ogg 反復   
                    &#xA;  
                    &#xA;背景音の個体名：vn_sysBGM 
+                   &#xA;
+                   &#xA;TIP: クロスフェード実装
+                   &#xA;名前変更 背景音 bgm_fade | アウト bgm_fade 800
+                   &#xA;背景音0 new.ogg | イン 背景音 800
                    &#xA;  
                    &#xA;最終音量：Master x BGM x 音量コマンド  
                    &#xA;  
@@ -8556,6 +8574,10 @@
       <explanation lang="eng" name="bgm"
                    syntax="bgm [filename] (repeat)"
                    details="ex. bgm bgm1.ogg repeat   
+                   &#xA;
+                   &#xA;TIP: cross fading
+                   &#xA;nameChange bgm bgm_fade | fadeout bgm_fade 800
+                   &#xA;bgm0 new.ogg | fadein bgm 800
                    &#xA;  
                    &#xA;Suffix:'0' starts play at volume 0。 
                    &#xA; (ex. bgm0 bgm.ogg)"
@@ -9909,17 +9931,23 @@
     </Command>
     <Command cmd="releaseUnusedMemory">
       <explanation lang="jap" name="未使用素材開放"
-                   syntax="未使用素材開放"
+                   syntax="未使用素材開放 (全部)"
                    details="ex. 未使用素材開放
                    &#xA;
-                   &#xA;現在使用されてない全ての素材のメモリーを開放します。"
+                   &#xA;現在使用されてない全ての素材のメモリーを開放します。
+                   &#xA;
+                   &#xA;「全部」を付けると、「永久」で登録された素材も含む。
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#releaseUnusedMemory">
       </explanation>
       <explanation lang="eng" name="releaseUnusedMemory"
-                   syntax="releaseUnusedMemory"
+                   syntax="releaseUnusedMemory (all)"
                    details="ex. releaseUnusedMemory
                    &#xA;
-                   &#xA;releases unused resources from memory."
+                   &#xA;releases unused resources from memory.
+                   &#xA;
+                   &#xA;(all) will include resources loaded with [forever]
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#releaseUnusedMemory">
       </explanation>
       <explanation lang="zh_cn" name="释放未使用内存"
@@ -10795,6 +10823,7 @@
                    &#xA;
                    &#xA;画像全体品質
                    &#xA;合成画像登録
+                   &#xA;方形画像登録
                    &#xA;アニメーション登録
                    &#xA;タッチ素材設定
                    &#xA;
@@ -10837,6 +10866,7 @@
                    &#xA;
                    &#xA;imageDefaultQuality
                    &#xA;textureCreate
+                   &#xA;textureCreateRect
                    &#xA;animation registry
                    &#xA;touchableRes
                    &#xA;
@@ -11288,11 +11318,12 @@
                    reference="https://wikiwiki.jp/lightvn/commands/system#textureCreateRect">
       </explanation>
       <explanation lang="eng" name="textureCreateRect"
-                   syntax="1. textureCreateRect [w] [h] [r] [g] [b] (a)
-                   &#xA;2. textureCreateRect [w] [h] [hex colour]"
-                   details="ex. textureCreateRect new_texture 100 100 #000000
+                   syntax="1. textureCreateRect [register_name] [w] [h] [r] [g] [b] (a)
+                   &#xA;2. textureCreateRect [register_name] [w] [h] [hex colour]"
+                   details="ex. textureCreateRect my_file.png new_texture 100 100 #000000
                    &#xA;
-                   &#xA;create a rectangular texture
+                   &#xA;create a rectangular texture as Images/[register_name]
+                   &#xA;(ex. Images/my_file.png)
                    &#xA;
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#textureCreateRect">
@@ -12823,6 +12854,11 @@
       <explanation lang="eng" name="lvCreateVarHashMap"
                    syntax="lvCreateVarHashMap()"
                    details="ex. lvCreateVarHashMap()  
+                   &#xA;
+                   &#xA;Create a HashMap variable.
+                   &#xA;
+                   &#xA;You can add key/values by ex.
+                   &#xA;price[&quot;flower&quot;] = 300
                    &#xA;  
                    &#xA;return: hashmap var"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvCreateVarHashMap">

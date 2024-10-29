@@ -256,6 +256,7 @@
       </option>
       <option name="cacheLight">
         <val lang="jap" value="軽量積載"/>
+        <val lang="zh_cn" value="轻量加载"/>
       </option>
       <option name="stateUpdate">
         <val lang="jap" value="状態更新"/>
@@ -3754,7 +3755,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animation">
       </explanation>
       <explanation lang="zh_cn" name="动画注册"
-                   syntax="动画注册 [注册名] [循环类型: 0/1/2] (x:循环次数) [显示图片] [显示时间] (显示图片) (显示时间) ..... (过渡类型) (永久)"
+                   syntax="动画注册 [注册名] [循环类型: 0/1/2] (x:循环次数) [显示图片] [显示时间] (显示图片) (显示时间) ..... (过渡类型) (永久) (轻量加载)"
                    details="「循环类型」
                    &#xA; 0: 不循环。
                    &#xA; 1: 命令结束后，返回初始值再播放
@@ -3768,6 +3769,9 @@
                    &#xA;如果指定，动画资源将被永久缓存。
                    &#xA;注意：动画本身不会被永久保存。
                    &#xA;
+                   &#xA;「轻量加载」
+                   &#xA;如果指定，将减少该指令的RAM消耗。
+                   &#xA;作为代价，这会消耗一定的FPS。
                    &#xA;
                    &#xA;例如：动画注册 anim1 2 x2 scg2.png 500 scg1.png 1500 !cg_test001.png &quot;lvRandom(1000, 4000)&quot;
                    &#xA;参考：如果在显示时间中使用Lightvn的lvRandom，每次播放动画时会重新计算并随机播放。
@@ -3860,8 +3864,16 @@
       </explanation>
       <explanation lang="zh_cn" name="简易动画注册"
                    syntax="简易动画注册 [注册名] [循环类型: 0/1/2] (x:循环次数) [文件格式]
-                   &#xA;[文件编号最小] [文件编号最大] [执行编号开始] [执行编号结束] [图片间隔] [每张图片显示时间] (过渡类型)"
-                   details="「循环类型」
+                   &#xA;[文件编号最小] [文件编号最大] [执行编号开始] [执行编号结束] [图片间隔] [每张图片显示时间（毫秒）/fps] (过渡类型) (轻量加载)"
+                   details="
+                   &#xA;例：简易动画注册 apple 1 apple/apple%04d.png 0 44 12 24 1 120  
+                   &#xA;将文件名格式为 apple/apple%04d.png 的文件自动更改为
+                   &#xA;apple/apple0012.png ~ apple/apple0024.png，并注册为动画。
+                   &#xA;
+                   &#xA;例：简易动画注册 apple 1 apple/apple%04d.png 0 44 12 24 1 30fps 
+                   &#xA;例：简易动画注册 apple 1 apple/apple%04d.png 0 44 12 24 1 &quot;30fps&quot;
+                   &#xA;
+                   &#xA;「循环类型」
                    &#xA; 0: 不循环。
                    &#xA; 1: 命令结束后，返回初始值再播放
                    &#xA; 2: 命令结束后，向最小值反向播放并重复
@@ -3889,6 +3901,10 @@
                    &#xA;「过渡类型」
                    &#xA;0: 无过渡效果
                    &#xA;1: 平滑过渡（前后图像插值：默认）
+                   &#xA;
+                   &#xA;「轻量加载」
+                   &#xA;如果指定，将减少该指令的RAM消耗。
+                   &#xA;作为代价，这会消耗一定的FPS。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animationEx">
       </explanation>
@@ -8446,6 +8462,8 @@
                    &#xA;“lua”命令右侧的全部内容将作为“lua”语言行执行。
                    &#xA;lua语言与Light.vn脚本语言不同。
                    &#xA;
+                   &#xA;将其设置为「.lua」后，脚本会在执行命令之前进行等待。
+                   &#xA;
                    &#xA;从Light.vn传递参数到Lua的方法：
                    &#xA;考虑到上述情况，Light.vn中仅可通过“{{ 变量名 }}”的形式直接传递参数。
                    &#xA;也可以通过lua内部的lvGetVar函数来引用变量。
@@ -8588,6 +8606,10 @@
                    details="例如：背景音乐 bgm1.ogg 重复
                    &#xA;
                    &#xA;背景音乐的个体名：vn_sysBGM
+                   &#xA;
+                   &#xA;提示：交叉淡入实现
+                   &#xA;名称更改 背景音乐 bgm_fade | 淡出 bgm_fade 800
+                   &#xA;背景音乐0 new.ogg | 淡入 背景音乐 800
                    &#xA;
                    &#xA;最终音量：Master x BGM x 音量命令
                    &#xA;
@@ -9950,11 +9972,14 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#releaseUnusedMemory">
       </explanation>
-      <explanation lang="zh_cn" name="释放未使用内存"
+      <explanation lang="zh_cn" name="释放未使用内存(全部)"
                    syntax="释放未使用内存"
                    details="例如：释放未使用内存
                    &#xA;
-                   &#xA;释放当前未使用的所有资源的内存。"
+                   &#xA;释放当前未使用的所有资源的内存。
+                   &#xA;
+                   &#xA;如果加上“全部”，则包括注册为“永久”的素材。
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#releaseUnusedMemory">
       </explanation>
     </Command>
@@ -10904,6 +10929,7 @@
                    &#xA;
                    &#xA;特殊效果自动应用
                    &#xA;遮罩自动应用
+                   &#xA;矩形图像注册
                    &#xA;
                    &#xA;物理处理
                    &#xA;允许进入单位

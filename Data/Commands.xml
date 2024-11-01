@@ -10396,7 +10396,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#rollback_points_clear">
       </explanation>
-      <explanation lang="jap" name="清除回滚点"
+      <explanation lang="zh_cn" name="清除回滚点"
                    syntax="清除回滚点"
                    details="ex. 清除回滚点
                    &#xA;
@@ -12954,7 +12954,7 @@
                    &#xA;return: HashMap"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvHashMapEraseKey">
       </explanation>
-      <explanation lang="jap" name="lvHashMapEraseKey"
+      <explanation lang="zh_cn" name="lvHashMapEraseKey"
                    syntax="lvHashMapEraseKey(HashMap变量, 字符串: 键)"
                    details="ex. lvHashMapEraseKey(var, &quot;名字&quot;)
                    &#xA;  

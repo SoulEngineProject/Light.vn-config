@@ -23,6 +23,7 @@
   <EString nkey="UpdateMsg_LowFPS" wpfControl="">
     <val lang="jap">FPSが異常領域に低下。{}以上に調整必要。</val>
     <val lang="eng">FPS drop to danger levels. Adjust above: {}</val>
+    <val lang="zh_cn">FPS下降发生异常。{}或将需要调整。</val>
   </EString>
 
   <!--[preview messages]-->
@@ -251,6 +252,7 @@
   <EString nkey="action_reload_resources" wpfControl="">
     <val lang="jap">素材更新</val>
     <val lang="eng">Reload Resources</val>
+    <val lang="zh_cn">更新素材</val>
   </EString>
   <EString nkey="action_settings" wpfControl="">
     <val lang="jap">設定</val>
@@ -710,6 +712,7 @@
   <EString nkey="lvn_objs_tree_type" wpfControl="">
     <val lang="jap">種類</val>
     <val lang="eng">Type</val>
+    <val lang="zh_cn">种类</val>
   </EString>
   <EString nkey="lvn_objs_tree_center_x" wpfControl="">
     <val lang="jap">描画中心 x</val>
@@ -734,6 +737,7 @@
   <EString nkey="lvn_objs_tree_created_at" wpfControl="">
     <val lang="jap">作成元</val>
     <val lang="eng">Created at</val>
+    <val lang="zh_cn">来源</val>
   </EString>
 
   <!--[tab: variables]-->
@@ -1088,6 +1092,7 @@
   <EString nkey="lvn_alarm_filepath_spaces" wpfControl="">
     <val lang="jap">ファイルパスに空白は入れないのだ！</val>
     <val lang="eng">Filepath cannot contain spaces!</val>
+    <val lang="zh_cn">文件路径不能为空！</val>
   </EString>
 
 </Strings>

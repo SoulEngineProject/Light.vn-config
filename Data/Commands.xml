@@ -384,9 +384,6 @@
                    &#xA;/*が開始され、*/がくるまでの部分をコメントとして認識する。
                    &#xA;  
                    &#xA;注：/*が行頭、*/が行末、に来る場合にのみ正常動作する。
-                   &#xA;
-                   &#xA;  
-                   &#xA;違いの理由： {{ }}の場合、シナリオ行内でも変数を反映できるように設計された為。  
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#var">
       </explanation>

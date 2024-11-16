@@ -8110,29 +8110,6 @@
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyTriggerReset">
       </explanation>
     </Command>
-    <Command cmd="keyTriggersActive">
-      <explanation lang="jap" name="キートリガー活性化"
-                   syntax="キートリガー活性化 [true / false]"
-                   details="ex. キートリガー活性化 true
-                   &#xA;
-                   &#xA;登録されたキートリガーを全て活性化させるかどうかを指定。"
-                   reference="https://wikiwiki.jp/lightvn/commands/script#keyTriggerActive">
-      </explanation>
-      <explanation lang="eng" name="keyTriggersActive"
-                   syntax="keyTriggersActive [true / false]"
-                   details="ex. keyTriggerReset
-                   &#xA;
-                   &#xA;activates / deactives triggering of key triggers"
-                   reference="https://wikiwiki.jp/lightvn/commands/script#keyTriggerActive">
-      </explanation>
-      <explanation lang="zh_cn" name="激活按键触发器"
-                   syntax="激活按键触发器 [true / false]"
-                   details="例如：激活按键触发器 true
-                   &#xA;
-                   &#xA;指定是否激活所有已注册的按键触发器。"
-                   reference="https://wikiwiki.jp/lightvn/commands/script#keyTriggerActive">
-      </explanation>
-    </Command>
     <Command cmd="inputLock">
       <explanation lang="jap" name="入力禁止"
                    syntax="入力禁止 [true / false (デフォルト)]"
@@ -11255,23 +11232,6 @@
                    &#xA;在浏览器输出中：“Console”（开发者工具）
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#SystemLog">
-      </explanation>
-    </Command>
-    <Command cmd="createDummyCG">
-      <explanation lang="jap" name="仮絵生成"
-                   syntax="仮絵生成 [保存ファイル名] [フォント名] [幅] [縦] [名前ラベル] (表情ラベル) (他ラベル...)"
-                   details="ex. 仮絵生成 cg_s001 r-mplus-1c-m.ttf 250 450 テスト 笑 制服"
-                   reference="https://wikiwiki.jp/lightvn/commands/system#createDummyCG">
-      </explanation>
-      <explanation lang="eng" name="createDummyCG"
-                   syntax="createDummyCG [save filename] [font filename] [width] [height] [name label] (expression label) (other label...)"
-                   details="ex. createDummyCG cg_s001 r-mplus-1c-m.ttf 250 450 テスト 笑 制服"
-                   reference="https://wikiwiki.jp/lightvn/commands/system#createDummyCG">
-      </explanation>
-      <explanation lang="zh_cn" name="生成虚拟CG"
-                   syntax="生成虚拟CG [保存文件名] [字体名] [宽度] [高度] [名称标签] (表情标签) (其他标签...)"
-                   details="例如：生成虚拟CG cg_s001 r-mplus-1c-m.ttf 250 450 测试 笑 制服"
-                   reference="https://wikiwiki.jp/lightvn/commands/system#createDummyCG">
       </explanation>
     </Command>
     <Command cmd="textureCreate">

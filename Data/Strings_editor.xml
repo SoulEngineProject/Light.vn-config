@@ -614,6 +614,10 @@
     <val lang="eng">Release Cache on Tabs Changed</val>
     <val lang="zh_cn">切换标签时释放缓存</val>
   </EString>
+  <EString nkey="ReadFromPatchesCheck" wpfControl="">
+    <val lang="jap">Patch類を読み込む</val>
+    <val lang="eng">Read from Patches</val>
+  </EString>
 
   <!--[tab: commands]-->
   <EString nkey="tab_main_commands" wpfControl="">
@@ -625,6 +629,20 @@
     <val lang="jap">全体検索</val>
     <val lang="eng">Full Search</val>
     <val lang="zh_cn">全局搜索</val>
+  </EString>
+
+  <!--[tab: interop]-->
+  <EString nkey="tab_main_interop" wpfControl="">
+    <val lang="jap">作品介入</val>
+    <val lang="eng">Interop</val>
+  </EString>
+  <EString nkey="lvn_command_label" wpfControl="">
+    <val lang="jap">コマンド</val>
+    <val lang="eng">Command</val>
+  </EString>
+  <EString nkey="lvn_command_send" wpfControl="">
+    <val lang="jap">実行</val>
+    <val lang="eng">Execute</val>
   </EString>
 
   <!--[tab: script]-->
@@ -1040,9 +1058,9 @@
     <val lang="zh_cn">需要选择6张图像！</val>
   </EString>
   <EString nkey="lvn_alarm_handle_BtnNewScript_directory_error" wpfControl="">
-    <val lang="jap">{} か、{} の中に作るのだよ~</val>
-    <val lang="eng">Choose from either {}, or {}</val>
-    <val lang="zh_cn">请选择{}或{}中的目录</val>
+    <val lang="jap">{}の中に作るのだよ~</val>
+    <val lang="eng">Choose from {}</val>
+    <val lang="zh_cn">请选择{}中的目录</val>
   </EString>
   <EString nkey="lvn_alarm_is_valid_filename_invalid" wpfControl="">
     <val lang="jap">スクリプト: '{}' は読み込みできるファイルではないみたいなのだ！</val>
@@ -1050,9 +1068,9 @@
     <val lang="zh_cn">脚本：'{}' 似乎不是可读取的文件！</val>
   </EString>
   <EString nkey="lvn_alarm_handle_BtnOpenScript_invalid_directory" wpfControl="">
-    <val lang="jap">{} &#xA;&#xA;または&#xA;&#xA; {} &#xA;&#xA;の中から選ぶなのだ！</val>
-    <val lang="eng">Choose between&#xA;&#xA;{}&#xA;&#xA;or&#xA;&#xA;{}!</val>
-    <val lang="zh_cn">请选择&#xA;&#xA;{}&#xA;&#xA;或&#xA;&#xA;{}!</val>
+    <val lang="jap">{}の中から選ぶなのだ！</val>
+    <val lang="eng">Choose within {}!</val>
+    <val lang="zh_cn">请选择{}中!</val>
   </EString>
   <EString nkey="lvn_alarm_readScript_error" wpfControl="">
     <val lang="jap">スクリプト: '{}' の読み込みに失敗したのだ。きっと誰かが食べたなのだ！</val>

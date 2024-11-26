@@ -261,6 +261,9 @@
       <option name="stateUpdate">
         <val lang="jap" value="状態更新"/>
       </option>
+      <option name="default">
+        <val lang="jap" value="初期値"/>
+      </option>
     </CmdOptions>
   </Keywords>
   <!--[COMMANDS]-->
@@ -1556,7 +1559,7 @@
                    &#xA;定义按钮纹理内的可让光标接触的区域。
                    &#xA;注：目标名称可以使用正则表达式。"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchArea">
-      </explanation>   
+      </explanation>
     </Command>
     <Command cmd="touchAreaScreen">
       <explanation lang="jap" name="画面内反応範囲"
@@ -3088,7 +3091,7 @@
                    &#xA;  
                    &#xA;true: 最初のシナリオ行を除外したシナリオ行の先を全て自動改行させる。 
                    &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/text#textAutoNewLine">
+                   reference="https://wikiwiki.jp/lightvn/commands/text#textAutoNewline">
       </explanation>
       <explanation lang="eng" name="textAutoNewline"
                    syntax="textAutoNewline [true/false]"
@@ -3096,7 +3099,7 @@
                    &#xA;  
                    &#xA;true: auto starts a new line for all scenario lines except for the first line 
                    &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/text#textAutoNewLine">
+                   reference="https://wikiwiki.jp/lightvn/commands/text#textAutoNewline">
       </explanation>
       <explanation lang="zh_cn" name="文本自动换行"
                    syntax="文本自动换行 [true/false]"
@@ -3104,7 +3107,7 @@
                    &#xA;
                    &#xA;true: 自动为除第一行之外的所有剧本换行
                    &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/text#textAutoNewLine">
+                   reference="https://wikiwiki.jp/lightvn/commands/text#textAutoNewline">
       </explanation>
     </Command>
     <Command cmd="textReadVersion">
@@ -3637,16 +3640,20 @@
     </Command>
     <Command cmd="parentChild">
       <explanation lang="jap" name="親子"
-                   syntax="親子 [親] [子供(達)] (画面領域範囲)"
+                   syntax="親子(2) [親] [子供(達)] (画面領域範囲)"
                    details="ex. 親子 鶏 子1, 子2, 子3
                    &#xA;
-                   &#xA;注: 画面領域範囲：全画面領域、同階層画面領域。何もつけない場合、現画面領域の個体のみ拾う。"
+                   &#xA;注：親子2、の場合、親の焦点を中心に子の焦点を相対的に置く。
+                   &#xA;注: 画面領域範囲：全画面領域、同階層画面領域。何もつけない場合、現画面領域の個体のみ拾う。
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#parentChild">
       </explanation>
       <explanation lang="eng" name="parentChild"
                    syntax="parentChild [parent name] [child(ren)] (screenspace range)"
                    details="ex. parentChild parent child1, child2, child3
                    &#xA;
+                   &#xA;
+                   &#xA;Note: parentChild2 will place child's origin relatively aginst parent's origin
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#parentChild">
       </explanation>
@@ -3718,8 +3725,14 @@
                    &#xA;
                    &#xA;「軽量積載」
                    &#xA;指定される場合、RAMの使用が抑えられる形で実行される。
+                   &#xA;(個体による使用時に、全素材を読み込む)
+                   &#xA;(代わりに、使用初期に時間を消耗する)
+                   &#xA;
+                   &#xA;「軽量積載2」
+                   &#xA;指定される場合、RAMの使用が更に抑えられる形で実行される。
+                   &#xA;(再生時に、素材を一枚ずつ読み込む)
                    &#xA;(代わりに、再生時にFPSを消耗する)
-                   &#xA;  
+                   &#xA;
                    &#xA;ex. アニメ登録 anim1 2 x2 scg2.png 500 scg1.png 1500 !cg_test001.png &quot;lvRandom(1000, 4000)&quot;  
                    &#xA;参考：表示時間にLightvnのlvRandomを入れると、
                    &#xA;  アニメが再生される度にそこは再計算されランダムに再生される。
@@ -3745,6 +3758,10 @@
                    &#xA;
                    &#xA;[cacheLight]
                    &#xA;if set, will load resources in a way that reduces overall RAM usage
+                   &#xA;(in exchange, will consume time when animation is first used)
+                    &#xA;
+                   &#xA;[cacheLight2]
+                   &#xA;if set, will load resources in a way that further reduces overall RAM usage
                    &#xA;(in exchange, will consume FPS during animation play)
                    &#xA;  
                    &#xA;ex. animation anim1 2 x2 scg2.png 500 scg1.png 1500 !cg_test001.png 500   
@@ -5536,6 +5553,29 @@
                    &#xA;
                    &#xA;注：动画命令的目标名可以使用正则表达式指定多个。"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#origin">
+      </explanation>
+    </Command>
+    <Command cmd="createOrigin">
+      <explanation lang="jap" name="作成焦点"
+                   syntax="1. 作成焦点 [x: 0.0~1.0] [y: 0.0~1.0] [z: 0.0~1.0]
+                   &#xA;2. 作成焦点 初期値"
+                   details="ex. 作成焦点 0.5 0.5 0.5
+                   &#xA; 
+                   &#xA;個体作成時の、座標焦点を指定する。
+                   &#xA;
+                   &#xA;適用範囲：実行スクリプト内
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#createOrigin">
+      </explanation>
+      <explanation lang="eng" name="createOrigin"
+                   syntax="createOrigin [x: 0.0~1.0] [y: 0.0~1.0] [z: 0.0~1.0]"
+                   details="ex. createOrigin 0.5 0.5 0.5
+                   &#xA;
+                   &#xA;defines the origin for which the object's coordinates are placed on creation.
+                   &#xA;
+                   &#xA;range: current script
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#createOrigin">
       </explanation>
     </Command>
     <Command cmd="alpha">
@@ -14130,6 +14170,26 @@
                    &#xA;
                    &#xA;返回：布尔值"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_IsRunForever">
+      </explanation>
+    </Command>
+    <Command name="lvSystem::IsPausingLowerScripts">
+      <explanation lang="jap" name="lvSystem::IsPausingLowerScripts"
+                   syntax="lvSystem::IsPausingLowerScripts()"
+                   details="ex. lvSystem::IsPausingLowerScripts()
+                   &#xA;  
+                   &#xA;下位スタックのスクリプト読込みの停止が実行されていれば、true
+                   &#xA;  
+                   &#xA;return: bool"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_IsPausingLowerScripts ">
+      </explanation>
+      <explanation lang="eng" name="lvSystem::IsPausingLowerScripts "
+                   syntax="lvSystem::IsPausingLowerScripts()"
+                   details="ex. lvSystem::IsPausingLowerScripts()
+                   &#xA;
+                   &#xA;return true if program is pausing lower scripts
+                   &#xA;  
+                   &#xA;return: bool"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_IsPausingLowerScripts">
       </explanation>
     </Command>
     <!--[LIGHT VN LUA FUNCTIONS]-->

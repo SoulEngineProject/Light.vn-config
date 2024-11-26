@@ -3091,7 +3091,7 @@
                    &#xA;  
                    &#xA;true: 最初のシナリオ行を除外したシナリオ行の先を全て自動改行させる。 
                    &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/text#textAutoNewLine">
+                   reference="https://wikiwiki.jp/lightvn/commands/text#textAutoNewline">
       </explanation>
       <explanation lang="eng" name="textAutoNewline"
                    syntax="textAutoNewline [true/false]"
@@ -3099,7 +3099,7 @@
                    &#xA;  
                    &#xA;true: auto starts a new line for all scenario lines except for the first line 
                    &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/text#textAutoNewLine">
+                   reference="https://wikiwiki.jp/lightvn/commands/text#textAutoNewline">
       </explanation>
       <explanation lang="zh_cn" name="文本自动换行"
                    syntax="文本自动换行 [true/false]"
@@ -3107,7 +3107,7 @@
                    &#xA;
                    &#xA;true: 自动为除第一行之外的所有剧本换行
                    &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/text#textAutoNewLine">
+                   reference="https://wikiwiki.jp/lightvn/commands/text#textAutoNewline">
       </explanation>
     </Command>
     <Command cmd="textReadVersion">
@@ -14170,6 +14170,26 @@
                    &#xA;
                    &#xA;返回：布尔值"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_IsRunForever">
+      </explanation>
+    </Command>
+    <Command name="lvSystem::IsPausingLowerScripts">
+      <explanation lang="jap" name="lvSystem::IsPausingLowerScripts"
+                   syntax="lvSystem::IsPausingLowerScripts()"
+                   details="ex. lvSystem::IsPausingLowerScripts()
+                   &#xA;  
+                   &#xA;下位スタックのスクリプト読込みの停止が実行されていれば、true
+                   &#xA;  
+                   &#xA;return: bool"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_IsPausingLowerScripts ">
+      </explanation>
+      <explanation lang="eng" name="lvSystem::IsPausingLowerScripts "
+                   syntax="lvSystem::IsPausingLowerScripts()"
+                   details="ex. lvSystem::IsPausingLowerScripts()
+                   &#xA;
+                   &#xA;return true if program is pausing lower scripts
+                   &#xA;  
+                   &#xA;return: bool"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_IsPausingLowerScripts">
       </explanation>
     </Command>
     <!--[LIGHT VN LUA FUNCTIONS]-->

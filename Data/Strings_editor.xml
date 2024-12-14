@@ -735,6 +735,10 @@
     <val lang="zh_cn">切换标签时释放缓存</val>
     <val lang="kor">탭 변경 시에 사용하지 않은 리소스 해제</val>
   </EString>
+  <EString nkey="ReadFromPatchesCheck" wpfControl="">
+    <val lang="jap">Patch類を読み込む</val>
+    <val lang="eng">Read from Patches</val>
+  </EString>
 
   <!--[tab: commands]-->
   <EString nkey="tab_main_commands" wpfControl="">
@@ -748,6 +752,20 @@
     <val lang="eng">Full Search</val>
     <val lang="zh_cn">全局搜索</val>
     <val lang="kor">전체 찾기</val>
+  </EString>
+
+  <!--[tab: interop]-->
+  <EString nkey="tab_main_interop" wpfControl="">
+    <val lang="jap">作品介入</val>
+    <val lang="eng">Interop</val>
+  </EString>
+  <EString nkey="lvn_command_label" wpfControl="">
+    <val lang="jap">コマンド</val>
+    <val lang="eng">Command</val>
+  </EString>
+  <EString nkey="lvn_command_send" wpfControl="">
+    <val lang="jap">実行</val>
+    <val lang="eng">Execute</val>
   </EString>
 
   <!--[tab: script]-->
@@ -1240,10 +1258,10 @@
     <val lang="kor">그림 6개를 고를 필요가 있는 것이다!</val>
   </EString>
   <EString nkey="lvn_alarm_handle_BtnNewScript_directory_error" wpfControl="">
-    <val lang="jap">{} か、{} の中に作るのだよ~</val>
-    <val lang="eng">Choose from either {}, or {}</val>
-    <val lang="zh_cn">请选择{}或{}中的目录</val>
-    <val lang="kor">{}나 {} 안에 만들어야 해~</val>
+    <val lang="jap">{}の中に作るのだよ~</val>
+    <val lang="eng">Choose from {}</val>
+    <val lang="zh_cn">请选择{}中的目录</val>
+    <val lang="kor">{} 안에 만들어야 해~</val>
   </EString>
   <EString nkey="lvn_alarm_is_valid_filename_invalid" wpfControl="">
     <val lang="jap">スクリプト: '{}' は読み込みできるファイルではないみたいなのだ！</val>
@@ -1252,10 +1270,10 @@
     <val lang="kor">스크립트: '{}'는 불러올 수 있는 파일이 아닌 것이다!</val>
   </EString>
   <EString nkey="lvn_alarm_handle_BtnOpenScript_invalid_directory" wpfControl="">
-    <val lang="jap">{} &#xA;&#xA;または&#xA;&#xA; {} &#xA;&#xA;の中から選ぶなのだ！</val>
-    <val lang="eng">Choose between&#xA;&#xA;{}&#xA;&#xA;or&#xA;&#xA;{}!</val>
-    <val lang="zh_cn">请选择&#xA;&#xA;{}&#xA;&#xA;或&#xA;&#xA;{}!</val>
-    <val lang="kor">{}&#xA;&#xA;혹은&#xA;&#xA;{}&#xA;&#xA; 중에서 골라야 하는 것이다!</val>
+    <val lang="jap">{}の中から選ぶなのだ！</val>
+    <val lang="eng">Choose within {}!</val>
+    <val lang="zh_cn">请选择{}中!</val>
+    <val lang="kor">{} 중에서 골라야 하는 것이다!</val>
   </EString>
   <EString nkey="lvn_alarm_readScript_error" wpfControl="">
     <val lang="jap">スクリプト: '{}' の読み込みに失敗したのだ。きっと誰かが食べたなのだ！</val>

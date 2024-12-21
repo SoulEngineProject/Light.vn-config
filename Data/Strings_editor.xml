@@ -55,13 +55,13 @@
     <val lang="jap">shift + マウスホイール押し: スクリーン移動。マウスホイール: 拡大 (テストプレイ中)</val>
     <val lang="eng">Shift + Mouse Wheel: Move. Mouse Wheel: Zoom (during test play)</val>
     <val lang="zh_cn">shift + 鼠标中键：移动屏幕。鼠标滚轮：缩放（测试游戏时）</val>
-    <val lang="kor">shift + 마우스 휠 버튼: 스크린 이동. 마우스 휠: 확대(테스트 플레이 중)</val>
+    <val lang="kor">shift + 마우스 휠 버튼: 스크린 이동. 마우스 휠: 확대 (테스트 플레이 중)</val>
   </EString>
   <EString nkey="PreviewMsg_PlayMode" wpfControl="">
     <val lang="jap">テストプレイ中。スクリプト修正は終了後に反映されます。(F5で終了)</val>
     <val lang="eng">Test play in progress. Script changes will be saved after completion. (F5 to exit)</val>
     <val lang="zh_cn">测试游戏中。脚本更改在结束后才会生效。（按F5结束）</val>
-    <val lang="kor">테스트 플레이 중. 스크립트 수정은 종료 후 반영됩니다.(F5키로 종료)</val>
+    <val lang="kor">테스트 플레이 중. 스크립트 수정은 종료 후 반영됩니다. (F5키로 종료)</val>
   </EString>
   <EString nkey="PreviewMsg_PausedMode" wpfControl="">
     <val lang="jap">テストプレイの一時停止中。スクリプト修正は反映されません。(F5で続行)</val>
@@ -805,7 +805,7 @@
     <val lang="jap">画面領域</val>
     <val lang="eng">Screenspaces</val>
     <val lang="zh_cn">屏幕区域</val>
-    <val lang="kor">화면 영역</val>
+    <val lang="kor">화면영역</val>
   </EString>
   <EString nkey="lvn_screen_tree_level" wpfControl="">
     <val lang="jap">階層</val>
@@ -893,7 +893,7 @@
     <val lang="jap">画面領域 (階層)</val>
     <val lang="eng">Screenspace (Level)</val>
     <val lang="zh_cn">屏幕区域 (层级)</val>
-    <val lang="kor">화면 영역 (계층)</val>
+    <val lang="kor">화면영역 (계층)</val>
   </EString>
   <EString nkey="lvn_objs_tree_created_at" wpfControl="">
     <val lang="jap">作成元</val>

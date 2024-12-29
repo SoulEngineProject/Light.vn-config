@@ -9739,6 +9739,7 @@
       <explanation lang="jap" name="--[スクリプト関連コマンド]--"></explanation>
       <explanation lang="eng" name="--[script commands]--"></explanation>
       <explanation lang="zh_cn" name="--[脚本相关命令]--"></explanation>
+      <explanation lang="kor" name="--[스크립트 관련 커맨드]--"></explanation>
     </Command>
     <Command cmd="continueRead">
       <explanation lang="jap" name="続行"

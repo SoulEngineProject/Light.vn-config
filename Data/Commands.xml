@@ -5789,13 +5789,13 @@
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/transition#screenIn">
       </explanation>
-      <explanation lang="kor" name="전체페이드인"
-                   syntax="전체페이드인 (소요 시간 : ms) (알파 이미지) (윤곽 흐림 효과: 0.0 이상)"
-                   details="ex. 전체페이드인 800 fade_sun.png
+      <explanation lang="kor" name="화면페이드인"
+                   syntax="화면페이드인 (소요 시간 : ms) (알파 이미지) (윤곽 흐림 효과: 0.0 이상)"
+                   details="ex. 화면페이드인 800 fade_sun.png
                    &#xA;
                    &#xA;화면상의 모든 오브젝트를 페이드인 시킵니다.
                    &#xA;  
-                   &#xA;ex. 전체페이드인 800 fade_sun.png 0.1
+                   &#xA;ex. 화면페이드인 800 fade_sun.png 0.1
                    &#xA;윤곽 흐림 효과를 0.1로 설정.
                    &#xA;값이 클수록 흐림 효과가 강해집니다."
                    reference="https://wikiwiki.jp/lightvn/commands/transition#screenIn">
@@ -5834,13 +5834,13 @@
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/transition#screenOut">
       </explanation>
-      <explanation lang="kor" name="전체페이드아웃"
-                   syntax="전체페이드아웃 (소요 시간 : ms) (알파 이미지) (윤곽 흐림 효과: 0.0 이상)"
-                   details="ex. 전체페이드아웃 800 fade_sun.png
+      <explanation lang="kor" name="화면페이드아웃"
+                   syntax="화면페이드아웃 (소요 시간 : ms) (알파 이미지) (윤곽 흐림 효과: 0.0 이상)"
+                   details="ex. 화면페이드아웃 800 fade_sun.png
                    &#xA;
                    &#xA;화면상의 모든 오브젝트를 페이드아웃 시킵니다.
                    &#xA;  
-                   &#xA;ex. 전체페이드아웃 800 fade_sun.png 0.1 
+                   &#xA;ex. 화면페이드아웃 800 fade_sun.png 0.1 
                    &#xA;윤곽 흐림 효과를 0.1로 설정.
                    &#xA;값이 클수록 흐림 효과가 강해집니다."
                    reference="https://wikiwiki.jp/lightvn/commands/transition#screenOut">

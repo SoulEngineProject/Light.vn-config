@@ -11528,7 +11528,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#bgm">
       </explanation>
       <explanation lang="eng" name="bgm"
-                   syntax="bgm [filename] (repeat)"
+                   syntax="bgm (name) [filename] (repeat)"
                    details="ex. bgm bgm1.ogg repeat   
                    &#xA;
                    &#xA;TIP: cross fading

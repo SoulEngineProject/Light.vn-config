@@ -1200,7 +1200,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg">
       </explanation>
       <explanation lang="kor" name="흐름그림"
-                   syntax="흐름그림 [이름] [파일 이름 / 등록된 애니메이션 이름] [x좌표] [y좌표] [레이어(r)] [1초 동안 이동하는 px 값] (세로) (ずれ:px) (카메라옵션)"
+                   syntax="흐름그림 [이름] [파일 이름 / 등록된 애니메이션 이름] [x좌표] [y좌표] [레이어(r)] [1초 동안 이동하는 px 값] (세로) (오프셋:px) (카메라옵션)"
                    details="ex. 흐름그림 bg_effect scrolling_background.png 0 0 10 60  
                    &#xA;[1초 동안 이동하는 px값]에 따라 이미지가 이동한다.
                    &#xA;기본적으로 수평 방향으로 이동하며, 이미지가 화면을 넘어가면 넘어간 만큼 반대편 화면에 표시된다.
@@ -2173,10 +2173,10 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchAlpha">
       </explanation>
       <explanation lang="kor" name="터치투명도"
-                   syntax="터치투명도 [대상 이름] [반응 시작 불투명도 값(기본: 255)]"
+                   syntax="터치투명도 [대상 이름] [반응 시작 투명도 값(기본: 255)]"
                    details="ex. 터치투명도 btn0 100  
                    &#xA;  
-                   &#xA;대상의 투명도가 [반응 시작 불투명도 값] 이상일 경우, 터치 등 입력 처리가 허용됩니다.
+                   &#xA;대상의 투명도가 [반응 시작 투명도 값] 이상일 경우, 터치 등 입력 처리가 허용됩니다.
                    &#xA;  
                    &#xA;주: 대상 이름에 정규표현식을 사용할 수 있습니다.
                    &#xA;  "
@@ -5902,8 +5902,8 @@
                    &#xA; (ex. .페이드인 scg.* 1500) 
                    &#xA;주: 소요 시간을 ups(units per second)로 설정하면 초당 이동 속도로 계산됩니다.
                    &#xA;주: 화면 영역 지정은 '화면영역전체' 또는 '동일계층화면영역'을 지정할 수 있으며, 지정하지 않으면 현재 화면 영역의 오브젝트에만 적용됩니다.
-                   &#xA;주: 페이드인은 기존 오브젝트의 불투명도를 먼저 0으로 설정한 뒤 페이드인을 실행합니다.
-                   &#xA;따라서 매끄러운 페이드인을 원할 경우, 먼저 객체의 불투명도를 0으로 설정하는 것이 좋습니다."
+                   &#xA;주: 페이드인은 기존 오브젝트의 투명도를 먼저 0으로 설정한 뒤 페이드인을 실행합니다.
+                   &#xA;따라서 매끄러운 페이드인을 원할 경우, 먼저 객체의 투명도를 0으로 설정하는 것이 좋습니다."
                    reference="https://wikiwiki.jp/lightvn/commands/transition#fadein">
       </explanation>
     </Command>
@@ -7517,9 +7517,9 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#alpha">
       </explanation>
-      <explanation lang="kor" name="불투명도"
-                   syntax="불투명도 [대상 이름(여러 개 가능)] [불투명도: 0-255] (소요 시간: ms) (가속도: a0~a18) (화면 영역 지정)"
-                   details="ex. 불투명도 albert2 125 1500  
+      <explanation lang="kor" name="투명도"
+                   syntax="투명도 [대상 이름(여러 개 가능)] [투명도: 0-255] (소요 시간: ms) (가속도: a0~a18) (화면 영역 지정)"
+                   details="ex. 투명도 albert2 125 1500  
                    &#xA;  
                    &#xA;주: 연출 커맨드의 대상 이름에 정규표현식을 사용하여 여러 대상을 동시에 지정할 수 있습니다.
                    &#xA;주: 화면 영역 지정은 '화면영역전체' 또는 '동일계층화면영역'을 지정할 수 있으며, 지정하지 않으면 현재 화면 영역의 오브젝트에만 적용됩니다.
@@ -8293,11 +8293,11 @@
                    &#xA;ex. 마스크적용2 alice1, ace1 mask
                    &#xA;  
                    &#xA;대상에 마스크 효과를 적용합니다.  
-                   &#xA;적용될 마스크의 불투명도가 대상의 불투명도에 곱해져 표시됩니다.
-                   &#xA;대상이 마스크 영역(이미지 파일 영역) 바깥에 있는 경우, 해당 부분은 불투명으로 처리됩니다.
+                   &#xA;적용될 마스크의 투명도가 대상의 투명도에 곱해져 표시됩니다.
+                   &#xA;대상이 마스크 영역(이미지 파일 영역) 바깥에 있는 경우, 해당 부분은 투명으로 처리됩니다.
                    &#xA;  
                    &#xA;&quot;마스크적용2&quot;를 사용할 경우,  
-                   &#xA;마스크 불투명도를 (255 - 마스크 불투명도)로 계산하여 표시합니다.
+                   &#xA;마스크 투명도를 (255 - 마스크 투명도)로 계산하여 표시합니다.
                    &#xA;대상이 마스크 영역(이미지 파일 영역) 바깥에 있는 경우, 해당 부분은 원래 대상의 색상으로 표시됩니다.  
                    &#xA;  
                    &#xA;주: 마스크나 카메라를 x축 또는 z축으로 회전시킬 경우, 올바르게 출력되지 않습니다.
@@ -8357,7 +8357,7 @@
                    &#xA;true: 이후 생성되는 모든 오브젝트에 지정한 마스크 효과를 자동 적용시킵니다.
                    &#xA;  
                    &#xA;&quot;마스크적용2&quot;를 사용할 경우,  
-                   &#xA;마스크 불투명도를 (255 - 마스크의 불투명도)로 계산하여 표시합니다.
+                   &#xA;마스크 투명도를 (255 - 마스크의 투명도)로 계산하여 표시합니다.
                    &#xA;대상이 마스크 영역(이미지 파일 영역) 바깥에 있는 경우, 해당 부분은 원래 대상의 색상으로 표시됩니다.  
                    &#xA;  
                    &#xA;주: 마스크나 카메라를 x축 또는 z축으로 회전시킬 경우, 올바르게 출력되지 않습니다."
@@ -8515,7 +8515,7 @@
                    &#xA;주: 커맨드에 '0'을 붙이면 투명한(opacity 0) 상태로 표시됩니다. 
                    &#xA; (ex. 그림0 alice2 anim_alice 150 30 50)
                    &#xA;  
-                   &#xA;주: 불투명도(opacity)가 0이면 입자가 추가 생성되지 않습니다.
+                   &#xA;주: 투명도(opacity)가 0이면 입자가 추가 생성되지 않습니다.
                    &#xA;
                    &#xA;주: 입자생성기도 일반적인 오브젝트처럼 이동, 확대, 회전 등의 대상이 됩니다."
                    reference="https://wikiwiki.jp/lightvn/commands/particle#particleMaker">
@@ -8590,9 +8590,9 @@
                    &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#positionRange">
       </explanation>
-      <explanation lang="kor" name="입자위치설정"
-                   syntax="입자위치설정 [대상 이름] [최소x] [최소y] [최소r] [최대x] [최대y] [최대r] (화면 영역 지정)"
-                   details="ex. 입자위치설정 maker -300 0 0 300 0 0 
+      <explanation lang="kor" name="입자위치"
+                   syntax="입자위치 [대상 이름] [최소x] [최소y] [최소r] [최대x] [최대y] [최대r] (화면 영역 지정)"
+                   details="ex. 입자위치 maker -300 0 0 300 0 0 
                    &#xA;  
                    &#xA;대상 입자생성기를 중심으로 생성되는 입자의 위치 범위를 설정합니다.
                    &#xA;주: 이때 입력되는 x, y 좌표는 입자 발생기를 기준으로 한 '상대적' 좌표입니다.
@@ -8750,9 +8750,9 @@
                    &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#velocityRange">
       </explanation>
-      <explanation lang="kor" name="입자속도설정"
-                   syntax="입자속도설정 [대상 이름] [x최소 속도] [y최소 속도] [r최소 속도] [x최대 속도] [y최대 속도] [r최대 속도] (화면 영역 지정)"
-                   details="ex. 입자속도설정 maker 0 10 0 0 30 0  
+      <explanation lang="kor" name="입자속도"
+                   syntax="입자속도 [대상 이름] [x최소 속도] [y최소 속도] [r최소 속도] [x최대 속도] [y최대 속도] [r최대 속도] (화면 영역 지정)"
+                   details="ex. 입자속도 maker 0 10 0 0 30 0  
                    &#xA;  
                    &#xA;대상 입자생성기에서 생성되는 입자의 이동 속도 범위를 설정합니다.
                    &#xA;속도 단위: 픽셀/초 
@@ -8792,9 +8792,9 @@
                    &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#acceleration">
       </explanation>
-      <explanation lang="kor" name="입자가속도설정"
-                   syntax="입자가속도설정 [대상 이름] [x가속도] [y가속도] [r가속도] (화면 영역 지정)"
-                   details="ex. 입자가속도설정 maker 0 10 0 
+      <explanation lang="kor" name="입자가속도"
+                   syntax="입자가속도 [대상 이름] [x가속도] [y가속도] [r가속도] (화면 영역 지정)"
+                   details="ex. 입자가속도 maker 0 10 0 
                    &#xA;  
                    &#xA;대상 입자생성기에서 생성되는 입자의 가속도를 설정합니다.
                    &#xA;가속도 단위: 픽셀/초^2 
@@ -8831,9 +8831,9 @@
                    &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#RGBARange">
       </explanation>
-      <explanation lang="kor" name="입자색조설정"
-                   syntax="입자색조설정 [대상 이름] [최소r] [최소g] [최소b] [최소a] [최대r] [최대g] [최대b] [최대a] (화면 영역 지정)"
-                   details="ex. 입자색조설정 maker 255 255 255 0 255 255 255 10  
+      <explanation lang="kor" name="입자색조"
+                   syntax="입자색조 [대상 이름] [최소r] [최소g] [최소b] [최소a] [최대r] [최대g] [최대b] [최대a] (화면 영역 지정)"
+                   details="ex. 입자색조 maker 255 255 255 0 255 255 255 10  
                    &#xA;  
                    &#xA;대상 입자생성기에서 생성되는 입자의 색조 범위를 설정합니다.
                    &#xA;  
@@ -8872,9 +8872,9 @@
                    &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#endRotationRange">
       </explanation>
-      <explanation lang="kor" name="입자소멸시각도설정"
-                   syntax="입자소멸시각도설정 [대상 이름] [최소 각도] [최대 각도] (화면 영역 지정)"
-                   details="ex. 입자소멸시각도설정 maker 30 90  
+      <explanation lang="kor" name="입자소멸시각도"
+                   syntax="입자소멸시각도 [대상 이름] [최소 각도] [최대 각도] (화면 영역 지정)"
+                   details="ex. 입자소멸시각도 maker 30 90  
                    &#xA;  
                    &#xA;대상 입자생성기에서 생성된 입자가 사라질 때의 회전 각도 범위를 설정합니다.
                    &#xA;
@@ -8939,10 +8939,10 @@
                    &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#endZoomRange">
       </explanation>
-      <explanation lang="kor" name="입자소멸시크기설정"
-                   syntax="1. 입자소멸시크기설정 [대상 이름] [최소 크기값%] [최대 크기값%] (화면 영역 지정)
-                   &#xA;2. 입자소멸시크기설정 [대상 이름] [최소x 크기값%] [최소y 크기값%] [최대x 크기값%] [최대y 크기값%] (화면 영역 지정)
-                   &#xA;3. 입자소멸시크기설정 [대상 이름] [최소x 크기값%] [최소y 크기값%] [최소z 크기값%] [최대x 크기값%] [최대y 크기값%] [최대z 크기값%] (화면 영역 지정)
+      <explanation lang="kor" name="입자소멸시크기"
+                   syntax="1. 입자소멸시크기 [대상 이름] [최소 크기값%] [최대 크기값%] (화면 영역 지정)
+                   &#xA;2. 입자소멸시크기 [대상 이름] [최소x 크기값%] [최소y 크기값%] [최대x 크기값%] [최대y 크기값%] (화면 영역 지정)
+                   &#xA;3. 입자소멸시크기 [대상 이름] [최소x 크기값%] [최소y 크기값%] [최소z 크기값%] [최대x 크기값%] [최대y 크기값%] [최대z 크기값%] (화면 영역 지정)
                    "
                    details="ex. 입자소멸시크기설정 maker 30% 30% 150% 150%  
                    &#xA;  
@@ -8992,9 +8992,9 @@
                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                   reference="https://wikiwiki.jp/lightvn/commands/particle#endRGBARange">
       </explanation>
-      <explanation lang="kor" name="입자소멸시색조설정"
-                   syntax="입자소멸시색조설정 [대상 이름] [최소r] [최소g] [최소b] [최소a] [최대r] [최대g] [최대b] [최대a] (화면 영역 지정)"
-                   details="ex. 입자소멸시색조설정 maker 255 255 255 0 255 255 255 10  
+      <explanation lang="kor" name="입자소멸시색조"
+                   syntax="입자소멸시색조 [대상 이름] [최소r] [최소g] [최소b] [최소a] [최대r] [최대g] [최대b] [최대a] (화면 영역 지정)"
+                   details="ex. 입자소멸시색조 maker 255 255 255 0 255 255 255 10  
                    &#xA;  
                    &#xA;대상 입자생성기에서 생성된 입자가 사라질 때의 색조 범위를 설정합니다.
                    &#xA;  
@@ -11987,7 +11987,7 @@
                    syntax="동영상 [이름] [파일명] [x좌표] [y좌표] [레이어(r)] (반복) (카메라옵션)"
                    details="ex. 동영상 movie1 test.mp4 0 0 70 
                    &#xA;  
-                   &#xA;커맨드에 '0'을 붙이면 불투명도·음량이 0인 상태로 재생됨.  
+                   &#xA;커맨드에 '0'을 붙이면 투명도·음량이 0인 상태로 재생됨.  
                    &#xA; (ex. 동영상0 movie1 test.mp4 0 0 70）
                    &#xA;
                    &#xA;지원 형식: 비디오가 MPEG1 Video (mpeg1), 오디오가 MPEG1 Audio Layer II (mp2)인 .mpg파일
@@ -12305,9 +12305,9 @@
                    &#xA; (例如：背景音乐0 bgm.ogg)"
                    reference="https://wikiwiki.jp/lightvn/commands/media#syncSound">
       </explanation>
-      <explanation lang="kor" name="음원동기화"
-                   syntax="음원동기화 [이름] [파일명] [동기화 대상 이름]"
-                   details="ex. 음원동기화 sound /BGM/snowsnow.ogg vn_sysBGM
+      <explanation lang="kor" name="동기화음원"
+                   syntax="동기화음원 [이름] [파일명] [동기화 대상 이름]"
+                   details="ex. 동기화음원 sound /BGM/snowsnow.ogg vn_sysBGM
                    &#xA;  
                    &#xA;[동기화 대상 이름]의 음원이 재생된 시간과 같은 부분을 재생.
                    &#xA;예: vn_sysBGM가 현재 1300ms 부분에서 재생 중이라면 sound도 그 부분을 재생.

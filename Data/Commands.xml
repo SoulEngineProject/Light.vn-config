@@ -2901,10 +2901,10 @@
                    &#xA;这样的形式。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableLine">
       </explanation>
-      <explanation lang="kor" name="대사파일행출력"
-                   syntax="1. 대사파일행출력 (대상이름) [파일 이름]
-                   &#xA;2. 대사파일행출력 (대상이름) [파일 이름] (행)"
-                   details="ex. 대사파일행출력 table.csv
+      <explanation lang="kor" name="대사파일출력"
+                   syntax="1. 대사파일출력 (대상이름) [파일 이름]
+                   &#xA;2. 대사파일출력 (대상이름) [파일 이름] (행)"
+                   details="ex. 대사파일출력 table.csv
                    &#xA;
                    &#xA;미리 등록한 &quot;파일 이름&quot;에서 텍스트 데이터를 불러와,
                    &#xA;현재 활성화된 텍스트창에 다음 행을 새롭게 표시합니다.
@@ -2912,7 +2912,7 @@
                    &#xA;주: 먼저 [파일 경로]를 &quot;대사파일행지정&quot;으로 등록해야 합니다. 단, 행 번호를 지정하는 경우에는 등록하지 않아도 됩니다.
                    &#xA;
                    &#xA;주: 대기 상태가 적용되지 않으므로 대기가 필요한 경우  
-                   &#xA;ex. 대사파일행출력 table.csv | 대기  
+                   &#xA;ex. 대사파일출력 table.csv | 대기  
                    &#xA;와 같은 형태로 사용하는 것을 권장합니다."
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableLine">
       </explanation>
@@ -2961,10 +2961,10 @@
                   &#xA;这样的形式。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableLineCont">
       </explanation>
-      <explanation lang="kor" name="대사파일행이어출력"
-                   syntax="1. 대사파일행이어출력 (대상 이름) [파일 이름]
-                   &#xA;2. 대사파일행이어출력 (대상 이름) [파일 이름] (행)"
-                   details="ex. 대사파일행이어출력 table.csv
+      <explanation lang="kor" name="대사파일이어출력"
+                   syntax="1. 대사파일이어출력 (대상 이름) [파일 이름]
+                   &#xA;2. 대사파일이어출력 (대상 이름) [파일 이름] (행)"
+                   details="ex. 대사파일이어출력 table.csv
                    &#xA;
                    &#xA;미리 등록한 &quot;파일 이름&quot;에서 텍스트 데이터를 불러와,  
                    &#xA;현재 사용 중인 텍스트창에 다음 행을 기존 텍스트 뒤에 이어서 표시합니다.
@@ -2972,7 +2972,7 @@
                    &#xA;주: 먼저 [파일 경로]를 &quot;대사파일행지정&quot;으로 등록해야 합니다. 단, 행 번호를 지정하는 경우에는 등록하지 않아도 됩니다.
                    &#xA;
                    &#xA;주: 대기 상태가 적용되지 않으므로 대기가 필요한 경우  
-                   &#xA;ex. 대사파일행출력 table.csv | 대기  
+                   &#xA;ex. 대사파일출력 table.csv | 대기  
                    &#xA;와 같은 형태로 사용하는 것을 권장합니다."
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableLineCont">
       </explanation>
@@ -3080,9 +3080,9 @@
                    &#xA;注：指定“目标名称”时，设置会立即应用于整个当前文本。如果未指定，则应用于下一段文本。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textFont">
       </explanation>
-      <explanation lang="kor" name="폰트"
-                   syntax="폰트 (대상 이름) [폰트 파일 이름]"
-                   details="ex. 폰트 arial.ttf  
+      <explanation lang="kor" name="텍스트폰트"
+                   syntax="텍스트폰트 (대상 이름) [폰트 파일 이름]"
+                   details="ex. 텍스트폰트 arial.ttf  
                    &#xA;  
                    &#xA;주: '대상 이름'은 정규표현식을 사용할 수 있습니다. 
                    &#xA;주: 폰트 파일은 Fonts 폴더에 넣어 주세요. 
@@ -4254,7 +4254,7 @@
                    &#xA;버전 1:  
                    &#xA;텍스트읽기스킵모드 true: 스킵 가능한 조건에 해당하는 경우 자동으로 스킵합니다.  
                    &#xA;텍스트읽기자동모드 true: 스킵 중이 아닐 경우 자동 진행 모드로 전환합니다.  
-                   &#xA;(스킵과 자동 진행은 동시에 true로 설정할 수 없습니다.) 
+                   &#xA;(스킵과 자동 진행은 동시에 true로 설정할 수 있습니다.) 
                    &#xA;  
                    &#xA;주: 사용자 입장에서 &quot;1&quot;이 훨씬 더 편리합니다.
                    "
@@ -4353,7 +4353,7 @@
                    &#xA;자동 모드를 시작합니다.
                    &#xA;  
                    &#xA;텍스트읽기버전이 1인 경우:
-                   &#xA;스킵 중이 아니라면 자동 모드로 전환됩니다."
+                   &#xA;스킵 중이 아님 자동 모드로 전환됩니다."
                    reference="https://wikiwiki.jp/lightvn/commands/text#textReadAuto">
       </explanation>
     </Command>
@@ -4450,12 +4450,12 @@
                   &#xA;例如：文字跳过模式 1"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textSkipMode">
       </explanation>
-      <explanation lang="kor" name="텍스트스킵모드"
-                   syntax="텍스트스킵모드 [0/1]"
+      <explanation lang="kor" name="텍스트스킵형식"
+                   syntax="텍스트스킵형식 [0/1]"
                    details="0: 전부
                    &#xA;1: 읽은 내용만  
                    &#xA;  
-                   &#xA;ex. 텍스트스킵모드 1"
+                   &#xA;ex. 텍스트스킵형식 1"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textSkipMode">
       </explanation>
     </Command>
@@ -4754,7 +4754,7 @@
                    syntax="백로그대사등록 [true/false]"
                    details="ex. 백로그대사등록 true
                    &#xA;
-                   &#xA;true: 백로그에 대사가 등록됩니다."
+                   &#xA;true: 백로그에 스크립트의 대사들이 등록됩니다."
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogAddLine">
       </explanation>
     </Command>
@@ -7592,10 +7592,10 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#rgb">
       </explanation>
-      <explanation lang="kor" name="색조"
-                   syntax="1. 색조 [대상 이름(여러 개 가능)] [r: 0-255] [g: 0-255] [b: 0-255] (소요 시간: ms) (가속도: a0~a18) (화면 영역 지정)
-                   &#xA;2. 색조 [대상 이름(여러 개 가능)] [HEX색] (소요 시간: ms) (가속도: a0~a18) (화면 영역 지정)"
-                   details="ex. 색조 albert2 25 25 25 1500  
+      <explanation lang="kor" name="색상"
+                   syntax="1. 색상 [대상 이름(여러 개 가능)] [r: 0-255] [g: 0-255] [b: 0-255] (소요 시간: ms) (가속도: a0~a18) (화면 영역 지정)
+                   &#xA;2. 색상 [대상 이름(여러 개 가능)] [HEX색] (소요 시간: ms) (가속도: a0~a18) (화면 영역 지정)"
+                   details="ex. 색상 albert2 25 25 25 1500  
                    &#xA;ex. rgb albert2 #1f1f1f 1500  
                    &#xA;  
                    &#xA;r: red(빨강), g: green(초록), b: blue(파랑)  
@@ -7666,9 +7666,9 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#hsl">
       </explanation>
-      <explanation lang="kor" name="hsl색조"
-                   syntax="hsl색조 [대상 이름(여러 개 가능)] [h: 0-360] [s: 0-100] [l: 0-100] (소요 시간: ms) (가속도: a0~a18) (화면 영역 지정)"
-                   details="ex. hsl색조 albert2 180 100 50 (1500(ms))  
+      <explanation lang="kor" name="hsl색상"
+                   syntax="hsl색상 [대상 이름(여러 개 가능)] [h: 0-360] [s: 0-100] [l: 0-100] (소요 시간: ms) (가속도: a0~a18) (화면 영역 지정)"
+                   details="ex. hsl색상 albert2 180 100 50 (1500(ms))  
                    &#xA;  
                    &#xA;h: hue(색상), s: saturation(채도), l: lightness(휘도) 
                    &#xA;아주 간단하게 설명하자면, h: 180이 파랑, h: 0 혹은 360이 빨강입니다.
@@ -8837,11 +8837,11 @@
                    &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#RGBARange">
       </explanation>
-      <explanation lang="kor" name="입자색조"
-                   syntax="입자색조 [대상 이름] [최소r] [최소g] [최소b] [최소a] [최대r] [최대g] [최대b] [최대a] (화면 영역 지정)"
-                   details="ex. 입자색조 maker 255 255 255 0 255 255 255 10  
+      <explanation lang="kor" name="입자색상"
+                   syntax="입자색상 [대상 이름] [최소r] [최소g] [최소b] [최소a] [최대r] [최대g] [최대b] [최대a] (화면 영역 지정)"
+                   details="ex. 입자색상 maker 255 255 255 0 255 255 255 10  
                    &#xA;  
-                   &#xA;대상 입자생성기에서 생성되는 입자의 색조 범위를 설정합니다.
+                   &#xA;대상 입자생성기에서 생성되는 입자의 색상 범위를 설정합니다.
                    &#xA;  
                    &#xA;주: 대상 이름에 정규표현식을 사용할 수 있습니다.
                    &#xA;주: 화면 영역 지정은 '화면영역전체' 또는 '동일계층화면영역'을 지정할 수 있으며, 지정하지 않으면 현재 화면 영역의 오브젝트에만 적용됩니다."
@@ -8998,11 +8998,11 @@
                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
                   reference="https://wikiwiki.jp/lightvn/commands/particle#endRGBARange">
       </explanation>
-      <explanation lang="kor" name="입자소멸시색조"
-                   syntax="입자소멸시색조 [대상 이름] [최소r] [최소g] [최소b] [최소a] [최대r] [최대g] [최대b] [최대a] (화면 영역 지정)"
-                   details="ex. 입자소멸시색조 maker 255 255 255 0 255 255 255 10  
+      <explanation lang="kor" name="입자소멸시색상"
+                   syntax="입자소멸시색상 [대상 이름] [최소r] [최소g] [최소b] [최소a] [최대r] [최대g] [최대b] [최대a] (화면 영역 지정)"
+                   details="ex. 입자소멸시색상 maker 255 255 255 0 255 255 255 10  
                    &#xA;  
-                   &#xA;대상 입자생성기에서 생성된 입자가 사라질 때의 색조 범위를 설정합니다.
+                   &#xA;대상 입자생성기에서 생성된 입자가 사라질 때의 색상 범위를 설정합니다.
                    &#xA;  
                    &#xA;주: 대상 이름에 정규표현식을 사용할 수 있습니다.
                    &#xA;주: 화면 영역 지정은 '화면영역전체' 또는 '동일계층화면영역'을 지정할 수 있으며, 지정하지 않으면 현재 화면 영역의 오브젝트에만 적용됩니다."
@@ -10108,20 +10108,20 @@
                    reference="https://wikiwiki.jp/lightvn/commands/script#jump">
       </explanation>
       <explanation lang="kor" name="점프"
-                   syntax="1. 점프 [목표 스크립트] (목표 스크립트 북마크)
-                   &#xA;2. 점프 [현재 스크립트 북마크]
+                   syntax="1. 점프 [목표 스크립트] (목표 스크립트 책갈피)
+                   &#xA;2. 점프 [현재 스크립트 책갈피]
                    &#xA;
                    &#xA;  "
                    details="ex. 점프 script.txt bookmark1   
                    &#xA;ex. 점프 bookmark1  
                    &#xA;ex. 점프 script2.txt  
                    &#xA;  
-                   &#xA;현재 스크립트로부터 지정 스크립트/북마크로 점프한 후 스크립트를 로드.
+                   &#xA;현재 스크립트로부터 지정 스크립트/책갈피로 점프한 후 스크립트를 로드.
                    &#xA;  
                    &#xA;ex. 점프 script2.txt  bookmark 0
                    &#xA;ex. 점프 bookmark 0
                    &#xA;  
-                   &#xA;점프할 곳을 &quot;북마크&quot;로 지정한 경우, 뒷부분은 해당 북마크의 매개변수로 인식됨.
+                   &#xA;점프할 곳을 &quot;책갈피&quot;로 지정한 경우, 뒷부분은 해당 책갈피의 매개변수로 인식됨.
                    &#xA;  
                    &#xA;주: 다른 스크립트로 점프할 경우, 
                    &#xA;디스크에 저장된 파일을 로드합니다.
@@ -10186,8 +10186,8 @@
                    reference="https://wikiwiki.jp/lightvn/">
       </explanation>
       <explanation lang="kor" name="최종점프"
-                   syntax="1. 최종점프 [목표 스크립트] (목표 스크립트 북마크)
-                   &#xA;2. 최종점프 [현재 스크립트 북마크]"
+                   syntax="1. 최종점프 [목표 스크립트] (목표 스크립트 책갈피)
+                   &#xA;2. 최종점프 [현재 스크립트 책갈피]"
                    details="ex. 최종점프 script.txt bookmark1   
                    &#xA;  
                    &#xA;주: 일반 점프와는 다르게 커맨드 실행 시점에서 로드가 끝나지 않은 모든 스크립트 실행을
@@ -10234,12 +10234,12 @@
                    reference="https://wikiwiki.jp/lightvn/commands/script#srcScriptJump">
       </explanation>
       <explanation lang="kor" name="번호스크립트점프"
-                   syntax="번호스크립트점프 [스택 번호] [목표 스크립트/현재 스크립트 북마크] (목표 스크립트 북마크)"
+                   syntax="번호스크립트점프 [스택 번호] [목표 스크립트/현재 스크립트 책갈피] (목표 스크립트 책갈피)"
                    details="ex. 번호스크립트점프 0 script.txt bookmark1  
                    &#xA;ex. 번호스크립트점프 0 bookmark1   
                    &#xA;ex. 번호스크립트점프 0 script2.txt   
                    &#xA;  
-                   &#xA;스크립트 스택 중의 &quot;번호&quot;스크립트를 지정하여 스크립트/북마크로 점프시킨 후 로드를 재개합니다."
+                   &#xA;스크립트 스택 중의 &quot;번호&quot;스크립트를 지정하여 스크립트/책갈피로 점프시킨 후 로드를 재개합니다."
                    reference="https://wikiwiki.jp/lightvn/commands/script#srcScriptJump">
       </explanation>
     </Command>
@@ -10301,7 +10301,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/script#script">
       </explanation>
       <explanation lang="kor" name="스크립트"
-                   syntax="스크립트 [불러올 스크립트 / 현재] (로드를 재개할 북마크) (매개변수...)"
+                   syntax="스크립트 [불러올 스크립트 / 현재] (로드를 재개할 책갈피) (매개변수...)"
                    details="ex. 스크립트 textbox.txt 다음으로
                    &#xA;ex. 스크립트 lua/lua_script.lua  
                    &#xA;ex. 스크립트 현재 이파일실행
@@ -10319,7 +10319,7 @@
                    &#xA;반드시 저장한 후 실행시키십시오.
                    &#xA;
                    &#xA;주: (매개변수...)를 할당하는 경우,
-                   &#xA;호출할 스크립트의 북마크에 정의된 매개변수로 등록됩니다.
+                   &#xA;호출할 스크립트의 책갈피에 정의된 매개변수로 등록됩니다.
                    &#xA;  
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/script#script">
@@ -10370,7 +10370,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/script#parallel_script">
       </explanation>
       <explanation lang="kor" name="병렬스크립트"
-                   syntax="병렬스크립트 [불러올 스크립트] (로드를 개시할 북마크)"
+                   syntax="병렬스크립트 [불러올 스크립트] (로드를 개시할 책갈피)"
                    details="ex. 병렬스크립트 textbox.txt (bookmark1) 
                    &#xA;  
                    &#xA;지정된 스크립트를 불러와 병렬 스크립트로 실행.
@@ -10987,9 +10987,9 @@
                    details="例如：书签 bookmark1"
                    reference="https://wikiwiki.jp/lightvn/commands/script#bookmark">
       </explanation>
-      <explanation lang="kor" name="북마크"
-                   syntax="북마크명 [북마크명]"
-                   details="ex. 북마크 bookmark1"
+      <explanation lang="kor" name="책갈피"
+                   syntax="책갈피명 [책갈피명]"
+                   details="ex. 책갈피 bookmark1"
                    reference="https://wikiwiki.jp/lightvn/commands/script#bookmark">
       </explanation>
     </Command>
@@ -11444,14 +11444,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/script#stateLoop">
       </explanation>
       <explanation lang="kor" name="상태갱신기"
-                   syntax="상태갱신기 [대상 이름] [스크립트] [북마크 접두사] [개시상태]"
+                   syntax="상태갱신기 [대상 이름] [스크립트] [책갈피 접두사] [개시상태]"
                    details="ex. 상태갱신기 apple0 &quot;apple.txt&quot; &quot;사과_상태_&quot; &quot;대기&quot;   
                    &#xA;
                    &#xA;주: 실험 단계의 커맨드임.
                    &#xA;
                    &#xA;[대상 이름]을 부모로 삼는 &quot;[대상 이름]_loop&quot; 오브젝트를 생성함.
                    &#xA;
-                   &#xA;정기적으로 [스크립트] [북마크 앞글자] + [상태] 의 병렬스크립트 로드를 발생시킴.
+                   &#xA;정기적으로 [스크립트] [책갈피 앞글자] + [상태] 의 병렬스크립트 로드를 발생시킴.
                    &#xA;해당 스크립트가 이미 실행중인 경우, 다시 실행되지는 않음.
                    &#xA;
                    &#xA;위 예시의 경우, &quot;병렬스크립트 apple.txt 사과_상태_대기&quot;가 실행됨.
@@ -12585,9 +12585,9 @@
       <explanation lang="kor" name="저장변수"
                    syntax="저장변수 [변수명] [지정·연산] [수치/변수명]"
                    details="변수 커맨드와 사용법은 동일.  
-                   &#xA;단, &quot;저장변수&quot;로 지정된 변수는 &quot;저장&quot; 커맨드 실행 시, 
+                   &#xA;단, &quot;저장변수&quot;로 지정된 변수는 &quot;세이브&quot; 커맨드 실행 시, 
                    &#xA;SaveData/ 내 개별 세이브 데이터에 저장되어  
-                   &#xA;&quot;불러오기&quot;커맨드 실행 시 해당 세이브 데이터의 수치로 덮어씌워집니다.
+                   &#xA;&quot;로드&quot;커맨드 실행 시 해당 세이브 데이터의 수치로 덮어씌워집니다.
                    &#xA;  
                    &#xA;저장변수의 유효기간)  
                    &#xA;해당 스크립트를 넘어서도 존재.
@@ -12639,7 +12639,7 @@
                    &#xA;단, &quot;전역변수&quot;로 지정된 변수는 SaveData의 global.xml에 저장되어 
                    &#xA;개별 세이브 데이터와 무관하게 작품 전체에 반영됩니다. 
                    &#xA;  
-                   &#xA;전역변수는 &quot;전역변수저장&quot;과 &quot;저장&quot; 커맨드 실행 시 저장.
+                   &#xA;전역변수는 &quot;전역변수저장&quot;과 &quot;세이브&quot; 커맨드 실행 시 저장.
                    &#xA;프로그램 실행 시 불러오게 됩니다. 
                    &#xA;따라서 &quot;로드&quot;의 영향은 받지 않습니다.
                    &#xA;  
@@ -12908,11 +12908,11 @@
                    reference="https://wikiwiki.jp/lightvn/commands/var#if">
       </explanation>
       <explanation lang="kor" name="만약"
-                   syntax="만약 (true/false 조건식) [조건성립 커맨드] (아니라면) (조건불성립 커맨드)"
-                   details="ex. 만약 (정답숫자 == 2) 점프 달성 아니라면 점프 미달성   
+                   syntax="만약 (true/false 조건식) [조건성립 커맨드] (아님) (조건불성립 커맨드)"
+                   details="ex. 만약 (정답숫자 == 2) 점프 달성 아님 점프 미달성   
                    &#xA;ex. 만약 (정답숫자 == 2) 아웃웃 cg0 
                    &#xA;  
-                   &#xA;주: 아니라면~ 은 생략 가능합니다."
+                   &#xA;주: 아님~ 은 생략 가능합니다."
                    reference="https://wikiwiki.jp/lightvn/commands/var#if">
       </explanation>
     </Command>
@@ -12941,11 +12941,11 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#elseif">
       </explanation>
-            <explanation lang="kor" name="아니어도만약"
-                   syntax="아니어도만약 (true/false 조건식) [조건성립커맨드] "
-                   details="ex. 아니어도만약 (정답숫자 == 2) 점프 달성 
+            <explanation lang="kor" name="아님만약"
+                   syntax="아님만약 (true/false 조건식) [조건성립커맨드] "
+                   details="ex. 아님만약 (정답숫자 == 2) 점프 달성 
                    &#xA;  
-                   &#xA;이전 행의 &quot;만약&quot; 혹은 &quot;아니어도만약&quot;이 false일 경우에만 실행됨.
+                   &#xA;이전 행의 &quot;만약&quot; 혹은 &quot;아님만약&quot;이 false일 경우에만 실행됨.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#elseif">
       </explanation>
@@ -12975,11 +12975,11 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#else">
       </explanation>
-      <explanation lang="kor" name="아니라면"
-                   syntax="아니라면 [커맨드]"
-                   details="ex. 아니라면 점프 달성
+      <explanation lang="kor" name="아님"
+                   syntax="아님 [커맨드]"
+                   details="ex. 아님 점프 달성
                    &#xA;  
-                   &#xA;이전 행의 &quot;만약&quot; 혹은 &quot;아니어도만약&quot;이 false일 경우에만 실행됨.
+                   &#xA;이전 행의 &quot;만약&quot; 혹은 &quot;아님만약&quot;이 false일 경우에만 실행됨.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#else">
       </explanation>
@@ -13481,7 +13481,7 @@
                    &#xA;주: Windows, iOS에서는
                    &#xA;settings.xml의 sysMemoryManagementType이 2일 경우,
                    &#xA;프로그램이 실행 중에 실제 RAM 사용량을 불러와서 자동적으로 이 과정을 처리해 주므로,
-                   &#xA;모종의 이유로 RAM에 비해 VRAM이 현저히 작은 경우가 아니라면 스크립트상으로 할 필요는 없음.
+                   &#xA;모종의 이유로 RAM에 비해 VRAM이 현저히 작은 경우가 아님 스크립트상으로 할 필요는 없음.
                    &#xA;(단, 이것도 &quot;사용 기기의 RAM 잔량&quot;이 아니라 &quot;사용 중인 RAM&quot;을 기준으로 하기 때문에 주의는 필요함)
                    &#xA;
                    &#xA;
@@ -14216,13 +14216,13 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#noSaveSSRange">
       </explanation>
-      <explanation lang="kor" name="세이브그림제외범위"
-                   syntax="세이브그림제외범위 [정규표현식]"
-                   details="ex. 세이브그림제외범위 sys.* 
+      <explanation lang="kor" name="세이브스샷제외범위"
+                   syntax="세이브스샷제외범위 [정규표현식]"
+                   details="ex. 세이브스샷제외범위 sys.* 
                    &#xA;  
                    &#xA;&quot;세이브&quot;시 저장되는 오브젝트 중  
-                   &#xA;세이브 이미지에 표시하고 싶지 않은 오브젝트를 지정.  
-                   &#xA;상기 예에서는 이름이 sys로 시작하는 오브젝트를 이미지에 저장하지 않음.  
+                   &#xA;세이브 스크린샷에 표시하고 싶지 않은 오브젝트를 지정.  
+                   &#xA;상기 예에서는 이름이 sys로 시작하는 오브젝트를 스크린샷에 저장하지 않음.  
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#noSaveSSRange">
       </explanation>
@@ -14973,11 +14973,11 @@
                    &#xA;将指定字符串追加到标题字符串（如窗口标题等）之后。"
                    reference="https://wikiwiki.jp/lightvn/commands/system#setTitleSuffix">
       </explanation>
-      <explanation lang="kor" name="타이틀추가문자열"
-                   syntax="타이틀추가문자열 [문자열]"
-                   details="ex. 타이틀추가문자열 &quot;8월16일 아리스&quot;
+      <explanation lang="kor" name="타이틀추가텍스트"
+                   syntax="타이틀추가텍스트 [텍스트]"
+                   details="ex. 타이틀추가텍스트 &quot;8월16일 아리스&quot;
                    &#xA;
-                   &#xA;해당 문자열을 타이틀 문자열 (창 제목표시줄의) 뒤에 추가합니다."
+                   &#xA;해당 텍스트를 타이틀 (창 제목표시줄의) 뒤에 추가합니다."
                    reference="https://wikiwiki.jp/lightvn/commands/system#setTitleSuffix">
       </explanation>
     </Command>
@@ -16483,7 +16483,7 @@
                    syntax="lvKeyFree(string: 키 이름)"
                    details="ex. lvKeyFree(&quot;a&quot;)  
                    &#xA;  
-                   &#xA;&quot;키 이름&quot;의 키가 현재 눌려 있지 않다면 true, 아니라면 false.
+                   &#xA;&quot;키 이름&quot;의 키가 현재 눌려 있지 않다면 true, 아님 false.
                    &#xA;&quot;키 이름&quot;이 존재하지 않다면 에러.
                    &#xA;  
                    &#xA;return: bool"
@@ -16523,7 +16523,7 @@
                    syntax="lvKeyDown(string: 키 이름)"
                    details="ex. lvKeyDown(&quot;a&quot;)  
                    &#xA;  
-                   &#xA;&quot;키 이름&quot;의 키가 눌린 순간 true, 아니라면 false.
+                   &#xA;&quot;키 이름&quot;의 키가 눌린 순간 true, 아님 false.
                    &#xA;&quot;키 이름&quot;이 존재하지 않는다면 에러.
                    &#xA;  
                    &#xA;return: bool"
@@ -16563,7 +16563,7 @@
                    syntax="lvKeyPressed(string: 키 이름)"
                    details="ex. lvKeyPressed(&quot;a&quot;) 
                    &#xA;  
-                   &#xA;&quot;키 이름&quot;의 키가 현재 눌려 있다면 true, 아니라면 false.
+                   &#xA;&quot;키 이름&quot;의 키가 현재 눌려 있다면 true, 아님 false.
                    &#xA;&quot;키 이름&quot;이 존재하지 않는다면 에러.
                    &#xA;  
                    &#xA;return: bool"

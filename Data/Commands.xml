@@ -4353,7 +4353,7 @@
                    &#xA;자동 모드를 시작합니다.
                    &#xA;  
                    &#xA;텍스트읽기버전이 1인 경우:
-                   &#xA;스킵 중이 아님 자동 모드로 전환됩니다."
+                   &#xA;스킵 중이 아니라면 자동 모드로 전환됩니다."
                    reference="https://wikiwiki.jp/lightvn/commands/text#textReadAuto">
       </explanation>
     </Command>
@@ -16483,7 +16483,7 @@
                    syntax="lvKeyFree(string: 키 이름)"
                    details="ex. lvKeyFree(&quot;a&quot;)  
                    &#xA;  
-                   &#xA;&quot;키 이름&quot;의 키가 현재 눌려 있지 않다면 true, 아님 false.
+                   &#xA;&quot;키 이름&quot;의 키가 현재 눌려 있지 않다면 true, 아니라면 false.
                    &#xA;&quot;키 이름&quot;이 존재하지 않다면 에러.
                    &#xA;  
                    &#xA;return: bool"
@@ -16523,7 +16523,7 @@
                    syntax="lvKeyDown(string: 키 이름)"
                    details="ex. lvKeyDown(&quot;a&quot;)  
                    &#xA;  
-                   &#xA;&quot;키 이름&quot;의 키가 눌린 순간 true, 아님 false.
+                   &#xA;&quot;키 이름&quot;의 키가 눌린 순간 true, 아니라면 false.
                    &#xA;&quot;키 이름&quot;이 존재하지 않는다면 에러.
                    &#xA;  
                    &#xA;return: bool"
@@ -16563,7 +16563,7 @@
                    syntax="lvKeyPressed(string: 키 이름)"
                    details="ex. lvKeyPressed(&quot;a&quot;) 
                    &#xA;  
-                   &#xA;&quot;키 이름&quot;의 키가 현재 눌려 있다면 true, 아님 false.
+                   &#xA;&quot;키 이름&quot;의 키가 현재 눌려 있다면 true, 아니라면 false.
                    &#xA;&quot;키 이름&quot;이 존재하지 않는다면 에러.
                    &#xA;  
                    &#xA;return: bool"

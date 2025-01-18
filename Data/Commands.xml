@@ -2807,7 +2807,7 @@
                    syntax="대사파일열 [열(column)명]"
                    details="ex. 대사파일열 jap
                    &#xA;
-                   &#xA;현재 사용 중인 대사 파일(csv)의 열(column)을 재지정합니다.
+                   &#xA;현재 사용 중인 대사 파일들(csv)의 열(column)을 재지정합니다.
                    &#xA;이후 출력되는 대사는 새로 지정된 열의 데이터를 사용합니다.          
                    &#xA;ex. 언어 변경. jap → kor
                    &#xA;"

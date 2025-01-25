@@ -14,16 +14,22 @@
       准备关闭Light.vn
       是否保存该进度？
     </val>
+    <val lang="kor">
+      Light.vn 에디터를 종료합니다.
+      작업 중인 스크립트를 전부 저장하시겠습니까?
+    </val>
   </EString>
   <EString nkey="messageStopTestPlay" wpfControl="">
     <val lang="jap">テストプレイを終了しますか?</val>
     <val lang="eng">Stop Test Play?</val>
     <val lang="zh_cn">结束测试吗？</val>
+    <val lang="kor">테스트 플레이를 종료하시겠습니까?</val>
   </EString>
   <EString nkey="UpdateMsg_LowFPS" wpfControl="">
     <val lang="jap">FPSが異常領域に低下。{}以上に調整必要。</val>
     <val lang="eng">FPS drop to danger levels. Adjust above: {}</val>
     <val lang="zh_cn">FPS下降发生异常。{}或将需要调整。</val>
+    <val lang="kor">FPS가 정상 수치 이하로 저하. {} 이상으로 조정 필요.</val>
   </EString>
 
   <!--[preview messages]-->
@@ -31,31 +37,37 @@
     <val lang="jap">スクリプト行をクリックすると画面に反映されます。</val>
     <val lang="eng">Click on the script line to reflect it on the screen.</val>
     <val lang="zh_cn">单击脚本将应用于屏幕上</val>
+    <val lang="kor">스크립트 행을 클릭하면 화면에 반영됩니다.</val>
   </EString>
   <EString nkey="PreviewMsg_NoPreview" wpfControl="">
     <val lang="jap">リアルタイムプレビュー解除中です。</val>
     <val lang="eng">Realtime preview is off.</val>
     <val lang="zh_cn">实时预览关闭</val>
+    <val lang="kor">실시간 미리보기를 해제 중입니다.</val>
   </EString>
   <EString nkey="PreviewMsg_FreeCamera_editmode" wpfControl="">
     <val lang="jap">操作法：コマンド目録の「自由カメラ操作法」参考</val>
     <val lang="eng">Controls: Refer to [Free Camera Usage] in the Commands tab</val>
     <val lang="zh_cn">操作方法：参考命令选项卡中的“自由视角”</val>
+    <val lang="kor">조작 방법: 커맨드 목록 중 '자유 카메라 조작법'을 참고</val>
   </EString>
   <EString nkey="PreviewMsg_FreeCamera_gameplaymode" wpfControl="">
     <val lang="jap">shift + マウスホイール押し: スクリーン移動。マウスホイール: 拡大 (テストプレイ中)</val>
     <val lang="eng">Shift + Mouse Wheel: Move. Mouse Wheel: Zoom (during test play)</val>
     <val lang="zh_cn">shift + 鼠标中键：移动屏幕。鼠标滚轮：缩放（测试游戏时）</val>
+    <val lang="kor">shift + 마우스 휠 버튼: 스크린 이동. 마우스 휠: 확대 (테스트 플레이 중)</val>
   </EString>
   <EString nkey="PreviewMsg_PlayMode" wpfControl="">
     <val lang="jap">テストプレイ中。スクリプト修正は終了後に反映されます。(F5で終了)</val>
     <val lang="eng">Test play in progress. Script changes will be saved after completion. (F5 to exit)</val>
     <val lang="zh_cn">测试游戏中。脚本更改在结束后才会生效。（按F5结束）</val>
+    <val lang="kor">테스트 플레이 중. 스크립트 수정은 종료 후 반영됩니다. (F5키로 종료)</val>
   </EString>
   <EString nkey="PreviewMsg_PausedMode" wpfControl="">
     <val lang="jap">テストプレイの一時停止中。スクリプト修正は反映されません。(F5で続行)</val>
     <val lang="eng">Test play is paused. Script changes will not be saved. (F5 to continue)</val>
     <val lang="zh_cn">测试游戏暂停。脚本更改不会保存。（按F5继续）</val>
+    <val lang="kor">테스트 플레이 일시정지 중. 스크립트 수정은 반영되지 않습니다. (F5로 재개)</val>
   </EString>
 
   <!--[EDITOR COMMAND INSERT]-->
@@ -64,78 +76,93 @@
     <val lang="jap">移動：マウス</val>
     <val lang="eng">move: mouse</val>
     <val lang="zh_cn">移动：鼠标</val>
+    <val lang="kor">이동: 마우스</val>
   </EString>
   <EString nkey="InsCmd_instruction_scale" wpfControl="">
     <val lang="jap">拡大：スクロール</val>
     <val lang="eng">zoom: scroll</val>
     <val lang="zh_cn">缩放：滚轮</val>
+    <val lang="kor">확대: 스크롤</val>
   </EString>
   <EString nkey="InsCmd_instruction_confirm" wpfControl="">
     <val lang="jap">確定：左クリック</val>
     <val lang="eng">confirm: left click</val>
     <val lang="zh_cn">确定：左键点击</val>
+    <val lang="kor">선택: 왼쪽 마우스 클릭</val>
   </EString>
   <EString nkey="InsCmd_sky_error_texture_count" wpfControl="">
     <val lang="jap">6枚の画像を選ぶ必要があるのだ！</val>
     <val lang="eng">You need to choose 6 textures!</val>
     <val lang="zh_cn">你需要选择6张纹理图像！</val>
+    <val lang="kor">그림 6개를 선택할 필요가 있는 것이다!</val>
   </EString>
   <EString nkey="InsCmd_TextSample" wpfControl="">
     <val lang="jap">吾輩は文字王である。</val>
     <val lang="eng">I'm a master of letters.</val>
     <val lang="zh_cn">我可是最好的文本。</val>
+    <val lang="kor">이 몸은 글자왕이로다.</val>
   </EString>
   <EString nkey="InsCmd_TextChoiceSample" wpfControl="">
     <val lang="jap">選択肢だよ</val>
     <val lang="eng">It's a choice</val>
     <val lang="zh_cn">这是一个选择分支</val>
+    <val lang="kor">선택지야</val>
   </EString>
   <EString nkey="InsCmd_TargetNameSample" wpfControl="">
     <val lang="jap">対象名</val>
     <val lang="eng">target_name</val>
     <val lang="zh_cn">对象名称</val>
+    <val lang="kor">대상 이름</val>
   </EString>
   <EString nkey="InsCmd_VarNameSample" wpfControl="">
     <val lang="jap">変数名</val>
     <val lang="eng">varname</val>
     <val lang="zh_cn">变量名</val>
+    <val lang="kor">변수명</val>
   </EString>
   <EString nkey="InsCmd_VarValueSample" wpfControl="">
     <val lang="jap">変数値</val>
     <val lang="eng">value</val>
     <val lang="zh_cn">变量值</val>
+    <val lang="kor">변수값</val>
   </EString>
   <!--command divider-->
   <EString nkey="InsCmdChoice" wpfControl="">
     <val lang="jap">選択肢</val>
     <val lang="eng">choice</val>
     <val lang="zh_cn">选择分支</val>
+    <val lang="kor">선택지</val>
   </EString>
   <EString nkey="InsCmdChoice_notice_texture" wpfControl="">
     <val lang="jap">選択肢ボタンの画像をお選びください</val>
     <val lang="eng">Choose the texture for the button</val>
     <val lang="zh_cn">请选择选项按钮的纹理图像</val>
+    <val lang="kor">선택지 버튼에 사용할 그림 파일을 선택해 주세요</val>
   </EString>
   <EString nkey="InsCmdChoice_notice_font" wpfControl="">
     <val lang="jap">選択肢ボタンのフォントをお選びください</val>
     <val lang="eng">Choose the font for the button</val>
     <val lang="zh_cn">请选择选项按钮的字体</val>
+    <val lang="kor">선택지 버튼의 폰트를 선택해 주세요</val>
   </EString>
   <!--command divider-->
   <EString nkey="InsCmdSystemMessage_ScriptCmd" wpfControl="">
     <val lang="jap">メッセージを表示します。</val>
     <val lang="eng">Show this message.</val>
     <val lang="zh_cn">显示此消息</val>
+    <val lang="kor">메시지를 표시합니다.</val>
   </EString>
   <EString nkey="InsCmdSystemError_ScriptCmd" wpfControl="">
     <val lang="jap">エラーを表示させます。</val>
     <val lang="eng">Show error message.</val>
     <val lang="zh_cn">显示发生错误</val>
+    <val lang="kor">에러를 표시합니다.</val>
   </EString>
   <EString nkey="InsCmdSystemLog_ScriptCmd" wpfControl="">
     <val lang="jap">ログに記録されるぜ。</val>
     <val lang="eng">Log messages.</val>
     <val lang="zh_cn">被记录在了日志中</val>
+    <val lang="kor">로그에 기록된다고.</val>
   </EString>
 
   <!--[EDITOR BOTTOM INFORMATION]-->
@@ -143,11 +170,13 @@
     <val lang="jap">FPS ( アップデート: {0} , render: {1} )</val>
     <val lang="eng">FPS ( Update: {0} , Render: {1} )</val>
     <val lang="zh_cn">FPS ( 更新: {0} , 渲染: {1} )</val>
+    <val lang="kor">FPS ( Update: {0} , Render: {1} )</val>
   </EString>
   <EString nkey="mousePos" wpfControl="">
     <val lang="jap">マウス位置： ( {0} , {1} )</val>
     <val lang="eng">Mouse Position: ( {0} , {1} )</val>
     <val lang="zh_cn">鼠标位置：( {0} , {1} )</val>
+    <val lang="kor">마우스 위치: ( {0} , {1} )</val>
   </EString>
 
   <!--[header top right: script management (v2 confirmed)]-->
@@ -155,16 +184,19 @@
     <val lang="jap">新規スクリプト</val>
     <val lang="eng">New Script</val>
     <val lang="zh_cn">新建脚本</val>
+    <val lang="kor">새 스크립트</val>
   </EString>
   <EString nkey="closeAllScript" wpfControl="">
     <val lang="jap">全部 閉じる</val>
     <val lang="eng">Close All</val>
     <val lang="zh_cn">关闭全部</val>
+    <val lang="kor">전부 닫기</val>
   </EString>
   <EString nkey="btn_openscript" wpfControl="">
     <val lang="jap">開く</val>
     <val lang="eng">Open</val>
     <val lang="zh_cn">打开</val>
+    <val lang="kor">열기</val>
   </EString>
 
   <!--[header top menu]-->
@@ -173,26 +205,31 @@
     <val lang="jap">ファイル</val>
     <val lang="eng">File</val>
     <val lang="zh_cn">文件</val>
+    <val lang="kor">파일</val>
   </EString>
   <EString nkey="actionNew_Project" wpfControl="">
     <val lang="jap">新規プロジェクト</val>
     <val lang="eng">New Project</val>
     <val lang="zh_cn">新建项目</val>
+    <val lang="kor">새 프로젝트</val>
   </EString>
   <EString nkey="actionSave_Current_Script" wpfControl="">
     <val lang="jap">現在スクリプトを保存</val>
     <val lang="eng">Save Current Script</val>
     <val lang="zh_cn">保存当前脚本</val>
+    <val lang="kor">현재 스크립트 저장</val>
   </EString>
   <EString nkey="actionClose_Project" wpfControl="">
     <val lang="jap">プロジェクト終了</val>
     <val lang="eng">Close Project</val>
     <val lang="zh_cn">关闭脚本</val>
+    <val lang="kor">프로젝트 종료</val>
   </EString>
   <EString nkey="menuFileExit" wpfControl="">
     <val lang="jap">Light.vnを終了</val>
     <val lang="eng">Close Light.vn</val>
     <val lang="zh_cn">关闭Light.vn</val>
+    <val lang="kor">Light.vn을 종료</val>
   </EString>
   <!--file:new_project-->
   <EString nkey="actionNew_Project_select" wpfControl="">
@@ -205,64 +242,78 @@
     <val lang="zh_cn">
       请选择创建项目的文件夹
     </val>
+    <val lang="kor">
+      새 프로젝트를 생성할 폴더를 선택해 주십시오.
+    </val>
   </EString>
   <EString nkey="actionNew_Project_select_success" wpfControl="">
     <val lang="jap">成功したなのだ！ いつか招待してくれると嬉しいのだ！ &#xA;(作成場所：{})</val>
     <val lang="eng">Success created new project! (Created Location: {})</val>
     <val lang="zh_cn">成功在 {} 打开了LightEditor.exe</val>
+    <val lang="kor">성공한 것이다! 언젠가 초대해 준다면 기쁜 것이다! &#xA;(저장 위치: {})</val>
   </EString>
   <EString nkey="actionNew_Project_select_failure" wpfControl="">
     <val lang="jap">作成に失敗したなのだ！　ログに理由が出ているなのだ・・・。</val>
     <val lang="eng">Failed to create new project! Read the log for more details.</val>
     <val lang="zh_cn">失败！详细信息请查阅日志...</val>
+    <val lang="kor">저장에 실패한 것이다! 로그에 이유가 나와 있는 것이다…….</val>
   </EString>
   <!--view-->
   <EString nkey="menuView" wpfControl="">
     <val lang="jap">表示</val>
     <val lang="eng">View</val>
     <val lang="zh_cn">查看</val>
+    <val lang="kor">보기</val>
   </EString>
   <EString nkey="menuPreview_Scale" wpfControl="">
     <val lang="jap">プレビュー画面拡大</val>
     <val lang="eng">Preview Scale</val>
     <val lang="zh_cn">预览缩放</val>
+    <val lang="kor">미리보기 화면 확대</val>
   </EString>
   <!--edit-->
   <EString nkey="menuEdit" wpfControl="">
     <val lang="jap">編集</val>
     <val lang="eng">Edit</val>
     <val lang="zh_cn">编辑</val>
+    <val lang="kor">편집</val>
   </EString>
   <EString nkey="action_find_replace" wpfControl="">
     <val lang="jap">検索・置換</val>
     <val lang="eng">Find and Replace</val>
     <val lang="zh_cn">查找和替换</val>
+    <val lang="kor">찾기 및 바꾸기</val>
   </EString>
   <!--view:novel-->
   <EString nkey="menuGame" wpfControl="">
     <val lang="jap">作品</val>
     <val lang="eng">Project</val>
     <val lang="zh_cn">项目</val>
+    <val lang="kor">프로젝트</val>
   </EString>
   <EString nkey="action_play_on_off" wpfControl="">
     <val lang="jap">現在行からテストプレイ開始 on/off</val>
     <val lang="eng">Start/End Test Play from Current Line</val>
     <val lang="zh_cn">从当前行开始/结束测试播放</val>
+    <val lang="kor">현재 행부터 테스트 플레이 시작/종료</val>
   </EString>
   <EString nkey="action_reload_resources" wpfControl="">
     <val lang="jap">素材更新</val>
     <val lang="eng">Reload Resources</val>
     <val lang="zh_cn">更新素材</val>
+    <val lang="kor">리소스 새로고침</val>
   </EString>
   <EString nkey="action_settings" wpfControl="">
     <val lang="jap">設定</val>
     <val lang="eng">Settings</val>
     <val lang="zh_cn">设置</val>
+    <val lang="kor">설정</val>
   </EString>
   <EString nkey="action_deploy" wpfControl="">
     <val lang="jap">配布</val>
     <val lang="eng">Publish</val>
     <val lang="zh_cn">项目分发</val>
+    <val lang="kor">배포</val>
   </EString>
 
   <!--view:settings (V2 confirmed)-->
@@ -270,107 +321,128 @@
     <val lang="jap">作品設定 -Light.vn</val>
     <val lang="eng">Settings - Light.vn</val>
     <val lang="zh_cn">项目设置 -Light.vn</val>
+    <val lang="kor">설정 - Light.vn</val>
   </EString>
   <EString nkey="menuNovelConfigTab" wpfControl="">
     <val lang="jap">作品設定</val>
     <val lang="eng">Project</val>
     <val lang="zh_cn">项目设置</val>
+    <val lang="kor">프로젝트 설정</val>
   </EString>
   <EString nkey="menuNovelConfigTitle" wpfControl="">
     <val lang="jap">作品タイトル</val>
     <val lang="eng">Title</val>
     <val lang="zh_cn">项目标题</val>
+    <val lang="kor">제목</val>
   </EString>
   <EString nkey="menuNovelConfigFolderName" wpfControl="">
     <val lang="jap">作品フォルダ名</val>
     <val lang="eng">Folder Name</val>
     <val lang="zh_cn">项目文件夹名称</val>
+    <val lang="kor">폴더명</val>
   </EString>
   <EString nkey="menuNovelConfigFolderNameExpl" wpfControl="">
     <val lang="jap">英数字でのプロジェクトフォルダー名</val>
     <val lang="eng">Alphanumeric project folder name.</val>
     <val lang="zh_cn">项目文件夹名称推荐使用英文和数字</val>
+    <val lang="kor">영문자 및 숫자 프로젝트 폴더명</val>
   </EString>
   <EString nkey="menuNovelConfigInitScript" wpfControl="">
     <val lang="jap">スタートスクリプト</val>
     <val lang="eng">Start Script</val>
     <val lang="zh_cn">启动脚本</val>
+    <val lang="kor">시작 스크립트</val>
   </EString>
   <EString nkey="menuNovelConfigGameRes" wpfControl="">
     <val lang="jap">作品解像度</val>
     <val lang="eng">Resolution</val>
     <val lang="zh_cn">分辨率</val>
+    <val lang="kor">해상도</val>
   </EString>
   <EString nkey="menuNovelConfigGameWinRes" wpfControl="">
     <val lang="jap">ウインドウサイズ</val>
     <val lang="eng">Window Size</val>
     <val lang="zh_cn">窗口大小</val>
+    <val lang="kor">창 크기</val>
   </EString>
   <EString nkey="menuNovelConfigIcon" wpfControl="">
     <val lang="jap">アイコン</val>
     <val lang="eng">Icon</val>
     <val lang="zh_cn">图标</val>
+    <val lang="kor">아이콘</val>
   </EString>
   <EString nkey="menuNovelConfigIconExpl" wpfControl="">
     <val lang="jap">32x32のpng画像をお勧めします</val>
     <val lang="eng">32x32 png images are recommended.</val>
     <val lang="zh_cn">建议使用32x32的PNG图片</val>
+    <val lang="kor">32x32 png 이미지를 추천합니다.</val>
   </EString>
   <EString nkey="menuNovelConfigWindowSizeAdjustable" wpfControl="">
     <val lang="jap">ウインドウサイズ調整</val>
     <val lang="eng">Adjustable Window Size</val>
     <val lang="zh_cn">窗口大小调整</val>
+    <val lang="kor">창 크기 조정</val>
   </EString>
   <EString nkey="menuNovelConfigWindowSizeAdjustable_yes" wpfControl="">
     <val lang="jap">可能</val>
     <val lang="eng">Yes</val>
     <val lang="zh_cn">启用</val>
+    <val lang="kor">네</val>
   </EString>
   <EString nkey="menuNovelConfigNoWindowBorder" wpfControl="">
     <val lang="jap">ウインドウボーダー無し</val>
     <val lang="eng">Borderless Window</val>
     <val lang="zh_cn">无边框窗口</val>
+    <val lang="kor">테두리 없는 창</val>
   </EString>
   <EString nkey="menuNovelConfigNoWindowBorder_yes" wpfControl="">
     <val lang="jap">yes</val>
     <val lang="eng">Yes</val>
     <val lang="zh_cn">启用</val>
+    <val lang="kor">네</val>
   </EString>
 
   <EString nkey="menuNovelEditorTab" wpfControl="">
     <val lang="jap">エディター</val>
     <val lang="eng">Editor</val>
     <val lang="zh_cn">编辑器设置</val>
+    <val lang="kor">에디터</val>
   </EString>
   <EString nkey="menuNovelConfigEditorStringFile" wpfControl="">
     <val lang="jap">エディター文字列</val>
     <val lang="eng">Editor Strings</val>
     <val lang="zh_cn">语言文件</val>
+    <val lang="kor">에디터 문자열</val>
   </EString>
   <EString nkey="menuNovelConfigCommandFile" wpfControl="">
     <val lang="jap">コマンドファイル</val>
     <val lang="eng">Command File</val>
     <val lang="zh_cn">命令文件</val>
+    <val lang="kor">커맨드 파일</val>
   </EString>
   <EString nkey="menuNovelConfigSyntaxFile" wpfControl="">
     <val lang="jap">コマンド文法ファイル</val>
     <val lang="eng">Snytax File</val>
     <val lang="zh_cn">命令语法文件</val>
+    <val lang="kor">커맨드 문법 파일</val>
   </EString>
   <EString nkey="menuNovelConfigLanguage" wpfControl="">
     <val lang="jap">使用言語</val>
     <val lang="eng">Language</val>
     <val lang="zh_cn">语言</val>
+    <val lang="kor">언어</val>
   </EString>
   <EString nkey="menuNovelEditorFont" wpfControl="">
     <val lang="jap">エディターフォント</val>
     <val lang="eng">Editor Font</val>
     <val lang="zh_cn">字体</val>
+    <val lang="kor">에디터 폰트</val>
   </EString>
   <EString nkey="menuNovelEditorFontSize" wpfControl="">
     <val lang="jap">フォントサイズ</val>
     <val lang="eng">Font Size</val>
     <val lang="zh_cn">字体大小</val>
+    <val lang="kor">폰트 크기</val>
   </EString>
 
   <!--view:distribution (V2 confirmed)-->
@@ -378,41 +450,49 @@
     <val lang="jap">作品配布</val>
     <val lang="eng">Publish</val>
     <val lang="zh_cn">项目分发</val>
+    <val lang="kor">작품 배포</val>
   </EString>
   <EString nkey="menuNovelDistrTitle" wpfControl="">
     <val lang="jap">作品配布 -Light.vn</val>
     <val lang="eng">Publish - Light.vn</val>
     <val lang="zh_cn">项目分发 -Light.vn</val>
+    <val lang="kor">작품 배포 - Light.vn</val>
   </EString>
   <EString nkey="menuNovelDistrDir" wpfControl="">
     <val lang="jap">作品配布経路</val>
     <val lang="eng">Directory</val>
     <val lang="zh_cn">分发目录</val>
+    <val lang="kor">배포 경로</val>
   </EString>
   <EString nkey="menuNovelDistrMethod" wpfControl="">
     <val lang="jap">作品配布形式</val>
     <val lang="eng">Platform</val>
     <val lang="zh_cn">分发格式</val>
+    <val lang="kor">배포 형식</val>
   </EString>
   <EString nkey="menuNovelDistrNote" wpfControl="">
     <val lang="jap">(注：指定されたディレクトリーにノベルフォルダーを作ります)</val>
     <val lang="eng">(Note: A folder will be created in the specified directory)</val>
     <val lang="zh_cn">（注：将在指定目录中创建文件夹）</val>
+    <val lang="kor">(도움말: 지정된 경로에 노벨 폴더를 생성합니다)</val>
   </EString>
   <EString nkey="menuNovelDistrProg" wpfControl="">
     <val lang="jap">作品配布進行度</val>
     <val lang="eng">Progress</val>
     <val lang="zh_cn">分发进度</val>
+    <val lang="kor">진행도</val>
   </EString>
   <EString nkey="menuNovelDistrStart" wpfControl="">
     <val lang="jap">作品配布開始</val>
     <val lang="eng">Start</val>
     <val lang="zh_cn">开始分发</val>
+    <val lang="kor">배포 시작</val>
   </EString>
   <EString nkey="menuNovelDistrPatchStart" wpfControl="">
     <val lang="jap">パッチ作成開始</val>
     <val lang="eng">Create Patch</val>
     <val lang="zh_cn">开始制作补丁</val>
+    <val lang="kor">패치 생성 시작</val>
   </EString>
   <EString nkey="menuNovelDistrLicenseTxt" wpfControl="">
     <val lang="jap">
@@ -431,42 +511,54 @@
 
       如果您能够发送实体游戏包给我们，我们将非常高兴。
     </val>
+    <val lang="kor">
+      작품 공개 시 Light.vn 도입 사례로 추가 및 홍보 협력 등을 원하시는 경우, 괜찮으시다면 메일 혹은 Discord로 연락 부탁드립니다. 유료 작품일 경우 연락 폼을 통한 송신이 필수이므로 모쪼록 부탁드리겠습니다.
+
+      더불어서, 공개 시 작품 패키지 혹은 링크를 함께 첨부해 주시면 개발자가 대단히 기뻐하므로 가능하시다면 검토 부탁드립니다!
+    </val>
   </EString>
   <EString nkey="menuNovelDistrReferenceTxt1" wpfControl="">
     <val lang="jap">参考：</val>
     <val lang="eng">Note:</val>
     <val lang="zh_cn">备注：</val>
+    <val lang="kor">참고:</val>
   </EString>
   <EString nkey="menuNovelDistrReferenceTxt2" wpfControl="">
     <val lang="jap">Light.vn 配布時のアドバイス + 連絡フォーム</val>
     <val lang="eng">Light.vn Distribution Advice + Contact Form</val>
     <val lang="zh_cn">Light.vn 分发建议 + 联系表格</val>
+    <val lang="kor">Light.vn 배포 시의 팁 + 연락 폼</val>
   </EString>
 
   <EString nkey="menuNovelDistrAction_started" wpfControl="">
     <val lang="jap">配布を開始・・・</val>
     <val lang="eng">Start distributing...</val>
     <val lang="zh_cn">开始分发...</val>
+    <val lang="kor">배포 시작...</val>
   </EString>
   <EString nkey="menuNovelDistrAction_success" wpfControl="">
     <val lang="jap">成功しました！</val>
     <val lang="eng">Success!</val>
     <val lang="zh_cn">成功！</val>
+    <val lang="kor">성공했습니다!</val>
   </EString>
   <EString nkey="menuNovelDistrAction_failure" wpfControl="">
     <val lang="jap">失敗しました。詳細はログをご参考くださいー</val>
     <val lang="eng">Failed! Please refer to the log for details.</val>
     <val lang="zh_cn">失败。请查看日志获取详细信息</val>
+    <val lang="kor">실패했습니다. 자세한 내용은 로그를 참고 바랍니다.</val>
   </EString>
   <EString nkey="menuNovelDistrPatchAction_limited" wpfControl="">
     <val lang="jap">パッチ作成の対象は{}のみになっております。</val>
     <val lang="eng">Patches can only be created for formats: {}</val>
     <val lang="zh_cn">仅可以为以下格式创建补丁：{}</val>
+    <val lang="kor">패치 생성 대상은 다음으로 한정됩니다 : {}</val>
   </EString>
   <EString nkey="menuNovelDistr_contact" wpfControl="">
     <val lang="jap">Light.vn 開発者 (Discord / email)の方にお問い合わせくださいー</val>
     <val lang="eng">Please contact the Light.vn developers via Discord or email.</val>
     <val lang="zh_cn">请通过Discord或Email联系Light.vn的开发者</val>
+    <val lang="kor">Light.vn 개발자 연락처(Discord / email)로 문의 부탁드립니다.</val>
   </EString>
 
   <!--help-->
@@ -474,11 +566,13 @@
     <val lang="jap">ヘルプ</val>
     <val lang="eng">Help</val>
     <val lang="zh_cn">帮助</val>
+    <val lang="kor">도움말</val>
   </EString>
   <EString nkey="action_link_yukihara_channel" wpfControl="">
     <val lang="jap">解説チャンネル</val>
     <val lang="eng">Yukihara Channel</val>
     <val lang="zh_cn">解说频道</val>
+    <val lang="kor">해설 채널</val>
   </EString>
 
   <!--help:format-->
@@ -486,27 +580,32 @@
     <val lang="jap">支援ファイルフォーマット</val>
     <val lang="eng">Supported File Formats</val>
     <val lang="zh_cn">支持的文件格式</val>
+    <val lang="kor">지원하는 파일 포맷</val>
   </EString>
   <EString nkey="menuHelpFormatTitle" wpfControl="">
     <val lang="jap">支援ファイル -Light.vn</val>
     <val lang="eng">File Formats - Light.vn</val>
     <val lang="zh_cn">文件格式 -Light.vn</val>
+    <val lang="kor">지원하는 포맷 - Light.vn</val>
   </EString>
   <EString nkey="menuHelpFormatHeader" wpfControl="">
     <val lang="jap">Light.vn 支援ファイルフォーマット</val>
     <val lang="eng">Light.vn File Formats</val>
     <val lang="zh_cn">Light.vn 文件格式</val>
+    <val lang="kor">Light.vn 지원하는 파일 포맷</val>
   </EString>
   <EString nkey="menuHelpFormatNote" wpfControl="">
     <val lang="jap">注：.mp3は法律上の問題によって支援していません。オーディオファイルは.oggをお勧めします。</val>
     <val lang="eng">Note: .mp3 is not supported due to legal reasons. We recommended .ogg for audio files.</val>
     <val lang="zh_cn">注意：由于法律原因，不支持.mp3格式。音频推荐使用.ogg格式。</val>
+    <val lang="kor">참고: .mp3는 법률상의 문제로 지원하지 않습니다. 오디오 파일은 .ogg를 권장합니다.</val>
   </EString>
   <!--help:about-->
   <EString nkey="menuHelpAbout" wpfControl="">
     <val lang="jap">Light.vnについて</val>
     <val lang="eng">About Light.vn</val>
     <val lang="zh_cn">关于 Light.vn</val>
+    <val lang="kor">Light.vn에 대하여</val>
   </EString>
   <EString nkey="menuHelpAboutContent" wpfControl="">
     <val lang="jap">
@@ -527,6 +626,12 @@
       以及一种简约的脚本语言，可在最短的时间内构建项目，
       让开发者有更多的时间使他们的作品更加出色。
     </val>
+    <val lang="kor">
+      Light.vn은 비주얼 노벨 작품 제작을 지원하기 위해 만들어졌습니다.
+      스크립트 편집과 동시에 결과를 볼 수 있는 프리뷰 기능 제공 및
+      제작과 편집에 드는 수고를 최소화하기 위해 커맨드를 간략화하여,
+      일반적으로 제작에 소요되는 불필요한 시간적 소모를 줄이도록 설계되었습니다.
+    </val>
   </EString>
 
   <!--V2 Confirmed-->
@@ -536,31 +641,37 @@
     <val lang="jap">画像変換</val>
     <val lang="eng">Change Image</val>
     <val lang="zh_cn">更改图像</val>
+    <val lang="kor">그림 파일 변경</val>
   </EString>
   <EString nkey="btn_cmd_use_light" wpfControl="">
     <val lang="jap">ライト使用</val>
     <val lang="eng">Lights On</val>
     <val lang="zh_cn">使用光源</val>
+    <val lang="kor">광원 사용</val>
   </EString>
   <EString nkey="btn_cmd_use_light_false" wpfControl="">
     <val lang="jap">ライト未使用</val>
     <val lang="eng">Lights Off</val>
     <val lang="zh_cn">关闭光源</val>
+    <val lang="kor">광원 미사용</val>
   </EString>
   <EString nkey="btn_cmd_use2dcamera" wpfControl="">
     <val lang="jap">2Dカメラ使用</val>
     <val lang="eng">Use 2D Camera</val>
     <val lang="zh_cn">使用2D视角</val>
+    <val lang="kor">2D 카메라 사용</val>
   </EString>
   <EString nkey="btn_cmd_use3dcamera" wpfControl="">
     <val lang="jap">3Dカメラ使用</val>
     <val lang="eng">Use 3D Camera</val>
     <val lang="zh_cn">使用3D视角</val>
+    <val lang="kor">3D 카메라 사용</val>
   </EString>
   <EString nkey="btn_cmd_choice" wpfControl="">
     <val lang="jap">選択肢</val>
     <val lang="eng">Choice</val>
     <val lang="zh_cn">选项</val>
+    <val lang="kor">선택지</val>
   </EString>
 
   <!--[tab: settings]-->
@@ -568,51 +679,61 @@
     <val lang="jap">設定</val>
     <val lang="eng">Settings</val>
     <val lang="zh_cn">设置</val>
+    <val lang="kor">설정</val>
   </EString>
   <EString nkey="RealtimePreviewCheck" wpfControl="">
     <val lang="jap">リアルタイムプレビュー</val>
     <val lang="eng">Realtime Preview</val>
     <val lang="zh_cn">实时预览</val>
+    <val lang="kor">실시간 미리보기</val>
   </EString>
   <EString nkey="BoundingBoxCheck" wpfControl="">
     <val lang="jap">バウンディングボックス</val>
     <val lang="eng">View Bounding Boxes</val>
     <val lang="zh_cn">查看边界框</val>
+    <val lang="kor">테두리 박스</val>
   </EString>
   <EString nkey="MusicPlayCheck" wpfControl="">
     <val lang="jap">編集中に背景音楽再生</val>
     <val lang="eng">Play BGMs During Editing</val>
     <val lang="zh_cn">编辑期间播放BGM</val>
+    <val lang="kor">편집 중에 배경 음악 재생</val>
   </EString>
   <EString nkey="DisplayAxesCheck" wpfControl="">
     <val lang="jap">座標系表示</val>
     <val lang="eng">View Axes</val>
     <val lang="zh_cn">显示坐标系</val>
+    <val lang="kor">좌표계 표시</val>
   </EString>
   <EString nkey="ViewMaskCheck" wpfControl="">
     <val lang="jap">マスク表示</val>
     <val lang="eng">View Masks</val>
     <val lang="zh_cn">查看遮罩</val>
+    <val lang="kor">마스크 표시</val>
   </EString>
   <EString nkey="ViewCollidersCheck" wpfControl="">
     <val lang="jap">衝突範囲表示</val>
     <val lang="eng">View Colliders</val>
     <val lang="zh_cn">查看碰撞箱</val>
+    <val lang="kor">충돌 범위 표시</val>
   </EString>
   <EString nkey="ViewWaitIconCheck" wpfControl="">
     <val lang="jap">編集中に文字窓待機絵表示</val>
     <val lang="eng">View Wait Icons</val>
     <val lang="zh_cn">查看等待图标</val>
+    <val lang="kor">편집 중에 대기 아이콘 표시</val>
   </EString>
   <EString nkey="ScriptWordWrapCheck" wpfControl="">
     <val lang="jap">スクリプトワードラップ</val>
     <val lang="eng">Script Word Wrap</val>
     <val lang="zh_cn">脚本自动换行</val>
+    <val lang="kor">스크립트 자동 줄바꿈</val>
   </EString>
   <EString nkey="ReleaseCacheOnTabChangeCheck" wpfControl="">
     <val lang="jap">タブ変更時に未使用素材開放</val>
     <val lang="eng">Release Cache on Tabs Changed</val>
     <val lang="zh_cn">切换标签时释放缓存</val>
+    <val lang="kor">탭 변경 시에 사용하지 않은 리소스 해제</val>
   </EString>
   <EString nkey="ReadFromPatchesCheck" wpfControl="">
     <val lang="jap">Patch類を読み込む</val>
@@ -624,11 +745,13 @@
     <val lang="jap">コマンド</val>
     <val lang="eng">Commands</val>
     <val lang="zh_cn">命令</val>
+    <val lang="kor">커맨드</val>
   </EString>
   <EString nkey="cmd_search" wpfControl="">
     <val lang="jap">全体検索</val>
     <val lang="eng">Full Search</val>
     <val lang="zh_cn">全局搜索</val>
+    <val lang="kor">전체 찾기</val>
   </EString>
 
   <!--[tab: interop]-->
@@ -650,26 +773,31 @@
     <val lang="jap">スクリプト</val>
     <val lang="eng">Scripts</val>
     <val lang="zh_cn">脚本</val>
+    <val lang="kor">스크립트</val>
   </EString>
   <EString nkey="lvn_script_tree_id" wpfControl="">
     <val lang="jap">番号 (変数名)</val>
     <val lang="eng">Index (Var Name)</val>
     <val lang="zh_cn">索引（变量名）</val>
+    <val lang="kor">색인 (변수명)</val>
   </EString>
   <EString nkey="lvn_script_tree_name" wpfControl="">
     <val lang="jap">スクリプト名 (変数値)</val>
     <val lang="eng">Script Name (Var Value)</val>
     <val lang="zh_cn">脚本名（变量值）</val>
+    <val lang="kor">스크립트명 (변수값)</val>
   </EString>
   <EString nkey="lvn_script_tree_line" wpfControl="">
     <val lang="jap">行</val>
     <val lang="eng">Line</val>
     <val lang="zh_cn">行号</val>
+    <val lang="kor">행</val>
   </EString>
   <EString nkey="lvn_script_tree_state" wpfControl="">
     <val lang="jap">状態</val>
     <val lang="eng">State</val>
     <val lang="zh_cn">状态</val>
+    <val lang="kor">상태</val>
   </EString>
 
   <!--[tab: screenspaces]-->
@@ -677,21 +805,25 @@
     <val lang="jap">画面領域</val>
     <val lang="eng">Screenspaces</val>
     <val lang="zh_cn">屏幕区域</val>
+    <val lang="kor">화면영역</val>
   </EString>
   <EString nkey="lvn_screen_tree_level" wpfControl="">
     <val lang="jap">階層</val>
     <val lang="eng">Level</val>
     <val lang="zh_cn">图层</val>
+    <val lang="kor">계층</val>
   </EString>
   <EString nkey="lvn_screen_tree_name" wpfControl="">
     <val lang="jap">画面領域</val>
     <val lang="eng">Name</val>
     <val lang="zh_cn">名称</val>
+    <val lang="kor">이름</val>
   </EString>
   <EString nkey="lvn_screen_tree_release_on_return_to_main" wpfControl="">
     <val lang="jap">原点回帰時解除</val>
     <val lang="eng">Release on return_to_main</val>
     <val lang="zh_cn">返回主界面时释放</val>
+    <val lang="kor">return_to_main 시 해제</val>
   </EString>
 
   <!--[tab: macros]-->
@@ -699,16 +831,19 @@
     <val lang="jap">マクロ</val>
     <val lang="eng">Macros</val>
     <val lang="zh_cn">宏</val>
+    <val lang="kor">매크로</val>
   </EString>
   <EString nkey="lvn_macro_tree_target" wpfControl="">
     <val lang="jap">変換対象</val>
     <val lang="eng">Apply to</val>
     <val lang="zh_cn">应用于</val>
+    <val lang="kor">변환 대상</val>
   </EString>
   <EString nkey="lvn_macro_tree_result" wpfControl="">
     <val lang="jap">変換結果</val>
     <val lang="eng">Convert Result</val>
     <val lang="zh_cn">转换结果</val>
+    <val lang="kor">변환 결과</val>
   </EString>
 
   <!--[tab: objects]-->
@@ -716,46 +851,55 @@
     <val lang="jap">個体</val>
     <val lang="eng">Objects</val>
     <val lang="zh_cn">对象</val>
+    <val lang="kor">개체</val>
   </EString>
   <EString nkey="objsearch_label" wpfControl="">
     <val lang="jap">検索 (正規表現可)</val>
     <val lang="eng">Search (Regex)</val>
     <val lang="zh_cn">搜索（支持正则表达式）</val>
+    <val lang="kor">찾기 (Regex 사용가능)</val>
   </EString>
   <EString nkey="lvn_objs_tree_name" wpfControl="">
     <val lang="jap">名前</val>
     <val lang="eng">Name</val>
     <val lang="zh_cn">名称</val>
+    <val lang="kor">이름</val>
   </EString>
   <EString nkey="lvn_objs_tree_type" wpfControl="">
     <val lang="jap">種類</val>
     <val lang="eng">Type</val>
     <val lang="zh_cn">种类</val>
+    <val lang="kor">종류</val>
   </EString>
   <EString nkey="lvn_objs_tree_center_x" wpfControl="">
     <val lang="jap">描画中心 x</val>
     <val lang="eng">Center X</val>
     <val lang="zh_cn">中心点 X</val>
+    <val lang="kor">중심축 X</val>
   </EString>
   <EString nkey="lvn_objs_tree_center_y" wpfControl="">
     <val lang="jap">描画中心 y</val>
     <val lang="eng">Center Y</val>
     <val lang="zh_cn">中心点 Y</val>
+    <val lang="kor">중심축 Y</val>
   </EString>
   <EString nkey="lvn_objs_tree_center_r" wpfControl="">
     <val lang="jap">描画中心 r</val>
     <val lang="eng">Center R</val>
     <val lang="zh_cn">中心点 R</val>
+    <val lang="kor">중심축 R</val>
   </EString>
   <EString nkey="lvn_objs_tree_screenspace" wpfControl="">
     <val lang="jap">画面領域 (階層)</val>
     <val lang="eng">Screenspace (Level)</val>
     <val lang="zh_cn">屏幕区域 (层级)</val>
+    <val lang="kor">화면영역 (계층)</val>
   </EString>
   <EString nkey="lvn_objs_tree_created_at" wpfControl="">
     <val lang="jap">作成元</val>
     <val lang="eng">Created at</val>
     <val lang="zh_cn">来源</val>
+    <val lang="kor">생성자</val>
   </EString>
 
   <!--[tab: variables]-->
@@ -763,26 +907,31 @@
     <val lang="jap">変数</val>
     <val lang="eng">Variables</val>
     <val lang="zh_cn">变量</val>
+    <val lang="kor">변수</val>
   </EString>
   <EString nkey="varsearch_label" wpfControl="">
     <val lang="jap">検索 (正規表現可)</val>
     <val lang="eng">Search (Regex)</val>
     <val lang="zh_cn">搜索（支持正则表达式）</val>
+    <val lang="kor">찾기 (Regex 사용가능)</val>
   </EString>
   <EString nkey="lvn_var_tree_name" wpfControl="">
     <val lang="jap">変数名</val>
     <val lang="eng">Name</val>
     <val lang="zh_cn">变量名</val>
+    <val lang="kor">변수</val>
   </EString>
   <EString nkey="lvn_var_tree_value" wpfControl="">
     <val lang="jap">変数値</val>
     <val lang="eng">Value</val>
     <val lang="zh_cn">变量值</val>
+    <val lang="kor">변수값</val>
   </EString>
   <EString nkey="lvn_var_tree_type" wpfControl="">
     <val lang="jap">種類</val>
     <val lang="eng">Type</val>
     <val lang="zh_cn">类型</val>
+    <val lang="kor">종류</val>
   </EString>
 
   <!--[tab: key input]-->
@@ -790,26 +939,31 @@
     <val lang="jap">キートリガー</val>
     <val lang="eng">Key Triggers</val>
     <val lang="zh_cn">Key 触发器</val>
+    <val lang="kor">Key 트리거</val>
   </EString>
   <EString nkey="lvn_keytrigger_tree_key" wpfControl="">
     <val lang="jap">Key</val>
     <val lang="eng">Key</val>
     <val lang="zh_cn">Key</val>
+    <val lang="kor">Key</val>
   </EString>
   <EString nkey="lvn_keytrigger_tree_condition" wpfControl="">
     <val lang="jap">発動条件</val>
     <val lang="eng">Condition</val>
     <val lang="zh_cn">条件</val>
+    <val lang="kor">발동 조건</val>
   </EString>
   <EString nkey="lvn_keytrigger_tree_command" wpfControl="">
     <val lang="jap">コマンド</val>
     <val lang="eng">Command</val>
     <val lang="zh_cn">命令</val>
+    <val lang="kor">커맨드</val>
   </EString>
   <EString nkey="lvn_keytrigger_tree_state" wpfControl="">
     <val lang="jap">現状態</val>
     <val lang="eng">State</val>
     <val lang="zh_cn">当前状态</val>
+    <val lang="kor">현재 상태</val>
   </EString>
 
   <!--[tab: collisions]-->
@@ -817,31 +971,37 @@
     <val lang="jap">衝突処理</val>
     <val lang="eng">Colliders</val>
     <val lang="zh_cn">碰撞处理</val>
+    <val lang="kor">충돌 처리</val>
   </EString>
   <EString nkey="lvn_collision_tree_groupa" wpfControl="">
     <val lang="jap">衝突グループA</val>
     <val lang="eng">Group A</val>
     <val lang="zh_cn">碰撞组 A</val>
+    <val lang="kor">충돌 그룹 A</val>
   </EString>
   <EString nkey="lvn_collision_tree_groupb" wpfControl="">
     <val lang="jap">衝突グループB</val>
     <val lang="eng">Group B</val>
     <val lang="zh_cn">碰撞组 B</val>
+    <val lang="kor">충돌 그룹 B</val>
   </EString>
   <EString nkey="lvn_collision_tree_type" wpfControl="">
     <val lang="jap">衝突種類</val>
     <val lang="eng">Type</val>
     <val lang="zh_cn">碰撞类型</val>
+    <val lang="kor">충돌 종류</val>
   </EString>
   <EString nkey="lvn_collision_tree_pluscondition" wpfControl="">
     <val lang="jap">プラス条件</val>
     <val lang="eng">Plus Condition</val>
     <val lang="zh_cn">附加条件</val>
+    <val lang="kor">부가 조건</val>
   </EString>
   <EString nkey="lvn_collision_tree_command" wpfControl="">
     <val lang="jap">コマンド</val>
     <val lang="eng">Command</val>
     <val lang="zh_cn">命令</val>
+    <val lang="kor">커맨드</val>
   </EString>
 
   <!--[tab: free camera]-->
@@ -849,36 +1009,43 @@
     <val lang="jap">自由カメラ</val>
     <val lang="eng">Free Camera</val>
     <val lang="zh_cn">自由视角</val>
+    <val lang="kor">자유 카메라</val>
   </EString>
   <EString nkey="lvn_freecamera_speed_label" wpfControl="">
     <val lang="jap">スピード</val>
     <val lang="eng">Speed</val>
     <val lang="zh_cn">速度</val>
+    <val lang="kor">속도</val>
   </EString>
   <EString nkey="lvn_freecamera_toplayer" wpfControl="">
     <val lang="jap">プレイヤー視点へ</val>
     <val lang="eng">To Player Perspective</val>
     <val lang="zh_cn">切换到玩家视角</val>
+    <val lang="kor">플레이어 시점으로</val>
   </EString>
   <EString nkey="lvn_freecamera_apply" wpfControl="">
     <val lang="jap">自由カメラを適用</val>
     <val lang="eng">Free Camera Apply</val>
     <val lang="zh_cn">应用到自由视角</val>
+    <val lang="kor">자유 카메라 적용</val>
   </EString>
   <EString nkey="lvn_freecamera_reset" wpfControl="">
     <val lang="jap">自由カメラ初期化</val>
     <val lang="eng">Free Camera Reset</val>
     <val lang="zh_cn">重置自由视角</val>
+    <val lang="kor">자유 카메라 초기화</val>
   </EString>
   <EString nkey="lvn_freecamera_properties_attribute" wpfControl="">
     <val lang="jap">属性</val>
     <val lang="eng">Attribute</val>
     <val lang="zh_cn">属性</val>
+    <val lang="kor">속성</val>
   </EString>
   <EString nkey="lvn_freecamera_properties_value" wpfControl="">
     <val lang="jap">値</val>
     <val lang="eng">Value</val>
     <val lang="zh_cn">值</val>
+    <val lang="kor">값</val>
   </EString>
 
   <!--[tab: log]-->
@@ -886,11 +1053,13 @@
     <val lang="jap">ログ</val>
     <val lang="eng">Log</val>
     <val lang="zh_cn">日志</val>
+    <val lang="kor">로그</val>
   </EString>
   <EString nkey="lvn_output_clear" wpfControl="">
     <val lang="jap">クリア</val>
     <val lang="eng">Clear</val>
     <val lang="zh_cn">清除</val>
+    <val lang="kor">비우기</val>
   </EString>
 
   <!--[preview header]-->
@@ -898,36 +1067,43 @@
     <val lang="jap">カメラ視点：</val>
     <val lang="eng">View Type:</val>
     <val lang="zh_cn">视角类型：</val>
+    <val lang="kor">카메라 시점</val>
   </EString>
   <EString nkey="lv_camera_player" wpfControl="">
     <val lang="jap">プレイヤー基準</val>
     <val lang="eng">Player</val>
     <val lang="zh_cn">玩家视角</val>
+    <val lang="kor">플레이어 기준</val>
   </EString>
   <EString nkey="lv_camera_free" wpfControl="">
     <val lang="jap">自由</val>
     <val lang="eng">Free Camera</val>
     <val lang="zh_cn">自由视角</val>
+    <val lang="kor">자유 카메라</val>
   </EString>
   <EString nkey="lvn_play_stop" wpfControl="">
     <val lang="jap">停止</val>
     <val lang="eng">Stop</val>
     <val lang="zh_cn">停止</val>
+    <val lang="kor">정지</val>
   </EString>
   <EString nkey="lvn_play_pause" wpfControl="">
     <val lang="jap">一時停止</val>
     <val lang="eng">Pause</val>
     <val lang="zh_cn">暂停</val>
+    <val lang="kor">일시정지</val>
   </EString>
   <EString nkey="lvn_play_start" wpfControl="">
     <val lang="jap">開始</val>
     <val lang="eng">Play</val>
     <val lang="zh_cn">开始</val>
+    <val lang="kor">시작</val>
   </EString>
   <EString nkey="lvn_play_continue" wpfControl="">
     <val lang="jap">続行</val>
     <val lang="eng">Continue</val>
     <val lang="zh_cn">继续</val>
+    <val lang="kor">계속</val>
   </EString>
 
   <!--[footer]-->
@@ -935,6 +1111,7 @@
     <val lang="jap">TIP: スクリプト中のコマンドをダブルクリックすると、説明が表示されます。</val>
     <val lang="eng">TIP: Double-click on any command for details.</val>
     <val lang="zh_cn">提示：在脚本中双击任何命令可以显示其说明。</val>
+    <val lang="kor">TIP: 스크립트 내 커맨드를 더블클릭하면 설명이 표시됩니다.</val>
   </EString>
 
   <!--[find and replace]-->
@@ -942,91 +1119,109 @@
     <val lang="jap">検索・置換対象</val>
     <val lang="eng">Find and Replace</val>
     <val lang="zh_cn">查找和替换</val>
+    <val lang="kor">찾기 및 바꾸기</val>
   </EString>
   <EString nkey="findreplace_find" wpfControl="">
     <val lang="jap">検索式</val>
     <val lang="eng">Find</val>
     <val lang="zh_cn">查找</val>
+    <val lang="kor">찾기</val>
   </EString>
   <EString nkey="findreplace_replace" wpfControl="">
     <val lang="jap">置換式</val>
     <val lang="eng">Replace</val>
     <val lang="zh_cn">替换</val>
+    <val lang="kor">바꾸기</val>
   </EString>
   <EString nkey="findreplace_direction" wpfControl="">
     <val lang="jap">方向</val>
     <val lang="eng">Direction</val>
     <val lang="zh_cn">方向</val>
+    <val lang="kor">방향</val>
   </EString>
   <EString nkey="findreplace_down" wpfControl="">
     <val lang="jap">下</val>
     <val lang="eng">down</val>
     <val lang="zh_cn">下</val>
+    <val lang="kor">아래</val>
   </EString>
   <EString nkey="findreplace_up" wpfControl="">
     <val lang="jap">上</val>
     <val lang="eng">up</val>
     <val lang="zh_cn">上</val>
+    <val lang="kor">위</val>
   </EString>
   <EString nkey="findreplace_option" wpfControl="">
     <val lang="jap">オプション</val>
     <val lang="eng">Options</val>
     <val lang="zh_cn">选项</val>
+    <val lang="kor">옵션</val>
   </EString>
   <EString nkey="findreplace_option_case" wpfControl="">
     <val lang="jap">大小文字区分</val>
     <val lang="eng">Case Sensitve</val>
     <val lang="zh_cn">大小写区分</val>
+    <val lang="kor">대소문자 구별</val>
   </EString>
   <EString nkey="findreplace_option_whole_words" wpfControl="">
     <val lang="jap">独立単語のみ</val>
     <val lang="eng">Whole Words Only</val>
     <val lang="zh_cn">全字匹配</val>
+    <val lang="kor">독립된 단어만</val>
   </EString>
   <EString nkey="findreplace_option_regex" wpfControl="">
     <val lang="jap">検索式を正規表現として</val>
     <val lang="eng">Find as Regex</val>
     <val lang="zh_cn">正则表达式查找</val>
+    <val lang="kor">Regex로 찾기</val>
   </EString>
   <EString nkey="findreplace_btn_search" wpfControl="">
     <val lang="jap">検索</val>
     <val lang="eng">Find</val>
     <val lang="zh_cn">查找</val>
+    <val lang="kor">찾기</val>
   </EString>
   <EString nkey="findreplace_btn_replace_next" wpfControl="">
     <val lang="jap">置換（次）</val>
     <val lang="eng">Replace (next)</val>
     <val lang="zh_cn">替换（下一个）</val>
+    <val lang="kor">바꾸기 (다음)</val>
   </EString>
   <EString nkey="findreplace_btn_replace_all" wpfControl="">
     <val lang="jap">置換（全部）</val>
     <val lang="eng">Replace (all)</val>
     <val lang="zh_cn">替换（全部）</val>
+    <val lang="kor">바꾸기 (전부)</val>
   </EString>
   <EString nkey="findreplace_message_replace_done" wpfControl="">
     <val lang="jap">代替成功</val>
     <val lang="eng">Replace Success</val>
     <val lang="zh_cn">替换成功</val>
+    <val lang="kor">바꾸기 성공</val>
   </EString>
   <EString nkey="findreplace_message_replace_none" wpfControl="">
     <val lang="jap">代替該当項目なし</val>
     <val lang="eng">Search term matched nowhere</val>
     <val lang="zh_cn">未找到匹配项</val>
+    <val lang="kor">바꿀 항목 없음</val>
   </EString>
   <EString nkey="findreplace_message_replace_count" wpfControl="">
     <val lang="jap">置換数</val>
     <val lang="eng">Replace Count</val>
     <val lang="zh_cn">替换计数</val>
+    <val lang="kor">값 바꾸기</val>
   </EString>
   <EString nkey="findreplace_message_term_request" wpfControl="">
     <val lang="jap">検索式をいれてください。</val>
     <val lang="eng">Enter the Search Term</val>
     <val lang="zh_cn">请输入查找词</val>
+    <val lang="kor">찾을 값을 입력해 주십시오.</val>
   </EString>
   <EString nkey="findreplace_message_term_regex_error" wpfControl="">
     <val lang="jap">検索式の正規表現に問題あり</val>
     <val lang="eng">Search Term Regex has Issues</val>
     <val lang="zh_cn">查找词的正则表达式错误</val>
+    <val lang="kor">Regex 문법 오류</val>
   </EString>
 
   <!--[dialog]-->
@@ -1034,16 +1229,19 @@
     <val lang="jap">ラム</val>
     <val lang="eng">Lam</val>
     <val lang="zh_cn">Lam</val>
+    <val lang="kor">람</val>
   </EString>
   <EString nkey="char_name_vale" wpfControl="">
     <val lang="jap">バーレ</val>
     <val lang="eng">Vale</val>
     <val lang="zh_cn">Vale</val>
+    <val lang="kor">발레</val>
   </EString>
   <EString nkey="char_support" wpfControl="">
     <val lang="jap">サポート</val>
     <val lang="eng">Support</val>
     <val lang="zh_cn">支持</val>
+    <val lang="kor">서포트</val>
   </EString>
 
   <!--[alarms]-->
@@ -1051,66 +1249,79 @@
     <val lang="jap">書き込みフォルダーが外部のもの: '{}' になってるよ。注意してね。</val>
     <val lang="eng">the write directory: '{}' is external. be careful.</val>
     <val lang="zh_cn">注意：写入目录：'{}' 是外部目录</val>
+    <val lang="kor">저장 폴더가 외부: '{}'로 되어 있어. 주의해.</val>
   </EString>
   <EString nkey="lvn_alarm_handle_insert_command_sky" wpfControl="">
     <val lang="jap">6枚の画像を選ぶ必要があるのだ！</val>
     <val lang="eng">we need 6 textures!</val>
     <val lang="zh_cn">需要选择6张图像！</val>
+    <val lang="kor">그림 6개를 고를 필요가 있는 것이다!</val>
   </EString>
   <EString nkey="lvn_alarm_handle_BtnNewScript_directory_error" wpfControl="">
     <val lang="jap">{}の中に作るのだよ~</val>
     <val lang="eng">Choose from {}</val>
     <val lang="zh_cn">请选择{}中的目录</val>
+    <val lang="kor">{} 안에 만들어야 해~</val>
   </EString>
   <EString nkey="lvn_alarm_is_valid_filename_invalid" wpfControl="">
     <val lang="jap">スクリプト: '{}' は読み込みできるファイルではないみたいなのだ！</val>
     <val lang="eng">Script: '{}' doesn't seem like a readable file!</val>
     <val lang="zh_cn">脚本：'{}' 似乎不是可读取的文件！</val>
+    <val lang="kor">스크립트: '{}'는 불러올 수 있는 파일이 아닌 것이다!</val>
   </EString>
   <EString nkey="lvn_alarm_handle_BtnOpenScript_invalid_directory" wpfControl="">
     <val lang="jap">{}の中から選ぶなのだ！</val>
     <val lang="eng">Choose within {}!</val>
     <val lang="zh_cn">请选择{}中!</val>
+    <val lang="kor">{} 중에서 골라야 하는 것이다!</val>
   </EString>
   <EString nkey="lvn_alarm_readScript_error" wpfControl="">
     <val lang="jap">スクリプト: '{}' の読み込みに失敗したのだ。きっと誰かが食べたなのだ！</val>
     <val lang="eng">Script: '{}' could not be read. Someone might have eaten it!</val>
     <val lang="zh_cn">脚本：'{}' 读取失败，可能被谁吃掉了！</val>
+    <val lang="kor">스크립트: '{}' 를 불러오는 데 실패한 것이다. 분명 누가 먹어버린 것이다!</val>
   </EString>
   <EString nkey="lvn_alarm_saveScript_error_noexist" wpfControl="">
     <val lang="jap">スクリプト: '{}' がDiskに存在しないのだ！ 保存を試してみるけど、何かが怪しいのだ・・・</val>
     <val lang="eng">Script: '{}' does not exist on Disk! Will save, but something is odd...</val>
     <val lang="zh_cn">脚本：'{}' 在磁盘上不存在！ 尝试保存中，但有些奇怪...</val>
+    <val lang="kor">스크립트: '{}' 가 디스크에 존재하지 않는 것이다! 저장을 시도해 봤지만, 뭔가 이상한 것이다...</val>
   </EString>
   <EString nkey="lvn_alarm_saveScript_overwrite_blank" wpfControl="">
     <val lang="jap">スクリプト: '{}' を空に上書きしようとしている。このまま進める？</val>
     <val lang="eng">Script: '{}' will be overwritten with blank contents. Continue?</val>
     <val lang="zh_cn">脚本：'{}' 将被空白内容覆盖，继续吗？</val>
+    <val lang="kor">스크립트: '{}' 가 빈 내용으로 덮어쓰기돼. 이대로 진행할까?</val>
   </EString>
   <EString nkey="lvn_alarm_saveScript_error_commit" wpfControl="">
     <val lang="jap">スクリプト: '{}' の保存に失敗したぞ！ ファイルが読み取り専用、或いは誰かが開いているかもしれない・・・。</val>
     <val lang="eng">Script: '{}' failed to save! The file might be read only, or someone might have it open...</val>
     <val lang="zh_cn">脚本：'{}' 保存失败！ 文件可能是只读，或被谁打开了...</val>
+    <val lang="kor">스크립트: '{}' 저장에 실패했어! 파일이 읽기 전용이거나 열려 있을지도 몰라….</val>
   </EString>
   <EString nkey="lvn_alarm_handle_file_external_change" wpfControl="">
     <val lang="jap">スクリプト: '{}' が外部から修正されたよ。また読み込む？</val>
     <val lang="eng">Script: '{}' has been modified externally. Read again?</val>
     <val lang="zh_cn">脚本：'{}' 已被外部修改，重新读取吗？</val>
+    <val lang="kor">스크립트: '{}' 가 외부에서 수정됐어. 다시 불러올까?</val>
   </EString>
   <EString nkey="lvn_alarm_handle_tabClose_not_saved" wpfControl="">
     <val lang="jap">'{}'はまだ保存されてないよ。保存してから閉じようか？</val>
     <val lang="eng">'{}' has yet to be saved. Shall we save, then close?</val>
     <val lang="zh_cn">'{}' 尚未保存，是否保存后关闭？</val>
+    <val lang="kor">'{}'는 아직 저장하지 않았어. 저장한 후 닫을까?</val>
   </EString>
   <EString nkey="lvn_alarm_is_toggleplay_possible_error_during_command_insert" wpfControl="">
     <val lang="jap">コマンド挿入中にはテストプレイへ切り替えないのだ！</val>
     <val lang="eng">We cannot toggle to testplay while trying to insert a command!</val>
     <val lang="zh_cn">在插入命令时无法切换到测试播放！</val>
+    <val lang="kor">커맨드 삽입 중에는 테스트 플레이로 전환할 수 없는 것이다!</val>
   </EString>
   <EString nkey="lvn_alarm_filepath_spaces" wpfControl="">
     <val lang="jap">ファイルパスに空白は入れないのだ！</val>
     <val lang="eng">Filepath cannot contain spaces!</val>
     <val lang="zh_cn">文件路径不能为空！</val>
+    <val lang="kor">파일 경로에 공백은 못 넣는 것이다!</val>
   </EString>
 
 </Strings>

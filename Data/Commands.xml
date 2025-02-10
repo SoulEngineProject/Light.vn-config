@@ -8375,10 +8375,10 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#autoApplyMask">
       </explanation>
-      <explanation lang="eng" name="applyMask"
-                   syntax="1. applyMask(2) [target(s)] [mask name]
-                   &#xA;2. applyMask false"
-                   details="ex. applyMask true mask
+      <explanation lang="eng" name="autoApplyMask"
+                   syntax="1. autoApplyMask(2) [target(s)] [mask name]
+                   &#xA;2. autoApplyMask false"
+                   details="ex. autoApplyMask true mask
                    &#xA;
                    &#xA;if true, applies the mask to all objects created here on after
                    &#xA;

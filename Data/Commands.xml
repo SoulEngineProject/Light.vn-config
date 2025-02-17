@@ -330,6 +330,10 @@
         <val lang="zhc" value="默认值"/>
         <val lang="kor" value="초기화"/>
       </option>
+      <option name="onUpdate">
+        <val lang="jap" value="更新同期"/>
+        <val lang="zhc" value="同步更新"/>
+      </option>
     </CmdOptions>
   </Keywords>
   <!--[COMMANDS]-->
@@ -1230,7 +1234,7 @@
                    &#xA;  
                    &#xA;[対象名]の回転絵を、指定の設定に更新する。
                    &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/media#flow_cg_set">
+                   reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg_set">
       </explanation>
       <explanation lang="eng" name="flow_cg_set"
                    syntax="flow_cg_set [target] [move per second] (vertical/horizontal)"
@@ -1238,7 +1242,7 @@
                    &#xA;  
                    &#xA;Updates [target] (a flow_cg) with the set values
                    &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/media#flow_cg_set">
+                   reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg_set">
       </explanation>
       <explanation lang="zhc" name="刷新滚动图片"
                    syntax="刷新滚动图片 [名称] [每秒移动] (横/竖)"
@@ -1246,7 +1250,7 @@
                    &#xA;  
                    &#xA;将目标滚动图片重新刷新至指定移动位置
                    &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/media#flow_cg_set">
+                   reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg_set">
       </explanation>
       <explanation lang="kor" name="흐름그림갱신"
                    syntax="흐름그림갱신 [대상 이름] [1초 동안 이동하는 px값] (가로/세로)"
@@ -1254,7 +1258,33 @@
                    &#xA;  
                    &#xA;[대상 이름] 흐름그림의 설정을 갱신한다.
                    &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/media#flow_cg_set">
+                   reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg_set">
+      </explanation>
+    </Command>
+    <Command cmd="spine_cg">
+      <explanation lang="jap" name="spine絵"
+                   syntax="spine絵 [対象名] [skeletonパス] [atlasパス] [x] [y] [laye(r)] [開始アニメーション] (カメラオプション)"
+                   details="ex. spine絵 mycg spine/cloud-pot.json spine/cloud-pot.atlas 300 500 0 rain
+                   &#xA;  
+                   &#xA;spine絵を作成する。
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/image#spine_cg">
+      </explanation>
+      <explanation lang="eng" name="spine_cg"
+                   syntax="spine_cg [name] [filepath_skeleton] [filepath_atlas] [x] [y] [r] [start_animation] (カメラオプション)"
+                   details="ex. spine_cg mycg spine/cloud-pot.json spine/cloud-pot.atlas 300 500 0 rain
+                   &#xA;  
+                   &#xA;Creates an object from spine
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/image#spine_cg">
+      </explanation>
+      <explanation lang="zhc" name="Spine动画"
+                  syntax="spine动画 [目标名称] [骨架文件路径] [图集文件路径] [x] [y] [图层(r)] [起始动画] (视角选项)"
+                  details="ex. spine动画 mycg spine/cloud-pot.json spine/cloud-pot.atlas 300 500 0 rain
+                  &#xA;  
+                  &#xA;从Spine创建动画对象
+                  &#xA;"
+                  reference="https://wikiwiki.jp/lightvn/commands/image#spine_cg">
       </explanation>
     </Command>
     <Command cmd="model">
@@ -5441,6 +5471,36 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animationPlay">
       </explanation>
     </Command>
+    <Command cmd="animationState">
+      <explanation lang="jap" name="アニメ状態"
+                   syntax="アニメ状態 [対象: 複数可能] [状態]"
+                   details="ex. アニメ再生 kojiken walk
+                   &#xA;  
+                   &#xA;kojikenのアニメをwalkにする。
+                   &#xA;現状spine絵のみに対応。
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#animationState">
+      </explanation>
+      <explanation lang="eng" name="animationState"
+                   syntax="animationState [target name(s)] [state]"
+                   details="ex. animationState kojiken walk
+                   &#xA;
+                   &#xA;set the animation to [state].
+                   &#xA;currently only works with spine_cg.
+                   &#xA;  
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#animationState">
+      </explanation>
+      <explanation lang="zhc" name="动画状态"
+                   syntax="动画状态 [目标名称（可多选）] [状态]"
+                   details="ex. 动画状态 kojiken walk
+                   &#xA;  
+                   &#xA;将目标对象的动画设置为指定状态。
+                   &#xA;当前仅支持 spine动画 对象。
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#animationState">
+       </explanation>
+    </Command>
     <Command cmd="loop">
       <explanation lang="jap" name="ループ"
                    syntax="ループ [ループ種類: 0/1/2] (x:反復回数)  [ループコマンド]"
@@ -7752,7 +7812,7 @@
     </Command>
     <Command cmd="blendMode">
       <explanation lang="jap" name="ブレンドモード"
-                   syntax="1. ブレンドモード [対象名 (複数可)] [モード: BlendAlpha/BlendAdd/BlendMultiply/BlendNone]  (画面領域範囲)
+                   syntax="1. ブレンドモード [対象名 (複数可)] [モード: BlendAlpha/BlendAdd/BlendMultiply/BlendScreen/BlendNone]  (画面領域範囲)
                    &#xA;2. ブレンドモード [対象名 (複数可)] [src色] [dst色] (ブレンド式) (srcアルファ) (dstアルファ) (ブレンド式) (画面領域範囲)"
                    details="色/アルファ設定：Zero/One/SrcColor/OneMinusSrcColor/DstColor/ 
                    &#xA;OneMinusDstColor/SrcAlpha/OneMinusSrcAlpha/DstAlpha/OneMinusDstAlpha  
@@ -7760,25 +7820,30 @@
                    &#xA;ブレンド式：Add/Subtract/ReverseSubtract    
                    &#xA;  
                    &#xA;ex. ブレンドモード alice2 BlendAdd 
-                   &#xA;ex. ブレンドモード alice2 OneMinusDstColor Zero  
+                   &#xA;ex. ブレンドモード alice2 OneMinusDstColor Zero 
+                   &#xA;
+                   &#xA;注: BlendScreenは、Clip Studioなどのソフトのスクリーン効果とは多少違います。 
                    &#xA;  
                    &#xA;注: 演出コマンドの対象名に正規表現による複数指定が可能です。
                    &#xA;注: 画面領域範囲：全画面領域、同階層画面領域。何もつけない場合、現画面領域の個体のみ拾う。"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#blendMode">
       </explanation>
       <explanation lang="eng" name="blendMode"
-                   syntax="1. blendMode [target name(s)] [mode: BlendAlpha/BlendAdd/BlendMultiply/BlendNone] (screenspace range)  
+                   syntax="1. blendMode [target name(s)] [mode: BlendAlpha/BlendAdd/BlendMultiply/BlendScreen/BlendNone] (screenspace range)  
                    &#xA;2. blendMode [target name(s)] [src rgb] [dst rgb] (blend equation) (src a) (dst a) (blend equation) (screenspace range)"
                    details="rgba settings：Zero/One/SrcColor/OneMinusSrcColor/DstColor/OneMinusDstColor/SrcAlpha/OneMinusSrcAlpha/DstAlpha/OneMinusDstAlpha  
                    &#xA;  
                    &#xA;blend equations：Add/Subtract/ReverseSubtract    
                    &#xA;  
                    &#xA;ex. blendMode alice2 BlendAdd 
-                   &#xA;ex. blendMode alice2 OneMinusDstColor Zero"
+                   &#xA;ex. blendMode alice2 OneMinusDstColor Zero
+                   &#xA;
+                   &#xA;Note: BlendScreen differs slightly from the screen effect seen in ex. Clip Studio
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#blendMode">
       </explanation>
       <explanation lang="zhc" name="混合模式"
-                   syntax="1. 混合模式 [目标名 (可多个)] [模式: BlendAlpha/BlendAdd/BlendMultiply/BlendNone] (画面区域范围)
+                   syntax="1. 混合模式 [目标名 (可多个)] [模式: BlendAlpha/BlendAdd/BlendMultiply/BlendScreen/BlendNone] (画面区域范围)
                    &#xA;2. 混合模式 [目标名 (可多个)] [源色] [目标色] (混合公式) (源透明度) (目标透明度) (混合公式) (画面区域范围)"
                    details="颜色/透明度设置：Zero/One/SrcColor/OneMinusSrcColor/DstColor/OneMinusDstColor/SrcAlpha/OneMinusSrcAlpha/DstAlpha/OneMinusDstAlpha
                    &#xA;
@@ -7788,11 +7853,13 @@
                    &#xA;例如：混合模式 alice2 OneMinusDstColor Zero
                    &#xA;
                    &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。"
+                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：BlendScreen与Clip Studio中的画面效果略有不同。
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#blendMode">
       </explanation>
       <explanation lang="kor" name="블렌딩모드"
-                   syntax="1. 블렌딩모드 [대상 이름(여러 개 가능)] [모드: BlendAlpha/BlendAdd/BlendMultiply/BlendNone] (화면 영역 지정)
+                   syntax="1. 블렌딩모드 [대상 이름(여러 개 가능)] [모드: BlendAlpha/BlendAdd/BlendMultiply/BlendScreen/BlendNone] (화면 영역 지정)
                    &#xA;2. 블렌딩모드 [대상 이름(여러 개 가능)] [src색] [dst색] (블렌드 식) (src알파) (dst알파) (블렌드 식) (화면 영역 지정)"
                    details="색/알파 설정: Zero/One/SrcColor/OneMinusSrcColor/DstColor/ 
                    &#xA;OneMinusDstColor/SrcAlpha/OneMinusSrcAlpha/DstAlpha/OneMinusDstAlpha  
@@ -10494,6 +10561,66 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#pauseLowerScripts">
       </explanation>
+    <Command cmd="unique_script_lock">
+      <explanation lang="jap" name="スクリプト唯一化"
+                  syntax="スクリプト唯一化 [true/false]"
+                  details="ex. スクリプト唯一化 true
+                  &#xA;  
+                  &#xA;true)
+                  &#xA;- 現画面領域の開始スクリプトからのみ実行可能。
+                  &#xA;- 現在スクリプト以外の、現画面領域でのスクリプトを全部破棄する。
+                  &#xA;- 実行スクリプト以外での、スクリプト・ジャンプ、実行を禁止する。
+                  &#xA;- 砂時計・物理処理などの外部処理によるコマンドが実行しなくなる。
+                  &#xA;
+                  &#xA;- 要するに、現スクリプトのみ読み込まれるようにする。
+                  &#xA;  (外部処理による変化の心配をしなくてもいい)
+                  &#xA;
+                  &#xA;false)
+                  &#xA;- スクリプト唯一化 true を実行したスクリプトからのみ実行可能。
+                  &#xA;- 上記の制限が全解除される。
+                  &#xA;  
+                  &#xA;"
+                  reference="https://wikiwiki.jp/lightvn/commands/script#unique_script_lock">
+      </explanation>
+      <explanation lang="eng" name="unique_script_lock"
+                  syntax="unique_script_lock [true/false]"
+                  details="ex. unique_script_lock true
+                  &#xA;  
+                  &#xA;true)
+                  &#xA;- can only be executed on the current screenspace base script
+                  &#xA;- scraps other scripts on the current screenspace
+                  &#xA;- script, jump commands from any other scripts do not function
+                  &#xA;- commands triggered from external processes (ex. timer, physics, etc.) do not execute.
+                  &#xA;
+                  &#xA;- Basically, only allow the current script to continue reading
+                  &#xA;  (allowing you to not worry about state changes due to external processes)
+                  &#xA;
+                  &#xA;false)
+                  &#xA;- can only be executed from the script that ran [unique_script_lock true]
+                  &#xA;- releases all limitations above
+                  &#xA;"
+                  reference="https://wikiwiki.jp/lightvn/commands/script#unique_script_lock">
+      </explanation>
+      <explanation lang="zhc" name="脚本唯一锁定"
+                  syntax="unique_script_lock [true/false]"
+                  details="ex. 脚本唯一锁定 true
+                  &#xA;  
+                  &#xA;true)
+                  &#xA;- 仅允许从当前画面区域的基础脚本执行
+                  &#xA;- 销毁当前画面区域中其他所有脚本
+                  &#xA;- 禁止其他脚本的跳转和执行操作
+                  &#xA;- 外部进程触发的命令（如计时器、物理引擎等）将不再执行
+                  &#xA;
+                  &#xA;- 简而言之，仅允许当前脚本继续运行
+                  &#xA;  （无需担心外部进程导致的状态变化）
+                  &#xA;
+                  &#xA;false)
+                  &#xA;- 仅允许最初执行[脚本唯一锁定 true]的脚本解除锁定
+                  &#xA;- 完全解除上述所有限制
+                  &#xA;"
+                  reference="https://wikiwiki.jp/lightvn/commands/script#unique_script_lock">
+      </explanation>
+    </Command>
     </Command>
     <Command cmd="scriptReadType">
       <explanation lang="jap" name="スクリプト読み込み方式"
@@ -14316,6 +14443,73 @@
                    &#xA;이미 창에 렌더링되어 있는 내용은 유지됨.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#allowRender">
+      </explanation>
+    </Command>
+        <Command cmd="render_fps">
+      <explanation lang="jap" name="描画fps"
+                   syntax="描画fps [fps]"
+                   details="ex. 描画fps 30 
+                   &#xA;  
+                   &#xA;描画fpsを指定する。
+                   &#xA;
+                   &#xA;適用範囲：リアルタイムプレビュー対象外 (Settings.xmlに保存)
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#render_fps">
+      </explanation>
+      <explanation lang="eng" name="render_fps"
+                   syntax="render_fps [fps]"
+                   details="ex. render_fps 30
+                   &#xA;
+                   &#xA;Set the render fps.
+                   &#xA;
+                   &#xA;Application range: does not apply for realtime preview. (Value saved in Settings.xml)
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#render_fps">
+      </explanation>
+      <explanation lang="zhc" name="渲染fps"
+                   syntax="渲染fps [fps]"
+                   details="ex. 渲染fps 30
+                   &#xA;  
+                   &#xA;设置渲染fps。
+                   &#xA;
+                   &#xA;适用范围：不应用于实时预览（数值保存在 Settings.xml）
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#render_fps">
+      </explanation>
+    </Command>
+    <Command cmd="cpu_low_usage_mode">
+      <explanation lang="jap" name="cpu低負荷実行"
+                   syntax="cpu低負荷実行 [数値：０(デフォルト：使用しない) -３]"
+                   details="ex. cpu低負荷実行 3
+                   &#xA;  
+                   &#xA;高いほどcpuへより少ない負荷をかける。
+                   &#xA;(無論、代わりに実行が遅くなる)
+                   &#xA;
+                   &#xA;適用範囲：リアルタイムプレビュー対象外 (Settings.xmlに保存)
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#cpu_low_usage_mode">
+      </explanation>
+      <explanation lang="eng" name="cpu_low_usage_mode"
+                   syntax="cpu_low_usage_mode [mode: 0(default: don't use) - 3]"
+                   details="ex. cpu_low_usage_mode 3
+                   &#xA;
+                   &#xA;The higher the number, the more cpu usage is suppressed.
+                   &#xA;(fps will drop as a result)
+                   &#xA;
+                   &#xA;Application range: does not apply for realtime preview. (Value saved in Settings.xml)
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#cpu_low_usage_mode">
+      </explanation>
+      <explanation lang="zhc" name="CPU低负载模式"
+                   syntax="CPU低负载模式 [模式：0（默认：禁用）-3]"
+                   details="ex. CPU低负载模式 3
+                   &#xA;  
+                   &#xA;数值越大，CPU使用率越低。
+                   &#xA;（但会导致帧率下降）
+                   &#xA;
+                   &#xA;适用范围：不应用于实时预览（数值保存在 Settings.xml）
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#cpu_low_usage_mode">
       </explanation>
     </Command>
     <Command cmd="open">

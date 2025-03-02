@@ -10561,6 +10561,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#pauseLowerScripts">
       </explanation>
+    </Command>
     <Command cmd="unique_script_lock">
       <explanation lang="jap" name="スクリプト唯一化"
                   syntax="スクリプト唯一化 [true/false]"
@@ -10620,7 +10621,6 @@
                   &#xA;"
                   reference="https://wikiwiki.jp/lightvn/commands/script#unique_script_lock">
       </explanation>
-    </Command>
     </Command>
     <Command cmd="scriptReadType">
       <explanation lang="jap" name="スクリプト読み込み方式"

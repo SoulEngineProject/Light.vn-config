@@ -10,326 +10,329 @@
     <Types>
       <type name="all">
         <val lang="jap" value="全部"/>
-        <val lang="zh_cn" value="全部"/>
+        <val lang="zhc" value="全部"/>
         <val lang="kor" value="전부"/>
       </type>
       <type name="backlog">
         <val lang="jap" value="バックログ"/>
-        <val lang="zh_cn" value="日志"/>
+        <val lang="zhc" value="日志"/>
         <val lang="kor" value="백로그"/>
       </type>
       <type name="camera">
         <val lang="jap" value="カメラ"/>
-        <val lang="zh_cn" value="视角"/>
+        <val lang="zhc" value="视角"/>
         <val lang="kor" value="카메라"/>
       </type>
     </Types>
     <CmdOptions>
       <option name="all">
         <val lang="jap" value="全部"/>
-        <val lang="zh_cn" value="全部"/>
+        <val lang="zhc" value="全部"/>
         <val lang="kor" value="전부"/>
       </option>
       <option name="buttonSelect">
         <val lang="jap" value="ボタン選択"/>
-        <val lang="zh_cn" value="按钮选择"/>
+        <val lang="zhc" value="按钮选择"/>
         <val lang="kor" value="버튼선택"/>
       </option>
       <option name="msgboxSelect">
         <val lang="jap" value="メッセージ選択"/>
-        <val lang="zh_cn" value="消息框选择"/>
+        <val lang="zhc" value="消息框选择"/>
         <val lang="kor" value="메시지선택"/>
       </option>
       <option name="tween_finish">
         <val lang="jap" value="演出終了"/>
-        <val lang="zh_cn" value="演出结束"/>
+        <val lang="zhc" value="演出结束"/>
         <val lang="kor" value="연출종료"/>
       </option>
       <option name="animation_finish">
         <val lang="jap" value="アニメ終了"/>
-        <val lang="zh_cn" value="动画结束"/>
+        <val lang="zhc" value="动画结束"/>
         <val lang="kor" value="애니종료"/>
       </option>
       <option name="obj_destroy">
         <val lang="jap" value="個体消滅"/>
-        <val lang="zh_cn" value="对象消失"/>
+        <val lang="zhc" value="对象消失"/>
         <val lang="kor" value="오브젝트삭제"/>
       </option>
       <option name="preventContinueRead">
         <val lang="jap" value="続行禁止"/>
-        <val lang="zh_cn" value="禁止继续"/>
+        <val lang="zhc" value="禁止继续"/>
         <val lang="kor" value="계속금지"/>
       </option>
       <option name="textDisplayFin">
         <val lang="jap" value="文字出力完了"/>
-        <val lang="zh_cn" value="文字显示完成"/>
+        <val lang="zhc" value="文字显示完成"/>
         <val lang="kor" value="문자출력완료"/>
       </option>
       <option name="textInputFin">
         <val lang="jap" value="文字入力完了"/>
-        <val lang="zh_cn" value="文字输入完成"/>
+        <val lang="zhc" value="文字输入完成"/>
         <val lang="kor" value="문자입력완료"/>
       </option>
       <option name="movieFin">
         <val lang="jap" value="動画終了"/>
-        <val lang="zh_cn" value="视频结束"/>
+        <val lang="zhc" value="视频结束"/>
         <val lang="kor" value="동영상종료"/>
       </option>
       <option name="on_camera">
         <val lang="jap" value="カメラ付着"/>
-        <val lang="zh_cn" value="绑定视角"/>
+        <val lang="zhc" value="绑定视角"/>
         <val lang="kor" value="카메라부착"/>
       </option>
       <option name="lock_y">
         <val lang="jap" value="y軸固定"/>
-        <val lang="zh_cn" value="锁定Y轴"/>
+        <val lang="zhc" value="锁定Y轴"/>
         <val lang="kor" value="y축고정"/>
       </option>
       <option name="lock_xy">
         <val lang="jap" value="xy軸固定"/>
-        <val lang="zh_cn" value="锁定XY轴"/>
+        <val lang="zhc" value="锁定XY轴"/>
         <val lang="kor" value="xy축고정"/>
       </option>
       <option name="2DView">
         <val lang="jap" value="2D視点"/>
-        <val lang="zh_cn" value="2D视角"/>
+        <val lang="zhc" value="2D视角"/>
         <val lang="kor" value="2D시점"/>
       </option>
       <option name="3DView">
         <val lang="jap" value="3D視点"/>
-        <val lang="zh_cn" value="3D视角"/>
+        <val lang="zhc" value="3D视角"/>
         <val lang="kor" value="3D시점"/>
       </option>
       <option name="noSave">
         <val lang="jap" value="セーブ無視"/>
-        <val lang="zh_cn" value="忽略保存"/>
+        <val lang="zhc" value="忽略保存"/>
         <val lang="kor" value="세이브무시"/>
       </option>
       <option name="none">
         <val lang="jap" value="無"/>
-        <val lang="zh_cn" value="无"/>
+        <val lang="zhc" value="无"/>
         <val lang="kor" value="없음"/>
       </option>
       <option name="repeat">
         <val lang="jap" value="反復"/>
-        <val lang="zh_cn" value="重复"/>
+        <val lang="zhc" value="重复"/>
         <val lang="kor" value="반복"/>
       </option>
       <option name="vertical">
         <val lang="jap" value="縦"/>
-        <val lang="zh_cn" value="竖"/>
+        <val lang="zhc" value="竖"/>
         <val lang="kor" value="세로"/>
       </option>
       <option name="horizontal">
         <val lang="jap" value="横"/>
-        <val lang="zh_cn" value="横"/>
+        <val lang="zhc" value="横"/>
         <val lang="kor" value="가로"/>
       </option>
       <option name="userCanEnd">
         <val lang="jap" value="干渉可能"/>
-        <val lang="zh_cn" value="允许用户终止"/>
+        <val lang="zhc" value="允许用户终止"/>
         <val lang="kor" value="간섭가능"/>
       </option>
       <option name="middle">
         <val lang="jap" value="中央"/>
-        <val lang="zh_cn" value="中"/>
+        <val lang="zhc" value="中"/>
         <val lang="kor" value="중앙"/>
       </option>
       <option name="left">
         <val lang="jap" value="左"/>
-        <val lang="zh_cn" value="左"/>
+        <val lang="zhc" value="左"/>
         <val lang="kor" value="좌"/>
       </option>
       <option name="right">
         <val lang="jap" value="右"/>
-        <val lang="zh_cn" value="右"/>
+        <val lang="zhc" value="右"/>
         <val lang="kor" value="우"/>
       </option>
       <option name="up">
         <val lang="jap" value="上"/>
-        <val lang="zh_cn" value="上"/>
+        <val lang="zhc" value="上"/>
         <val lang="kor" value="상"/>
       </option>
       <option name="down">
         <val lang="jap" value="下"/>
-        <val lang="zh_cn" value="下"/>
+        <val lang="zhc" value="下"/>
         <val lang="kor" value="하"/>
       </option>
       <option name="up.down">
         <val lang="jap" value="上下"/>
-        <val lang="zh_cn" value="上下"/>
+        <val lang="zhc" value="上下"/>
         <val lang="kor" value="상하"/>
       </option>
       <option name="left.right">
         <val lang="jap" value="左右"/>
-        <val lang="zh_cn" value="左右"/>
+        <val lang="zhc" value="左右"/>
         <val lang="kor" value="좌우"/>
       </option>
       <option name="before">
         <val lang="jap" value="前"/>
-        <val lang="zh_cn" value="前"/>
+        <val lang="zhc" value="前"/>
         <val lang="kor" value="앞"/>
       </option>
       <option name="after">
         <val lang="jap" value="後"/>
-        <val lang="zh_cn" value="后"/>
+        <val lang="zhc" value="后"/>
         <val lang="kor" value="뒤"/>
       </option>
       <option name="ignoreTrans">
         <val lang="jap" value="透明無視"/>
-        <val lang="zh_cn" value="忽略透明"/>
+        <val lang="zhc" value="忽略透明"/>
         <val lang="kor" value="투명무시"/>
       </option>
       <option name="reset">
         <val lang="jap" value="初期化"/>
-        <val lang="zh_cn" value="重置"/>
+        <val lang="zhc" value="重置"/>
         <val lang="kor" value="초기화"/>
       </option>
       <option name="curYear">
         <val lang="jap" value="現在年"/>
-        <val lang="zh_cn" value="当前年"/>
+        <val lang="zhc" value="当前年"/>
         <val lang="kor" value="현재연도"/>
       </option>
       <option name="curMonth">
         <val lang="jap" value="現在月"/>
-        <val lang="zh_cn" value="当前月"/>
+        <val lang="zhc" value="当前月"/>
         <val lang="kor" value="현재월"/>
       </option>
       <option name="curDay">
         <val lang="jap" value="現在日"/>
-        <val lang="zh_cn" value="当前日"/>
+        <val lang="zhc" value="当前日"/>
         <val lang="kor" value="현재일"/>
       </option>
       <option name="curHour">
         <val lang="jap" value="現在時"/>
-        <val lang="zh_cn" value="当前时"/>
+        <val lang="zhc" value="当前时"/>
         <val lang="kor" value="현재시"/>
       </option>
       <option name="curMin">
         <val lang="jap" value="現在分"/>
-        <val lang="zh_cn" value="当前分"/>
+        <val lang="zhc" value="当前分"/>
         <val lang="kor" value="현재분"/>
       </option>
       <option name="curSec">
         <val lang="jap" value="現在秒"/>
-        <val lang="zh_cn" value="当前秒"/>
+        <val lang="zhc" value="当前秒"/>
         <val lang="kor" value="현재초"/>
       </option>
       <option name="followSystem">
         <val lang="jap" value="設定反映"/>
-        <val lang="zh_cn" value="跟随系统"/>
+        <val lang="zhc" value="跟随系统"/>
         <val lang="kor" value="설정적용"/>
       </option>
       <option name="followSystemAuto">
         <val lang="jap" value="オート設定反映"/>
-        <val lang="zh_cn" value="跟随系统自动"/>
+        <val lang="zhc" value="自动跟随系统"/>
         <val lang="kor" value="자동설정적용"/>
       </option>
       <option name="show">
         <val lang="jap" value="表示"/>
-        <val lang="zh_cn" value="显示"/>
+        <val lang="zhc" value="显示"/>
         <val lang="kor" value="표시"/>
       </option>
       <option name="forever">
         <val lang="jap" value="永久"/>
-        <val lang="zh_cn" value="永久"/>
+        <val lang="zhc" value="永久"/>
         <val lang="kor" value="영구적"/>
       </option>
       <option name="oneFrameOnly">
         <val lang="jap" value="一フレームのみ"/>
-        <val lang="zh_cn" value="单帧显示"/>
+        <val lang="zhc" value="单帧显示"/>
         <val lang="kor" value="원프레임"/>
       </option>
       <option name="allScreenSpaces">
         <val lang="jap" value="全画面領域"/>
-        <val lang="zh_cn" value="全屏区域"/>
+        <val lang="zhc" value="全屏区域"/>
         <val lang="kor" value="화면영역전체"/>
       </option>
       <option name="sameLevelScreenSpaces">
         <val lang="jap" value="同階層画面領域"/>
-        <val lang="zh_cn" value="同层级屏幕区域"/>
+        <val lang="zhc" value="同层级屏幕区域"/>
         <val lang="kor" value="동일계층화면영역"/>
       </option>
       <option name="skipNormal">
         <val lang="jap" value="通常スキップ"/>
-        <val lang="zh_cn" value="正常跳过"/>
+        <val lang="zhc" value="正常跳过"/>
         <val lang="kor" value="일반스킵"/>
       </option>
       <option name="skipReadContinue">
         <val lang="jap" value="続行時スキップ"/>
-        <val lang="zh_cn" value="继续时跳过"/>
+        <val lang="zhc" value="继续时跳过"/>
         <val lang="kor" value="계속시스킵"/>
       </option>
       <option name="skipNone">
         <val lang="jap" value="スキップ禁止"/>
-        <val lang="zh_cn" value="禁止跳过"/>
+        <val lang="zhc" value="禁止跳过"/>
         <val lang="kor" value="스킵금지"/>
       </option>
       <option name="noBacklogAddition">
         <val lang="jap" value="バックログ登録禁止"/>
-        <val lang="zh_cn" value="禁止加入日志"/>
+        <val lang="zhc" value="禁止加入日志"/>
         <val lang="kor" value="백로그에추가안함"/>
       </option>
       <option name="inBacklog">
         <val lang="jap" value="バックログ登録"/>
-        <val lang="zh_cn" value="加入日志"/>
+        <val lang="zhc" value="加入日志"/>
         <val lang="kor" value="백로그에추가"/>
       </option>
       <option name="freeOnReturnToMain">
         <val lang="jap" value="原点回帰時解除"/>
-        <val lang="zh_cn" value="返回主界面时释放"/>
+        <val lang="zhc" value="返回主界面时释放"/>
         <val lang="kor" value="원점회귀시해제"/>
       </option>
       <option name="startAtTarget">
         <val lang="jap" value="対象位置から"/>
-        <val lang="zh_cn" value="从目标位置"/>
+        <val lang="zhc" value="从目标位置"/>
         <val lang="kor" value="대상위치에서"/>
       </option>
       <option name="preventEntry">
         <val lang="jap" value="侵入禁止"/>
-        <val lang="zh_cn" value="禁止进入"/>
+        <val lang="zhc" value="禁止进入"/>
         <val lang="kor" value="침범금지"/>
       </option>
       <option name="stopOnCollisionX">
         <val lang="jap" value="X衝突時初期化"/>
-        <val lang="zh_cn" value="X碰撞时重置"/>
+        <val lang="zhc" value="X碰撞时重置"/>
         <val lang="kor" value="X충돌시초기화"/>
       </option>
       <option name="stopOnCollisionY">
         <val lang="jap" value="Y衝突時初期化"/>
-        <val lang="zh_cn" value="Y碰撞时重置"/>
+        <val lang="zhc" value="Y碰撞时重置"/>
         <val lang="kor" value="Y충돌시초기화"/>
       </option>
       <option name="current">
         <val lang="jap" value="現在"/>
-        <val lang="zh_cn" value="当前"/>
+        <val lang="zhc" value="当前"/>
         <val lang="kor" value="현재"/>
       </option>
       <option name="ignoreOverflow">
         <val lang="jap" value="超過無視"/>
-        <val lang="zh_cn" value="忽略溢出"/>
+        <val lang="zhc" value="忽略溢出"/>
         <val lang="kor" value="넘침무시"/>
       </option>
       <option name="async">
         <val lang="jap" value="非同期"/>
-        <val lang="zh_cn" value="异步"/>
+        <val lang="zhc" value="异步"/>
         <val lang="kor" value="비동기"/>
       </option>
       <option name="cacheLight">
         <val lang="jap" value="軽量積載"/>
-        <val lang="zh_cn" value="轻量加载"/>
+        <val lang="zhc" value="轻量加载"/>
         <val lang="kor" value="메모리최적화"/>
       </option>
       <option name="stateUpdate">
         <val lang="jap" value="状態更新"/>
+        <val lang="zhc" value="状态更新"/>
         <val lang="kor" value="상태갱신"/>
       </option>
       <option name="default">
         <val lang="jap" value="初期値"/>
+        <val lang="zhc" value="默认值"/>
         <val lang="kor" value="초기화"/>
       </option>
       <option name="onUpdate">
         <val lang="jap" value="更新同期"/>
+        <val lang="zhc" value="同步更新"/>
       </option>
     </CmdOptions>
   </Keywords>
@@ -365,7 +368,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/command">
       </explanation>
-      <explanation lang="zh_cn" name="--[命令使用信息]--"
+      <explanation lang="zhc" name="--[命令使用信息]--"
                syntax=""
                details="[ ]：必填参数，( )：可选参数。
                &#xA;
@@ -431,7 +434,7 @@
                    &#xA;4. try run as Light vn command"
                    reference="https://wikiwiki.jp/lightvn/commands/var#var">
       </explanation>
-      <explanation lang="zh_cn" name="--[脚本处理顺序信息]--"
+      <explanation lang="zhc" name="--[脚本处理顺序信息]--"
                    syntax=""
                    details="脚本按行处理的步骤如下：
                    &#xA;1. 应用宏
@@ -508,7 +511,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/var#var">
       </explanation>
-      <explanation lang="zh_cn" name="--[脚本注释化]--"
+      <explanation lang="zhc" name="--[脚本注释化]--"
                    syntax=""
                    details="如何编写注释：
                    &#xA;1. //
@@ -561,7 +564,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/var#var">
       </explanation>
-      <explanation lang="zh_cn" name="--[渲染顺序]--"
+      <explanation lang="zhc" name="--[渲染顺序]--"
                    syntax=""
                    details="渲染顺序如下计算：
                    &#xA;- z 计算：中心 z 较高的实体显示在前
@@ -623,7 +626,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/command#command1a5">
       </explanation>
-      <explanation lang="zh_cn" name="--[视角选项]--"
+      <explanation lang="zhc" name="--[视角选项]--"
                    syntax=""
                    details="视角选项：
                    &#xA;
@@ -696,7 +699,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/command#command1a5">
       </explanation>
-      <explanation lang="zh_cn" name="--[屏幕空间选项]--"
+      <explanation lang="zhc" name="--[屏幕空间选项]--"
                    syntax=""
                    details="屏幕空间选项：
                    &#xA;
@@ -764,7 +767,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/editor/free_camera_usage">
       </explanation>
-      <explanation lang="zh_cn" name="--[自由视角操作]--"
+      <explanation lang="zhc" name="--[自由视角操作]--"
                    syntax=""
                    details="自由视角使用：
                    &#xA;自由视角模式继承当前脚本的“视角模式”。
@@ -803,7 +806,7 @@
     <Command name="--[イメージ表示コマンド]--">
       <explanation lang="jap" name="--[イメージ表示コマンド]--"></explanation>
       <explanation lang="eng" name="--[image commands]--"></explanation>
-      <explanation lang="zh_cn" name="--[图像命令]--"></explanation>
+      <explanation lang="zhc" name="--[图像命令]--"></explanation>
       <explanation lang="kor" name="--[이미지 표시 커맨드]--"></explanation>      
     </Command>
     <Command cmd="empty">
@@ -832,7 +835,7 @@
                    &#xA;Suffix:'0'will display object as alpha: 0。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#empty">
       </explanation>
-      <explanation lang="zh_cn" name="个体"
+      <explanation lang="zhc" name="个体"
                    syntax="个体 [名字] [x] [y] [r] (视角选项)"
                    details="例如：个体 id0 150 30 50  
                    &#xA;在指定位置创建名为id0的个体。 
@@ -901,7 +904,7 @@
                    &#xA;Suffix:'0'will display object as alpha: 0。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#bg">
       </explanation>
-      <explanation lang="zh_cn" name="背景"
+      <explanation lang="zhc" name="背景"
                    syntax="背景 [名称] [文件名 / 动画名称] (视角选项)"
                    details="例如：背景 bg1 scenery.png
                    &#xA;使用名称为 'bg1' 的背景图片 'scenery.png'。
@@ -962,7 +965,7 @@
                    &#xA;Suffix:'0'will display object as alpha: 0。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#cg">
       </explanation>
-      <explanation lang="zh_cn" name="立绘"
+      <explanation lang="zhc" name="立绘"
                    syntax="立绘 [名称] [文件名 / 动画名称] [x] [y] [r] (视角选项)"
                    details="立绘 alice2 alice.png 150 30 50
                    &#xA;使用名称 'alice2' 的图片 'alice.png' 在坐标 [150 30] 和层 50 上显示。
@@ -1039,7 +1042,7 @@
                    &#xA;Suffix:'0'will display object as alpha: 0。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#sound_cg">
       </explanation>
-      <explanation lang="zh_cn" name="音效立绘"
+      <explanation lang="zhc" name="音效立绘"
                    syntax="音效立绘 [名称] [文件名 / 动画名称] [x] [y] [r] [音效目标名称] [判断间隔时间] (变化类型) (最小音量1) (显示图像1) (...) (获取音量的时间延迟:ms) (视角选项)"
                    details="例如：音效立绘 hisia mouth0.png 400 200 90 id0 100 30 mouth1.png 60 mouth2.png 90 mouth3.png 120 mouth4.png
                    &#xA;  
@@ -1137,7 +1140,7 @@
                    &#xA;Suffix:'0'will display object as alpha: 0。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#ninecg">
       </explanation>
-      <explanation lang="zh_cn" name="九格立绘"
+      <explanation lang="zhc" name="九格立绘"
                    syntax="九格立绘 [名称] [文件名 / 动画名称] [x] [y] [r] [分割_x1] [分割_x2] [分割_y1] [分割_y2] [宽度] [高度] (缩放类型: 0(默认)) (视角选项)"
                    details="例如：九格立绘 ex1 waku.png 450 200 1 33 66 33 66 200 200
                    &#xA;  
@@ -1195,7 +1198,7 @@
                    &#xA;Suffix:'0'will display object as alpha: 0。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg">
       </explanation>
-      <explanation lang="zh_cn" name="滚动图片"
+      <explanation lang="zhc" name="滚动图片"
                    syntax="滚动图片 [名称] [文件名 / 动画名称] [x] [y] [r] [每秒移动] (竖) (偏移:px) (视角选项)"
                    details="例如：滚动图片 bg_effect scrolling_background.png 0 0 10 60
                    &#xA;  
@@ -1241,7 +1244,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg_set">
       </explanation>
-      <explanation lang="zh_cn" name="刷新滚动图片"
+      <explanation lang="zhc" name="刷新滚动图片"
                    syntax="刷新滚动图片 [名称] [每秒移动] (横/竖)"
                    details="ex. 刷新滚动图片 my_cg 1500 
                    &#xA;  
@@ -1275,6 +1278,14 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/image#spine_cg">
       </explanation>
+      <explanation lang="zhc" name="Spine动画"
+                  syntax="spine动画 [目标名称] [骨架文件路径] [图集文件路径] [x] [y] [图层(r)] [起始动画] (视角选项)"
+                  details="ex. spine动画 mycg spine/cloud-pot.json spine/cloud-pot.atlas 300 500 0 rain
+                  &#xA;  
+                  &#xA;从Spine创建动画对象
+                  &#xA;"
+                  reference="https://wikiwiki.jp/lightvn/commands/image#spine_cg">
+      </explanation>
     </Command>
     <Command cmd="model">
       <explanation lang="jap" name="モデル"
@@ -1295,7 +1306,7 @@
                    &#xA;Suffix:'0'will display object as alpha: 0。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#model">
       </explanation>
-      <explanation lang="zh_cn" name="模型"
+      <explanation lang="zhc" name="模型"
                    syntax="模型 [名称] [文件名] [x] [y] [r] (视角选项)"
                    details="例如：模型 stairs stairs.glb 0 400 0
                    &#xA;  
@@ -1334,7 +1345,7 @@
                    &#xA;Suffix:'0'will display object as alpha: 0。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#sky">
       </explanation>
-      <explanation lang="zh_cn" name="天空盒"
+      <explanation lang="zhc" name="天空盒"
                    syntax="天空盒 [文件名: 上] [文件名: 下] [文件名: 前] [文件名: 后] [文件名: 左] [文件名: 右]"
                    details="例如：天空盒 skybox/top.jpg skybox/bottom.jpg skybox/front.jpg skybox/back.jpg skybox/left.jpg skybox/right.jpg
                    &#xA;  
@@ -1376,7 +1387,7 @@
                    &#xA;Suffix:'0'will display object as alpha: 0。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#light">
       </explanation>
-      <explanation lang="zh_cn" name="光源"
+      <explanation lang="zhc" name="光源"
                    syntax="光源 [名称] [x] [y] [r] (视角选项)"
                    details="例如：光源 light0 100 100 80
                    &#xA;  
@@ -1423,7 +1434,7 @@
                    &#xA;Suffix:'0'will display object as alpha: 0。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#lightMode">
       </explanation>
-      <explanation lang="zh_cn" name="光源模式"
+      <explanation lang="zhc" name="光源模式"
                    syntax="光源模式 [模式]"
                    details="例如：光源模式 1
                    &#xA;  
@@ -1469,7 +1480,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/image#lightApply">
       </explanation>
-      <explanation lang="zh_cn" name="光源应用"
+      <explanation lang="zhc" name="光源应用"
                syntax="光源应用 [名称 (多选)] [true/false]"
                details="例如：光源应用 alice true
                &#xA;  
@@ -1491,7 +1502,7 @@
     <Command name="--[マップ 関連コマンド]--">
       <explanation lang="jap" name="--[マップ関連コマンド]--"></explanation>
       <explanation lang="eng" name="--[Map commands]--"></explanation>
-      <explanation lang="zh_cn" name="--[地图相关命令]--"></explanation>
+      <explanation lang="zhc" name="--[地图相关命令]--"></explanation>
       <explanation lang="kor" name="--[맵 관련 커맨드]--"></explanation>
     </Command>
     <Command cmd="tilemap">
@@ -1514,7 +1525,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/Map#tilemap">
       </explanation>
-      <explanation lang="zh_cn" name="瓦片地图"
+      <explanation lang="zhc" name="瓦片地图"
                    syntax="瓦片地图 [名称] [x] [y] [r] [每层r间隔]"
                    details="例如：瓦片地图 map map0.json 3050 2850 0 2
                    &#xA;
@@ -1553,7 +1564,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/Map#walkArea">
       </explanation>
-      <explanation lang="zh_cn" name="移动区域"
+      <explanation lang="zhc" name="移动区域"
                    syntax="移动区域 [目标名称]"
                    details="例如：移动区域 map_1_walkable
                    &#xA;
@@ -1592,7 +1603,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/Map#walkAreaCG">
       </explanation>
-      <explanation lang="zh_cn" name="移动区域立绘"
+      <explanation lang="zhc" name="移动区域立绘"
                    syntax="移动区域立绘 [名称] [图像] [瓦片x] [瓦片y] [r] [偏移x] [偏移y]"
                    details="例如：移动区域立绘 npc idle_left 7 2 1 0 -20
                    &#xA;
@@ -1638,7 +1649,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/Map#walkAreaTileChar">
       </explanation>
-      <explanation lang="zh_cn" name="移动区域瓦片角色"
+      <explanation lang="zhc" name="移动区域瓦片角色"
                    syntax="移动区域瓦片角色 [名称] [图像路径] [帧宽度] [帧高度] [瓦片x] [瓦片y] [r] [偏移x] [偏移y] [方向]"
                    details="例如：移动区域瓦片角色 npc_b maps/tilemap_tut/lam/sheet.png 32 48 47 11 1 0 -15 下
                    &#xA;
@@ -1677,7 +1688,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/Map#defaultWalkSpeed">
       </explanation>
-      <explanation lang="zh_cn" name="默认移动速度"
+      <explanation lang="zhc" name="默认移动速度"
                    syntax="默认移动速度 [速度]"
                    details="例如：默认移动速度 500
                    &#xA;
@@ -1714,7 +1725,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/Map#walkSpeed">
       </explanation>
-      <explanation lang="zh_cn" name="移动速度"
+      <explanation lang="zhc" name="移动速度"
                    syntax="移动速度 [目标名称] [速度]"
                    details="例如：移动速度 500
                    &#xA;
@@ -1758,7 +1769,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/Map#tileMoveX">
       </explanation>
-      <explanation lang="zh_cn" name="瓦片移动x"
+      <explanation lang="zhc" name="瓦片移动x"
                    syntax="瓦片移动x [目标名称] [偏移量] (时间/速度(ups)) [开始命令] [结束命令] (屏幕区域范围) (禁止跳过)"
                    details="例如：瓦片移动x npc -1 5ups &quot;image npc walk_left&quot; &quot;image npc idle_left&quot;
                    &#xA;
@@ -1817,7 +1828,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/Map#tileMoveY">
       </explanation>
-      <explanation lang="zh_cn" name="瓦片移动y"
+      <explanation lang="zhc" name="瓦片移动y"
                    syntax="瓦片移动y [目标名称] [偏移量] (时间/速度(ups)) [开始命令] [结束命令] (屏幕区域范围) (禁止跳过)"
                    details="例如：瓦片移动y npc -1 5ups &quot;image npc walk_left&quot; &quot;image npc idle_left&quot;
                    &#xA;
@@ -1866,7 +1877,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/Map#lookAt">
       </explanation>
-      <explanation lang="zh_cn" name="朝向"
+      <explanation lang="zhc" name="朝向"
                    syntax="朝向 [观察对象] [目标对象]"
                    details="例如：朝向 viewer target
                    &#xA;"
@@ -1895,7 +1906,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/Map#direction">
       </explanation>
-      <explanation lang="zh_cn" name="方向"
+      <explanation lang="zhc" name="方向"
                    syntax="方向 [目标] [方向：左/右/上/下]"
                    details="例如：方向 viewer 左
                    &#xA;"
@@ -1913,7 +1924,7 @@
     <Command name="--[UI 関連コマンド]--">
       <explanation lang="jap" name="--[UI関連コマンド]--"></explanation>
       <explanation lang="eng" name="--[UI commands]--"></explanation>
-      <explanation lang="zh_cn" name="--[UI相关命令]--"></explanation>
+      <explanation lang="zhc" name="--[UI相关命令]--"></explanation>
       <explanation lang="kor" name="--[UI 관련 커맨드]--"></explanation>
     </Command>
     <Command cmd="button">
@@ -1952,7 +1963,7 @@
                    &#xA;Note: image sizes need to be constant."
                    reference="https://wikiwiki.jp/lightvn/commands/UI#button">
       </explanation>
-      <explanation lang="zh_cn" name="按钮"
+      <explanation lang="zhc" name="按钮"
                    syntax="按钮 [名称] (按钮常态图像) (光标接触图像) (按钮点击图像) [x] [y] [r] (忽略透明) (视角选项) (Light.vn命令)"
                    details="例如：按钮 button1 untouched-image.png touched-image.png clicked-image.png 300 400 200 绑定视角 跳转 tut.txt
                    &#xA;
@@ -2025,7 +2036,7 @@
                    &#xA;[button name + _text] with the text commands."
                    reference="https://wikiwiki.jp/lightvn/commands/UI#btnText">
       </explanation>
-      <explanation lang="zh_cn" name="按钮文字"
+      <explanation lang="zhc" name="按钮文字"
                   syntax="按钮文字 [按钮名称] [字体文件名] [字体大小] [&quot;文本&quot;]"
                   details="例如：按钮文字 button1 r-mplus-1c-m.ttf 24 &quot;点击我！&quot;
                   &#xA;
@@ -2075,7 +2086,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#setButtonGroup">
       </explanation>
-      <explanation lang="zh_cn" name="按钮组"
+      <explanation lang="zhc" name="按钮组"
                   syntax="按钮组 [按钮前缀]"
                   details="例如：按钮组 choice_
                   &#xA;
@@ -2117,7 +2128,7 @@
                    &#xA;defines the touchable area inside the button texture"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchArea">
       </explanation>
-      <explanation lang="zh_cn" name="光标接触区域"
+      <explanation lang="zhc" name="光标接触区域"
                    syntax="光标接触区域 [目标名称] [从左上角的x] [从左上角的y] [宽度] [高度]"
                    details="例如：光标接触区域 btn0 0 0 100 100
                    &#xA;
@@ -2154,7 +2165,7 @@
                    &#xA;defines the touchable area within the screen"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchAreaScreen">
       </explanation>
-      <explanation lang="zh_cn" name="屏幕光标接触区域"
+      <explanation lang="zhc" name="屏幕光标接触区域"
                    syntax="屏幕光标接触区域 [名称] [从左上角的x] [从左上角的y] [宽度] [高度]"
                    details="例如：屏幕光标接触区域 btn0 0 0 100 100
                    &#xA;
@@ -2191,7 +2202,7 @@
                    &#xA;defines the touchable area within the screen"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchAlpha">
       </explanation>
-      <explanation lang="zh_cn" name="光标接触透明度"
+      <explanation lang="zhc" name="光标接触透明度"
                    syntax="光标接触透明度 [目标名称] [最小透明值 (默认: 255)]"
                    details="例如：光标接触透明度 btn0 100
                    &#xA;
@@ -2227,7 +2238,7 @@
                    &#xA;defines the condition for which button will show active"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#highlight_if">
       </explanation>
-      <explanation lang="zh_cn" name="激活条件"
+      <explanation lang="zhc" name="激活条件"
                    syntax="激活条件 [按钮名称] [激活条件：字符串]"
                    details="例如：激活条件 btn0 &quot;lvSystem::WindowMode() == 2&quot;
                    &#xA;
@@ -2260,7 +2271,7 @@
                    details="ex. onTouchStart btn1 script textbox.txt"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnTouch">
       </explanation>
-      <explanation lang="zh_cn" name="光标接触开始时"
+      <explanation lang="zhc" name="光标接触开始时"
                    syntax="光标接触开始时 [个体名称] [光标接触开始时执行的命令]"
                    details="例如：光标接触开始时 btn1 脚本 textbox.txt
                    &#xA;
@@ -2293,7 +2304,7 @@
                    details="ex. onTouchExit btn1 script textbox.txt"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnNotTouch">
       </explanation>
-      <explanation lang="zh_cn" name="光标接触结束时"
+      <explanation lang="zhc" name="光标接触结束时"
                    syntax="光标接触结束时 [按钮名称] [光标接触结束时执行的命令]"
                    details="例如：光标接触结束时 btn1 脚本 textbox.txt
                    &#xA;
@@ -2342,7 +2353,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchStateForce">
       </explanation>
-      <explanation lang="zh_cn" name="强制光标接触状态"
+      <explanation lang="zhc" name="强制光标接触状态"
                    syntax="1. 强制光标接触状态 [个体名称] [状态：0, 1, 2]
                    &#xA;2. 强制光标接触状态 [个体名称] false"
                    details="例如：强制光标接触状态 btn1 1
@@ -2399,7 +2410,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchableRes">
       </explanation>
-      <explanation lang="zh_cn" name="默认光标接触素材"
+      <explanation lang="zhc" name="默认光标接触素材"
                    syntax="默认光标接触素材 [UI未光标接触图像] [UI光标接触时图像] [UI点击时图像] (UI光标接触时音效) (UI点击时音效)"
                    details="例如：默认光标接触素材 untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg
                    &#xA;
@@ -2458,7 +2469,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchFilterRange">
       </explanation>
-      <explanation lang="zh_cn" name="光标接触处理优先级"
+      <explanation lang="zhc" name="光标接触处理优先级"
                    syntax="光标接触处理优先级 [优先级 (默认：0)]"
                    details="在当前屏幕区域中，当多个可光标接触个体（例如：按钮）同时被点击时，设置光标接触处理的优先级。
                    &#xA;
@@ -2503,7 +2514,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#trackbar">
       </explanation>
-      <explanation lang="zh_cn" name="轨迹条"
+      <explanation lang="zhc" name="轨迹条"
                    syntax="轨迹条 [名称] (轨迹球未光标接触素材) (轨迹球光标接触素材) (轨迹球点击素材) [x] [y] [r] [横/竖] [长度] [变量名称] [左侧值] [右侧值] (忽略透明) (视角选项) (调整后执行的命令)"
                    details="例如：轨迹条 trackbar sys_trackball.png 370 246 105 水平 530 bgm 0 100
                    &#xA;
@@ -2558,7 +2569,7 @@
       </explanation>
       <explanation lang="eng" name="--[text decoration]--">
       </explanation>
-      <explanation lang="zh_cn" name="--[文本装饰]--"
+      <explanation lang="zhc" name="--[文本装饰]--"
                    details="例如：&lt;textSize 20&gt;装饰文本&lt;/&gt;
                    &#xA;
                    &#xA;在要装饰的文本两侧加上&lt;&gt;&lt;/&gt;，并在左侧的&lt;&gt;中指定装饰。
@@ -2609,7 +2620,7 @@
     <Command name="--[テキスト関連コマンド]--">
       <explanation lang="jap" name="--[テキスト表示コマンド]--"></explanation>
       <explanation lang="eng" name="--[text commands]--"></explanation>
-      <explanation lang="zh_cn" name="--[文本相关命令]--"></explanation>
+      <explanation lang="zhc" name="--[文本相关命令]--"></explanation>
       <explanation lang="kor" name="--[텍스트 표시 커맨드]--"></explanation>
     </Command>
     <Command cmd="textbox">
@@ -2634,7 +2645,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textbox">
       </explanation>
-      <explanation lang="zh_cn" name="文本框"
+      <explanation lang="zhc" name="文本框"
                    syntax="文本框 [名称] [x] [y] [r] [宽度] [高度] [字体文件名] [字体大小] [忽略溢出] (视角选项) [&quot;字符串:文本内容&quot;] (加入日志)"
                    details="例如：文本框 textbox1 0 400 81 800 200 r-mplus-1c-m.ttf 24
                    &#xA;
@@ -2673,7 +2684,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#useTextbox">
       </explanation>
-      <explanation lang="zh_cn" name="使用文本框"
+      <explanation lang="zhc" name="使用文本框"
                    syntax="使用文本框 [文本框名称]"
                    details="例如：使用文本框 textbox1
                    &#xA;
@@ -2708,7 +2719,7 @@
                    &#xA;注：「text」, unilke textbox, does not have flowing text and displays all text at once"
                    reference="https://wikiwiki.jp/lightvn/commands/text#text">
       </explanation>
-      <explanation lang="zh_cn" name="文本"
+      <explanation lang="zhc" name="文本"
                    syntax="文本 [名称] [x] [y] [r] [字体文件名] [字体大小(px)] (行大小)
                    &#xA;(方向：横/纵) (对齐：左/右/中) (最大文本长度) (视角选项) &quot;[字符串:文本内容]&quot; (加入日志)"
                    details="例如：文本 msg_str 370 223 106 r-mplus-1c-m.ttf 24 &quot;内容! &quot;
@@ -2746,7 +2757,7 @@
                    &#xA;Note: To display text、('useTextbox') needs to have been previously set with a correct textbox"
                    reference="https://wikiwiki.jp/lightvn/text">
       </explanation>
-      <explanation lang="zh_cn" name="新文本"
+      <explanation lang="zhc" name="新文本"
                    syntax="&quot;[文本内容]"
                    details="例如：“新文本内容!
                    &#xA;
@@ -2780,7 +2791,7 @@
                    &#xA;displays 'text' appended to previous text"
                    reference="https://wikiwiki.jp/lightvn/text">
       </explanation>
-      <explanation lang="zh_cn" name="续文本"
+      <explanation lang="zhc" name="续文本"
                    syntax="-&quot;[文本内容]"
                    details="例如：-”这是续文本!
                    &#xA;
@@ -2816,7 +2827,7 @@
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableColumn">
       </explanation>
-      <explanation lang="zh_cn" name="台词类型"
+      <explanation lang="zhc" name="台词类型"
                    syntax="台词类型 [类型名称]"
                    details="例如：台词类型 jap
                    &#xA;
@@ -2857,7 +2868,7 @@
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableLoad">
       </explanation>
-      <explanation lang="zh_cn" name="加载台词"
+      <explanation lang="zhc" name="加载台词"
                    syntax="加载台词 [文件路径] [下一行: 0~]"
                    details="加载台词 table.csv 0
                    &#xA;
@@ -2908,7 +2919,7 @@
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableLine">
       </explanation>
-      <explanation lang="zh_cn" name="新增台词"
+      <explanation lang="zhc" name="新增台词"
                    syntax="1.新增台词 (目标) [文件路径]
                    &#xA;2.新增台词 (目标) [文件路径] (行)"
                    details="例如：新增台词 table.csv
@@ -2969,7 +2980,7 @@
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableLineCont">
       </explanation>
-      <explanation lang="zh_cn" name="追加台词"
+      <explanation lang="zhc" name="追加台词"
                   syntax="追加台词 [文件路径]"
                   details="例如：追加台词 table.csv
                   &#xA;
@@ -3015,7 +3026,7 @@
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/text#textClear">
       </explanation>
-      <explanation lang="zh_cn" name="文本清除"
+      <explanation lang="zhc" name="文本清除"
                    syntax="文本清除 (目标名称)"
                    details="例如：文本清除
                    &#xA;清除目标的文本。
@@ -3053,7 +3064,7 @@
                    &#xA;Note: When 'target name' is set, settings will be applied to whole current text. If not, will be applied to next texts"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textPop">
       </explanation>
-      <explanation lang="zh_cn" name="文字清除"
+      <explanation lang="zhc" name="文字清除"
                   syntax="文字清除 (目标名称) [删除字符数]"
                   details="例如：文字清除 3
                   &#xA;
@@ -3092,7 +3103,7 @@
                    &#xA;Note: When 'target name' is set, settings will be applied to whole current text. If not, will be applied to next texts"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textFont">
       </explanation>
-      <explanation lang="zh_cn" name="字体"
+      <explanation lang="zhc" name="字体"
                    syntax="字体 (目标名称) [字体文件名]"
                    details="例如：字体 arial.ttf
                    &#xA;
@@ -3127,7 +3138,7 @@
                    &#xA;Note: When 'target name' is set, settings will be applied to whole current text. If not, will be applied to next texts"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textSize">
       </explanation>
-      <explanation lang="zh_cn" name="字体大小"
+      <explanation lang="zhc" name="字体大小"
                    syntax="字体大小 (目标名称) [大小(pixels)]"
                    details="例如：字体大小 30
                    &#xA;
@@ -3160,7 +3171,7 @@
                    &#xA;Note: When 'target name' is set, settings will be applied to whole current text. If not, will be applied to next text line."
                    reference="https://wikiwiki.jp/lightvn/commands/text#textLineSize">
       </explanation>
-      <explanation lang="zh_cn" name="字体间距"
+      <explanation lang="zhc" name="字体间距"
                    syntax="字体间距 (目标名称) [大小(pixels)]"
                    details="例如：字体间距 30
                    &#xA;
@@ -3206,7 +3217,7 @@
                    &#xA;Note: When 'target name' is set, settings will be applied to whole current text. If not, will be applied to next texts"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textColour">
       </explanation>
-      <explanation lang="zh_cn" name="字体颜色"
+      <explanation lang="zhc" name="字体颜色"
                   syntax="1. 字体颜色 (目标名称) [r:0-255] [g:0-255] [b:0-255] (a:0-255)
                   &#xA;2. 字体颜色 (目标名称) #[HEX rgb / rgba]
                   &#xA;3. 字体颜色 (目标名称) #[HEX rgb / rgba1] [颜色1反映度]% #[HEX rgb / rgba2]"
@@ -3271,7 +3282,7 @@
                    &#xA;Note: When 'target name' is set, settings will be applied to whole current text. If not, will be applied to next texts"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textColourSkippable">
       </explanation>
-      <explanation lang="zh_cn" name="已读字体颜色"
+      <explanation lang="zhc" name="已读字体颜色"
                    syntax="1. 已读字体颜色 (目标名称) [r:0-255] [g:0-255] [b:0-255] (a:0-255)
                    &#xA;2. 已读字体颜色 (目标名称) #[HEX rgb / rgba]
                    &#xA;3. 已读字体颜色 (目标名称) #[HEX rgb / rgba1] [颜色1反映度]% #[HEX rgb / rgba2]
@@ -3324,7 +3335,7 @@
                    &#xA;Note: When 'target name' is set, settings will be applied to whole current text. If not, will be applied to next texts"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textBold">
       </explanation>
-      <explanation lang="zh_cn" name="字体加粗"
+      <explanation lang="zhc" name="字体加粗"
                    syntax="字体加粗 (目标名称) [true/false]"
                    details="例如：字体加粗 true
                    &#xA;
@@ -3361,7 +3372,7 @@
                    &#xA;Note: When 'target name' is set, settings will be applied to whole current text. If not, will be applied to next texts"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textItalic">
       </explanation>
-      <explanation lang="zh_cn" name="字体斜体"
+      <explanation lang="zhc" name="字体斜体"
                    syntax="字体斜体 (对象名) [true/false]"
                    details="字体斜体 true
                    &#xA;
@@ -3416,7 +3427,7 @@
                    &#xA;Note: When 'target name' is set, settings will be applied to whole current text. If not, will be applied to next texts"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textShadow">
       </explanation>
-      <explanation lang="zh_cn" name="文本阴影"
+      <explanation lang="zhc" name="文本阴影"
                    syntax="文本阴影 (对象名) [阴影类型]"
                    details="[阴影类型]
                    &#xA;0: 无阴影
@@ -3475,7 +3486,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/text#textSpeed">
       </explanation>
-      <explanation lang="zh_cn" name="文本速度"
+      <explanation lang="zhc" name="文本速度"
                    syntax="文本速度 (对象名) [速度:ms/字]"
                    details="例如：文本速度 400
                    &#xA;
@@ -3510,7 +3521,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textWordWrap">
       </explanation>
-      <explanation lang="zh_cn" name="文本换行"
+      <explanation lang="zhc" name="文本换行"
                    syntax="文本换行 (对象名) [true/false]"
                    details="例如：文本换行 false
                    &#xA;
@@ -3550,7 +3561,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textAutoIndent">
       </explanation>
-      <explanation lang="zh_cn" name="文本自动缩进"
+      <explanation lang="zhc" name="文本自动缩进"
                    syntax="文本自动缩进 (对象名) [字符串：启动自动缩进的字符集] (额外间隔)"
                    details="例如：文本自动缩进 &quot;[「&quot;
                    &#xA;
@@ -3603,7 +3614,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textIndent">
       </explanation>
-      <explanation lang="zh_cn" name="文本缩进"
+      <explanation lang="zhc" name="文本缩进"
                    syntax="文本缩进 (对象名) [间隔(px)]"
                    details="例如：文本缩进 100
                    &#xA;
@@ -3649,7 +3660,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textDisallowStart">
       </explanation>
-      <explanation lang="zh_cn" name="文本禁止换行"
+      <explanation lang="zhc" name="文本禁止换行"
                    syntax="文本禁止换行 (对象名) [文字禁止换行指定字符]"
                    details="文本禁止换行 &quot;)]&quot;
                    &#xA;
@@ -3692,7 +3703,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textDisallowEnd">
       </explanation>
-      <explanation lang="zh_cn" name="文本换行"
+      <explanation lang="zhc" name="文本换行"
                    syntax="文本换行 (对象名) [文字换行指定字符]"
                    details="例如：文本换行 &quot;[(&quot;
                    &#xA;
@@ -3732,7 +3743,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textExtraSpacing">
       </explanation>
-      <explanation lang="zh_cn" name="文本额外间隔"
+      <explanation lang="zhc" name="文本额外间隔"
                    syntax="文本额外间隔 (对象名) [x] [y]"
                    details="例如：文本额外间隔 10 10
                    &#xA;
@@ -3769,7 +3780,7 @@
                    &#xA;Note: When 'target name' is set, settings will be applied to whole current text. If not, will be applied to next texts"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textDir">
       </explanation>
-      <explanation lang="zh_cn" name="文本方向"
+      <explanation lang="zhc" name="文本方向"
                    syntax="文本方向 (对象名) [竖/横:default]"
                    details="例如：文本方向 竖
                    &#xA;
@@ -3802,7 +3813,7 @@
                    &#xA;Note: settings will be applied to whole current text."
                    reference="https://wikiwiki.jp/lightvn/commands/text#textAlignment">
       </explanation>
-      <explanation lang="zh_cn" name="文本对齐"
+      <explanation lang="zhc" name="文本对齐"
                    syntax="文本对齐 (对象名) [左:default/右/中]"
                    details="例如：文本对齐 中
                    &#xA;
@@ -3840,7 +3851,7 @@
                    &#xA;Detail: Creates a sprite with name: (target name + _skin) as child of textbox."
                    reference="https://wikiwiki.jp/lightvn/commands/text#textboxSkin">
       </explanation>
-      <explanation lang="zh_cn" name="文本框材质"
+      <explanation lang="zhc" name="文本框材质"
                    syntax="文本框材质 (对象名) [文件名 / 已注册动画名] [x] [y] (缩放比例) (缩放比例 y)"
                    details="例如：文本框材质 skin.png 300 400
                    &#xA;例如：文本框材质 skin.png 300 400 80%
@@ -3887,7 +3898,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textWaitIcon">
       </explanation>
-      <explanation lang="zh_cn" name="文本框等待图标"
+      <explanation lang="zhc" name="文本框等待图标"
                    syntax="文本框等待图标 (对象名) (位置类型) [文件名 / 已注册动画名] [x] [y]"
                    details="例如：文本框等待图标 sys_wait.png 8 -8
                    &#xA;
@@ -3935,7 +3946,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/text#textFlowEffect">
       </explanation>
-      <explanation lang="zh_cn" name="文本输出效果"
+      <explanation lang="zhc" name="文本输出效果"
                    syntax="文本输出效果 (对象名) [强度：0以上的数字]"
                    details="例如：文本输出效果 8
                    &#xA;
@@ -3977,7 +3988,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textRedisplay">
       </explanation>
-      <explanation lang="zh_cn" name="文本重新显示"
+      <explanation lang="zhc" name="文本重新显示"
                    syntax="文本重新显示 (对象名)"
                    details="例如：文本重新显示
                    &#xA;
@@ -4019,7 +4030,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textRepeat">
       </explanation>
-      <explanation lang="zh_cn" name="文本重复输出"
+      <explanation lang="zhc" name="文本重复输出"
                    syntax="文本重复输出 (对象名) [true/false]"
                    details="例如：文本重复输出 true
                    &#xA;
@@ -4062,7 +4073,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textReadAlpha">
       </explanation>
-      <explanation lang="zh_cn" name="文本已读透明度"
+      <explanation lang="zhc" name="文本已读透明度"
                    syntax="文本已读透明度 (对象名) [透明度] (所需时间:ms)"
                    details="例如：文字已读透明度 125 100
                    &#xA;
@@ -4105,7 +4116,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textOverflowAutoWait">
       </explanation>
-      <explanation lang="zh_cn" name="文本超出自动等待"
+      <explanation lang="zhc" name="文本超出自动等待"
                    syntax="文本超出自动等待 [true(默认)/false]"
                    details="例如：文本超出自动等待 true
                    &#xA;
@@ -4148,7 +4159,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textAutoWait">
       </explanation>
-      <explanation lang="zh_cn" name="文本自动等待"
+      <explanation lang="zhc" name="文本自动等待"
                    syntax="文本自动等待 [类型编号]"
                    details="例如：文字自动等待 0
                    &#xA;
@@ -4187,7 +4198,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textAutoNewline">
       </explanation>
-      <explanation lang="zh_cn" name="文本自动换行"
+      <explanation lang="zhc" name="文本自动换行"
                    syntax="文本自动换行 [true/false]"
                    details="例如：文字自动换行 true
                    &#xA;
@@ -4243,7 +4254,7 @@
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/text#textReadVersion">
       </explanation>
-      <explanation lang="zh_cn" name="文本进度"
+      <explanation lang="zhc" name="文本进度"
                    syntax="文本进度 [类型]"
                    details="例如：文本进度 1
                    &#xA;
@@ -4306,7 +4317,7 @@
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/text#textReadSkip">
       </explanation>
-      <explanation lang="zh_cn" name="文本进度跳过"
+      <explanation lang="zhc" name="文本进度跳过"
                    syntax="文本进度跳过 [true/false]"
                    details="例如：文本进度跳过 true
                    &#xA;
@@ -4354,7 +4365,7 @@
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/text#textReadAuto">
       </explanation>
-      <explanation lang="zh_cn" name="文本进度自动"
+      <explanation lang="zhc" name="文本进度自动"
                    syntax="文本进度自动 [true/false]"
                    details="例如：文本进度自动 true
                    &#xA;
@@ -4393,7 +4404,7 @@
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/text#textReadNormal">
       </explanation>
-      <explanation lang="zh_cn" name="文本进度正常"
+      <explanation lang="zhc" name="文本进度正常"
                    syntax="文本进度正常"
                    details="例如：文字进度正常
                    &#xA;"
@@ -4428,7 +4439,7 @@
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/text#textReadNormalForce">
       </explanation>
-      <explanation lang="zh_cn" name="文本进度强制正常"
+      <explanation lang="zhc" name="文本进度强制正常"
                    syntax="文本进度强制正常 [true/false]"
                    details="例如：文本进度强制正常 true
                    &#xA;
@@ -4464,7 +4475,7 @@
                    &#xA;ex. textSkipMode 1"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textSkipMode">
       </explanation>
-      <explanation lang="zh_cn" name="文本跳过模式"
+      <explanation lang="zhc" name="文本跳过模式"
                   syntax="文本跳过模式 [0/1]"
                   details="0: 全部, 1: 仅已读
                   &#xA;
@@ -4506,7 +4517,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/text#restoreReadOnContinue">
       </explanation>
-      <explanation lang="zh_cn" name="继续时恢复文字进度"
+      <explanation lang="zhc" name="继续时恢复文字进度"
                    syntax="继续时恢复文字进度 [true/false]"
                    details="
                    &#xA;true) (默认)
@@ -4547,7 +4558,7 @@
                    &#xA;use textbox:「backlog_textbox」as settings for the backlog."
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogConfig">
       </explanation>
-      <explanation lang="zh_cn" name="日志设置"
+      <explanation lang="zhc" name="日志设置"
                    syntax="日志设置 [使用文本框] (语音播放按钮文件名) (语音播放按钮光标接触时文件名)"
                    details="例如：日志设置 backlog_textbox sys\sys_log_sound.png sys\sys_log_sound@.png
                    &#xA;使用文本框「backlog_textbox」作为日志的设置。
@@ -4584,7 +4595,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogVoiceOffset">
       </explanation>
-      <explanation lang="zh_cn" name="日志语音位置"
+      <explanation lang="zhc" name="日志语音位置"
                    syntax="日志语音位置 [x] [y]"
                    details="例如：日志语音位置 10 -10
                    &#xA;
@@ -4625,7 +4636,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogVoiceOverwrite">
       </explanation>
-      <explanation lang="zh_cn" name="日志语音覆盖"
+      <explanation lang="zhc" name="日志语音覆盖"
                    syntax="日志语音覆盖 [true(默认)/false]"
                    details="例如：日志语音覆盖 true
                    &#xA;
@@ -4660,7 +4671,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogCurSpeaker">
       </explanation>
-      <explanation lang="zh_cn" name="日志当前名称"
+      <explanation lang="zhc" name="日志当前名称"
                    syntax="日志当前名称 [字符串]"
                    details="例如：日志当前名称 &quot;ラム\n&quot;
                    &#xA;
@@ -4692,7 +4703,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogNewPagePrefix">
       </explanation>
-      <explanation lang="zh_cn" name="日志新页面前缀"
+      <explanation lang="zhc" name="日志新页面前缀"
                    syntax="日志新页面前缀 [字符串]"
                    details="例如：日志新页面前缀 &quot;\n\n&quot;
                    &#xA;
@@ -4728,7 +4739,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlog_scroll">
       </explanation>
-      <explanation lang="zh_cn" name="日志滚动"
+      <explanation lang="zhc" name="日志滚动"
                    syntax="日志滚动 [滚动行数]"
                    details="例如：日志滚动 1
                    &#xA;
@@ -4764,7 +4775,7 @@
                    &#xA;if true, scenario lines will be added to the backlog"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogAddLine">
       </explanation>
-      <explanation lang="zh_cn" name="日志台词注册"
+      <explanation lang="zhc" name="日志台词注册"
                    syntax="日志台词注册 [true/false]"
                    details="例如：日志台词注册 true
                    &#xA;
@@ -4797,7 +4808,7 @@
                    &#xA;recommended to use this command every 2~3 scripts"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogReset">
       </explanation>
-      <explanation lang="zh_cn" name="日志重置"
+      <explanation lang="zhc" name="日志重置"
                    syntax="日志重置"
                    details="例如：日志重置
                    &#xA;
@@ -4831,7 +4842,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogAddLineCont">
       </explanation>
-      <explanation lang="zh_cn" name="日志台词追加"
+      <explanation lang="zhc" name="日志台词追加"
                    syntax="日志台词追加 [字符串]"
                    details="例如：日志台词追加 &quot;继续添加这个。&quot;
                    &#xA;
@@ -4850,7 +4861,7 @@
     <Command name="--[変化関連コマンド]--">
       <explanation lang="jap" name="--[変化関連コマンド]--"></explanation>
       <explanation lang="eng" name="--[change commands]--"></explanation>
-      <explanation lang="zh_cn" name="--[过渡相关命令]--"></explanation>
+      <explanation lang="zhc" name="--[过渡相关命令]--"></explanation>
       <explanation lang="kor" name="--[변화 관련 커맨드]--"></explanation>
     </Command>
     <Command cmd="nameChange">
@@ -4872,7 +4883,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#nameChange">
       </explanation>
-      <explanation lang="zh_cn" name="更改名称"
+      <explanation lang="zhc" name="更改名称"
                    syntax="更改名称 [目标名称] [新名称]"
                    details="例如：更改名称 objA objB
                    &#xA;
@@ -4912,7 +4923,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#parentChild">
       </explanation>
-      <explanation lang="zh_cn" name="设置父子类"
+      <explanation lang="zhc" name="设置父子类"
                    syntax="设置父子类 [父] [子(可多个)] (屏幕区域范围)"
                    details="例如：设置父子类 鸡 鸡1, 鸡2, 鸡3
                    &#xA;
@@ -4954,7 +4965,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#autoOnCamera">
       </explanation>
-      <explanation lang="zh_cn" name="自动绑定视角"
+      <explanation lang="zhc" name="自动绑定视角"
                    syntax="自动绑定视角 [true/false]"
                    details="例如：自动绑定视角 true
                    &#xA;
@@ -5045,7 +5056,7 @@
                    &#xA; register an animation called 'anim1'。can be used in cg, bg, etc. x'2': repeat twice"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animation">
       </explanation>
-      <explanation lang="zh_cn" name="动画注册"
+      <explanation lang="zhc" name="动画注册"
                    syntax="动画注册 [注册名] [循环类型: 0/1/2] (x:循环次数) [显示图片] [显示时间] (显示图片) (显示时间) ..... (过渡类型) (永久) (轻量加载)"
                    details="「循环类型」
                    &#xA; 0: 不循环。
@@ -5061,8 +5072,14 @@
                    &#xA;注意：动画本身不会被永久保存。
                    &#xA;
                    &#xA;「轻量加载」
-                   &#xA;如果指定，将减少该指令的RAM消耗。
-                   &#xA;作为代价，这会消耗一定的FPS。
+                   &#xA;如果指定该选项，将减少该指令的RAM消耗。
+                   &#xA;（在个体使用时，会加载所有素材）
+                   &#xA;（但代价是，在初始使用时需要消耗时间）
+                   &#xA;
+                   &#xA;「轻量加载2」
+                   &#xA;如果指定该选项，将以进一步减少RAM使用的方式运行。
+                   &#xA;（在播放时，会逐张加载素材）
+                   &#xA;（但代价是，在播放时会消耗FPS）
                    &#xA;
                    &#xA;例如：动画注册 anim1 2 x2 scg2.png 500 scg1.png 1500 !cg_test001.png &quot;lvRandom(1000, 4000)&quot;
                    &#xA;参考：如果在显示时间中使用Lightvn的lvRandom，每次播放动画时会重新计算并随机播放。
@@ -5189,7 +5206,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animationEx">
       </explanation>
-      <explanation lang="zh_cn" name="简易动画注册"
+      <explanation lang="zhc" name="简易动画注册"
                    syntax="简易动画注册 [注册名] [循环类型: 0/1/2] (x:循环次数) [文件格式]
                    &#xA;[文件编号最小] [文件编号最大] [执行编号开始] [执行编号结束] [图片间隔] [每张图片显示时间（毫秒）/fps] (过渡类型) (永久) (轻量加载)"
                    details="
@@ -5326,7 +5343,7 @@
                    &#xA; register an animationSheet called 'test_sprite'。can be used in cg, bg, etc. "
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animationSheet">
       </explanation>
-      <explanation lang="zh_cn" name="动画表注册"
+      <explanation lang="zhc" name="动画表注册"
                    syntax="动画表注册 [注册名] [循环类型: 0/1/2] (x:循环次数) [显示图片] [内部图片宽度] [内部图片高度] [x] [y] [进度方向：横/竖] [帧数] [每帧时间] (过渡类型)"
                    details="「循环类型」
                    &#xA; 0: 不循环。
@@ -5388,7 +5405,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animationPause">
       </explanation>
-      <explanation lang="zh_cn" name="动画暂停"
+      <explanation lang="zhc" name="动画暂停"
                    syntax="动画暂停 [目标: 可多个] (暂停帧编号) (屏幕区域范围)"
                    details="例如：动画暂停 kojiken
                    &#xA;
@@ -5432,7 +5449,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animationPlay">
       </explanation>
-      <explanation lang="zh_cn" name="动画播放"
+      <explanation lang="zhc" name="动画播放"
                    syntax="动画播放 [目标: 可多个] (开始播放的帧编号) (屏幕区域范围)"
                    details="例如：动画播放 kojiken
                    &#xA;
@@ -5474,6 +5491,15 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animationState">
       </explanation>
+      <explanation lang="zhc" name="动画状态"
+                   syntax="动画状态 [目标名称（可多选）] [状态]"
+                   details="ex. 动画状态 kojiken walk
+                   &#xA;  
+                   &#xA;将目标对象的动画设置为指定状态。
+                   &#xA;当前仅支持 spine动画 对象。
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#animationState">
+       </explanation>
     </Command>
     <Command cmd="loop">
       <explanation lang="jap" name="ループ"
@@ -5499,7 +5525,7 @@
                    &#xA;ex. loop 1 x6 move2 alice1 +100 +0 500 "
                    reference="https://wikiwiki.jp/lightvn/commands/transition#loop">
       </explanation>
-      <explanation lang="zh_cn" name="动画循环"
+      <explanation lang="zhc" name="动画循环"
                    syntax="动画循环 [循环类型: 0/1/2] (x:循环次数)  [循环命令]"
                    details="「循环类型」
                    &#xA; 0: 不循环。
@@ -5557,7 +5583,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#tweenListAdd">
       </explanation>
-      <explanation lang="zh_cn" name="演出列表追加"
+      <explanation lang="zhc" name="演出列表追加"
                    syntax="演出列表追加 [目标] [延迟时间(ms)] [执行命令]"
                    details="
                    &#xA;例如：演出列表追加 id0 300 移动x2 id0 300 3000
@@ -5620,7 +5646,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#tweenEnd">
       </explanation>
-      <explanation lang="zh_cn" name="变化结束"
+      <explanation lang="zhc" name="变化结束"
                    syntax="变化结束 [目标] (画面区域范围)"
                    details="例如：变化结束 alice1, textbox0, 摄像头
                    &#xA;
@@ -5661,7 +5687,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#finishTweens">
       </explanation>
-      <explanation lang="zh_cn" name="变化完成"
+      <explanation lang="zhc" name="变化完成"
                   syntax="变化完成"
                   details="例如：变化完成
                    &#xA;
@@ -5694,7 +5720,7 @@
                    details="ex. shaderEffect all frag_bw_time.txt 300"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#shaderEffect">
       </explanation>
-      <explanation lang="zh_cn" name="着色器效果"
+      <explanation lang="zhc" name="着色器效果"
                    syntax="着色器效果 [目标名称 (可多个)] [文件名/none] (所需时间) (画面区域范围)"
                    details="例如：着色器效果 全部 frag_bw_time.txt 300
                    &#xA;
@@ -5730,7 +5756,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/transition#shaderEffectAuto">
       </explanation>
-      <explanation lang="zh_cn" name="自动着色器效果"
+      <explanation lang="zhc" name="自动着色器效果"
                    syntax="自动着色器效果 [最小层级] [最大层级] [文件名] (所需时间)"
                    details="例如：自动着色器效果 0 90 frag_sepia_time.txt 300
                    &#xA;
@@ -5776,7 +5802,7 @@
                    &#xA;to guarantee behaviour, the designated texture and original texture need to be of same size"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#image">
       </explanation>
-      <explanation lang="zh_cn" name="图片"
+      <explanation lang="zhc" name="图片"
                    syntax="图片 [目标名称 (可多个)] [文件名 / 注册动画名] (所需时间:毫秒) (alpha文件名) (画面区域范围)"
                    details="例如：图片 albert2 scg1.png
                    &#xA;
@@ -5825,7 +5851,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/transition#screenIn">
       </explanation>
-      <explanation lang="zh_cn" name="屏幕淡入"
+      <explanation lang="zhc" name="屏幕淡入"
                    syntax="屏幕淡入 (所需时间:毫秒) (alpha图像) (轮廓模糊: 0.0以上)"
                    details="例如：屏幕淡入 800 fade_sun.png
                    &#xA;
@@ -5870,7 +5896,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#screenOut">
       </explanation>
-      <explanation lang="zh_cn" name="屏幕淡出"
+      <explanation lang="zhc" name="屏幕淡出"
                    syntax="屏幕淡出 (所需时间:毫秒) (alpha图像) (轮廓模糊: 0.0以上)"
                    details="例如：屏幕淡出 800 fade_sun.png
                    &#xA;
@@ -5921,7 +5947,7 @@
                    &#xA;Note: fadein/out can be applied to all targets. (cg, textbox, ...)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#fadein">
       </explanation>
-      <explanation lang="zh_cn" name="淡入"
+      <explanation lang="zhc" name="淡入"
                    syntax="淡入 [目标名・目标类型名 (可多个)] (所需时间:毫秒) (加速度: a0~a18) (alpha图像) (轮廓模糊: 0.0以上) (画面区域范围)"
                    details="例如：淡入 albert2 1500
                    &#xA;例如：淡入 alice1, albert2 1500
@@ -5983,7 +6009,7 @@
                    &#xA;Note: fadein/out can be applied to all targets. (cg, textbox, ...)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#fadeout">
       </explanation>
-      <explanation lang="zh_cn" name="淡出"
+      <explanation lang="zhc" name="淡出"
                    syntax="淡出 [目标名・目标类型名 (可多个)] (所需时间:毫秒) (加速度: a0~a18) (alpha图像) (轮廓模糊: 0.0以上) (画面区域范围)"
                    details="例如：淡出 albert2 1500
                    &#xA;例如：淡出 alice1, albert2 1500
@@ -6035,7 +6061,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#delayedDestroy">
       </explanation>
-      <explanation lang="zh_cn" name="消失延迟"
+      <explanation lang="zhc" name="消失延迟"
                    syntax="消失延迟 [目标名・目标类型名 (可多个)] [所需时间:毫秒] (画面区域范围)"
                    details="例如：消失延迟 albert2 1500
                    &#xA;
@@ -6072,7 +6098,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#onDestroy">
       </explanation>
-      <explanation lang="zh_cn" name="销毁时"
+      <explanation lang="zhc" name="销毁时"
                    syntax="销毁时 [目标对象名称或类型 (可多个)] [执行命令]"
                    details="ex. 销毁时 albert2 script filename.txt 
                    &#xA;
@@ -6114,7 +6140,7 @@
                    &#xA; (ex. move2 alice +20 -10 300)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#move">
       </explanation>
-      <explanation lang="zh_cn" name="移动"
+      <explanation lang="zhc" name="移动"
                    syntax="移动 [类型/目标名 (可多个)] [绝对x坐标/相对x坐标] [绝对y坐标/相对y坐标] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：移动 albert2 300 30 1500
                    &#xA;例如：移动 摄像头 +100 +30 1500 a3
@@ -6171,7 +6197,7 @@
                    &#xA; (ex. move2 alice +20 -10 300)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#movexyz">
       </explanation>
-      <explanation lang="zh_cn" name="移动xyz"
+      <explanation lang="zhc" name="移动xyz"
                    syntax="移动xyz [类型/目标名 (可多个)] [绝对x坐标/相对x坐标] [绝对y坐标/相对y坐标] [绝对z坐标/相对z坐标] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：移动xyz albert2 300 30 80 1500
                    &#xA;
@@ -6226,7 +6252,7 @@
                    &#xA; (ex. move2 alice +20 -10 300)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#movexyr">
       </explanation>
-      <explanation lang="zh_cn" name="移动xyr"
+      <explanation lang="zhc" name="移动xyr"
                    syntax="移动xyr [类型/目标名 (可多个)] [绝对x坐标/相对x坐标] [绝对y坐标/相对y坐标] [绝对r坐标/相对r坐标] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：移动xyl albert2 300 30 80 1500
                    &#xA;
@@ -6281,7 +6307,7 @@
                    &#xA; (ex. move2 alice +20 -10 300)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#movex">
       </explanation>
-      <explanation lang="zh_cn" name="移动x"
+      <explanation lang="zhc" name="移动x"
                    syntax="移动x [类型/目标名 (可多个)] [绝对x坐标/相对x坐标] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：移动x albert2 300 30 80 1500
                    &#xA;
@@ -6336,7 +6362,7 @@
                    &#xA; (ex. move2 alice +20 -10 300)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#movey">
       </explanation>
-      <explanation lang="zh_cn" name="移动y"
+      <explanation lang="zhc" name="移动y"
                    syntax="移动y [类型/目标名 (可多个)] [绝对y坐标/相对y坐标] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：移动y albert2 300 30 80 1500
                    &#xA;
@@ -6396,7 +6422,7 @@
                    &#xA; (ex. move2 alice +20 -10 300)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#movez">
       </explanation>
-      <explanation lang="zh_cn" name="移动z"
+      <explanation lang="zhc" name="移动z"
                    syntax="移动z [类型/目标名 (可多个)] [绝对z坐标/相对z坐标] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：移动z albert2 300 30 80 1500
                    &#xA;
@@ -6466,7 +6492,7 @@
                    &#xA; (ex. move2 alice +20 -10 300)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#mover">
       </explanation>
-      <explanation lang="zh_cn" name="移动r"
+      <explanation lang="zhc" name="移动r"
                    syntax="移动r [类型/目标名 (可多个)] [最终r坐标/相对r坐标] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：移动r albert2 300 30 80 1500
                    &#xA;
@@ -6527,7 +6553,7 @@
                    &#xA;Note: higher layers are shown in front"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#layer">
       </explanation>
-      <explanation lang="zh_cn" name="图层"
+      <explanation lang="zhc" name="图层"
                    syntax="图层 [目标名 (可多个)] [r] (画面区域范围)"
                    details="例如：层 albert2 80
                    &#xA;
@@ -6587,7 +6613,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#localmovex">
       </explanation>
-      <explanation lang="zh_cn" name="方向移动x"
+      <explanation lang="zhc" name="方向移动x"
                    syntax="1. 方向移动x [类型/目标名 (可多个)] [x变化] (所需时间:毫秒) (画面区域范围)
                    &#xA;2. 方向移动x [类型/目标名 (可多个)] [每秒速度:ups]"
                    details="例如：方向移动x albert2 300 800
@@ -6653,7 +6679,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#localmovey">
       </explanation>
-      <explanation lang="zh_cn" name="方向移动y"
+      <explanation lang="zhc" name="方向移动y"
                    syntax="1. 方向移动y [类型/目标名 (可多个)] [y变化] (所需时间:毫秒) (画面区域范围)
                    &#xA;2. 方向移动y [类型/目标名 (可多个)] [每秒速度:ups]"
                    details="例如：方向移动y albert2 300 800
@@ -6719,7 +6745,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#localmovez">
       </explanation>
-      <explanation lang="zh_cn" name="方向移动z"
+      <explanation lang="zhc" name="方向移动z"
                    syntax="1. 方向移动z [类型/目标名 (可多个)] [z变化] (所需时间:毫秒) (画面区域范围)
                    &#xA;2. 方向移动z [类型/目标名 (可多个)] [每秒速度:ups]"
                    details="例如：方向移动z albert2 300 800
@@ -6778,7 +6804,7 @@
                    &#xA; (ex. move2 alice +20 -10 300)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#rotate">
       </explanation>
-      <explanation lang="zh_cn" name="旋转"
+      <explanation lang="zhc" name="旋转"
                    syntax="旋转 [目标名 (可多个)] [角度] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：旋转 albert2 180 1500
                    &#xA;
@@ -6833,7 +6859,7 @@
                    &#xA; (ex. move2 alice +20 -10 300)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#rotatex">
       </explanation>
-      <explanation lang="zh_cn" name="旋转x"
+      <explanation lang="zhc" name="旋转x"
                    syntax="旋转x [目标名 (可多个)] [角度] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：旋转x albert2 180 1500
                    &#xA;
@@ -6888,7 +6914,7 @@
                    &#xA; (ex. move2 alice +20 -10 300)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#rotatey">
       </explanation>
-      <explanation lang="zh_cn" name="旋转y"
+      <explanation lang="zhc" name="旋转y"
                    syntax="旋转y [目标名 (可多个)] [角度] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：旋转y albert2 180 1500
                    &#xA;
@@ -6942,7 +6968,7 @@
                    &#xA; (ex. move2 alice +20 -10 300)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#rotatez">
       </explanation>
-      <explanation lang="zh_cn" name="旋转z"
+      <explanation lang="zhc" name="旋转z"
                    syntax="旋转z [目标名 (可多个)] [角度] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：旋转z albert2 180 1500
                    &#xA;
@@ -7000,7 +7026,7 @@
                    &#xA; (ex. move2 alice +20 -10 300)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#zoom">
       </explanation>
-      <explanation lang="zh_cn" name="缩放"
+      <explanation lang="zhc" name="缩放"
                    syntax="1. 缩放 [目标名 (可多个)] [比率%] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)
                    &#xA;2. 缩放 [目标名] [x比率%] [y比率%] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)
                    &#xA;3. 缩放 [目标名] [x比率%] [y比率%] [z比率%] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
@@ -7058,7 +7084,7 @@
                    &#xA; (ex. move2 alice +20 -10 300)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#zoomx">
       </explanation>
-      <explanation lang="zh_cn" name="缩放x"
+      <explanation lang="zhc" name="缩放x"
                    syntax="1. 缩放x [目标名 (可多个)] [比率%] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：缩放x albert2 50% 1500
                    &#xA;
@@ -7112,7 +7138,7 @@
                    &#xA; (ex. move2 alice +20 -10 300)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#zoomy">
       </explanation>
-      <explanation lang="zh_cn" name="缩放y"
+      <explanation lang="zhc" name="缩放y"
                    syntax="1. 缩放y [目标名 (可多个)] [比率%] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：缩放y albert2 50% 1500
                    &#xA;
@@ -7166,7 +7192,7 @@
                    &#xA; (ex. move2 alice +20 -10 300)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#zoomz">
       </explanation>
-      <explanation lang="zh_cn" name="缩放z"
+      <explanation lang="zhc" name="缩放z"
                    syntax="1. 缩放z [目标名 (可多个)] [比率%] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：缩放z albert2 50% 1500
                    &#xA;
@@ -7214,7 +7240,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#speedx">
       </explanation>
-      <explanation lang="zh_cn" name="速度x"
+      <explanation lang="zhc" name="速度x"
                    syntax="速度x [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：速度 albert 30 300
                    &#xA;
@@ -7251,7 +7277,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#speedy">
       </explanation>
-      <explanation lang="zh_cn" name="速度y"
+      <explanation lang="zhc" name="速度y"
                    syntax="速度y [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：速度y albert 30 300
                    &#xA;
@@ -7288,7 +7314,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#speedz">
       </explanation>
-      <explanation lang="zh_cn" name="速度z"
+      <explanation lang="zhc" name="速度z"
                    syntax="速度z [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：速度z albert 30 300
                    &#xA;
@@ -7331,7 +7357,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#accelerationx">
       </explanation>
-      <explanation lang="zh_cn" name="加速度x"
+      <explanation lang="zhc" name="加速度x"
                    syntax="加速度x [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (X碰撞时重置) (Y碰撞时重置) (画面区域范围)"
                    details="例如：加速度x albert 30 300
                    &#xA;
@@ -7386,7 +7412,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#accelerationy">
       </explanation>
-      <explanation lang="zh_cn" name="加速度y"
+      <explanation lang="zhc" name="加速度y"
                    syntax="加速度y [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (X碰撞时重置) (Y碰撞时重置) (画面区域范围)"
                    details="例如：加速度y albert 30 300
                    &#xA;
@@ -7435,7 +7461,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#accelerationz">
       </explanation>
-      <explanation lang="zh_cn" name="加速度z"
+      <explanation lang="zhc" name="加速度z"
                    syntax="加速度z [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：加速度z albert 30 300
                    &#xA;
@@ -7472,7 +7498,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#origin">
       </explanation>
-      <explanation lang="zh_cn" name="焦点"
+      <explanation lang="zhc" name="焦点"
                    syntax="焦点 [目标名 (可多个)] [x: 0.0~1.0] [y: 0.0~1.0] (z: 0.0~1.0)"
                    details="例如：焦点 albert 0.0 1.0
                    &#xA;
@@ -7513,6 +7539,17 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#createOrigin">
       </explanation>
+      <explanation lang="zhc" name="创建原点"
+             syntax="1. 创建原点 [x: 0.0~1.0] [y: 0.0~1.0] [z: 0.0~1.0]
+             &#xA;2. 创建原点 初始值"
+             details="ex. 创建原点 0.5 0.5 0.5
+             &#xA;
+             &#xA;设置新创建对象的坐标原点。
+             &#xA;
+             &#xA;适用范围：当前脚本内
+             &#xA;"
+             reference="https://wikiwiki.jp/lightvn/commands/transition#createOrigin">
+      </explanation>
       <explanation lang="kor" name="생성시기준점"
                    syntax="1. 생성시기준점 [x: 0.0~1.0] [y: 0.0~1.0] [z: 0.0~1.0]
                    &#xA;2. 생성시기준점 초기값"
@@ -7550,7 +7587,7 @@
                    &#xA; (ex. move2 alice +20 -10 300)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#alpha">
       </explanation>
-      <explanation lang="zh_cn" name="透明度"
+      <explanation lang="zhc" name="透明度"
                    syntax="透明度 [目标名 (可多个)] [透明度:0-255] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：透明度 albert2 125 1500
                    &#xA;
@@ -7614,7 +7651,7 @@
                    &#xA; (ex. move2 alice +20 -10 300)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#rgb">
       </explanation>
-      <explanation lang="zh_cn" name="色调"
+      <explanation lang="zhc" name="色调"
                    syntax="1. 色调 [目标名 (可多个)] [r:0-255] [g:0-255] [b:0-255] (所需时间:毫秒) (加速度: a0~a18)  (画面区域范围)
                    &#xA;2. 色调 [目标名 (可多个)] [HEX色] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：色调 albert2 25 25 25 1500
@@ -7688,7 +7725,7 @@
                    &#xA; (ex. move2 alice +20 -10 300)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#hsl">
       </explanation>
-      <explanation lang="zh_cn" name="hsl色调"
+      <explanation lang="zhc" name="hsl色调"
                    syntax="hsl色调 [目标名 (可多个)] [h:0-360] [s:0-100] [l:0-100] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
                    details="例如：hsl色调 albert2 180 100 50  (1500毫秒)
                    &#xA;
@@ -7749,7 +7786,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#inverse">
       </explanation>
-      <explanation lang="zh_cn" name="图像反转"
+      <explanation lang="zhc" name="图像反转"
                    syntax="图像反转 [目标名 (可多个)] [上下/左右] (画面区域范围)"
                    details="例如：图像反转 alice1 左右
                    &#xA;
@@ -7783,9 +7820,9 @@
                    &#xA;ブレンド式：Add/Subtract/ReverseSubtract    
                    &#xA;  
                    &#xA;ex. ブレンドモード alice2 BlendAdd 
-                   &#xA;ex. ブレンドモード alice2 OneMinusDstColor Zero
+                   &#xA;ex. ブレンドモード alice2 OneMinusDstColor Zero 
                    &#xA;
-                   &#xA;注: BlendScreenは、Clip Studioなどのソフトのスクリーン効果とは多少違います。
+                   &#xA;注: BlendScreenは、Clip Studioなどのソフトのスクリーン効果とは多少違います。 
                    &#xA;  
                    &#xA;注: 演出コマンドの対象名に正規表現による複数指定が可能です。
                    &#xA;注: 画面領域範囲：全画面領域、同階層画面領域。何もつけない場合、現画面領域の個体のみ拾う。"
@@ -7805,7 +7842,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#blendMode">
       </explanation>
-      <explanation lang="zh_cn" name="混合模式"
+      <explanation lang="zhc" name="混合模式"
                    syntax="1. 混合模式 [目标名 (可多个)] [模式: BlendAlpha/BlendAdd/BlendMultiply/BlendScreen/BlendNone] (画面区域范围)
                    &#xA;2. 混合模式 [目标名 (可多个)] [源色] [目标色] (混合公式) (源透明度) (目标透明度) (混合公式) (画面区域范围)"
                    details="颜色/透明度设置：Zero/One/SrcColor/OneMinusSrcColor/DstColor/OneMinusDstColor/SrcAlpha/OneMinusSrcAlpha/DstAlpha/OneMinusDstAlpha
@@ -7816,7 +7853,9 @@
                    &#xA;例如：混合模式 alice2 OneMinusDstColor Zero
                    &#xA;
                    &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。"
+                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：BlendScreen与Clip Studio中的画面效果略有不同。
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#blendMode">
       </explanation>
       <explanation lang="kor" name="블렌딩모드"
@@ -7857,7 +7896,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#camera_mode">
       </explanation>
-      <explanation lang="zh_cn" name="视角模式"
+      <explanation lang="zhc" name="视角模式"
                    syntax="视角模式 [类型]"
                    details="例如：视角模式 3
                    &#xA;
@@ -7897,7 +7936,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraReset">
       </explanation>
-      <explanation lang="zh_cn" name="视角重置"
+      <explanation lang="zhc" name="视角重置"
                    syntax="视角重置"
                    details="例如：视角重置
                    &#xA;
@@ -7949,7 +7988,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraFollow">
       </explanation>
-      <explanation lang="zh_cn" name="视角跟随"
+      <explanation lang="zhc" name="视角跟随"
                    syntax="1. 视角跟随 [目标名] (x) (y) (r) (相对x) (相对y) (相对r) (大约完成时间:毫秒) (从目标位置)
                    &#xA;2. 视角跟随 false"
                    details="
@@ -8022,7 +8061,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraFollow3D">
       </explanation>
-      <explanation lang="zh_cn" name="视角跟随3D"
+      <explanation lang="zhc" name="视角跟随3D"
                    syntax="1. 视角跟随3D [目标名] [距离] [角度x] [角度y] [角度z] [平移位置x] [平移位置y] (大约完成时间:毫秒) (从目标位置)
                    &#xA;2. 视角跟随3D false"
                    details="
@@ -8069,7 +8108,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraRangeX">
       </explanation>
-      <explanation lang="zh_cn" name="视角范围x"
+      <explanation lang="zhc" name="视角范围x"
                    syntax="视角范围x [最小] [最大]"
                    details="
                    &#xA;例如：视角范围x - 500 500
@@ -8103,7 +8142,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraRangeY">
       </explanation>
-      <explanation lang="zh_cn" name="视角范围y"
+      <explanation lang="zhc" name="视角范围y"
                    syntax="视角范围y [最小] [最大]"
                    details="
                    &#xA;例如：视角范围y - 500 500
@@ -8137,7 +8176,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraRangeR">
       </explanation>
-      <explanation lang="zh_cn" name="视角范围r"
+      <explanation lang="zhc" name="视角范围r"
                    syntax="视角范围r [最小] [最大]"
                    details="
                    &#xA;例如：视角范围r - 500 500
@@ -8172,7 +8211,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraRangeReset">
       </explanation>
-      <explanation lang="zh_cn" name="视角范围重置"
+      <explanation lang="zhc" name="视角范围重置"
                    syntax="视角范围重置"
                    details="
                    &#xA;例如：视角范围重置
@@ -8215,7 +8254,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#objectSortByCameraZ">
       </explanation>
-      <explanation lang="zh_cn" name="基于视角的对象绘制"
+      <explanation lang="zhc" name="基于视角的对象绘制"
                    syntax="基于视角的对象绘制 [true/false(默认)]"
                    details="例如：基于视角的对象绘制 true
                    &#xA;
@@ -8263,7 +8302,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#mask">
       </explanation>
-      <explanation lang="zh_cn" name="遮罩"
+      <explanation lang="zhc" name="遮罩"
                    syntax="遮罩 [名称] [图像名/注册动画名] [x] [y] [r] (显示图像) (视角选项)"
                    details="例如：遮罩 mask mask.png 0 0 80
                    &#xA;
@@ -8322,7 +8361,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#applyMask">
       </explanation>
-      <explanation lang="zh_cn" name="应用遮罩"
+      <explanation lang="zhc" name="应用遮罩"
                    syntax="应用遮罩(2) [目标名 (可多个)] [应用的遮罩名] (画面区域范围)"
                    details="例如：应用遮罩 alice1, ace1 mask
                    &#xA;例如：应用遮罩2 alice1, ace1 mask
@@ -8385,7 +8424,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#autoApplyMask">
       </explanation>
-      <explanation lang="zh_cn" name="自动应用遮罩"
+      <explanation lang="zhc" name="自动应用遮罩"
                    syntax="1. 自动应用遮罩(2) true [应用的遮罩名]
                    &#xA;2. 自动应用遮罩 false"
                    details="例如：自动应用遮罩 true mask
@@ -8440,7 +8479,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/transition#imageQuality">
       </explanation>
-      <explanation lang="zh_cn" name="图像质量"
+      <explanation lang="zhc" name="图像质量"
                    syntax="图像质量 [目标名] [0/1]"
                    details="指定目标的图像质量。
                    &#xA;
@@ -8486,7 +8525,7 @@
                    &#xA;ex. imageDefaultQuality 0"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#imageDefaultQuality">
       </explanation>
-      <explanation lang="zh_cn" name="全局图像质量"
+      <explanation lang="zhc" name="全局图像质量"
                    syntax="全局图像质量 [0/1]"
                    details="设置当前及未来所有图像的质量。
                    &#xA;
@@ -8514,7 +8553,7 @@
     <Command name="--[粒子関連コマンド]--">
       <explanation lang="jap" name="--[粒子関連コマンド]--"></explanation>
       <explanation lang="eng" name="--[script commands]--"></explanation>
-      <explanation lang="zh_cn" name="--[粒子相关命令]--"></explanation>
+      <explanation lang="zhc" name="--[粒子相关命令]--"></explanation>
       <explanation lang="kor" name="--[입자 관련 커맨드]--"></explanation>
     </Command>
     <Command cmd="particleMaker">
@@ -8542,7 +8581,7 @@
                    &#xA;creates particle maker"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#particleMaker">
       </explanation>
-      <explanation lang="zh_cn" name="粒子生成器"
+      <explanation lang="zhc" name="粒子生成器"
                    syntax="粒子生成器 [名称] [图像文件名或已注册动画名] [x] [y] [r]
                    &#xA;[粒子最小寿命(ms)] [粒子最大寿命(ms)] [最大粒子数]"
                    details="例如：粒子生成器 maker petal.png 0 0 30 0 3000 30
@@ -8593,7 +8632,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#spawnDelayRange">
       </explanation>
-      <explanation lang="zh_cn" name="生成间隔设置"
+      <explanation lang="zhc" name="生成间隔设置"
                    syntax="生成间隔设置 [目标名] [最小(ms)] [最大(ms)] (屏幕范围)"
                    details="例如：生成间隔设置 maker 0 300
                    &#xA;
@@ -8632,7 +8671,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#positionRange">
       </explanation>
-      <explanation lang="zh_cn" name="粒子位置设置"
+      <explanation lang="zhc" name="粒子位置设置"
                    syntax="粒子位置设置 [目标名] [最小x] [最小 y] [最小r] [最大x] [最大y] [最大r] (屏幕范围)"
                    details="例如：粒子位置设置 maker -300 0 0 300 0 0
                    &#xA;
@@ -8672,7 +8711,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#rotationRange">
       </explanation>
-      <explanation lang="zh_cn" name="粒子旋转设置"
+      <explanation lang="zhc" name="粒子旋转设置"
                    syntax="粒子旋转设置 [目标名] [最小旋转] [最大旋转] (屏幕范围)"
                    details="例如：粒子旋转设置 maker 30 90
                    &#xA;
@@ -8725,7 +8764,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#zoomRange">
       </explanation>
-      <explanation lang="zh_cn" name="粒子缩放设置"
+      <explanation lang="zhc" name="粒子缩放设置"
                    syntax="1. 粒子缩放设置 [目标名] [最小缩放] [最大缩放] (屏幕范围)
                    &#xA;2. 粒子缩放设置 [目标名] [最小x缩放] [最小y缩放] [最大x缩放] [最大y缩放] (屏幕范围)
                    &#xA;3. 粒子缩放设置 [目标名] [最小x缩放] [最小y缩放] [最小z缩放] [最大x缩放] [最大y缩放] [最大z缩放] (屏幕范围)"
@@ -8791,7 +8830,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#velocityRange">
       </explanation>
-      <explanation lang="zh_cn" name="粒子速度设置"
+      <explanation lang="zhc" name="粒子速度设置"
                    syntax="粒子速度设置 [目标名] [x最小速度] [y最小速度] [r最小速度] [x最大速度] [y最大速度] [r最大速度] (屏幕范围)"
                    details="例如：粒子速度设置 maker 0 10 0 0 30 0
                    &#xA;
@@ -8834,7 +8873,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#acceleration">
       </explanation>
-      <explanation lang="zh_cn" name="粒子加速度设置"
+      <explanation lang="zhc" name="粒子加速度设置"
                    syntax="粒子加速度设置 [目标名] [x加速度] [y加速度] [r加速度] (屏幕范围)"
                    details="例如：粒子加速度设置 maker 0 10 0
                    &#xA;
@@ -8874,7 +8913,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#RGBARange">
       </explanation>
-      <explanation lang="zh_cn" name="粒子颜色设置"
+      <explanation lang="zhc" name="粒子颜色设置"
                    syntax="粒子颜色设置 [目标名] [最小r] [最小g] [最小b] [最小a] [最大r] [最大g] [最大b] [最大a] (屏幕范围)"
                    details="例如：粒子颜色设置 maker 255 255 255 0 255 255 255 10
                    &#xA;
@@ -8915,7 +8954,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#endRotationRange">
       </explanation>
-      <explanation lang="zh_cn" name="粒子结束旋转设置"
+      <explanation lang="zhc" name="粒子结束旋转设置"
                    syntax="粒子结束旋转设置 [目标名] [最小旋转] [最大旋转] (屏幕范围)"
                    details="例如：粒子结束旋转设置 maker 30 90
                    &#xA;
@@ -8970,7 +9009,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#endZoomRange">
       </explanation>
-      <explanation lang="zh_cn" name="粒子结束缩放设置"
+      <explanation lang="zhc" name="粒子结束缩放设置"
                    syntax="1. 粒子结束缩放设置 [目标名] [最小缩放] [最大缩放] (屏幕范围)
                    &#xA;2. 粒子结束缩放设置 [目标名] [最小x缩放] [最小y缩放] [最大x缩放] [最大y缩放] (屏幕范围)
                    &#xA;3. 粒子结束缩放设置 [目标名] [最小x缩放] [最小y缩放] [最小z缩放] [最大x缩放] [最大y缩放] [最大z缩放] (屏幕范围)"
@@ -9035,7 +9074,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#endRGBARange">
       </explanation>
-      <explanation lang="zh_cn" name="粒子结束颜色设置"
+      <explanation lang="zhc" name="粒子结束颜色设置"
                   syntax="粒子结束颜色设置 [目标名] [最小r] [最小g] [最小b] [最小a] [最大r] [最大g] [最大b] [最大a] (屏幕范围)"
                   details="例如：粒子结束颜色设置 maker 255 255 255 0 255 255 255 10
                   &#xA;
@@ -9060,7 +9099,7 @@
     <Command name="--[物理関連コマンド]--">
       <explanation lang="jap" name="--[物理関連コマンド]--"></explanation>
       <explanation lang="eng" name="--[physics commands]--"></explanation>
-      <explanation lang="zh_cn" name="--[物理相关命令]--"></explanation>
+      <explanation lang="zhc" name="--[物理相关命令]--"></explanation>
       <explanation lang="kor" name="--[물리 관련 커맨드]--"></explanation>
     </Command>
     <Command cmd="runPhysics">
@@ -9078,7 +9117,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#runPhysics">
       </explanation>
-      <explanation lang="zh_cn" name="物理处理"
+      <explanation lang="zhc" name="物理处理"
                    syntax="物理处理 [true: 默认/false]"
                    details="例如：物理处理 true
                    &#xA;
@@ -9112,7 +9151,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#entryAllowance">
       </explanation>
-      <explanation lang="zh_cn" name="允许单位"
+      <explanation lang="zhc" name="允许单位"
                    syntax="允许单位 [数值]"
                    details="例如：允许单位 1
                    &#xA;
@@ -9156,7 +9195,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#colliderRect">
       </explanation>
-      <explanation lang="zh_cn" name="碰撞箱"
+      <explanation lang="zhc" name="碰撞箱"
                    syntax="碰撞箱 [名称] (组名) [x] [y] [宽度] [高度] (禁止进入)"
                    details="例如：碰撞箱 rect 200 200 300 300
                    &#xA;
@@ -9209,7 +9248,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#addColliderRect">
       </explanation>
-      <explanation lang="zh_cn" name="添加碰撞箱"
+      <explanation lang="zhc" name="添加碰撞箱"
                    syntax="1. 添加碰撞箱 [目标名] [x] [y] [宽度] [高度] (禁止进入)
                    &#xA;2. 添加碰撞箱 [目标名] [组名] [x] [y] [宽度] [高度] (禁止进入)
                    &#xA;3. 添加碰撞箱 [目标名] [名称] [组名] [x] [y] [宽度] [高度] (禁止进入)
@@ -9268,7 +9307,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#addColliderSphere">
       </explanation>
-      <explanation lang="zh_cn" name="添加碰撞球"
+      <explanation lang="zhc" name="添加碰撞球"
                    syntax="1. 添加碰撞球 [目标名] [x] [y] [r] [半径]
                    &#xA;2. 添加碰撞球 [目标名] [组名] [x] [y] [r] [半径]
                    &#xA;3. 添加碰撞球 [目标名] [名称] [组名] [x] [y] [r] [半径]
@@ -9315,7 +9354,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#colliderTile">
       </explanation>
-      <explanation lang="zh_cn" name="碰撞瓦片"
+      <explanation lang="zhc" name="碰撞瓦片"
                    syntax="碰撞瓦片 [名称] (组名) [瓦片x] [瓦片y]"
                    details="例如：碰撞瓦片 rect 20 11
                    &#xA;
@@ -9353,7 +9392,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#addColliderTile">
       </explanation>
-      <explanation lang="zh_cn" name="添加碰撞瓦片"
+      <explanation lang="zhc" name="添加碰撞瓦片"
                    syntax="添加碰撞瓦片 [目标名] (组名)"
                    details="例如：添加碰撞瓦片 id0 20 11
                    &#xA;
@@ -9391,7 +9430,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#addColliderTileLayer">
       </explanation>
-      <explanation lang="zh_cn" name="图层添加碰撞瓦片"
+      <explanation lang="zhc" name="图层添加碰撞瓦片"
                   syntax="图层添加碰撞瓦片 [图层名] [组名]"
                   details="例如：图层添加碰撞瓦片 layer_grass 草
                   &#xA;
@@ -9442,7 +9481,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#onCollisionStart">
       </explanation>
-      <explanation lang="zh_cn" name="碰撞开始时"
+      <explanation lang="zhc" name="碰撞开始时"
                    syntax="碰撞开始时 [组名A] [组名B] [执行命令]"
                    details="例如：碰撞开始时 id1_c id0_c 脚本 title.txt collision_start
                    &#xA;
@@ -9516,7 +9555,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#onCollisionCont">
       </explanation>
-      <explanation lang="zh_cn" name="碰撞持续时"
+      <explanation lang="zhc" name="碰撞持续时"
                    syntax="碰撞持续时 [组名A] [组名B] [执行命令]"
                    details="例如：碰撞持续时 id1_c id0_c 脚本 title.txt collision_continue
                    &#xA;
@@ -9582,7 +9621,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#onCollisionExit">
       </explanation>
-      <explanation lang="zh_cn" name="碰撞结束时"
+      <explanation lang="zhc" name="碰撞结束时"
                    syntax="碰撞结束时 [组名A] [组名B] [执行命令]"
                    details="例如：碰撞结束时 id1_c id0_c 脚本 title.txt collision_exit
                    &#xA;
@@ -9648,7 +9687,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#onFaceCollision">
       </explanation>
-      <explanation lang="zh_cn" name="面向碰撞持续时"
+      <explanation lang="zhc" name="面向碰撞持续时"
                    syntax="面向碰撞持续时 [组名] [查看组名] (左) (右) (上) (下) [执行命令]"
                    details="例如：面向碰撞持续时 npc player 左 &quot;&quot;
                    &#xA;
@@ -9705,7 +9744,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#clearChildColliders">
       </explanation>
-      <explanation lang="zh_cn" name="清除子碰撞区域"
+      <explanation lang="zhc" name="清除子碰撞区域"
                    syntax="清除子碰撞区域 [目标名]"
                    details="例如：清除子碰撞区域 npc
                    &#xA;
@@ -9738,7 +9777,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#clearCollisionChecks">
       </explanation>
-      <explanation lang="zh_cn" name="初始化碰撞检测"
+      <explanation lang="zhc" name="初始化碰撞检测"
                    syntax="初始化碰撞检测"
                    details="例如：初始化碰撞检测
                    &#xA;
@@ -9771,7 +9810,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#removeCollisionChecks">
       </explanation>
-      <explanation lang="zh_cn" name="移除碰撞检测"
+      <explanation lang="zhc" name="移除碰撞检测"
                    syntax="移除碰撞检测 [组名A] [组名B]"
                    details="例如：移除碰撞检测 door player
                    &#xA;
@@ -9791,7 +9830,7 @@
     <Command name="--[スクリプト関連コマンド]--">
       <explanation lang="jap" name="--[スクリプト関連コマンド]--"></explanation>
       <explanation lang="eng" name="--[script commands]--"></explanation>
-      <explanation lang="zh_cn" name="--[脚本相关命令]--"></explanation>
+      <explanation lang="zhc" name="--[脚本相关命令]--"></explanation>
       <explanation lang="kor" name="--[스크립트 관련 커맨드]--"></explanation>
     </Command>
     <Command cmd="continueRead">
@@ -9819,7 +9858,7 @@
                    &#xA;if [wait ]"
                    reference="https://wikiwiki.jp/lightvn/commands/script#continueRead">
       </explanation>
-      <explanation lang="zh_cn" name="继续"
+      <explanation lang="zhc" name="继续"
                    syntax="继续 (Light.vn命令)"
                    details="例如：继续
                    &#xA;
@@ -9964,7 +10003,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#wait">
       </explanation>
-      <explanation lang="zh_cn" name="等待"
+      <explanation lang="zhc" name="等待"
                    syntax="等待 (选项)"
                    details="[选项]
                    &#xA;- 等待
@@ -10125,7 +10164,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/script#jump">
       </explanation>
-      <explanation lang="zh_cn" name="跳转"
+      <explanation lang="zhc" name="跳转"
                    syntax="1. 跳转 [目标脚本] (目标脚本书签)
                    &#xA;2. 跳转 [当前脚本书签]
                    &#xA;
@@ -10215,7 +10254,7 @@
                    &#xA;Note: finaljump, unlike jump, will also remove all pushed scripts on current script stack and make the dest script the only script"
                    reference="https://wikiwiki.jp/lightvn/commands/script#finaljump">
       </explanation>
-      <explanation lang="zh_cn" name="立即跳转"
+      <explanation lang="zhc" name="立即跳转"
                    syntax="立即跳转 [目标脚本/当前脚本书签] (目标脚本书签)"
                    details="例如：立即跳转 script.txt bookmark1
                    &#xA;
@@ -10271,7 +10310,7 @@
                    &#xA;script at idx jumps to designated script/bookmark and restarts reading."
                    reference="https://wikiwiki.jp/lightvn/commands/script#srcScriptJump">
       </explanation>
-      <explanation lang="zh_cn" name="编号脚本跳转"
+      <explanation lang="zhc" name="编号脚本跳转"
                    syntax="编号脚本跳转 [堆栈编号] [目标脚本/当前脚本书签] (目标脚本书签)"
                    details="例如：编号脚本跳转 0 script.txt bookmark1
                    &#xA;例如：编号脚本跳转 0 bookmark1
@@ -10330,7 +10369,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/script#script">
       </explanation>
-      <explanation lang="zh_cn" name="脚本"
+      <explanation lang="zhc" name="脚本"
                    syntax="脚本 [调用脚本 / 当前] (开始读取的书签)"
                    details="例如：脚本 textbox.txt (bookmark1)
                    &#xA;例如：脚本 lua/lua_script.lua
@@ -10401,7 +10440,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#parallel_script">
       </explanation>
-      <explanation lang="zh_cn" name="并行脚本"
+      <explanation lang="zhc" name="并行脚本"
                    syntax="并行脚本 [调用脚本] (开始读取的书签)"
                    details="例如：并行脚本 textbox.txt (bookmark1)
                    &#xA;
@@ -10452,7 +10491,7 @@
                    &#xA;pops current script off script stack and continues read of script below."
                    reference="https://wikiwiki.jp/lightvn/commands/script#script_fin">
       </explanation>
-      <explanation lang="zh_cn" name="脚本结束"
+      <explanation lang="zhc" name="脚本结束"
                    syntax="脚本结束"
                    details="例如：脚本结束
                    &#xA;
@@ -10494,7 +10533,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#pauseLowerScripts">
       </explanation>
-      <explanation lang="zh_cn" name="暂停下级脚本"
+      <explanation lang="zhc" name="暂停下级脚本"
                    syntax="暂停下级脚本 [true/false]"
                    details="例如：暂停下级脚本 true
                    &#xA;
@@ -10522,47 +10561,66 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#pauseLowerScripts">
       </explanation>
-    </Command>
     <Command cmd="unique_script_lock">
       <explanation lang="jap" name="スクリプト唯一化"
-                   syntax="スクリプト唯一化 [true/false]"
-                   details="ex. スクリプト唯一化 true
-                   &#xA;  
-                   &#xA;true)
-                   &#xA;- 現画面領域の開始スクリプトからのみ実行可能。
-                   &#xA;- 現在スクリプト以外の、現画面領域でのスクリプトを全部破棄する。
-                   &#xA;- 実行スクリプト以外での、スクリプト・ジャンプ、実行を禁止する。
-                   &#xA;- 砂時計・物理処理などの外部処理によるコマンドが実行しなくなる。
-                   &#xA;
-                   &#xA;- 要するに、現スクリプトのみ読み込まれるようにする。
-                   &#xA;  (外部処理による変化の心配をしなくてもいい)
-                   &#xA;
-                   &#xA;false)
-                   &#xA;- スクリプト唯一化 true を実行したスクリプトからのみ実行可能。
-                   &#xA;- 上記の制限が全解除される。
-                   &#xA;  
-                   &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/script#unique_script_lock">
+                  syntax="スクリプト唯一化 [true/false]"
+                  details="ex. スクリプト唯一化 true
+                  &#xA;  
+                  &#xA;true)
+                  &#xA;- 現画面領域の開始スクリプトからのみ実行可能。
+                  &#xA;- 現在スクリプト以外の、現画面領域でのスクリプトを全部破棄する。
+                  &#xA;- 実行スクリプト以外での、スクリプト・ジャンプ、実行を禁止する。
+                  &#xA;- 砂時計・物理処理などの外部処理によるコマンドが実行しなくなる。
+                  &#xA;
+                  &#xA;- 要するに、現スクリプトのみ読み込まれるようにする。
+                  &#xA;  (外部処理による変化の心配をしなくてもいい)
+                  &#xA;
+                  &#xA;false)
+                  &#xA;- スクリプト唯一化 true を実行したスクリプトからのみ実行可能。
+                  &#xA;- 上記の制限が全解除される。
+                  &#xA;  
+                  &#xA;"
+                  reference="https://wikiwiki.jp/lightvn/commands/script#unique_script_lock">
       </explanation>
       <explanation lang="eng" name="unique_script_lock"
-                   syntax="unique_script_lock [true/false]"
-                   details="ex. unique_script_lock true
-                   &#xA;  
-                   &#xA;true)
-                   &#xA;- can only be executed on the current screenspace base script
-                   &#xA;- scraps other scripts on the current screenspace
-                   &#xA;- script, jump commands from any other scripts do not function
-                   &#xA;- commands triggered from external processes (ex. timer, physics, etc.) do not execute.
-                   &#xA;
-                   &#xA;- Basically, only allow the current script to continue reading
-                   &#xA;  (allowing you to not worry about state changes due to external processes)
-                   &#xA;
-                   &#xA;false)
-                   &#xA;- can only be executed from the script that ran [unique_script_lock true]
-                   &#xA;- releases all limitations above
-                   &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/script#unique_script_lock">
+                  syntax="unique_script_lock [true/false]"
+                  details="ex. unique_script_lock true
+                  &#xA;  
+                  &#xA;true)
+                  &#xA;- can only be executed on the current screenspace base script
+                  &#xA;- scraps other scripts on the current screenspace
+                  &#xA;- script, jump commands from any other scripts do not function
+                  &#xA;- commands triggered from external processes (ex. timer, physics, etc.) do not execute.
+                  &#xA;
+                  &#xA;- Basically, only allow the current script to continue reading
+                  &#xA;  (allowing you to not worry about state changes due to external processes)
+                  &#xA;
+                  &#xA;false)
+                  &#xA;- can only be executed from the script that ran [unique_script_lock true]
+                  &#xA;- releases all limitations above
+                  &#xA;"
+                  reference="https://wikiwiki.jp/lightvn/commands/script#unique_script_lock">
       </explanation>
+      <explanation lang="zhc" name="脚本唯一锁定"
+                  syntax="unique_script_lock [true/false]"
+                  details="ex. 脚本唯一锁定 true
+                  &#xA;  
+                  &#xA;true)
+                  &#xA;- 仅允许从当前画面区域的基础脚本执行
+                  &#xA;- 销毁当前画面区域中其他所有脚本
+                  &#xA;- 禁止其他脚本的跳转和执行操作
+                  &#xA;- 外部进程触发的命令（如计时器、物理引擎等）将不再执行
+                  &#xA;
+                  &#xA;- 简而言之，仅允许当前脚本继续运行
+                  &#xA;  （无需担心外部进程导致的状态变化）
+                  &#xA;
+                  &#xA;false)
+                  &#xA;- 仅允许最初执行[脚本唯一锁定 true]的脚本解除锁定
+                  &#xA;- 完全解除上述所有限制
+                  &#xA;"
+                  reference="https://wikiwiki.jp/lightvn/commands/script#unique_script_lock">
+      </explanation>
+    </Command>
     </Command>
     <Command cmd="scriptReadType">
       <explanation lang="jap" name="スクリプト読み込み方式"
@@ -10596,7 +10654,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/script#scriptReadType">
       </explanation>
-      <explanation lang="zh_cn" name="脚本读取方式"
+      <explanation lang="zhc" name="脚本读取方式"
                    syntax="脚本读取方式 [方式]"
                    details="例如：脚本读取方式 1
                    &#xA;
@@ -10648,7 +10706,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/script#scriptPrevent">
       </explanation>
-      <explanation lang="zh_cn" name="禁止脚本"
+      <explanation lang="zhc" name="禁止脚本"
                    syntax="禁止脚本 [文件路径前缀]"
                    details="例如：禁止脚本 /Scripts/fufu
                    &#xA;
@@ -10686,7 +10744,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/script#scriptAllow">
       </explanation>
-      <explanation lang="zh_cn" name="允许脚本"
+      <explanation lang="zhc" name="允许脚本"
                    syntax="允许脚本 [文件路径前缀]"
                    details="例如：允许脚本 /Scripts/fufu
                    &#xA; 允许通过“脚本”命令读取以“/Scripts/fufu”开头的文件。
@@ -10722,7 +10780,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/script#scriptAllowAll">
       </explanation>
-      <explanation lang="zh_cn" name="允许所有脚本"
+      <explanation lang="zhc" name="允许所有脚本"
                    syntax="允许所有脚本"
                    details="例如：允许所有脚本
                    &#xA;
@@ -10767,7 +10825,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/script#script_fin_return_to_main">
       </explanation>
-      <explanation lang="zh_cn" name="脚本结束返回"
+      <explanation lang="zhc" name="脚本结束返回"
                    syntax="脚本结束返回"
                    details="例如：脚本结束返回
                    &#xA;
@@ -10824,7 +10882,7 @@
                    &#xA;Note: if button clicked while mouse click keytrigger set, button clicks will override."
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyDown">
       </explanation>
-      <explanation lang="zh_cn" name="按键按下"
+      <explanation lang="zhc" name="按键按下"
                    syntax="按键按下 [触发器名称] (Light.vn命令)"
                    details="例如：按键按下 r.click 跳转 start.txt
                    &#xA;
@@ -10890,7 +10948,7 @@
                    &#xA;Note: if button clicked while mouse click keytrigger set, button clicks will override."
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyUp">
       </explanation>
-      <explanation lang="zh_cn" name="按键抬起"
+      <explanation lang="zhc" name="按键抬起"
                    syntax="按键抬起 [触发器名称] (Light.vn命令)"
                    details="例如：按键抬起 r.click 跳转 start.txt
                    &#xA;
@@ -10951,7 +11009,7 @@
                    &#xA;Note: if button clicked while mouse click keytrigger set, button clicks will override."
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyPress">
       </explanation>
-      <explanation lang="zh_cn" name="按键长按"
+      <explanation lang="zhc" name="按键长按"
                    syntax="按键长按 [触发器名称] (Light.vn命令)"
                    details="例如：按键长按 r.click 跳转 start.txt
                    &#xA;
@@ -11001,7 +11059,7 @@
                    &#xA;unregisters all registered key triggers"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyTriggerReset">
       </explanation>
-      <explanation lang="zh_cn" name="重置按键触发器"
+      <explanation lang="zhc" name="重置按键触发器"
                    syntax="重置按键触发器"
                    details="例如：重置按键触发器
                    &#xA;
@@ -11036,7 +11094,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/script#inputLock">
       </explanation>
-      <explanation lang="zh_cn" name="输入锁定"
+      <explanation lang="zhc" name="输入锁定"
                    syntax="输入锁定 [true / false]"
                    details="例如：输入锁定 true
                    &#xA;
@@ -11070,7 +11128,7 @@
                    details="ex. bookmark bookmark1"
                    reference="https://wikiwiki.jp/lightvn/commands/script#bookmark">
       </explanation>
-      <explanation lang="zh_cn" name="书签"
+      <explanation lang="zhc" name="书签"
                    syntax="书签 [书签名称]"
                    details="例如：书签 bookmark1"
                    reference="https://wikiwiki.jp/lightvn/commands/script#bookmark">
@@ -11101,7 +11159,7 @@
                    &#xA;regex reference：https:mzl.la/2pieQXw"
                    reference="https://wikiwiki.jp/lightvn/commands/script#macro">
       </explanation>
-      <explanation lang="zh_cn" name="宏"
+      <explanation lang="zhc" name="宏"
                    syntax="宏 [字符串:宏转换目标] [字符串:宏转换结果]"
                    details="例如：宏 “~【(.*)】” “~脚本 resources.txt name $1”
                    &#xA;
@@ -11146,7 +11204,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#commandMacro">
       </explanation>
-      <explanation lang="zh_cn" name="命令宏"
+      <explanation lang="zhc" name="命令宏"
                    syntax="命令宏 [字符串:宏转换目标] [字符串:宏转换结果]"
                    details="例如：命令宏 “文字窗口” “脚本 system/textbox.txt default”
                    &#xA;
@@ -11199,7 +11257,7 @@
                    &#xA;regex reference：https:mzl.la/2pieQXw"
                    reference="https://wikiwiki.jp/lightvn/commands/script#stringMacro">
       </explanation>
-      <explanation lang="zh_cn" name="字符串宏"
+      <explanation lang="zhc" name="字符串宏"
                    syntax="字符串宏 [字符串:宏转换目标] [字符串:宏转换结果]"
                    details="例如：字符串宏 “~【(.*)】” “~脚本 resources.txt name $1”
                    &#xA;
@@ -11248,7 +11306,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#macroApply">
       </explanation>
-      <explanation lang="zh_cn" name="应用宏"
+      <explanation lang="zhc" name="应用宏"
                    syntax="应用宏 [true/false]"
                    details="例如：应用宏 false
                    &#xA;
@@ -11282,7 +11340,7 @@
                    &#xA;refer to manual for details on script indices:（http:bit.ly/2EWnJve）"
                    reference="https://wikiwiki.jp/lightvn/commands/script#checkScriptIndex">
       </explanation>
-      <explanation lang="zh_cn" name="检查脚本索引"
+      <explanation lang="zhc" name="检查脚本索引"
                    syntax="检查脚本索引 [编号]"
                    details="检查当前脚本的索引。最低脚本：0, 1, 2, 3...
                    &#xA;
@@ -11313,7 +11371,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#screenSpaceStart">
       </explanation>
-      <explanation lang="zh_cn" name="启用屏幕空间"
+      <explanation lang="zhc" name="启用屏幕空间"
                    syntax="启用屏幕空间 [名称]"
                    details="例如：启用屏幕空间 my_backlog
                    &#xA;
@@ -11347,7 +11405,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#screenSpaceOverwrite">
       </explanation>
-      <explanation lang="zh_cn" name="覆盖屏幕空间"
+      <explanation lang="zhc" name="覆盖屏幕空间"
                    syntax="覆盖屏幕空间 [名称]"
                    details="例如：覆盖屏幕空间 my_backlog
                    &#xA;
@@ -11385,7 +11443,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#screenSpaceFin">
       </explanation>
-      <explanation lang="zh_cn" name="结束屏幕空间"
+      <explanation lang="zhc" name="结束屏幕空间"
                    syntax="结束屏幕空间 [名称]"
                    details="例如：结束屏幕空间 my_backlog
                    &#xA;
@@ -11434,7 +11492,7 @@
                    &#xA;Note：can also load lua files through script command"
                    reference="https://wikiwiki.jp/lightvn/commands/script#lua">
       </explanation>
-      <explanation lang="zh_cn" name="lua"
+      <explanation lang="zhc" name="lua"
                    syntax="lua [lua命令]"
                    details="例如：lua custom_func(&quot;alice&quot;, &quot;ice cream&quot;, &quot;puppy&quot;)
                    &#xA;
@@ -11510,7 +11568,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#stateLoop">
       </explanation>
-      <explanation lang="zh_cn" name="状态更新器"
+      <explanation lang="zhc" name="状态更新器"
                    syntax="状态更新器 [目标名称] [脚本] [书签前缀] [开始状态]"
                    details="例如：stateLoop apple0 &quot;apple.txt&quot; &quot;苹果_状态_&quot; &quot;等待&quot;
                    &#xA;
@@ -11573,7 +11631,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#state">
       </explanation>
-      <explanation lang="zh_cn" name="状态"
+      <explanation lang="zhc" name="状态"
                    syntax="状态 [目标名称] [指定状态]"
                    details="例如：状态 apple0 爆炸
                    &#xA;
@@ -11598,7 +11656,7 @@
     <Command name="--[メディア関連コマンド]--">
       <explanation lang="jap" name="--[メディア関連コマンド]--"></explanation>
       <explanation lang="eng" name="--[media commands]--"></explanation>
-      <explanation lang="zh_cn" name="--[媒体相关命令]--"></explanation>
+      <explanation lang="zhc" name="--[媒体相关命令]--"></explanation>
       <explanation lang="kor" name="--[미디어 관련 커맨드]--"></explanation>
     </Command>
     <Command cmd="bgm">
@@ -11633,7 +11691,7 @@
                    &#xA; (ex. bgm0 bgm.ogg)"
                    reference="https://wikiwiki.jp/lightvn/commands/media#bgm">
       </explanation>
-      <explanation lang="zh_cn" name="背景音乐"
+      <explanation lang="zhc" name="背景音乐"
                    syntax="背景音乐 (个体名) [文件名] (重复)"
                    details="例如：背景音乐 bgm1.ogg 重复
                    &#xA;
@@ -11692,7 +11750,7 @@
                    &#xA; (ex. bgm0 bgm.ogg)"
                    reference="https://wikiwiki.jp/lightvn/commands/media#soundEffect">
       </explanation>
-      <explanation lang="zh_cn" name="音效"
+      <explanation lang="zhc" name="音效"
                    syntax="音效 [名字] [文件名] (重复)"
                    details="例如：音效 roar roar.ogg 重复
                    &#xA;
@@ -11745,7 +11803,7 @@
                    &#xA; (ex. bgm0 bgm.ogg)"
                    reference="https://wikiwiki.jp/lightvn/commands/media#voice">
       </explanation>
-      <explanation lang="zh_cn" name="语音"
+      <explanation lang="zhc" name="语音"
                    syntax="语音 [名字] [文件名] (音量变量) (开/关变量：true/false) (禁止加入日志)"
                    details="例如：语音 voice ep0-3.ogg
                    &#xA;例如：语音 voice ep0-3.ogg char_vol char_vol_on
@@ -11793,7 +11851,7 @@
                    &#xA;replays most recently played voice file"
                    reference="https://wikiwiki.jp/lightvn/commands/media#voiceReplay">
       </explanation>
-      <explanation lang="zh_cn" name="语音重放"
+      <explanation lang="zhc" name="语音重放"
                    syntax="语音重放"
                    details="例如：语音重放
                    &#xA;重放最近播放的语音文件。"
@@ -11832,7 +11890,7 @@
                    &#xA; (ex. bgm0 bgm.ogg)"
                    reference="https://wikiwiki.jp/lightvn/commands/media#bgvoice">
       </explanation>
-      <explanation lang="zh_cn" name="背景语音"
+      <explanation lang="zhc" name="背景语音"
                    syntax="背景语音 [名字] [文件名] (音量变量) (音量为零的目标名字的一部分) (非活性/活性时渐变：毫秒)"
                    details="例如：背景语音 bgv0 ep0-3.ogg
                    &#xA;例如：背景语音 bgv0 ep0-3.ogg none voice_boy :
@@ -11881,7 +11939,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/media#setAutoVoice">
       </explanation>
-      <explanation lang="zh_cn" name="自动语音注册"
+      <explanation lang="zhc" name="自动语音注册"
                    syntax="自动语音注册 [自动语音注册名] [播放文件格式] [开始编号] (音量变量)"
                    details="例如：自动语音注册 voice_ace voice_ace_%03d.ogg 0
                    &#xA;
@@ -11925,7 +11983,7 @@
                    &#xA; (ex. bgm0 bgm.ogg)"
                    reference="https://wikiwiki.jp/lightvn/commands/media#autoVoice">
       </explanation>
-      <explanation lang="zh_cn" name="自动语音"
+      <explanation lang="zhc" name="自动语音"
                    syntax="自动语音 [个体名] [注册的自动语音名] (禁止添加到日志)"
                    details="例如：自动语音 voice0 voice_ace
                    &#xA;
@@ -11957,7 +12015,7 @@
                    details="ex. pause bgm"
                    reference="https://wikiwiki.jp/lightvn/commands/media#pause">
       </explanation>
-      <explanation lang="zh_cn" name="暂停"
+      <explanation lang="zhc" name="暂停"
                    syntax="暂停 [目标]"
                    details="例如：暂停 背景音乐"
                    reference="https://wikiwiki.jp/lightvn/commands/media#pause">
@@ -11983,7 +12041,7 @@
                    &#xA;continues to play targets that were paused"
                    reference="https://wikiwiki.jp/lightvn/commands/media#play">
       </explanation>
-      <explanation lang="zh_cn" name="继续播放"
+      <explanation lang="zhc" name="继续播放"
                    syntax="继续播放 [目标]"
                    details="例如：继续播放 背景音乐
                    &#xA;
@@ -12022,7 +12080,7 @@
                    &#xA; (ex. volume2 背景音 -30%)"
                    reference="https://wikiwiki.jp/lightvn/commands/media#volume">
       </explanation>
-      <explanation lang="zh_cn" name="音量"
+      <explanation lang="zhc" name="音量"
                    syntax="音量 [目标] [音量：%] (所需时间：ms) (加速度：a0~a18)"
                    details="例如：音量 背景音乐 10%
                    &#xA;
@@ -12067,7 +12125,7 @@
                    &#xA; (ex. movie0 movie1 test.mp4 0 0 70)"
                    reference="https://wikiwiki.jp/lightvn/commands/media#movie">
       </explanation>
-      <explanation lang="zh_cn" name="视频"
+      <explanation lang="zhc" name="视频"
                    syntax="视频 [名字] [文件名] [x] [y] [r] (重复) (视角选项)"
                    details="例如：视频 movie1 test.mp4 0 0 70
                    &#xA;
@@ -12106,7 +12164,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/media#setMovie">
       </explanation>
-      <explanation lang="zh_cn" name="更新视频"
+      <explanation lang="zhc" name="更新视频"
                    syntax="更新视频 [目标名] [文件名]"
                    details="例如：更新视频 movie1 new_movie.mp4
                    &#xA;
@@ -12148,7 +12206,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/media#movieFinishType">
       </explanation>
-      <explanation lang="zh_cn" name="视频结束形式"
+      <explanation lang="zhc" name="视频结束形式"
                    syntax="视频结束形式 [目标名] [形式]"
                    details="例如：视频结束形式 movie1 1
                    &#xA;
@@ -12203,7 +12261,7 @@
                    &#xA; "
                    reference="https://wikiwiki.jp/lightvn/commands/media#movieChromakey">
       </explanation>
-      <explanation lang="zh_cn" name="视频抠像"
+      <explanation lang="zhc" name="视频抠像"
                    syntax="1. 视频抠像 [目标名] [颜色：rgb/HEX] [相似度：0~1] [平滑度：0~1] [溢出：0~1] (调试：true/false)
                    &#xA;2. 视频抠像 [目标名] [使用：true/false]"
                    details="例如：视频抠像 movie #00ff00 0.99 0.2 0.2
@@ -12255,7 +12313,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/media#bgmAutoContinue">
       </explanation>
-      <explanation lang="zh_cn" name="背景音乐自动继续"
+      <explanation lang="zhc" name="背景音乐自动继续"
                    syntax="背景音乐自动继续 [true(默认)/ false]"
                    details="例如：背景音乐自动继续 true
                    &#xA;
@@ -12300,7 +12358,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/media#loopRegion">
       </explanation>
-      <explanation lang="zh_cn" name="循环区间"
+      <explanation lang="zhc" name="循环区间"
                    syntax="循环区间 [目标] [循环起点(ms)] [循环区间长度(ms)]"
                    details="例如：循环区间 1500 500
                    &#xA;
@@ -12338,7 +12396,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/media#soundChecker">
       </explanation>
-      <explanation lang="zh_cn" name="音源检查器"
+      <explanation lang="zhc" name="音源检查器"
                    syntax="音源检查器 [名字] [目标名] [目标时间(ms)] [命令]"
                    details="例如：音源检查器 checker vn_sysBGM 3000 系统消息 &quot;fufu&quot;
                    &#xA;
@@ -12389,7 +12447,7 @@
                    &#xA; (ex. bgm0 bgm.ogg)"
                    reference="https://wikiwiki.jp/lightvn/commands/media#syncSound">
       </explanation>
-      <explanation lang="zh_cn" name="声音同步"
+      <explanation lang="zhc" name="声音同步"
                    syntax="声音同步 [名字] [文件名] [同步目标名]"
                    details="例如：声音同步 sound /BGM/snowsnow.ogg vn_sysBGM
                    &#xA;
@@ -12443,7 +12501,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/media#logAmplitude">
       </explanation>
-      <explanation lang="zh_cn" name="音量日志"
+      <explanation lang="zhc" name="音量日志"
                    syntax="音量日志 [true/false(默认)]"
                    details="例如：音量日志 true
                    &#xA;
@@ -12507,7 +12565,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/var#var">
       </explanation>
-      <explanation lang="zh_cn" name="--[变量相关命令]--"
+      <explanation lang="zhc" name="--[变量相关命令]--"
                    syntax=""
                    details="
                    &#xA;运算符：
@@ -12580,7 +12638,7 @@
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/var#var">
       </explanation>
-      <explanation lang="zh_cn" name="变量"
+      <explanation lang="zhc" name="变量"
                    syntax="变量 [变量名] [操作] [数值/变量名]"
                    details="当前可用操作：+= -= *= /=
                    &#xA;例如：变量 正确个数 = 0
@@ -12625,7 +12683,7 @@
                    details="same as 'var' command, but persists across files"
                    reference="https://wikiwiki.jp/lightvn/commands/var#temp_globalvar">
       </explanation>
-      <explanation lang="zh_cn" name="临时全局变量"
+      <explanation lang="zhc" name="临时全局变量"
                    syntax="临时全局变量 [变量名] [操作] [数值/变量名]"
                    details="用法与变量命令相同。
                    &#xA;
@@ -12658,7 +12716,7 @@
                    details="same as 'var' command, but 'datavar's are saved in individual SaveData/ files"
                    reference="https://wikiwiki.jp/lightvn/commands/var#datavar">
       </explanation>
-      <explanation lang="zh_cn" name="保存变量"
+      <explanation lang="zhc" name="保存变量"
                    syntax="保存变量 [变量名] [操作] [数值/变量名]"
                    details="用法与变量命令相同。
                    &#xA;但被指定为“保存变量”的变量将在执行“保存”命令时，
@@ -12706,7 +12764,7 @@
                    &#xA;globalvars are saved upon running [saveGlobalVars], [save]"
                    reference="https://wikiwiki.jp/lightvn/commands/var#globalvar">
       </explanation>
-      <explanation lang="zh_cn" name="全局变量"
+      <explanation lang="zhc" name="全局变量"
                    syntax="全局变量 [变量名] [操作] [数值/变量名]"
                    details="用法与变量命令相同。
                    &#xA;但被指定为“全局变量”的变量将保存到SaveData的global.xml中，
@@ -12758,7 +12816,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#saveGlobalVars">
       </explanation>
-      <explanation lang="zh_cn" name="保存全局变量"
+      <explanation lang="zhc" name="保存全局变量"
                    syntax="保存全局变量"
                    details="保存所有被指定为“全局变量”的变量。
                    &#xA;
@@ -12793,7 +12851,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#systemvar">
       </explanation>
-      <explanation lang="zh_cn" name="系统变量"
+      <explanation lang="zhc" name="系统变量"
                    syntax="系统变量 [变量名] [操作] [数值/变量名]"
                    details="用法与变量命令相同。
                    &#xA;但“系统变量”仅限于Settings.xml的GameSettings中的变量。
@@ -12821,7 +12879,7 @@
                    details="saves all systemvars"
                    reference="https://wikiwiki.jp/lightvn/commands/var#saveSystemVars">
       </explanation>
-      <explanation lang="zh_cn" name="保存系统变量"
+      <explanation lang="zhc" name="保存系统变量"
                    syntax="保存系统变量"
                    details="保存所有被指定为“系统变量”的变量。"
                    reference="https://wikiwiki.jp/lightvn/commands/var#saveSystemVars">
@@ -12858,7 +12916,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/var#eraseVars">
       </explanation>
-      <explanation lang="zh_cn" name="删除变量"
+      <explanation lang="zhc" name="删除变量"
                    syntax="1. 删除变量 [变量名 (可多个)]
                    &#xA;2. 删除变量2 [变量名 (可多个)]"
                    details="例. 删除变量 变量名1, 变量名2, 变量名3
@@ -12926,7 +12984,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#clearVars">
       </explanation>
-      <explanation lang="zh_cn" name="清除变量"
+      <explanation lang="zhc" name="清除变量"
                    syntax="清除变量 (类型)"
                    details="
                    类型：
@@ -12987,7 +13045,7 @@
                    &#xA;Note: can skip else～"
                    reference="https://wikiwiki.jp/lightvn/commands/var#if">
       </explanation>
-      <explanation lang="zh_cn" name="如果"
+      <explanation lang="zhc" name="如果"
                    syntax="如果 (true/false 条件表达式) [条件成立命令] (否则) (条件不成立命令)"
                    details="例如：如果 (正确个数 == 2) 跳转 达成 否则 跳转 未达成
                    &#xA;例如：如果 (正确个数 == 2) 淡出 cg0
@@ -13021,7 +13079,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#elseif">
       </explanation>
-      <explanation lang="zh_cn" name="否则如果"
+      <explanation lang="zhc" name="否则如果"
                    syntax="否则如果 (true/false 条件表达式) [条件成立命令] "
                    details="例如：否则如果 (正确个数 == 2) 跳转 达成
                    &#xA;
@@ -13055,7 +13113,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#else">
       </explanation>
-      <explanation lang="zh_cn" name="否则"
+      <explanation lang="zhc" name="否则"
                    syntax="否则 [命令]"
                    details="例如：否则 跳转 达成
                    &#xA;
@@ -13093,7 +13151,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#forRun">
       </explanation>
-      <explanation lang="zh_cn" name="循环执行"
+      <explanation lang="zhc" name="循环执行"
                    syntax="循环执行 [开始值] [结束值] [Light.vn命令]"
                    details="例如：循环执行 1 16 &quot;脚本 tut_map.txt 创建硬币 {}&quot;
                    &#xA;
@@ -13143,7 +13201,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#varChecker">
       </explanation>
-      <explanation lang="zh_cn" name="变量检查"
+      <explanation lang="zhc" name="变量检查"
                    syntax="变量检查 [名字] [检查的表达式] [结果变化时执行的命令]"
                    details="例如：变量检查 检查状态 &quot;状态 + 100&quot; &quot;脚本 update.txt 更新 {}&quot;
                    &#xA;每当“状态 + 100”的结果发生变化时，
@@ -13199,7 +13257,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#varChange">
       </explanation>
-      <explanation lang="zh_cn" name="变量变化"
+      <explanation lang="zhc" name="变量变化"
                    syntax="变量变化 [变量名] [数值] (持续时间:ms) (加速度: a0~a18)"
                    details="例如：变量变化 hp -100 300
                    &#xA;在300毫秒内将“hp”更改为“-100”。
@@ -13292,7 +13350,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#var">
       </explanation>
-      <explanation lang="zh_cn" name="--[Light vn 系统变量目录]--"
+      <explanation lang="zhc" name="--[Light vn 系统变量目录]--"
                    syntax=""
                    details="格式：变量名 : 说明 (变量类型)
                    &#xA;
@@ -13363,7 +13421,7 @@
     <Command name="--[システム関連コマンド]--">
       <explanation lang="jap" name="--[システム関連コマンド]--"></explanation>
       <explanation lang="eng" name="--[system commands]--"></explanation>
-      <explanation lang="zh_cn" name="--[系统相关命令]--"></explanation>
+      <explanation lang="zhc" name="--[系统相关命令]--"></explanation>
       <explanation lang="kor" name="--[시스템 관련 커맨드]--"></explanation>
     </Command>
     <Command cmd="endGame">
@@ -13381,7 +13439,7 @@
                    &#xA;ends the application. (does not work in editor)"
                    reference="https://wikiwiki.jp/lightvn/commands/system#endGame">
       </explanation>
-      <explanation lang="zh_cn" name="结束游戏"
+      <explanation lang="zhc" name="结束游戏"
                    syntax="结束游戏"
                    details="例如：结束游戏
                    &#xA;
@@ -13425,7 +13483,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/system#preLoad">
       </explanation>
-      <explanation lang="zh_cn" name="预加载"
+      <explanation lang="zhc" name="预加载"
                    syntax="预加载 [文件名] (永久)"
                    details="例如：预加载 /Movies/movie.mp4
                    &#xA;
@@ -13483,7 +13541,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#releaseUnusedMemory">
       </explanation>
-      <explanation lang="zh_cn" name="释放未使用内存(全部)"
+      <explanation lang="zhc" name="释放未使用内存(全部)"
                    syntax="释放未使用内存"
                    details="例如：释放未使用内存
                    &#xA;
@@ -13534,7 +13592,7 @@
                    &#xA;releases unused resources from memory if hit the bound"
                    reference="https://wikiwiki.jp/lightvn/commands/system#releaseUnusedMemoryAutoBound">
       </explanation>
-      <explanation lang="zh_cn" name="自动释放未使用内存"
+      <explanation lang="zhc" name="自动释放未使用内存"
                    syntax="自动释放未使用内存 [RAM 上限 (MB)]"
                    details="例如：自动释放未使用内存 300
                    &#xA;
@@ -13615,7 +13673,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#voicePlayType">
       </explanation>
-      <explanation lang="zh_cn" name="语音播放类型"
+      <explanation lang="zhc" name="语音播放类型"
                    syntax="语音播放类型 [0/1]"
                    details="0: 显示下一个文本时强制结束语音播放
                    &#xA;1: 无论文本进度如何继续播放语音"
@@ -13674,7 +13732,7 @@
                    &#xA;ex. screen 1 "
                    reference="https://wikiwiki.jp/lightvn/commands/system#screen">
       </explanation>
-      <explanation lang="zh_cn" name="屏幕"
+      <explanation lang="zhc" name="屏幕"
                    syntax="屏幕 [类型编号]"
                    details="
                    &#xA;a. 0 : (全屏扩展)
@@ -13741,7 +13799,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/system#save">
       </explanation>
-      <explanation lang="zh_cn" name="保存"
+      <explanation lang="zhc" name="保存"
                    syntax="保存 [插槽编号] (保存截图宽度) (保存截图高度)"
                    details="例如：保存 5 245 130
                    &#xA;
@@ -13777,7 +13835,7 @@
                    &#xA;if load file exists, brings up a dialog to check load. if yes, loads."
                    reference="https://wikiwiki.jp/lightvn/commands/system#load">
       </explanation>
-      <explanation lang="zh_cn" name="加载"
+      <explanation lang="zhc" name="加载"
                    syntax="加载 [插槽编号]"
                    details="例如：加载 5
                    &#xA;
@@ -13809,7 +13867,7 @@
                    &#xA;if save file exists, brings up a dialog to check delete. if yes, deletes."
                    reference="https://wikiwiki.jp/lightvn/commands/system#savedelete">
       </explanation>
-      <explanation lang="zh_cn" name="删除保存"
+      <explanation lang="zhc" name="删除保存"
                    syntax="删除保存 [插槽编号]"
                    details="例如：删除保存 5
                    &#xA;
@@ -13841,7 +13899,7 @@
                    &#xA;if global save file exists, deletes."
                    reference="https://wikiwiki.jp/lightvn/commands/system#deleteglobalinfo">
       </explanation>
-      <explanation lang="zh_cn" name="删除全局信息"
+      <explanation lang="zhc" name="删除全局信息"
                    syntax="删除全局信息"
                    details="例如：删除全局信息
                    &#xA;
@@ -13874,7 +13932,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#quickSave">
       </explanation>
-      <explanation lang="zh_cn" name="快速保存"
+      <explanation lang="zhc" name="快速保存"
                    syntax="快速保存 [保存截图宽度] [保存截图高度]"
                    details="例如：快速保存 245 130
                    &#xA;
@@ -13901,7 +13959,7 @@
                    details="ex. quickLoad"
                    reference="https://wikiwiki.jp/lightvn/commands/system#quickLoad">
       </explanation>
-      <explanation lang="zh_cn" name="快速加载"
+      <explanation lang="zhc" name="快速加载"
                    syntax="快速加载"
                    details="例如：快速加载"
                    reference="https://wikiwiki.jp/lightvn/commands/system#quickLoad">
@@ -13930,7 +13988,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#rollback">
       </explanation>
-      <explanation lang="zh_cn" name="回滚"
+      <explanation lang="zhc" name="回滚"
                    syntax="回滚"
                    details="ex. 回滚
                    &#xA;
@@ -13970,7 +14028,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#rollback_point">
       </explanation>
-      <explanation lang="zh_cn" name="设置回滚点"
+      <explanation lang="zhc" name="设置回滚点"
                    syntax="设置回滚点"
                    details="ex. 设置回滚点
                    &#xA;
@@ -14013,7 +14071,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#rollback_point_AutoAdd">
       </explanation>
-      <explanation lang="zh_cn" name="自动添加回滚点"
+      <explanation lang="zhc" name="自动添加回滚点"
                    syntax="自动添加回滚点 [类型]"
                    details="ex. 自动添加回滚点 1
                    &#xA;
@@ -14055,7 +14113,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#rollback_points_max">
       </explanation>
-      <explanation lang="zh_cn" name="设置最大回滚点数"
+      <explanation lang="zhc" name="设置最大回滚点数"
                    syntax="设置最大回滚点数 [数值]"
                    details="ex. 设置最大回滚点数 100
                    &#xA;
@@ -14091,7 +14149,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#rollback_points_clear">
       </explanation>
-      <explanation lang="zh_cn" name="清除回滚点"
+      <explanation lang="zhc" name="清除回滚点"
                    syntax="清除回滚点"
                    details="ex. 清除回滚点
                    &#xA;
@@ -14133,7 +14191,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/system#waitSaveDataFetch">
       </explanation>
-      <explanation lang="zh_cn" name="继承保存信息"
+      <explanation lang="zhc" name="继承保存信息"
                    syntax="继承保存信息 [最小保存数据] [最大保存数据]"
                    details="例如：继承保存信息 0 100
                    &#xA;
@@ -14185,7 +14243,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/system#saveTextMethod">
       </explanation>
-      <explanation lang="zh_cn" name="保存文本格式"
+      <explanation lang="zhc" name="保存文本格式"
                    syntax="保存文本格式 [格式]"
                    details="例如：保存文本格式 0
                    &#xA;
@@ -14228,7 +14286,7 @@
                    &#xA;saves screenshot in Screenshots/"
                    reference="https://wikiwiki.jp/lightvn/commands/system#screenshot">
       </explanation>
-      <explanation lang="zh_cn" name="截图"
+      <explanation lang="zhc" name="截图"
                    syntax="截图"
                    details="例如：截图
                    &#xA;
@@ -14260,7 +14318,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/system#noSaveRange">
       </explanation>
-      <explanation lang="zh_cn" name="保存排除范围"
+      <explanation lang="zhc" name="保存排除范围"
                    syntax="保存排除范围 [正则表达式]"
                    details="例如：保存排除范围 sys.*
                    &#xA;
@@ -14296,7 +14354,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/system#noSaveSSRange">
       </explanation>
-      <explanation lang="zh_cn" name="保存图片排除范围"
+      <explanation lang="zhc" name="保存图片排除范围"
                    syntax="保存图片排除范围 [正则表达式]"
                    details="例如：保存图片排除范围 sys.*
                    &#xA;
@@ -14333,7 +14391,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#errorOnNoCommandMatch">
       </explanation>
-      <explanation lang="zh_cn" name="无命令匹配时报错"
+      <explanation lang="zhc" name="无命令匹配时报错"
                    syntax="无命令匹配时报错 [true (默认) /false]"
                    details="例如：无命令匹配时报错 true
                    &#xA;
@@ -14368,7 +14426,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#allowRender">
       </explanation>
-      <explanation lang="zh_cn" name="允许渲染"
+      <explanation lang="zhc" name="允许渲染"
                    syntax="允许渲染 [true (默认) /false]"
                    details="例如：允许渲染 true
                    &#xA;
@@ -14387,7 +14445,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/system#allowRender">
       </explanation>
     </Command>
-    <Command cmd="render_fps">
+        <Command cmd="render_fps">
       <explanation lang="jap" name="描画fps"
                    syntax="描画fps [fps]"
                    details="ex. 描画fps 30 
@@ -14405,6 +14463,16 @@
                    &#xA;Set the render fps.
                    &#xA;
                    &#xA;Application range: does not apply for realtime preview. (Value saved in Settings.xml)
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#render_fps">
+      </explanation>
+      <explanation lang="zhc" name="渲染fps"
+                   syntax="渲染fps [fps]"
+                   details="ex. 渲染fps 30
+                   &#xA;  
+                   &#xA;设置渲染fps。
+                   &#xA;
+                   &#xA;适用范围：不应用于实时预览（数值保存在 Settings.xml）
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#render_fps">
       </explanation>
@@ -14432,6 +14500,17 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#cpu_low_usage_mode">
       </explanation>
+      <explanation lang="zhc" name="CPU低负载模式"
+                   syntax="CPU低负载模式 [模式：0（默认：禁用）-3]"
+                   details="ex. CPU低负载模式 3
+                   &#xA;  
+                   &#xA;数值越大，CPU使用率越低。
+                   &#xA;（但会导致帧率下降）
+                   &#xA;
+                   &#xA;适用范围：不应用于实时预览（数值保存在 Settings.xml）
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#cpu_low_usage_mode">
+      </explanation>
     </Command>
     <Command cmd="open">
       <explanation lang="jap" name="開く"
@@ -14452,7 +14531,7 @@
                    &#xA;ex. open http:lightvn.net"
                    reference="https://wikiwiki.jp/lightvn/commands/system#open">
       </explanation>
-      <explanation lang="zh_cn" name="打开"
+      <explanation lang="zhc" name="打开"
                    syntax="打开 [文件名 / URL]"
                    details="例如：打开 movie.mp4
                    &#xA;例如：打开 http:lightvn.net
@@ -14490,7 +14569,7 @@
                    details="ex. mouseCursor sys_wait.png"
                    reference="https://wikiwiki.jp/lightvn/commands/system#mouseCursor">
       </explanation>
-      <explanation lang="zh_cn" name="鼠标光标"
+      <explanation lang="zhc" name="鼠标光标"
                    syntax="1. 鼠标光标 [文件名]
                    &#xA;2. 鼠标光标 none"
                    details="例如：鼠标光标 sys_wait.png"
@@ -14525,7 +14604,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#mouseCursorAutoHide">
       </explanation>
-      <explanation lang="zh_cn" name="鼠标光标自动隐藏"
+      <explanation lang="zhc" name="鼠标光标自动隐藏"
                    syntax="1. 鼠标光标自动隐藏 [隐藏执行前的判断时间：毫秒]
                    &#xA;2. 鼠标光标自动隐藏 false"
                    details="例. 鼠标光标自动隐藏 5000
@@ -14565,7 +14644,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/system#setDialogScript">
       </explanation>
-      <explanation lang="zh_cn" name="对话框脚本注册"
+      <explanation lang="zhc" name="对话框脚本注册"
                    syntax="对话框脚本注册 [脚本名]"
                    details="例如：对话框脚本注册 system/sys_msg.txt
                    &#xA;
@@ -14593,7 +14672,7 @@
                    details="ex. dialog &quot;タイトルへ戻りますか？&quot; jump tut_text.txt"
                    reference="https://wikiwiki.jp/lightvn/commands/system#dialog">
       </explanation>
-      <explanation lang="zh_cn" name="对话框"
+      <explanation lang="zhc" name="对话框"
                    syntax="对话框 [字符串:对话框消息] (YES选项命令)"
                    details="例如：对话框 &quot;是否返回标题？&quot; 跳转 tut_text.txt"
                    reference="https://wikiwiki.jp/lightvn/commands/system#dialog">
@@ -14619,7 +14698,7 @@
                    &#xA;sets result of current displayed dialog"
                    reference="https://wikiwiki.jp/lightvn/commands/system#dialogResult">
       </explanation>
-      <explanation lang="zh_cn" name="对话框结果"
+      <explanation lang="zhc" name="对话框结果"
                    syntax="对话框结果 [yes/no]"
                    details="例如：对话框结果 yes
                    &#xA;
@@ -14649,7 +14728,7 @@
                    details="ex. timer timer0 1500 反復 script textbox_sample.txt timer_func"
                    reference="https://wikiwiki.jp/lightvn/commands/system#timer">
       </explanation>
-      <explanation lang="zh_cn" name="计时器"
+      <explanation lang="zhc" name="计时器"
                    syntax="计时器 [名字] [时间间隔:ms] (循环) [到时执行命令]"
                    details="例如：计时器 timer0 1500 循环 脚本 textbox_sample.txt timer_func
                    &#xA;
@@ -14758,7 +14837,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#clear">
       </explanation>
-      <explanation lang="zh_cn" name="清除"
+      <explanation lang="zhc" name="清除"
                    syntax="清除 (屏幕区域范围)"
                    details="例如：清除
                    &#xA;清除之前生成的所有资源（图片、背景、按钮、背景音乐等）
@@ -14855,7 +14934,7 @@
                    &#xA;changes clear colour of screen to white (255 255 255)"
                    reference="https://wikiwiki.jp/lightvn/commands/system#clearRGB">
       </explanation>
-      <explanation lang="zh_cn" name="清除颜色"
+      <explanation lang="zhc" name="清除颜色"
                    syntax="1. 清除颜色 [红:0-255] [绿:0-255] [蓝:0-255]
                    &#xA;2. 清除颜色 #[HEX色]"
                    details="例如：清除颜色 255 255 255
@@ -14885,7 +14964,7 @@
                    &#xA;changes clear colour of window to white (255 255 255)"
                    reference="https://wikiwiki.jp/lightvn/commands/system#windowClearRGB">
       </explanation>
-      <explanation lang="zh_cn" name="窗口清除颜色"
+      <explanation lang="zhc" name="窗口清除颜色"
                    syntax="1. 窗口清除颜色 [红:0-255] [绿:0-255] [蓝:0-255]
                    &#xA;2. 窗口清除颜色 #[HEX色]"
                    details="例如：窗口清除颜色 255 255 255
@@ -14924,7 +15003,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#objectDepthTest">
       </explanation>
-      <explanation lang="zh_cn" name="对象深度计算"
+      <explanation lang="zhc" name="对象深度计算"
                    syntax="对象深度计算 [true (默认) / false]"
                    details="指定在绘制对象时是否精确计算深度。
                    &#xA;
@@ -14977,7 +15056,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/system#renderFilterObj">
       </explanation>
-      <explanation lang="zh_cn" name="渲染基准对象"
+      <explanation lang="zhc" name="渲染基准对象"
                   syntax="渲染基准对象 [对象名] [距离]"
                   details="
                    &#xA;例如：渲染基准对象 id 300
@@ -15024,7 +15103,7 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/system#collisionFilterObj">
       </explanation>
-      <explanation lang="zh_cn" name="碰撞基准对象"
+      <explanation lang="zhc" name="碰撞基准对象"
                    syntax="碰撞基准对象 [对象名] [距离]"
                    details="
                    &#xA;例如：碰撞基准对象 id 300
@@ -15065,7 +15144,7 @@
                    &#xA;Note: no command is the same as unregistering a command for that event"
                    reference="https://wikiwiki.jp/lightvn/commands/system#event">
       </explanation>
-      <explanation lang="zh_cn" name="事件"
+      <explanation lang="zhc" name="事件"
                    syntax="事件 [事件名] [前/后] (命令)"
                    details="例如：事件 load 后 脚本 system/sys_events.txt load_after
                    &#xA;
@@ -15100,7 +15179,7 @@
                    &#xA;displays suffix after title in ex. window bar"
                    reference="https://wikiwiki.jp/lightvn/commands/system#setTitleSuffix">
       </explanation>
-      <explanation lang="zh_cn" name="标题后缀"
+      <explanation lang="zhc" name="标题后缀"
                    syntax="标题后缀　[字符串]"
                    details="例如：标题后缀 &quot;8月16日 爱丽丝&quot;
                    &#xA;
@@ -15130,7 +15209,7 @@
                    &#xA;displays message"
                    reference="https://wikiwiki.jp/lightvn/commands/system#SystemDialog">
       </explanation>
-      <explanation lang="zh_cn" name="系统对话框"
+      <explanation lang="zhc" name="系统对话框"
                    syntax="系统对话框 [字符串] (标题)"
                    details="例如：系统对话框 &quot;出现了一些问题。&quot;
                    &#xA;
@@ -15163,7 +15242,7 @@
                    &#xA;displays message"
                    reference="https://wikiwiki.jp/lightvn/commands/system#SystemMessage">
       </explanation>
-      <explanation lang="zh_cn" name="系统消息"
+      <explanation lang="zhc" name="系统消息"
                    syntax="系统消息　[字符串]"
                    details="例如：系统消息 &quot;出现了一些问题。&quot;
                    &#xA;
@@ -15200,7 +15279,7 @@
                    &#xA;displays message. if during testplay in editor, will also give option to stop testplay."
                    reference="https://wikiwiki.jp/lightvn/commands/system#SystemError">
       </explanation>
-      <explanation lang="zh_cn" name="系统错误"
+      <explanation lang="zhc" name="系统错误"
                    syntax="系统错误　[字符串]"
                    details="例如：系统错误 &quot;出现了一些问题。&quot;
                    &#xA;
@@ -15235,7 +15314,7 @@
                    &#xA;records message in debug.txt"
                    reference="https://wikiwiki.jp/lightvn/commands/system#SystemLog">
       </explanation>
-      <explanation lang="zh_cn" name="系统日志"
+      <explanation lang="zhc" name="系统日志"
                    syntax="系统日志　[字符串]"
                    details="例如：系统日志 &quot;记录当前状态。&quot;
                    &#xA;
@@ -15291,7 +15370,7 @@
                    details="ex. createDummyCG cg_s001 r-mplus-1c-m.ttf 250 450 テスト 笑 制服"
                    reference="https://wikiwiki.jp/lightvn/commands/system#textureCreate">
       </explanation>
-      <explanation lang="zh_cn" name="合成图像注册"
+      <explanation lang="zhc" name="合成图像注册"
                    syntax="合成图像注册 [注册名] [画布文件名]
                    &#xA;[合成文件名1] [合成坐标x] [合成坐标y]
                    &#xA;(合成文件名2) (合成坐标x) (合成坐标y) (...)"
@@ -15366,7 +15445,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#textureCreateRect">
       </explanation>
-      <explanation lang="zh_cn" name="矩形图像注册"
+      <explanation lang="zhc" name="矩形图像注册"
                    syntax="1. 矩形图像注册 [注册名] [宽] [高] [r] [g] [b] (a)
                    &#xA;2. 矩形图像注册 [注册名] [宽] [高] [HEX颜色]"
                    details="例如：矩形图像注册 new_texture 100 100 #000000
@@ -15409,7 +15488,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#breakpoint">
       </explanation>
-      <explanation lang="zh_cn" name="断点"
+      <explanation lang="zhc" name="断点"
                    syntax="断点"
                    details="例如：断点
                    &#xA;
@@ -15429,7 +15508,7 @@
     <Command name="--[LIGHT.VN 関数]--">
       <explanation lang="jap" name="--[LIGHT.VN 関数]--"></explanation>
       <explanation lang="eng" name="--[LIGHT.VN functions]--"></explanation>
-      <explanation lang="zh_cn" name="--[LIGHT.VN 函数]--"></explanation>
+      <explanation lang="zhc" name="--[LIGHT.VN 函数]--"></explanation>
       <explanation lang="kor" name="--[LIGHT.VN 함수]--"></explanation>
     </Command>
     <Command name="lvRandom">
@@ -15451,7 +15530,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvRandom">
       </explanation>
-      <explanation lang="zh_cn" name="lvRandom"
+      <explanation lang="zhc" name="lvRandom"
                    syntax="lvRandom(数字A, 数字B)"
                    details="例如：lvRandom(0, 2)
                    &#xA;
@@ -15489,7 +15568,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvMin">
       </explanation>
-      <explanation lang="zh_cn" name="lvMin"
+      <explanation lang="zhc" name="lvMin"
                    syntax="lvMin(数字A, ...任意多个数字)"
                    details="例如：lvMin(0, 1, 2, 3, 4)
                    &#xA;
@@ -15527,7 +15606,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvMax">
       </explanation>
-      <explanation lang="zh_cn" name="lvMax"
+      <explanation lang="zhc" name="lvMax"
                    syntax="lvMax(数字A, ...任意多个数字)"
                    details="例如：lvMax(0, 1, 2, 3, 4)
                    &#xA;
@@ -15565,7 +15644,7 @@
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvRandomName">
       </explanation>
-      <explanation lang="zh_cn" name="lvRandomName"
+      <explanation lang="zhc" name="lvRandomName"
                    syntax="lvRandomName(字符串: 前缀)"
                    details="例如：lvRandomName(&quot;fufu&quot;)
                    &#xA;
@@ -15603,7 +15682,7 @@
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvExistsObj">
       </explanation>
-      <explanation lang="zh_cn" name="lvExistsObj"
+      <explanation lang="zhc" name="lvExistsObj"
                    syntax="lvExistsObj(字符串: 对象名)"
                    details="例如：lvExistsObj(&quot;obj_name&quot;)
                    &#xA;
@@ -15666,7 +15745,7 @@
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvTimeNow">
       </explanation>
-      <explanation lang="zh_cn" name="lvTimeNow"
+      <explanation lang="zhc" name="lvTimeNow"
                    syntax="lvTimeNow(字符串: 时间格式)"
                    details="例如：lvTimeNow(&quot;%y&quot;)
                    &#xA;
@@ -15740,7 +15819,7 @@
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSubstring">
       </explanation>
-      <explanation lang="zh_cn" name="lvSubstring"
+      <explanation lang="zhc" name="lvSubstring"
                    syntax="lvSubstring(字符串: 原字符串, 数字: 起始位置, 数字: 子字符串长度)"
                    details="例如：lvSubstring(&quot;ふふはは&quot;, 1, 2)
                    &#xA;
@@ -15787,7 +15866,7 @@
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvRemoveSuffix">
       </explanation>
-      <explanation lang="zh_cn" name="lvRemoveSuffix"
+      <explanation lang="zhc" name="lvRemoveSuffix"
                    syntax="1. lvRemoveSuffix(字符串: 原字符串, 数字: 字符数)
                    &#xA;2. lvRemoveSuffix(字符串: 原字符串A, 字符串: 后缀字符串B)"
                    details="例如：lvRemoveSuffix(&quot;ふふはは&quot;, 2)
@@ -15840,7 +15919,7 @@
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvStringRemoveFormat">
       </explanation>
-      <explanation lang="zh_cn" name="lvStringRemoveFormat"
+      <explanation lang="zhc" name="lvStringRemoveFormat"
                    syntax="lvStringRemoveFormat(字符串: 原字符串)"
                    details="例如：lvStringRemoveFormat(&quot;&lt;textSize 20&gt;装饰文本&lt;/&gt;&quot;)
                    &#xA;
@@ -15881,7 +15960,7 @@
                    &#xA;return: list"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvPositionCenter">
       </explanation>
-      <explanation lang="zh_cn" name="lvPositionCenter"
+      <explanation lang="zhc" name="lvPositionCenter"
                    syntax="lvPositionCenter(字符串: 对象名)"
                    details="例如：lvPositionCenter(&quot;kojiken&quot;)
                    &#xA;
@@ -15922,7 +16001,7 @@
                    &#xA;return: list"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvPositionCenterXYZ">
       </explanation>
-      <explanation lang="zh_cn" name="lvPositionCenterXYZ"
+      <explanation lang="zhc" name="lvPositionCenterXYZ"
                    syntax="lvPositionCenterXYZ(字符串: 对象名)"
                    details="例如：lvPositionCenterXYZ(&quot;kojiken&quot;)
                    &#xA;
@@ -15963,7 +16042,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvPositionCenterX">
       </explanation>
-      <explanation lang="zh_cn" name="lvPositionCenterX"
+      <explanation lang="zhc" name="lvPositionCenterX"
                    syntax="lvPositionCenterX(字符串: 对象名)"
                    details="例如：lvPositionCenterX(&quot;kojiken&quot;)
                    &#xA;
@@ -16004,7 +16083,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvPositionCenterY">
       </explanation>
-      <explanation lang="zh_cn" name="lvPositionCenterY"
+      <explanation lang="zhc" name="lvPositionCenterY"
                    syntax="lvPositionCenterY(字符串: 对象名)"
                    details="例如：lvPositionCenterY(&quot;kojiken&quot;)
                    &#xA;
@@ -16045,7 +16124,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvPositionCenterR">
       </explanation>
-      <explanation lang="zh_cn" name="lvPositionCenterR"
+      <explanation lang="zhc" name="lvPositionCenterR"
                    syntax="lvPositionCenterR(字符串: 对象名)"
                    details="例如：lvPositionCenterR(&quot;kojiken&quot;)
                    &#xA;
@@ -16086,7 +16165,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvPositionCenterZ">
       </explanation>
-      <explanation lang="zh_cn" name="lvPositionCenterZ"
+      <explanation lang="zhc" name="lvPositionCenterZ"
                    syntax="lvPositionCenterZ(字符串: 对象名)"
                    details="例如：lvPositionCenterZ(&quot;kojiken&quot;)
                    &#xA;
@@ -16127,7 +16206,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvPositionDeltaX">
       </explanation>
-      <explanation lang="zh_cn" name="lvPositionDeltaX"
+      <explanation lang="zhc" name="lvPositionDeltaX"
                    syntax="lvPositionDeltaX(字符串: 对象名)"
                    details="例如：lvPositionDeltaX(&quot;kojiken&quot;)
                    &#xA;
@@ -16168,7 +16247,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvPositionDeltaY">
       </explanation>
-      <explanation lang="zh_cn" name="lvPositionDeltaY"
+      <explanation lang="zhc" name="lvPositionDeltaY"
                    syntax="lvPositionDeltaY(字符串: 对象名)"
                    details="例如：lvPositionDeltaY(&quot;kojiken&quot;)
                    &#xA;
@@ -16208,7 +16287,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvRotationX">
       </explanation>
-      <explanation lang="zh_cn" name="lvRotationX"
+      <explanation lang="zhc" name="lvRotationX"
                    syntax="lvRotationX(字符串: 对象名)"
                    details="例如：lvRotationX(&quot;kojiken&quot;)
                    &#xA;
@@ -16246,7 +16325,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvRotationY">
       </explanation>
-      <explanation lang="zh_cn" name="lvRotationY"
+      <explanation lang="zhc" name="lvRotationY"
                    syntax="lvRotationY(字符串: 对象名)"
                    details="例如：lvRotationY(&quot;kojiken&quot;)
                    &#xA;
@@ -16284,7 +16363,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvRotationZ">
       </explanation>
-      <explanation lang="zh_cn" name="lvRotationZ"
+      <explanation lang="zhc" name="lvRotationZ"
                    syntax="lvRotationZ(字符串: 对象名)"
                    details="例如：lvRotationZ(&quot;kojiken&quot;)
                    &#xA;
@@ -16323,7 +16402,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvTileX">
       </explanation>
-      <explanation lang="zh_cn" name="lvTileX"
+      <explanation lang="zhc" name="lvTileX"
                    syntax="lvTileX(字符串: 对象名)"
                    details="例如：lvTileX(&quot;kojiken&quot;)
                    &#xA;
@@ -16364,7 +16443,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvTileY">
       </explanation>
-      <explanation lang="zh_cn" name="lvTileY"
+      <explanation lang="zhc" name="lvTileY"
                    syntax="lvTileY(字符串: 对象名)"
                    details="例如：lvTileY(&quot;kojiken&quot;)
                    &#xA;
@@ -16404,7 +16483,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSpeedX">
       </explanation>
-      <explanation lang="zh_cn" name="lvSpeedX"
+      <explanation lang="zhc" name="lvSpeedX"
                    syntax="lvSpeedX(字符串: 对象名)"
                    details="例如：lvSpeedX(&quot;kojiken&quot;)
                    &#xA;
@@ -16442,7 +16521,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSpeedY">
       </explanation>
-      <explanation lang="zh_cn" name="lvSpeedY"
+      <explanation lang="zhc" name="lvSpeedY"
                    syntax="lvSpeedY(字符串: 对象名)"
                    details="例如：lvSpeedY(&quot;kojiken&quot;)
                    &#xA;
@@ -16480,7 +16559,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSpeedZ">
       </explanation>
-      <explanation lang="zh_cn" name="lvSpeedZ"
+      <explanation lang="zhc" name="lvSpeedZ"
                    syntax="lvSpeedZ(字符串: 对象名)"
                    details="例如：lvSpeedZ(&quot;kojiken&quot;)
                    &#xA;
@@ -16520,7 +16599,7 @@
                    &#xA;return: list"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvObjTransformPoint">
       </explanation>
-      <explanation lang="zh_cn" name="lvObjTransformPoint"
+      <explanation lang="zhc" name="lvObjTransformPoint"
                    syntax="lvObjTransformPoint(字符串: 对象名, 数字: x, 数字: y, 数字: z)"
                    details="例如：lvObjTransformPoint(&quot;kojiken&quot;, 0, -1, 0)
                    &#xA;
@@ -16563,7 +16642,7 @@
                    &#xA;return: list"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvObjTransformVector">
       </explanation>
-      <explanation lang="zh_cn" name="lvObjTransformVector"
+      <explanation lang="zhc" name="lvObjTransformVector"
                    syntax="lvObjTransformVector(字符串: 对象名, 数字: x, 数字: y, 数字: z)"
                    details="例如：lvObjTransformVector(&quot;kojiken&quot;, 0, -1, 0)
                    &#xA;
@@ -16604,7 +16683,7 @@
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvKeyFree">
       </explanation>
-      <explanation lang="zh_cn" name="lvKeyFree"
+      <explanation lang="zhc" name="lvKeyFree"
                    syntax="lvKeyFree(字符串: 键名)"
                    details="例如：lvKeyFree(&quot;a&quot;)
                    &#xA;
@@ -16644,7 +16723,7 @@
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvKeyDown">
       </explanation>
-      <explanation lang="zh_cn" name="lvKeyDown"
+      <explanation lang="zhc" name="lvKeyDown"
                    syntax="lvKeyDown(字符串: 键名)"
                    details="例如：lvKeyDown(&quot;a&quot;)
                    &#xA;
@@ -16684,7 +16763,7 @@
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvKeyPressed">
       </explanation>
-      <explanation lang="zh_cn" name="lvKeyPressed"
+      <explanation lang="zhc" name="lvKeyPressed"
                    syntax="lvKeyPressed(字符串: 键名)"
                    details="例如：lvKeyPressed(&quot;a&quot;)
                    &#xA;
@@ -16723,7 +16802,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvRoundToInteger">
       </explanation>
-      <explanation lang="zh_cn" name="lvRoundToInteger"
+      <explanation lang="zhc" name="lvRoundToInteger"
                    syntax="lvRoundToInteger(数字)"
                    details="例如：lvRoundToInteger(30.123123)
                    &#xA;
@@ -16759,7 +16838,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvFloor">
       </explanation>
-      <explanation lang="zh_cn" name="lvFloor"
+      <explanation lang="zhc" name="lvFloor"
                    syntax="lvFloor(数字)"
                    details="例如：lvFloor(30.123123)
                    &#xA;
@@ -16797,7 +16876,7 @@
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvNumberToString">
       </explanation>
-      <explanation lang="zh_cn" name="lvNumberToString"
+      <explanation lang="zhc" name="lvNumberToString"
                    syntax="a. lvNumberToString(数字)
                    &#xA;b. lvNumberToString(数字, 小数点以下几位)"
                    details="例如：lvNumberToString(30.123123) -> &quot;30.123123&quot;
@@ -16837,7 +16916,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvStringToNumber">
       </explanation>
-      <explanation lang="zh_cn" name="lvStringToNumber"
+      <explanation lang="zhc" name="lvStringToNumber"
                    syntax="lvStringToNumber(字符串)"
                    details="ex. lvNumberToString(&quot;30&quot;) -> 30
                    &#xA;  
@@ -16873,7 +16952,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSubstringCount">
       </explanation>
-      <explanation lang="zh_cn" name="lvSubstringCount"
+      <explanation lang="zhc" name="lvSubstringCount"
                    syntax="lvSubstringCount(字符串：目标, 字符串：搜索)"
                    details="例如：lvSubstringCount(&quot;asas&quot;, &quot;as&quot;)  -> 2
                    &#xA;
@@ -16924,7 +17003,7 @@
                    &#xA;return: var"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvCopyDeep">
       </explanation>
-      <explanation lang="zh_cn" name="lvCopyDeep"
+      <explanation lang="zhc" name="lvCopyDeep"
                    syntax="lvCopyDeep(变量)"
                    details="例如：lvCopyDeep(列表变量)
                    &#xA;
@@ -16994,7 +17073,7 @@
                    &#xA;return: list var"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvCreateVarList">
       </explanation>
-      <explanation lang="zh_cn" name="lvCreateVarList"
+      <explanation lang="zhc" name="lvCreateVarList"
                    syntax="1. lvCreateVarList()
                    &#xA;2. lvCreateVarList(数字: 列表大小)
                    &#xA;3. lvCreateVarList(数字: 列表大小, 任何类型: 列表元素初始值)"
@@ -17045,7 +17124,7 @@
                    &#xA;return: list"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvListPushFront">
       </explanation>
-      <explanation lang="zh_cn" name="lvListPushFront"
+      <explanation lang="zhc" name="lvListPushFront"
                    syntax="lvListPushFront(列表变量, 添加元素)"
                    details="例如：lvListPushFront(列表, &quot;fufu&quot;)
                    &#xA;
@@ -17081,7 +17160,7 @@
                    &#xA;return: list"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvListPushBack">
       </explanation>
-      <explanation lang="zh_cn" name="lvListPushBack"
+      <explanation lang="zhc" name="lvListPushBack"
                    syntax="lvListPushBack(列表变量, 添加元素)"
                    details="例如：lvListPushBack(列表, &quot;fufu&quot;)
                    &#xA;
@@ -17119,7 +17198,7 @@
                    &#xA;return: list a"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvListAppendBack">
       </explanation>
-      <explanation lang="zh_cn" name="lvListAppendBack"
+      <explanation lang="zhc" name="lvListAppendBack"
                    syntax="lvListAppendBack(列表变量A, 列表变量B)"
                    details="例如：lvListAppendBack(列表A, 列表B)
                    &#xA;
@@ -17158,7 +17237,7 @@
                    &#xA;return: list"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvListPopFront">
       </explanation>
-      <explanation lang="zh_cn" name="lvListPopFront"
+      <explanation lang="zhc" name="lvListPopFront"
                    syntax="lvListPopFront(列表变量)"
                    details="例如：lvListPushBack(列表)
                    &#xA;
@@ -17199,7 +17278,7 @@
                    &#xA;return: list"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvListPopBack">
       </explanation>
-      <explanation lang="zh_cn" name="lvListPopBack"
+      <explanation lang="zhc" name="lvListPopBack"
                    syntax="lvListPopBack(列表变量)"
                    details="例如：lvListPopBack(列表)
                    &#xA;
@@ -17240,7 +17319,7 @@
                    &#xA;return: list"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvListPushAt">
       </explanation>
-      <explanation lang="zh_cn" name="lvListPushAt"
+      <explanation lang="zhc" name="lvListPushAt"
                    syntax="lvListPushAt(列表变量, 位置, 变量)"
                    details="例如：lvListPushAt(列表, 2, &quot;fufu&quot;)
                    &#xA;
@@ -17281,7 +17360,7 @@
                    &#xA;return: list"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvListPopAt">
       </explanation>
-      <explanation lang="zh_cn" name="lvListPopAt"
+      <explanation lang="zhc" name="lvListPopAt"
                    syntax="lvListPopAt(列表变量, 位置)"
                    details="例如：lvListPopAt(列表, 2)
                    &#xA;
@@ -17324,7 +17403,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvListIndexWithHashKeyValue">
       </explanation>
-      <explanation lang="zh_cn" name="lvListIndexWithHashKeyValue"
+      <explanation lang="zhc" name="lvListIndexWithHashKeyValue"
                    syntax="lvListIndexWithHashKeyValue(列表变量, 键值, 值值)"
                    details="例如：lvListIndexWithHashKeyValue(列表, &quot;item&quot;, &quot;name&quot;)
                    &#xA;
@@ -17365,7 +17444,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvListIndexEmptyFirst">
       </explanation>
-      <explanation lang="zh_cn" name="lvListIndexEmptyFirst"
+      <explanation lang="zhc" name="lvListIndexEmptyFirst"
                    syntax="lvListIndexEmptyFirst(列表变量)"
                    details="例如：lvListIndexEmptyFirst(列表)
                    &#xA;
@@ -17412,7 +17491,7 @@
                    &#xA;return: hashmap var"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvCreateVarHashMap">
       </explanation>
-      <explanation lang="zh_cn" name="lvCreateVarHashMap"
+      <explanation lang="zhc" name="lvCreateVarHashMap"
                    syntax="lvCreateVarHashMap()"
                    details="例如：lvCreateVarHashMap()
                    &#xA;
@@ -17458,7 +17537,7 @@
                    &#xA;return: hashmap var"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvCreateVarHashMapFromJson">
       </explanation>
-      <explanation lang="zh_cn" name="lvCreateVarHashMapFromJson"
+      <explanation lang="zhc" name="lvCreateVarHashMapFromJson"
                    syntax="lvCreateVarHashMapFromJson(字符串: json文件的绝对路径)"
                    details="例如：lvCreateVarHashMapFromJson(&quot;/Images/info.json&quot;)
                    &#xA;
@@ -17496,7 +17575,7 @@
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvHashMapHasKey">
       </explanation>
-      <explanation lang="zh_cn" name="lvHashMapHasKey"
+      <explanation lang="zhc" name="lvHashMapHasKey"
                    syntax="lvHashMapHasKey(HashMap变量, 字符串: 键名)"
                    details="例如：lvHashMapHasKey(变量, &quot;名字&quot;)
                    &#xA;
@@ -17534,7 +17613,7 @@
                    &#xA;return: HashMap"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvHashMapEraseKey">
       </explanation>
-      <explanation lang="zh_cn" name="lvHashMapEraseKey"
+      <explanation lang="zhc" name="lvHashMapEraseKey"
                    syntax="lvHashMapEraseKey(HashMap变量, 字符串: 键)"
                    details="ex. lvHashMapEraseKey(var, &quot;名字&quot;)
                    &#xA;  
@@ -17572,7 +17651,7 @@
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvIsEmpty">
       </explanation>
-      <explanation lang="zh_cn" name="lvIsEmpty"
+      <explanation lang="zhc" name="lvIsEmpty"
                    syntax="lvIsEmpty(目标变量名)"
                    details="例如：lvIsEmpty(包)
                    &#xA;
@@ -17613,7 +17692,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSize">
       </explanation>
-      <explanation lang="zh_cn" name="lvSize"
+      <explanation lang="zhc" name="lvSize"
                    syntax="lvSize(目标变量名)"
                    details="例如：lvSize(包)
                    &#xA;
@@ -17653,7 +17732,7 @@
                    &#xA;return: input var"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvClear">
       </explanation>
-      <explanation lang="zh_cn" name="lvClear"
+      <explanation lang="zhc" name="lvClear"
                    syntax="lvClear(目标变量名)"
                    details="例如：lvClear(包)
                    &#xA;
@@ -17691,7 +17770,7 @@
                    &#xA;return: list"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvShuffle">
       </explanation>
-      <explanation lang="zh_cn" name="lvShuffle"
+      <explanation lang="zhc" name="lvShuffle"
                    syntax="lvShuffle(列表变量)"
                    details="例如：lvShuffle(包)
                    &#xA;
@@ -17729,7 +17808,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvTextureW">
       </explanation>
-      <explanation lang="zh_cn" name="lvTextureW"
+      <explanation lang="zhc" name="lvTextureW"
                    syntax="lvTextureW(字符串)"
                    details="例如：lvTextureW(&quot;scg.png&quot;)
                    &#xA;
@@ -17767,7 +17846,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvTextureH">
       </explanation>
-      <explanation lang="zh_cn" name="lvTextureH"
+      <explanation lang="zhc" name="lvTextureH"
                    syntax="lvTextureH(字符串)"
                    details="例如：lvTextureH(&quot;scg.png&quot;)
                    &#xA;
@@ -17805,7 +17884,7 @@
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvText">
       </explanation>
-      <explanation lang="zh_cn" name="lvText"
+      <explanation lang="zhc" name="lvText"
                    syntax="lvText(字符串: 文本或文本窗口名)"
                    details="例如：lvText(&quot;文字王&quot;)
                    &#xA;
@@ -17843,7 +17922,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvTextBoundsW">
       </explanation>
-      <explanation lang="zh_cn" name="lvTextBoundsW"
+      <explanation lang="zhc" name="lvTextBoundsW"
                    syntax="lvTextBoundsW(字符串: 文本或文本窗口名)"
                    details="例如：lvTextBoundsW(&quot;文字王&quot;)
                    &#xA;
@@ -17881,7 +17960,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvTextBoundsH">
       </explanation>
-      <explanation lang="zh_cn" name="lvTextBoundsH"
+      <explanation lang="zhc" name="lvTextBoundsH"
                    syntax="lvTextBoundsH(字符串: 文本或文本窗口名)"
                    details="例如：lvTextBoundsH(&quot;文字王&quot;)
                    &#xA;
@@ -17919,7 +17998,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvMediaOffset">
       </explanation>
-      <explanation lang="zh_cn" name="lvMediaOffset"
+      <explanation lang="zhc" name="lvMediaOffset"
                    syntax="lvMediaOffset(字符串: 对象名)"
                    details="例如：lvMediaOffset(&quot;对象名&quot;)
                    &#xA;
@@ -17957,7 +18036,7 @@
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvAnimationIsPlaying">
       </explanation>
-      <explanation lang="zh_cn" name="lvAnimationIsPlaying"
+      <explanation lang="zhc" name="lvAnimationIsPlaying"
                    syntax="lvAnimationIsPlaying(string: 个体名)"
                    details="例如：lvAnimationIsPlaying(&quot;目标名&quot;)
                    &#xA;
@@ -17995,7 +18074,7 @@
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvState">
       </explanation>
-      <explanation lang="zh_cn" name="lvState"
+      <explanation lang="zhc" name="lvState"
                    syntax="lvState(string: 个体名)"
                    details="例如：lvState(&quot;目标名&quot;)
                    &#xA;
@@ -18033,7 +18112,7 @@
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvHasState">
       </explanation>
-      <explanation lang="zh_cn" name="lvHasState"
+      <explanation lang="zhc" name="lvHasState"
                    syntax="lvHasState(string: 个体名)"
                    details="例如：lvHasState(&quot;目标名&quot;)
                    &#xA;
@@ -18071,7 +18150,7 @@
                    &#xA;return: list"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvGetNames">
       </explanation>
-      <explanation lang="zh_cn" name="lvGetNames"
+      <explanation lang="zhc" name="lvGetNames"
                    syntax="lvGetNames(string: 个体名的正则表达式)"
                    details="例如：lvGetNames(&quot;目标.*&quot;)
                    &#xA;
@@ -18114,7 +18193,7 @@
                    &#xA;return: list"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvGetClosestObjWithName">
       </explanation>
-      <explanation lang="zh_cn" name="lvGetClosestObjWithName"
+      <explanation lang="zhc" name="lvGetClosestObjWithName"
                    syntax="lvGetClosestObjWithName(string: 基准个体名, string: 个体名的正则表达式)"
                    details="例如：lvGetClosestObjWithName(&quot;基准&quot;, &quot;目标.*&quot;)
                    &#xA;
@@ -18157,7 +18236,7 @@
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveExists">
       </explanation>
-      <explanation lang="zh_cn" name="lvSaveExists"
+      <explanation lang="zhc" name="lvSaveExists"
                    syntax="lvSaveExists(数字: 数据编号)"
                    details="例如：lvSaveExists(30)
                    &#xA;
@@ -18196,7 +18275,7 @@
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveImagePath">
       </explanation>
-      <explanation lang="zh_cn" name="lvSaveImagePath"
+      <explanation lang="zhc" name="lvSaveImagePath"
                    syntax="lvSaveImagePath(数字: 数据编号)"
                    details="例如：lvSaveImagePath(30)
                    &#xA;
@@ -18237,7 +18316,7 @@
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveInfo">
       </explanation>
-      <explanation lang="zh_cn" name="lvSaveInfo"
+      <explanation lang="zhc" name="lvSaveInfo"
                    syntax="lvSaveInfo(数字: 数据编号, string: 需要获取的属性名)"
                    details="例如：lvSaveInfo(30, &quot;属性名&quot;)
                    &#xA;
@@ -18278,7 +18357,7 @@
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveGetDataVar">
       </explanation>
-      <explanation lang="zh_cn" name="lvSaveGetDataVar"
+      <explanation lang="zhc" name="lvSaveGetDataVar"
                    syntax="lvSaveGetDataVar(数字: 数据编号, string: 需要获取的保存变量名)"
                    details="例如：lvSaveGetDataVar(30, &quot;变量名&quot;)
                    &#xA;
@@ -18319,7 +18398,7 @@
                    &#xA;return: void"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveSetDataVar">
       </explanation>
-      <explanation lang="zh_cn" name="lvSaveSetDataVar"
+      <explanation lang="zhc" name="lvSaveSetDataVar"
                    syntax="lvSaveSetDataVar(数字: 数据编号, string: 变量名, 变量)"
                    details="例如：lvSaveSetDataVar(30, &quot;锁定中&quot;, true)
                    &#xA;
@@ -18359,7 +18438,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvMath_pi">
       </explanation>
-      <explanation lang="zh_cn" name="lvMath::pi"
+      <explanation lang="zhc" name="lvMath::pi"
                    syntax="lvMath::pi()"
                    details="例如：lvMath::pi()
                    &#xA;
@@ -18397,7 +18476,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvMath_deg">
       </explanation>
-      <explanation lang="zh_cn" name="lvMath::deg"
+      <explanation lang="zhc" name="lvMath::deg"
                    syntax="lvMath::deg(数字: 弧度)"
                    details="例如：lvMath::deg(30)
                    &#xA;
@@ -18435,7 +18514,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvMath_rad">
       </explanation>
-      <explanation lang="zh_cn" name="lvMath::rad"
+      <explanation lang="zhc" name="lvMath::rad"
                    syntax="lvMath::rad(数字: 角度)"
                    details="例如：lvMath::rad(30)
                    &#xA;
@@ -18473,7 +18552,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#r_to_z">
       </explanation>
-      <explanation lang="zh_cn" name="lvMath::r_to_z"
+      <explanation lang="zhc" name="lvMath::r_to_z"
                    syntax="lvMath::r_to_z(数字: r)"
                    details="例如：lvMath::r_to_z(30)
                    &#xA;
@@ -18511,7 +18590,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#z_to_r">
       </explanation>
-      <explanation lang="zh_cn" name="lvMath::z_to_r"
+      <explanation lang="zhc" name="lvMath::z_to_r"
                    syntax="lvMath::z_to_r(数字: z)"
                    details="例如：lvMath::z_to_r(30)
                    &#xA;
@@ -18549,7 +18628,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvMath_abs">
       </explanation>
-      <explanation lang="zh_cn" name="lvMath::abs"
+      <explanation lang="zhc" name="lvMath::abs"
                    syntax="lvMath::abs(数字)"
                    details="例如：lvMath::abs(数字)
                    &#xA;
@@ -18585,7 +18664,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvMath_sin">
       </explanation>
-      <explanation lang="zh_cn" name="lvMath::sin"
+      <explanation lang="zhc" name="lvMath::sin"
                    syntax="lvMath::sin(数字: 弧度)"
                    details="例如：lvMath::sin(lvMath::pi() / 2)
                    &#xA;
@@ -18621,7 +18700,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvMath_cos">
       </explanation>
-      <explanation lang="zh_cn" name="lvMath::cos"
+      <explanation lang="zhc" name="lvMath::cos"
                    syntax="lvMath::cos(数字: 弧度)"
                    details="例如：lvMath::cos(lvMath::pi() / 2)
                    &#xA;
@@ -18657,7 +18736,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvMath_tan">
       </explanation>
-      <explanation lang="zh_cn" name="lvMath::tan"
+      <explanation lang="zhc" name="lvMath::tan"
                    syntax="lvMath::tan(数字: 弧度)"
                    details="例如：lvMath::tan(lvMath::pi() / 2)
                    &#xA;
@@ -18693,7 +18772,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvMath_asin">
       </explanation>
-      <explanation lang="zh_cn" name="lvMath::asin"
+      <explanation lang="zhc" name="lvMath::asin"
                    syntax="lvMath::asin(数字)"
                    details="例如：lvMath::asin(lvMath::pi() / 2)
                    &#xA;
@@ -18729,7 +18808,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvMath_acos">
       </explanation>
-      <explanation lang="zh_cn" name="lvMath::acos"
+      <explanation lang="zhc" name="lvMath::acos"
                    syntax="lvMath::acos(数字)"
                    details="例如：lvMath::acos(lvMath::pi() / 2)
                    &#xA;
@@ -18765,7 +18844,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvMath_atan">
       </explanation>
-      <explanation lang="zh_cn" name="lvMath::atan"
+      <explanation lang="zhc" name="lvMath::atan"
                    syntax="lvMath::atan(数字)"
                    details="例如：lvMath::atan(lvMath::pi() / 2)
                    &#xA;
@@ -18801,7 +18880,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvMath_atan2">
       </explanation>
-      <explanation lang="zh_cn" name="lvMath::atan2"
+      <explanation lang="zhc" name="lvMath::atan2"
                    syntax="lvMath::atan2(数字)"
                    details="例如：lvMath::atan2(lvMath::pi() / 2)
                    &#xA;
@@ -18839,7 +18918,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvMath_sqrt">
       </explanation>
-      <explanation lang="zh_cn" name="lvMath::sqrt"
+      <explanation lang="zhc" name="lvMath::sqrt"
                    syntax="lvMath::sqrt(数字)"
                    details="例如：lvMath::sqrt(4)
                    &#xA;
@@ -18884,7 +18963,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_InputType">
       </explanation>
-      <explanation lang="zh_cn" name="lvSystem::InputType"
+      <explanation lang="zhc" name="lvSystem::InputType"
                    syntax="lvSystem::InputType()"
                    details="例如：lvSystem::InputType()
                    &#xA;
@@ -18934,7 +19013,7 @@
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_WindowMode">
       </explanation>
-      <explanation lang="zh_cn" name="lvSystem::WindowMode"
+      <explanation lang="zhc" name="lvSystem::WindowMode"
                    syntax="lvSystem::WindowMode()"
                    details="例如：lvSystem::WindowMode()
                    &#xA;
@@ -18980,7 +19059,7 @@
                    &#xA;return: list"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_WindowSize">
       </explanation>
-      <explanation lang="zh_cn" name="lvSystem::WindowSize"
+      <explanation lang="zhc" name="lvSystem::WindowSize"
                    syntax="lvSystem::WindowSize()"
                    details="例如：lvSystem::WindowSize()
                    &#xA;
@@ -19018,7 +19097,7 @@
                    &#xA;return: list"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_ViewportSize">
       </explanation>
-      <explanation lang="zh_cn" name="lvSystem::ViewportSize"
+      <explanation lang="zhc" name="lvSystem::ViewportSize"
                    syntax="lvSystem::ViewportSize()"
                    details="例如：lvSystem::ViewportSize()
                    &#xA;
@@ -19056,7 +19135,7 @@
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_IsFixedWindowSize">
       </explanation>
-      <explanation lang="zh_cn" name="lvSystem::IsFixedWindowSize"
+      <explanation lang="zhc" name="lvSystem::IsFixedWindowSize"
                    syntax="lvSystem::IsFixedWindowSize()"
                    details="例如：lvSystem::IsFixedWindowSize()
                    &#xA;
@@ -19094,7 +19173,7 @@
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_IsRunForever">
       </explanation>
-      <explanation lang="zh_cn" name="lvSystem::IsRunForever"
+      <explanation lang="zhc" name="lvSystem::IsRunForever"
                    syntax="lvSystem::IsRunForever()"
                    details="例如：lvSystem::IsRunForever()
                    &#xA;
@@ -19132,6 +19211,15 @@
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_IsPausingLowerScripts">
       </explanation>
+      <explanation lang="zhc" name="lvSystem::IsPausingLowerScripts"
+             syntax="lvSystem::IsPausingLowerScripts()"
+             details="ex. lvSystem::IsPausingLowerScripts()
+             &#xA;  
+             &#xA;如果正在暂停下层脚本的加载，则返回 true
+             &#xA;  
+             &#xA;返回值: 布尔类型"
+             reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_IsPausingLowerScripts">
+      </explanation>
       <explanation lang="kor" name="lvSystem::IsPausingLowerScripts"
                    syntax="lvSystem::IsPausingLowerScripts()"
                    details="ex. lvSystem::IsPausingLowerScripts()
@@ -19146,7 +19234,7 @@
     <Command name="--[LIGHT.VN LUA 関数]--">
       <explanation lang="jap" name="--[LIGHT.VN LUA 関数]--"></explanation>
       <explanation lang="eng" name="--[LIGHT.VN LUA functions]--"></explanation>
-      <explanation lang="zh_cn" name="--[LIGHT.VN LUA 函数]--"></explanation>
+      <explanation lang="zhc" name="--[LIGHT.VN LUA 函数]--"></explanation>
       <explanation lang="kor" name="--[LIGHT.VN LUA 함수]--"></explanation>
     </Command>
     <Command name="lvCmd">
@@ -19168,7 +19256,7 @@
                    &#xA;return: none"
                    reference="https://wikiwiki.jp/lightvn/lua#lvCmd">
       </explanation>
-      <explanation lang="zh_cn" name="lvCmd"
+      <explanation lang="zhc" name="lvCmd"
                    syntax="lvCmd(string: Lightvn命令)"
                    details="例如：lvCmd(&quot;绘图 alice2 alice.png 150 30 50&quot;)
                    &#xA;
@@ -19206,7 +19294,7 @@
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/lua#lvGetVar">
       </explanation>
-      <explanation lang="zh_cn" name="lvGetVar"
+      <explanation lang="zhc" name="lvGetVar"
                    syntax="lvGetVar(string: Lightvn变量名)"
                    details="例如：lvGetVar(&quot;我的变量&quot;)
                    &#xA;
@@ -19244,7 +19332,7 @@
                    &#xA;return: none"
                    reference="https://wikiwiki.jp/lightvn/lua#lvSetVar">
       </explanation>
-      <explanation lang="zh_cn" name="lvSetVar"
+      <explanation lang="zhc" name="lvSetVar"
                    syntax="lvSetVar(string: Lightvn变量名, string: 变量值)"
                    details="例如：lvSetVar(&quot;我的变量&quot;, &quot;3&quot;)
                    &#xA;
@@ -19282,7 +19370,7 @@
                    &#xA;return: none"
                    reference="https://wikiwiki.jp/lightvn/lua#lvSetDataVar">
       </explanation>
-      <explanation lang="zh_cn" name="lvSetDataVar"
+      <explanation lang="zhc" name="lvSetDataVar"
                    syntax="lvSetDataVar(string: Lightvn变量名, string: 变量值)"
                    details="例如：lvSetDataVar(&quot;我的变量&quot;, &quot;3&quot;)
                    &#xA;
@@ -19320,7 +19408,7 @@
                    &#xA;return: none"
                    reference="https://wikiwiki.jp/lightvn/lua#lvSetGlobalVar">
       </explanation>
-      <explanation lang="zh_cn" name="lvSetGlobalVar"
+      <explanation lang="zhc" name="lvSetGlobalVar"
                    syntax="lvSetGlobalVar(string: Lightvn变量名, string: 变量值)"
                    details="例如：lvSetGlobalVar(&quot;我的变量&quot;, &quot;3&quot;)
                    &#xA;
@@ -19358,7 +19446,7 @@
                    &#xA;return: none"
                    reference="https://wikiwiki.jp/lightvn/lua#lvLog">
       </explanation>
-      <explanation lang="zh_cn" name="lvLog"
+      <explanation lang="zhc" name="lvLog"
                    syntax="lvLog(string:消息)"
                    details="例如：lvLog(&quot;已记录。\n&quot;)
                    &#xA;
@@ -19396,7 +19484,7 @@
                    &#xA;return: none"
                    reference="https://wikiwiki.jp/lightvn/lua#lvSystemMessage">
       </explanation>
-      <explanation lang="zh_cn" name="lvSystemMessage"
+      <explanation lang="zhc" name="lvSystemMessage"
                    syntax="lvSystemMessage(string:消息)"
                    details="例如：lvSystemMessage(&quot;告诉你&quot;)
                    &#xA;
@@ -19434,7 +19522,7 @@
                    &#xA;return: none"
                    reference="https://wikiwiki.jp/lightvn/lua#lvSystemError">
       </explanation>
-      <explanation lang="zh_cn" name="lvSystemError"
+      <explanation lang="zhc" name="lvSystemError"
                    syntax="lvSystemError(string:消息)"
                    details="例如：lvSystemError(&quot;告诉你&quot;)
                    &#xA;
@@ -19472,7 +19560,7 @@
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/lua#lvFileExists">
       </explanation>
-      <explanation lang="zh_cn" name="lvFileExists"
+      <explanation lang="zhc" name="lvFileExists"
                    syntax="lvFileExists(string:文件路径)"
                    details="例如：lvFileExists(&quot;Images/scg.png&quot;)
                    &#xA;

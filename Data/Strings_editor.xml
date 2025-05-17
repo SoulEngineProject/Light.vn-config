@@ -249,7 +249,7 @@
   <EString nkey="actionNew_Project_select_success" wpfControl="">
     <val lang="jap">成功したなのだ！ いつか招待してくれると嬉しいのだ！ &#xA;(作成場所：{})</val>
     <val lang="eng">Success created new project! (Created Location: {})</val>
-    <val lang="zhc">成功在 {} 打开了LightEditor.exe</val>
+    <val lang="zhc">成功创建了新项目！(创建位置： {} )</val>
     <val lang="kor">성공한 것이다! 언젠가 초대해 준다면 기쁜 것이다! &#xA;(저장 위치: {})</val>
   </EString>
   <EString nkey="actionNew_Project_select_failure" wpfControl="">
@@ -738,6 +738,7 @@
   <EString nkey="ReadFromPatchesCheck" wpfControl="">
     <val lang="jap">Patch類を読み込む</val>
     <val lang="eng">Read from Patches</val>
+    <val lang="zhc">读取补丁文件</val>
   </EString>
 
   <!--[tab: commands]-->

@@ -29,3 +29,4 @@ PRs will be talked over, and once merged, will be published together with Light.
 - `Strings_editor.xml`: Strings used in LightEditor.exe
 
 Join our [Discord](https://discord.gg/gzNThtmGH3) server for swift communication!
+

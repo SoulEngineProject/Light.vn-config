@@ -20,7 +20,7 @@
       </type>
       <type name="camera">
         <val lang="jap" value="カメラ"/>
-        <val lang="zhc" value="视角"/>
+        <val lang="zhc" value="摄像机"/>
         <val lang="kor" value="카메라"/>
       </type>
     </Types>
@@ -77,7 +77,7 @@
       </option>
       <option name="on_camera">
         <val lang="jap" value="カメラ付着"/>
-        <val lang="zhc" value="绑定视角"/>
+        <val lang="zhc" value="绑定摄像机"/>
         <val lang="kor" value="카메라부착"/>
       </option>
       <option name="lock_y">
@@ -92,12 +92,12 @@
       </option>
       <option name="2DView">
         <val lang="jap" value="2D視点"/>
-        <val lang="zhc" value="2D视角"/>
+        <val lang="zhc" value="2D摄像机"/>
         <val lang="kor" value="2D시점"/>
       </option>
       <option name="3DView">
         <val lang="jap" value="3D視点"/>
-        <val lang="zhc" value="3D视角"/>
+        <val lang="zhc" value="3D摄像机"/>
         <val lang="kor" value="3D시점"/>
       </option>
       <option name="noSave">
@@ -373,9 +373,9 @@
                details="[ ]：必填参数，( )：可选参数。
                &#xA;
                &#xA;常用输入)
-               &#xA;- (视角选项)
-               &#xA;如果设置了 (绑定视角)，
-               &#xA;实体将附着在视角上，不再受视角移动影响。
+               &#xA;- (摄像机选项)
+               &#xA;如果设置了 (绑定摄像机)，
+               &#xA;实体将附着在摄像机上，不再受摄像机移动影响。
                &#xA;
                &#xA;注意：所有文件名也可以表示为字符串
                &#xA; (例如：cg alice2 &quot;scg.png&quot; 150 30 50)。
@@ -437,14 +437,14 @@
       <explanation lang="zhc" name="--[脚本处理顺序信息]--"
                    syntax=""
                    details="脚本按行处理的步骤如下：
-                   &#xA;1. 应用宏
+                   &#xA;1. 宏应用
                    &#xA;2. 应用 {{ }}
                    &#xA;3. 计算 ()
                    &#xA;4. 尝试作为 Light vn 命令执行
                    &#xA;
                    &#xA;参考：
                    &#xA;如果一个 Light.vn 命令接收另一个命令作为参数，将要执行的命令用&quot;&quot;括起来，
-                   &#xA;当需要执行该命令时，括号内的条件将被计算并执行。（所谓优先求值）
+                   &#xA;当需要执行该命令时，括号内的条件将被计算并执行。（所谓惰性求值）
                    &#xA;
                    &#xA;反映参考A：
                    &#xA;对于 {{ }}，如果内容是字符串，则去掉外部的&quot;&quot;。
@@ -626,24 +626,24 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/command#command1a5">
       </explanation>
-      <explanation lang="zhc" name="--[视角选项]--"
+      <explanation lang="zhc" name="--[摄像机选项]--"
                    syntax=""
-                   details="视角选项：
+                   details="摄像机选项：
                    &#xA;
-                   &#xA;绑定视角
-                   &#xA;不受视角变化影响的显示。（好像实体粘在视角上一样）
+                   &#xA;绑定摄像机
+                   &#xA;不受摄像机变化影响的显示。（好像实体粘在摄像机上一样）
                    &#xA;
-                   &#xA;2D视角
-                   &#xA;显示为“视角模式 0”状态下的实体。
+                   &#xA;2D摄像机
+                   &#xA;显示为“摄像机模式 0”状态下的实体。
                    &#xA;
-                   &#xA;3D视角
-                   &#xA;显示为“视角模式 3”状态下的实体。
+                   &#xA;3D摄像机
+                   &#xA;显示为“摄像机模式 3”状态下的实体。
                    &#xA;
                    &#xA;锁定Y轴
-                   &#xA;取消视角的 y 轴旋转。y 轴旋转度始终面向视角。
+                   &#xA;取消摄像机的 y 轴旋转。y 轴旋转度始终面向摄像机。
                    &#xA;
                    &#xA;锁定XY轴
-                   &#xA;取消视角的 x 和 y 轴旋转。x 和 y 轴旋转度始终面向视角。
+                   &#xA;取消摄像机的 x 和 y 轴旋转。x 和 y 轴旋转度始终面向摄像机。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/command#command1a5">
       </explanation>
@@ -707,7 +707,7 @@
                    &#xA;所有屏幕空间。
                    &#xA;
                    &#xA;同层级屏幕区域
-                   &#xA;使用“启用屏幕空间”时：在屏幕空间堆栈的顶部启动新的屏幕空间。
+                   &#xA;使用“开始屏幕空间”时：在屏幕空间堆栈的顶部启动新的屏幕空间。
                    &#xA;但是，使用“覆盖屏幕空间”命令时，会发生覆盖，
                    &#xA;因此同一层级可以存在多个屏幕空间。
                    &#xA;此选项选择同一层级的屏幕空间。
@@ -767,10 +767,10 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/editor/free_camera_usage">
       </explanation>
-      <explanation lang="zhc" name="--[自由视角操作]--"
+      <explanation lang="zhc" name="--[自由摄像机操作]--"
                    syntax=""
-                   details="自由视角使用：
-                   &#xA;自由视角模式继承当前脚本的“视角模式”。
+                   details="自由摄像机使用：
+                   &#xA;自由摄像机模式继承当前脚本的“摄像机模式”。
                    &#xA;
                    &#xA;左右移动：ad
                    &#xA;前后移动：ws
@@ -780,7 +780,7 @@
                    &#xA;旋转 z 轴：qe
                    &#xA;
                    &#xA;左右移动：shift + 按住鼠标滚轮并移动。
-                   &#xA;缩放：鼠标滚轮（仅限 2D 视角）
+                   &#xA;缩放：鼠标滚轮（仅限 2D 摄像机）
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/editor/free_camera_usage">
       </explanation>
@@ -836,17 +836,17 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#empty">
       </explanation>
       <explanation lang="zhc" name="个体"
-                   syntax="个体 [名字] [x] [y] [r] (视角选项)"
+                   syntax="个体 [名字] [x] [y] [r] (摄像机选项)"
                    details="例如：个体 id0 150 30 50  
                    &#xA;在指定位置创建名为id0的个体。 
-                   &#xA;主要用作“父子类”命令中的便利个体。 
+                   &#xA;主要用作“父子关系”命令中的父对象。 
                    &#xA;  
                    &#xA;具有以下特性：  
                    &#xA;色调(rgba)  
                    &#xA;位置、缩放、旋转  
                    &#xA;
-                   &#xA;注意：视角选项示例。绑定视角（忽略视角操作的影响）  
-                   &#xA;其他“视角选项”可以在命令目录的“视角选项”中查看。 
+                   &#xA;注意：摄像机选项示例。绑定摄像机（忽略摄像机操作的影响）  
+                   &#xA;其他“摄像机选项”可以在命令目录的“摄像机选项”中查看。 
                    &#xA;注意：在命令中添加'0'将以透明度为0的状态显示。 
                    &#xA; (例如：立绘0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#empty">
@@ -905,7 +905,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#bg">
       </explanation>
       <explanation lang="zhc" name="背景"
-                   syntax="背景 [名称] [文件名 / 动画名称] (视角选项)"
+                   syntax="背景 [名称] [文件名 / 动画名称] (摄像机选项)"
                    details="例如：背景 bg1 scenery.png
                    &#xA;使用名称为 'bg1' 的背景图片 'scenery.png'。
                    &#xA;
@@ -966,12 +966,12 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#cg">
       </explanation>
       <explanation lang="zhc" name="立绘"
-                   syntax="立绘 [名称] [文件名 / 动画名称] [x] [y] [r] (视角选项)"
+                   syntax="立绘 [名称] [文件名 / 动画名称] [x] [y] [r] (摄像机选项)"
                    details="立绘 alice2 alice.png 150 30 50
                    &#xA;使用名称 'alice2' 的图片 'alice.png' 在坐标 [150 30] 和层 50 上显示。
                    &#xA;立绘 alice2 anim_alice 150 30 50
                    &#xA;使用名称 'alice2' 的动画 'anim_alice' 在坐标 [150 30] 和层 50 上显示。
-                   &#xA;注：如果设置了 '视角选项'，则将忽略视角。
+                   &#xA;注：如果设置了 '摄像机选项'，则将忽略摄像机。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#cg">
       </explanation>
@@ -1043,7 +1043,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#sound_cg">
       </explanation>
       <explanation lang="zhc" name="音效立绘"
-                   syntax="音效立绘 [名称] [文件名 / 动画名称] [x] [y] [r] [音效目标名称] [判断间隔时间] (变化类型) (最小音量1) (显示图像1) (...) (获取音量的时间延迟:ms) (视角选项)"
+                   syntax="音效立绘 [名称] [文件名 / 动画名称] [x] [y] [r] [音效目标名称] [判断间隔时间] (变化类型) (最小音量1) (显示图像1) (...) (获取音量的时间延迟:ms) (摄像机选项)"
                    details="例如：音效立绘 hisia mouth0.png 400 200 90 id0 100 30 mouth1.png 60 mouth2.png 90 mouth3.png 120 mouth4.png
                    &#xA;  
                    &#xA;根据音效文件的音量数据显示图像。
@@ -1063,8 +1063,8 @@
                    &#xA;0: 原样
                    &#xA;1: 平滑（在图像之间进行插值：默认）
                    &#xA;提示：对于有大量口型同步效果的作品，建议统一调整整体语音音量并重复使用值，以避免过度负担。
-                   &#xA;注：视角选项示例：绑定视角（不受视角操作影响）
-                   &#xA;其他“视角选项”请参阅命令手册中的“视角选项”。
+                   &#xA;注：摄像机选项示例：绑定摄像机（不受摄像机操作影响）
+                   &#xA;其他“摄像机选项”请参阅命令手册中的“摄像机选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
                    reference="https://wikiwiki.jp/lightvn/commands/image#sound_cg">
@@ -1141,7 +1141,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#ninecg">
       </explanation>
       <explanation lang="zhc" name="九格立绘"
-                   syntax="九格立绘 [名称] [文件名 / 动画名称] [x] [y] [r] [分割_x1] [分割_x2] [分割_y1] [分割_y2] [宽度] [高度] (缩放类型: 0(默认)) (视角选项)"
+                   syntax="九格立绘 [名称] [文件名 / 动画名称] [x] [y] [r] [分割_x1] [分割_x2] [分割_y1] [分割_y2] [宽度] [高度] (缩放类型: 0(默认)) (摄像机选项)"
                    details="例如：九格立绘 ex1 waku.png 450 200 1 33 66 33 66 200 200
                    &#xA;  
                    &#xA;指定的图像沿着[分割_x1] [分割_x2] [分割_y1] [分割_y2]分割成九个区域，并在中心区域拉伸以适应指定的大小。
@@ -1149,8 +1149,8 @@
                    &#xA;0: 缩放中心以适应。
                    &#xA;1: 将中心部分作为平铺处理。如果指定尺寸不足以放置平铺，则九格立绘的中心尺寸增大为平铺大小的倍数。
                    &#xA;2: 将中心部分作为平铺处理。如果指定尺寸不足以放置平铺，则平铺区域缩放以适应。
-                   &#xA;注：视角选项示例：绑定视角（不受视角操作影响）
-                   &#xA;其他“视角选项”请参阅命令手册中的“视角选项”。
+                   &#xA;注：摄像机选项示例：绑定摄像机（不受摄像机操作影响）
+                   &#xA;其他“摄像机选项”请参阅命令手册中的“摄像机选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
                    reference="https://wikiwiki.jp/lightvn/commands/image#ninecg">
@@ -1199,14 +1199,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg">
       </explanation>
       <explanation lang="zhc" name="滚动图片"
-                   syntax="滚动图片 [名称] [文件名 / 动画名称] [x] [y] [r] [每秒移动] (竖) (偏移:px) (视角选项)"
+                   syntax="滚动图片 [名称] [文件名 / 动画名称] [x] [y] [r] [每秒移动] (竖) (偏移:px) (摄像机选项)"
                    details="例如：滚动图片 bg_effect scrolling_background.png 0 0 10 60
                    &#xA;  
                    &#xA;图像根据每秒的移动值移动。
                    &#xA;注：如果设置了“竖”选项，则竖流动。
                    &#xA;注：建议使用的图像在流动方向上的尺寸与屏幕相同或更大。
-                   &#xA;注：视角选项示例：绑定视角（不受视角操作影响）
-                   &#xA;其他“视角选项”请参阅命令手册中的“视角选项”。
+                   &#xA;注：摄像机选项示例：绑定摄像机（不受摄像机操作影响）
+                   &#xA;其他“摄像机选项”请参阅命令手册中的“摄像机选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
                    reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg">
@@ -1279,7 +1279,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#spine_cg">
       </explanation>
       <explanation lang="zhc" name="Spine动画"
-                  syntax="spine动画 [目标名称] [骨架文件路径] [图集文件路径] [x] [y] [图层(r)] [起始动画] (视角选项)"
+                  syntax="spine动画 [目标名称] [骨架文件路径] [图集文件路径] [x] [y] [图层(r)] [起始动画] (摄像机选项)"
                   details="ex. spine动画 mycg spine/cloud-pot.json spine/cloud-pot.atlas 300 500 0 rain
                   &#xA;  
                   &#xA;从Spine创建动画对象
@@ -1307,11 +1307,11 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#model">
       </explanation>
       <explanation lang="zhc" name="模型"
-                   syntax="模型 [名称] [文件名] [x] [y] [r] (视角选项)"
+                   syntax="模型 [名称] [文件名] [x] [y] [r] (摄像机选项)"
                    details="例如：模型 stairs stairs.glb 0 400 0
                    &#xA;  
-                   &#xA;注：视角选项示例：绑定视角（不受视角操作影响）
-                   &#xA;其他“视角选项”请参阅命令手册中的“视角选项”。
+                   &#xA;注：摄像机选项示例：绑定摄像机（不受摄像机操作影响）
+                   &#xA;其他“摄像机选项”请参阅命令手册中的“摄像机选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
                    reference="https://wikiwiki.jp/lightvn/commands/image#model">
@@ -1349,8 +1349,8 @@
                    syntax="天空盒 [文件名: 上] [文件名: 下] [文件名: 前] [文件名: 后] [文件名: 左] [文件名: 右]"
                    details="例如：天空盒 skybox/top.jpg skybox/bottom.jpg skybox/front.jpg skybox/back.jpg skybox/left.jpg skybox/right.jpg
                    &#xA;  
-                   &#xA;创建一个看起来离视角无限远的天空盒。
-                   &#xA;（不受视角位置影响。）
+                   &#xA;创建一个看起来离摄像机无限远的天空盒。
+                   &#xA;（不受摄像机位置影响。）
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
                    reference="https://wikiwiki.jp/lightvn/commands/image#sky">
@@ -1388,12 +1388,12 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#light">
       </explanation>
       <explanation lang="zhc" name="光源"
-                   syntax="光源 [名称] [x] [y] [r] (视角选项)"
+                   syntax="光源 [名称] [x] [y] [r] (摄像机选项)"
                    details="例如：光源 light0 100 100 80
                    &#xA;  
                    &#xA;要使其生效，必须将光源模式设置为1或更高。
-                   &#xA;注：视角选项示例：绑定视角（不受视角操作影响）
-                   &#xA;其他“视角选项”请参阅命令手册中的“视角选项”。
+                   &#xA;注：摄像机选项示例：绑定摄像机（不受摄像机操作影响）
+                   &#xA;其他“摄像机选项”请参阅命令手册中的“摄像机选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
                    reference="https://wikiwiki.jp/lightvn/commands/image#light">
@@ -1441,8 +1441,8 @@
                    &#xA;模式：
                    &#xA;0: 不使用光源。模型不受光源的影响。（默认）
                    &#xA;1: 使用光源。
-                   &#xA;注：视角选项示例：绑定视角（不受视角操作影响）
-                   &#xA;其他“视角选项”请参阅命令手册中的“视角选项”。
+                   &#xA;注：摄像机选项示例：绑定摄像机（不受摄像机操作影响）
+                   &#xA;其他“摄像机选项”请参阅命令手册中的“摄像机选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
                    reference="https://wikiwiki.jp/lightvn/commands/image#lightMode">
@@ -1964,8 +1964,8 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#button">
       </explanation>
       <explanation lang="zhc" name="按钮"
-                   syntax="按钮 [名称] (按钮常态图像) (光标接触图像) (按钮点击图像) [x] [y] [r] (忽略透明) (视角选项) (Light.vn命令)"
-                   details="例如：按钮 button1 untouched-image.png touched-image.png clicked-image.png 300 400 200 绑定视角 跳转 tut.txt
+                   syntax="按钮 [名称] (按钮常态图像) (光标接触图像) (按钮点击图像) [x] [y] [r] (忽略透明) (摄像机选项) (Light.vn命令)"
+                   details="例如：按钮 button1 untouched-image.png touched-image.png clicked-image.png 300 400 200 绑定摄像机 跳转 tut.txt
                    &#xA;
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）
@@ -2037,7 +2037,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#btnText">
       </explanation>
       <explanation lang="zhc" name="按钮文字"
-                  syntax="按钮文字 [按钮名称] [字体文件名] [字体大小] [&quot;文本&quot;]"
+                  syntax="按钮文字 [按钮名称] [字体文件名] [字体大小] (中心点x偏移) (中心点y偏移) [&quot;文本&quot;]"
                   details="例如：按钮文字 button1 r-mplus-1c-m.ttf 24 &quot;点击我！&quot;
                   &#xA;
                   &#xA;在指定的按钮中间显示文字。
@@ -2091,7 +2091,7 @@
                   details="例如：按钮组 choice_
                   &#xA;
                   &#xA;将所有以'choice_'开头的按钮分组。
-                  &#xA;当分组中的任何一个按钮被光标接触住时，该组中的所有按钮将不再接受外部输入。
+                  &#xA;当组中的任何一个按钮被点击时，该组中的所有按钮将不再接受外部输入。
                   &#xA;建议在选择场景中使用，当用光标接触在一个选项时应禁用所有选项。
                   &#xA;当组中的所有按钮都被移除时，组将自动解散。"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#setButtonGroup">
@@ -2410,9 +2410,9 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchableRes">
       </explanation>
-      <explanation lang="zhc" name="默认光标接触素材"
-                   syntax="默认光标接触素材 [UI未光标接触图像] [UI光标接触时图像] [UI点击时图像] (UI光标接触时音效) (UI点击时音效)"
-                   details="例如：默认光标接触素材 untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg
+      <explanation lang="zhc" name="光标接触素材设置"
+                   syntax="光标接触素材设置 [UI未光标接触图像] [UI光标接触时图像] [UI点击时图像] (UI光标接触时音效) (UI点击时音效) (UI激活时图像) (UI非激活时图像)"
+                   details="例如：光标接触素材设置 untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg
                    &#xA;
                    &#xA;声明“所有之后创建的可让光标接触的个体”（例如：按钮）的默认素材。
                    &#xA;如果在创建个体时未声明特定的使用素材，则使用此处声明的素材。
@@ -2515,12 +2515,12 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#trackbar">
       </explanation>
       <explanation lang="zhc" name="轨迹条"
-                   syntax="轨迹条 [名称] (轨迹球未光标接触素材) (轨迹球光标接触素材) (轨迹球点击素材) [x] [y] [r] [横/竖] [长度] [变量名称] [左侧值] [右侧值] (忽略透明) (视角选项) (调整后执行的命令)"
-                   details="例如：轨迹条 trackbar sys_trackball.png 370 246 105 水平 530 bgm 0 100
+                   syntax="轨迹条 [名称] (轨迹球未光标接触素材) (轨迹球光标接触素材) (轨迹球点击素材) [x] [y] [r] [横/竖] [长度] [变量名称] [左侧值] [右侧值] (忽略透明) (摄像机选项) (调整后执行的命令)"
+                   details="例如：轨迹条 trackbar sys_trackball.png 370 246 105 横 530 bgm 0 100
                    &#xA;
                    &#xA;创建一个控制背景音乐音量的轨迹条。
                    &#xA;
-                   &#xA;例如：轨迹条 trackbar sys_trackball.png 370 246 105 水平 530 bgm 0 100 音效 test_sound test.ogg
+                   &#xA;例如：轨迹条 trackbar sys_trackball.png 370 246 105 横 530 bgm 0 100 音效 test_sound test.ogg
                    &#xA;
                    &#xA;调整后，执行“音效 test_sound test.ogg”。
                    &#xA;如果未指定素材，则使用“光标接触素材设置”配置。"
@@ -2589,6 +2589,7 @@
                    &#xA;目前支持的命令：
                    &#xA;ruby 文字列：为单词添加注音。
                    &#xA;rubyAt 数字：指定注音的位置。
+                   &#xA;rubyFont 文字串：指定注音的字体。
                    &#xA;"
                   >
       </explanation>
@@ -2646,7 +2647,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textbox">
       </explanation>
       <explanation lang="zhc" name="文本框"
-                   syntax="文本框 [名称] [x] [y] [r] [宽度] [高度] [字体文件名] [字体大小] [忽略溢出] (视角选项) [&quot;字符串:文本内容&quot;] (加入日志)"
+                   syntax="文本框 [名称] [x] [y] [r] [宽度] [高度] [字体文件名] [字体大小] (忽略溢出) (摄像机选项) [&quot;字符串:文本内容&quot;] (加入日志)"
                    details="例如：文本框 textbox1 0 400 81 800 200 r-mplus-1c-m.ttf 24
                    &#xA;
                    &#xA;忽略溢出：如果设置，则即使文本超出文本框范围也不会报错。
@@ -2721,7 +2722,7 @@
       </explanation>
       <explanation lang="zhc" name="文本"
                    syntax="文本 [名称] [x] [y] [r] [字体文件名] [字体大小(px)] (行大小)
-                   &#xA;(方向：横/纵) (对齐：左/右/中) (最大文本长度) (视角选项) &quot;[字符串:文本内容]&quot; (加入日志)"
+                   &#xA;(方向：横/纵) (对齐：左/右/中) (最大文本长度) (摄像机选项) &quot;[字符串:文本内容]&quot; (加入日志)"
                    details="例如：文本 msg_str 370 223 106 r-mplus-1c-m.ttf 24 &quot;内容! &quot;
                    &#xA;
                    &#xA;注：“文本”不同于文本框的文本，不会流动，所有文本会立即显示。
@@ -2793,7 +2794,7 @@
       </explanation>
       <explanation lang="zhc" name="续文本"
                    syntax="-&quot;[文本内容]"
-                   details="例如：-”这是续文本!
+                   details="例如：-&quot;这是续文本!
                    &#xA;
                    &#xA;用于在现有文本之后显示追加文本。"
                    reference="https://wikiwiki.jp/lightvn/text">
@@ -2868,9 +2869,9 @@
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableLoad">
       </explanation>
-      <explanation lang="zhc" name="加载台词"
-                   syntax="加载台词 [文件路径] [下一行: 0~]"
-                   details="加载台词 table.csv 0
+      <explanation lang="zhc" name="注册台词信息"
+                   syntax="注册台词信息 [文件路径] [下一行: 0~]"
+                   details="例如：注册台词信息 table.csv 0
                    &#xA;
                    &#xA;加载剧本表格，并设置下一行要显示的内容。
                    &#xA;
@@ -2927,7 +2928,7 @@
                    &#xA;从已经注册的“文件路径”中的台词信息中，
                    &#xA;在当前使用的文本框中显示下一条文本数据，作为“新页面文本”。
                    &#xA;
-                   &#xA;注：需要先通过“加载台词”注册[文件路径]，但如果是(行)指定，则不用。
+                   &#xA;注：需要先通过“注册台词信息”注册[文件路径]，但如果是(行)指定，则不用。
                    &#xA;注：由于无法设置等待，因此如果需要等待，建议使用
                    &#xA;例如：新增台词 table.csv | 等待
                    &#xA;这样的形式。"
@@ -2981,13 +2982,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableLineCont">
       </explanation>
       <explanation lang="zhc" name="追加台词"
-                  syntax="追加台词 [文件路径]"
+                  syntax="1. 追加台词 (目标) [文件路径]
+                  &#xA;2. 追加台词 (目标) [文件路径] (行)"
                   details="例如：追加台词 table.csv
                   &#xA;
                   &#xA;从已经注册的“文件路径”中的台词信息中，
                   &#xA;在当前使用的文本框中显示下一条文本数据，作为“追加文本”。
                   &#xA;
-                  &#xA;注：需要先通过“加载台词”注册[文件路径]。
+                  &#xA;注：需要先通过“注册台词信息”注册[文件路径]。
                   &#xA;注：由于无法设置等待，因此如果需要等待，建议使用
                   &#xA;例如：追加台词 table.csv | 等待
                   &#xA;这样的形式。"
@@ -3171,9 +3173,9 @@
                    &#xA;Note: When 'target name' is set, settings will be applied to whole current text. If not, will be applied to next text line."
                    reference="https://wikiwiki.jp/lightvn/commands/text#textLineSize">
       </explanation>
-      <explanation lang="zhc" name="字体间距"
-                   syntax="字体间距 (目标名称) [大小(pixels)]"
-                   details="例如：字体间距 30
+      <explanation lang="zhc" name="字体行高"
+                   syntax="字体行高 (目标名称) [大小(pixels)]"
+                   details="例如：字体行高 30
                    &#xA;
                    &#xA;注：目标名称可使用正则表达式。
                    &#xA;注：指定“目标名称”时，设置会立即应用于整个当前文本。如果未指定，则应用于文本框中的下一行文本。"
@@ -3372,14 +3374,14 @@
                    &#xA;Note: When 'target name' is set, settings will be applied to whole current text. If not, will be applied to next texts"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textItalic">
       </explanation>
-      <explanation lang="zhc" name="字体斜体"
-                   syntax="字体斜体 (对象名) [true/false]"
-                   details="字体斜体 true
+      <explanation lang="zhc" name="文本斜体"
+                   syntax="文本斜体 (目标名称) [true/false]"
+                   details="例如：文本斜体 true
                    &#xA;
                    &#xA;「注意：此功能正在开发中」
                    &#xA;
-                   &#xA;注: 对象名允许使用正则表达式
-                   &#xA;注: 如果指定了'对象名'，设置将立即应用于整个当前文本。如果未指定，将应用于下一个文本。"
+                   &#xA;注: 目标名称允许使用正则表达式
+                   &#xA;注: 如果指定了'目标名称'，设置将立即应用于整个当前文本。如果未指定，将应用于下一个文本。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textItalic">
       </explanation>
       <explanation lang="kor" name="텍스트기울이기"
@@ -3428,7 +3430,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textShadow">
       </explanation>
       <explanation lang="zhc" name="文本阴影"
-                   syntax="文本阴影 (对象名) [阴影类型]"
+                   syntax="文本阴影 (目标名称) [阴影类型]"
                    details="[阴影类型]
                    &#xA;0: 无阴影
                    &#xA;1: 轮廓线 [厚度] [r:0-255] [g:0-255] [b:0-255] (a:0-255) (x) (y)
@@ -3442,8 +3444,9 @@
                    &#xA;(x) (y)表示相对于原始文本的位置。
                    &#xA;使用hex值比使用r, g, b值更易读。
                    &#xA;
-                   &#xA;注: 对象名可以为正则表达式
-                   &#xA;注: 如果指定了'对象名'，设置将立即应用于整个当前文本。如果未指定，将应用于下一个文本。"
+                   &#xA;注: 目标名称可以为正则表达式
+                   &#xA;注: 如果指定了'目标名称'，设置将立即应用于整个当前文本。如果未指定，将应用于下一个文本。
+                   &#xA;注: 此功能实际上是为文字添加描边效果，而非传统意义上的投影阴影"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textShadow">
       </explanation>
       <explanation lang="kor" name="텍스트그림자"
@@ -3487,13 +3490,13 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textSpeed">
       </explanation>
       <explanation lang="zhc" name="文本速度"
-                   syntax="文本速度 (对象名) [速度:ms/字]"
+                   syntax="文本速度 (目标名称) [速度:ms/字]"
                    details="例如：文本速度 400
                    &#xA;
-                   &#xA; 「文本速度 跟随系统」使文本遵循用户设置 (vn_sysTextSpeed)
-                   &#xA; 「文本速度 跟随系统自动」使文本遵循用户设置 (vn_sysAutoSpeed)
+                   &#xA; 『文本速度 跟随系统』使文本遵循用户设置 (vn_sysTextSpeed)
+                   &#xA; 『文本速度 跟随系统自动』使文本遵循用户设置 (vn_sysAutoSpeed)
                    &#xA;
-                   &#xA;注: 对象名允许使用正则表达式"
+                   &#xA;注: 目标名称允许使用正则表达式"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textSpeed">
       </explanation>
       <explanation lang="kor" name="텍스트속도"
@@ -3522,10 +3525,10 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textWordWrap">
       </explanation>
       <explanation lang="zhc" name="文本换行"
-                   syntax="文本换行 (对象名) [true/false]"
+                   syntax="文本换行 (目标名称) [true/false]"
                    details="例如：文本换行 false
                    &#xA;
-                   &#xA;注: （对象名）可以是正则表达式"
+                   &#xA;注: （目标名称）可以是正则表达式"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textWordWrap">
       </explanation>
       <explanation lang="kor" name="텍스트자동개행"
@@ -3562,7 +3565,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textAutoIndent">
       </explanation>
       <explanation lang="zhc" name="文本自动缩进"
-                   syntax="文本自动缩进 (对象名) [字符串：启动自动缩进的字符集] (额外间隔)"
+                   syntax="文本自动缩进 (目标名称) [字符串：启动自动缩进的字符集] (额外间隔)"
                    details="例如：文本自动缩进 &quot;[「&quot;
                    &#xA;
                    &#xA;如果文本框的第一个字符是指定的自动缩进字符之一，
@@ -3573,7 +3576,7 @@
                    &#xA;
                    &#xA;额外间隔：从自动缩进字符到正文的额外间隔
                    &#xA;
-                   &#xA;注: 对象名允许使用正则表达式"
+                   &#xA;注: 目标名称允许使用正则表达式"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textAutoIndent">
       </explanation>
       <explanation lang="kor" name="텍스트자동들여쓰기"
@@ -3615,14 +3618,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textIndent">
       </explanation>
       <explanation lang="zhc" name="文本缩进"
-                   syntax="文本缩进 (对象名) [间隔(px)]"
+                   syntax="文本缩进 (目标名称) [间隔(px)]"
                    details="例如：文本缩进 100
                    &#xA;
                    &#xA;指定文本框当前行及之后的行首字符的缩进距离。
                    &#xA;
                    &#xA;如果设置了文字自动缩进，并且遇到符合条件的行，缩进距离将被覆盖。
                    &#xA;
-                   &#xA;注: 对象名允许使用正则表达式"
+                   &#xA;注: 目标名称允许使用正则表达式"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textIndent">
       </explanation>
       <explanation lang="kor" name="텍스트들여쓰기"
@@ -3660,14 +3663,14 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textDisallowStart">
       </explanation>
-      <explanation lang="zhc" name="文本禁止换行"
-                   syntax="文本禁止换行 (对象名) [文字禁止换行指定字符]"
-                   details="文本禁止换行 &quot;)]&quot;
+      <explanation lang="zhc" name="禁止行首字符"
+                   syntax="禁止行首字符 (目标名称) [文字禁止换行指定字符]"
+                   details="例如：禁止行首字符 &quot;)]&quot;
                    &#xA;
                    &#xA;如果文本超出文本框设置的范围，并且行头是指定的禁止换行字符，
                    &#xA;则不进行换行，而是在当前行继续添加字符。
                    &#xA;
-                   &#xA;注: 对象名允许使用正则表达式"
+                   &#xA;注: 目标名称允许使用正则表达式"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textDisallowStart">
       </explanation>
       <explanation lang="kor" name="텍스트줄시작제한"
@@ -3703,14 +3706,15 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textDisallowEnd">
       </explanation>
-      <explanation lang="zhc" name="文本换行"
-                   syntax="文本换行 (对象名) [文字换行指定字符]"
-                   details="例如：文本换行 &quot;[(&quot;
+      <explanation lang="zhc" name="禁止行尾字符"
+                   syntax="禁止行尾字符 (目标名称) [文字换行指定字符]"
+                   details="例如：禁止行尾字符 &quot;[(&quot;
                    &#xA;
                    &#xA;如果文本超出文本框设置的范围，并且行末包含指定的文字换行字符，
                    &#xA;则将文字换行字符换行到新的一行，并继续添加字符。
+                   &#xA;控制哪些字符不能出现在行尾，如果这些字符出现在行尾，则将字符移到下一行。
                    &#xA;
-                   &#xA;注: 对象名允许使用正则表达式"
+                   &#xA;注: 目标名称允许使用正则表达式"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textDisallowEnd">
       </explanation>
       <explanation lang="kor" name="텍스트줄끝제한"
@@ -3744,13 +3748,13 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textExtraSpacing">
       </explanation>
       <explanation lang="zhc" name="文本额外间隔"
-                   syntax="文本额外间隔 (对象名) [x] [y]"
+                   syntax="文本额外间隔 (目标名称) [x] [y]"
                    details="例如：文本额外间隔 10 10
                    &#xA;
                    &#xA;在文本框的字符之间添加额外的间隔，相对于字体指定的默认间隔。
                    &#xA;
-                   &#xA;注: 对象名允许使用正则表达式
-                   &#xA;注: 如果指定了'对象名'，设置将立即应用于整个当前文本。如果未指定，将应用于下一个文本。"
+                   &#xA;注: 目标名称允许使用正则表达式
+                   &#xA;注: 如果指定了'目标名称'，设置将立即应用于整个当前文本。如果未指定，将应用于下一个文本。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textExtraSpacing">
       </explanation>
       <explanation lang="kor" name="텍스트추가간격"
@@ -3781,11 +3785,11 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textDir">
       </explanation>
       <explanation lang="zhc" name="文本方向"
-                   syntax="文本方向 (对象名) [竖/横:default]"
+                   syntax="文本方向 (目标名称) [竖/横:default]"
                    details="例如：文本方向 竖
                    &#xA;
-                   &#xA;注: 对象名允许使用正则表达式
-                   &#xA;注: 如果指定了'对象名'，设置将立即应用于整个当前文本。如果未指定，将应用于下一个文本。"
+                   &#xA;注: 目标名称允许使用正则表达式
+                   &#xA;注: 如果指定了'目标名称'，设置将立即应用于整个当前文本。如果未指定，将应用于下一个文本。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textDir">
       </explanation>
       <explanation lang="kor" name="텍스트방향"
@@ -3814,10 +3818,10 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textAlignment">
       </explanation>
       <explanation lang="zhc" name="文本对齐"
-                   syntax="文本对齐 (对象名) [左:default/右/中]"
+                   syntax="文本对齐 (目标名称) [左:default/右/中]"
                    details="例如：文本对齐 中
                    &#xA;
-                   &#xA;注: 对象名允许使用正则表达式
+                   &#xA;注: 目标名称允许使用正则表达式
                    &#xA;注: 设置将立即应用于整个当前文本。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textAlignment">
       </explanation>
@@ -3852,14 +3856,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textboxSkin">
       </explanation>
       <explanation lang="zhc" name="文本框材质"
-                   syntax="文本框材质 (对象名) [文件名 / 已注册动画名] [x] [y] (缩放比例) (缩放比例 y)"
+                   syntax="文本框材质 (目标名称) [文件名 / 已注册动画名] [x] [y] (缩放比例) (缩放比例 y)"
                    details="例如：文本框材质 skin.png 300 400
                    &#xA;例如：文本框材质 skin.png 300 400 80%
                    &#xA;
-                   &#xA;详情：创建一个名为「对象名 + _skin」的图片作为目标文本框的子级。
-                   &#xA;因此，如果要对材质进行额外的调整，请将「对象名 + _skin」作为目标。
+                   &#xA;详情：创建一个名为「目标名称 + _skin」的图片作为目标文本框的子级。
+                   &#xA;因此，如果要对材质进行额外的调整，请将「目标名称 + _skin」作为目标。
                    &#xA;
-                   &#xA;注: 对象名允许使用正则表达式"
+                   &#xA;注: 目标名称允许使用正则表达式"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textboxSkin">
       </explanation>
       <explanation lang="kor" name="텍스트창스킨"
@@ -3899,14 +3903,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textWaitIcon">
       </explanation>
       <explanation lang="zhc" name="文本框等待图标"
-                   syntax="文本框等待图标 (对象名) (位置类型) [文件名 / 已注册动画名] [x] [y]"
+                   syntax="文本框等待图标 (目标名称) (位置类型) [文件名 / 已注册动画名] [x] [y]"
                    details="例如：文本框等待图标 sys_wait.png 8 -8
                    &#xA;
                    &#xA;位置类型
                    &#xA;0 (默认): 相对于最后一个字符
                    &#xA;1: 相对于文本框左上角
                    &#xA;
-                   &#xA;注: 对象名允许使用正则表达式
+                   &#xA;注: 目标名称允许使用正则表达式
                    &#xA;注: 在编辑器中将「文本框等待图标显示」打开，可以边看边调整位置。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textWaitIcon">
       </explanation>
@@ -3947,14 +3951,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textFlowEffect">
       </explanation>
       <explanation lang="zhc" name="文本输出效果"
-                   syntax="文本输出效果 (对象名) [强度：0以上的数字]"
+                   syntax="文本输出效果 (目标名称) [强度：0以上的数字]"
                    details="例如：文本输出效果 8
                    &#xA;
                    &#xA;强度越高，流动效果越强。
                    &#xA;
                    &#xA;设置为0时完全关闭效果，每个字符逐个显示。
                    &#xA;
-                   &#xA;注: 对象名允许使用正则表达式"
+                   &#xA;注: 目标名称允许使用正则表达式"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textFlowEffect">
       </explanation>
       <explanation lang="kor" name="텍스트출력효과"
@@ -3989,12 +3993,12 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textRedisplay">
       </explanation>
       <explanation lang="zhc" name="文本重新显示"
-                   syntax="文本重新显示 (对象名)"
+                   syntax="文本重新显示 (目标名称)"
                    details="例如：文本重新显示
                    &#xA;
                    &#xA;从头开始重新输出目标的当前显示文字。
                    &#xA;
-                   &#xA;注: 对象名允许使用正则表达式"
+                   &#xA;注: 目标名称允许使用正则表达式"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textRedisplay">
       </explanation>
       <explanation lang="kor" name="텍스트다시출력"
@@ -4031,14 +4035,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textRepeat">
       </explanation>
       <explanation lang="zhc" name="文本重复输出"
-                   syntax="文本重复输出 (对象名) [true/false]"
+                   syntax="文本重复输出 (目标名称) [true/false]"
                    details="例如：文本重复输出 true
                    &#xA;
                    &#xA;指定目标的文字输出结束后循环从头开始输出。
                    &#xA;
                    &#xA;如果文字速度设置为「自动跟随」，则在「vn_sysAutoWait」时间后重复输出。
                    &#xA;
-                   &#xA;注: 对象名允许使用正则表达式"
+                   &#xA;注: 目标名称允许使用正则表达式"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textRepeat">
       </explanation>
       <explanation lang="kor" name="텍스트반복출력"
@@ -4074,12 +4078,12 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textReadAlpha">
       </explanation>
       <explanation lang="zhc" name="文本已读透明度"
-                   syntax="文本已读透明度 (对象名) [透明度] (所需时间:ms)"
-                   details="例如：文字已读透明度 125 100
+                   syntax="文本已读透明度 (目标名称) [透明度] (所需时间:ms)"
+                   details="例如：文本已读透明度 125 100
                    &#xA;
                    &#xA;进入等待状态后，如果有新文本添加，将现有文本转换为指定的透明度。
                    &#xA;
-                   &#xA;注: 对象名允许使用正则表达式"
+                   &#xA;注: 目标名称允许使用正则表达式"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textReadAlpha">
       </explanation>
       <explanation lang="kor" name="텍스트읽은후투명도"
@@ -4161,7 +4165,7 @@
       </explanation>
       <explanation lang="zhc" name="文本自动等待"
                    syntax="文本自动等待 [类型编号]"
-                   details="例如：文字自动等待 0
+                   details="例如：文本自动等待 0
                    &#xA;
                    &#xA;「类型编号」
                    &#xA;0: 不自动等待
@@ -4200,7 +4204,7 @@
       </explanation>
       <explanation lang="zhc" name="文本自动换行"
                    syntax="文本自动换行 [true/false]"
-                   details="例如：文字自动换行 true
+                   details="例如：文本自动换行 true
                    &#xA;
                    &#xA;true: 自动为除第一行之外的所有剧本换行
                    &#xA;"
@@ -4406,8 +4410,9 @@
       </explanation>
       <explanation lang="zhc" name="文本进度正常"
                    syntax="文本进度正常"
-                   details="例如：文字进度正常
-                   &#xA;"
+                   details="例如：文本进度正常
+                   &#xA;将文本阅读模式恢复为正常模式，取消跳过或自动模式
+                   "
                    reference="https://wikiwiki.jp/lightvn/commands/text#textReadNormal">
       </explanation>
       <explanation lang="kor" name="텍스트읽기통상모드"
@@ -4479,7 +4484,7 @@
                   syntax="文本跳过模式 [0/1]"
                   details="0: 全部, 1: 仅已读
                   &#xA;
-                  &#xA;例如：文字跳过模式 1"
+                  &#xA;例如：文本跳过模式 1"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textSkipMode">
       </explanation>
       <explanation lang="kor" name="텍스트스킵형식"
@@ -4517,8 +4522,8 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/text#restoreReadOnContinue">
       </explanation>
-      <explanation lang="zhc" name="继续时恢复文字进度"
-                   syntax="继续时恢复文字进度 [true/false]"
+      <explanation lang="zhc" name="继续时恢复文本进度"
+                   syntax="继续时恢复文本进度 [true/false]"
                    details="
                    &#xA;true) (默认)
                    &#xA;在执行“继续”命令时，将文字进度恢复到0（正常）。
@@ -4526,7 +4531,7 @@
                    &#xA;false)
                    &#xA;在执行“继续”命令时，不修改文字进度。
                    &#xA;
-                   &#xA;例如：继续时恢复文字进度 true"
+                   &#xA;例如：继续时恢复文本进度 true"
                    reference="https://wikiwiki.jp/lightvn/commands/text#restoreReadOnContinue">
       </explanation>
       <explanation lang="kor" name="계속시읽기모드"
@@ -4671,9 +4676,9 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogCurSpeaker">
       </explanation>
-      <explanation lang="zhc" name="日志当前名称"
-                   syntax="日志当前名称 [字符串]"
-                   details="例如：日志当前名称 &quot;ラム\n&quot;
+      <explanation lang="zhc" name="日志当前发言人"
+                   syntax="日志当前发言人 [字符串]"
+                   details="例如：日志当前发言人 &quot;ラム\n&quot;
                    &#xA;
                    &#xA;指定用于在日志中记录带有名字的台词的字符串。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogCurSpeaker">
@@ -4842,11 +4847,11 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogAddLineCont">
       </explanation>
-      <explanation lang="zhc" name="日志台词追加"
-                   syntax="日志台词追加 [字符串]"
-                   details="例如：日志台词追加 &quot;继续添加这个。&quot;
+      <explanation lang="zhc" name="日志台词延续"
+                   syntax="日志台词延续 [字符串]"
+                   details="例如：日志台词延续 &quot;继续添加这个。&quot;
                    &#xA;
-                   &#xA;在日志中追加台词。"
+                   &#xA;在日志中延续台词。"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogAddLineCont">
       </explanation>
       <explanation lang="kor" name="백로그텍스트추가"
@@ -4923,10 +4928,11 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#parentChild">
       </explanation>
-      <explanation lang="zhc" name="设置父子类"
-                   syntax="设置父子类 [父] [子(可多个)] (屏幕区域范围)"
-                   details="例如：设置父子类 鸡 鸡1, 鸡2, 鸡3
+      <explanation lang="zhc" name="设置父子关系"
+                   syntax="设置父子关系(2) [父] [子(可多个)] (屏幕区域范围)"
+                   details="例如：设置父子关系 鸡 鸡1, 鸡2, 鸡3
                    &#xA;
+                   &#xA;注: 设置父子关系2将以父元素的原点为基准，相对放置子元素原点
                    &#xA;注: 屏幕区域范围：全屏区域、同层屏幕区域。如果不指定，则仅包括当前屏幕区域的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#parentChild">
       </explanation>
@@ -4965,12 +4971,12 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#autoOnCamera">
       </explanation>
-      <explanation lang="zhc" name="自动绑定视角"
-                   syntax="自动绑定视角 [true/false]"
-                   details="例如：自动绑定视角 true
+      <explanation lang="zhc" name="自动绑定摄像机"
+                   syntax="自动绑定摄像机 [true/false]"
+                   details="例如：自动绑定摄像机 true
                    &#xA;
                    &#xA;如果为true，
-                   &#xA;在当前脚本中，执行命令后的所有个体将自动 [绑定视角]。
+                   &#xA;在当前脚本中，执行命令后的所有个体将自动 [绑定摄像机]。
                    &#xA;
                    &#xA;在UI界面中使用非常方便。
                    &#xA;
@@ -5221,10 +5227,10 @@
                    &#xA; 0: 不循环。
                    &#xA; 1: 命令结束后，返回初始值再播放
                    &#xA; 2: 命令结束后，向最小值反向播放并重复
-                   &#xA;(所以循环播放是'2')
+                   &#xA;(即'来回'循环，所以用'2'表示)
                    &#xA;
                    &#xA;「文件格式」
-                   &#xA;遵循C++的sprintf写法。
+                   &#xA;遵循C++的printf写法。
                    &#xA;
                    &#xA;例如：简易动画注册 apple 1 apple/apple%04d.png 0 44 12 24 1 120
                    &#xA; 将文件名格式为apple/apple%04d.png的文件，
@@ -5349,7 +5355,7 @@
                    &#xA; 0: 不循环。
                    &#xA; 1: 命令结束后，返回初始值再播放
                    &#xA; 2: 命令结束后，向最小值反向播放并重复
-                   &#xA;(循环播放所以是'2')
+                   &#xA;(即'来回'循环，所以用'2'表示)
                    &#xA;
                    &#xA;例如：动画表注册 test_sprite 1 sprite_test.png 48 48 0 2 横 3 150 1
                    &#xA; 注册名为test_sprite的动画。可用于图片、背景等。
@@ -5493,7 +5499,7 @@
       </explanation>
       <explanation lang="zhc" name="动画状态"
                    syntax="动画状态 [目标名称（可多选）] [状态]"
-                   details="ex. 动画状态 kojiken walk
+                   details="例如：动画状态 kojiken walk
                    &#xA;  
                    &#xA;将目标对象的动画设置为指定状态。
                    &#xA;当前仅支持 spine动画 对象。
@@ -5525,16 +5531,16 @@
                    &#xA;ex. loop 1 x6 move2 alice1 +100 +0 500 "
                    reference="https://wikiwiki.jp/lightvn/commands/transition#loop">
       </explanation>
-      <explanation lang="zhc" name="动画循环"
-                   syntax="动画循环 [循环类型: 0/1/2] (x:循环次数)  [循环命令]"
+      <explanation lang="zhc" name="循环"
+                   syntax="循环 [循环类型: 0/1/2] (x:循环次数)  [循环命令]"
                    details="「循环类型」
                    &#xA; 0: 不循环。
                    &#xA; 1: 命令结束后，返回初始值再播放
                    &#xA; 2: 命令结束后，向最小值反向播放并重复
-                   &#xA;(所以循环播放是'2')
+                   &#xA;(即'来回'循环，所以用'2'表示)
                    &#xA;
-                   &#xA;例如：动画循环 2 移动2 alice1 +400 +0 500
-                   &#xA;例如：动画循环 1 x6 移动2 alice1 +100 +0 500 "
+                   &#xA;例如：循环 2 移动2 alice1 +400 +0 500
+                   &#xA;例如：循环 1 x6 移动2 alice1 +100 +0 500 "
                    reference="https://wikiwiki.jp/lightvn/commands/transition#loop">
       </explanation>
       <explanation lang="kor" name="루프"
@@ -5647,12 +5653,12 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#tweenEnd">
       </explanation>
       <explanation lang="zhc" name="变化结束"
-                   syntax="变化结束 [目标] (画面区域范围)"
+                   syntax="变化结束 [目标] (屏幕区域范围)"
                    details="例如：变化结束 alice1, textbox0, 摄像头
                    &#xA;
                    &#xA;停止所有当前的变化命令，包括循环效果，使其保持当前状态。
                    &#xA;
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#tweenEnd">
       </explanation>
@@ -5693,7 +5699,7 @@
                    &#xA;
                    &#xA;将所有正在进行的变化立即结束。
                    &#xA;
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
                    &#xA;"
                   reference="https://wikiwiki.jp/lightvn/commands/transition#finishTweens">
       </explanation>
@@ -5721,10 +5727,10 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#shaderEffect">
       </explanation>
       <explanation lang="zhc" name="着色器效果"
-                   syntax="着色器效果 [目标名称 (可多个)] [文件名/none] (所需时间) (画面区域范围)"
+                   syntax="着色器效果 [目标名称 (可多个)] [文件名/none] (所需时间) (屏幕区域范围)"
                    details="例如：着色器效果 全部 frag_bw_time.txt 300
                    &#xA;
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。"
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#shaderEffect">
       </explanation>
       <explanation lang="kor" name="특수효과"
@@ -5803,7 +5809,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#image">
       </explanation>
       <explanation lang="zhc" name="图片"
-                   syntax="图片 [目标名称 (可多个)] [文件名 / 注册动画名] (所需时间:毫秒) (alpha文件名) (画面区域范围)"
+                   syntax="图片 [目标名称 (可多个)] [文件名 / 注册动画名] (所需时间:毫秒) (alpha文件名) (屏幕区域范围)"
                    details="例如：图片 albert2 scg1.png
                    &#xA;
                    &#xA;将目标图片更改为指定文件。
@@ -5812,7 +5818,7 @@
                    &#xA;
                    &#xA;注：如果目标已经应用了[文件名 / 注册动画名]，则不做任何更改。
                    &#xA;注：图片命令内部作为特殊效果执行，会覆盖现有的特殊效果。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#image">
       </explanation>
@@ -5948,7 +5954,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#fadein">
       </explanation>
       <explanation lang="zhc" name="淡入"
-                   syntax="淡入 [目标名・目标类型名 (可多个)] (所需时间:毫秒) (加速度: a0~a18) (alpha图像) (轮廓模糊: 0.0以上) (画面区域范围)"
+                   syntax="淡入 [目标名・目标类型名 (可多个)] (所需时间:毫秒) (加速度: a0~a18) (alpha图像) (轮廓模糊: 0.0以上) (屏幕区域范围)"
                    details="例如：淡入 albert2 1500
                    &#xA;例如：淡入 alice1, albert2 1500
                    &#xA;例如：淡入 btn.* 1500
@@ -5958,7 +5964,7 @@
                    &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
                    &#xA;
                    &#xA;注：淡入会先将现有对象的透明度降至零，然后再进行淡入。
                    &#xA;因此，如果希望实现平滑的淡入效果，建议先将对象设置为透明度为零的状态。"
@@ -6010,7 +6016,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#fadeout">
       </explanation>
       <explanation lang="zhc" name="淡出"
-                   syntax="淡出 [目标名・目标类型名 (可多个)] (所需时间:毫秒) (加速度: a0~a18) (alpha图像) (轮廓模糊: 0.0以上) (画面区域范围)"
+                   syntax="淡出 [目标名・目标类型名 (可多个)] (所需时间:毫秒) (加速度: a0~a18) (alpha图像) (轮廓模糊: 0.0以上) (屏幕区域范围)"
                    details="例如：淡出 albert2 1500
                    &#xA;例如：淡出 alice1, albert2 1500
                    &#xA;例如：淡出 btn.* 1500
@@ -6021,7 +6027,8 @@
                    &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：淡出的结果是对象本身会被销毁
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#fadeout">
       </explanation>
@@ -6062,12 +6069,12 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#delayedDestroy">
       </explanation>
       <explanation lang="zhc" name="消失延迟"
-                   syntax="消失延迟 [目标名・目标类型名 (可多个)] [所需时间:毫秒] (画面区域范围)"
+                   syntax="消失延迟 [目标名・目标类型名 (可多个)] [所需时间:毫秒] (屏幕区域范围)"
                    details="例如：消失延迟 albert2 1500
                    &#xA;
                    &#xA;在指定时间后，使对象消失。
                    &#xA;
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#delayedDestroy">
       </explanation>
@@ -6099,7 +6106,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#onDestroy">
       </explanation>
       <explanation lang="zhc" name="销毁时"
-                   syntax="销毁时 [目标对象名称或类型 (可多个)] [执行命令]"
+                   syntax="销毁时 [目标目标名称称或类型 (可多个)] [执行命令]"
                    details="ex. 销毁时 albert2 script filename.txt 
                    &#xA;
                    &#xA;当指定的目标对象被销毁时，执行给定的命令。
@@ -6141,12 +6148,12 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#move">
       </explanation>
       <explanation lang="zhc" name="移动"
-                   syntax="移动 [类型/目标名 (可多个)] [绝对x坐标/相对x坐标] [绝对y坐标/相对y坐标] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="移动 [类型/目标名 (可多个)] [绝对x坐标/相对x坐标] [绝对y坐标/相对y坐标] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：移动 albert2 300 30 1500
                    &#xA;例如：移动 摄像头 +100 +30 1500 a3
                    &#xA;
                    &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
                    &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
                    &#xA;注：在演出命令中加上‘2’表示按相对变化值执行
@@ -6198,14 +6205,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#movexyz">
       </explanation>
       <explanation lang="zhc" name="移动xyz"
-                   syntax="移动xyz [类型/目标名 (可多个)] [绝对x坐标/相对x坐标] [绝对y坐标/相对y坐标] [绝对z坐标/相对z坐标] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="移动xyz [类型/目标名 (可多个)] [绝对x坐标/相对x坐标] [绝对y坐标/相对y坐标] [绝对z坐标/相对z坐标] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：移动xyz albert2 300 30 80 1500
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
-                   &#xA;注：在动画命令中加上‘2’表示按相对变化值执行
+                   &#xA;注：在演出命令中加上‘2’表示按相对变化值执行
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -6253,14 +6260,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#movexyr">
       </explanation>
       <explanation lang="zhc" name="移动xyr"
-                   syntax="移动xyr [类型/目标名 (可多个)] [绝对x坐标/相对x坐标] [绝对y坐标/相对y坐标] [绝对r坐标/相对r坐标] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
-                   details="例如：移动xyl albert2 300 30 80 1500
+                   syntax="移动xyr [类型/目标名 (可多个)] [绝对x坐标/相对x坐标] [绝对y坐标/相对y坐标] [绝对r坐标/相对r坐标] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
+                   details="例如：移动xyr albert2 300 30 80 1500
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
-                   &#xA;注：在动画命令中加上‘2’表示按相对变化值执行
+                   &#xA;注：在演出命令中加上‘2’表示按相对变化值执行
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -6308,14 +6315,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#movex">
       </explanation>
       <explanation lang="zhc" name="移动x"
-                   syntax="移动x [类型/目标名 (可多个)] [绝对x坐标/相对x坐标] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="移动x [类型/目标名 (可多个)] [绝对x坐标/相对x坐标] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：移动x albert2 300 30 80 1500
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
-                   &#xA;注：在动画命令中加上‘2’表示按相对变化值执行
+                   &#xA;注：在演出命令中加上‘2’表示按相对变化值执行
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -6363,14 +6370,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#movey">
       </explanation>
       <explanation lang="zhc" name="移动y"
-                   syntax="移动y [类型/目标名 (可多个)] [绝对y坐标/相对y坐标] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="移动y [类型/目标名 (可多个)] [绝对y坐标/相对y坐标] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：移动y albert2 300 30 80 1500
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
-                   &#xA;注：在动画命令中加上‘2’表示按相对变化值执行
+                   &#xA;注：在演出命令中加上‘2’表示按相对变化值执行
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -6423,7 +6430,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#movez">
       </explanation>
       <explanation lang="zhc" name="移动z"
-                   syntax="移动z [类型/目标名 (可多个)] [绝对z坐标/相对z坐标] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="移动z [类型/目标名 (可多个)] [绝对z坐标/相对z坐标] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：移动z albert2 300 30 80 1500
                    &#xA;
                    &#xA;注：基本上，z值越高，显示越靠前。
@@ -6431,11 +6438,11 @@
                    &#xA;
                    &#xA;注：基本上，z = 层 * 100。
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
-                   &#xA;注：在动画命令中加上‘2’表示按相对变化值执行
+                   &#xA;注：在演出命令中加上‘2’表示按相对变化值执行
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -6493,7 +6500,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#mover">
       </explanation>
       <explanation lang="zhc" name="移动r"
-                   syntax="移动r [类型/目标名 (可多个)] [最终r坐标/相对r坐标] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="移动r [类型/目标名 (可多个)] [最终r坐标/相对r坐标] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：移动r albert2 300 30 80 1500
                    &#xA;
                    &#xA;注：与层相同。“r”表示laye(r)的最后一个字母。
@@ -6501,11 +6508,11 @@
                    &#xA;注：基本上，层数越高，显示越靠前。
                    &#xA;如果多个目标具有相同的层数，绘制顺序无法保证。
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
-                   &#xA;注：在动画命令中加上‘2’表示按相对变化值执行
+                   &#xA;注：在演出命令中加上‘2’表示按相对变化值执行
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -6554,15 +6561,15 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#layer">
       </explanation>
       <explanation lang="zhc" name="图层"
-                   syntax="图层 [目标名 (可多个)] [r] (画面区域范围)"
-                   details="例如：层 albert2 80
+                   syntax="图层 [目标名 (可多个)] [layer/r] (画面区域范围)"
+                   details="例如：图层 albert2 80
                    &#xA;
                    &#xA;注：图层数越高，显示越靠前。
                    &#xA;如果同一图层中存在多个对象，绘制顺序无法保证。
                    &#xA;
                    &#xA;内部处理：相当于“移动r 目标名 0”。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#layer">
@@ -6614,16 +6621,16 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#localmovex">
       </explanation>
       <explanation lang="zhc" name="方向移动x"
-                   syntax="1. 方向移动x [类型/目标名 (可多个)] [x变化] (所需时间:毫秒) (画面区域范围)
+                   syntax="1. 方向移动x [类型/目标名 (可多个)] [x变化] (所需时间:毫秒) (屏幕区域范围)
                    &#xA;2. 方向移动x [类型/目标名 (可多个)] [每秒速度:ups]"
                    details="例如：方向移动x albert2 300 800
                    &#xA;例如：方向移动x alice 300ups
                    &#xA;
                    &#xA;在保持现有方向的情况下，相对于该方向在x方向上移动。
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -6680,16 +6687,16 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#localmovey">
       </explanation>
       <explanation lang="zhc" name="方向移动y"
-                   syntax="1. 方向移动y [类型/目标名 (可多个)] [y变化] (所需时间:毫秒) (画面区域范围)
+                   syntax="1. 方向移动y [类型/目标名 (可多个)] [y变化] (所需时间:毫秒) (屏幕区域范围)
                    &#xA;2. 方向移动y [类型/目标名 (可多个)] [每秒速度:ups]"
                    details="例如：方向移动y albert2 300 800
                    &#xA;例如：方向移动y alice 300ups
                    &#xA;
                    &#xA;在保持现有方向的情况下，相对于该方向在y方向上移动。
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -6746,16 +6753,16 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#localmovez">
       </explanation>
       <explanation lang="zhc" name="方向移动z"
-                   syntax="1. 方向移动z [类型/目标名 (可多个)] [z变化] (所需时间:毫秒) (画面区域范围)
+                   syntax="1. 方向移动z [类型/目标名 (可多个)] [z变化] (所需时间:毫秒) (屏幕区域范围)
                    &#xA;2. 方向移动z [类型/目标名 (可多个)] [每秒速度:ups]"
                    details="例如：方向移动z albert2 300 800
                    &#xA;例如：方向移动z alice 300ups
                    &#xA;
                    &#xA;在保持现有方向的情况下，相对于该方向在z方向上移动。
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -6805,14 +6812,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#rotate">
       </explanation>
       <explanation lang="zhc" name="旋转"
-                   syntax="旋转 [目标名 (可多个)] [角度] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="旋转 [目标名 (可多个)] [角度] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：旋转 albert2 180 1500
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -6860,14 +6867,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#rotatex">
       </explanation>
       <explanation lang="zhc" name="旋转x"
-                   syntax="旋转x [目标名 (可多个)] [角度] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="旋转x [目标名 (可多个)] [角度] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：旋转x albert2 180 1500
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -6915,14 +6922,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#rotatey">
       </explanation>
       <explanation lang="zhc" name="旋转y"
-                   syntax="旋转y [目标名 (可多个)] [角度] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="旋转y [目标名 (可多个)] [角度] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：旋转y albert2 180 1500
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -6969,14 +6976,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#rotatez">
       </explanation>
       <explanation lang="zhc" name="旋转z"
-                   syntax="旋转z [目标名 (可多个)] [角度] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="旋转z [目标名 (可多个)] [角度] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：旋转z albert2 180 1500
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -7027,16 +7034,15 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#zoom">
       </explanation>
       <explanation lang="zhc" name="缩放"
-                   syntax="1. 缩放 [目标名 (可多个)] [比率%] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)
-                   &#xA;2. 缩放 [目标名] [x比率%] [y比率%] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)
-                   &#xA;3. 缩放 [目标名] [x比率%] [y比率%] [z比率%] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="1. 缩放 [目标名 (可多个)] [比率%] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)
+                   &#xA;2. 缩放 [目标名] [x比率%] [y比率%] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)
+                   &#xA;3. 缩放 [目标名] [x比率%] [y比率%] [z比率%] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：缩放 albert2 50% 1500
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -7085,14 +7091,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#zoomx">
       </explanation>
       <explanation lang="zhc" name="缩放x"
-                   syntax="1. 缩放x [目标名 (可多个)] [比率%] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="1. 缩放x [目标名 (可多个)] [比率%] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：缩放x albert2 50% 1500
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -7139,14 +7145,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#zoomy">
       </explanation>
       <explanation lang="zhc" name="缩放y"
-                   syntax="1. 缩放y [目标名 (可多个)] [比率%] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="1. 缩放y [目标名 (可多个)] [比率%] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：缩放y albert2 50% 1500
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -7193,14 +7199,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#zoomz">
       </explanation>
       <explanation lang="zhc" name="缩放z"
-                   syntax="1. 缩放z [目标名 (可多个)] [比率%] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="1. 缩放z [目标名 (可多个)] [比率%] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：缩放z albert2 50% 1500
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -7241,12 +7247,12 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#speedx">
       </explanation>
       <explanation lang="zhc" name="速度x"
-                   syntax="速度x [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
-                   details="例如：速度 albert 30 300
+                   syntax="速度x [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
+                   details="例如：速度x albert 30 300
                    &#xA;
                    &#xA;指定x方向的速度（每秒像素数）。
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。"
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#speedx">
       </explanation>
       <explanation lang="kor" name="속도x"
@@ -7278,12 +7284,12 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#speedy">
       </explanation>
       <explanation lang="zhc" name="速度y"
-                   syntax="速度y [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="速度y [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：速度y albert 30 300
                    &#xA;
                    &#xA;指定y方向的速度（每秒像素数）。
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。"
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#speedy">
       </explanation>
       <explanation lang="kor" name="속도y"
@@ -7315,12 +7321,12 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#speedz">
       </explanation>
       <explanation lang="zhc" name="速度z"
-                   syntax="速度z [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="速度z [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：速度z albert 30 300
                    &#xA;
                    &#xA;指定z方向的速度（每秒像素数）。
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。"
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#speedz">
       </explanation>
       <explanation lang="kor" name="속도z"
@@ -7358,7 +7364,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#accelerationx">
       </explanation>
       <explanation lang="zhc" name="加速度x"
-                   syntax="加速度x [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (X碰撞时重置) (Y碰撞时重置) (画面区域范围)"
+                   syntax="加速度x [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (X碰撞时重置) (Y碰撞时重置) (屏幕区域范围)"
                    details="例如：加速度x albert 30 300
                    &#xA;
                    &#xA;指定x方向的加速度。
@@ -7369,7 +7375,7 @@
                    &#xA;Y碰撞时重置：如果目标设置为不可穿透并在Y轴与其他不可穿透对象发生碰撞，
                    &#xA;则将此命令增加的速度值重置为零。
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。"
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#accelerationx">
       </explanation>
       <explanation lang="kor" name="가속도x"
@@ -7413,7 +7419,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#accelerationy">
       </explanation>
       <explanation lang="zhc" name="加速度y"
-                   syntax="加速度y [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (X碰撞时重置) (Y碰撞时重置) (画面区域范围)"
+                   syntax="加速度y [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (X碰撞时重置) (Y碰撞时重置) (屏幕区域范围)"
                    details="例如：加速度y albert 30 300
                    &#xA;
                    &#xA;指定y方向的加速度。
@@ -7424,7 +7430,7 @@
                    &#xA;Y碰撞时重置：如果目标设置为不可穿透并在Y轴与其他不可穿透对象发生碰撞，
                    &#xA;则将此命令增加的速度值重置为零。
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。"
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#accelerationy">
       </explanation>
       <explanation lang="kor" name="가속도y"
@@ -7462,12 +7468,12 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#accelerationz">
       </explanation>
       <explanation lang="zhc" name="加速度z"
-                   syntax="加速度z [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="加速度z [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：加速度z albert 30 300
                    &#xA;
                    &#xA;指定z方向的加速度。
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。"
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#accelerationz">
       </explanation>
       <explanation lang="kor" name="가속도z"
@@ -7504,7 +7510,7 @@
                    &#xA;
                    &#xA;指定移动、缩放、旋转的中心。
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。"
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#origin">
       </explanation>
       <explanation lang="kor" name="기준점"
@@ -7588,14 +7594,13 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#alpha">
       </explanation>
       <explanation lang="zhc" name="透明度"
-                   syntax="透明度 [目标名 (可多个)] [透明度:0-255] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="透明度 [目标名 (可多个)] [透明度:0-255] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：透明度 albert2 125 1500
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -7652,19 +7657,18 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#rgb">
       </explanation>
       <explanation lang="zhc" name="色调"
-                   syntax="1. 色调 [目标名 (可多个)] [r:0-255] [g:0-255] [b:0-255] (所需时间:毫秒) (加速度: a0~a18)  (画面区域范围)
-                   &#xA;2. 色调 [目标名 (可多个)] [HEX色] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="1. 色调 [目标名 (可多个)] [r:0-255] [g:0-255] [b:0-255] (所需时间:毫秒) (加速度: a0~a18)  (屏幕区域范围)
+                   &#xA;2. 色调 [目标名 (可多个)] [HEX色] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：色调 albert2 25 25 25 1500
                    &#xA;例如：rgb albert2 #1f1f1f 1500
                    &#xA;
                    &#xA;r: 红色, g: 绿色, b: 蓝色
                    &#xA;rgb色彩空间的详细信息：http:bit.ly/2kqduaG
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -7726,7 +7730,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#hsl">
       </explanation>
       <explanation lang="zhc" name="hsl色调"
-                   syntax="hsl色调 [目标名 (可多个)] [h:0-360] [s:0-100] [l:0-100] (所需时间:毫秒) (加速度: a0~a18) (画面区域范围)"
+                   syntax="hsl色调 [目标名 (可多个)] [h:0-360] [s:0-100] [l:0-100] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
                    details="例如：hsl色调 albert2 180 100 50  (1500毫秒)
                    &#xA;
                    &#xA;h: 色相, s: 饱和度, l: 亮度
@@ -7734,11 +7738,10 @@
                    &#xA;
                    &#xA;hsl色彩空间的详细信息：http:bit.ly/2kQRTFF
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
-                   &#xA;注：在动画命令前加上“.”，表示命令执行完毕后再读取下一行。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：在演出命令前加上“.”，表示命令执行完毕后再读取下一行。
                    &#xA; (例如：.淡入 scg.* 1500)
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;注：所需时间可以使用ups（每秒单位变化），表示每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 100px的变化以“每秒30px的速度”进行)
@@ -7787,14 +7790,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#inverse">
       </explanation>
       <explanation lang="zhc" name="图像反转"
-                   syntax="图像反转 [目标名 (可多个)] [上下/左右] (画面区域范围)"
+                   syntax="图像反转 [目标名 (可多个)] [上下/左右] (屏幕区域范围)"
                    details="例如：图像反转 alice1 左右
                    &#xA;
                    &#xA;内部处理：
                    &#xA;左右) rotatey2 目标名 180
                    &#xA;上下) rotatex2 目标名 180
                    &#xA;
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#inverse">
       </explanation>
@@ -7843,8 +7846,8 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#blendMode">
       </explanation>
       <explanation lang="zhc" name="混合模式"
-                   syntax="1. 混合模式 [目标名 (可多个)] [模式: BlendAlpha/BlendAdd/BlendMultiply/BlendScreen/BlendNone] (画面区域范围)
-                   &#xA;2. 混合模式 [目标名 (可多个)] [源色] [目标色] (混合公式) (源透明度) (目标透明度) (混合公式) (画面区域范围)"
+                   syntax="1. 混合模式 [目标名 (可多个)] [模式: BlendAlpha/BlendAdd/BlendMultiply/BlendScreen/BlendNone] (屏幕区域范围)
+                   &#xA;2. 混合模式 [目标名 (可多个)] [源色] [目标色] (混合公式) (源透明度) (目标透明度) (混合公式) (屏幕区域范围)"
                    details="颜色/透明度设置：Zero/One/SrcColor/OneMinusSrcColor/DstColor/OneMinusDstColor/SrcAlpha/OneMinusSrcAlpha/DstAlpha/OneMinusDstAlpha
                    &#xA;
                    &#xA;混合公式：Add/Subtract/ReverseSubtract
@@ -7852,8 +7855,8 @@
                    &#xA;例如：混合模式 alice2 BlendAdd
                    &#xA;例如：混合模式 alice2 OneMinusDstColor Zero
                    &#xA;
-                   &#xA;注：动画命令的目标名可以使用正则表达式指定多个。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
                    &#xA;注：BlendScreen与Clip Studio中的画面效果略有不同。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#blendMode">
@@ -7896,15 +7899,15 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#camera_mode">
       </explanation>
-      <explanation lang="zhc" name="视角模式"
-                   syntax="视角模式 [类型]"
-                   details="例如：视角模式 3
+      <explanation lang="zhc" name="摄像机模式"
+                   syntax="摄像机模式 [类型]"
+                   details="例如：摄像机模式 3
                    &#xA;
                    &#xA;「类型」
                    &#xA;0: 默认的2D视觉小说形式
-                   &#xA;3: 3D 透视视角
+                   &#xA;3: 3D 透视摄像机
                    &#xA;
-                   &#xA;重置视角的位置、缩放和旋转。"
+                   &#xA;重置摄像机的位置、缩放和旋转。"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#camera_mode">
       </explanation>
       <explanation lang="kor" name="카메라모드"
@@ -7936,11 +7939,11 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraReset">
       </explanation>
-      <explanation lang="zhc" name="视角重置"
-                   syntax="视角重置"
-                   details="例如：视角重置
+      <explanation lang="zhc" name="摄像机重置"
+                   syntax="摄像机重置"
+                   details="例如：摄像机重置
                    &#xA;
-                   &#xA;重置视角位置、缩放和旋转。"
+                   &#xA;重置摄像机位置、缩放和旋转。"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraReset">
       </explanation>
       <explanation lang="kor" name="카메라초기화"
@@ -7988,26 +7991,26 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraFollow">
       </explanation>
-      <explanation lang="zhc" name="视角跟随"
-                   syntax="1. 视角跟随 [目标名] (x) (y) (r) (相对x) (相对y) (相对r) (大约完成时间:毫秒) (从目标位置)
-                   &#xA;2. 视角跟随 false"
+      <explanation lang="zhc" name="摄像机跟随"
+                   syntax="1. 摄像机跟随 [目标名] (x) (y) (r) (相对x) (相对y) (相对r) (大约完成时间:毫秒) (从目标位置)
+                   &#xA;2. 摄像机跟随 false"
                    details="
-                   &#xA;例如：视角跟随 kojiken x -640 200
-                   &#xA;视角的x位置（绘制中心）将基于kojiken的x位置（绘制中心）移动到-640。
+                   &#xA;例如：摄像机跟随 kojiken x -640 200
+                   &#xA;摄像机的x位置（绘制中心）将基于kojiken的x位置（绘制中心）移动到-640。
                    &#xA;
-                   &#xA;例如：视角跟随 kojiken x y -640 -360 200
-                   &#xA;视角的x位置（绘制中心）将基于kojiken的x位置（绘制中心）移动到-640。
-                   &#xA;视角的y位置（绘制中心）将基于kojiken的y位置（绘制中心）移动到-360。
+                   &#xA;例如：摄像机跟随 kojiken x y -640 -360 200
+                   &#xA;摄像机的x位置（绘制中心）将基于kojiken的x位置（绘制中心）移动到-640。
+                   &#xA;摄像机的y位置（绘制中心）将基于kojiken的y位置（绘制中心）移动到-360。
                    &#xA;
-                   &#xA;例如：视角跟随 kojiken x y -640 -360 10 200
-                   &#xA;视角的x位置（绘制中心）将基于kojiken的x位置（绘制中心）移动到-640。
-                   &#xA;视角的y位置（绘制中心）将基于kojiken的y位置（绘制中心）移动到-360。
-                   &#xA;视角的z位置（绘制中心）将基于kojiken的z位置（绘制中心）移动到+10。
+                   &#xA;例如：摄像机跟随 kojiken x y -640 -360 10 200
+                   &#xA;摄像机的x位置（绘制中心）将基于kojiken的x位置（绘制中心）移动到-640。
+                   &#xA;摄像机的y位置（绘制中心）将基于kojiken的y位置（绘制中心）移动到-360。
+                   &#xA;摄像机的z位置（绘制中心）将基于kojiken的z位置（绘制中心）移动到+10。
                    &#xA;
                    &#xA;从目标位置：
-                   &#xA;视角会先移动到目标位置，然后开始跟随。
+                   &#xA;摄像机会先移动到目标位置，然后开始跟随。
                    &#xA;
-                   &#xA;视角跟随 false：
+                   &#xA;摄像机跟随 false：
                    &#xA;取消跟随。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraFollow">
@@ -8061,17 +8064,17 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraFollow3D">
       </explanation>
-      <explanation lang="zhc" name="视角跟随3D"
-                   syntax="1. 视角跟随3D [目标名] [距离] [角度x] [角度y] [角度z] [平移位置x] [平移位置y] (大约完成时间:毫秒) (从目标位置)
-                   &#xA;2. 视角跟随3D false"
+      <explanation lang="zhc" name="摄像机跟随3D"
+                   syntax="1. 摄像机跟随3D [目标名] [距离] [角度x] [角度y] [角度z] [平移位置x] [平移位置y] (大约完成时间:毫秒) (从目标位置)
+                   &#xA;2. 摄像机跟随3D false"
                    details="
-                   &#xA;例如：视角跟随3D player 5 8 0 0 0 -50 100
-                   &#xA;视角跟随3D（绘制中心）将基于player的位置（绘制中心）移动到指定的参数位置。
+                   &#xA;例如：摄像机跟随3D player 5 8 0 0 0 -50 100
+                   &#xA;摄像机（绘制中心）将基于player的位置（绘制中心）按指定参数移动并跟随。
                    &#xA;
                    &#xA;从目标位置：
-                   &#xA;视角会先移动到目标位置，然后开始跟随。
+                   &#xA;摄像机会先移动到目标位置，然后开始跟随。
                    &#xA;
-                   &#xA;视角跟随3D false：
+                   &#xA;摄像机跟随3D false：
                    &#xA;取消跟随。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraFollow3D">
@@ -8108,10 +8111,10 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraRangeX">
       </explanation>
-      <explanation lang="zhc" name="视角范围x"
-                   syntax="视角范围x [最小] [最大]"
+      <explanation lang="zhc" name="摄像机范围x"
+                   syntax="摄像机范围x [最小] [最大]"
                    details="
-                   &#xA;例如：视角范围x - 500 500
+                   &#xA;例如：摄像机范围x - 500 500
                    &#xA;以绘制位置为基准。
                    &#xA;
                    &#xA;"
@@ -8142,10 +8145,10 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraRangeY">
       </explanation>
-      <explanation lang="zhc" name="视角范围y"
-                   syntax="视角范围y [最小] [最大]"
+      <explanation lang="zhc" name="摄像机范围y"
+                   syntax="摄像机范围y [最小] [最大]"
                    details="
-                   &#xA;例如：视角范围y - 500 500
+                   &#xA;例如：摄像机范围y - 500 500
                    &#xA;以绘制位置为基准。
                    &#xA;
                    &#xA;"
@@ -8176,10 +8179,10 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraRangeR">
       </explanation>
-      <explanation lang="zhc" name="视角范围r"
-                   syntax="视角范围r [最小] [最大]"
+      <explanation lang="zhc" name="摄像机范围r"
+                   syntax="摄像机范围r [最小] [最大]"
                    details="
-                   &#xA;例如：视角范围r - 500 500
+                   &#xA;例如：摄像机范围r - 500 500
                    &#xA;以绘制位置为基准。
                    &#xA;
                    &#xA;"
@@ -8211,11 +8214,11 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraRangeReset">
       </explanation>
-      <explanation lang="zhc" name="视角范围重置"
-                   syntax="视角范围重置"
+      <explanation lang="zhc" name="摄像机范围重置"
+                   syntax="摄像机范围重置"
                    details="
-                   &#xA;例如：视角范围重置
-                   &#xA;重置绘制位置。
+                   &#xA;例如：摄像机范围重置
+                   &#xA;重置摄像机的范围限制。
                    &#xA;
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraRangeReset">
@@ -8254,12 +8257,12 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#objectSortByCameraZ">
       </explanation>
-      <explanation lang="zhc" name="基于视角的对象绘制"
-                   syntax="基于视角的对象绘制 [true/false(默认)]"
-                   details="例如：基于视角的对象绘制 true
+      <explanation lang="zhc" name="基于摄像机的对象绘制"
+                   syntax="基于摄像机的对象绘制 [true/false(默认)]"
+                   details="例如：基于摄像机的对象绘制 true
                    &#xA;
                    &#xA;true)
-                   &#xA;根据与视角的距离(z)顺序绘制对象。
+                   &#xA;根据与摄像机的距离(z)顺序绘制对象。
                    &#xA;
                    &#xA;false)
                    &#xA;根据图层顺序绘制对象。
@@ -8303,7 +8306,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#mask">
       </explanation>
       <explanation lang="zhc" name="遮罩"
-                   syntax="遮罩 [名称] [图像名/注册动画名] [x] [y] [r] (显示图像) (视角选项)"
+                   syntax="遮罩 [名称] [图像名/注册动画名] [x] [y] [r] (显示图像) (摄像机选项)"
                    details="例如：遮罩 mask mask.png 0 0 80
                    &#xA;
                    &#xA;创建遮罩。
@@ -8362,7 +8365,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#applyMask">
       </explanation>
       <explanation lang="zhc" name="应用遮罩"
-                   syntax="应用遮罩(2) [目标名 (可多个)] [应用的遮罩名] (画面区域范围)"
+                   syntax="应用遮罩(2) [目标名 (可多个)] [应用的遮罩名] (屏幕区域范围)"
                    details="例如：应用遮罩 alice1, ace1 mask
                    &#xA;例如：应用遮罩2 alice1, ace1 mask
                    &#xA;
@@ -8374,8 +8377,8 @@
                    &#xA;应用遮罩的目标，其显示透明度为 (255 - 遮罩透明度)。
                    &#xA;目标在遮罩素材之外的部分将显示为目标的原始颜色。
                    &#xA;
-                   &#xA;注：如果遮罩或视角绕x轴或z轴旋转，则无法正确显示。
-                   &#xA;注：使用区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
+                   &#xA;注：如果遮罩或摄像机绕x轴或z轴旋转，则无法正确显示。
+                   &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#applyMask">
       </explanation>
@@ -8436,7 +8439,7 @@
                    &#xA;应用遮罩的目标，其显示透明度为 (255 - 遮罩透明度)。
                    &#xA;目标在遮罩素材之外的部分将显示为目标的原始颜色。
                    &#xA;
-                   &#xA;注：如果遮罩或视角绕x轴或z轴旋转，则无法正确显示。
+                   &#xA;注：如果遮罩或摄像机绕x轴或z轴旋转，则无法正确显示。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#autoApplyMask">
       </explanation>
@@ -8633,13 +8636,13 @@
                    reference="https://wikiwiki.jp/lightvn/commands/particle#spawnDelayRange">
       </explanation>
       <explanation lang="zhc" name="生成间隔设置"
-                   syntax="生成间隔设置 [目标名] [最小(ms)] [最大(ms)] (屏幕范围)"
+                   syntax="生成间隔设置 [目标名] [最小(ms)] [最大(ms)] (屏幕区域范围)"
                    details="例如：生成间隔设置 maker 0 300
                    &#xA;
                    &#xA;设置生成下一个粒子的时间间隔范围设置。
                    &#xA;
                    &#xA;注：目标名可使用正则表达式。
-                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
+                   &#xA;注：区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕区域范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#spawnDelayRange">
       </explanation>
       <explanation lang="kor" name="입자생성간격"
@@ -8672,14 +8675,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/particle#positionRange">
       </explanation>
       <explanation lang="zhc" name="粒子位置设置"
-                   syntax="粒子位置设置 [目标名] [最小x] [最小 y] [最小r] [最大x] [最大y] [最大r] (屏幕范围)"
+                   syntax="粒子位置设置 [目标名] [最小x] [最小 y] [最小r] [最大x] [最大y] [最大r] (屏幕区域范围)"
                    details="例如：粒子位置设置 maker -300 0 0 300 0 0
                    &#xA;
                    &#xA;设置相对于粒子生成器的粒子生成位置设置。
                    &#xA;注：输入的x, y坐标是相对于粒子生成器的“相对”坐标。
                    &#xA;
                    &#xA;注：目标名可使用正则表达式。
-                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
+                   &#xA;注：区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕区域范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#positionRange">
       </explanation>
       <explanation lang="kor" name="입자위치"
@@ -8712,13 +8715,13 @@
                    reference="https://wikiwiki.jp/lightvn/commands/particle#rotationRange">
       </explanation>
       <explanation lang="zhc" name="粒子旋转设置"
-                   syntax="粒子旋转设置 [目标名] [最小旋转] [最大旋转] (屏幕范围)"
+                   syntax="粒子旋转设置 [目标名] [最小旋转] [最大旋转] (屏幕区域范围)"
                    details="例如：粒子旋转设置 maker 30 90
                    &#xA;
                    &#xA;指定粒子生成器生成粒子的起始和结束时的旋转范围设置。
                    &#xA;
                    &#xA;注：目标名可使用正则表达式。
-                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
+                   &#xA;注：区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕区域范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#rotationRange">
       </explanation>
       <explanation lang="kor" name="입자회전"
@@ -8765,9 +8768,9 @@
                    reference="https://wikiwiki.jp/lightvn/commands/particle#zoomRange">
       </explanation>
       <explanation lang="zhc" name="粒子缩放设置"
-                   syntax="1. 粒子缩放设置 [目标名] [最小缩放] [最大缩放] (屏幕范围)
-                   &#xA;2. 粒子缩放设置 [目标名] [最小x缩放] [最小y缩放] [最大x缩放] [最大y缩放] (屏幕范围)
-                   &#xA;3. 粒子缩放设置 [目标名] [最小x缩放] [最小y缩放] [最小z缩放] [最大x缩放] [最大y缩放] [最大z缩放] (屏幕范围)"
+                   syntax="1. 粒子缩放设置 [目标名] [最小缩放] [最大缩放] (屏幕区域范围)
+                   &#xA;2. 粒子缩放设置 [目标名] [最小x缩放] [最小y缩放] [最大x缩放] [最大y缩放] (屏幕区域范围)
+                   &#xA;3. 粒子缩放设置 [目标名] [最小x缩放] [最小y缩放] [最小z缩放] [最大x缩放] [最大y缩放] [最大z缩放] (屏幕区域范围)"
                    details="例如：粒子缩放设置 maker 30% 30% 150% 150%
                    &#xA;
                    &#xA;指定粒子生成器生成粒子的起始和结束时的粒子缩放范围设置。
@@ -8784,7 +8787,7 @@
                    &#xA;
                    &#xA;注：目标名可使用正则表达式。
                    &#xA;注：结束粒子缩放设置也将被覆盖为相同数值。
-                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
+                   &#xA;注：区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕区域范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#zoomRange">
       </explanation>
       <explanation lang="kor" name="입자확대"
@@ -8831,15 +8834,15 @@
                    reference="https://wikiwiki.jp/lightvn/commands/particle#velocityRange">
       </explanation>
       <explanation lang="zhc" name="粒子速度设置"
-                   syntax="粒子速度设置 [目标名] [x最小速度] [y最小速度] [r最小速度] [x最大速度] [y最大速度] [r最大速度] (屏幕范围)"
+                   syntax="粒子速度设置 [目标名] [x最小速度] [y最小速度] [r最小速度] [x最大速度] [y最大速度] [r最大速度] (屏幕区域范围)"
                    details="例如：粒子速度设置 maker 0 10 0 0 30 0
                    &#xA;
-                   &#xA;指定粒子生成器生成粒子的移动粒子速度范围设置。
+                   &#xA;指定粒子生成器生成粒子的移动速度范围设置。
                    &#xA;速度单位：像素/秒
                    &#xA;（上述例子中，粒子每秒在y方向移动10~30像素）
                    &#xA;
                    &#xA;注：目标名可使用正则表达式。
-                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
+                   &#xA;注：区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕区域范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#velocityRange">
       </explanation>
       <explanation lang="kor" name="입자속도"
@@ -8874,14 +8877,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/particle#acceleration">
       </explanation>
       <explanation lang="zhc" name="粒子加速度设置"
-                   syntax="粒子加速度设置 [目标名] [x加速度] [y加速度] [r加速度] (屏幕范围)"
+                   syntax="粒子加速度设置 [目标名] [x加速度] [y加速度] [r加速度] (屏幕区域范围)"
                    details="例如：粒子加速度设置 maker 0 10 0
                    &#xA;
                    &#xA;指定粒子生成器生成粒子的加速度。
                    &#xA;加速度单位：像素/秒^2
                    &#xA;
                    &#xA;注：目标名可使用正则表达式。
-                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
+                   &#xA;注：区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕区域范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#acceleration">
       </explanation>
       <explanation lang="kor" name="입자가속도"
@@ -8914,13 +8917,13 @@
                    reference="https://wikiwiki.jp/lightvn/commands/particle#RGBARange">
       </explanation>
       <explanation lang="zhc" name="粒子颜色设置"
-                   syntax="粒子颜色设置 [目标名] [最小r] [最小g] [最小b] [最小a] [最大r] [最大g] [最大b] [最大a] (屏幕范围)"
+                   syntax="粒子颜色设置 [目标名] [最小r] [最小g] [最小b] [最小a] [最大r] [最大g] [最大b] [最大a] (屏幕区域范围)"
                    details="例如：粒子颜色设置 maker 255 255 255 0 255 255 255 10
                    &#xA;
                    &#xA;指定粒子生成器生成粒子的起始和结束时的颜色。
                    &#xA;
                    &#xA;注：目标名可使用正则表达式。
-                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
+                   &#xA;注：区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕区域范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#RGBARange">
       </explanation>
       <explanation lang="kor" name="입자색상"
@@ -8955,13 +8958,13 @@
                    reference="https://wikiwiki.jp/lightvn/commands/particle#endRotationRange">
       </explanation>
       <explanation lang="zhc" name="粒子结束旋转设置"
-                   syntax="粒子结束旋转设置 [目标名] [最小旋转] [最大旋转] (屏幕范围)"
+                   syntax="粒子结束旋转设置 [目标名] [最小旋转] [最大旋转] (屏幕区域范围)"
                    details="例如：粒子结束旋转设置 maker 30 90
                    &#xA;
                    &#xA;指定粒子生成器生成粒子的结束时的旋转范围设置。
                    &#xA;
                    &#xA;注：目标名可使用正则表达式。
-                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
+                   &#xA;注：区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕区域范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#endRotationRange">
       </explanation>
       <explanation lang="kor" name="입자소멸시회전"
@@ -9010,9 +9013,9 @@
                    reference="https://wikiwiki.jp/lightvn/commands/particle#endZoomRange">
       </explanation>
       <explanation lang="zhc" name="粒子结束缩放设置"
-                   syntax="1. 粒子结束缩放设置 [目标名] [最小缩放] [最大缩放] (屏幕范围)
-                   &#xA;2. 粒子结束缩放设置 [目标名] [最小x缩放] [最小y缩放] [最大x缩放] [最大y缩放] (屏幕范围)
-                   &#xA;3. 粒子结束缩放设置 [目标名] [最小x缩放] [最小y缩放] [最小z缩放] [最大x缩放] [最大y缩放] [最大z缩放] (屏幕范围)"
+                   syntax="1. 粒子结束缩放设置 [目标名] [最小缩放] [最大缩放] (屏幕区域范围)
+                   &#xA;2. 粒子结束缩放设置 [目标名] [最小x缩放] [最小y缩放] [最大x缩放] [最大y缩放] (屏幕区域范围)
+                   &#xA;3. 粒子结束缩放设置 [目标名] [最小x缩放] [最小y缩放] [最小z缩放] [最大x缩放] [最大y缩放] [最大z缩放] (屏幕区域范围)"
                    details="例如：粒子结束缩放设置 maker 30% 30% 150% 150%
                    &#xA;
                    &#xA;指定粒子生成器生成粒子结束时的缩放范围设置。
@@ -9028,7 +9031,7 @@
                    &#xA;对x, y, z使用指定数值。
                    &#xA;
                    &#xA;注：目标名可使用正则表达式。
-                   &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
+                   &#xA;注：区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕区域范围内的个体。"
                    reference="https://wikiwiki.jp/lightvn/commands/particle#endZoomRange">
       </explanation>
       <explanation lang="kor" name="입자소멸시확대"
@@ -9075,13 +9078,13 @@
                    reference="https://wikiwiki.jp/lightvn/commands/particle#endRGBARange">
       </explanation>
       <explanation lang="zhc" name="粒子结束颜色设置"
-                  syntax="粒子结束颜色设置 [目标名] [最小r] [最小g] [最小b] [最小a] [最大r] [最大g] [最大b] [最大a] (屏幕范围)"
+                  syntax="粒子结束颜色设置 [目标名] [最小r] [最小g] [最小b] [最小a] [最大r] [最大g] [最大b] [最大a] (屏幕区域范围)"
                   details="例如：粒子结束颜色设置 maker 255 255 255 0 255 255 255 10
                   &#xA;
                   &#xA;指定粒子生成器生成粒子的结束时的颜色。
                   &#xA;
                   &#xA;注：目标名可使用正则表达式。
-                  &#xA;注：使用区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕范围内的个体。"
+                  &#xA;注：区域范围：全屏、同层级画面。若未指定，则仅作用于当前屏幕区域范围内的个体。"
                   reference="https://wikiwiki.jp/lightvn/commands/particle#endRGBARange">
       </explanation>
       <explanation lang="kor" name="입자소멸시색상"
@@ -9151,9 +9154,9 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#entryAllowance">
       </explanation>
-      <explanation lang="zhc" name="允许单位"
-                   syntax="允许单位 [数值]"
-                   details="例如：允许单位 1
+      <explanation lang="zhc" name="侵入容许值"
+                   syntax="侵入容许值 [数值]"
+                   details="例如：侵入容许值 1
                    &#xA;
                    &#xA;注：这是一个实验阶段的命令。
                    &#xA;
@@ -9203,7 +9206,7 @@
                    &#xA;
                    &#xA;注：如果未指定“组名”，则名称将作为组名。
                    &#xA;
-                   &#xA;指定“禁止进入”的碰撞区域将无法互相进入（交叉）。
+                   &#xA;指定“禁止进入”的碰撞区域将无法互相进入（碰撞）。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#colliderRect">
       </explanation>
@@ -9261,7 +9264,7 @@
                    &#xA;注：如果未指定名称，则将其命名为“目标名+_collider”。
                    &#xA;（例如：上述情况中为id0_collider）
                    &#xA;
-                   &#xA;指定“禁止进入”的碰撞区域将无法互相进入（交叉）。
+                   &#xA;指定“禁止进入”的碰撞区域将无法互相进入（碰撞）。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#addColliderRect">
       </explanation>
@@ -9314,7 +9317,7 @@
                    &#xA;"
                    details="例如：添加碰撞球 player 0 0 0 250
                    &#xA;
-                   &#xA;在目标的中心创建一个宽度x高度的碰撞箱（球型）。
+                   &#xA;在目标的中心创建一个半径为[半径]的碰撞球。
                    &#xA;
                    &#xA;注：如果未指定“组名”，则名称将作为组名。
                    &#xA;注：如果未指定名称，则将其命名为“目标名+_collider”。
@@ -9430,9 +9433,9 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#addColliderTileLayer">
       </explanation>
-      <explanation lang="zhc" name="图层添加碰撞瓦片"
-                  syntax="图层添加碰撞瓦片 [图层名] [组名]"
-                  details="例如：图层添加碰撞瓦片 layer_grass 草
+      <explanation lang="zhc" name="添加碰撞瓦片图层"
+                  syntax="添加碰撞瓦片图层 [图层名] [组名]"
+                  details="例如：添加碰撞瓦片图层 layer_grass 草
                   &#xA;
                   &#xA;为图层名中的所有瓦片添加以“名称前缀”开头的碰撞箱（瓦片）。
                   &#xA;"
@@ -9485,7 +9488,7 @@
                    syntax="碰撞开始时 [组名A] [组名B] [执行命令]"
                    details="例如：碰撞开始时 id1_c id0_c 脚本 title.txt collision_start
                    &#xA;
-                   &#xA;当id1_c所属的碰撞区域与id0_c所属的碰撞区域开始交叉时，执行命令。
+                   &#xA;当id1_c所属的碰撞区域与id0_c所属的碰撞区域开始碰撞时，执行命令。
                    &#xA;
                    &#xA;[执行命令]：作为字符串包含时，每次碰撞都会重新计算。
                    &#xA;执行命令时附加以下信息：
@@ -9493,7 +9496,7 @@
                    &#xA;  碰撞的碰撞区域名B
                    &#xA;  碰撞的碰撞区域名A的中心坐标x, y, z
                    &#xA;  碰撞的碰撞区域名B的中心坐标x, y, z
-                   &#xA;  交叉范围x, y, z
+                   &#xA;  碰撞范围x, y, z
                    &#xA;
                    &#xA;  （碰撞区域名A, B按“指定的组顺序”）
                    &#xA;
@@ -9559,7 +9562,7 @@
                    syntax="碰撞持续时 [组名A] [组名B] [执行命令]"
                    details="例如：碰撞持续时 id1_c id0_c 脚本 title.txt collision_continue
                    &#xA;
-                   &#xA;当id1_c所属的碰撞区域与id0_c所属的碰撞区域持续交叉时，执行命令。
+                   &#xA;当id1_c所属的碰撞区域与id0_c所属的碰撞区域持续碰撞时，执行命令。
                    &#xA;
                    &#xA;[执行命令]：作为字符串包含时，每次碰撞都会重新计算。
                    &#xA;执行命令时附加以下信息：
@@ -9567,7 +9570,7 @@
                    &#xA;  碰撞的碰撞区域名B
                    &#xA;  碰撞的碰撞区域名A的中心坐标x, y, z
                    &#xA;  碰撞的碰撞区域名B的中心坐标x, y, z
-                   &#xA;  交叉范围x, y, z
+                   &#xA;  碰撞范围x, y, z
                    &#xA;
                    &#xA;  （碰撞区域名A, B按“指定的组顺序”）
                    &#xA;"
@@ -9625,7 +9628,7 @@
                    syntax="碰撞结束时 [组名A] [组名B] [执行命令]"
                    details="例如：碰撞结束时 id1_c id0_c 脚本 title.txt collision_exit
                    &#xA;
-                   &#xA;当id1_c所属的碰撞区域与id0_c所属的碰撞区域结束交叉时，执行命令。
+                   &#xA;当id1_c所属的碰撞区域与id0_c所属的碰撞区域结束碰撞时，执行命令。
                    &#xA;
                    &#xA;[执行命令]：作为字符串包含时，每次碰撞都会重新计算。
                    &#xA;执行命令时附加以下信息：
@@ -9633,7 +9636,7 @@
                    &#xA;  碰撞的碰撞区域名B
                    &#xA;  碰撞的碰撞区域名A的中心坐标x, y, z
                    &#xA;  碰撞的碰撞区域名B的中心坐标x, y, z
-                   &#xA;  交叉范围x, y, z
+                   &#xA;  碰撞范围x, y, z
                    &#xA;
                    &#xA;  （碰撞区域名A, B按“指定的组顺序”）
                    &#xA;"
@@ -9687,9 +9690,9 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#onFaceCollision">
       </explanation>
-      <explanation lang="zhc" name="面向碰撞持续时"
-                   syntax="面向碰撞持续时 [组名] [查看组名] (左) (右) (上) (下) [执行命令]"
-                   details="例如：面向碰撞持续时 npc player 左 &quot;&quot;
+      <explanation lang="zhc" name="方向碰撞持续时"
+                   syntax="方向碰撞持续时 [组名] [查看组名] (左) (右) (上) (下) [执行命令]"
+                   details="例如：方向碰撞持续时 npc player 左 &quot;&quot;
                    &#xA;
                    &#xA;当“查看组名”在与“组名”接触的瓦片中，并且查看个体面向目标方向时，执行命令。
                    &#xA;
@@ -9699,11 +9702,11 @@
                    &#xA;  碰撞的碰撞区域名B
                    &#xA;  碰撞的碰撞区域名A的中心坐标x, y, z
                    &#xA;  碰撞的碰撞区域名B的中心坐标x, y, z
-                   &#xA;  交叉范围x, y, z
+                   &#xA;  碰撞范围x, y, z
                    &#xA;
                    &#xA;  （碰撞区域名A, B按“指定的组顺序”）
                    &#xA;
-                   &#xA;例如：面向碰撞持续时 colA colB 左 脚本 title.txt collision_start
+                   &#xA;例如：方向碰撞持续时 colA colB 左 脚本 title.txt collision_start
                    &#xA;例如：脚本 title.txt collision_start colliderA colliderB
                    &#xA;（colliderA：组colA，colliderB：组colB）
                    &#xA;"
@@ -9777,11 +9780,11 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#clearCollisionChecks">
       </explanation>
-      <explanation lang="zhc" name="初始化碰撞检测"
-                   syntax="初始化碰撞检测"
-                   details="例如：初始化碰撞检测
+      <explanation lang="zhc" name="重置碰撞检测"
+                   syntax="重置碰撞检测"
+                   details="例如：重置碰撞检测
                    &#xA;
-                   &#xA;初始化通过“碰撞开始时”等命令添加的所有碰撞检测。
+                   &#xA;重置通过“碰撞开始时”等命令添加的所有碰撞检测。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#clearCollisionChecks">
       </explanation>
@@ -10255,7 +10258,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/script#finaljump">
       </explanation>
       <explanation lang="zhc" name="立即跳转"
-                   syntax="立即跳转 [目标脚本/当前脚本书签] (目标脚本书签)"
+                   syntax="立即跳转 [目标脚本] (目标脚本书签)"
                    details="例如：立即跳转 script.txt bookmark1
                    &#xA;
                    &#xA;注意：与普通跳转不同，执行此命令时，会停止并解除所有未完成的脚本执行并跳转到目标脚本。
@@ -10370,7 +10373,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/script#script">
       </explanation>
       <explanation lang="zhc" name="脚本"
-                   syntax="脚本 [调用脚本 / 当前] (开始读取的书签)"
+                   syntax="脚本 [调用脚本 / 当前] (开始读取的书签) (参数...))"
                    details="例如：脚本 textbox.txt (bookmark1)
                    &#xA;例如：脚本 lua/lua_script.lua
                    &#xA;例如：脚本 当前 这个执行
@@ -10381,7 +10384,8 @@
                    &#xA;如果脚本名称指定为“当前”，
                    &#xA;  则读取当前执行的脚本。
                    &#xA;
-                   &#xA;注意：如果跳转到另一个脚本，读取的脚本将是磁盘上保存的文件。
+                   &#xA;注：如果跳转到另一个脚本，读取的脚本将是磁盘上保存的文件。
+                   &#xA;注：如果传递(参数...)，这些参数将作为目标书签定义的输入参数。
                    &#xA;因此，在编辑器中编辑脚本时，请确保保存后再执行。
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/script#script">
@@ -10607,8 +10611,8 @@
                   details="ex. 脚本唯一锁定 true
                   &#xA;  
                   &#xA;true)
-                  &#xA;- 仅允许从当前画面区域的基础脚本执行
-                  &#xA;- 销毁当前画面区域中其他所有脚本
+                  &#xA;- 仅允许从当前屏幕区域的基础脚本执行
+                  &#xA;- 销毁当前屏幕区域中其他所有脚本
                   &#xA;- 禁止其他脚本的跳转和执行操作
                   &#xA;- 外部进程触发的命令（如计时器、物理引擎等）将不再执行
                   &#xA;
@@ -10706,9 +10710,9 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/script#scriptPrevent">
       </explanation>
-      <explanation lang="zhc" name="禁止脚本"
-                   syntax="禁止脚本 [文件路径前缀]"
-                   details="例如：禁止脚本 /Scripts/fufu
+      <explanation lang="zhc" name="禁止脚本添加"
+                   syntax="禁止脚本添加 [文件路径前缀]"
+                   details="例如：禁止脚本添加 /Scripts/fufu
                    &#xA;
                    &#xA;今后禁止通过“脚本”命令读取以“/Scripts/fufu”开头的文件。
                    &#xA;注意：文件路径为绝对路径。(参考编辑器的“脚本”选项卡)
@@ -10744,9 +10748,9 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/script#scriptAllow">
       </explanation>
-      <explanation lang="zhc" name="允许脚本"
-                   syntax="允许脚本 [文件路径前缀]"
-                   details="例如：允许脚本 /Scripts/fufu
+      <explanation lang="zhc" name="禁止脚本解除"
+                   syntax="禁止脚本解除 [文件路径前缀]"
+                   details="例如：禁止脚本解除 /Scripts/fufu
                    &#xA; 允许通过“脚本”命令读取以“/Scripts/fufu”开头的文件。
                    &#xA;如果之前未通过“禁止脚本”添加，则会报错。
                    &#xA;
@@ -10780,9 +10784,9 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/script#scriptAllowAll">
       </explanation>
-      <explanation lang="zhc" name="允许所有脚本"
-                   syntax="允许所有脚本"
-                   details="例如：允许所有脚本
+      <explanation lang="zhc" name="禁止脚本全解除"
+                   syntax="禁止脚本全解除"
+                   details="例如：禁止脚本全解除
                    &#xA;
                    &#xA;移除通过“禁止脚本”添加的所有信息。
                    &#xA;
@@ -10833,7 +10837,7 @@
                    &#xA;移除所有在堆栈底部脚本之上的脚本，并继续读取底部脚本。
                    &#xA;（如果当前脚本是第一个脚本，则不执行任何操作。）
                    &#xA;
-                   &#xA;注意：屏幕区域也将恢复到没有设置[返回主界面时释放]的最上层屏幕区域。
+                   &#xA;注意：屏幕区域也将恢复到没有设置[返回初始状态时解除]的最上层屏幕区域。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#script_fin_return_to_main">
       </explanation>
@@ -10954,9 +10958,10 @@
                    &#xA;
                    &#xA;按键触发器）https://wikiwiki.jp/lightvn/commands/script#keyDown
                    &#xA;
-                   &#xA;注意：要取消注册按键触发器，只需注册相同的按键但不指定命令
+                   &#xA;注：要取消注册按键触发器，只需注册相同的按键但不指定命令
+                   &#xA;注：释放按下的按键时执行一次命令
                    &#xA; （例如：按键触发器 r.click）
-                   &#xA;注意：如果在设置光标点击按键触发器的同时单击按钮，按钮单击将覆盖。"
+                   &#xA;注：如果在设置光标点击按键触发器的同时单击按钮，按钮单击将覆盖。"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyUp">
       </explanation>
       <explanation lang="kor" name="키업"
@@ -11095,7 +11100,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/script#inputLock">
       </explanation>
       <explanation lang="zhc" name="输入锁定"
-                   syntax="输入锁定 [true / false]"
+                   syntax="输入锁定 [true / false (默认)]"
                    details="例如：输入锁定 true
                    &#xA;
                    &#xA;使以下输入操作无效：
@@ -11206,7 +11211,7 @@
       </explanation>
       <explanation lang="zhc" name="命令宏"
                    syntax="命令宏 [字符串:宏转换目标] [字符串:宏转换结果]"
-                   details="例如：命令宏 “文字窗口” “脚本 system/textbox.txt default”
+                   details="例如：命令宏 “底部文本栏” “脚本 system/textbox.txt default”
                    &#xA;
                    &#xA;当宏转换目标与普通Lightvn命令相同，
                    &#xA;且在命令行的开头时，转换结果将被执行。
@@ -11306,12 +11311,12 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#macroApply">
       </explanation>
-      <explanation lang="zhc" name="应用宏"
-                   syntax="应用宏 [true/false]"
-                   details="例如：应用宏 false
+      <explanation lang="zhc" name="宏应用"
+                   syntax="宏应用 [true/false]"
+                   details="例如：宏应用 false
                    &#xA;
-                   &#xA;指定是否在当前脚本中应用宏。
-                   &#xA;
+                   &#xA;指定是否在当前脚本中宏应用。
+                   &#xA;true: 在当前脚本中宏应用
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#macroApply">
       </explanation>
@@ -11371,9 +11376,9 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#screenSpaceStart">
       </explanation>
-      <explanation lang="zhc" name="启用屏幕空间"
-                   syntax="启用屏幕空间 [名称]"
-                   details="例如：启用屏幕空间 my_backlog
+      <explanation lang="zhc" name="开始屏幕空间"
+                   syntax="开始屏幕空间 [名称] (返回初始状态时释放)"
+                   details="例如：开始屏幕空间 my_backlog
                    &#xA;
                    &#xA;在堆栈顶部创建一个新的屏幕空间。
                    &#xA;"
@@ -11570,7 +11575,7 @@
       </explanation>
       <explanation lang="zhc" name="状态更新器"
                    syntax="状态更新器 [目标名称] [脚本] [书签前缀] [开始状态]"
-                   details="例如：stateLoop apple0 &quot;apple.txt&quot; &quot;苹果_状态_&quot; &quot;等待&quot;
+                   details="例如：状态更新器 apple0...apple0 &quot;apple.txt&quot; &quot;苹果_状态_&quot; &quot;等待&quot;
                    &#xA;
                    &#xA;注意：这是实验命令。
                    &#xA;
@@ -11637,7 +11642,7 @@
                    &#xA;
                    &#xA;注意：这是实验命令。
                    &#xA;
-                   &#xA;将状态更新器附加到[目标名称]并更新为指定状态。
+                   &#xA;更新已设置状态更新器的[目标名称]的状态为指定状态
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#state">
       </explanation>
@@ -11697,7 +11702,7 @@
                    &#xA;
                    &#xA;背景音乐的个体名：vn_sysBGM
                    &#xA;
-                   &#xA;提示：交叉淡入实现
+                   &#xA;提示：碰撞淡入实现
                    &#xA;名称更改 背景音乐 bgm_fade | 淡出 bgm_fade 800
                    &#xA;背景音乐0 new.ogg | 淡入 背景音乐 800
                    &#xA;
@@ -11940,7 +11945,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#setAutoVoice">
       </explanation>
       <explanation lang="zhc" name="自动语音注册"
-                   syntax="自动语音注册 [自动语音注册名] [播放文件格式] [开始编号] (音量变量)"
+                   syntax="自动语音注册 [自动语音注册名] [播放文件格式] [开始编号] (音量变量) (on/off变量：true/false)"
                    details="例如：自动语音注册 voice_ace voice_ace_%03d.ogg 0
                    &#xA;
                    &#xA;注意：“播放文件格式”遵循c++的printf格式。
@@ -12126,7 +12131,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#movie">
       </explanation>
       <explanation lang="zhc" name="视频"
-                   syntax="视频 [名字] [文件名] [x] [y] [r] (重复) (视角选项)"
+                   syntax="视频 [名字] [文件名] [x] [y] [r] (重复) (摄像机选项)"
                    details="例如：视频 movie1 test.mp4 0 0 70
                    &#xA;
                    &#xA;注意：在命令后加'0'，将以透明度和音量为0开始播放。
@@ -12320,7 +12325,7 @@
                    &#xA;当设置为true，执行‘背景音乐’命令时
                    &#xA;  
                    &#xA;  - 同一个体名称
-                   &#xA;  - 如果已经存在同一文件名的曲子作为‘背景音’个体，  
+                   &#xA;  - 如果已经存在同一文件名的曲子作为‘背景音乐’个体，  
                    &#xA;  
                    &#xA;将不重新创建个体，而是继续播放现有的曲子。"
                    reference="https://wikiwiki.jp/lightvn/commands/media#bgmAutoContinue">
@@ -12359,10 +12364,11 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#loopRegion">
       </explanation>
       <explanation lang="zhc" name="循环区间"
-                   syntax="循环区间 [目标] [循环起点(ms)] [循环区间长度(ms)]"
+                   syntax="循环区间 (目标) [循环起点(ms)] [循环区间长度(ms)]"
                    details="例如：循环区间 1500 500
                    &#xA;
                    &#xA;开始循环播放背景音乐，从起点到指定长度。
+                   &#xA;当正在播放的背景音乐达到'循环起点'时，将从'循环起点'开始循环播放指定长度的区间
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/media#loopRegion">
       </explanation>
@@ -12447,12 +12453,14 @@
                    &#xA; (ex. bgm0 bgm.ogg)"
                    reference="https://wikiwiki.jp/lightvn/commands/media#syncSound">
       </explanation>
-      <explanation lang="zhc" name="声音同步"
-                   syntax="声音同步 [名字] [文件名] [同步目标名]"
-                   details="例如：声音同步 sound /BGM/snowsnow.ogg vn_sysBGM
+      <explanation lang="zhc" name="音源同步"
+                   syntax="音源同步 [名字] [文件名] [同步目标名]"
+                   details="例如：音源同步 sound /BGM/snowsnow.ogg vn_sysBGM
                    &#xA;
                    &#xA;播放[文件名]，与[目标名]的播放偏移量相同。
-                   &#xA;
+                   &#xA;与[同步目标名]的音源播放位置保持同步。
+                   &#xA;例如，如果目标在播放1300ms位置，本音源也会在同一位置播放。
+                   &#xA;非常适合在特定场景为背景音添加额外音轨等用途。
                    &#xA;后缀：'0'以音量0开始播放。
                    &#xA; (例如：背景音乐0 bgm.ogg)"
                    reference="https://wikiwiki.jp/lightvn/commands/media#syncSound">
@@ -12818,8 +12826,10 @@
       </explanation>
       <explanation lang="zhc" name="保存全局变量"
                    syntax="保存全局变量"
-                   details="保存所有被指定为“全局变量”的变量。
+                   details="保存所有被指定为&quot;全局变量&quot;的变量。
                    &#xA;
+                   &#xA;注意：由于需要写入HDD，可能需要一些时间。
+                   &#xA;建议在玩家不会注意到延迟的地方执行此命令。
                    &#xA;
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#saveGlobalVars">
@@ -13262,7 +13272,7 @@
                    details="例如：变量变化 hp -100 300
                    &#xA;在300毫秒内将“hp”更改为“-100”。
                    &#xA;
-                   &#xA;注意：在动画命令中加上'2'将作为相对变化值进行处理
+                   &#xA;注意：在演出命令中加上'2'将作为相对变化值进行处理
                    &#xA; (例如：移动2 alice +20 -10 300)
                    &#xA;注意：如果持续时间设置为ups（每秒单位），则按每秒的单位变化。
                    &#xA; (例如：移动x2 alice 100 30ups : 以每秒30像素的速度进行100px的变化)
@@ -13541,7 +13551,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#releaseUnusedMemory">
       </explanation>
-      <explanation lang="zhc" name="释放未使用内存(全部)"
+      <explanation lang="zhc" name="释放未使用内存 (全部)"
                    syntax="释放未使用内存"
                    details="例如：释放未使用内存
                    &#xA;
@@ -13676,7 +13686,18 @@
       <explanation lang="zhc" name="语音播放类型"
                    syntax="语音播放类型 [0/1]"
                    details="0: 显示下一个文本时强制结束语音播放
-                   &#xA;1: 无论文本进度如何继续播放语音"
+                   &#xA;- 0 (淡出毫秒):
+                   &#xA;显示下一个文本时强制结束所有现有语音播放
+                   &#xA;例如：语音播放类型 0 200
+                   &#xA;
+                   &#xA;- 1:
+                   &#xA;无论文本进度如何继续播放语音
+                   &#xA;例如：语音播放类型 1
+                   &#xA;
+                   &#xA;- 2 (淡出毫秒):
+                   &#xA;执行[语音]命令时强制结束所有现有语音播放
+                   &#xA;例如：语音播放类型 2 200
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#voicePlayTyoe">
       </explanation>
       <explanation lang="kor" name="보이스재생형식"
@@ -13804,6 +13825,7 @@
                    details="例如：保存 5 245 130
                    &#xA;
                    &#xA;如果保存文件已存在，会生成确认覆盖的对话框。
+                   &#xA;注：
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#save">
       </explanation>
@@ -14848,12 +14870,12 @@
                    &#xA;
                    &#xA;“以下设置也将初始化”
                    &#xA;
-                   &#xA;视角初始化
+                   &#xA;摄像机初始化
                    &#xA;
                    &#xA;按键触发初始化
                    &#xA;
                    &#xA;对象深度计算
-                   &#xA;视角基准对象绘制
+                   &#xA;摄像机基准对象绘制
                    &#xA;光照模式
                    &#xA;绘制基准对象
                    &#xA;碰撞基准对象
@@ -15057,14 +15079,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/system#renderFilterObj">
       </explanation>
       <explanation lang="zhc" name="渲染基准对象"
-                  syntax="渲染基准对象 [对象名] [距离]"
+                  syntax="渲染基准对象 [目标名称] [距离]"
                   details="
                    &#xA;例如：渲染基准对象 id 300
                    &#xA;
                    &#xA;优化命令。
                    &#xA;仅渲染从基准对象“距离”以内的对象（基于渲染中心）。
                    &#xA;
-                   &#xA;注意：[绑定视角] 的对象不参与计算。
+                   &#xA;注意：[绑定摄像机] 的对象不参与计算。
                    &#xA;"
                   reference="https://wikiwiki.jp/lightvn/commands/system#renderFilterObj">
       </explanation>
@@ -15104,7 +15126,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/system#collisionFilterObj">
       </explanation>
       <explanation lang="zhc" name="碰撞基准对象"
-                   syntax="碰撞基准对象 [对象名] [距离]"
+                   syntax="碰撞基准对象 [目标名称] [距离]"
                    details="
                    &#xA;例如：碰撞基准对象 id 300
                    &#xA;
@@ -15648,7 +15670,7 @@
                    syntax="lvRandomName(字符串: 前缀)"
                    details="例如：lvRandomName(&quot;fufu&quot;)
                    &#xA;
-                   &#xA;返回一个以指定前缀开头的随机且未使用的对象名称。
+                   &#xA;返回一个以指定前缀开头的随机且未使用的目标名称称。
                    &#xA;
                    &#xA;返回：字符串"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvRandomName">
@@ -15683,7 +15705,7 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvExistsObj">
       </explanation>
       <explanation lang="zhc" name="lvExistsObj"
-                   syntax="lvExistsObj(字符串: 对象名)"
+                   syntax="lvExistsObj(字符串: 目标名称)"
                    details="例如：lvExistsObj(&quot;obj_name&quot;)
                    &#xA;
                    &#xA;检查是否存在具有指定名称的对象。如果存在返回true，否则返回false。
@@ -15961,10 +15983,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvPositionCenter">
       </explanation>
       <explanation lang="zhc" name="lvPositionCenter"
-                   syntax="lvPositionCenter(字符串: 对象名)"
+                   syntax="lvPositionCenter(字符串: 目标名称)"
                    details="例如：lvPositionCenter(&quot;kojiken&quot;)
                    &#xA;
-                   &#xA;返回对象名为“对象名”的对象的中心位置(x, y, r)的列表。
+                   &#xA;返回目标名称为“目标名称”的对象的中心位置(x, y, r)的列表。
                    &#xA;如果对象不存在或没有位置，则报错。
                    &#xA;
                    &#xA;返回：列表"
@@ -16002,10 +16024,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvPositionCenterXYZ">
       </explanation>
       <explanation lang="zhc" name="lvPositionCenterXYZ"
-                   syntax="lvPositionCenterXYZ(字符串: 对象名)"
+                   syntax="lvPositionCenterXYZ(字符串: 目标名称)"
                    details="例如：lvPositionCenterXYZ(&quot;kojiken&quot;)
                    &#xA;
-                   &#xA;返回对象名为“对象名”的对象的中心位置(x, y, z)的列表。
+                   &#xA;返回目标名称为“目标名称”的对象的中心位置(x, y, z)的列表。
                    &#xA;如果对象不存在或没有位置，则报错。
                    &#xA;
                    &#xA;返回：列表"
@@ -16043,10 +16065,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvPositionCenterX">
       </explanation>
       <explanation lang="zhc" name="lvPositionCenterX"
-                   syntax="lvPositionCenterX(字符串: 对象名)"
+                   syntax="lvPositionCenterX(字符串: 目标名称)"
                    details="例如：lvPositionCenterX(&quot;kojiken&quot;)
                    &#xA;
-                   &#xA;返回对象名为“对象名”的对象的中心位置x。
+                   &#xA;返回目标名称为“目标名称”的对象的中心位置x。
                    &#xA;如果对象不存在或没有位置，则报错。
                    &#xA;
                    &#xA;返回：数字"
@@ -16084,10 +16106,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvPositionCenterY">
       </explanation>
       <explanation lang="zhc" name="lvPositionCenterY"
-                   syntax="lvPositionCenterY(字符串: 对象名)"
+                   syntax="lvPositionCenterY(字符串: 目标名称)"
                    details="例如：lvPositionCenterY(&quot;kojiken&quot;)
                    &#xA;
-                   &#xA;返回对象名为“对象名”的对象的中心位置y。
+                   &#xA;返回目标名称为“目标名称”的对象的中心位置y。
                    &#xA;如果对象不存在或没有位置，则报错。
                    &#xA;
                    &#xA;返回：数字"
@@ -16125,10 +16147,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvPositionCenterR">
       </explanation>
       <explanation lang="zhc" name="lvPositionCenterR"
-                   syntax="lvPositionCenterR(字符串: 对象名)"
+                   syntax="lvPositionCenterR(字符串: 目标名称)"
                    details="例如：lvPositionCenterR(&quot;kojiken&quot;)
                    &#xA;
-                   &#xA;返回对象名为“对象名”的对象的中心位置r。
+                   &#xA;返回目标名称为“目标名称”的对象的中心位置r。
                    &#xA;如果对象不存在或没有位置，则报错。
                    &#xA;
                    &#xA;返回：数字"
@@ -16166,10 +16188,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvPositionCenterZ">
       </explanation>
       <explanation lang="zhc" name="lvPositionCenterZ"
-                   syntax="lvPositionCenterZ(字符串: 对象名)"
+                   syntax="lvPositionCenterZ(字符串: 目标名称)"
                    details="例如：lvPositionCenterZ(&quot;kojiken&quot;)
                    &#xA;
-                   &#xA;返回对象名为“对象名”的对象的中心位置z。
+                   &#xA;返回目标名称为“目标名称”的对象的中心位置z。
                    &#xA;如果对象不存在或没有位置，则报错。
                    &#xA;
                    &#xA;返回：数字"
@@ -16207,10 +16229,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvPositionDeltaX">
       </explanation>
       <explanation lang="zhc" name="lvPositionDeltaX"
-                   syntax="lvPositionDeltaX(字符串: 对象名)"
+                   syntax="lvPositionDeltaX(字符串: 目标名称)"
                    details="例如：lvPositionDeltaX(&quot;kojiken&quot;)
                    &#xA;
-                   &#xA;如果对象“对象名”正在移动，返回其前一帧与当前帧的x值差。
+                   &#xA;如果对象“目标名称”正在移动，返回其前一帧与当前帧的x值差。
                    &#xA;如果对象不存在或没有位置，则报错。
                    &#xA;
                    &#xA;返回：数字"
@@ -16248,10 +16270,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvPositionDeltaY">
       </explanation>
       <explanation lang="zhc" name="lvPositionDeltaY"
-                   syntax="lvPositionDeltaY(字符串: 对象名)"
+                   syntax="lvPositionDeltaY(字符串: 目标名称)"
                    details="例如：lvPositionDeltaY(&quot;kojiken&quot;)
                    &#xA;
-                   &#xA;如果对象“对象名”正在移动，返回其前一帧与当前帧的y值差。
+                   &#xA;如果对象“目标名称”正在移动，返回其前一帧与当前帧的y值差。
                    &#xA;如果对象不存在或没有位置，则报错。
                    &#xA;
                    &#xA;返回：数字"
@@ -16288,10 +16310,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvRotationX">
       </explanation>
       <explanation lang="zhc" name="lvRotationX"
-                   syntax="lvRotationX(字符串: 对象名)"
+                   syntax="lvRotationX(字符串: 目标名称)"
                    details="例如：lvRotationX(&quot;kojiken&quot;)
                    &#xA;
-                   &#xA;返回对象名为“对象名”的对象的x轴旋转角度。
+                   &#xA;返回目标名称为“目标名称”的对象的x轴旋转角度。
                    &#xA;
                    &#xA;返回：数字"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvRotationX">
@@ -16326,10 +16348,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvRotationY">
       </explanation>
       <explanation lang="zhc" name="lvRotationY"
-                   syntax="lvRotationY(字符串: 对象名)"
+                   syntax="lvRotationY(字符串: 目标名称)"
                    details="例如：lvRotationY(&quot;kojiken&quot;)
                    &#xA;
-                   &#xA;返回对象名为“对象名”的对象的y轴旋转角度。
+                   &#xA;返回目标名称为“目标名称”的对象的y轴旋转角度。
                    &#xA;
                    &#xA;返回：数字"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvRotationY">
@@ -16364,10 +16386,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvRotationZ">
       </explanation>
       <explanation lang="zhc" name="lvRotationZ"
-                   syntax="lvRotationZ(字符串: 对象名)"
+                   syntax="lvRotationZ(字符串: 目标名称)"
                    details="例如：lvRotationZ(&quot;kojiken&quot;)
                    &#xA;
-                   &#xA;返回对象名为“对象名”的对象的z轴旋转角度。
+                   &#xA;返回目标名称为“目标名称”的对象的z轴旋转角度。
                    &#xA;
                    &#xA;返回：数字"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvRotationZ">
@@ -16403,10 +16425,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvTileX">
       </explanation>
       <explanation lang="zhc" name="lvTileX"
-                   syntax="lvTileX(字符串: 对象名)"
+                   syntax="lvTileX(字符串: 目标名称)"
                    details="例如：lvTileX(&quot;kojiken&quot;)
                    &#xA;
-                   &#xA;返回对象名为“对象名”的对象所在瓦片的x坐标。
+                   &#xA;返回目标名称为“目标名称”的对象所在瓦片的x坐标。
                    &#xA;如果对象不存在或不在瓦片上，则报错。
                    &#xA;
                    &#xA;返回：数字"
@@ -16444,10 +16466,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvTileY">
       </explanation>
       <explanation lang="zhc" name="lvTileY"
-                   syntax="lvTileY(字符串: 对象名)"
+                   syntax="lvTileY(字符串: 目标名称)"
                    details="例如：lvTileY(&quot;kojiken&quot;)
                    &#xA;
-                   &#xA;返回对象名为“对象名”的对象所在瓦片的y坐标。
+                   &#xA;返回目标名称为“目标名称”的对象所在瓦片的y坐标。
                    &#xA;如果对象不存在或不在瓦片上，则报错。
                    &#xA;
                    &#xA;返回：数字"
@@ -16484,10 +16506,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSpeedX">
       </explanation>
       <explanation lang="zhc" name="lvSpeedX"
-                   syntax="lvSpeedX(字符串: 对象名)"
+                   syntax="lvSpeedX(字符串: 目标名称)"
                    details="例如：lvSpeedX(&quot;kojiken&quot;)
                    &#xA;
-                   &#xA;返回对象名为“对象名”的对象的x轴速度。
+                   &#xA;返回目标名称为“目标名称”的对象的x轴速度。
                    &#xA;
                    &#xA;返回：数字"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSpeedX">
@@ -16522,10 +16544,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSpeedY">
       </explanation>
       <explanation lang="zhc" name="lvSpeedY"
-                   syntax="lvSpeedY(字符串: 对象名)"
+                   syntax="lvSpeedY(字符串: 目标名称)"
                    details="例如：lvSpeedY(&quot;kojiken&quot;)
                    &#xA;
-                   &#xA;返回对象名为“对象名”的对象的y轴速度。
+                   &#xA;返回目标名称为“目标名称”的对象的y轴速度。
                    &#xA;
                    &#xA;返回：数字"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSpeedY">
@@ -16560,10 +16582,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSpeedZ">
       </explanation>
       <explanation lang="zhc" name="lvSpeedZ"
-                   syntax="lvSpeedZ(字符串: 对象名)"
+                   syntax="lvSpeedZ(字符串: 目标名称)"
                    details="例如：lvSpeedZ(&quot;kojiken&quot;)
                    &#xA;
-                   &#xA;返回对象名为“对象名”的对象的z轴速度。
+                   &#xA;返回目标名称为“目标名称”的对象的z轴速度。
                    &#xA;
                    &#xA;返回：数字"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSpeedZ">
@@ -16600,10 +16622,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvObjTransformPoint">
       </explanation>
       <explanation lang="zhc" name="lvObjTransformPoint"
-                   syntax="lvObjTransformPoint(字符串: 对象名, 数字: x, 数字: y, 数字: z)"
+                   syntax="lvObjTransformPoint(字符串: 目标名称, 数字: x, 数字: y, 数字: z)"
                    details="例如：lvObjTransformPoint(&quot;kojiken&quot;, 0, -1, 0)
                    &#xA;
-                   &#xA;返回以“对象名”对象的方向为基准的相对位置(x,y,z)的列表。
+                   &#xA;返回以“目标名称”对象的方向为基准的相对位置(x,y,z)的列表。
                    &#xA;如果对象不存在或不在瓦片上，则报错。
                    &#xA;
                    &#xA;返回：列表"
@@ -16643,10 +16665,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvObjTransformVector">
       </explanation>
       <explanation lang="zhc" name="lvObjTransformVector"
-                   syntax="lvObjTransformVector(字符串: 对象名, 数字: x, 数字: y, 数字: z)"
+                   syntax="lvObjTransformVector(字符串: 目标名称, 数字: x, 数字: y, 数字: z)"
                    details="例如：lvObjTransformVector(&quot;kojiken&quot;, 0, -1, 0)
                    &#xA;
-                   &#xA;返回以“对象名”对象的方向为基准的绝对坐标系中的相对位置(x,y,z)的列表。
+                   &#xA;返回以“目标名称”对象的方向为基准的绝对坐标系中的相对位置(x,y,z)的列表。
                    &#xA;如果对象不存在或不在瓦片上，则报错。
                    &#xA;
                    &#xA;返回：列表"
@@ -16902,7 +16924,7 @@
     <Command name="lvStringToNumber">
       <explanation lang="jap" name="lvStringToNumber"
                    syntax="lvStringToNumber(文字列)"
-                   details="ex. lvNumberToString(&quot;30&quot;) -> 30
+                   details="ex. lvStringToNumber(&quot;30&quot;) -> 30
                    &#xA;  
                    &#xA;指定された文字列を数字として返還。
                    &#xA;  
@@ -16911,14 +16933,14 @@
       </explanation>
       <explanation lang="eng" name="lvStringToNumber"
                    syntax="lvStringToNumber(string)"
-                   details="ex. lvNumberToString(&quot;30&quot;) -> 30
+                   details="ex. lvStringToNumber(&quot;30&quot;) -> 30
                    &#xA;  
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvStringToNumber">
       </explanation>
       <explanation lang="zhc" name="lvStringToNumber"
                    syntax="lvStringToNumber(字符串)"
-                   details="ex. lvNumberToString(&quot;30&quot;) -> 30
+                   details="ex. lvStringToNumber(&quot;30&quot;) -> 30
                    &#xA;  
                    &#xA;将指定的字符串转换为数字。
                    &#xA;  
@@ -17220,7 +17242,7 @@
     <Command name="lvListPopFront">
       <explanation lang="jap" name="lvListPopFront"
                    syntax="lvListPopFront(List変数)"
-                   details="ex. lvListPushBack(リスト) 
+                   details="ex. lvListPopFront(リスト) 
                    &#xA;  
                    &#xA;指定されたList変数の一番前の元素を削除する。
                    &#xA;(結果的にリストのサイズが1減る)
@@ -17302,7 +17324,7 @@
     <Command name="lvListPushAt">
       <explanation lang="jap" name="lvListPushAt"
                    syntax="lvListPushAt(List変数, 位置, 変数)"
-                   details="ex. lvListPopBack(リスト, 2, &quot;fufu&quot;) 
+                   details="ex. lvListPushAt(リスト, 2, &quot;fufu&quot;) 
                    &#xA;  
                    &#xA;指定されたList変数の「位置」に変数を挿入する。
                    &#xA;(結果的にリストのサイズが1増える)
@@ -17343,7 +17365,7 @@
     <Command name="lvListPopAt">
       <explanation lang="jap" name="lvListPopAt"
                    syntax="lvListPopAt(List変数, 位置)"
-                   details="ex. lvListPopBack(リスト, 2) 
+                   details="ex. lvListPopAt(リスト, 2) 
                    &#xA;  
                    &#xA;指定されたList変数の「位置」の変数を削除する。
                    &#xA;(結果的にリストのサイズが1減る)
@@ -17999,8 +18021,8 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvMediaOffset">
       </explanation>
       <explanation lang="zhc" name="lvMediaOffset"
-                   syntax="lvMediaOffset(字符串: 对象名)"
-                   details="例如：lvMediaOffset(&quot;对象名&quot;)
+                   syntax="lvMediaOffset(字符串: 目标名称)"
+                   details="例如：lvMediaOffset(&quot;目标名称&quot;)
                    &#xA;
                    &#xA;如果目标是音频对象，返回播放位置。
                    &#xA;
@@ -18630,7 +18652,7 @@
       </explanation>
       <explanation lang="zhc" name="lvMath::abs"
                    syntax="lvMath::abs(数字)"
-                   details="例如：lvMath::abs(数字)
+                   details="例如：lvMath::abs(30)
                    &#xA;
                    &#xA;返回绝对值
                    &#xA;
@@ -18796,7 +18818,7 @@
                    syntax="lvMath::acos(数字: ラジアン)"
                    details="ex. lvMath::acos(lvMath::pi() / 2)
                    &#xA;  
-                   &#xA;tan値を返還
+                   &#xA;acos値を返還
                    &#xA;  
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvMath_acos">
@@ -19217,7 +19239,7 @@
              &#xA;  
              &#xA;如果正在暂停下层脚本的加载，则返回 true
              &#xA;  
-             &#xA;返回值: 布尔类型"
+             &#xA;返回：布尔值"
              reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_IsPausingLowerScripts">
       </explanation>
       <explanation lang="kor" name="lvSystem::IsPausingLowerScripts"

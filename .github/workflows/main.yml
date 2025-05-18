@@ -18,7 +18,7 @@ concurrency:
 jobs:
   # --------------------------------------------------------------------------------------------------
   editorconfig:
-    runs-on: [linux, x64]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: editorconfig-checker/action-editorconfig-checker@main
@@ -28,7 +28,7 @@ jobs:
   # https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home
   # https://www.baeldung.com/linux/xmllint
   xmllint:
-    runs-on: [linux, x64]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - run: sudo apt-get -y install libxml2-utils

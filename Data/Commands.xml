@@ -20,7 +20,7 @@
       </type>
       <type name="camera">
         <val lang="jap" value="カメラ"/>
-        <val lang="zhc" value="摄像机"/>
+        <val lang="zhc" value="视图"/>
         <val lang="kor" value="카메라"/>
       </type>
     </Types>
@@ -77,7 +77,7 @@
       </option>
       <option name="on_camera">
         <val lang="jap" value="カメラ付着"/>
-        <val lang="zhc" value="绑定摄像机"/>
+        <val lang="zhc" value="绑定视图"/>
         <val lang="kor" value="카메라부착"/>
       </option>
       <option name="lock_y">
@@ -92,12 +92,12 @@
       </option>
       <option name="2DView">
         <val lang="jap" value="2D視点"/>
-        <val lang="zhc" value="2D摄像机"/>
+        <val lang="zhc" value="2D视图"/>
         <val lang="kor" value="2D시점"/>
       </option>
       <option name="3DView">
         <val lang="jap" value="3D視点"/>
-        <val lang="zhc" value="3D摄像机"/>
+        <val lang="zhc" value="3D视图"/>
         <val lang="kor" value="3D시점"/>
       </option>
       <option name="noSave">
@@ -373,9 +373,9 @@
                details="[ ]：必填参数，( )：可选参数。
                &#xA;
                &#xA;常用输入)
-               &#xA;- (摄像机选项)
-               &#xA;如果设置了 (绑定摄像机)，
-               &#xA;实体将附着在摄像机上，不再受摄像机移动影响。
+               &#xA;- (视图选项)
+               &#xA;如果设置了 (绑定视图)，
+               &#xA;实体将附着在视图上，不再受视图移动影响。
                &#xA;
                &#xA;注意：所有文件名也可以表示为字符串
                &#xA; (例如：cg alice2 &quot;scg.png&quot; 150 30 50)。
@@ -626,24 +626,24 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/command#command1a5">
       </explanation>
-      <explanation lang="zhc" name="--[摄像机选项]--"
+      <explanation lang="zhc" name="--[视图选项]--"
                    syntax=""
-                   details="摄像机选项：
+                   details="视图选项：
                    &#xA;
-                   &#xA;绑定摄像机
-                   &#xA;不受摄像机变化影响的显示。（好像实体粘在摄像机上一样）
+                   &#xA;绑定视图
+                   &#xA;不受视图变化影响的显示。（好像实体粘在视图上一样）
                    &#xA;
-                   &#xA;2D摄像机
-                   &#xA;显示为“摄像机模式 0”状态下的实体。
+                   &#xA;2D视图
+                   &#xA;显示为“视图模式 0”状态下的实体。
                    &#xA;
-                   &#xA;3D摄像机
-                   &#xA;显示为“摄像机模式 3”状态下的实体。
+                   &#xA;3D视图
+                   &#xA;显示为“视图模式 3”状态下的实体。
                    &#xA;
                    &#xA;锁定Y轴
-                   &#xA;取消摄像机的 y 轴旋转。y 轴旋转度始终面向摄像机。
+                   &#xA;取消视图的 y 轴旋转。y 轴旋转度始终面向视图。
                    &#xA;
                    &#xA;锁定XY轴
-                   &#xA;取消摄像机的 x 和 y 轴旋转。x 和 y 轴旋转度始终面向摄像机。
+                   &#xA;取消视图的 x 和 y 轴旋转。x 和 y 轴旋转度始终面向视图。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/command#command1a5">
       </explanation>
@@ -767,10 +767,10 @@
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/editor/free_camera_usage">
       </explanation>
-      <explanation lang="zhc" name="--[自由摄像机操作]--"
+      <explanation lang="zhc" name="--[自由视图操作]--"
                    syntax=""
-                   details="自由摄像机使用：
-                   &#xA;自由摄像机模式继承当前脚本的“摄像机模式”。
+                   details="自由视图使用：
+                   &#xA;自由视图模式继承当前脚本的“视图模式”。
                    &#xA;
                    &#xA;左右移动：ad
                    &#xA;前后移动：ws
@@ -780,7 +780,7 @@
                    &#xA;旋转 z 轴：qe
                    &#xA;
                    &#xA;左右移动：shift + 按住鼠标滚轮并移动。
-                   &#xA;缩放：鼠标滚轮（仅限 2D 摄像机）
+                   &#xA;缩放：鼠标滚轮（仅限 2D 视图）
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/editor/free_camera_usage">
       </explanation>
@@ -836,7 +836,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#empty">
       </explanation>
       <explanation lang="zhc" name="个体"
-                   syntax="个体 [名字] [x] [y] [r] (摄像机选项)"
+                   syntax="个体 [名字] [x] [y] [r] (视图选项)"
                    details="例如：个体 id0 150 30 50  
                    &#xA;在指定位置创建名为id0的个体。 
                    &#xA;主要用作“父子关系”命令中的父对象。 
@@ -845,8 +845,8 @@
                    &#xA;色调(rgba)  
                    &#xA;位置、缩放、旋转  
                    &#xA;
-                   &#xA;注意：摄像机选项示例。绑定摄像机（忽略摄像机操作的影响）  
-                   &#xA;其他“摄像机选项”可以在命令目录的“摄像机选项”中查看。 
+                   &#xA;注意：视图选项示例。绑定视图（忽略视图操作的影响）  
+                   &#xA;其他“视图选项”可以在命令目录的“视图选项”中查看。 
                    &#xA;注意：在命令中添加'0'将以透明度为0的状态显示。 
                    &#xA; (例如：立绘0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#empty">
@@ -905,7 +905,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#bg">
       </explanation>
       <explanation lang="zhc" name="背景"
-                   syntax="背景 [名称] [文件名 / 动画名称] (摄像机选项)"
+                   syntax="背景 [名称] [文件名 / 动画名称] (视图选项)"
                    details="例如：背景 bg1 scenery.png
                    &#xA;使用名称为 'bg1' 的背景图片 'scenery.png'。
                    &#xA;
@@ -966,12 +966,12 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#cg">
       </explanation>
       <explanation lang="zhc" name="立绘"
-                   syntax="立绘 [名称] [文件名 / 动画名称] [x] [y] [r] (摄像机选项)"
+                   syntax="立绘 [名称] [文件名 / 动画名称] [x] [y] [r] (视图选项)"
                    details="立绘 alice2 alice.png 150 30 50
                    &#xA;使用名称 'alice2' 的图片 'alice.png' 在坐标 [150 30] 和层 50 上显示。
                    &#xA;立绘 alice2 anim_alice 150 30 50
                    &#xA;使用名称 'alice2' 的动画 'anim_alice' 在坐标 [150 30] 和层 50 上显示。
-                   &#xA;注：如果设置了 '摄像机选项'，则将忽略摄像机。
+                   &#xA;注：如果设置了 '视图选项'，则将忽略视图。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。"
                    reference="https://wikiwiki.jp/lightvn/commands/image#cg">
       </explanation>
@@ -1043,7 +1043,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#sound_cg">
       </explanation>
       <explanation lang="zhc" name="音效立绘"
-                   syntax="音效立绘 [名称] [文件名 / 动画名称] [x] [y] [r] [音效目标名称] [判断间隔时间] (变化类型) (最小音量1) (显示图像1) (...) (获取音量的时间延迟:ms) (摄像机选项)"
+                   syntax="音效立绘 [名称] [文件名 / 动画名称] [x] [y] [r] [音效目标名称] [判断间隔时间] (变化类型) (最小音量1) (显示图像1) (...) (获取音量的时间延迟:ms) (视图选项)"
                    details="例如：音效立绘 hisia mouth0.png 400 200 90 id0 100 30 mouth1.png 60 mouth2.png 90 mouth3.png 120 mouth4.png
                    &#xA;  
                    &#xA;根据音效文件的音量数据显示图像。
@@ -1063,8 +1063,8 @@
                    &#xA;0: 原样
                    &#xA;1: 平滑（在图像之间进行插值：默认）
                    &#xA;提示：对于有大量口型同步效果的作品，建议统一调整整体语音音量并重复使用值，以避免过度负担。
-                   &#xA;注：摄像机选项示例：绑定摄像机（不受摄像机操作影响）
-                   &#xA;其他“摄像机选项”请参阅命令手册中的“摄像机选项”。
+                   &#xA;注：视图选项示例：绑定视图（不受视图操作影响）
+                   &#xA;其他“视图选项”请参阅命令手册中的“视图选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
                    reference="https://wikiwiki.jp/lightvn/commands/image#sound_cg">
@@ -1141,7 +1141,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#ninecg">
       </explanation>
       <explanation lang="zhc" name="九格立绘"
-                   syntax="九格立绘 [名称] [文件名 / 动画名称] [x] [y] [r] [分割_x1] [分割_x2] [分割_y1] [分割_y2] [宽度] [高度] (缩放类型: 0(默认)) (摄像机选项)"
+                   syntax="九格立绘 [名称] [文件名 / 动画名称] [x] [y] [r] [分割_x1] [分割_x2] [分割_y1] [分割_y2] [宽度] [高度] (缩放类型: 0(默认)) (视图选项)"
                    details="例如：九格立绘 ex1 waku.png 450 200 1 33 66 33 66 200 200
                    &#xA;  
                    &#xA;指定的图像沿着[分割_x1] [分割_x2] [分割_y1] [分割_y2]分割成九个区域，并在中心区域拉伸以适应指定的大小。
@@ -1149,8 +1149,8 @@
                    &#xA;0: 缩放中心以适应。
                    &#xA;1: 将中心部分作为平铺处理。如果指定尺寸不足以放置平铺，则九格立绘的中心尺寸增大为平铺大小的倍数。
                    &#xA;2: 将中心部分作为平铺处理。如果指定尺寸不足以放置平铺，则平铺区域缩放以适应。
-                   &#xA;注：摄像机选项示例：绑定摄像机（不受摄像机操作影响）
-                   &#xA;其他“摄像机选项”请参阅命令手册中的“摄像机选项”。
+                   &#xA;注：视图选项示例：绑定视图（不受视图操作影响）
+                   &#xA;其他“视图选项”请参阅命令手册中的“视图选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
                    reference="https://wikiwiki.jp/lightvn/commands/image#ninecg">
@@ -1199,14 +1199,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg">
       </explanation>
       <explanation lang="zhc" name="滚动图片"
-                   syntax="滚动图片 [名称] [文件名 / 动画名称] [x] [y] [r] [每秒移动] (竖) (偏移:px) (摄像机选项)"
+                   syntax="滚动图片 [名称] [文件名 / 动画名称] [x] [y] [r] [每秒移动] (竖) (偏移:px) (视图选项)"
                    details="例如：滚动图片 bg_effect scrolling_background.png 0 0 10 60
                    &#xA;  
                    &#xA;图像根据每秒的移动值移动。
                    &#xA;注：如果设置了“竖”选项，则竖流动。
                    &#xA;注：建议使用的图像在流动方向上的尺寸与屏幕相同或更大。
-                   &#xA;注：摄像机选项示例：绑定摄像机（不受摄像机操作影响）
-                   &#xA;其他“摄像机选项”请参阅命令手册中的“摄像机选项”。
+                   &#xA;注：视图选项示例：绑定视图（不受视图操作影响）
+                   &#xA;其他“视图选项”请参阅命令手册中的“视图选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
                    reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg">
@@ -1279,7 +1279,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#spine_cg">
       </explanation>
       <explanation lang="zhc" name="Spine动画"
-                  syntax="spine动画 [目标名称] [骨架文件路径] [图集文件路径] [x] [y] [图层(r)] [起始动画] (摄像机选项)"
+                  syntax="spine动画 [目标名称] [骨架文件路径] [图集文件路径] [x] [y] [图层(r)] [起始动画] (视图选项)"
                   details="ex. spine动画 mycg spine/cloud-pot.json spine/cloud-pot.atlas 300 500 0 rain
                   &#xA;  
                   &#xA;从Spine创建动画对象
@@ -1307,11 +1307,11 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#model">
       </explanation>
       <explanation lang="zhc" name="模型"
-                   syntax="模型 [名称] [文件名] [x] [y] [r] (摄像机选项)"
+                   syntax="模型 [名称] [文件名] [x] [y] [r] (视图选项)"
                    details="例如：模型 stairs stairs.glb 0 400 0
                    &#xA;  
-                   &#xA;注：摄像机选项示例：绑定摄像机（不受摄像机操作影响）
-                   &#xA;其他“摄像机选项”请参阅命令手册中的“摄像机选项”。
+                   &#xA;注：视图选项示例：绑定视图（不受视图操作影响）
+                   &#xA;其他“视图选项”请参阅命令手册中的“视图选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
                    reference="https://wikiwiki.jp/lightvn/commands/image#model">
@@ -1349,8 +1349,8 @@
                    syntax="天空盒 [文件名: 上] [文件名: 下] [文件名: 前] [文件名: 后] [文件名: 左] [文件名: 右]"
                    details="例如：天空盒 skybox/top.jpg skybox/bottom.jpg skybox/front.jpg skybox/back.jpg skybox/left.jpg skybox/right.jpg
                    &#xA;  
-                   &#xA;创建一个看起来离摄像机无限远的天空盒。
-                   &#xA;（不受摄像机位置影响。）
+                   &#xA;创建一个看起来离视图无限远的天空盒。
+                   &#xA;（不受视图位置影响。）
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
                    reference="https://wikiwiki.jp/lightvn/commands/image#sky">
@@ -1388,12 +1388,12 @@
                    reference="https://wikiwiki.jp/lightvn/commands/image#light">
       </explanation>
       <explanation lang="zhc" name="光源"
-                   syntax="光源 [名称] [x] [y] [r] (摄像机选项)"
+                   syntax="光源 [名称] [x] [y] [r] (视图选项)"
                    details="例如：光源 light0 100 100 80
                    &#xA;  
                    &#xA;要使其生效，必须将光源模式设置为1或更高。
-                   &#xA;注：摄像机选项示例：绑定摄像机（不受摄像机操作影响）
-                   &#xA;其他“摄像机选项”请参阅命令手册中的“摄像机选项”。
+                   &#xA;注：视图选项示例：绑定视图（不受视图操作影响）
+                   &#xA;其他“视图选项”请参阅命令手册中的“视图选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
                    reference="https://wikiwiki.jp/lightvn/commands/image#light">
@@ -1441,8 +1441,8 @@
                    &#xA;模式：
                    &#xA;0: 不使用光源。模型不受光源的影响。（默认）
                    &#xA;1: 使用光源。
-                   &#xA;注：摄像机选项示例：绑定摄像机（不受摄像机操作影响）
-                   &#xA;其他“摄像机选项”请参阅命令手册中的“摄像机选项”。
+                   &#xA;注：视图选项示例：绑定视图（不受视图操作影响）
+                   &#xA;其他“视图选项”请参阅命令手册中的“视图选项”。
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）"
                    reference="https://wikiwiki.jp/lightvn/commands/image#lightMode">
@@ -1964,8 +1964,8 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#button">
       </explanation>
       <explanation lang="zhc" name="按钮"
-                   syntax="按钮 [名称] (按钮常态图像) (光标接触图像) (按钮点击图像) [x] [y] [r] (忽略透明) (摄像机选项) (Light.vn命令)"
-                   details="例如：按钮 button1 untouched-image.png touched-image.png clicked-image.png 300 400 200 绑定摄像机 跳转 tut.txt
+                   syntax="按钮 [名称] (按钮常态图像) (光标接触图像) (按钮点击图像) [x] [y] [r] (忽略透明) (视图选项) (Light.vn命令)"
+                   details="例如：按钮 button1 untouched-image.png touched-image.png clicked-image.png 300 400 200 绑定视图 跳转 tut.txt
                    &#xA;
                    &#xA;注：在命令后加上'0'，则以透明度0显示。
                    &#xA;（例如：立绘0 alice2 anim_alice 150 30 50）
@@ -2515,7 +2515,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#trackbar">
       </explanation>
       <explanation lang="zhc" name="轨迹条"
-                   syntax="轨迹条 [名称] (轨迹球未光标接触素材) (轨迹球光标接触素材) (轨迹球点击素材) [x] [y] [r] [横/竖] [长度] [变量名称] [左侧值] [右侧值] (忽略透明) (摄像机选项) (调整后执行的命令)"
+                   syntax="轨迹条 [名称] (轨迹球未光标接触素材) (轨迹球光标接触素材) (轨迹球点击素材) [x] [y] [r] [横/竖] [长度] [变量名称] [左侧值] [右侧值] (忽略透明) (视图选项) (调整后执行的命令)"
                    details="例如：轨迹条 trackbar sys_trackball.png 370 246 105 横 530 bgm 0 100
                    &#xA;
                    &#xA;创建一个控制背景音乐音量的轨迹条。
@@ -2647,7 +2647,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textbox">
       </explanation>
       <explanation lang="zhc" name="文本框"
-                   syntax="文本框 [名称] [x] [y] [r] [宽度] [高度] [字体文件名] [字体大小] (忽略溢出) (摄像机选项) [&quot;字符串:文本内容&quot;] (加入日志)"
+                   syntax="文本框 [名称] [x] [y] [r] [宽度] [高度] [字体文件名] [字体大小] (忽略溢出) (视图选项) [&quot;字符串:文本内容&quot;] (加入日志)"
                    details="例如：文本框 textbox1 0 400 81 800 200 r-mplus-1c-m.ttf 24
                    &#xA;
                    &#xA;忽略溢出：如果设置，则即使文本超出文本框范围也不会报错。
@@ -2722,7 +2722,7 @@
       </explanation>
       <explanation lang="zhc" name="文本"
                    syntax="文本 [名称] [x] [y] [r] [字体文件名] [字体大小(px)] (行大小)
-                   &#xA;(方向：横/纵) (对齐：左/右/中) (最大文本长度) (摄像机选项) &quot;[字符串:文本内容]&quot; (加入日志)"
+                   &#xA;(方向：横/纵) (对齐：左/右/中) (最大文本长度) (视图选项) &quot;[字符串:文本内容]&quot; (加入日志)"
                    details="例如：文本 msg_str 370 223 106 r-mplus-1c-m.ttf 24 &quot;内容! &quot;
                    &#xA;
                    &#xA;注：“文本”不同于文本框的文本，不会流动，所有文本会立即显示。
@@ -4971,12 +4971,12 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#autoOnCamera">
       </explanation>
-      <explanation lang="zhc" name="自动绑定摄像机"
-                   syntax="自动绑定摄像机 [true/false]"
-                   details="例如：自动绑定摄像机 true
+      <explanation lang="zhc" name="自动绑定视图"
+                   syntax="自动绑定视图 [true/false]"
+                   details="例如：自动绑定视图 true
                    &#xA;
                    &#xA;如果为true，
-                   &#xA;在当前脚本中，执行命令后的所有个体将自动 [绑定摄像机]。
+                   &#xA;在当前脚本中，执行命令后的所有个体将自动 [绑定视图]。
                    &#xA;
                    &#xA;在UI界面中使用非常方便。
                    &#xA;
@@ -7899,15 +7899,15 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#camera_mode">
       </explanation>
-      <explanation lang="zhc" name="摄像机模式"
-                   syntax="摄像机模式 [类型]"
-                   details="例如：摄像机模式 3
+      <explanation lang="zhc" name="视图模式"
+                   syntax="视图模式 [类型]"
+                   details="例如：视图模式 3
                    &#xA;
                    &#xA;「类型」
                    &#xA;0: 默认的2D视觉小说形式
-                   &#xA;3: 3D 透视摄像机
+                   &#xA;3: 3D 透视视图
                    &#xA;
-                   &#xA;重置摄像机的位置、缩放和旋转。"
+                   &#xA;重置视图的位置、缩放和旋转。"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#camera_mode">
       </explanation>
       <explanation lang="kor" name="카메라모드"
@@ -7939,11 +7939,11 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraReset">
       </explanation>
-      <explanation lang="zhc" name="摄像机重置"
-                   syntax="摄像机重置"
-                   details="例如：摄像机重置
+      <explanation lang="zhc" name="视图重置"
+                   syntax="视图重置"
+                   details="例如：视图重置
                    &#xA;
-                   &#xA;重置摄像机位置、缩放和旋转。"
+                   &#xA;重置视图位置、缩放和旋转。"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraReset">
       </explanation>
       <explanation lang="kor" name="카메라초기화"
@@ -7991,26 +7991,26 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraFollow">
       </explanation>
-      <explanation lang="zhc" name="摄像机跟随"
-                   syntax="1. 摄像机跟随 [目标名] (x) (y) (r) (相对x) (相对y) (相对r) (大约完成时间:毫秒) (从目标位置)
-                   &#xA;2. 摄像机跟随 false"
+      <explanation lang="zhc" name="视图跟随"
+                   syntax="1. 视图跟随 [目标名] (x) (y) (r) (相对x) (相对y) (相对r) (大约完成时间:毫秒) (从目标位置)
+                   &#xA;2. 视图跟随 false"
                    details="
-                   &#xA;例如：摄像机跟随 kojiken x -640 200
-                   &#xA;摄像机的x位置（绘制中心）将基于kojiken的x位置（绘制中心）移动到-640。
+                   &#xA;例如：视图跟随 kojiken x -640 200
+                   &#xA;视图的x位置（绘制中心）将基于kojiken的x位置（绘制中心）移动到-640。
                    &#xA;
-                   &#xA;例如：摄像机跟随 kojiken x y -640 -360 200
-                   &#xA;摄像机的x位置（绘制中心）将基于kojiken的x位置（绘制中心）移动到-640。
-                   &#xA;摄像机的y位置（绘制中心）将基于kojiken的y位置（绘制中心）移动到-360。
+                   &#xA;例如：视图跟随 kojiken x y -640 -360 200
+                   &#xA;视图的x位置（绘制中心）将基于kojiken的x位置（绘制中心）移动到-640。
+                   &#xA;视图的y位置（绘制中心）将基于kojiken的y位置（绘制中心）移动到-360。
                    &#xA;
-                   &#xA;例如：摄像机跟随 kojiken x y -640 -360 10 200
-                   &#xA;摄像机的x位置（绘制中心）将基于kojiken的x位置（绘制中心）移动到-640。
-                   &#xA;摄像机的y位置（绘制中心）将基于kojiken的y位置（绘制中心）移动到-360。
-                   &#xA;摄像机的z位置（绘制中心）将基于kojiken的z位置（绘制中心）移动到+10。
+                   &#xA;例如：视图跟随 kojiken x y -640 -360 10 200
+                   &#xA;视图的x位置（绘制中心）将基于kojiken的x位置（绘制中心）移动到-640。
+                   &#xA;视图的y位置（绘制中心）将基于kojiken的y位置（绘制中心）移动到-360。
+                   &#xA;视图的z位置（绘制中心）将基于kojiken的z位置（绘制中心）移动到+10。
                    &#xA;
                    &#xA;从目标位置：
-                   &#xA;摄像机会先移动到目标位置，然后开始跟随。
+                   &#xA;视图会先移动到目标位置，然后开始跟随。
                    &#xA;
-                   &#xA;摄像机跟随 false：
+                   &#xA;视图跟随 false：
                    &#xA;取消跟随。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraFollow">
@@ -8064,17 +8064,17 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraFollow3D">
       </explanation>
-      <explanation lang="zhc" name="摄像机跟随3D"
-                   syntax="1. 摄像机跟随3D [目标名] [距离] [角度x] [角度y] [角度z] [平移位置x] [平移位置y] (大约完成时间:毫秒) (从目标位置)
-                   &#xA;2. 摄像机跟随3D false"
+      <explanation lang="zhc" name="视图跟随3D"
+                   syntax="1. 视图跟随3D [目标名] [距离] [角度x] [角度y] [角度z] [平移位置x] [平移位置y] (大约完成时间:毫秒) (从目标位置)
+                   &#xA;2. 视图跟随3D false"
                    details="
-                   &#xA;例如：摄像机跟随3D player 5 8 0 0 0 -50 100
-                   &#xA;摄像机（绘制中心）将基于player的位置（绘制中心）按指定参数移动并跟随。
+                   &#xA;例如：视图跟随3D player 5 8 0 0 0 -50 100
+                   &#xA;视图（绘制中心）将基于player的位置（绘制中心）按指定参数移动并跟随。
                    &#xA;
                    &#xA;从目标位置：
-                   &#xA;摄像机会先移动到目标位置，然后开始跟随。
+                   &#xA;视图会先移动到目标位置，然后开始跟随。
                    &#xA;
-                   &#xA;摄像机跟随3D false：
+                   &#xA;视图跟随3D false：
                    &#xA;取消跟随。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraFollow3D">
@@ -8111,10 +8111,10 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraRangeX">
       </explanation>
-      <explanation lang="zhc" name="摄像机范围x"
-                   syntax="摄像机范围x [最小] [最大]"
+      <explanation lang="zhc" name="视图范围x"
+                   syntax="视图范围x [最小] [最大]"
                    details="
-                   &#xA;例如：摄像机范围x - 500 500
+                   &#xA;例如：视图范围x - 500 500
                    &#xA;以绘制位置为基准。
                    &#xA;
                    &#xA;"
@@ -8145,10 +8145,10 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraRangeY">
       </explanation>
-      <explanation lang="zhc" name="摄像机范围y"
-                   syntax="摄像机范围y [最小] [最大]"
+      <explanation lang="zhc" name="视图范围y"
+                   syntax="视图范围y [最小] [最大]"
                    details="
-                   &#xA;例如：摄像机范围y - 500 500
+                   &#xA;例如：视图范围y - 500 500
                    &#xA;以绘制位置为基准。
                    &#xA;
                    &#xA;"
@@ -8179,10 +8179,10 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraRangeR">
       </explanation>
-      <explanation lang="zhc" name="摄像机范围r"
-                   syntax="摄像机范围r [最小] [最大]"
+      <explanation lang="zhc" name="视图范围r"
+                   syntax="视图范围r [最小] [最大]"
                    details="
-                   &#xA;例如：摄像机范围r - 500 500
+                   &#xA;例如：视图范围r - 500 500
                    &#xA;以绘制位置为基准。
                    &#xA;
                    &#xA;"
@@ -8214,11 +8214,11 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraRangeReset">
       </explanation>
-      <explanation lang="zhc" name="摄像机范围重置"
-                   syntax="摄像机范围重置"
+      <explanation lang="zhc" name="视图范围重置"
+                   syntax="视图范围重置"
                    details="
-                   &#xA;例如：摄像机范围重置
-                   &#xA;重置摄像机的范围限制。
+                   &#xA;例如：视图范围重置
+                   &#xA;重置视图的范围限制。
                    &#xA;
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#cameraRangeReset">
@@ -8257,12 +8257,12 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#objectSortByCameraZ">
       </explanation>
-      <explanation lang="zhc" name="基于摄像机的对象绘制"
-                   syntax="基于摄像机的对象绘制 [true/false(默认)]"
-                   details="例如：基于摄像机的对象绘制 true
+      <explanation lang="zhc" name="基于视图的对象绘制"
+                   syntax="基于视图的对象绘制 [true/false(默认)]"
+                   details="例如：基于视图的对象绘制 true
                    &#xA;
                    &#xA;true)
-                   &#xA;根据与摄像机的距离(z)顺序绘制对象。
+                   &#xA;根据与视图的距离(z)顺序绘制对象。
                    &#xA;
                    &#xA;false)
                    &#xA;根据图层顺序绘制对象。
@@ -8306,7 +8306,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#mask">
       </explanation>
       <explanation lang="zhc" name="遮罩"
-                   syntax="遮罩 [名称] [图像名/注册动画名] [x] [y] [r] (显示图像) (摄像机选项)"
+                   syntax="遮罩 [名称] [图像名/注册动画名] [x] [y] [r] (显示图像) (视图选项)"
                    details="例如：遮罩 mask mask.png 0 0 80
                    &#xA;
                    &#xA;创建遮罩。
@@ -8377,7 +8377,7 @@
                    &#xA;应用遮罩的目标，其显示透明度为 (255 - 遮罩透明度)。
                    &#xA;目标在遮罩素材之外的部分将显示为目标的原始颜色。
                    &#xA;
-                   &#xA;注：如果遮罩或摄像机绕x轴或z轴旋转，则无法正确显示。
+                   &#xA;注：如果遮罩或视图绕x轴或z轴旋转，则无法正确显示。
                    &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#applyMask">
@@ -8439,7 +8439,7 @@
                    &#xA;应用遮罩的目标，其显示透明度为 (255 - 遮罩透明度)。
                    &#xA;目标在遮罩素材之外的部分将显示为目标的原始颜色。
                    &#xA;
-                   &#xA;注：如果遮罩或摄像机绕x轴或z轴旋转，则无法正确显示。
+                   &#xA;注：如果遮罩或视图绕x轴或z轴旋转，则无法正确显示。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#autoApplyMask">
       </explanation>
@@ -12131,7 +12131,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#movie">
       </explanation>
       <explanation lang="zhc" name="视频"
-                   syntax="视频 [名字] [文件名] [x] [y] [r] (重复) (摄像机选项)"
+                   syntax="视频 [名字] [文件名] [x] [y] [r] (重复) (视图选项)"
                    details="例如：视频 movie1 test.mp4 0 0 70
                    &#xA;
                    &#xA;注意：在命令后加'0'，将以透明度和音量为0开始播放。
@@ -14870,12 +14870,12 @@
                    &#xA;
                    &#xA;“以下设置也将初始化”
                    &#xA;
-                   &#xA;摄像机初始化
+                   &#xA;视图初始化
                    &#xA;
                    &#xA;按键触发初始化
                    &#xA;
                    &#xA;对象深度计算
-                   &#xA;摄像机基准对象绘制
+                   &#xA;视图基准对象绘制
                    &#xA;光照模式
                    &#xA;绘制基准对象
                    &#xA;碰撞基准对象
@@ -15086,7 +15086,7 @@
                    &#xA;优化命令。
                    &#xA;仅渲染从基准对象“距离”以内的对象（基于渲染中心）。
                    &#xA;
-                   &#xA;注意：[绑定摄像机] 的对象不参与计算。
+                   &#xA;注意：[绑定视图] 的对象不参与计算。
                    &#xA;"
                   reference="https://wikiwiki.jp/lightvn/commands/system#renderFilterObj">
       </explanation>

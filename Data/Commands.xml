@@ -333,6 +333,7 @@
       <option name="onUpdate">
         <val lang="jap" value="更新同期"/>
         <val lang="zhc" value="同步更新"/>
+        <val lang="kor" value="업데이트시"/>
       </option>
     </CmdOptions>
   </Keywords>
@@ -14737,21 +14738,32 @@
     </Command>
     <Command cmd="timer">
       <explanation lang="jap" name="砂時計"
-                   syntax="砂時計 [名前] [時間間隔:ms] (反復) [定時間発動コマンド]"
+                   syntax="1. 砂時計 [名前] [時間間隔:ms] (反復) [定時間発動コマンド]
+                   &#xA;2. 砂時計 [名前] 更新同期 (反復) [定時間発動コマンド]
+                   &#xA;"
                    details="ex. 砂時計 timer0 1500 反復 スクリプト textbox_sample.txt timer_func
                    &#xA;
                    &#xA;[コマンド]：文字列として囲むと、毎回再計算される。
+                   &#xA;
+                   &#xA;更新同期) 時間間隔を考えるのが面倒な人用。100ミリ秒。
                    &#xA;
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/system#timer">
       </explanation>
       <explanation lang="eng" name="timer"
-                   syntax="timer [name] [countdown:ms] (反復) [Light.vn command to run on zero]"
-                   details="ex. timer timer0 1500 反復 script textbox_sample.txt timer_func"
+                   syntax="1. timer [name] [countdown:ms] (反復) [Light.vn command to run on zero]
+                   &#xA;2. timer [name] onUpdate (反復) [Light.vn command to run on zero]
+                   &#xA;"
+                   details="ex. timer timer0 1500 反復 script textbox_sample.txt timer_func
+                   &#xA;
+                   &#xA;onUpdate) for those that can't be bothered to think of a time. 100ms.
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#timer">
       </explanation>
       <explanation lang="zhc" name="计时器"
-                   syntax="计时器 [名字] [时间间隔:ms] (循环) [到时执行命令]"
+                   syntax="1. 计时器 [名字] [时间间隔:ms] (循环) [到时执行命令]
+                   &#xA;2. 计时器 [名字] 同步更新 (循环) [到时执行命令]
+                   &#xA;"
                    details="例如：计时器 timer0 1500 循环 脚本 textbox_sample.txt timer_func
                    &#xA;
                    &#xA;[命令]：如果作为字符串括起来，每次都会重新计算。
@@ -14759,11 +14771,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/system#timer">
       </explanation>
       <explanation lang="kor" name="타이머"
-                   syntax="타이머 [이름] [시간 간격:ms] (반복) [시간 경과 시 발동 커맨드]"
+                   syntax="1. 타이머 [이름] [시간 간격:ms] (반복) [시간 경과 시 발동 커맨드]
+                   &#xA;2. 타이머 [이름] 업데이트시 (반복) [시간 경과 시 발동 커맨드]
+                   &#xA;"
                    details="ex. 타이머 timer0 1500 반복 스크립트 textbox_sample.txt timer_func
                    &#xA;
                    &#xA;[커맨드]：문자열로 취급할 경우 매회 재계산됨.
                    &#xA;
+                   &#xA;업데이트시) 시간 간격을 생각하기에 귀찮은 분들용. 100ms.
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/system#timer">
       </explanation>
@@ -16991,6 +17006,51 @@
                    &#xA;  
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSubstringCount">
+      </explanation>
+    </Command>
+    <Command name="lvVarFromString">
+      <explanation lang="jap" name="lvVarFromString"
+                   syntax="lvVarFromString(文字列：変数名)"
+                   details="ex. var my_var = 123
+                   &#xA;lvVarFromString(&quot;my_var&quot;)  -> my_var -> 123
+                   &#xA;  
+                   &#xA;文字列を、変数として扱う。
+                   &#xA;文字列が変数名を表していない場合、エラー。
+                   &#xA;  
+                   &#xA;return: variable"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvVarFromString">
+      </explanation>
+      <explanation lang="eng" name="lvVarFromString"
+                   syntax="lvVarFromString(string: variable name)"
+                   details="ex. var my_var = 123
+                   &#xA;lvVarFromString(&quot;my_var&quot;)  -> my_var -> 123
+                   &#xA;
+                   &#xA;converts the string into the variable associated with that name.
+                   &#xA;if a variable with that name does not exist, error.
+                   &#xA;  
+                   &#xA;return: variable"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvVarFromString">
+      </explanation>
+      <!--<explanation lang="zhc" name="lvVarFromString"
+                   syntax="lvVarFromString(string: variable name)"
+                   details="ex. var my_var = 123
+                   &#xA;lvVarFromString(&quot;my_var&quot;)  -> my_var -> 123
+                   &#xA;
+                   &#xA;converts the string into the variable associated with that name.
+                   &#xA;if a variable with that name does not exist, error.
+                   &#xA;  
+                   &#xA;return: variable"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvVarFromString">
+      </explanation>-->
+      <explanation lang="kor" name="lvVarFromString"
+                   syntax="lvVarFromString(문자열: 변수명)"
+                   ddetails="ex. var my_var = 123
+                   &#xA;lvVarFromString(&quot;my_var&quot;)  -> my_var -> 123
+                   &#xA;
+                   &#xA;문자열을 해당 문자열을 이름으로 가진 변수로 변환.
+                   &#xA;  
+                   &#xA;return: variable"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvVarFromString">
       </explanation>
     </Command>
     <Command name="lvCopyDeep">

@@ -48,7 +48,7 @@
   <EString nkey="PreviewMsg_FreeCamera_editmode" wpfControl="">
     <val lang="jap">操作法：コマンド目録の「自由カメラ操作法」参考</val>
     <val lang="eng">Controls: Refer to [Free Camera Usage] in the Commands tab</val>
-    <val lang="zhc">操作方法：参考命令选项卡中的“自由视角”</val>
+    <val lang="zhc">操作方法：参考命令选项卡中的“自由视图”</val>
     <val lang="kor">조작 방법: 커맨드 목록 중 '자유 카메라 조작법'을 참고</val>
   </EString>
   <EString nkey="PreviewMsg_FreeCamera_gameplaymode" wpfControl="">
@@ -658,13 +658,13 @@
   <EString nkey="btn_cmd_use2dcamera" wpfControl="">
     <val lang="jap">2Dカメラ使用</val>
     <val lang="eng">Use 2D Camera</val>
-    <val lang="zhc">使用2D视角</val>
+    <val lang="zhc">使用2D视图</val>
     <val lang="kor">2D 카메라 사용</val>
   </EString>
   <EString nkey="btn_cmd_use3dcamera" wpfControl="">
     <val lang="jap">3Dカメラ使用</val>
     <val lang="eng">Use 3D Camera</val>
-    <val lang="zhc">使用3D视角</val>
+    <val lang="zhc">使用3D视图</val>
     <val lang="kor">3D 카메라 사용</val>
   </EString>
   <EString nkey="btn_cmd_choice" wpfControl="">
@@ -1012,7 +1012,7 @@
   <EString nkey="tab_main_freecamera" wpfControl="">
     <val lang="jap">自由カメラ</val>
     <val lang="eng">Free Camera</val>
-    <val lang="zhc">自由视角</val>
+    <val lang="zhc">自由视图</val>
     <val lang="kor">자유 카메라</val>
   </EString>
   <EString nkey="lvn_freecamera_speed_label" wpfControl="">
@@ -1024,19 +1024,19 @@
   <EString nkey="lvn_freecamera_toplayer" wpfControl="">
     <val lang="jap">プレイヤー視点へ</val>
     <val lang="eng">To Player Perspective</val>
-    <val lang="zhc">切换到玩家视角</val>
+    <val lang="zhc">切换到玩家视图</val>
     <val lang="kor">플레이어 시점으로</val>
   </EString>
   <EString nkey="lvn_freecamera_apply" wpfControl="">
     <val lang="jap">自由カメラを適用</val>
     <val lang="eng">Free Camera Apply</val>
-    <val lang="zhc">应用到自由视角</val>
+    <val lang="zhc">应用到自由视图</val>
     <val lang="kor">자유 카메라 적용</val>
   </EString>
   <EString nkey="lvn_freecamera_reset" wpfControl="">
     <val lang="jap">自由カメラ初期化</val>
     <val lang="eng">Free Camera Reset</val>
-    <val lang="zhc">重置自由视角</val>
+    <val lang="zhc">重置自由视图</val>
     <val lang="kor">자유 카메라 초기화</val>
   </EString>
   <EString nkey="lvn_freecamera_properties_attribute" wpfControl="">
@@ -1070,19 +1070,19 @@
   <EString nkey="lv_camera_view_type" wpfControl="">
     <val lang="jap">カメラ視点：</val>
     <val lang="eng">View Type:</val>
-    <val lang="zhc">视角类型：</val>
+    <val lang="zhc">视图类型：</val>
     <val lang="kor">카메라 시점</val>
   </EString>
   <EString nkey="lv_camera_player" wpfControl="">
     <val lang="jap">プレイヤー基準</val>
     <val lang="eng">Player</val>
-    <val lang="zhc">玩家视角</val>
+    <val lang="zhc">玩家视图</val>
     <val lang="kor">플레이어 기준</val>
   </EString>
   <EString nkey="lv_camera_free" wpfControl="">
     <val lang="jap">自由</val>
     <val lang="eng">Free Camera</val>
-    <val lang="zhc">自由视角</val>
+    <val lang="zhc">自由视图</val>
     <val lang="kor">자유 카메라</val>
   </EString>
   <EString nkey="lvn_play_stop" wpfControl="">

@@ -11379,8 +11379,9 @@
                    reference="https://wikiwiki.jp/lightvn/commands/script#screenSpaceStart">
       </explanation>
       <explanation lang="eng" name="screenSpaceStart"
-                   syntax="screenSpaceStart [name]"
-                   details="
+                   syntax="screenSpaceStart [name] (freeOnReturnToMain)"
+                   details="ex. screenSpaceStart my_backlog
+                   &#xA;
                    &#xA;create a new screenspace at the top of the stack
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#screenSpaceStart">
@@ -11414,7 +11415,8 @@
       </explanation>
       <explanation lang="eng" name="screenSpaceOverwrite"
                    syntax="screenSpaceOverwrite [name]"
-                   details="
+                   details="ex. screenSpaceOverwrite my_backlog
+                   &#xA;
                    &#xA;overwrite the screenspace at the top of the stack with the name provided
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#screenSpaceOverwrite">

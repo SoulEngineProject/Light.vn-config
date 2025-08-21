@@ -1928,6 +1928,72 @@
       <explanation lang="zhc" name="--[UI相关命令]--"></explanation>
       <explanation lang="kor" name="--[UI 관련 커맨드]--"></explanation>
     </Command>
+    <Command cmd="hbox">
+      <explanation lang="jap" name="横箱"
+                   syntax="横箱 [個体名] [x] [y] [r] [横幅] [縦幅] (個体間間隔)"
+                   details="ex. 横箱 mybox 0 0 80 800 100
+                   &#xA;
+                   &#xA;「親子」コマンドにて登録された子どもたちを、
+                   &#xA;一定間隔で横幅の中で並ばせる。
+                   &#xA;
+                   &#xA;個体間間隔、が指定された場合、その数値に従う。
+                   &#xA;  "
+                   reference="https://wikiwiki.jp/lightvn/commands/UI#hbox">
+      </explanation>
+      <explanation lang="eng" name="hbox"
+                   syntax="hbox [name] [x] [y] [r] [width] [height] (spacing)"
+                   details="ex. hbox mybox 0 0 80 800 100
+                   &#xA;
+                   &#xA;Horizontally aligns children added through 「parentChild」within the designated [width].
+                   &#xA;
+                   &#xA;If spacing is not designated, children are evenly aligned, if designated uses that value.
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/UI#hbox">
+      </explanation>
+      <explanation lang="kor" name="가로상자"
+                   syntax="가로상자 [이름] [x] [y] [r] [가로 길이] [세로 길이] (오브젝트 간격)"
+                   details="ex. 가로상자 mybox 0 0 80 800 100
+                   &#xA;
+                   &#xA;「부모자식」에 의해 추가된 자식들을 가로 길이에 맞춰 동일 간격으로 정렬시킴.
+                   &#xA;
+                   &#xA;(오브젝트 간격)을 지정할 경우, 그를 따름.
+                   &#xA;  "
+                   reference="https://wikiwiki.jp/lightvn/commands/UI#hbox">
+      </explanation>
+    </Command>
+    <Command cmd="vbox">
+      <explanation lang="jap" name="縦箱"
+                   syntax="縦箱 [個体名] [x] [y] [r] [横幅] [縦幅] (個体間隔)"
+                   details="ex. 縦箱 mybox 0 0 80 800 100
+                   &#xA;
+                   &#xA;「親子」コマンドにて登録された子どもたちを、
+                   &#xA;一定間隔で縦幅の中で並ばせる。
+                   &#xA;
+                   &#xA;個体間隔、が指定された場合、その数値に従う。
+                   &#xA;  "
+                   reference="https://wikiwiki.jp/lightvn/commands/UI#vbox">
+      </explanation>
+      <explanation lang="eng" name="vbox"
+                   syntax="vbox [name] [x] [y] [r] [width] [height] (spacing)"
+                   details="ex. vbox mybox 0 0 80 800 100
+                   &#xA;
+                   &#xA;Vertically aligns children added through 「parentChild」within the designated [width].
+                   &#xA;
+                   &#xA;If spacing is not designated, children are evenly aligned, if designated uses that value.
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/UI#vbox">
+      </explanation>
+      <explanation lang="kor" name="세로상자"
+                   syntax="세로상자 [이름] [x] [y] [r] [가로 길이] [세로 길이] (오브젝트 간격)"
+                   details="ex. 세로상자 mybox 0 0 80 800 100
+                   &#xA;
+                   &#xA;「부모자식」에 의해 추가된 자식들을 세로 길이에 맞춰 동일 간격으로 정렬시킴.
+                   &#xA;
+                   &#xA;(오브젝트 간격)을 지정할 경우, 그를 따름.
+                   &#xA;  "
+                   reference="https://wikiwiki.jp/lightvn/commands/UI#vbox">
+      </explanation>
+    </Command>
     <Command cmd="button">
       <explanation lang="jap" name="ボタン"
                    syntax="ボタン [名前] (ボタン通常イメージ) (ボタンタッチ時イメージ) (ボタンクリック時イメージ)
@@ -3012,6 +3078,35 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableLineCont">
       </explanation>
     </Command>
+    <Command cmd="textExplicitClear">
+      <explanation lang="jap" name="文章消去明記必須"
+                   syntax="文章消去明記必須 [true/false]"
+                   details="ex. 文章消去明記必須 true
+                   &#xA;
+                   &#xA;trueの場合、「&quot;」による文字消去ができず、「文字消去」でのみ文字窓の文字を消去できる。
+                   &#xA;
+                   "
+                   reference="https://wikiwiki.jp/lightvn/commands/text#textExplicitClear">
+      </explanation>
+      <explanation lang="eng" name="textExplicitClear"
+                   syntax="textExplicitClear [true/false]"
+                   details="ex. textExplicitClear true
+                   &#xA;
+                   &#xA;if true, text cannot be cleared through the use of「&quot;」.
+                   &#xA;「textClear」must be explicitly used to clear text.
+                   "
+                   reference="https://wikiwiki.jp/lightvn/commands/text#textExplicitClear">
+      </explanation>
+      <explanation lang="kor" name="텍스트지우기명시필수"
+                   syntax="텍스트지우기명시필수 [true/false]"
+                   details="ex. 텍스트지우기명시필수 true
+                   &#xA;
+                   &#xA;true일 경우, 「&quot;」를 통해서 텍스트를 지울 수 없으며, 「텍스트지우기」커맨드를 통해서만 가능.
+                   &#xA;
+                   "
+                   reference="https://wikiwiki.jp/lightvn/commands/text#textExplicitClear">
+      </explanation>
+    </Command>
     <Command cmd="textClear">
       <explanation lang="jap" name="文章消去"
                    syntax="文章消去 (対象名)"
@@ -3403,6 +3498,7 @@
                    &#xA;0: 陰無し
                    &#xA;1: 輪郭線 [太さ] [r:0-255] [g:0-255] [b:0-255] (a:0-255) (x) (y)
                    &#xA;1: 輪郭線 [太さ] [#HEX rgb / rgba色] (x) (y)
+                   &#xA;1: 輪郭線 [太さ] #[HEX rgb / rgba色1] [色1反映度]% #[HEX rgb / rgba色2] (x) (y)
                    &#xA;
                    &#xA;ex. 文字陰 0
                    &#xA;ex. 文字陰 1 2 255 255 255
@@ -3422,6 +3518,7 @@
                    &#xA;0: no shadow
                    &#xA;1: shadow [r:0-255] [g:0-255] [b:0-255] (a:0-255) (x) (y)
                    &#xA;1: shadow [#HEX rgb / rgba] (x) (y)
+                   &#xA;1: shadow #[HEX rgb / rgba1] [colour 1]% #[HEX rgb / rgba2] (x) (y)
                    &#xA;
                    &#xA;ex. textShadow 0
                    &#xA;ex. textShadow 1 255 255 255
@@ -3436,6 +3533,7 @@
                    &#xA;0: 无阴影
                    &#xA;1: 轮廓线 [厚度] [r:0-255] [g:0-255] [b:0-255] (a:0-255) (x) (y)
                    &#xA;1: 轮廓线 [厚度] [#HEX rgb / rgba色] (x) (y)
+                   &#xA;1: 轮廓线 [厚度] #[HEX rgb / rgba1] [颜色1反映度]% #[HEX rgb / rgba2] (x) (y)
                    &#xA;
                    &#xA;例如：文本阴影 0
                    &#xA;例如：文本阴影 1 2 255 255 255
@@ -3456,6 +3554,7 @@
                    &#xA;0: 그림자 없음
                    &#xA;1: 윤곽선 [굵기] [r:0-255] [g:0-255] [b:0-255] (a:0-255) (x) (y)
                    &#xA;1: 윤곽선 [굵기] [#HEX rgb / rgba색] (x) (y)
+                   &#xA;1: 윤곽선 [굵기] #[HEX rgb / rgba색1] [색1 반영도]% #[HEX rgb / rgba색2] (x) (y)
                    &#xA;
                    &#xA;ex. 텍스트그림자 0
                    &#xA;ex. 텍스트그림자 1 2 255 255 255
@@ -12124,41 +12223,55 @@
     <Command cmd="movie">
       <explanation lang="jap" name="動画"
                    syntax="動画 [名前] [ファイル名] [x座標] [y座標] [laye(r)] (反復) (カメラオプション)"
-                   details="ex. 動画 movie1 test.mp4 0 0 70
+                   details="ex. 動画 movie1 test.mpg 0 0 70
                    &#xA;
                    &#xA;コマンドに'0'をつけると、透明度・音量ゼロの状態で再生を始めます。
-                   &#xA; (ex. 動画0 movie1 test.mp4 0 0 70）
+                   &#xA; (ex. 動画0 movie1 test.mpg 0 0 70）
                    &#xA;
-                   &#xA;対応形式：ビデオ側がMPEG1 Video (mpeg1)、オーディオ側がMPEG1 Audio Layer II (mp2)の.mpgファイル
+                   &#xA;対応形式：
+                   &#xA;- ビデオ側がMPEG1 Video (mpeg1)、オーディオ側がMPEG1 Audio Layer II (mp2)の.mpg
+                   &#xA;- webm (動画のみ・Windows専用)
+                   &#xA;
                    &#xA;変換サイト：https://video-converter.com/ja/"
                    reference="https://wikiwiki.jp/lightvn/commands/media#movie">
       </explanation>
       <explanation lang="eng" name="movie"
                    syntax="movie [name] [filename] [x] [y] [laye(r)] (repeat) (camera_option)"
-                   details="ex. movie movie1 test.mp4 0 0 70
+                   details="ex. movie movie1 test.mpg 0 0 70
                    &#xA;
                    &#xA;Suffix: '0' will start play at alpha + volume: 0.
-                   &#xA; (ex. movie0 movie1 test.mp4 0 0 70)"
+                   &#xA; (ex. movie0 movie1 test.mp4 0 0 70)
+                   &#xA;
+                   &#xA;Supported Formats:
+                   &#xA;- .mpg (mpeg1 video, mpeg1 audio layer II)
+                   &#xA;- .webm (only video - Windows only)
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/media#movie">
       </explanation>
       <explanation lang="zhc" name="视频"
                    syntax="视频 [名字] [文件名] [x] [y] [r] (重复) (视图选项)"
-                   details="例如：视频 movie1 test.mp4 0 0 70
+                   details="例如：视频 movie1 test.mpg 0 0 70
                    &#xA;
                    &#xA;注意：在命令后加'0'，将以透明度和音量为0开始播放。
                    &#xA; (例如：视频0 movie1 test.mp4 0 0 70）
-                   &#xA;支持格式：视频为MPEG1 Video (mpeg1)，音频为MPEG1 Audio Layer II (mp2)的.mpg文件
+                   &#xA;
+                   &#xA;支持格式：
+                   &#xA;- 视频为MPEG1 Video (mpeg1)，音频为MPEG1 Audio Layer II (mp2)的.mpg
+                   &#xA;
                    &#xA;转换网站：https://video-converter.com/ja/"
                    reference="https://wikiwiki.jp/lightvn/commands/media#movie">
       </explanation>
       <explanation lang="kor" name="동영상"
                    syntax="동영상 [이름] [파일명] [x좌표] [y좌표] [레이어(r)] (반복) (카메라옵션)"
-                   details="ex. 동영상 movie1 test.mp4 0 0 70
+                   details="ex. 동영상 movie1 test.mpg 0 0 70
                    &#xA;
                    &#xA;커맨드에 '0'을 붙이면 투명도·음량이 0인 상태로 재생됨.
-                   &#xA; (ex. 동영상0 movie1 test.mp4 0 0 70）
+                   &#xA; (ex. 동영상0 movie1 test.mpg 0 0 70）
                    &#xA;
-                   &#xA;지원 형식: 비디오가 MPEG1 Video (mpeg1), 오디오가 MPEG1 Audio Layer II (mp2)인 .mpg파일
+                   &#xA;지원 형식:
+                   &#xA;- 비디오가 MPEG1 Video (mpeg1), 오디오가 MPEG1 Audio Layer II (mp2)인 .mpg
+                   &#xA;- .webm (영상만, Windows 전용)
+                   &#xA;
                    &#xA;변환 사이트: https://video-converter.com/ja/"
                    reference="https://wikiwiki.jp/lightvn/commands/media#movie">
       </explanation>
@@ -14486,6 +14599,8 @@
                    &#xA;描画fpsを指定する。
                    &#xA;
                    &#xA;適用範囲：リアルタイムプレビュー対象外 (Settings.xmlに保存)
+                   &#xA;
+                   &#xA;UseVSync (Settings.xml) False時にのみ有効。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#render_fps">
       </explanation>
@@ -14496,6 +14611,8 @@
                    &#xA;Set the render fps.
                    &#xA;
                    &#xA;Application range: does not apply for realtime preview. (Value saved in Settings.xml)
+                   &#xA;
+                   &#xA;Only applies when UseVSync (Settings.xml) is False
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#render_fps">
       </explanation>
@@ -14509,6 +14626,18 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#render_fps">
       </explanation>
+          <explanation lang="eng" name="렌더fps"
+                   syntax="렌더fps [fps]"
+                   details="ex. 렌더fps 30
+                   &#xA;
+                   &#xA;렌더fps를 설정.
+                   &#xA;
+                   &#xA;리얼타임 프리뷰 적용이 안 됨. (Settings.xml에 값이 저장)
+                   &#xA;
+                   &#xA;UseVSync (Settings.xml)이 False일 시에만 반영.
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#render_fps">
+          </explanation>
     </Command>
     <Command cmd="cpu_low_usage_mode">
       <explanation lang="jap" name="cpu低負荷実行"
@@ -14541,6 +14670,17 @@
                    &#xA;（但会导致帧率下降）
                    &#xA;
                    &#xA;适用范围：不应用于实时预览（数值保存在 Settings.xml）
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#cpu_low_usage_mode">
+      </explanation>
+      <explanation lang="eng" name="cpu저부하모드"
+                   syntax="cpu저부하모드 [모드: 0(디폴트: 사용 않음) - 3]"
+                   details="ex. cpu저부하모드 3
+                   &#xA;
+                   &#xA;숫자가 높을수록 CPU부하가 떨어짐
+                   &#xA;(fps가 결과적으로 떨어짐)
+                   &#xA;
+                   &#xA;리얼타임 프리뷰 적용이 안 됨. (Settings.xml에 값이 저장)
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#cpu_low_usage_mode">
       </explanation>
@@ -14928,9 +15068,9 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#clear">
       </explanation>
-      <explanation lang="kor" name="비우기"
-                   syntax="비우기 (화면 영역)"
-                   details="ex. 비우기
+      <explanation lang="kor" name="클리어"
+                   syntax="클리어 (화면 영역)"
+                   details="ex. 클리어
                    &#xA;이전 생성된 모든 리소스를 해제 (이미지, 배경, 버튼, 배경음악 등）
                    &#xA;
                    &#xA;주: 화면 영역 - 화면영역전체, 동일계층화면영역. 아무것도 붙이지 않을 경우 현재 화면 영역 내의 오브젝트만을 정리.
@@ -15756,6 +15896,35 @@
                    &#xA;
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvExistsObj">
+      </explanation>
+    </Command>
+    <Command name="lvObjInfo">
+      <explanation lang="jap" name="lvObjInfo"
+                   syntax="lvObjInfo(string: 個体名)"
+                   details="ex. lvObjInfo(&quot;obj_name&quot;)
+                   &#xA;
+                   &#xA;「個体名」の個体があれば、情報を返還。
+                   &#xA;
+                   &#xA;return: string"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvObjInfo">
+      </explanation>
+      <explanation lang="eng" name="lvObjInfo"
+                   syntax="lvObjInfo(string: name)"
+                   details="ex. lvObjInfo(&quot;obj_name&quot;)
+                   &#xA;
+                   &#xA;if object with [name] exists, return information as string.
+                   &#xA;
+                   &#xA;return: string"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvObjInfo">
+      </explanation>
+      <explanation lang="kor" name="lvObjInfo"
+                   syntax="lvObjInfo(string: 오브젝트명)"
+                   details="ex. lvObjInfo(&quot;obj_name&quot;)
+                   &#xA;
+                   &#xA;&quot;오브젝트명&quot;을 가진 개체가 있다면 정보를 반환.
+                   &#xA;
+                   &#xA;return: string"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvObjInfo">
       </explanation>
     </Command>
     <Command name="lvTimeNow">
@@ -17967,6 +18136,35 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvTextureH">
       </explanation>
     </Command>
+    <Command name="lvTextboxInUse">
+      <explanation lang="jap" name="lvTextboxInUse"
+                   syntax="lvTextboxInUse()"
+                   details="ex. lvTextboxInUse()
+                   &#xA;
+                   &#xA;「使用文字窓」に登録された個体名を返還。
+                   &#xA;
+                   &#xA;return: string"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextboxInUse">
+      </explanation>
+      <explanation lang="eng" name="lvTextboxInUse"
+                   syntax="lvTextboxInUse()"
+                   details="ex. lvTextboxInUse()
+                   &#xA;
+                   &#xA;return name of object designated in [useTextbox]
+                   &#xA;
+                   &#xA;return: string"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextboxInUse">
+      </explanation>
+      <explanation lang="kor" name="lvTextboxInUse"
+                   syntax="lvTextboxInUse()"
+                   details="ex. lvTextboxInUse()
+                   &#xA;
+                   &#xA;[텍스트창사용]에 등록된 오브젝트명을 반환.
+                   &#xA;
+                   &#xA;return: string"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextboxInUse">
+      </explanation>
+    </Command>
     <Command name="lvText">
       <explanation lang="jap" name="lvText"
                    syntax="lvText(文字列：文字・文字窓名)"
@@ -18003,6 +18201,35 @@
                    &#xA;
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvText">
+      </explanation>
+    </Command>
+    <Command name="lvTextTableLine">
+      <explanation lang="jap" name="lvTextTableLine"
+                   syntax="lvTextTableLine(文字列：csvファイルパス、数字：行番号)"
+                   details="ex. lvTextTableLine(&quot;tables/me.csv&quot;, 2)
+                   &#xA;
+                   &#xA;該当csvの行番号の結果を返還する。
+                   &#xA;
+                   &#xA;return: string"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextTableLine">
+      </explanation>
+      <explanation lang="eng" name="lvTextTableLine"
+                   syntax="lvTextTableLine(string: csv filepath, number: row)"
+                   details="ex. lvTextTableLine(&quot;table/me.csv&quot;, 2)
+                   &#xA;
+                   &#xA;return text of the corresponding row in the csv
+                   &#xA;
+                   &#xA;return: string"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextTableLine">
+      </explanation>
+      <explanation lang="kor" name="lvTextTableLine"
+                   syntax="lvTextTableLine(문자열: csv경로, 숫자: 행)"
+                   details="ex. lvTextTableLine(&quot;table/me.csv&quot;, 2)
+                   &#xA;
+                   &#xA;해당 파일의 행을 반환
+                   &#xA;
+                   &#xA;return: string"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextTableLine">
       </explanation>
     </Command>
     <Command name="lvTextBoundsW">

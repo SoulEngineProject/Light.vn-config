@@ -221,6 +221,24 @@
     <val lang="zhc">新建项目</val>
     <val lang="kor">새 프로젝트</val>
   </EString>
+  <EString nkey="actionOpen_Current_Directory">
+    <val lang="jap">現在フォルダを開く</val>
+    <val lang="eng">Open Current Directory</val>
+    <val lang="zhc"></val>
+    <val lang="kor">현재 폴더를 열기</val>
+  </EString>
+  <EString nkey="actionClose_All_Tabs_Except_Current">
+    <val lang="jap">今のタブ以外の全タブを閉じる</val>
+    <val lang="eng">Close All Tabs Except Current</val>
+    <val lang="zhc"></val>
+    <val lang="kor">현 탭 이외의 탭을 모두 닫기</val>
+  </EString>
+  <EString nkey="actionClose_All_Tabs">
+    <val lang="jap">全タブを閉じる</val>
+    <val lang="eng">Close All Tabs</val>
+    <val lang="zhc"></val>
+    <val lang="kor">탭을 모두 닫기</val>
+  </EString>
   <EString nkey="actionSave_Current_Script">
     <val lang="jap">現在スクリプトを保存</val>
     <val lang="eng">Save Current Script</val>

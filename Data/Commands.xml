@@ -14665,7 +14665,7 @@
                    &#xA;UseVSync (Settings.xml)이 False일 시에만 반영.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#render_fps">
-      </explanation>
+          </explanation>
     </Command>
     <Command cmd="cpu_low_usage_mode">
       <explanation lang="jap" name="cpu低負荷実行"

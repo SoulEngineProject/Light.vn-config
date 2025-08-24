@@ -224,19 +224,19 @@
   <EString nkey="actionOpen_Current_Directory">
     <val lang="jap">現在フォルダを開く</val>
     <val lang="eng">Open Current Directory</val>
-    <val lang="zhc"></val>
+    <val lang="zhc">打开当前文件夹</val>
     <val lang="kor">현재 폴더를 열기</val>
   </EString>
   <EString nkey="actionClose_All_Tabs_Except_Current">
     <val lang="jap">今のタブ以外の全タブを閉じる</val>
     <val lang="eng">Close All Tabs Except Current</val>
-    <val lang="zhc"></val>
+    <val lang="zhc">关闭除当前外的所有标签页</val>
     <val lang="kor">현 탭 이외의 탭을 모두 닫기</val>
   </EString>
   <EString nkey="actionClose_All_Tabs">
     <val lang="jap">全タブを閉じる</val>
     <val lang="eng">Close All Tabs</val>
-    <val lang="zhc"></val>
+    <val lang="zhc">关闭所有标签页</val>
     <val lang="kor">탭을 모두 닫기</val>
   </EString>
   <EString nkey="actionSave_Current_Script">
@@ -783,6 +783,7 @@
   <EString nkey="cmd_search_placeholder">
     <val lang="jap">検索コマンド</val>
     <val lang="eng">Command to search</val>
+    <val lang="zhc">搜索命令</val>
     <val lang="kor">검색할 커맨드</val>
   </EString>
 
@@ -953,16 +954,19 @@
   <EString nkey="lvn_var_update_name">
     <val lang="jap">指定変数名</val>
     <val lang="eng">variable name to set</val>
+    <val lang="zhc">指定变量名</val>
     <val lang="kor">업데이트할 변수명</val>
   </EString>
   <EString nkey="lvn_var_update_value">
     <val lang="jap">指定変数値</val>
     <val lang="eng">variable value to set</val>
+    <val lang="zhc">指定变量值</val>
     <val lang="kor">업데이트할 변수값</val>
   </EString>
   <EString nkey="lvn_var_update_apply">
     <val lang="jap">反映</val>
     <val lang="eng">apply</val>
+    <val lang="zhc">应用</val>
     <val lang="kor">반영</val>
   </EString>
   <EString nkey="lvn_var_tree_name">

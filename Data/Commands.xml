@@ -1950,6 +1950,16 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#hbox">
       </explanation>
+      <explanation lang="zhc" name="水平布局"
+                   syntax="水平布局 [名称] [x] [y] [r] [宽度] [高度] (间距)"
+                   details="例：水平布局 mybox 0 0 80 800 100
+                   &#xA;
+                   &#xA;将通过「父子关系」命令添加的子元素在指定的[宽度]内水平排列。
+                   &#xA;
+                   &#xA;如果未指定间距，子元素将均匀分布；如果指定了间距值，则使用该数值。
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/UI#hbox">
+      </explanation>
       <explanation lang="kor" name="가로상자"
                    syntax="가로상자 [이름] [x] [y] [r] [가로 길이] [세로 길이] (오브젝트 간격)"
                    details="ex. 가로상자 mybox 0 0 80 800 100
@@ -1983,6 +1993,16 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#vbox">
       </explanation>
+      <explanation lang="zhc" name="垂直布局"
+                   syntax="垂直布局 [名称] [x] [y] [r] [宽度] [高度] (间距)"
+                   details="例：垂直布局 mybox 0 0 80 800 100
+                   &#xA;
+                   &#xA;将通过「父子关系」命令添加的子元素在指定的[高度]内垂直排列。
+                   &#xA;
+                   &#xA;如果未指定间距，子元素将均匀分布；如果指定了间距值，则使用该数值。
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/UI#vbox">
+    </explanation>
       <explanation lang="kor" name="세로상자"
                    syntax="세로상자 [이름] [x] [y] [r] [가로 길이] [세로 길이] (오브젝트 간격)"
                    details="ex. 세로상자 mybox 0 0 80 800 100
@@ -3095,6 +3115,14 @@
                    &#xA;if true, text cannot be cleared through the use of「&quot;」.
                    &#xA;「textClear」must be explicitly used to clear text.
                    "
+                   reference="https://wikiwiki.jp/lightvn/commands/text#textExplicitClear">
+      </explanation>
+      <explanation lang="zhc" name="强制显式清除"
+                   syntax="强制显式清除 [true/false]"
+                   details="例：强制显式清除 true
+                   &#xA;
+                   &#xA;设为true时，无法通过「&quot;」清除文本，必须使用「文本清除」命令才能清除文本框内容。
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textExplicitClear">
       </explanation>
       <explanation lang="kor" name="텍스트지우기명시필수"
@@ -4671,7 +4699,7 @@
                    details="例如：日志设置 backlog_textbox sys\sys_log_sound.png sys\sys_log_sound@.png
                    &#xA;使用文本框「backlog_textbox」作为日志的设置。
                    &#xA;
-                   &#xA;
+                   &#xA;通过[交互素材设置]指定的素材将用作语音重播按钮。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogConfig">
       </explanation>
@@ -15917,6 +15945,15 @@
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvObjInfo">
       </explanation>
+      <explanation lang="zhc" name="lvObjInfo"
+                   syntax="lvObjInfo(string: 对象名称)"
+                   details="例：lvObjInfo(&quot;obj_name&quot;)
+                   &#xA;
+                   &#xA;如果存在指定「对象名称」的对象，返回其信息。
+                   &#xA;
+                   &#xA;返回：string"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvObjInfo">
+      </explanation>
       <explanation lang="kor" name="lvObjInfo"
                    syntax="lvObjInfo(string: 오브젝트명)"
                    details="ex. lvObjInfo(&quot;obj_name&quot;)
@@ -17228,7 +17265,7 @@
                    &#xA;将字符串转换为与该名称关联的变量。
                    &#xA;如果没有该名称的变量存在，则会报错。
                    &#xA;
-                   &#xA;返回值：变量"
+                   &#xA;返回：变量"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvVarFromString">
       </explanation>
       <explanation lang="kor" name="lvVarFromString"
@@ -18155,6 +18192,15 @@
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvTextboxInUse">
       </explanation>
+      <explanation lang="zhc" name="lvTextboxInUse"
+                   syntax="lvTextboxInUse()"
+                   details="例：lvTextboxInUse()
+                   &#xA;
+                   &#xA;返回「使用文本框」中注册的对象名称。
+                   &#xA;
+                   &#xA;返回：string"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextboxInUse">
+      </explanation>
       <explanation lang="kor" name="lvTextboxInUse"
                    syntax="lvTextboxInUse()"
                    details="ex. lvTextboxInUse()
@@ -18221,6 +18267,15 @@
                    &#xA;
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvTextTableLine">
+      </explanation>
+      <explanation lang="zhc" name="lvTextTableLine"
+                 syntax="lvTextTableLine(字符串：csv文件路径，数字：行号)"
+                 details="例：lvTextTableLine(&quot;tables/me.csv&quot;, 2)
+                 &#xA;
+                 &#xA;返回指定csv文件中对应行号的内容。
+                 &#xA;
+                 &#xA;返回：string"
+                 reference="https://wikiwiki.jp/lightvn/funcs#lvTextTableLine">
       </explanation>
       <explanation lang="kor" name="lvTextTableLine"
                    syntax="lvTextTableLine(문자열: csv경로, 숫자: 행)"

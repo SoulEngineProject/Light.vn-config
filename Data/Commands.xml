@@ -14654,7 +14654,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#render_fps">
       </explanation>
-          <explanation lang="eng" name="렌더fps"
+          <explanation lang="kor" name="렌더fps"
                    syntax="렌더fps [fps]"
                    details="ex. 렌더fps 30
                    &#xA;
@@ -14701,7 +14701,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#cpu_low_usage_mode">
       </explanation>
-      <explanation lang="eng" name="cpu저부하모드"
+      <explanation lang="kor" name="cpu저부하모드"
                    syntax="cpu저부하모드 [모드: 0(디폴트: 사용 않음) - 3]"
                    details="ex. cpu저부하모드 3
                    &#xA;
@@ -19964,4 +19964,5 @@
       </explanation>
     </Command>
   </Commands>
+
 </ScriptStrings>

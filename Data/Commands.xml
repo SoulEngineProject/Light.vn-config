@@ -2495,7 +2495,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchableRes">
       </explanation>
       <explanation lang="eng" name="touchableRes"
-                   syntax="touchableRes [untouched image] [touched image] [clicked image] (touched sfx) (clicked sfx)"
+                   syntax="touchableRes [untouched image] [touched image] [clicked image] (touched sfx) (clicked sfx) (highlighted image) (disabled image)"
                    details="ex. touchableRes untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg
                    &#xA;
                    &#xA;Defines default settings for 「all buttons」created after this line.
@@ -4722,6 +4722,66 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogConfig">
       </explanation>
     </Command>
+    <Command cmd="backlogVoiceRes">
+      <explanation lang="jap" name="バックログボイス素材"
+                   syntax="バックログボイス素材 [UI通常画像] [UIタッチ時画像] [UIクリック時画像] (UIタッチ時音) (UIクリック時音)"
+                   details="ex. バックログボイス素材 untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg
+                   &#xA;
+                   &#xA;バックログボイスボタンの素材を指定。
+                   &#xA;コマンド：「バックログ設定」の後にする必要がある。
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/text#backlogVoiceRes">
+      </explanation>
+      <explanation lang="eng" name="backlogVoiceRes"
+                   syntax="backlogVoiceRes [untouched image] [touched image] [clicked image] (touched sfx) (clicked sfx)"
+                   details="ex. backlogVoiceRes untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg
+                   &#xA;
+                   &#xA;Define the resources to use for the backlog voice buttons.
+                   &#xA;Command: [backlogConfig] needs to be run first.
+                   &#xA;
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/text#backlogVoiceRes">
+      </explanation>
+      <explanation lang="kor" name="백로그보이스리소스"
+                   syntax="백로그보이스리소스 [UI통상 시 이미지] [UI터치 시 이미지] [UI클릭 시 이미지] (UI터치 시 효과음) (UI클릭 시 효과음)"
+                   details="ex. 백로그보이스리소스 untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg
+                   &#xA;
+                   &#xA;백로그 보이스 버튼들이 쓸 리소스 설정.
+                   &#xA;커맨드: [백로그설정]을 먼저 완료할 필요 있음. 
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/text#backlogVoiceRes">
+      </explanation>
+    </Command>
+    <Command cmd="backlogJumpRes">
+      <explanation lang="jap" name="バックログジャンプ素材"
+                   syntax="バックログジャンプ素材 [UI通常画像] [UIタッチ時画像] [UIクリック時画像] (UIタッチ時音) (UIクリック時音)"
+                   details="ex. バックログジャンプ素材 untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg
+                   &#xA;
+                   &#xA;バックログジャンプボタンの素材を指定。
+                   &#xA;コマンド：「バックログ設定」の後にする必要がある。
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/text#backlogJumpRes">
+      </explanation>
+      <explanation lang="eng" name="backlogJumpRes"
+                   syntax="backlogJumpRes [untouched image] [touched image] [clicked image] (touched sfx) (clicked sfx)"
+                   details="ex. backlogJumpRes untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg
+                   &#xA;
+                   &#xA;Define the resources to use for the backlog jump buttons.
+                   &#xA;Command: [backlogConfig] needs to be run first.
+                   &#xA;
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/text#backlogJumpRes">
+      </explanation>
+      <explanation lang="kor" name="백로그점프리소스"
+                   syntax="백로그점프리소스 [UI통상 시 이미지] [UI터치 시 이미지] [UI클릭 시 이미지] (UI터치 시 효과음) (UI클릭 시 효과음)"
+                   details="ex. 백로그점프리소스 untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg
+                   &#xA;
+                   &#xA;백로그 점프 버튼들이 쓸 리소스 설정.
+                   &#xA;커맨드: [백로그설정]을 먼저 완료할 필요 있음. 
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/text#backlogJumpRes">
+      </explanation>
+    </Command>
     <Command cmd="backlogVoiceOffset">
       <explanation lang="jap" name="バックログボイス位置"
                    syntax="バックログボイス位置 [x] [y]"
@@ -4762,8 +4822,43 @@
                    &#xA;기본값: (0, 0)
                    &#xA;백로그에서 보이스 재생 버튼의 위치를 지정합니다.
                    &#xA;x좌표: 텍스트창 왼쪽 끝에서 버튼 오른쪽 끝까지의 거리.
-                   &#xA;y좌표: 현재 발화자의 마지막 행 하단에서 버튼 기준점까지의 거리."
+                   &#xA;y좌표: 현재 발화자의 마지막 행 하단에서 버튼 기준점까지의 거리.
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogVoiceOffset">
+      </explanation>
+    </Command>
+    <Command cmd="backlogJumpOffset">
+      <explanation lang="jap" name="バックログジャンプ位置"
+                   syntax="バックログジャンプ位置 [x] [y]"
+                   details="ex. バックログジャンプ位置 10 -10
+                   &#xA;
+                   &#xA;デフォルト：(0, 0)。
+                   &#xA;バックログ改ページ接頭辞, バックログ現在話者
+                   &#xA;両方が反映された後の
+                   &#xA;x: 文字窓左座標
+                   &#xA;y: 行のベースライン基準。
+                   &#xA;
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/text#backlogJumpOffset">
+      </explanation>
+      <explanation lang="eng" name="backlogJumpOffset"
+                   syntax="backlogJumpOffset [x] [y]"
+                   details="ex. backlogJumpOffset 10 -10
+                   &#xA;
+                   &#xA;the offset to display the backlog jump buttons
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/text#backlogJumpOffset">
+      </explanation>
+      <explanation lang="kor" name="백로그점프위치"
+                   syntax="백로그점프위치 [x] [y]"
+                   details="ex. 백로그점프위치 10 -10
+                   &#xA;
+                   &#xA;기본값: (0, 0)
+                   &#xA;백로그에서 점프 버튼의 위치를 지정합니다.
+                   &#xA;x좌표: 텍스트창 왼쪽 끝에서 버튼 오른쪽 끝까지의 거리.
+                   &#xA;y좌표: 현재 발화자의 마지막 행 하단에서 버튼 기준점까지의 거리.
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/text#backlogJumpOffset">
       </explanation>
     </Command>
     <Command cmd="backlogVoiceOverwrite">
@@ -14742,7 +14837,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/system#allowRender">
       </explanation>
     </Command>
-        <Command cmd="render_fps">
+    <Command cmd="render_fps">
       <explanation lang="jap" name="描画fps"
                    syntax="描画fps [fps]"
                    details="ex. 描画fps 30
@@ -14777,18 +14872,18 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#render_fps">
       </explanation>
-          <explanation lang="kor" name="렌더fps"
-                   syntax="렌더fps [fps]"
-                   details="ex. 렌더fps 30
-                   &#xA;
-                   &#xA;렌더fps를 설정.
-                   &#xA;
-                   &#xA;리얼타임 프리뷰 적용이 안 됨. (Settings.xml에 값이 저장)
-                   &#xA;
-                   &#xA;UseVSync (Settings.xml)이 False일 시에만 반영.
-                   &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/system#render_fps">
-          </explanation>
+      <explanation lang="kor" name="렌더fps"
+               syntax="렌더fps [fps]"
+               details="ex. 렌더fps 30
+               &#xA;
+               &#xA;렌더fps를 설정.
+               &#xA;
+               &#xA;리얼타임 프리뷰 적용이 안 됨. (Settings.xml에 값이 저장)
+               &#xA;
+               &#xA;UseVSync (Settings.xml)이 False일 시에만 반영.
+               &#xA;"
+               reference="https://wikiwiki.jp/lightvn/commands/system#render_fps">
+      </explanation>
     </Command>
     <Command cmd="cpu_low_usage_mode">
       <explanation lang="jap" name="cpu低負荷実行"

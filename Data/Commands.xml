@@ -4924,39 +4924,6 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#backlogJumpActive">
       </explanation>
     </Command>
-    <Command cmd="backlogJumpOffset">
-      <explanation lang="jap" name="バックログジャンプ位置"
-                   syntax="バックログジャンプ位置 [x] [y]"
-                   details="ex. バックログジャンプ位置 10 -10
-                   &#xA;
-                   &#xA;デフォルト：(0, 0)。
-                   &#xA;バックログ改ページ接頭辞, バックログ現在話者
-                   &#xA;両方が反映された後の
-                   &#xA;x: 文字窓左座標
-                   &#xA;y: 行のベースライン基準。
-                   &#xA;
-                   &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/text#backlogJumpOffset">
-      </explanation>
-      <explanation lang="eng" name="backlogJumpOffset"
-                   syntax="backlogJumpOffset [x] [y]"
-                   details="ex. backlogJumpOffset 10 -10
-                   &#xA;
-                   &#xA;the offset to display the backlog jump buttons
-                   &#xA;"
-                   reference="https://wikiwiki.jp/lightvn/commands/text#backlogJumpOffset">
-      </explanation>
-      <explanation lang="kor" name="백로그점프위치"
-                   syntax="백로그점프위치 [x] [y]"
-                   details="ex. 백로그점프위치 10 -10
-                   &#xA;
-                   &#xA;기본값: (0, 0)
-                   &#xA;백로그에서 보이스 재생 버튼의 위치를 지정합니다.
-                   &#xA;x좌표: 텍스트창 왼쪽 끝에서 버튼 오른쪽 끝까지의 거리.
-                   &#xA;y좌표: 현재 발화자의 마지막 행 하단에서 버튼 기준점까지의 거리."
-                   reference="https://wikiwiki.jp/lightvn/commands/text#backlogJumpOffset">
-      </explanation>
-    </Command>
     <Command cmd="backlogCurSpeaker">
       <explanation lang="jap" name="バックログ現在話者"
                    syntax="バックログ現在話者 [文字列]"
@@ -5778,7 +5745,7 @@
     </Command>
     <Command cmd="animationState">
       <explanation lang="jap" name="アニメ状態"
-                   syntax="アニメ状態 [対象: 複数可能] [状態] (重复) (変換時間: ms)"
+                   syntax="アニメ状態 [対象: 複数可能] [状態] (反復) (変換時間: ms)"
                    details="ex. アニメ再生 kojiken walk
                    &#xA;
                    &#xA;kojikenのアニメをwalkにする。
@@ -5809,7 +5776,7 @@
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#animationState">
        </explanation>
-      <explanation lang="eng" name="애니상태"
+      <explanation lang="kor" name="애니상태"
                    syntax="애니상태 [타입/대상 이름(여러 개 가능)] [상태] (반복) (갱신시간: ms)"
                    details="ex. 애니상태 kojiken walk
                    &#xA;

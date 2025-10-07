@@ -15205,6 +15205,8 @@
                    &#xA;
                    &#xA;キートリガー初期化
                    &#xA;
+                   &#xA;素材転換時間
+                   &#xA;
                    &#xA;個体深度計算
                    &#xA;カメラ基準個体描画
                    &#xA;ライトモード
@@ -15247,6 +15249,8 @@
                    &#xA;camera
                    &#xA;
                    &#xA;key triggers
+                   &#xA;
+                   &#xA;resourceTransitionDuration
                    &#xA;
                    &#xA;objectDepthTest
                    &#xA;objectSortByCameraZ
@@ -15325,9 +15329,11 @@
                    &#xA;
                    &#xA;&quot;아래 설정도 초기화&quot;
                    &#xA;
-                   &#xA;카메라 초기화
+                   &#xA;카메라
                    &#xA;
-                   &#xA;키 트리거 초기화
+                   &#xA;키 트리거
+                   &#xA;
+                   &#xA;리소스전환시간
                    &#xA;
                    &#xA;오브젝트심도계산
                    &#xA;카메라기준오브젝트렌더링

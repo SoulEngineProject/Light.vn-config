@@ -77,6 +77,21 @@
     <val lang="zhc">测试游戏暂停。脚本更改不会保存。（按F5继续）</val>
     <val lang="kor">테스트 플레이 일시정지 중. 스크립트 수정은 반영되지 않습니다. (F5로 재개)</val>
   </EString>
+  <EString nkey="PreviewMsg_NoteExists">
+    <val lang="jap">参考：{}が存在します。</val>
+    <val lang="eng">Note. Exists: {}</val>
+    <val lang="kor">참고: {}가 존재합니다.</val>
+  </EString>
+  <EString nkey="PreviewMsg_NotExists">
+    <val lang="jap">エラー：{}が存在しません。</val>
+    <val lang="eng">Error. {} does not exist.</val>
+    <val lang="kor">에러: {}가 없습니다.</val>
+  </EString>
+  <EString nkey="PreviewMsg_Read_Lines">
+    <val lang="jap">処理行数: {}</val>
+    <val lang="eng">read lines: {}</val>
+    <val lang="kor">읽은 행수: {}</val>
+  </EString>
 
   <!--[EDITOR COMMAND INSERT]-->
   <!--command divider-->
@@ -756,7 +771,7 @@
     <val lang="kor">스크립트 자동 줄바꿈</val>
   </EString>
   <EString nkey="ReleaseCacheOnTabChangeCheck">
-    <val lang="jap">タブ変更時に未使用素材開放</val>
+    <val lang="jap">タブ変更時に未使用素材解放</val>
     <val lang="eng">Release Cache on Tabs Changed</val>
     <val lang="zhc">切换标签时释放缓存</val>
     <val lang="kor">탭 변경 시에 사용하지 않은 리소스 해제</val>

@@ -15788,7 +15788,13 @@
       </explanation>
       <explanation lang="eng" name="textureCreate"
                    syntax="textureCreate [register_name] [canvas image name] [image name 1] [offset x] [offset y] (image name 2) (offset x) (offset y) (...)"
-                   details="ex. createDummyCG cg_s001 r-mplus-1c-m.ttf 250 450 テスト 笑 制服"
+                   details="ex. textureCreate new_texture body.png face.png 100 100 eye.png 10 10
+                   &#xA;
+                   &#xA;Creates a new texture by applying layers on top of the [canvas image]
+                   &#xA;
+                   &#xA;The resulting texture can be used like ex. 
+                   &#xA;&quot;cg new_texture 100 80 80&quot;
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#textureCreate">
       </explanation>
       <explanation lang="zhc" name="合成图像注册"
@@ -15858,7 +15864,7 @@
       <explanation lang="eng" name="textureCreateRect"
                    syntax="1. textureCreateRect [register_name] [w] [h] [r] [g] [b] (a)
                    &#xA;2. textureCreateRect [register_name] [w] [h] [hex colour]"
-                   details="ex. textureCreateRect my_file.png new_texture 100 100 #000000
+                   details="ex. textureCreateRect new_texture 100 100 #000000
                    &#xA;
                    &#xA;create a rectangular texture as Images/[register_name]
                    &#xA;(ex. Images/my_file.png)

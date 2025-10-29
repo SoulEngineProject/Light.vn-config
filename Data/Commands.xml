@@ -23,6 +23,10 @@
         <val lang="zhc" value="视图"/>
         <val lang="kor" value="카메라"/>
       </type>
+      <type name="screenspace">
+        <val lang="jap" value="画面領域"/>
+        <val lang="kor" value="화면영역"/>
+      </type>
     </Types>
     <CmdOptions>
       <option name="all">
@@ -3552,13 +3556,14 @@
                    syntax="textShadow (target name) [shadow type]"
                    details="[shadow type]
                    &#xA;0: no shadow
-                   &#xA;1: shadow [r:0-255] [g:0-255] [b:0-255] (a:0-255) (x) (y)
-                   &#xA;1: shadow [#HEX rgb / rgba] (x) (y)
-                   &#xA;1: shadow #[HEX rgb / rgba1] [colour 1]% #[HEX rgb / rgba2] (x) (y)
+                   &#xA;1: shadow [thickness] [r:0-255] [g:0-255] [b:0-255] (a:0-255) (x) (y)
+                   &#xA;1: shadow [thickness] [#HEX rgb / rgba] (x) (y)
+                   &#xA;1: shadow [thickness] #[HEX rgb / rgba1] [colour 1]% #[HEX rgb / rgba2] (x) (y)
                    &#xA;
                    &#xA;ex. textShadow 0
-                   &#xA;ex. textShadow 1 255 255 255
-                   &#xA;ex. textShadow 1 #ffffff
+                   &#xA;ex. textShadow 1 2 255 255 255
+                   &#xA;ex. textShadow 1 5 #ffffff
+                   &#xA;ex. textShadow 1 5 #ffffff 0 0
                    &#xA;
                    &#xA;Note: When 'target name' is set, settings will be applied to whole current text. If not, will be applied to next texts"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textShadow">

@@ -7586,15 +7586,6 @@
                    &#xA;注：演出命令的目标名可以使用正则表达式指定多个。"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#speedx">
       </explanation>
-      <explanation lang="zhc" name="速度x"
-                   syntax="速度x [目标名 (可多个)] [数值] (所需时间:毫秒) (加速度: a0~a18) (屏幕区域范围)"
-                   details="例如：速度x albert 30 300
-                   &#xA;
-                   &#xA;x방향으로 이동할 때의 이동 속도(초당 이동하는 픽셀)를 설정합니다.
-                   &#xA;
-                   &#xA;注：演出命令的目标名可以使用正则表达式指定多个。"
-                   reference="https://wikiwiki.jp/lightvn/commands/transition#speedx">
-      </explanation>
       <explanation lang="kor" name="속도x"
                    syntax="속도x [대상 이름(여러 개 가능)] [값] (소요 시간: ms) (가속도: a0~a18) (화면 영역)"
                    details="ex. 속도x albert 30 300

@@ -5224,30 +5224,30 @@
     </Command>
     <Command cmd="asRenderParent">
       <explanation lang="jap" name="描画親指定"
-                   syntax="描画親指定 [対象名]"
-                   details="ex. 描画親指定 鶏
+                   syntax="描画親指定 [対象名] [true/false]"
+                   details="ex. 描画親指定 鶏 true
                    &#xA;
-                   &#xA;対象を「描画親」として指定。
+                   &#xA;trueの場合、対象を「描画親」として指定。
                    &#xA;親子コマンドにて子として付けられる個体たちと共に、
                    &#xA;単一画像かのように描画される。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#asRenderParent">
       </explanation>
       <explanation lang="eng" name="asRenderParent"
-                   syntax="asRenderParent [target]"
-                   details="ex. asRenderParent parent
+                   syntax="asRenderParent [target] [true/false]"
+                   details="ex. asRenderParent parent true
                    &#xA;
-                   &#xA;Sets target as the [renderParent].
+                   &#xA;If true, sets target as the [renderParent].
                    &#xA;Will be rendered as if one texture along with all children added through the
                    &#xA;[parentChild] command.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#asRenderParent">
       </explanation>
       <explanation lang="kor" name="렌더부모지정"
-                   syntax="렌더부모지정 [부모]"
-                   details="ex. 렌더부모지정 닭
+                   syntax="렌더부모지정 [부모] [true/false]"
+                   details="ex. 렌더부모지정 닭 true
                    &#xA;
-                   &#xA;부모 개체를 [렌더부모]로서 지정.
+                   &#xA;true일 경우, 부모 개체를 [렌더부모]로서 지정.
                    &#xA;[부모자식]으로 추가된 자신 개체들과 함께 마치 단일 텍스처인 것처럼 함께 렌더링됨.
                    &#xA;
                    &#xA;"

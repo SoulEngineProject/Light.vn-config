@@ -9734,14 +9734,6 @@
                    &#xA;
                    &#xA;指定“禁止进入”的碰撞区域将无法互相进入（碰撞）。
                    &#xA;"
-                   details="ex. 충돌영역사각형추가 id0 0 0 150 150
-                   &#xA;
-                   &#xA;대상의 중심을 기준으로 [가로 길이] x [세로 길이] 크기의 충돌영역을 추가합니다.
-                   &#xA;
-                   &#xA;주: '그룹 이름'을 지정하지 않으면, '충돌영역 이름'이 그룹 이름으로 사용됩니다.
-                   &#xA;주: '충돌영역 이름'을 지정하지 않으면, '대상 이름 + _collider'가 충돌영역 이름이 됩니다.
-                   &#xA;(ex. 위의 경우 'id0_collider')
-                   &#xA;'침범금지'가 지정된 충돌영역끼리는 서로 침범(교차)할 수 없습니다."
                    reference="https://wikiwiki.jp/lightvn/commands/physics#addColliderRect">
       </explanation>
       <explanation lang="kor" name="충돌영역사각형추가"

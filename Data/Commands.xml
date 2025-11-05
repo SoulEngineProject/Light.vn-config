@@ -8886,7 +8886,7 @@
       </explanation>
       <explanation lang="kor" name="연출가속도색"
                    syntax="연출가속도색 [가속도: a0~a18]"
-                   details="연출 커맨드의 가속도가 지정되지 않을 시 적용할 기본 가속도를 지정.
+                   details="색/음량 연출 커맨드의 가속도가 지정되지 않을 시 적용할 기본 가속도를 지정.
                    &#xA;
                    &#xA;ex. 연출가속도색 300
                    &#xA;
@@ -8898,7 +8898,7 @@
     <Command cmd="tweenMethodDefaultCamera">
       <explanation lang="jap" name="演出加速度カメラ"
                    syntax="演出加速度カメラ [加速度: a0~a18]"
-                   details="色調・音量演出コマンドに加速度が指定されていない場合のデフォルトを指定。
+                   details="カメラを対象とした演出コマンドに加速度が指定されていない場合のデフォルトを指定。
                    &#xA;
                    &#xA;ex. 演出加速度カメラ a6
                    &#xA;
@@ -8908,7 +8908,7 @@
       </explanation>
       <explanation lang="eng" name="tweenMethodDefaultCamera"
                    syntax="tweenMethodDefaultCamera [acceleration: a0~a18]"
-                   details="sets the default acceleration for tween commands that don't have an acceleration set.
+                   details="sets the default acceleration for tween commands targetting the camera that don't have an acceleration set.
                    &#xA;
                    &#xA;ex. tweenMethodDefaultCamera a6
                    &#xA;
@@ -18251,9 +18251,9 @@
                    &#xA;HashMap変数をcsvから作成する。
                    &#xA;
                    &#xA;csvが以下の場合：
-                   &#xA;name		value
-                   &#xA;box			300
-                   &#xA;ball			100
+                   &#xA;name    value
+                   &#xA;box     300
+                   &#xA;ball      100
                    &#xA;
                    &#xA;作成変数：
                    &#xA;hashmap[&quot;box&quot;][&quot;name&quot;] -> &quot;box&quot;
@@ -18269,9 +18269,9 @@
                    &#xA;create HashMap from the csv file
                    &#xA;
                    &#xA;csv example：
-                   &#xA;name		value
-                   &#xA;box			300
-                   &#xA;ball			100
+                   &#xA;name    value
+                   &#xA;box     300
+                   &#xA;ball      100
                    &#xA;
                    &#xA;variable result：
                    &#xA;hashmap[&quot;box&quot;][&quot;name&quot;] -> &quot;box&quot;
@@ -18288,9 +18288,9 @@
                    &#xA;HashMap변수를 csv을 읽어들여 생성.
                    &#xA;
                    &#xA;csv 예：
-                   &#xA;name		value
-                   &#xA;box			300
-                   &#xA;ball			100
+                   &#xA;name    value
+                   &#xA;box     300
+                   &#xA;ball      100
                    &#xA;
                    &#xA;변수 결과：
                    &#xA;hashmap[&quot;box&quot;][&quot;name&quot;] -> &quot;box&quot;
@@ -18308,9 +18308,9 @@
                    &#xA;List変数をcsvから作成する。
                    &#xA;
                    &#xA;csvが以下の場合：
-                   &#xA;name		value
-                   &#xA;box			300
-                   &#xA;ball			100
+                   &#xA;name    value
+                   &#xA;box     300
+                   &#xA;ball      100
                    &#xA;
                    &#xA;作成変数：
                    &#xA;list[0][&quot;name&quot;] -> &quot;box&quot;
@@ -18326,9 +18326,9 @@
                    &#xA;create List from the csv file
                    &#xA;
                    &#xA;csv example：
-                   &#xA;name		value
-                   &#xA;box			300
-                   &#xA;ball			100
+                   &#xA;name    value
+                   &#xA;box     300
+                   &#xA;ball      100
                    &#xA;
                    &#xA;variable result：
                    &#xA;list[0][&quot;name&quot;] -> &quot;box&quot;
@@ -18344,9 +18344,9 @@
                    &#xA;List변수를 csv을 읽어들여 생성.
                    &#xA;
                    &#xA;csv 예：
-                   &#xA;name		value
-                   &#xA;box			300
-                   &#xA;ball			100
+                   &#xA;name    value
+                   &#xA;box     300
+                   &#xA;ball      100
                    &#xA;
                    &#xA;변수 결과：
                    &#xA;list[0][&quot;name&quot;] -> &quot;box&quot;
@@ -18364,9 +18364,9 @@
                    &#xA;List変数をcsvから作成する。
                    &#xA;
                    &#xA;csvが以下の場合：
-                   &#xA;name		value
-                   &#xA;box			300
-                   &#xA;ball			100
+                   &#xA;name    value
+                   &#xA;box     300
+                   &#xA;ball      100
                    &#xA;
                    &#xA;作成変数：
                    &#xA;list[0][0] -> &quot;name&quot;
@@ -18383,9 +18383,9 @@
                    &#xA;create List from the csv file
                    &#xA;
                    &#xA;csv example：
-                   &#xA;name		value
-                   &#xA;box			300
-                   &#xA;ball			100
+                   &#xA;name    value
+                   &#xA;box     300
+                   &#xA;ball      100
                    &#xA;
                    &#xA;variable result：
                    &#xA;list[0][0] -> &quot;name&quot;
@@ -18402,9 +18402,9 @@
                    &#xA;List변수를 csv을 읽어들여 생성.
                    &#xA;
                    &#xA;csv 예：
-                   &#xA;name		value
-                   &#xA;box			300
-                   &#xA;ball			100
+                   &#xA;name    value
+                   &#xA;box     300
+                   &#xA;ball      100
                    &#xA;
                    &#xA;변수 결과：
                    &#xA;list[0][0] -> &quot;name&quot;

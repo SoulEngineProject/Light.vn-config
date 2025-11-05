@@ -27,6 +27,10 @@
         <val lang="jap" value="画面領域"/>
         <val lang="kor" value="화면영역"/>
       </type>
+    <type name="screen">
+        <val lang="jap" value="画面"/>
+        <val lang="kor" value="화면"/>
+      </type>
     </Types>
     <CmdOptions>
       <option name="all">
@@ -870,7 +874,7 @@
                    &#xA;주: 카메라옵션 ex. 카메라부착(카메라 조작의 영향을 무시)
                    &#xA;다른 &quot;카메라옵션&quot;은 커맨드 목록의 &quot;카메라옵션&quot;에서 확인 가능.
                    &#xA;
-                   &#xA;주: 커맨드에 '0'이 붙으면 투명한(opacity 0) 상태로 표시됩니다.
+                   &#xA;주: 커맨드에 '0'이 붙으면 투명한(투명도 0) 상태로 표시됩니다.
                    &#xA; (ex. 그림0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#empty">
       </explanation>
@@ -935,7 +939,7 @@
                    &#xA;
                    &#xA;주: 배경은 화면에 가득 차게 자동으로 확대된다.
                    &#xA;주: 배경의 레이어는 0.
-                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(opacity 0) 상태로 표시됩니다.
+                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(투명도 0) 상태로 표시됩니다.
                    &#xA; (ex. 그림0 alice2 anim_alice 150 30 50)
                    &#xA;주: 카메라옵션 ex. 카메라부착(카메라 조작의 영향을 무시)
                    &#xA;다른 &quot;카메라옵션&quot;은 커맨드 목록의 &quot;카메라옵션&quot;에서 확인 가능.
@@ -990,7 +994,7 @@
                    &#xA;
                    &#xA;주: 카메라옵션 ex. 카메라부착(카메라 조작의 영향을 무시)
                    &#xA;다른 &quot;카메라옵션&quot;은 커맨드 목록의 &quot;카메라옵션&quot;에서 확인 가능.
-                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(opacity 0) 상태로 표시됩니다.
+                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(투명도 0) 상태로 표시됩니다.
                    &#xA; (ex. 그림0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#cg">
       </explanation>
@@ -1107,7 +1111,7 @@
                    &#xA;
                    &#xA;주:  카메라옵션 ex. 카메라부착(카메라 조작의 영향을 무시)
                    &#xA;다른 &quot;카메라옵션&quot;은 커맨드 목록의 &quot;카메라옵션&quot;에서 확인 가능.
-                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(opacity 0) 상태로 표시됩니다.
+                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(투명도 0) 상태로 표시됩니다.
                    &#xA; (ex. 그림0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#sound_cg">
       </explanation>
@@ -1175,7 +1179,7 @@
                    &#xA;
                    &#xA;주: 카메라옵션 ex. 카메라부착(카메라 조작의 영향을 무시)
                    &#xA;다른 &quot;카메라옵션&quot;은 커맨드 목록의 &quot;카메라옵션&quot;에서 확인 가능.
-                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(opacity 0) 상태로 표시됩니다.
+                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(투명도 0) 상태로 표시됩니다.
                    &#xA; (ex. 그림0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#ninecg">
       </explanation>
@@ -1227,7 +1231,7 @@
                    &#xA;
                    &#xA;주: 카메라옵션 ex. 카메라부착(카메라 조작의 영향을 무시)
                    &#xA;다른 &quot;카메라옵션&quot;은 커맨드 목록의 &quot;카메라옵션&quot;에서 확인 가능.
-                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(opacity 0) 상태로 표시됩니다.
+                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(투명도 0) 상태로 표시됩니다.
                    &#xA; (ex. 그림0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#flow_cg">
       </explanation>
@@ -1335,7 +1339,7 @@
                    &#xA;
                    &#xA;주: 카메라옵션 ex. 카메라부착(카메라 조작의 영향을 무시)
                    &#xA;다른 &quot;카메라옵션&quot;은 커맨드 목록의 &quot;카메라옵션&quot;에서 확인 가능.
-                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(opacity 0) 상태로 표시됩니다.
+                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(투명도 0) 상태로 표시됩니다.
                    &#xA; (ex. 그림0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#model">
       </explanation>
@@ -1374,7 +1378,7 @@
                    &#xA;6개의 정사각형 이미지를 사용하여 전체 하늘 이미지를 생성합니다.
                    &#xA;(카메라 위치의 영향을 받지 않으며, 항상 최후면에 표시됩니다.)
                    &#xA;
-                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(opacity 0) 상태로 표시됩니다.
+                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(투명도 0) 상태로 표시됩니다.
                    &#xA; (ex. 그림0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#sky">
       </explanation>
@@ -1419,7 +1423,7 @@
                    &#xA;
                    &#xA;주:  카메라옵션 ex. 카메라부착(카메라 조작의 영향을 무시)
                    &#xA;다른 &quot;카메라옵션&quot;은 커맨드 목록의 &quot;카메라옵션&quot;에서 확인 가능.
-                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(opacity 0) 상태로 표시됩니다.
+                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(투명도 0) 상태로 표시됩니다.
                    &#xA; (ex. 그림0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#light">
       </explanation>
@@ -1470,7 +1474,7 @@
                    &#xA;
                    &#xA;주:  카메라옵션 ex. 카메라부착(카메라 조작의 영향을 무시)
                    &#xA;다른 &quot;카메라옵션&quot;은 커맨드 목록의 &quot;카메라옵션&quot;에서 확인 가능.
-                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(opacity 0) 상태로 표시됩니다.
+                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(투명도 0) 상태로 표시됩니다.
                    &#xA; (ex. 그림0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/image#lightMode">
       </explanation>
@@ -2081,7 +2085,7 @@
                    &#xA;[x좌표] [y좌표] [레이어(r)] (투명무시) (카메라옵션) (Light.vn커맨드)"
                    details="ex. 버튼 button1 untouched-image.png touched-image.png clicked-image.png 300 400 200 카메라부착 점프 tut.txt
                    &#xA;
-                   &#xA;주:  커맨드에 '0'을 붙이면 투명한(opacity 0) 상태로 표시됩니다.
+                   &#xA;주:  커맨드에 '0'을 붙이면 투명한(투명도 0) 상태로 표시됩니다.
                    &#xA; (ex. 그림0 alice2 anim_alice 150 30 50)
                    &#xA;주: 이미지 사이즈는 동일해야 합니다.
                    &#xA;
@@ -2762,7 +2766,7 @@
                    &#xA;넘침무시) 를 붙이면 대사가 텍스트창을 넘어가도 에러가 발생하지 않는다.
                    &#xA;
                    &#xA;
-                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(opacity 0) 상태로 표시됩니다.
+                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(투명도 0) 상태로 표시됩니다.
                    &#xA; (ex. 그림0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/text#textbox">
       </explanation>
@@ -2835,7 +2839,7 @@
                    details="ex. 텍스트 msg_str 370 223 106  r-mplus-1c-m.ttf 24 &quot;내용! &quot;
                    &#xA;
                    &#xA;주: &quot;텍스트&quot;의 경우 텍스트창의 글자들과 달리 차례대로 표시되는 것이 아니라, 단번에 표시된다.
-                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(opacity 0) 상태로 표시됩니다.
+                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(투명도 0) 상태로 표시됩니다.
                    &#xA; (ex. 그림0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/text#text">
       </explanation>
@@ -5218,6 +5222,38 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#parentChild">
       </explanation>
     </Command>
+    <Command cmd="asRenderParent">
+      <explanation lang="jap" name="描画親指定"
+                   syntax="描画親指定 [対象名]"
+                   details="ex. 描画親指定 鶏
+                   &#xA;
+                   &#xA;対象を「描画親」として指定。
+                   &#xA;親子コマンドにて子として付けられる個体たちと共に、
+                   &#xA;単一画像かのように描画される。
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#asRenderParent">
+      </explanation>
+      <explanation lang="eng" name="asRenderParent"
+                   syntax="asRenderParent [target]"
+                   details="ex. asRenderParent parent
+                   &#xA;
+                   &#xA;Sets target as the [renderParent].
+                   &#xA;Will be rendered as if one texture along with all children added through the
+                   &#xA;[parentChild] command.
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#asRenderParent">
+      </explanation>
+      <explanation lang="kor" name="렌더부모지정"
+                   syntax="렌더부모지정 [부모]"
+                   details="ex. 렌더부모지정 닭
+                   &#xA;
+                   &#xA;부모 개체를 [렌더부모]로서 지정.
+                   &#xA;[부모자식]으로 추가된 자신 개체들과 함께 마치 단일 텍스처인 것처럼 함께 렌더링됨.
+                   &#xA;
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#asRenderParent">
+      </explanation>
+    </Command>
     <Command cmd="autoOnCamera">
       <explanation lang="jap" name="自動カメラ付着"
                    syntax="自動カメラ付着 [true/false]"
@@ -6291,6 +6327,7 @@
                    &#xA;注: 演出コマンドの前に「.」を付けると、コマンド実行が終了してから、次の行を読み込みます。
                    &#xA; (ex. .イン scg.* 1500)
                    &#xA;注: 所要時間をups(units per second)にすると、秒ごとの単位変化になる。
+                   &#xA;注: 「画面領域」を対象にする場合、その画面領域の個体全てを消去後、画面領域の透明度を255に戻す。
                    &#xA;注: 画面領域範囲：全画面領域、同階層画面領域。何もつけない場合、現画面領域の個体のみ拾う。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#fadeout">
@@ -6302,7 +6339,10 @@
                    &#xA;ex. fadein btn.* 1500
                    &#xA;
                    &#xA;Note: fadeout results in the object itself being destroyed.
-                   &#xA;Note: fadein/out can be applied to all targets. (cg, textbox, ...)"
+                   &#xA;Note: fadein/out can be applied to all targets. (cg, textbox, ...)
+                   &#xA;Note: if target is set to [screenspace], all objects of that screenspace are faded out, then the screenspace's alpha is set to 255.
+                   &#xA;
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#fadeout">
       </explanation>
       <explanation lang="zhc" name="淡出"
@@ -6335,6 +6375,7 @@
                    &#xA;주: 연출 커맨드 앞에 &quot;.&quot;을 붙이면 명령 실행이 종료된 후 다음 행을 읽습니다.
                    &#xA; (ex. .페이드인 scg.* 1500)
                    &#xA;주: 소요 시간을 ups(units per second)로 설정하면 초당 이동 속도로 계산됩니다.
+                   &#xA;주: 대상을 [화면영역]으로 지정할 경우, 해당 화면영역의 오브젝트 모두를 삭제 후, 화면영역의 투명도를 255으로 복구.
                    &#xA;주: 화면 영역은 '화면영역전체' 또는 '동일계층화면영역'을 지정할 수 있으며, 지정하지 않으면 현재 화면 영역의 오브젝트에만 적용됩니다."
                    reference="https://wikiwiki.jp/lightvn/commands/transition#fadeout">
       </explanation>
@@ -8619,7 +8660,7 @@
                    &#xA;
                    &#xA;&quot;표시 이미지&quot; 옵션을 사용하는 경우에는, 이미지 리소스가 마스크 위치에 표시됩니다.
                    &#xA;
-                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(opacity 0) 상태로 표시됩니다.
+                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(투명도 0) 상태로 표시됩니다.
                    &#xA; (ex. 그림0 alice2 anim_alice 150 30 50)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#mask">
       </explanation>
@@ -8781,6 +8822,102 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#resourceTransitionDuration">
       </explanation>
     </Command>
+    <Command cmd="tweenMethodDefault">
+      <explanation lang="jap" name="演出加速度"
+                   syntax="演出加速度 [加速度: a0~a18]"
+                   details="演出コマンドに加速度が指定されていない場合のデフォルトを指定。
+                   &#xA;
+                   &#xA;ex. 演出加速度 a6
+                   &#xA;
+                   &#xA;注：settings.xmlのtweenMethodDefaultをデフォルト値とする。
+                   &#xA;  "
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#tweenMethodDefault">
+      </explanation>
+      <explanation lang="eng" name="tweenMethodDefault"
+                   syntax="tweenMethodDefault [acceleration: a0~a18]"
+                   details="sets the default acceleration for tween commands that don't have an acceleration set.
+                   &#xA;
+                   &#xA;ex. tweenMethodDefault a6
+                   &#xA;
+                   &#xA;Note: default value is set through settings.xml: tweenMethodDefault
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#tweenMethodDefault">
+      </explanation>
+      <explanation lang="kor" name="연출가속도"
+                   syntax="연출가속도 [가속도: a0~a18]"
+                   details="연출 커맨드의 가속도가 지정되지 않을 시 적용할 기본 가속도를 지정.
+                   &#xA;
+                   &#xA;ex. 연출가속도 300
+                   &#xA;
+                   &#xA;주: 디폴트 값을 settings.xml: tweenMethodDefault 서 조정 가능.
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#tweenMethodDefault">
+      </explanation>
+    </Command>
+    <Command cmd="tweenMethodDefaultColour">
+      <explanation lang="jap" name="演出加速度色"
+                   syntax="演出加速度色 [加速度: a0~a18]"
+                   details="色調・音量演出コマンドに加速度が指定されていない場合のデフォルトを指定。
+                   &#xA;
+                   &#xA;ex. 演出加速度色 a6
+                   &#xA;
+                   &#xA;注：settings.xmlのtweenMethodDefaultColourをデフォルト値とする。
+                   &#xA;  "
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#tweenMethodDefaultColour">
+      </explanation>
+      <explanation lang="eng" name="tweenMethodDefaultColour"
+                   syntax="tweenMethodDefaultColour [acceleration: a0~a18]"
+                   details="sets the default acceleration for tween commands on colour + volume that don't have an acceleration set.
+                   &#xA;
+                   &#xA;ex. tweenMethodDefaultColour a6
+                   &#xA;
+                   &#xA;Note: default value is set through settings.xml: tweenMethodDefaultColour
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#tweenMethodDefaultColour">
+      </explanation>
+      <explanation lang="kor" name="연출가속도색"
+                   syntax="연출가속도색 [가속도: a0~a18]"
+                   details="색/음량 연출 커맨드의 가속도가 지정되지 않을 시 적용할 기본 가속도를 지정.
+                   &#xA;
+                   &#xA;ex. 연출가속도색 300
+                   &#xA;
+                   &#xA;주: 디폴트 값을 settings.xml: tweenMethodDefaultColour 서 조정 가능.
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#tweenMethodDefaultColour">
+      </explanation>
+    </Command>
+    <Command cmd="tweenMethodDefaultCamera">
+      <explanation lang="jap" name="演出加速度カメラ"
+                   syntax="演出加速度カメラ [加速度: a0~a18]"
+                   details="カメラを対象とした演出コマンドに加速度が指定されていない場合のデフォルトを指定。
+                   &#xA;
+                   &#xA;ex. 演出加速度カメラ a6
+                   &#xA;
+                   &#xA;注：settings.xmlのtweenMethodDefaultCameraをデフォルト値とする。
+                   &#xA;  "
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#tweenMethodDefaultCamera">
+      </explanation>
+      <explanation lang="eng" name="tweenMethodDefaultCamera"
+                   syntax="tweenMethodDefaultCamera [acceleration: a0~a18]"
+                   details="sets the default acceleration for tween commands targetting the camera that don't have an acceleration set.
+                   &#xA;
+                   &#xA;ex. tweenMethodDefaultCamera a6
+                   &#xA;
+                   &#xA;Note: default value is set through settings.xml: tweenMethodDefaultCamera
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#tweenMethodDefaultCamera">
+      </explanation>
+      <explanation lang="kor" name="연출가속도카메라"
+                   syntax="연출가속도카메라 [가속도: a0~a18]"
+                   details="카메라를 대상으로 한 연출 커맨드의 가속도가 지정되지 않을 시 적용할 기본 가속도를 지정.
+                   &#xA;
+                   &#xA;ex. 연출가속도카메라 300
+                   &#xA;
+                   &#xA;주: 디폴트 값을 settings.xml: tweenMethodDefaultCamera 서 조정 가능.
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#tweenMethodDefaultCamera">
+      </explanation>
+    </Command>
     <Command cmd="imageQuality">
       <explanation lang="jap" name="画像品質"
                    syntax="画像品質 [対象名] [0/1]"
@@ -8929,7 +9066,7 @@
                    &#xA;
                    &#xA;입자를 생성시키는 입자생성기를 생성합니다.
                    &#xA;
-                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(opacity 0) 상태로 표시됩니다.
+                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(투명도 0) 상태로 표시됩니다.
                    &#xA; (ex. 그림0 alice2 anim_alice 150 30 50)
                    &#xA;
                    &#xA;주: 투명도(opacity)가 0이면 입자가 추가 생성되지 않습니다.
@@ -11688,6 +11825,8 @@
                    details="ex. 画面領域開始 my_backlog
                    &#xA;
                    &#xA;画面領域スタックの上に、新たな画面領域を開始する。
+                   &#xA;
+                   &#xA;注:コマンドに'0'を付けると透明度0の状態で表示される。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#screenSpaceStart">
       </explanation>
@@ -11696,6 +11835,8 @@
                    details="ex. screenSpaceStart my_backlog
                    &#xA;
                    &#xA;create a new screenspace at the top of the stack
+                   &#xA;
+                   &#xA;Suffix:'0'will display as alpha: 0。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#screenSpaceStart">
       </explanation>
@@ -11712,6 +11853,8 @@
                    details="ex. 화면영역시작 my_backlog
                    &#xA;
                    &#xA;화면 영역 스택 위에 새로운 화면 영역을 개시.
+                   &#xA;
+                   &#xA;주: 커맨드에 '0'이 붙으면 투명한(투명도 0) 상태로 표시됩니다.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#screenSpaceStart">
       </explanation>
@@ -15178,6 +15321,9 @@
                    &#xA;キートリガー初期化
                    &#xA;
                    &#xA;素材転換時間
+                   &#xA;演出加速度
+                   &#xA;演出加速度色
+                   &#xA;演出加速度カメラ
                    &#xA;
                    &#xA;個体深度計算
                    &#xA;カメラ基準個体描画
@@ -15208,6 +15354,8 @@
                    &#xA;
                    &#xA;ロールバック時点自動登録
                    &#xA;ロールバック時点最大
+                   &#xA;
+                   &#xA;注：終了後、現状の画面領域と画面の透明度を255に戻す。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#clear">
       </explanation>
@@ -15223,6 +15371,9 @@
                    &#xA;key triggers
                    &#xA;
                    &#xA;resourceTransitionDuration
+                   &#xA;tweenMethodDefault
+                   &#xA;tweenMethodDefaultColour
+                   &#xA;tweenMethodDefaultCamera
                    &#xA;
                    &#xA;objectDepthTest
                    &#xA;objectSortByCameraZ
@@ -15253,6 +15404,9 @@
                    &#xA;
                    &#xA;rollback_point_AutoAdd
                    &#xA;rollback_points_max
+                   &#xA;
+                   &#xA;
+                   &#xA;Note: after completion will revert the current screenspace and screen alpha to 255.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#clear">
       </explanation>
@@ -15306,6 +15460,9 @@
                    &#xA;키 트리거
                    &#xA;
                    &#xA;리소스전환시간
+                   &#xA;연출가속도
+                   &#xA;연출가속도색
+                   &#xA;연출가속도카메라
                    &#xA;
                    &#xA;오브젝트심도계산
                    &#xA;카메라기준오브젝트렌더링
@@ -15336,6 +15493,9 @@
                    &#xA;
                    &#xA;롤백시점자동등록
                    &#xA;롤백시점최대
+                   &#xA;
+                   &#xA;
+                   &#xA;주: 완료후, 현재 화면영역과 화면의 투명도를 255으로 원상복귀.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#clear">
       </explanation>
@@ -18064,6 +18224,178 @@
                    &#xA;
                    &#xA;return: hashmap var"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvCreateVarHashMapFromJson">
+      </explanation>
+    </Command>
+    <Command name="lvCreateVarHashMapFromCsv">
+      <explanation lang="jap" name="lvCreateVarHashMapFromCsv"
+                   syntax="lvCreateVarHashMapFromCsv(string: csvファイル名の絶対パス)"
+                   details="ex. lvCreateVarHashMapFromCsv(&quot;/Scripts/variables.csv&quot;)
+                   &#xA;
+                   &#xA;HashMap変数をcsvから作成する。
+                   &#xA;
+                   &#xA;csvが以下の場合：
+                   &#xA;name    value
+                   &#xA;box     300
+                   &#xA;ball      100
+                   &#xA;
+                   &#xA;作成変数：
+                   &#xA;hashmap[&quot;box&quot;][&quot;name&quot;] -> &quot;box&quot;
+                   &#xA;hashmap[&quot;box&quot;][&quot;value&quot;] -> &quot;box&quot;
+                   &#xA;
+                   &#xA;return: hashmap var"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvCreateVarHashMapFromCsv">
+      </explanation>
+      <explanation lang="eng" name="lvCreateVarHashMapFromCsv"
+                   syntax="lvCreateVarHashMapFromCsv(string: csv filepath)"
+                   details="ex. lvCreateVarHashMapFromCsv(&quot;/Scripts/variables.csv&quot;)
+                   &#xA;
+                   &#xA;create HashMap from the csv file
+                   &#xA;
+                   &#xA;csv example：
+                   &#xA;name    value
+                   &#xA;box     300
+                   &#xA;ball      100
+                   &#xA;
+                   &#xA;variable result：
+                   &#xA;hashmap[&quot;box&quot;][&quot;name&quot;] -> &quot;box&quot;
+                   &#xA;hashmap[&quot;box&quot;][&quot;value&quot;] -> &quot;box&quot;
+                   &#xA;
+                   &#xA;
+                   &#xA;return: hashmap var"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvCreateVarHashMapFromCsv">
+      </explanation>
+      <explanation lang="kor" name="lvCreateVarHashMapFromCsv"
+                   syntax="lvCreateVarHashMapFromCsv(string: csv 파일 절대경로)"
+                   details="ex. lvCreateVarHashMapFromCsv(&quot;/Scripts/variables.csv&quot;)
+                   &#xA;
+                   &#xA;HashMap변수를 csv을 읽어들여 생성.
+                   &#xA;
+                   &#xA;csv 예：
+                   &#xA;name    value
+                   &#xA;box     300
+                   &#xA;ball      100
+                   &#xA;
+                   &#xA;변수 결과：
+                   &#xA;hashmap[&quot;box&quot;][&quot;name&quot;] -> &quot;box&quot;
+                   &#xA;hashmap[&quot;box&quot;][&quot;value&quot;] -> &quot;box&quot;
+                   &#xA;
+                   &#xA;return: hashmap var"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvCreateVarHashMapFromCsv">
+      </explanation>
+    </Command>
+    <Command name="lvCreateVarListFromCsv">
+      <explanation lang="jap" name="lvCreateVarListFromCsv"
+                   syntax="lvCreateVarListFromCsv(string: csvファイル名の絶対パス)"
+                   details="ex. lvCreateVarListFromCsv(&quot;/Scripts/variables.csv&quot;)
+                   &#xA;
+                   &#xA;List変数をcsvから作成する。
+                   &#xA;
+                   &#xA;csvが以下の場合：
+                   &#xA;name    value
+                   &#xA;box     300
+                   &#xA;ball      100
+                   &#xA;
+                   &#xA;作成変数：
+                   &#xA;list[0][&quot;name&quot;] -> &quot;box&quot;
+                   &#xA;list[1][&quot;value&quot;] -> &quot;100&quot;
+                   &#xA;
+                   &#xA;return: List var"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvCreateVarListFromCsv">
+      </explanation>
+      <explanation lang="eng" name="lvCreateVarListFromCsv"
+                   syntax="lvCreateVarListFromCsv(string: csv filepath)"
+                   details="ex. lvCreateVarListFromCsv(&quot;/Scripts/variables.csv&quot;)
+                   &#xA;
+                   &#xA;create List from the csv file
+                   &#xA;
+                   &#xA;csv example：
+                   &#xA;name    value
+                   &#xA;box     300
+                   &#xA;ball      100
+                   &#xA;
+                   &#xA;variable result：
+                   &#xA;list[0][&quot;name&quot;] -> &quot;box&quot;
+                   &#xA;list[1][&quot;value&quot;] -> &quot;100&quot;
+                   &#xA;
+                   &#xA;return: List var"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvCreateVarListFromCsv">
+      </explanation>
+      <explanation lang="kor" name="lvCreateVarListFromCsv"
+                   syntax="lvCreateVarListFromCsv(string: csv 파일 절대경로)"
+                   details="ex. lvCreateVarListFromCsv(&quot;/Scripts/variables.csv&quot;)
+                   &#xA;
+                   &#xA;List변수를 csv을 읽어들여 생성.
+                   &#xA;
+                   &#xA;csv 예：
+                   &#xA;name    value
+                   &#xA;box     300
+                   &#xA;ball      100
+                   &#xA;
+                   &#xA;변수 결과：
+                   &#xA;list[0][&quot;name&quot;] -> &quot;box&quot;
+                   &#xA;list[1][&quot;value&quot;] -> &quot;100&quot;
+                   &#xA;
+                   &#xA;return: List var"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvCreateVarListFromCsv">
+      </explanation>
+    </Command>
+    <Command name="lvCreateVarArrayFromCsv">
+      <explanation lang="jap" name="lvCreateVarArrayFromCsv"
+                   syntax="lvCreateVarArrayFromCsv(string: csvファイル名の絶対パス)"
+                   details="ex. lvCreateVarArrayFromCsv(&quot;/Scripts/variables.csv&quot;)
+                   &#xA;
+                   &#xA;List変数をcsvから作成する。
+                   &#xA;
+                   &#xA;csvが以下の場合：
+                   &#xA;name    value
+                   &#xA;box     300
+                   &#xA;ball      100
+                   &#xA;
+                   &#xA;作成変数：
+                   &#xA;list[0][0] -> &quot;name&quot;
+                   &#xA;list[1][0] -> &quot;box&quot;
+                   &#xA;list[2][1] -> &quot;100&quot;
+                   &#xA;
+                   &#xA;return: List var"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvCreateVarArrayFromCsv">
+      </explanation>
+      <explanation lang="eng" name="lvCreateVarArrayFromCsv"
+                   syntax="lvCreateVarArrayFromCsv(string: csv filepath)"
+                   details="ex. lvCreateVarArrayFromCsv(&quot;/Scripts/variables.csv&quot;)
+                   &#xA;
+                   &#xA;create List from the csv file
+                   &#xA;
+                   &#xA;csv example：
+                   &#xA;name    value
+                   &#xA;box     300
+                   &#xA;ball      100
+                   &#xA;
+                   &#xA;variable result：
+                   &#xA;list[0][0] -> &quot;name&quot;
+                   &#xA;list[1][0] -> &quot;box&quot;
+                   &#xA;list[2][1] -> &quot;100&quot;
+                   &#xA;
+                   &#xA;return: List var"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvCreateVarArrayFromCsv">
+      </explanation>
+      <explanation lang="kor" name="lvCreateVarArrayFromCsv"
+                   syntax="lvCreateVarArrayFromCsv(string: csv 파일 절대경로)"
+                   details="ex. lvCreateVarArrayFromCsv(&quot;/Scripts/variables.csv&quot;)
+                   &#xA;
+                   &#xA;List변수를 csv을 읽어들여 생성.
+                   &#xA;
+                   &#xA;csv 예：
+                   &#xA;name    value
+                   &#xA;box     300
+                   &#xA;ball      100
+                   &#xA;
+                   &#xA;변수 결과：
+                   &#xA;list[0][0] -> &quot;name&quot;
+                   &#xA;list[1][0] -> &quot;box&quot;
+                   &#xA;list[2][1] -> &quot;100&quot;
+                   &#xA;
+                   &#xA;return: List var"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvCreateVarArrayFromCsv">
       </explanation>
     </Command>
     <Command name="lvHashMapHasKey">

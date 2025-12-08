@@ -2665,7 +2665,9 @@
                    &#xA;
                    &#xA;現在対応されているコマンド）
                    &#xA;ruby 文字列：ルビを単語にふる。
-                   &#xA;rubyAt 数字：ルビの表示位置を指定する。
+                   &#xA;rubyAt 数字1 (数字2)：ルビの表示位置を指定する。
+                   &#xA;数字1 -> 離れた距離
+                   &#xA;数字2 -> 開始位置 (例：-1)
                    &#xA;rubyFont 文字列：ルビのフォントを指定する。
                    &#xA;"
                    >
@@ -3112,6 +3114,47 @@
                    &#xA;ex. 대사파일출력 table.csv | 대기
                    &#xA;와 같은 형태로 사용하는 것을 권장합니다."
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableLineCont">
+      </explanation>
+    </Command>
+    <Command cmd="textDrawMethod">
+      <explanation lang="jap" name="文字描画形式"
+                   syntax="文字描画形式 (対象名) [形式]"
+                   details="ex. 文字描画形式 1
+                   &#xA;
+                   &#xA;形式)
+                   &#xA;0 (デフォルト): 最適化
+                   &#xA;1: 精密 (render countが上昇)
+                   &#xA;
+                   &#xA;settings.xml textDrawMethodDefaultによってデフォルト値調整可能
+                   &#xA;
+                   "
+                   reference="https://wikiwiki.jp/lightvn/commands/text#textDrawMethod">
+      </explanation>
+      <explanation lang="eng" name="textDrawMethod"
+                   syntax="textDrawMethod (target) [method]"
+                   details="ex. textDrawMethod 1
+                   &#xA;
+                   &#xA;method)
+                   &#xA;0 (default): optimised
+                   &#xA;1: highest accuracy (cost: render count will increase)
+                   &#xA;
+                   &#xA;default adjustable in settings.xml textDrawMethodDefault
+                   &#xA;
+                   "
+                   reference="https://wikiwiki.jp/lightvn/commands/text#textDrawMethod">
+      </explanation>
+      <explanation lang="kor" name="텍스트렌더형식"
+                   syntax="텍스트렌더형식 (대상명) [형식]"
+                   details="ex. 텍스트렌더형식 1
+                   &#xA;
+                   &#xA;형식)
+                   &#xA;0 (디폴트): 최적화
+                   &#xA;1: 정밀 (render count가 소요)
+                   &#xA;
+                   &#xA;settings.xml textDrawMethodDefault 을 통해 디폴트값 조절가능
+                   &#xA;
+                   "
+                   reference="https://wikiwiki.jp/lightvn/commands/text#textDrawMethod">
       </explanation>
     </Command>
     <Command cmd="textExplicitClear">
@@ -6037,26 +6080,38 @@
     </Command>
     <Command cmd="shaderEffect">
       <explanation lang="jap" name="特殊効果"
-                   syntax="特殊効果 [対象名 (複数可)] [ファイル名/none] (所要時間) (画面領域範囲)"
+                   syntax="特殊効果 [対象名 (複数可)] [ファイル名/none] (所要時間) (カスタム入力...) (画面領域範囲)"
                    details="ex. 特殊効果 全部 frag_bw_time.txt 300
                    &#xA;
-                   &#xA;注: 画面領域範囲：全画面領域、同階層画面領域。何もつけない場合、現画面領域の個体のみ拾う。"
+                   &#xA;「カスタム入力...」は、それぞれ特殊効果ファイルのvar0, var1, var2, ....に自動代入される。
+                   &#xA;
+                   &#xA;ex. 特殊効果 全部 frag_bw_time.txt 300 12 30 45
+                   &#xA;var0: 12
+                   &#xA;var1: 30
+                   &#xA;var2: 45
+                   &#xA;
+                   &#xA;注: 画面領域範囲：全画面領域、同階層画面領域。何もつけない場合、現画面領域の個体のみ拾う。
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#shaderEffect">
       </explanation>
       <explanation lang="eng" name="shaderEffect"
-                   syntax="shaderEffect [target name(s)] [filename/none] (time) (screenspace range)"
-                   details="ex. shaderEffect all frag_bw_time.txt 300"
+                   syntax="shaderEffect [target name(s)] [filename/none] (time) (custom input...) (screenspace range)"
+                   details="ex. shaderEffect all frag_bw_time.txt 300
+                   &#xA;
+                   &#xA;[custom input...] is applied to var0, var1, var2, ... in the user defined shader file.
+                   &#xA;
+                   &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#shaderEffect">
       </explanation>
       <explanation lang="zhc" name="着色器效果"
-                   syntax="着色器效果 [目标名称 (可多个)] [文件名/none] (所需时间) (屏幕区域范围)"
+                   syntax="着色器效果 [目标名称 (可多个)] [文件名/none] (所需时间) (...) (屏幕区域范围)"
                    details="例如：着色器效果 全部 frag_bw_time.txt 300
                    &#xA;
                    &#xA;注：区域范围：全屏、同层级画面。如果未指定，则仅影响当前画面区域内的对象。"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#shaderEffect">
       </explanation>
       <explanation lang="kor" name="특수효과"
-                   syntax="특수효과 [대상 이름(여러 개 가능)] [파일 이름 / none] (소요 시간) (화면 영역)"
+                   syntax="특수효과 [대상 이름(여러 개 가능)] [파일 이름 / none] (소요 시간) (커스텀 입력) (화면 영역)"
                    details="ex. 특수효과 전부 frag_bw_time.txt 300
                    &#xA;
                    &#xA;주: 화면 영역은 '화면영역전체' 또는 '동일계층화면영역'을 지정할 수 있으며, 지정하지 않으면 현재 화면 영역의 오브젝트에만 적용됩니다."

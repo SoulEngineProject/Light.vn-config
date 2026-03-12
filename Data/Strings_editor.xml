@@ -485,6 +485,16 @@
     <val lang="zhc">字体大小</val>
     <val lang="kor">폰트 크기</val>
   </EString>
+  <EString nkey="menuNovelEditorScriptBackground">
+    <val lang="jap">スクリプト背景</val>
+    <val lang="eng">Script BG</val>
+    <val lang="kor">스크립트 배경</val>
+  </EString>
+  <EString nkey="menuNovelEditorScriptBackgroundOpacity">
+    <val lang="jap">- 透明度</val>
+    <val lang="eng">- Opacity</val>
+    <val lang="kor">- 불투명도</val>
+  </EString>
 
   <!--view:distribution (V2 confirmed)-->
   <EString nkey="menuNovelDistr">
@@ -952,6 +962,11 @@
     <val lang="zhc">来源</val>
     <val lang="kor">생성자</val>
   </EString>
+  <EString nkey="lvn_objs_tree_select_hint">
+    <val lang="jap">個体の行をクリックするとハイライト表示されます。</val>
+    <val lang="eng">Click on an object row to see it highlight</val>
+    <val lang="kor">오브젝트 행을 클릭하면 하이라이트가 표시됩니다</val>
+  </EString>
 
   <!--[tab: variables]-->
   <EString nkey="tab_main_vars">
@@ -1149,6 +1164,16 @@
     <val lang="eng">Free Camera</val>
     <val lang="zhc">自由视图</val>
     <val lang="kor">자유 카메라</val>
+  </EString>
+  <EString nkey="btn_preview_detach">
+    <val lang="jap">分離</val>
+    <val lang="eng">Detach</val>
+    <val lang="kor">분리</val>
+  </EString>
+  <EString nkey="btn_preview_attach">
+    <val lang="jap">戻す</val>
+    <val lang="eng">Attach</val>
+    <val lang="kor">복귀</val>
   </EString>
   <EString nkey="lvn_play_stop">
     <val lang="jap">停止</val>

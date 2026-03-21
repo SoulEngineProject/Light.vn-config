@@ -157,7 +157,7 @@
   <EString nkey="InsCmd_screen_fadeout">
     <val lang="jap">画面消去</val>
     <val lang="eng">Screen Fadeout</val>
-    <val lang="kor">화면 페이드아수</val>
+    <val lang="kor">화면 페이드아웃</val>
   </EString>
   <!--command divider-->
   <EString nkey="InsCmdChoice">

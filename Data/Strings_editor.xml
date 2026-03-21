@@ -149,6 +149,16 @@
     <val lang="zhc">变量值</val>
     <val lang="kor">변수값</val>
   </EString>
+  <EString nkey="InsCmd_screen_fadein">
+    <val lang="jap">画面登場</val>
+    <val lang="eng">Screen Fadein</val>
+    <val lang="kor">화면 페이드인</val>
+  </EString>
+  <EString nkey="InsCmd_screen_fadeout">
+    <val lang="jap">画面消去</val>
+    <val lang="eng">Screen Fadeout</val>
+    <val lang="kor">화면 페이드아수</val>
+  </EString>
   <!--command divider-->
   <EString nkey="InsCmdChoice">
     <val lang="jap">選択肢</val>

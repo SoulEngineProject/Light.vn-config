@@ -778,6 +778,11 @@
     <val lang="zhc">查看碰撞箱</val>
     <val lang="kor">충돌 범위 표시</val>
   </EString>
+  <EString nkey="ViewTileGridCheck">
+    <val lang="jap">タイルグリッド表示</val>
+    <val lang="eng">View Tile Grid</val>
+    <val lang="kor">타일 그리드 표시</val>
+  </EString>
   <EString nkey="ViewWaitIconCheck">
     <val lang="jap">編集中に文字窓待機絵表示</val>
     <val lang="eng">View Wait Icons</val>

@@ -14350,7 +14350,7 @@
                    &#xA;[対象名]を親とする、&quot;[対象名]_loop&quot;の個体を作成する。
                    &#xA;
                    &#xA;内部的に個体スクリプトを使用し、スクリプトを[対象名]にバインドする。
-                   &#xA;スクリプト内で_selfやobjvarが使用可能。
+                   &#xA;スクリプト内で「個体変数」が使用可能。
                    &#xA;
                    &#xA;定期的に、個体スクリプト [対象名] [スクリプト] [栞先頭]+[状態] を実行する。
                    &#xA;該当スクリプトが既に実行中の場合、再実行されない。
@@ -14371,7 +14371,7 @@
                    &#xA;
                    &#xA;Creates a state loop for [target].
                    &#xA;Internally uses objscript to bind the script to [target].
-                   &#xA;The script has access to _self and objvar.
+                   &#xA;The script has access to objvar.
                    &#xA;
                    &#xA;Parameters:
                    &#xA;- target: name of an existing object to attach the state loop to.
@@ -14418,7 +14418,7 @@
                    &#xA;[대상 이름]을 부모로 삼는 &quot;[대상 이름]_loop&quot; 객체를 생성함.
                    &#xA;
                    &#xA;내부적으로 객체스크립트를 사용하여 스크립트를 [대상 이름]에 바인딩함.
-                   &#xA;스크립트 내에서 _self 및 objvar 사용 가능.
+                   &#xA;스크립트 내에서 [객체변수] 사용 가능.
                    &#xA;
                    &#xA;정기적으로 객체스크립트 [대상 이름] [스크립트] [책갈피 앞글자]+[상태]를 실행함.
                    &#xA;해당 스크립트가 이미 실행중인 경우, 다시 실행되지는 않음.

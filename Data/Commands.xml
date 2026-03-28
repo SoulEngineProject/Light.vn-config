@@ -19658,20 +19658,15 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvRemoveSuffix">
       </explanation>
       <explanation lang="eng" name="lvRemoveSuffix"
-                   syntax="lvRemoveSuffix(string, number: count)"
-                   details="ex. lvRemoveSuffix(&quot;fufu&quot;, 2)
+                   syntax="1. lvRemoveSuffix(string, number: count)
+                   &#xA;2. lvRemoveSuffix(string: A, string: B)"
+                   details="1. remove the last [count] chars from [string].
+                   &#xA;ex. lvRemoveSuffix(&quot;fufu&quot;, 2) -> &quot;fu&quot;
                    &#xA;
-                   &#xA;remove the last [count] chars from [string]
+                   &#xA;2. remove suffix B from A.
+                   &#xA;ex. lvRemoveSuffix(&quot;fufu&quot;, &quot;fu&quot;) -> &quot;fu&quot;
                    &#xA;
-                   &#xA;Overloads:
-                   &#xA;1. lvRemoveSuffix(string, number: count) - remove the last [count] characters.
-                   &#xA;2. lvRemoveSuffix(string A, string B) - remove suffix B from A.
-                   &#xA;
-                   &#xA;Parameters:
-                   &#xA;- string: the source string.
-                   &#xA;- count / B: number of trailing characters to remove, or the suffix string to remove.
-                   &#xA;
-                   &#xA;Returns: the string with the suffix removed."
+                   &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvRemoveSuffix">
       </explanation>
       <explanation lang="zhc" name="lvRemoveSuffix"
@@ -20757,18 +20752,15 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvNumberToString">
       </explanation>
       <explanation lang="eng" name="lvNumberToString"
-                   syntax="lvNumberToString(number: value)"
-                   details="ex. lvNumberToString(30.123123)
+                   syntax="1. lvNumberToString(number)
+                   &#xA;2. lvNumberToString(number, number: precision)"
+                   details="1. convert number to string.
+                   &#xA;ex. lvNumberToString(30.123123) -> &quot;30.123123&quot;
                    &#xA;
-                   &#xA;Overloads:
-                   &#xA;1. lvNumberToString(number) - convert number to string.
-                   &#xA;2. lvNumberToString(number, number: precision) - convert with decimal precision.
+                   &#xA;2. convert with decimal precision.
+                   &#xA;ex. lvNumberToString(30.123123, 3) -> &quot;30.123&quot;
                    &#xA;
-                   &#xA;Parameters:
-                   &#xA;- value: the number to convert.
-                   &#xA;- precision (optional): the number of decimal places.
-                   &#xA;
-                   &#xA;Returns: the number as a string."
+                   &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvNumberToString">
       </explanation>
       <explanation lang="zhc" name="lvNumberToString"

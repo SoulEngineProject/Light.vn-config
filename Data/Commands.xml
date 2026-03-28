@@ -7535,6 +7535,7 @@
                    &#xA;注: 所要時間をups(units per second)にすると、秒ごとの単位変化になる。
                    &#xA;注: 「画面領域」を対象にする場合、その画面領域の個体全てを消去後、画面領域の透明度を255に戻す。
                    &#xA;注: 画面領域範囲：全画面領域、同階層画面領域。何もつけない場合、現画面領域の個体のみ拾う。
+                   &#xA;注: 画面領域をアウトする場合、自動的に同期コマンドとして実行される。（「.」不要）
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#fadeout">
       </explanation>
@@ -7565,6 +7566,8 @@
                    &#xA;- If target is a screenspace, all objects in that screenspace
                    &#xA;  are faded out and destroyed, then the screenspace's alpha
                    &#xA;  is reset to 255.
+                   &#xA;- Fadeout on a screenspace is automatically treated as a sync
+                   &#xA;  command (no &quot;.&quot; prefix needed).
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#fadeout">
       </explanation>
@@ -7599,7 +7602,8 @@
                    &#xA; (ex. .페이드인 scg.* 1500)
                    &#xA;주: 소요 시간을 ups(units per second)로 설정하면 초당 이동 속도로 계산됩니다.
                    &#xA;주: 대상을 [화면영역]으로 지정할 경우, 해당 화면영역의 객체 모두를 삭제 후, 화면영역의 투명도를 255으로 복구.
-                   &#xA;주: 화면 영역은 '화면영역전체' 또는 '동일계층화면영역'을 지정할 수 있으며, 지정하지 않으면 현재 화면 영역의 객체에만 적용됩니다."
+                   &#xA;주: 화면 영역은 '화면영역전체' 또는 '동일계층화면영역'을 지정할 수 있으며, 지정하지 않으면 현재 화면 영역의 객체에만 적용됩니다.
+                   &#xA;주: 화면영역을 페이드아웃할 경우, 자동으로 동기 명령으로 실행됩니다. (&quot;.&quot; 불필요)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#fadeout">
       </explanation>
     </Command>

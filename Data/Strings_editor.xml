@@ -56,7 +56,7 @@
   <EString nkey="PreviewMsg_FreeCamera_editmode">
     <val lang="jap">操作法：コマンド目録の「自由カメラ操作法」参考</val>
     <val lang="eng">Controls: Refer to [Free Camera Usage] in the Commands tab</val>
-    <val lang="zhc">操作方法：参考命令选项卡中的“自由视图”</val>
+    <val lang="zhc">操作方法：参考命令选项卡中的“自由摄像机操作”</val>
     <val lang="kor">조작 방법: 커맨드 목록 중 '자유 카메라 조작법'을 참고</val>
   </EString>
   <EString nkey="PreviewMsg_FreeCamera_gameplaymode">
@@ -80,16 +80,19 @@
   <EString nkey="PreviewMsg_NoteExists">
     <val lang="jap">参考：{}が存在します。</val>
     <val lang="eng">Note. Exists: {}</val>
+    <val lang="zhc">参考：{}存在。</val>
     <val lang="kor">참고: {}가 존재합니다.</val>
   </EString>
   <EString nkey="PreviewMsg_NotExists">
     <val lang="jap">エラー：{}が存在しません。</val>
     <val lang="eng">Error. {} does not exist.</val>
+    <val lang="zhc">错误：{}不存在。</val>
     <val lang="kor">에러: {}가 없습니다.</val>
   </EString>
   <EString nkey="PreviewMsg_Read_Lines">
     <val lang="jap">処理行数: {}</val>
     <val lang="eng">read lines: {}</val>
+    <val lang="zhc">处理行数：{}</val>
     <val lang="kor">읽은 행수: {}</val>
   </EString>
 
@@ -152,11 +155,13 @@
   <EString nkey="InsCmd_screen_fadein">
     <val lang="jap">画面登場</val>
     <val lang="eng">Screen Fadein</val>
+    <val lang="zhc">画面淡入</val>
     <val lang="kor">화면 페이드인</val>
   </EString>
   <EString nkey="InsCmd_screen_fadeout">
     <val lang="jap">画面消去</val>
     <val lang="eng">Screen Fadeout</val>
+    <val lang="zhc">画面淡出</val>
     <val lang="kor">화면 페이드아웃</val>
   </EString>
   <!--command divider-->
@@ -498,11 +503,13 @@
   <EString nkey="menuNovelEditorScriptBackground">
     <val lang="jap">スクリプト背景</val>
     <val lang="eng">Script BG</val>
+    <val lang="zhc">脚本背景</val>
     <val lang="kor">스크립트 배경</val>
   </EString>
   <EString nkey="menuNovelEditorScriptBackgroundOpacity">
     <val lang="jap">- 透明度</val>
     <val lang="eng">- Opacity</val>
+    <val lang="zhc">- 不透明度</val>
     <val lang="kor">- 불투명도</val>
   </EString>
 
@@ -719,13 +726,13 @@
   <EString nkey="btn_cmd_use2dcamera">
     <val lang="jap">2Dカメラ使用</val>
     <val lang="eng">Use 2D Camera</val>
-    <val lang="zhc">使用2D视图</val>
+    <val lang="zhc">使用2D摄像机</val>
     <val lang="kor">2D 카메라 사용</val>
   </EString>
   <EString nkey="btn_cmd_use3dcamera">
     <val lang="jap">3Dカメラ使用</val>
     <val lang="eng">Use 3D Camera</val>
-    <val lang="zhc">使用3D视图</val>
+    <val lang="zhc">使用3D摄像机</val>
     <val lang="kor">3D 카메라 사용</val>
   </EString>
   <EString nkey="btn_cmd_choice">
@@ -781,6 +788,7 @@
   <EString nkey="ViewTileGridCheck">
     <val lang="jap">タイルグリッド表示</val>
     <val lang="eng">View Tile Grid</val>
+    <val lang="zhc">显示瓦片网格</val>
     <val lang="kor">타일 그리드 표시</val>
   </EString>
   <EString nkey="ViewWaitIconCheck">
@@ -980,6 +988,7 @@
   <EString nkey="lvn_objs_tree_select_hint">
     <val lang="jap">個体の行をクリックするとハイライト表示されます。</val>
     <val lang="eng">Click on an object row to see it highlight</val>
+    <val lang="zhc">点击个体行即可高亮显示。</val>
     <val lang="kor">오브젝트 행을 클릭하면 하이라이트가 표시됩니다</val>
   </EString>
 
@@ -1107,7 +1116,7 @@
   <EString nkey="tab_main_freecamera">
     <val lang="jap">自由カメラ</val>
     <val lang="eng">Free Camera</val>
-    <val lang="zhc">自由视图</val>
+    <val lang="zhc">自由摄像机</val>
     <val lang="kor">자유 카메라</val>
   </EString>
   <EString nkey="lvn_freecamera_speed_label">
@@ -1119,19 +1128,19 @@
   <EString nkey="lvn_freecamera_toplayer">
     <val lang="jap">プレイヤー視点へ</val>
     <val lang="eng">To Player Perspective</val>
-    <val lang="zhc">切换到玩家视图</val>
+    <val lang="zhc">切换至玩家视角</val>
     <val lang="kor">플레이어 시점으로</val>
   </EString>
   <EString nkey="lvn_freecamera_apply">
     <val lang="jap">自由カメラを適用</val>
     <val lang="eng">Free Camera Apply</val>
-    <val lang="zhc">应用到自由视图</val>
+    <val lang="zhc">应用到自由摄像机</val>
     <val lang="kor">자유 카메라 적용</val>
   </EString>
   <EString nkey="lvn_freecamera_reset">
     <val lang="jap">自由カメラ初期化</val>
     <val lang="eng">Free Camera Reset</val>
-    <val lang="zhc">重置自由视图</val>
+    <val lang="zhc">重置自由摄像机</val>
     <val lang="kor">자유 카메라 초기화</val>
   </EString>
   <EString nkey="lvn_freecamera_properties_attribute">
@@ -1165,29 +1174,31 @@
   <EString nkey="lv_camera_view_type">
     <val lang="jap">カメラ視点：</val>
     <val lang="eng">View Type:</val>
-    <val lang="zhc">视图类型：</val>
+    <val lang="zhc">摄像机视角：</val>
     <val lang="kor">카메라 시점</val>
   </EString>
   <EString nkey="lv_camera_player">
     <val lang="jap">プレイヤー基準</val>
     <val lang="eng">Player</val>
-    <val lang="zhc">玩家视图</val>
+    <val lang="zhc">玩家视角</val>
     <val lang="kor">플레이어 기준</val>
   </EString>
   <EString nkey="lv_camera_free">
     <val lang="jap">自由</val>
     <val lang="eng">Free Camera</val>
-    <val lang="zhc">自由视图</val>
+    <val lang="zhc">自由摄像机</val>
     <val lang="kor">자유 카메라</val>
   </EString>
   <EString nkey="btn_preview_detach">
     <val lang="jap">分離</val>
     <val lang="eng">Detach</val>
+    <val lang="zhc">分离</val>
     <val lang="kor">분리</val>
   </EString>
   <EString nkey="btn_preview_attach">
     <val lang="jap">戻す</val>
     <val lang="eng">Attach</val>
+    <val lang="zhc">归位</val>
     <val lang="kor">복귀</val>
   </EString>
   <EString nkey="lvn_play_stop">

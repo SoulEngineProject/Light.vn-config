@@ -760,6 +760,11 @@
     <val lang="zhc">编辑期间播放BGM</val>
     <val lang="kor">편집 중에 배경 음악 재생</val>
   </EString>
+  <EString nkey="ForceVolumeCheck">
+    <val lang="jap">プレビュー音量を固定</val>
+    <val lang="eng">Force Preview Volume</val>
+    <val lang="kor">미리보기 음량 고정</val>
+  </EString>
   <EString nkey="DisplayAxesCheck">
     <val lang="jap">座標系表示</val>
     <val lang="eng">View Axes</val>
@@ -831,16 +836,19 @@
   <EString nkey="tab_main_interop">
     <val lang="jap">作品介入</val>
     <val lang="eng">Interop</val>
+    <val lang="kor">작품 개입</val>
     <val lang="zhc">作品交互</val>
   </EString>
   <EString nkey="lvn_command_label">
     <val lang="jap">コマンド</val>
     <val lang="eng">Command</val>
+    <val lang="kor">커맨드</val>
     <val lang="zhc">命令</val>
   </EString>
   <EString nkey="lvn_command_send">
     <val lang="jap">実行</val>
     <val lang="eng">Execute</val>
+    <val lang="kor">실행</val>
     <val lang="zhc">执行</val>
   </EString>
 
@@ -1426,11 +1434,39 @@
     <val lang="zhc">在插入命令时无法切换到测试播放！</val>
     <val lang="kor">커맨드 삽입 중에는 테스트 플레이로 전환할 수 없는 것이다!</val>
   </EString>
+  <EString nkey="lvn_alarm_toggleplay_needs_realtime_preview">
+    <val lang="jap">リアルタイムプレビューを付けない状態だとテストプレイできないのだ。onにしてテストプレイに入る？</val>
+    <val lang="eng">We can't testplay without realtime preview on. Turn it on and enter testplay?</val>
+    <val lang="kor">실시간 미리보기를 키지 않으면 테스트 플레이를 할 수 없는 것이다. 키고 테스트 플레이에 들어갈까?</val>
+  </EString>
   <EString nkey="lvn_alarm_filepath_spaces">
     <val lang="jap">ファイルパスに空白は入れないのだ！</val>
     <val lang="eng">Filepath cannot contain spaces!</val>
     <val lang="zhc">文件路径不能为空！</val>
     <val lang="kor">파일 경로에 공백은 못 넣는 것이다!</val>
+  </EString>
+
+  <EString nkey="lvn_alarm_var_readonly">
+    <val lang="jap">変数「%1」は読み取り専用だから変更できないのだ！</val>
+    <val lang="eng">Variable '%1' is read-only and can't be edited.</val>
+    <val lang="kor">변수 '%1'은(는) 읽기 전용이라 수정할 수 없는 것이다!</val>
+  </EString>
+
+  <EString nkey="lvn_alarm_var_notfound">
+    <val lang="jap">「%1」という名前の変数は見つからないのだ！追加したいなら「%2」タブを使うのだ！</val>
+    <val lang="eng">No variable named '%1' exists. To add one, use the '%2' tab.</val>
+    <val lang="kor">'%1'(이)라는 이름의 변수는 찾을 수 없는 것이다! 추가하려면 '%2' 탭을 사용하는 것이다!</val>
+  </EString>
+
+  <EString nkey="inlay_bookmark_not_found">
+    <val lang="jap">%1が見つかりません</val>
+    <val lang="eng">%1 not found</val>
+    <val lang="kor">%1을(를) 찾을 수 없음</val>
+  </EString>
+  <EString nkey="inlay_asset_not_found">
+    <val lang="jap">素材が見つかりません</val>
+    <val lang="eng">asset not found</val>
+    <val lang="kor">리소스를 찾을 수 없음</val>
   </EString>
 
 </Strings>

@@ -1999,6 +1999,8 @@
                    &#xA; (ex. 移動2 alice +20 -10 300)
                    &#xA;注: 所要時間をups(units per second)にすると、秒ごとの単位変化になる。
                    &#xA; (ex. 移動x2 alice 100 30ups : 100pxの変化を「1秒間30pxの速度」で行う)
+                   &#xA;
+                   &#xA;注：[移動終了時コマンド]内の (式) は登録時ではなく移動終了時に計算される。
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/Map#tileMoveX">
       </explanation>
@@ -2022,6 +2024,8 @@
                    &#xA;  (ex. tileMoveX2 npc -1 5ups ...)
                    &#xA;- ups example: tileMoveX2 alice 100 30ups
                    &#xA;  moves 100px at 30px per second
+                   &#xA;
+                   &#xA;Note: the finish command's expressions evaluate on movement end, not at registration.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/Map#tileMoveX">
       </explanation>
@@ -2055,6 +2059,8 @@
                    &#xA; (ex. 이동2 alice +20 -10 300)
                    &#xA;주: 소요 시간을 ups(units per second)로 설정하면 초당 이동 속도로 계산됩니다.
                    &#xA; (ex. 이동x2 alice 100 30ups : 100px을 &quot;초당 30px&quot; 속도로 이동)
+                   &#xA;
+                   &#xA;주의: [이동 종료 시 커맨드] 내의 식은 등록 시가 아니라 이동 종료 시 계산된다.
                    &#xA; "
                    reference="https://wikiwiki.jp/lightvn/commands/Map#tileMoveX">
       </explanation>
@@ -2074,6 +2080,8 @@
                    &#xA; (ex. 移動2 alice +20 -10 300)
                    &#xA;注: 所要時間をups(units per second)にすると、秒ごとの単位変化になる。
                    &#xA; (ex. 移動x2 alice 100 30ups : 100pxの変化を「1秒間30pxの速度」で行う)
+                   &#xA;
+                   &#xA;注：[移動終了時コマンド]内の (式) は登録時ではなく移動終了時に計算される。
                    &#xA; "
                    reference="https://wikiwiki.jp/lightvn/commands/Map#tileMoveY">
       </explanation>
@@ -2097,6 +2105,8 @@
                    &#xA;  (ex. tileMoveY2 npc -1 5ups ...)
                    &#xA;- ups example: tileMoveY2 alice 100 30ups
                    &#xA;  moves 100px at 30px per second
+                   &#xA;
+                   &#xA;Note: the finish command's expressions evaluate on movement end, not at registration.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/Map#tileMoveY">
       </explanation>
@@ -2130,6 +2140,8 @@
                    &#xA; (ex. 이동2 alice +20 -10 300)
                    &#xA;주: 소요 시간을 ups(units per second)로 설정하면 초당 이동 속도로 계산됩니다.
                    &#xA; (ex. 이동y2 alice 100 30ups : 100px을 &quot;초당 30px&quot; 속도로 이동)
+                   &#xA;
+                   &#xA;주의: [이동 종료 시 커맨드] 내의 식은 등록 시가 아니라 이동 종료 시 계산된다.
                    &#xA; "
                    reference="https://wikiwiki.jp/lightvn/commands/Map#tileMoveX">
       </explanation>
@@ -2397,6 +2409,9 @@
                    &#xA;「vn_ + ボタンの名前＋_clickedSound」
                    &#xA;例：vn_button1_clickedSound
                    &#xA;
+                   &#xA;注：コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算されて固定される。クリック時の値にしたい場合は &quot;&quot; で囲む。
+                   &#xA; (ex. ボタン b 40 40 200 temp_globalvar hit = (hp) ) : 登録時のhp値に固定
+                   &#xA; (ex. ボタン b 40 40 200 &quot;temp_globalvar hit = (hp)&quot; ) : クリック時にhp値を計算
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#button">
       </explanation>
@@ -2428,6 +2443,9 @@
                    &#xA;  (ex. button0 btn1 ...)
                    &#xA;- Touch SFX names: &quot;vn_[button name]_touchedSound&quot;
                    &#xA;- Click SFX names: &quot;vn_[button name]_clickedSound&quot;
+                   &#xA;- For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it on click.
+                   &#xA;   (ex. button b 40 40 200 temp_globalvar hit = (hp) ) : hp evaluated at registration
+                   &#xA;   (ex. button b 40 40 200 &quot;temp_globalvar hit = (hp)&quot; ) : hp evaluated on click
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#button">
       </explanation>
@@ -2467,6 +2485,10 @@
                    &#xA;버튼 클릭시 재생되는 효과음 이름 :
                    &#xA;&quot;vn_ + 버튼 이름 +_clickedSound&quot;
                    &#xA;ex. vn_button1_clickedSound
+                   &#xA;
+                   &#xA;주의: 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. 클릭 시의 값으로 하려면 &quot;&quot;로 감싼다.
+                   &#xA; (ex. 버튼 b 40 40 200 temp_globalvar hit = (hp) ) : 등록 시 hp값으로 고정
+                   &#xA; (ex. 버튼 b 40 40 200 &quot;temp_globalvar hit = (hp)&quot; ) : 클릭 시에 hp값을 계산
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#button">
       </explanation>
@@ -2837,6 +2859,9 @@
                    &#xA;ボタン
                    &#xA;トラックバー
                    &#xA;
+                   &#xA;注：コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算されて固定される。タッチ開始時の値にしたい場合は &quot;&quot; で囲む。
+                   &#xA; (ex. タッチ開始時 btn1 temp_globalvar hit = (hp) ) : 登録時のhp値に固定
+                   &#xA; (ex. タッチ開始時 btn1 &quot;temp_globalvar hit = (hp)&quot; ) : タッチ開始時にhp値を計算
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnTouch">
       </explanation>
@@ -2856,6 +2881,10 @@
                    &#xA;Supported object types:
                    &#xA;- button
                    &#xA;- trackbar
+                   &#xA;
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it on touch start.
+                   &#xA; (ex. onTouchStart btn1 temp_globalvar hit = (hp) ) : hp evaluated at registration
+                   &#xA; (ex. onTouchStart btn1 &quot;temp_globalvar hit = (hp)&quot; ) : hp evaluated on touch start
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnTouch">
       </explanation>
@@ -2881,7 +2910,11 @@
                    &#xA;
                    &#xA;사용 가능한 객체 종류:
                    &#xA;버튼
-                   &#xA;트랙바"
+                   &#xA;트랙바
+                   &#xA;
+                   &#xA;주의: 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. 터치 시작 시의 값으로 하려면 &quot;&quot;로 감싼다.
+                   &#xA; (ex. 터치시작시 btn1 temp_globalvar hit = (hp) ) : 등록 시 hp값으로 고정
+                   &#xA; (ex. 터치시작시 btn1 &quot;temp_globalvar hit = (hp)&quot; ) : 터치 시작 시에 hp값을 계산"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnTouch">
       </explanation>
     </Command>
@@ -2902,6 +2935,9 @@
                    &#xA;ボタン
                    &#xA;トラックバー
                    &#xA;
+                   &#xA;注：コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算されて固定される。タッチ終了時の値にしたい場合は &quot;&quot; で囲む。
+                   &#xA; (ex. タッチ終了時 btn1 temp_globalvar hit = (hp) ) : 登録時のhp値に固定
+                   &#xA; (ex. タッチ終了時 btn1 &quot;temp_globalvar hit = (hp)&quot; ) : タッチ終了時にhp値を計算
                    &#xA; "
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnNotTouch">
       </explanation>
@@ -2921,6 +2957,10 @@
                    &#xA;Supported object types:
                    &#xA;- button
                    &#xA;- trackbar
+                   &#xA;
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it on touch end.
+                   &#xA; (ex. onTouchExit btn1 temp_globalvar hit = (hp) ) : hp evaluated at registration
+                   &#xA; (ex. onTouchExit btn1 &quot;temp_globalvar hit = (hp)&quot; ) : hp evaluated on touch end
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnNotTouch">
       </explanation>
@@ -2946,7 +2986,11 @@
                    &#xA;
                    &#xA;사용 가능한 객체 종류:
                    &#xA;버튼
-                   &#xA;트랙바"
+                   &#xA;트랙바
+                   &#xA;
+                   &#xA;주의: 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. 터치 종료 시의 값으로 하려면 &quot;&quot;로 감싼다.
+                   &#xA; (ex. 터치종료시 btn1 temp_globalvar hit = (hp) ) : 등록 시 hp값으로 고정
+                   &#xA; (ex. 터치종료시 btn1 &quot;temp_globalvar hit = (hp)&quot; ) : 터치 종료 시에 hp값을 계산"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnNotTouch">
       </explanation>
     </Command>
@@ -3154,8 +3198,8 @@
       <explanation lang="jap" name="トラックバー"
                    syntax="トラックバー [名前] (タッチ素材設定2セット名) (トラックボール未タッチ素材) (トラックボールタッチ素材) (トラックボールクリック素材) [x座標] [y座標] [laye(r)] [横・縦] [幅] [変数名] [左側数値] [右側数値]
                    &#xA; (透明無視) (カメラオプション) (調整完了後実行コマンド)"
-                   details="ex. トラックバー trackbar sys_trackball.png370 246 105 横 530 my_var 0 100
-                   &#xA;ex. トラックバー trackbar sys_trackball.png370 246 105 横 530 my_var 100 0 (100 -> 0 への反対方向も可能)
+                   details="ex. トラックバー trackbar sys_trackball.png 370 246 105 横 530 my_var 0 100
+                   &#xA;ex. トラックバー trackbar sys_trackball.png 370 246 105 横 530 my_var 100 0 (100 -> 0 への反対方向も可能)
                    &#xA;
                    &#xA;「my_var」の変数値をコントロールするトラックバーを生成。
                    &#xA;
@@ -3171,7 +3215,11 @@
                    &#xA;変数名にはコンテナのインデックス指定も可能：
                    &#xA;ex. mylist[0]、mymap[&quot;key&quot;]
                    &#xA;式にスペースが含まれる場合は引用符で囲む：
-                   &#xA;ex. &quot;mylist[ {{ x - 1 }} ]&quot;"
+                   &#xA;ex. &quot;mylist[ {{ x - 1 }} ]&quot;
+                   &#xA;
+                   &#xA;注：調整完了後実行コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算されて固定される。調整完了時の値にしたい場合は &quot;&quot; で囲む。
+                   &#xA; (ex. トラックバー tb ball.png 0 0 100 横 500 v 0 100 temp_globalvar hit = (hp) ) : 登録時のhp値に固定
+                   &#xA; (ex. トラックバー tb ball.png 0 0 100 横 500 v 0 100 &quot;temp_globalvar hit = (hp)&quot; ) : 調整完了時にhp値を計算"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#trackbar">
       </explanation>
       <explanation lang="eng" name="trackbar"
@@ -3203,6 +3251,10 @@
                    &#xA;- left val, right val: min and max values
                    &#xA;- command on adjustment complete: optional Light.vn command to run after
                    &#xA;  the user finishes adjusting
+                   &#xA;
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it on adjustment complete.
+                   &#xA; (ex. trackbar tb ball.png 0 0 100 horizontal 500 v 0 100 temp_globalvar hit = (hp) ) : hp evaluated at registration
+                   &#xA; (ex. trackbar tb ball.png 0 0 100 horizontal 500 v 0 100 &quot;temp_globalvar hit = (hp)&quot; ) : hp evaluated on adjustment complete
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#trackbar">
       </explanation>
@@ -3243,7 +3295,11 @@
                    &#xA;변수명에 컨테이너 인덱스 지정도 가능：
                    &#xA;ex. mylist[0], mymap[&quot;key&quot;]
                    &#xA;식에 공백이 포함된 경우 따옴표로 감싸야 함：
-                   &#xA;ex. &quot;mylist[ {{ x - 1 }} ]&quot;"
+                   &#xA;ex. &quot;mylist[ {{ x - 1 }} ]&quot;
+                   &#xA;
+                   &#xA;주의: 조정 완료 후 실행 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. 조정 완료 시의 값으로 하려면 &quot;&quot;로 감싼다.
+                   &#xA; (ex. 트랙바 tb ball.png 0 0 100 가로 500 v 0 100 temp_globalvar hit = (hp) ) : 등록 시 hp값으로 고정
+                   &#xA; (ex. 트랙바 tb ball.png 0 0 100 가로 500 v 0 100 &quot;temp_globalvar hit = (hp)&quot; ) : 조정 완료 시에 hp값을 계산"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#trackbar">
       </explanation>
     </Command>
@@ -7229,6 +7285,9 @@
                    &#xA;注意：従い、他の個体の制御などもできてしまうなど、かなりパワフルな機能なので、
                    &#xA;自分で混乱しないように注意。
                    &#xA;
+                   &#xA;注：コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算されて固定される。実行時の値にしたい場合は &quot;&quot; で囲む。
+                   &#xA; (ex. 演出目録追加 id0 300 temp_globalvar hit = (hp) ) : 登録時のhp値に固定
+                   &#xA; (ex. 演出目録追加 id0 300 &quot;temp_globalvar hit = (hp)&quot; ) : 実行時にhp値を計算
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#tweenListAdd">
       </explanation>
@@ -7256,6 +7315,9 @@
                    &#xA;Notes:
                    &#xA;- The command can be any Light.vn command, including commands
                    &#xA;  that affect other objects. Use with care.
+                   &#xA;- For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it when the entry runs.
+                   &#xA;   (ex. tweenListAdd id0 300 temp_globalvar hit = (hp) ) : hp evaluated at registration
+                   &#xA;   (ex. tweenListAdd id0 300 &quot;temp_globalvar hit = (hp)&quot; ) : hp evaluated when the entry runs
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#tweenListAdd">
       </explanation>
@@ -7297,7 +7359,10 @@
                    &#xA;
                    &#xA;[실행 커맨드]는 Lightvn의 모든 명령어를 사용할 수 있습니다.
                    &#xA;주: 이 기능은 매우 강력하기 때문에 다른 객체를 제어할 수도 있습니다.
-                   &#xA;혼란을 방지하려면 신중히 사용하세요."
+                   &#xA;혼란을 방지하려면 신중히 사용하세요.
+                   &#xA;주의: 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. 실행 시의 값으로 하려면 &quot;&quot;로 감싼다.
+                   &#xA; (ex. 연출목록추가 id0 300 temp_globalvar hit = (hp) ) : 등록 시 hp값으로 고정
+                   &#xA; (ex. 연출목록추가 id0 300 &quot;temp_globalvar hit = (hp)&quot; ) : 실행 시에 hp값을 계산"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#tweenListAdd">
       </explanation>
     </Command>
@@ -7922,6 +7987,11 @@
                    details="ex. 消滅時 albert2 script filename.txt
                    &#xA;
                    &#xA;対象が消滅時、コマンドを実行する。
+                   &#xA;
+                   &#xA;注：実行コマンドを&quot;&quot;で囲まない場合、 (式) は登録時に計算されて固定される。&quot;&quot;で囲むと消滅時に計算される。
+                   &#xA;複数コマンドを繋ぐ場合 (&quot;a | b&quot;) も囲む必要がある。
+                   &#xA; (ex. 消滅時 albert2 script title.txt (hp) ) : 登録時のhp値に固定
+                   &#xA; (ex. 消滅時 albert2 &quot;script title.txt (hp)&quot; ) : 消滅時にhp値を計算
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#onDestroy">
       </explanation>
@@ -7935,6 +8005,11 @@
                    &#xA;- target(s): supports regex and comma-separated lists
                    &#xA;- command: any Light.vn command to execute on destruction
                    &#xA;- screenspace range: optional. all / sameLevel
+                   &#xA;
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it at destroy time.
+                   &#xA;Quotes must also be used to execute multiple commands: ex. (&quot;a | b&quot;).
+                   &#xA; (ex. onDestroy albert2 script title.txt (hp) ) : hp evaluated at registration
+                   &#xA; (ex. onDestroy albert2 &quot;script title.txt (hp)&quot; ) : hp evaluated at destroy time
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#onDestroy">
       </explanation>
@@ -7950,7 +8025,12 @@
                    syntax="소멸시 [대상 이름 / 대상 종류 이름(여러 개 가능)] [실행 커맨드] (화면 영역)"
                    details="ex. 소멸시 albert2 script filename.txt
                    &#xA;
-                   &#xA;대상이 소멸할 때 커맨드가 실행된다."
+                   &#xA;대상이 소멸할 때 커맨드가 실행된다.
+                   &#xA;
+                   &#xA;주의: 실행 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. &quot;&quot;로 감싸면 소멸 시 계산된다.
+                   &#xA;파이프로 복수 커맨드를 실행하고 싶을 경우에도 (&quot;a | b&quot;)도 감싸야 한다.
+                   &#xA; (ex. 소멸시 albert2 script title.txt (hp) ) : 등록 시 hp값으로 고정
+                   &#xA; (ex. 소멸시 albert2 &quot;script title.txt (hp)&quot; ) : 소멸 시에 hp값을 계산"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#onDestroy">
       </explanation>
     </Command>
@@ -12222,6 +12302,7 @@
                    &#xA;コマンドを実行する。
                    &#xA;
                    &#xA;[実行コマンド]：文字列として囲むと、衝突の度に再計算される。
+                   &#xA;コマンド内の二重波括弧の式は衝突時に計算される。
                    &#xA;実行コマンドの最後に、
                    &#xA;  衝突された衝突範囲名A
                    &#xA;  衝突された衝突範囲名B
@@ -12268,6 +12349,7 @@
                    &#xA;
                    &#xA;Notes:
                    &#xA;- Wrap [command] in quotes to re-evaluate it on each collision
+                   &#xA;- Double-brace expressions in the command are evaluated at collision time
                    &#xA;- Collider names A/B follow the specified group order
                    &#xA;
                    &#xA;ex. onCollisionStart colA colB script title.txt collision_start
@@ -12306,6 +12388,7 @@
                    &#xA;id1_c 그룹의 충돌영역이 id0_c 그룹의 충돌영역과 충돌했을 때 지정된 커맨드를 실행합니다.
                    &#xA;
                    &#xA;[실행 커맨드]: 문자열로 작성하면, 충돌이 발생할 때마다 재계산되어 실행됩니다.
+                   &#xA;커맨드 내의 이중 중괄호 식은 충돌 시 계산됩니다.
                    &#xA;실행 시, 다음과 같은 정보가 커맨드에 추가됩니다:
                    &#xA;  - 충돌한 충돌영역 이름 A
                    &#xA;  - 충돌한 충돌영역 이름 B
@@ -12336,6 +12419,7 @@
                    &#xA;コマンドを実行する。
                    &#xA;
                    &#xA;[実行コマンド]：文字列として囲むと、衝突の度に再計算される。
+                   &#xA;コマンド内の二重波括弧の式は衝突時に計算される。
                    &#xA;実行コマンドの最後に、
                    &#xA;  衝突された衝突範囲名A
                    &#xA;  衝突された衝突範囲名B
@@ -12368,6 +12452,7 @@
                    &#xA;
                    &#xA;Notes:
                    &#xA;- Wrap [command] in quotes to re-evaluate it on each collision
+                   &#xA;- Double-brace expressions in the command are evaluated at collision time
                    &#xA;- Collider names A/B follow the specified group order
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#onCollisionCont">
@@ -12397,6 +12482,7 @@
                    &#xA;id1_c 그룹에 속한 충돌영역과 id0_c 그룹에 속한 충돌영역이 충돌 중인 동안 지정된 커맨드를 실행합니다.
                    &#xA;
                    &#xA;[실행 커맨드]: 문자열로 작성하면, 충돌이 발생할 때마다 재계산되어 실행됩니다.
+                   &#xA;커맨드 내의 이중 중괄호 식은 충돌 시 계산됩니다.
                    &#xA;실행 시, 다음과 같은 정보가 커맨드에 추가됩니다:
                    &#xA;  - 충돌한 충돌영역 이름 A
                    &#xA;  - 충돌한 충돌영역 이름 B
@@ -12417,6 +12503,7 @@
                    &#xA;コマンドを実行する。
                    &#xA;
                    &#xA;[実行コマンド]：文字列として囲むと、衝突の度に再計算される。
+                   &#xA;コマンド内の二重波括弧の式は衝突時に計算される。
                    &#xA;実行コマンドの最後に、
                    &#xA;  衝突された衝突範囲名A
                    &#xA;  衝突された衝突範囲名B
@@ -12449,6 +12536,7 @@
                    &#xA;
                    &#xA;Notes:
                    &#xA;- Wrap [command] in quotes to re-evaluate it on each collision
+                   &#xA;- Double-brace expressions in the command are evaluated at collision time
                    &#xA;- Collider names A/B follow the specified group order
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#onCollisionExit">
@@ -12478,6 +12566,7 @@
                    &#xA;id1_c 그룹의 충돌영역이 id0_c 그룹의 충돌영역과 충돌이 끝났을 때(분리) 지정된 커맨드를 실행합니다.
                    &#xA;
                    &#xA;[실행 커맨드]: 문자열로 작성하면, 충돌이 발생할 때마다 재계산되어 실행됩니다.
+                   &#xA;커맨드 내의 이중 중괄호 식은 충돌 시 계산됩니다.
                    &#xA;실행 시, 다음과 같은 정보가 커맨드에 추가됩니다:
                    &#xA;  - 충돌한 충돌영역 이름 A
                    &#xA;  - 충돌한 충돌영역 이름 B
@@ -12500,6 +12589,7 @@
                    &#xA;
                    &#xA;
                    &#xA;[実行コマンド]：文字列として囲むと、衝突の度に再計算される。
+                   &#xA;コマンド内の二重波括弧の式は衝突時に計算される。
                    &#xA;実行コマンドの最後に、衝突された衝突範囲名二つが「指定したグループ順に」付けられた状態で実行される。
                    &#xA;
                    &#xA;ex. 隣接方向衝突継続時 colA colB 左 スクリプト title.txt collision_start
@@ -12528,6 +12618,7 @@
                    &#xA;
                    &#xA;Notes:
                    &#xA;- Wrap [command] in quotes to re-evaluate on each trigger
+                   &#xA;- Double-brace expressions in the command are evaluated at collision time
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#onFaceCollision">
       </explanation>
@@ -12562,6 +12653,7 @@
                    &#xA;[실행 커맨드]를 실행합니다.
                    &#xA;
                    &#xA;[실행 커맨드]: 문자열로 작성된 경우, 충돌이 발생할 때마다 재계산되어 실행됩니다.
+                   &#xA;커맨드 내의 이중 중괄호 식은 충돌 시 계산됩니다.
                    &#xA;실행 커맨드에는 충돌한 두 영역 이름이 지정한 그룹 순서대로 추가됩니다.
                    &#xA;
                    &#xA;ex. 인접방향충돌중일시 colA colB 좌 스크립트 title.txt collision_start
@@ -13947,7 +14039,7 @@
                    &#xA;注：キートリガーを解除させたい場合は、該当トリガー名の先にコマンドをつけない形に再登録。
                    &#xA; (ex. キートリガー r.click)
                    &#xA;注：ボタンクリックとマウスダウンのキートリガーが同時に登録されてある場合、ボタンクリックが優先される。
-                   &#xA;注：コマンド内の (式) は登録時に計算されて固定される。発動時点の値にしたい場合は &quot;&quot; で囲む。
+                   &#xA;注：コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算されて固定される。発動時の値にしたい場合は &quot;&quot; で囲む。
                    &#xA; (ex. キーダウン k スクリプト 現在 処理 (体力) ) : 登録時の「体力」変数値に固定。
                    &#xA; (ex. キーダウン k &quot;スクリプト 現在 処理 (体力)&quot; ) : 発動時に「体力」変数値を計算し反映。"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyDown">
@@ -13967,7 +14059,7 @@
                    &#xA;Note: to unregister a keytrigger, just register the same key but without a command
                    &#xA; (ex. keyTrigger r.click)
                    &#xA;Note: if button clicked while mouse click keytrigger set, button clicks will override.
-                   &#xA;Note: an unquoted (expr) in the command is evaluated once at registration; wrap the command in &quot;&quot; to evaluate it at fire time.
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it at fire time.
                    &#xA; (ex. keyDown k script current handle (hp) ) : hp evaluated at registration
                    &#xA; (ex. keyDown k &quot;script current handle (hp)&quot; ) : hp evaluated at fire time"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyDown">
@@ -14004,7 +14096,7 @@
                    &#xA;주: 키 트리거를 해제하고 싶은 경우 해당 트리거명 다음으로 커맨드를 넣지 않고 재등록.
                    &#xA; (ex. 키트리거 r.click)
                    &#xA;주: 버튼 클릭과 마우스 다운이 키 트리거로 동시에 등록되어 있을 경우, 버튼 클릭이 우선됩니다.
-                   &#xA;주: 커맨드 내의 (식)은 등록 시점에 고정됩니다. 커맨드 발동 시점의 값을 쓰려면 &quot;&quot;로 감싸십시오.
+                   &#xA;주의: 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. 발동 시의 값으로 하려면 &quot;&quot;로 감싼다.
                    &#xA; (ex. 키다운 k 스크립트 현재 처리 (체력) ) : 커맨드 등록시의 '체력' 변수값에 고정.
                    &#xA; (ex. 키다운 k &quot;스크립트 현재 처리 (체력)&quot;) : 커맨드 발동시에 '체력' 변수값을 계산하여 반영."
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyDown">
@@ -14025,7 +14117,7 @@
                    &#xA;
                    &#xA;注：キートリガーを解除させたい場合は、該当トリガー名の先にコマンドをつけない形に再登録。
                    &#xA; (ex. キートリガー r.click)
-                   &#xA;注：コマンド内の (式) は登録時に計算されて固定される。発動時点の値にしたい場合は &quot;&quot; で囲む。
+                   &#xA;注：コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算されて固定される。発動時の値にしたい場合は &quot;&quot; で囲む。
                    &#xA; (ex. キーアップ k スクリプト 現在 処理 (体力) ) : 登録時の「体力」変数値に固定。
                    &#xA; (ex. キーアップ k &quot;スクリプト 現在 処理 (体力)&quot; ) : 発動時に「体力」変数値を計算し反映。
                    &#xA;"
@@ -14046,7 +14138,7 @@
                    &#xA;Note: to unregister a keytrigger, just register the same key but without a command
                    &#xA; (ex. keyTrigger r.click)
                    &#xA;Note: if button clicked while mouse click keytrigger set, button clicks will override.
-                   &#xA;Note: an unquoted (expr) in the command is evaluated once at registration; wrap the command in &quot;&quot; to evaluate it at fire time.
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it at fire time.
                    &#xA; (ex. keyUp k script current handle (hp) ) : hp evaluated at registration
                    &#xA; (ex. keyUp k &quot;script current handle (hp)&quot; ) : hp evaluated at fire time"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyUp">
@@ -14077,8 +14169,8 @@
                    &#xA;
                    &#xA;주: 키 트리거를 해제하고 싶은 경우 해당 트리거명 다음으로 커맨드를 넣지 않고 재등록.
                    &#xA; (ex. 키트리거 r.click)
-                   &#xA;주: 커맨드 내의 (식)은 등록 시점에 고정됩니다. 커맨드 발동 시점의 값을 쓰려면 &quot;&quot;로 감싸십시오.
-                   &#xA; (ex. 키업 k 스크립트 현재 처리 (체력) ) : 커맨드 등록시의 '체력' 변수값에 고정.
+                   &#xA;주의: 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. 발동 시의 값으로 하려면 &quot;&quot;로 감싼다.
+                   &#xA; (ex. 키업 k 스크립트 현재 처리 (체력) ) : 커맨드 등록시의 '체력' 변수값으로 고정.
                    &#xA; (ex. 키업 k &quot;스크립트 현재 처리 (체력)&quot;) : 커맨드 발동시에 '체력' 변수값을 계산하여 반영.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyUp">
@@ -14100,7 +14192,7 @@
                    &#xA;
                    &#xA;注：キートリガーを解除させたい場合は、該当トリガー名の先にコマンドをつけない形に再登録。
                    &#xA; (ex. キートリガー r.click)
-                   &#xA;注：コマンド内の (式) は登録時に計算し固定。長押し中は毎フレームその固定値が利用。押している間の値を反映したい場合は &quot;&quot; で囲む（毎フレーム再計算）。
+                   &#xA;注：コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算し固定。長押し中は毎フレームその固定値が利用。押している間の値を反映したい場合は &quot;&quot; で囲む（毎フレーム再計算）。
                    &#xA; (ex. キー長押し k スクリプト 現在 処理 (体力) ) : 登録時の「体力」に固定。
                    &#xA; (ex. キー長押し k &quot;スクリプト 現在 処理 (体力)&quot; ) : 毎フレーム「体力」を再計算し反映。
                    &#xA;"
@@ -14128,7 +14220,7 @@
                    &#xA;- trigger name: the key or input to listen for
                    &#xA;- Light.vn command (optional): the command to execute (omit to unregister)
                    &#xA;
-                   &#xA;Note: an unquoted (expr) is evaluated once at registration and reused every frame while held; wrap the command in &quot;&quot; to re-evaluate it each frame.
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated once at registration and reused every frame while held; wrap the command in &quot;&quot; to re-evaluate it each frame.
                    &#xA; (ex. keyPress k script current handle (hp) ) : hp frozen at registration
                    &#xA; (ex. keyPress k &quot;script current handle (hp)&quot; ) : hp re-evaluated each frame"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyPress">
@@ -14164,8 +14256,8 @@
                    &#xA;
                    &#xA;주: 키 트리거를 해제하고 싶은 경우 해당 트리거명 다음으로 커맨드를 넣지 않고 재등록.
                    &#xA; (ex. 키트리거 r.click)
-                   &#xA;주: 커맨드 내의 (식)은 등록 시점에 고정되어 누르는 동안 매 프레임 그 고정값이 사용됩니다. 누르는 동안의 값을  반영하려면 &quot;&quot;로 감싸십시오(매 프레임 재계산).
-                   &#xA; (ex. 키누르기 k 스크립트 현재 처리 (체력) ) : 등록시의 '체력'에 고정.
+                   &#xA;주의: 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정되고 누르는 동안 매 프레임 그 고정값이 사용된다. 누르는 동안의 값을 반영하려면 &quot;&quot;로 감싼다(매 프레임 재계산).
+                   &#xA; (ex. 키누르기 k 스크립트 현재 처리 (체력) ) : 등록시의 '체력' 값으로 고정.
                    &#xA; (ex. 키누르기 k &quot;스크립트 현재 처리 (체력)&quot; ) : 매 프레임 '체력'을 계산하여 반영.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyPress">
@@ -15741,7 +15833,10 @@
                    details="ex. 音源確認機 checker vn_sysBGM 3000 システムメッセージ &quot;fufu&quot;
                    &#xA;
                    &#xA;対象の現在再生時間が「対象の時間」を超える場合、「コマンド」を実行する。
-                   &#xA;実行後、個体は消滅する。"
+                   &#xA;実行後、個体は消滅する。
+                   &#xA;注：コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算されて固定される。発動時の値にしたい場合は &quot;&quot; で囲む。
+                   &#xA; (ex. 音源確認機 c bgm 3000 temp_globalvar x = (hp) ) : 登録時のhp値に固定
+                   &#xA; (ex. 音源確認機 c bgm 3000 &quot;temp_globalvar x = (hp)&quot; ) : 発動時のhp値を計算"
                    reference="https://wikiwiki.jp/lightvn/commands/media#soundChecker">
       </explanation>
       <explanation lang="eng" name="soundChecker"
@@ -15755,7 +15850,11 @@
                    &#xA;- name: object name for this checker.
                    &#xA;- target: name of the audio object to monitor.
                    &#xA;- threshold time: trigger time in ms.
-                   &#xA;- command: Light.vn command to execute when triggered."
+                   &#xA;- command: Light.vn command to execute when triggered.
+                   &#xA;
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it at trigger time.
+                   &#xA; (ex. soundChecker c bgm 3000 temp_globalvar x = (hp) ) : hp evaluated at registration
+                   &#xA; (ex. soundChecker c bgm 3000 &quot;temp_globalvar x = (hp)&quot; ) : hp evaluated at trigger time"
                    reference="https://wikiwiki.jp/lightvn/commands/media#soundChecker">
       </explanation>
       <explanation lang="zhc" name="音源检查器"
@@ -15771,7 +15870,10 @@
                    details="ex. 음원확인기 checker vn_sysBGM 3000 시스템메시지 &quot;fufu&quot;
                    &#xA;
                    &#xA;대상의 현재 재생 시간이 &quot;목표시간&quot;을 넘을 경우 &quot;커맨드&quot;를 실행.
-                   &#xA;실행 후 객체는 소멸됨."
+                   &#xA;실행 후 객체는 소멸됨.
+                   &#xA;주의: 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. 발동 시의 값으로 하려면 &quot;&quot;로 감싼다.
+                   &#xA; (ex. 음원확인기 c bgm 3000 temp_globalvar x = (hp) ) : 등록 시 hp값으로 고정
+                   &#xA; (ex. 음원확인기 c bgm 3000 &quot;temp_globalvar x = (hp)&quot; ) : 발동 시에 hp값을 계산"
                    reference="https://wikiwiki.jp/lightvn/commands/media#soundChecker">
       </explanation>
     </Command>
@@ -18630,7 +18732,11 @@
     <Command cmd="dialog">
       <explanation lang="jap" name="ダイアログ"
                    syntax="ダイアログ　[文字列:ダイアログメッセージ] (YES選択時コマンド)"
-                   details="ex. ダイアログ &quot;タイトルへ戻りますか？&quot; ジャンプ tut_text.txt"
+                   details="ex. ダイアログ &quot;タイトルへ戻りますか？&quot; ジャンプ tut_text.txt
+                   &#xA;
+                   &#xA;注：YES選択時コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算されて固定される。YES選択時の値にしたい場合は &quot;&quot; で囲む。
+                   &#xA; (ex. ダイアログ &quot;msg&quot; temp_globalvar hit = (hp) ) : 登録時のhp値に固定
+                   &#xA; (ex. ダイアログ &quot;msg&quot; &quot;temp_globalvar hit = (hp)&quot; ) : YES選択時にhp値を計算"
                    reference="https://wikiwiki.jp/lightvn/commands/system#dialog">
       </explanation>
       <explanation lang="eng" name="dialog"
@@ -18642,7 +18748,11 @@
                    &#xA;
                    &#xA;Parameters:
                    &#xA;- message: dialog message string.
-                   &#xA;- command on YES (optional): Light.vn command to execute on YES."
+                   &#xA;- command on YES (optional): Light.vn command to execute on YES.
+                   &#xA;
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it on YES.
+                   &#xA; (ex. dialog &quot;msg&quot; temp_globalvar hit = (hp) ) : hp evaluated at registration
+                   &#xA; (ex. dialog &quot;msg&quot; &quot;temp_globalvar hit = (hp)&quot; ) : hp evaluated on YES"
                    reference="https://wikiwiki.jp/lightvn/commands/system#dialog">
       </explanation>
       <explanation lang="zhc" name="对话框"
@@ -18652,7 +18762,11 @@
       </explanation>
       <explanation lang="kor" name="대화창"
                    syntax="대화창 [문자열: 대화창 메시지] (YES 선택시 커맨드)"
-                   details="ex. 대화창 &quot;타이틀로 돌아갈까요?&quot; 점프 tut_text.txt"
+                   details="ex. 대화창 &quot;타이틀로 돌아갈까요?&quot; 점프 tut_text.txt
+                   &#xA;
+                   &#xA;주의: YES 선택시 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. YES 선택 시의 값으로 하려면 &quot;&quot;로 감싼다.
+                   &#xA; (ex. 대화창 &quot;msg&quot; temp_globalvar hit = (hp) ) : 등록 시 hp값으로 고정
+                   &#xA; (ex. 대화창 &quot;msg&quot; &quot;temp_globalvar hit = (hp)&quot; ) : YES 선택 시에 hp값을 계산"
                    reference="https://wikiwiki.jp/lightvn/commands/system#dialog">
       </explanation>
     </Command>
@@ -18697,9 +18811,9 @@
                    &#xA;"
                    details="ex. 砂時計 timer0 1500 反復 スクリプト textbox_sample.txt timer_func
                    &#xA;
-                   &#xA;[コマンド]：(式) は登録時に計算し固定。発動（時間経過）ごとの値にしたい場合は &quot;&quot; で囲む（毎回再計算）。
-                   &#xA; (ex. 砂時計 t 1000 反復 変数 x = (体力) ) : 登録時の「体力」に固定。
-                   &#xA; (ex. 砂時計 t 1000 反復 &quot;変数 x = (体力)&quot; ) : 発動ごとに「体力」を計算。
+                   &#xA;[コマンド]：&quot;&quot; で囲まない場合、(式) は登録時に計算し固定。発動（時間経過）ごとの値にしたい場合は &quot;&quot; で囲む（毎回再計算）。
+                   &#xA; (ex. 砂時計 t 1000 反復 変数 x = (体力) ) : 登録時の「体力」値に固定。
+                   &#xA; (ex. 砂時計 t 1000 反復 &quot;変数 x = (体力)&quot; ) : 発動ごとに「体力」値を計算。
                    &#xA;
                    &#xA;更新同期) 時間間隔を考えるのが面倒な人用。100ミリ秒。
                    &#xA;
@@ -18714,7 +18828,7 @@
                    &#xA;3. timer8 [name] [command]"
                    details="ex. timer timer0 1500 repeat script textbox_sample.txt timer_func
                    &#xA;
-                   &#xA;[command]: an unquoted (expr) is evaluated once at registration; wrap the command in &quot;&quot; to re-evaluate it each time the timer fires.
+                   &#xA;[command]: for an unquoted command, any (expr) is evaluated once at registration; wrap the command in &quot;&quot; to re-evaluate it each time the timer fires.
                    &#xA; (ex. timer t 1000 repeat var x = (hp) ) : hp fixed at registration
                    &#xA; (ex. timer t 1000 repeat &quot;var x = (hp)&quot; ) : hp re-evaluated each fire
                    &#xA;
@@ -18750,9 +18864,9 @@
                    &#xA;"
                    details="ex. 타이머 timer0 1500 반복 스크립트 textbox_sample.txt timer_func
                    &#xA;
-                   &#xA;[커맨드]：(식)은 등록 시점에 고정. 발동(시간 경과)마다의 값을 쓰려면 &quot;&quot;로 감쌀 것(매번 재계산).
-                   &#xA; (ex. 타이머 t 1000 반복 변수 x = (체력) ) : 등록시의 '체력'에 고정.
-                   &#xA; (ex. 타이머 t 1000 반복 &quot;변수 x = (체력)&quot; ) : 발동마다 '체력'을 재계산.
+                   &#xA;[커맨드]：&quot;&quot;로 감싸지 않을 경우 (식)은 등록 시점에 고정. 발동(시간 경과)마다의 값을 쓰려면 &quot;&quot;로 감쌀 것(매번 재계산).
+                   &#xA; (ex. 타이머 t 1000 반복 변수 x = (체력) ) : 등록시의 '체력' 값으로 고정.
+                   &#xA; (ex. 타이머 t 1000 반복 &quot;변수 x = (체력)&quot; ) : 발동마다 '체력' 값을 재계산.
                    &#xA;
                    &#xA;업데이트시) 시간 간격을 생각하기에 귀찮은 분들용. 100ms.
                    &#xA;
@@ -19208,7 +19322,10 @@
                    &#xA;
                    &#xA;ロード後に該当スクリプトを実行する。
                    &#xA;
-                   &#xA;注：コマンドをつけない場合、既存登録コマンドが解除される。"
+                   &#xA;注：コマンドをつけない場合、既存登録コマンドが解除される。
+                   &#xA;注：コマンドを&quot;&quot;で囲まない場合、中の (式) は登録時に計算されて固定される。&quot;&quot;で囲むとイベント発生時に計算される。
+                   &#xA; (ex. イベント save 前 temp_globalvar snap = (hp) ) : 登録時のhp値に固定
+                   &#xA; (ex. イベント save 前 &quot;temp_globalvar snap = (hp)&quot; ) : イベント発生時にhp値を計算"
                    reference="https://wikiwiki.jp/lightvn/commands/system#event">
       </explanation>
       <explanation lang="eng" name="event"
@@ -19223,7 +19340,11 @@
                    &#xA;Parameters:
                    &#xA;- event name: name of the event to hook (e.g. load, rollback).
                    &#xA;- before/after: whether to run before or after the event.
-                   &#xA;- command (optional): Light.vn command to execute. Omit to unregister."
+                   &#xA;- command (optional): Light.vn command to execute. Omit to unregister.
+                   &#xA;
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it when the event fires.
+                   &#xA; (ex. event save before temp_globalvar snap = (hp) ) : hp evaluated at registration
+                   &#xA; (ex. event save before &quot;temp_globalvar snap = (hp)&quot; ) : hp evaluated when the event fires"
                    reference="https://wikiwiki.jp/lightvn/commands/system#event">
       </explanation>
       <explanation lang="zhc" name="事件"
@@ -19241,7 +19362,10 @@
                    &#xA;
                    &#xA;로드 후 해당 스크립트를 실행함.
                    &#xA;
-                   &#xA;주: 커맨드를 붙이지 않는 경우 기존 등록 커맨드가 해제됨."
+                   &#xA;주: 커맨드를 붙이지 않는 경우 기존 등록 커맨드가 해제됨.
+                   &#xA;주의: 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. &quot;&quot;로 감싸면 이벤트 발생 시 계산된다.
+                   &#xA; (ex. 이벤트 save 앞 temp_globalvar snap = (hp) ) : 등록 시 hp값으로 고정
+                   &#xA; (ex. 이벤트 save 앞 &quot;temp_globalvar snap = (hp)&quot; ) : 이벤트 발생 시에 hp값을 계산"
                    reference="https://wikiwiki.jp/lightvn/commands/system#event">
       </explanation>
     </Command>

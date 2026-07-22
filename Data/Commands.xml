@@ -349,7 +349,7 @@
   </Keywords>
   <!--[COMMANDS]-->
   <Commands>
-    <!--[ENTITY INSERT, REMOVE]-->
+    <!--[OBJECT INSERT, REMOVE]-->
     <Command name="--[コマンド使用情報]--">
       <explanation lang="jap" name="--[コマンド使用情報]--"
                    syntax=""
@@ -1237,8 +1237,11 @@
                    &#xA;- filepath / animation name: source image or registered animation
                    &#xA;- x, y: position coordinates
                    &#xA;- r (layer): higher = in front, z = r * 100
-                   &#xA;- cut_x1, cut_x2: horizontal split positions (% of image width)
-                   &#xA;- cut_y1, cut_y2: vertical split positions (% of image height)
+                   &#xA;- cut_x1, cut_x2: horizontal split positions (in source pixels).
+                   &#xA;     Set cut_x1 to 0 to omit the left corner; set cut_x2 to the
+                   &#xA;     image width to omit the right corner.
+                   &#xA;- cut_y1, cut_y2: vertical split positions (in source pixels).
+                   &#xA;     Same zero / image-height convention for omitting top/bottom corners.
                    &#xA;- sizex, sizey: desired display size
                    &#xA;
                    &#xA;scale_type:
@@ -1996,6 +1999,8 @@
                    &#xA; (ex. 移動2 alice +20 -10 300)
                    &#xA;注: 所要時間をups(units per second)にすると、秒ごとの単位変化になる。
                    &#xA; (ex. 移動x2 alice 100 30ups : 100pxの変化を「1秒間30pxの速度」で行う)
+                   &#xA;
+                   &#xA;注：[移動終了時コマンド]内の (式) は登録時ではなく移動終了時に計算される。
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/Map#tileMoveX">
       </explanation>
@@ -2019,6 +2024,8 @@
                    &#xA;  (ex. tileMoveX2 npc -1 5ups ...)
                    &#xA;- ups example: tileMoveX2 alice 100 30ups
                    &#xA;  moves 100px at 30px per second
+                   &#xA;
+                   &#xA;Note: the finish command's expressions evaluate on movement end, not at registration.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/Map#tileMoveX">
       </explanation>
@@ -2052,6 +2059,8 @@
                    &#xA; (ex. 이동2 alice +20 -10 300)
                    &#xA;주: 소요 시간을 ups(units per second)로 설정하면 초당 이동 속도로 계산됩니다.
                    &#xA; (ex. 이동x2 alice 100 30ups : 100px을 &quot;초당 30px&quot; 속도로 이동)
+                   &#xA;
+                   &#xA;주의: [이동 종료 시 커맨드] 내의 식은 등록 시가 아니라 이동 종료 시 계산된다.
                    &#xA; "
                    reference="https://wikiwiki.jp/lightvn/commands/Map#tileMoveX">
       </explanation>
@@ -2071,6 +2080,8 @@
                    &#xA; (ex. 移動2 alice +20 -10 300)
                    &#xA;注: 所要時間をups(units per second)にすると、秒ごとの単位変化になる。
                    &#xA; (ex. 移動x2 alice 100 30ups : 100pxの変化を「1秒間30pxの速度」で行う)
+                   &#xA;
+                   &#xA;注：[移動終了時コマンド]内の (式) は登録時ではなく移動終了時に計算される。
                    &#xA; "
                    reference="https://wikiwiki.jp/lightvn/commands/Map#tileMoveY">
       </explanation>
@@ -2094,6 +2105,8 @@
                    &#xA;  (ex. tileMoveY2 npc -1 5ups ...)
                    &#xA;- ups example: tileMoveY2 alice 100 30ups
                    &#xA;  moves 100px at 30px per second
+                   &#xA;
+                   &#xA;Note: the finish command's expressions evaluate on movement end, not at registration.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/Map#tileMoveY">
       </explanation>
@@ -2127,6 +2140,8 @@
                    &#xA; (ex. 이동2 alice +20 -10 300)
                    &#xA;주: 소요 시간을 ups(units per second)로 설정하면 초당 이동 속도로 계산됩니다.
                    &#xA; (ex. 이동y2 alice 100 30ups : 100px을 &quot;초당 30px&quot; 속도로 이동)
+                   &#xA;
+                   &#xA;주의: [이동 종료 시 커맨드] 내의 식은 등록 시가 아니라 이동 종료 시 계산된다.
                    &#xA; "
                    reference="https://wikiwiki.jp/lightvn/commands/Map#tileMoveX">
       </explanation>
@@ -2253,18 +2268,21 @@
     </Command>
     <Command cmd="hbox">
       <explanation lang="jap" name="横箱"
-                   syntax="横箱 [個体名] [x] [y] [r] [横幅] [縦幅] (個体間間隔)"
+                   syntax="横箱 [個体名] [x] [y] [r] [横幅] [縦幅] (個体間間隔) (カメラオプション)"
                    details="ex. 横箱 mybox 0 0 80 800 100
                    &#xA;
                    &#xA;「親子」コマンドにて登録された子どもたちを、
                    &#xA;一定間隔で横幅の中で並ばせる。
                    &#xA;
                    &#xA;個体間間隔、が指定された場合、その数値に従う。
+                   &#xA;
+                   &#xA;注:コマンドに'0'を付けると透明度0の状態で表示される。
+                   &#xA; (ex. 横箱0 mybox 0 0 80 800 100)
                    &#xA; "
                    reference="https://wikiwiki.jp/lightvn/commands/UI#hbox">
       </explanation>
       <explanation lang="eng" name="hbox"
-                   syntax="hbox [name] [x] [y] [r] [width] [height] (spacing)"
+                   syntax="hbox [name] [x] [y] [r] [width] [height] (spacing) (camera_option)"
                    details="ex. hbox mybox 0 0 80 800 100
                    &#xA;
                    &#xA;Creates a horizontal layout box. Children added via parentChild
@@ -2277,6 +2295,9 @@
                    &#xA;- width, height: dimensions of the layout box
                    &#xA;- spacing: optional. If set, uses fixed spacing between children.
                    &#xA;  If omitted, children are evenly distributed.
+                   &#xA;
+                   &#xA;Note: appending '0' to the command name displays at alpha 0.
+                   &#xA; (ex. hbox0 mybox 0 0 80 800 100)
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#hbox">
       </explanation>
@@ -2291,30 +2312,36 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#hbox">
       </explanation>
       <explanation lang="kor" name="가로상자"
-                   syntax="가로상자 [이름] [x] [y] [r] [가로 길이] [세로 길이] (객체 간격)"
+                   syntax="가로상자 [이름] [x] [y] [r] [가로 길이] [세로 길이] (객체 간격) (카메라옵션)"
                    details="ex. 가로상자 mybox 0 0 80 800 100
                    &#xA;
                    &#xA;「부모자식」에 의해 추가된 자식들을 가로 길이에 맞춰 동일 간격으로 정렬시킴.
                    &#xA;
                    &#xA;(객체 간격)을 지정할 경우, 그를 따름.
+                   &#xA;
+                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(투명도 0) 상태로 표시됩니다.
+                   &#xA; (ex. 가로상자0 mybox 0 0 80 800 100)
                    &#xA; "
                    reference="https://wikiwiki.jp/lightvn/commands/UI#hbox">
       </explanation>
     </Command>
     <Command cmd="vbox">
       <explanation lang="jap" name="縦箱"
-                   syntax="縦箱 [個体名] [x] [y] [r] [横幅] [縦幅] (個体間隔)"
+                   syntax="縦箱 [個体名] [x] [y] [r] [横幅] [縦幅] (個体間隔) (カメラオプション)"
                    details="ex. 縦箱 mybox 0 0 80 800 100
                    &#xA;
                    &#xA;「親子」コマンドにて登録された子どもたちを、
                    &#xA;一定間隔で縦幅の中で並ばせる。
                    &#xA;
                    &#xA;個体間隔、が指定された場合、その数値に従う。
+                   &#xA;
+                   &#xA;注:コマンドに'0'を付けると透明度0の状態で表示される。
+                   &#xA; (ex. 縦箱0 mybox 0 0 80 800 100)
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/UI#vbox">
       </explanation>
       <explanation lang="eng" name="vbox"
-                   syntax="vbox [name] [x] [y] [r] [width] [height] (spacing)"
+                   syntax="vbox [name] [x] [y] [r] [width] [height] (spacing) (camera_option)"
                    details="ex. vbox mybox 0 0 80 800 100
                    &#xA;
                    &#xA;Creates a vertical layout box. Children added via parentChild
@@ -2327,6 +2354,9 @@
                    &#xA;- width, height: dimensions of the layout box
                    &#xA;- spacing: optional. If set, uses fixed spacing between children.
                    &#xA;  If omitted, children are evenly distributed.
+                   &#xA;
+                   &#xA;Note: appending '0' to the command name displays at alpha 0.
+                   &#xA; (ex. vbox0 mybox 0 0 80 800 100)
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#vbox">
       </explanation>
@@ -2341,31 +2371,34 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#vbox">
     </explanation>
       <explanation lang="kor" name="세로상자"
-                   syntax="세로상자 [이름] [x] [y] [r] [가로 길이] [세로 길이] (객체 간격)"
+                   syntax="세로상자 [이름] [x] [y] [r] [가로 길이] [세로 길이] (객체 간격) (카메라옵션)"
                    details="ex. 세로상자 mybox 0 0 80 800 100
                    &#xA;
                    &#xA;「부모자식」에 의해 추가된 자식들을 세로 길이에 맞춰 동일 간격으로 정렬시킴.
                    &#xA;
                    &#xA;(객체 간격)을 지정할 경우, 그를 따름.
+                   &#xA;
+                   &#xA;주: 커맨드에 '0'을 붙이면 투명한(투명도 0) 상태로 표시됩니다.
+                   &#xA; (ex. 세로상자0 mybox 0 0 80 800 100)
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/UI#vbox">
       </explanation>
     </Command>
     <Command cmd="button">
       <explanation lang="jap" name="ボタン"
-                   syntax="ボタン [名前] (ボタン通常イメージ) (ボタンタッチ時イメージ) (ボタンクリック時イメージ)
+                   syntax="ボタン [名前] (タッチ素材設定2セット名) (ボタン通常イメージ) (ボタンタッチ時イメージ) (ボタンクリック時イメージ)
                    &#xA;[x座標] [y座標] [laye(r)] (透明無視) (カメラオプション) (Light.vnコマンド)"
                    details="ex. ボタン button1 untouched-image.png touched-image.png clicked-image.png 300 400 200 カメラ付着 ジャンプ tut.txt
+                   &#xA;
+                   &#xA;「ボタン通常イメージ」を含め素材が指定されない場合は、
+                   &#xA;「タッチ素材設定」の設定をそのまま使用する。
+                   &#xA;
+                   &#xA;タッチ素材設定2 で登録した名前付きセットを指定する場合、
+                   &#xA;基本素材として使われる。後続の画像は通常/タッチ時/クリック時の順で上書きする。
                    &#xA;
                    &#xA;注:コマンドに'0'を付けると透明度0の状態で表示される。
                    &#xA; (ex. 絵0 alice2 anim_alice 150 30 50)
                    &#xA;注: 画像サイズは同一のものにする必要がある。
-                   &#xA;
-                   &#xA;注：ボタンタッチ領域は、ボタンの移動・拡大には対応しているが、
-                   &#xA;現在拡大には対応されていない。
-                   &#xA;
-                   &#xA;「ボタン通常イメージ」を含め素材が指定されない場合は、
-                   &#xA;「タッチ素材登録」の設定をそのまま使用する。
                    &#xA;
                    &#xA;参考：
                    &#xA;ボタンタッチ時に流される効果音の名前：
@@ -2376,11 +2409,14 @@
                    &#xA;「vn_ + ボタンの名前＋_clickedSound」
                    &#xA;例：vn_button1_clickedSound
                    &#xA;
+                   &#xA;注：コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算されて固定される。クリック時の値にしたい場合は &quot;&quot; で囲む。
+                   &#xA; (ex. ボタン b 40 40 200 temp_globalvar hit = (hp) ) : 登録時のhp値に固定
+                   &#xA; (ex. ボタン b 40 40 200 &quot;temp_globalvar hit = (hp)&quot; ) : クリック時にhp値を計算
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#button">
       </explanation>
       <explanation lang="eng" name="button"
-                   syntax="button [name] (untouched image) (touched image) (clicked image)
+                   syntax="button [name] (touchableRes2 set name) (untouched image) (touched image) (clicked image)
                    &#xA;[x] [y] [r] (ignoreTrans) (camera_option) (Light.vn command)"
                    details="ex. button button1 untouched-image.png touched-image.png clicked-image.png 300 400 200 on_camera jump tut.txt
                    &#xA;
@@ -2388,6 +2424,11 @@
                    &#xA;
                    &#xA;Parameters:
                    &#xA;- name: unique identifier for the button
+                   &#xA;- touchableRes2 set name: may be given as the first optional token; it
+                   &#xA;  supplies the base resources, and any following images override
+                   &#xA;  untouched/touched/clicked in order.
+                   &#xA;- if touchableRes2 set name is not supplied, then the default resources
+                   &#xA;  are referenced from the most recent touchableRes setting
                    &#xA;- untouched/touched/clicked image: images for each button state.
                    &#xA;  If omitted, uses images from touchableRes.
                    &#xA;- x, y: position coordinates
@@ -2398,11 +2439,13 @@
                    &#xA;
                    &#xA;Notes:
                    &#xA;- All images must be the same size.
-                   &#xA;- Button touch area supports move/scale but not zoom.
                    &#xA;- Append '0' to command name to display at alpha 0.
                    &#xA;  (ex. button0 btn1 ...)
                    &#xA;- Touch SFX names: &quot;vn_[button name]_touchedSound&quot;
                    &#xA;- Click SFX names: &quot;vn_[button name]_clickedSound&quot;
+                   &#xA;- For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it on click.
+                   &#xA;   (ex. button b 40 40 200 temp_globalvar hit = (hp) ) : hp evaluated at registration
+                   &#xA;   (ex. button b 40 40 200 &quot;temp_globalvar hit = (hp)&quot; ) : hp evaluated on click
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#button">
       </explanation>
@@ -2421,19 +2464,18 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#button">
       </explanation>
       <explanation lang="kor" name="버튼"
-                   syntax="버튼 [이름] (버튼통상이미지) (버튼터치시이미지) (버튼클릭시이미지)
+                   syntax="버튼 [이름] (터치리소스2 세트명) (버튼통상이미지) (버튼터치시이미지) (버튼클릭시이미지)
                    &#xA;[x좌표] [y좌표] [레이어(r)] (투명무시) (카메라옵션) (Light.vn커맨드)"
                    details="ex. 버튼 button1 untouched-image.png touched-image.png clicked-image.png 300 400 200 카메라부착 점프 tut.txt
+                   &#xA;
+                   &#xA;&quot;버튼통상그림&quot; 등의 이미지가 지정되지 않았을 경우,
+                   &#xA;&quot;터치리소스&quot;의 설정값을 그대로 따라간다.
+                   &#xA;
+                   &#xA;첫 번째 선택 토큰에 &quot;터치리소스2&quot;로 등록한 명명된 세트를 지정할 경우, 그 설정값을 기본치로 한다.
                    &#xA;
                    &#xA;주:  커맨드에 '0'을 붙이면 투명한(투명도 0) 상태로 표시됩니다.
                    &#xA; (ex. 그림0 alice2 anim_alice 150 30 50)
                    &#xA;주: 이미지 사이즈는 동일해야 합니다.
-                   &#xA;
-                   &#xA;주: 버튼 터치 영역은 버튼 이동 및 축소/확대 조정에 대응하지만,
-                   &#xA;현재 확대 기능은 지원되지 않습니다.
-                   &#xA;
-                   &#xA;&quot;버튼통상그림&quot; 등의 이미지가 지정되지 않았을 경우,
-                   &#xA;&quot;터치리소스&quot;의 설정값을 그대로 따라간다.
                    &#xA;
                    &#xA;주:
                    &#xA;버튼 터치시 재생되는 효과음 이름 :
@@ -2443,13 +2485,17 @@
                    &#xA;버튼 클릭시 재생되는 효과음 이름 :
                    &#xA;&quot;vn_ + 버튼 이름 +_clickedSound&quot;
                    &#xA;ex. vn_button1_clickedSound
+                   &#xA;
+                   &#xA;주의: 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. 클릭 시의 값으로 하려면 &quot;&quot;로 감싼다.
+                   &#xA; (ex. 버튼 b 40 40 200 temp_globalvar hit = (hp) ) : 등록 시 hp값으로 고정
+                   &#xA; (ex. 버튼 b 40 40 200 &quot;temp_globalvar hit = (hp)&quot; ) : 클릭 시에 hp값을 계산
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#button">
       </explanation>
     </Command>
     <Command cmd="btnText">
       <explanation lang="jap" name="ボタン文字"
-                   syntax="ボタン文字 [ボタン名前] [フォント名] [フォント大きさ] (中央からの相対x) (中央からの相対y) [&quot;テキスト&quot;]"
+                   syntax="ボタン文字 [ボタン名前(カンマ区切りで複数可)] [フォント名] [フォント大きさ] (中央からの相対x) (中央からの相対y) [&quot;テキスト&quot;] (画面領域範囲)"
                    details="ex. ボタン文字 button1 r-mplus-1c-m.ttf 24 &quot;こっちをクリック！ &quot;
                    &#xA;
                    &#xA;指定されたボタンに文字を表示。
@@ -2466,7 +2512,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#btnText">
       </explanation>
       <explanation lang="eng" name="btnText"
-                   syntax="btnText [button name] [font filepath] [font size] (x-from-centre) (y-from-centre) [&quot;text&quot;]"
+                   syntax="btnText [button name(s)] [font filepath] [font size] (x-from-centre) (y-from-centre) [&quot;text&quot;] (screenspace range)"
                    details="ex. btnText button1 r-mplus-1c-m.ttf 24 &quot;Click me!&quot;
                    &#xA;
                    &#xA;Displays text centred on the specified button.
@@ -2500,7 +2546,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#btnText">
       </explanation>
       <explanation lang="kor" name="버튼텍스트"
-                   syntax="버튼텍스트 [버튼 이름] [폰트 이름] [폰트 크기] (중앙에서부터의 상대 x값) (중앙에서부터의 상대 y값) [&quot;텍스트&quot;]"
+                   syntax="버튼텍스트 [버튼 이름(콤마로 여러 개 가능)] [폰트 이름] [폰트 크기] (중앙에서부터의 상대 x값) (중앙에서부터의 상대 y값) [&quot;텍스트&quot;] (화면 영역)"
                    details="ex. 버튼텍스트 button1 r-mplus-1c-m.ttf 24 &quot;여기를 클릭해!&quot;
                    &#xA;
                    &#xA;지정된 버튼에 텍스트를 표시한다.
@@ -2576,7 +2622,7 @@
     </Command>
     <Command cmd="touchArea">
       <explanation lang="jap" name="反応範囲"
-                   syntax="反応範囲 [対象名] [ボタン左上からのx] [ボタン左上からのy] [幅] [高さ]"
+                   syntax="反応範囲 [対象名(カンマ区切りで複数可)] [ボタン左上からのx] [ボタン左上からのy] [幅] [高さ] (画面領域範囲)"
                    details="ex. 反応範囲 btn0 0 0 100 100
                    &#xA;
                    &#xA;ui画像内のタッチ可能領域を指定する。(使用例：ボタン)
@@ -2586,7 +2632,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchArea">
       </explanation>
       <explanation lang="eng" name="touchArea"
-                   syntax="touchArea [target] [x from top-left] [y from top-left] [width] [height]"
+                   syntax="touchArea [target(s)] [x from top-left] [y from top-left] [width] [height] (screenspace range)"
                    details="ex. touchArea btn0 0 0 100 100
                    &#xA;
                    &#xA;Defines the touchable area within a UI object's image (e.g. button).
@@ -2608,7 +2654,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchArea">
       </explanation>
       <explanation lang="kor" name="터치범위"
-                   syntax="터치범위 [대상 이름] [버튼 왼쪽 위에서 떨어질 x값] [버튼 오른쪽 위에서 떨어질 y값] [폭] [높이]"
+                   syntax="터치범위 [대상 이름(콤마로 여러 개 가능)] [버튼 왼쪽 위에서 떨어질 x값] [버튼 오른쪽 위에서 떨어질 y값] [폭] [높이] (화면 영역)"
                    details="ex. 터치범위 btn0 0 0 100 100
                    &#xA;
                    &#xA;ui화면 내에서 터치 가능한 영역을 지정한다. (사용 예 : 버튼)
@@ -2620,7 +2666,7 @@
     </Command>
     <Command cmd="touchAreaScreen">
       <explanation lang="jap" name="画面内反応範囲"
-                   syntax="画面内反応範囲 [対象名] [画面左上からのx] [画面左上からのy] [幅] [高さ]"
+                   syntax="画面内反応範囲 [対象名(カンマ区切りで複数可)] [画面左上からのx] [画面左上からのy] [幅] [高さ] (画面領域範囲)"
                    details="ex. 画面内反応範囲 btn0 0 0 100 100
                    &#xA;
                    &#xA;ui画像の画面内の反応領域を指定する。(使用例：ボタン)
@@ -2630,7 +2676,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchAreaScreen">
       </explanation>
       <explanation lang="eng" name="touchAreaScreen"
-                   syntax="touchAreaScreen [target] [x from screen top-left] [y from screen top-left] [width] [height]"
+                   syntax="touchAreaScreen [target(s)] [x from screen top-left] [y from screen top-left] [width] [height] (screenspace range)"
                    details="ex. touchAreaScreen btn0 0 0 100 100
                    &#xA;
                    &#xA;Defines the touchable area in screen coordinates (e.g. for buttons).
@@ -2652,7 +2698,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchAreaScreen">
       </explanation>
       <explanation lang="kor" name="화면내터치범위"
-                   syntax="화면내터치범위 [대상 이름] [버튼 왼쪽 위에서 떨어질 x값] [버튼 오른쪽 위에서 떨어질 y값] [폭] [높이]"
+                   syntax="화면내터치범위 [대상 이름(콤마로 여러 개 가능)] [버튼 왼쪽 위에서 떨어질 x값] [버튼 오른쪽 위에서 떨어질 y값] [폭] [높이] (화면 영역)"
                    details="ex. 화면내터치범위 btn0 0 0 100 100
                    &#xA;
                    &#xA;UI화면 내에서 터치 가능한 영역을 설정합니다. (ex. 버튼)
@@ -2705,9 +2751,59 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchAlpha">
       </explanation>
     </Command>
+    <Command cmd="touchableTransitionDuration">
+      <explanation lang="jap" name="タッチ転換時間"
+                   syntax="タッチ転換時間 (対象名：カンマ区切りで複数可) [時間：ミリ秒] (画面領域範囲)"
+                   details="ex. タッチ転換時間 200
+                   &#xA;
+                   &#xA;ボタンの状態切り替え（通常／タッチ時／クリック時／ハイライト）時の画像転換時間を指定する。
+                   &#xA;0で即時（転換なし）。
+                   &#xA;
+                   &#xA;対象名なし：すべてのタッチ可能個体の既定値を設定。
+                   &#xA;対象名あり：その個体ごとの値を上書き（既定値より優先）。
+                   &#xA;
+                   &#xA;注: 対象名: 正規表現可
+                   &#xA;注: settings.xmlのtouchableTransitionDurationDefaultをデフォルト値とする。
+                   &#xA;  "
+                   reference="https://wikiwiki.jp/lightvn/commands/UI#touchableTransitionDuration">
+      </explanation>
+      <explanation lang="eng" name="touchableTransitionDuration"
+                   syntax="touchableTransitionDuration (target(s)) [time: ms] (screenspace range)"
+                   details="ex. touchableTransitionDuration 200
+                   &#xA;
+                   &#xA;Sets the crossfade duration for button state changes
+                   &#xA;(untouched / touched / clicked / highlight). 0 = instant (no fade);
+                   &#xA;
+                   &#xA;- no target: sets the global default for all touchables.
+                   &#xA;- with target: overrides that object's duration (wins over the global).
+                   &#xA;
+                   &#xA;Parameters:
+                   &#xA;- target: object(s) to configure (supports regex)
+                   &#xA;- time: duration in milliseconds
+                   &#xA;
+                   &#xA;Note: default is set via settings.xml: touchableTransitionDurationDefault
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/UI#touchableTransitionDuration">
+      </explanation>
+      <explanation lang="kor" name="터치전환시간"
+                   syntax="터치전환시간 (대상 이름: 콤마로 여러 개 가능) [시간: 밀리초] (화면 영역)"
+                   details="ex. 터치전환시간 200
+                   &#xA;
+                   &#xA;버튼 상태 전환(통상／터치／클릭／하이라이트) 시 이미지 전환(크로스페이드) 시간을 지정한다.
+                   &#xA;0이면 즉시(전환 없음).
+                   &#xA;
+                   &#xA;대상 이름 없음: 모든 터치 가능 객체의 기본값을 설정.
+                   &#xA;대상 이름 있음: 해당 객체의 값을 덮어씀(기본값보다 우선).
+                   &#xA;
+                   &#xA;주: 대상 이름에 정규표현식을 사용할 수 있습니다.
+                   &#xA;주: 기본값은 settings.xml: touchableTransitionDurationDefault 에서 조정 가능.
+                   &#xA;  "
+                   reference="https://wikiwiki.jp/lightvn/commands/UI#touchableTransitionDuration">
+      </explanation>
+    </Command>
     <Command cmd="highlight_if">
       <explanation lang="jap" name="ハイライト条件"
-                   syntax="ハイライト条件 [ボタン名前] [活性条件：文字列]"
+                   syntax="ハイライト条件 [ボタン名前(カンマ区切りで複数可)] [活性条件：文字列] (画面領域範囲)"
                    details="ex. ハイライト条件 btn0 &quot;lvSystem::WindowMode() == 2&quot;
                    &#xA;
                    &#xA;ボタンが活性になる条件を指定する。
@@ -2716,7 +2812,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#highlight_if">
       </explanation>
       <explanation lang="eng" name="highlight_if"
-                   syntax="highlight_if [button name] [condition: string]"
+                   syntax="highlight_if [button name(s)] [condition: string] (screenspace range)"
                    details="ex. highlight_if btn0 &quot;lvSystem::WindowMode() == 2&quot;
                    &#xA;
                    &#xA;Sets a condition that determines when the button shows as active/highlighted.
@@ -2738,7 +2834,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#highlight_if">
       </explanation>
       <explanation lang="kor" name="하이라이트조건"
-                  syntax="하이라이트조건 [버튼 이름] [활성 조건 : 문자열]"
+                  syntax="하이라이트조건 [버튼 이름(콤마로 여러 개 가능)] [활성 조건 : 문자열] (화면 영역)"
                   details="ex. 하이라이트조건 btn0 &quot;lvSystem::WindowMode() == 2&quot;
                   &#xA;
                   &#xA;버튼이 활성화되는 조건을 설정합니다.
@@ -2748,27 +2844,47 @@
     </Command>
     <Command cmd="onTouchStart">
       <explanation lang="jap" name="タッチ開始時"
-                   syntax="タッチ開始時 [個体名] [タッチ開始時発動コマンド]"
+                   syntax="タッチ開始時 [個体名 (カンマ区切りで複数指定可)] [タッチ開始時発動コマンド] (画面領域範囲)"
                    details="ex. タッチ開始時 btn1 スクリプト textbox.txt
+                   &#xA;
+                   &#xA;注: カンマ区切りで複数の個体を指定できます。
+                   &#xA; (ex. タッチ開始時 btn1, btn2 スクリプト textbox.txt)
+                   &#xA;
+                   &#xA;注: 個体名に正規表現も使用できます。
+                   &#xA; (ex. タッチ開始時 btn.* スクリプト textbox.txt)
+                   &#xA;
+                   &#xA;注: 末尾に画面領域範囲（全画面領域／同階層画面領域）を指定できます。指定しない場合、現画面領域の個体のみが対象になります。
                    &#xA;
                    &#xA;対応個体種類：
                    &#xA;ボタン
+                   &#xA;トラックバー
                    &#xA;
+                   &#xA;注：コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算されて固定される。タッチ開始時の値にしたい場合は &quot;&quot; で囲む。
+                   &#xA; (ex. タッチ開始時 btn1 temp_globalvar hit = (hp) ) : 登録時のhp値に固定
+                   &#xA; (ex. タッチ開始時 btn1 &quot;temp_globalvar hit = (hp)&quot; ) : タッチ開始時にhp値を計算
                    &#xA;  "
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnTouch">
       </explanation>
       <explanation lang="eng" name="onTouchStart"
-                   syntax="onTouchStart [object name] [Light.vn command]"
+                   syntax="onTouchStart [object name(s), comma-separated] [Light.vn command] (screenspace range)"
                    details="ex. onTouchStart btn1 script textbox.txt
                    &#xA;
                    &#xA;Registers a command to execute when the object is touched.
                    &#xA;
                    &#xA;Parameters:
-                   &#xA;- object name: the touchable object to register the event on
+                   &#xA;- object name(s): the touchable object(s) to register the event on.
+                   &#xA;  Comma-separated for multiple (ex. onTouchStart btn1, btn2 script textbox.txt)
+                   &#xA;  Each name also supports regex (ex. onTouchStart btn.* script textbox.txt)
+                   &#xA;  A screen-space scope option (allScreenSpaces / sameLevelScreenSpaces) may be added at the end; without one, only current-screen-space objects are targeted.
                    &#xA;- Light.vn command: the command to execute when touched
                    &#xA;
                    &#xA;Supported object types:
                    &#xA;- button
+                   &#xA;- trackbar
+                   &#xA;
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it on touch start.
+                   &#xA; (ex. onTouchStart btn1 temp_globalvar hit = (hp) ) : hp evaluated at registration
+                   &#xA; (ex. onTouchStart btn1 &quot;temp_globalvar hit = (hp)&quot; ) : hp evaluated on touch start
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnTouch">
       </explanation>
@@ -2781,37 +2897,70 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnTouch">
       </explanation>
       <explanation lang="kor" name="터치시작시"
-                   syntax="터치시작시 [객체명] [터치 했을 시 작동하는 커맨드]"
+                   syntax="터치시작시 [객체명(콤마로 구분하여 여러 개 지정 가능)] [터치 했을 시 작동하는 커맨드] (화면 영역)"
                    details="ex. 터치시작시 btn1 스크립트 textbox.txt
                    &#xA;
+                   &#xA;주: 콤마로 구분하여 여러 객체를 지정할 수 있습니다.
+                   &#xA; (ex. 터치시작시 btn1, btn2 스크립트 textbox.txt)
+                   &#xA;
+                   &#xA;주: 객체명에 정규표현식도 사용할 수 있습니다.
+                   &#xA; (ex. 터치시작시 btn.* 스크립트 textbox.txt)
+                   &#xA;
+                   &#xA;주: 끝에 화면영역 범위(화면영역전체 / 동일계층화면영역)를 지정할 수 있습니다. 지정하지 않으면 현재 화면영역의 객체만 대상이 됩니다.
+                   &#xA;
                    &#xA;사용 가능한 객체 종류:
-                   &#xA;버튼"
+                   &#xA;버튼
+                   &#xA;트랙바
+                   &#xA;
+                   &#xA;주의: 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. 터치 시작 시의 값으로 하려면 &quot;&quot;로 감싼다.
+                   &#xA; (ex. 터치시작시 btn1 temp_globalvar hit = (hp) ) : 등록 시 hp값으로 고정
+                   &#xA; (ex. 터치시작시 btn1 &quot;temp_globalvar hit = (hp)&quot; ) : 터치 시작 시에 hp값을 계산"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnTouch">
       </explanation>
     </Command>
     <Command cmd="onTouchExit">
       <explanation lang="jap" name="タッチ終了時"
-                   syntax="タッチ終了時 [ボタン名前] [タッチ終了時発動コマンド]"
+                   syntax="タッチ終了時 [個体名 (カンマ区切りで複数指定可)] [タッチ終了時発動コマンド] (画面領域範囲)"
                    details="ex. タッチ終了時 btn1 スクリプト textbox.txt
+                   &#xA;
+                   &#xA;注: カンマ区切りで複数の個体を指定できます。
+                   &#xA; (ex. タッチ終了時 btn1, btn2 スクリプト textbox.txt)
+                   &#xA;
+                   &#xA;注: 個体名に正規表現も使用できます。
+                   &#xA; (ex. タッチ終了時 btn.* スクリプト textbox.txt)
+                   &#xA;
+                   &#xA;注: 末尾に画面領域範囲（全画面領域／同階層画面領域）を指定できます。指定しない場合、現画面領域の個体のみが対象になります。
                    &#xA;
                    &#xA;対応個体種類：
                    &#xA;ボタン
+                   &#xA;トラックバー
                    &#xA;
+                   &#xA;注：コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算されて固定される。タッチ終了時の値にしたい場合は &quot;&quot; で囲む。
+                   &#xA; (ex. タッチ終了時 btn1 temp_globalvar hit = (hp) ) : 登録時のhp値に固定
+                   &#xA; (ex. タッチ終了時 btn1 &quot;temp_globalvar hit = (hp)&quot; ) : タッチ終了時にhp値を計算
                    &#xA; "
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnNotTouch">
       </explanation>
       <explanation lang="eng" name="onTouchExit"
-                   syntax="onTouchExit [button name] [Light.vn command]"
+                   syntax="onTouchExit [object name(s), comma-separated] [Light.vn command] (screenspace range)"
                    details="ex. onTouchExit btn1 script textbox.txt
                    &#xA;
                    &#xA;Registers a command to execute when touch ends on the object.
                    &#xA;
                    &#xA;Parameters:
-                   &#xA;- button name: the button to register the event on
+                   &#xA;- object name(s): the touchable object(s) to register the event on.
+                   &#xA;  Comma-separated for multiple (ex. onTouchExit btn1, btn2 script textbox.txt)
+                   &#xA;  Each name also supports regex (ex. onTouchExit btn.* script textbox.txt)
+                   &#xA;  A screen-space scope option (allScreenSpaces / sameLevelScreenSpaces) may be added at the end; without one, only current-screen-space objects are targeted.
                    &#xA;- Light.vn command: the command to execute when touch ends
                    &#xA;
                    &#xA;Supported object types:
                    &#xA;- button
+                   &#xA;- trackbar
+                   &#xA;
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it on touch end.
+                   &#xA; (ex. onTouchExit btn1 temp_globalvar hit = (hp) ) : hp evaluated at registration
+                   &#xA; (ex. onTouchExit btn1 &quot;temp_globalvar hit = (hp)&quot; ) : hp evaluated on touch end
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnNotTouch">
       </explanation>
@@ -2824,11 +2973,24 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnNotTouch">
       </explanation>
       <explanation lang="kor" name="터치종료시"
-                   syntax="터치종료시 [버튼 이름] [손을 뗐을 시 작동하는 커맨드]"
+                   syntax="터치종료시 [객체명(콤마로 구분하여 여러 개 지정 가능)] [손을 뗐을 시 작동하는 커맨드] (화면 영역)"
                    details="ex. 터치종료시 btn1 스크립트 textbox.txt
                    &#xA;
+                   &#xA;주: 콤마로 구분하여 여러 객체를 지정할 수 있습니다.
+                   &#xA; (ex. 터치종료시 btn1, btn2 스크립트 textbox.txt)
+                   &#xA;
+                   &#xA;주: 객체명에 정규표현식도 사용할 수 있습니다.
+                   &#xA; (ex. 터치종료시 btn.* 스크립트 textbox.txt)
+                   &#xA;
+                   &#xA;주: 끝에 화면영역 범위(화면영역전체 / 동일계층화면영역)를 지정할 수 있습니다. 지정하지 않으면 현재 화면영역의 객체만 대상이 됩니다.
+                   &#xA;
                    &#xA;사용 가능한 객체 종류:
-                   &#xA;버튼"
+                   &#xA;버튼
+                   &#xA;트랙바
+                   &#xA;
+                   &#xA;주의: 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. 터치 종료 시의 값으로 하려면 &quot;&quot;로 감싼다.
+                   &#xA; (ex. 터치종료시 btn1 temp_globalvar hit = (hp) ) : 등록 시 hp값으로 고정
+                   &#xA; (ex. 터치종료시 btn1 &quot;temp_globalvar hit = (hp)&quot; ) : 터치 종료 시에 hp값을 계산"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#onBtnNotTouch">
       </explanation>
     </Command>
@@ -2898,7 +3060,8 @@
     </Command>
     <Command cmd="touchableRes">
       <explanation lang="jap" name="タッチ素材設定"
-                   syntax="タッチ素材設定 [UI通常画像] [UIタッチ時画像] [UIクリック時画像] (UIタッチ時音) (UIクリック時音) (UIハイライト時画像) (UI非活性時画像)"
+                   syntax="1. タッチ素材設定 [UI通常画像] [UIタッチ時画像] [UIクリック時画像] (UIタッチ時音) (UIクリック時音) (UIハイライト時画像) (UI非活性時画像)
+                   &#xA;2. タッチ素材設定2 [名前] [UI通常画像] [UIタッチ時画像] [UIクリック時画像] (UIタッチ時音) (UIクリック時音) (UIハイライト時画像) (UI非活性時画像)"
                    details="ex. タッチ素材設定 untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg
                    &#xA;
                    &#xA;「これから作られるタッチ可能個体すべて」（例：ボタン）のデフォルト素材を宣言する。
@@ -2913,11 +3076,13 @@
                    &#xA;注: 画像サイズは同一のものにする必要がある。
                    &#xA;注: UIハイライト時画像: 未指定時には、クリック時画像が使われる。
                    &#xA;注: UI非活性時画像: 未指定時には、通常画像が使われる。
+                   &#xA;注: 形式2 (タッチ素材設定2 [名前] ...) の場合は、ボタン、などで再利用可能な名前付き素材セットを登録する。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchableRes">
       </explanation>
       <explanation lang="eng" name="touchableRes"
-                   syntax="touchableRes [untouched image] [touched image] [clicked image] (touched sfx) (clicked sfx) (highlighted image) (disabled image)"
+                   syntax="1. touchableRes [untouched image] [touched image] [clicked image] (touched sfx) (clicked sfx) (highlighted image) (disabled image)
+                   &#xA;2. touchableRes2 [name] [untouched image] [touched image] [clicked image] (touched sfx) (clicked sfx) (highlighted image) (disabled image)"
                    details="ex. touchableRes untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg
                    &#xA;
                    &#xA;Defines default resources for all touchable objects (buttons, trackbars)
@@ -2935,6 +3100,8 @@
                    &#xA;
                    &#xA;Notes:
                    &#xA;- All images must be the same size.
+                   &#xA;- Form 2 (touchableRes2 [name] ...) registers a named, reusable set.
+                   &#xA;  Reference it by name, e.g. button [name] [set] ...
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchableRes">
       </explanation>
@@ -2955,7 +3122,8 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchableRes">
       </explanation>
       <explanation lang="kor" name="터치리소스"
-                   syntax="터치리소스 [UI통상 시 이미지] [UI터치 시 이미지] [UI클릭 시 이미지] (UI터치 시 효과음) (UI클릭 시 효과음) (UI하이라이트 시 이미지) (UI비활성 시 이미지)"
+                   syntax="1. 터치리소스 [UI통상 시 이미지] [UI터치 시 이미지] [UI클릭 시 이미지] (UI터치 시 효과음) (UI클릭 시 효과음) (UI하이라이트 시 이미지) (UI비활성 시 이미지)
+                   &#xA;2. 터치리소스2 [이름] [UI통상 시 이미지] [UI터치 시 이미지] [UI클릭 시 이미지] (UI터치 시 효과음) (UI클릭 시 효과음) (UI하이라이트 시 이미지) (UI비활성 시 이미지)"
                    details="ex. 터치리소스 untouched-image.png touched-image.png clicked-image.png touch.ogg click.ogg
                    &#xA;
                    &#xA;앞으로 생성할 모든 터치 가능 객체(ex. 버튼)의 기본 리소스를 선언합니다.
@@ -2969,7 +3137,8 @@
                    &#xA;
                    &#xA;주: 이미지 사이즈는 동일해야 합니다.
                    &#xA;주: 'UI하이라이트 시 이미지'를 설정하지 않으면, '클릭 시 이미지'가 사용됩니다.
-                   &#xA;주: 'UI비활성 시 이미지'를 설정하지 않으면, '통상 시 이미지'가 사용됩니다."
+                   &#xA;주: 'UI비활성 시 이미지'를 설정하지 않으면, '통상 시 이미지'가 사용됩니다.
+                   &#xA;주: 형식2 (터치리소스2 [이름] ...) 는 이름이 지정된 재사용 가능 세트를 등록한다. 버튼 [이름] [세트] ... 등에서 이름을 지정 가능."
                    reference="https://wikiwiki.jp/lightvn/commands/UI#touchableRes">
       </explanation>
     </Command>
@@ -3027,35 +3196,50 @@
     </Command>
     <Command cmd="trackbar">
       <explanation lang="jap" name="トラックバー"
-                   syntax="トラックバー [名前] (トラックボール未タッチ素材) (トラックボールタッチ素材) (トラックボールクリック素材) [x座標] [y座標] [laye(r)] [横・縦] [幅] [変数名] [左側数値] [右側数値]
+                   syntax="トラックバー [名前] (タッチ素材設定2セット名) (トラックボール未タッチ素材) (トラックボールタッチ素材) (トラックボールクリック素材) [x座標] [y座標] [laye(r)] [横・縦] [幅] [変数名] [左側数値] [右側数値]
                    &#xA; (透明無視) (カメラオプション) (調整完了後実行コマンド)"
-                   details="ex. トラックバー trackbar sys_trackball.png370 246 105 横 530 bgm 0 100
-                   &#xA;背景音楽の音量をコントロールするトラックバーを生成。
+                   details="ex. トラックバー trackbar sys_trackball.png 370 246 105 横 530 my_var 0 100
+                   &#xA;ex. トラックバー trackbar sys_trackball.png 370 246 105 横 530 my_var 100 0 (100 -> 0 への反対方向も可能)
                    &#xA;
-                   &#xA;ex. トラックバー trackbar sys_trackball.png 370 246 105 横 530 bgm 0 100 効果音 test_sound test.ogg
+                   &#xA;「my_var」の変数値をコントロールするトラックバーを生成。
+                   &#xA;
+                   &#xA;ex. トラックバー trackbar sys_trackball.png 370 246 105 横 530 my_var 0 100 効果音 test_sound test.ogg
                    &#xA;調整後、「効果音 test_sound test.ogg」が実行される。
                    &#xA;
                    &#xA;「トラックボール未タッチ素材」を含め素材が指定されない場合は、
-                   &#xA;「タッチ素材登録」の設定をそのまま使用する。
+                   &#xA;「タッチ素材設定」の設定をそのまま使用する。
+                   &#xA;
+                   &#xA;タッチ素材設定2 で登録した名前付きセットを指定する場合、
+                   &#xA;基本素材として使われる。後続の画像は通常/タッチ時/クリック時の順で上書きする。
                    &#xA;
                    &#xA;変数名にはコンテナのインデックス指定も可能：
                    &#xA;ex. mylist[0]、mymap[&quot;key&quot;]
                    &#xA;式にスペースが含まれる場合は引用符で囲む：
-                   &#xA;ex. &quot;mylist[ {{ x - 1 }} ]&quot;"
+                   &#xA;ex. &quot;mylist[ {{ x - 1 }} ]&quot;
+                   &#xA;
+                   &#xA;注：調整完了後実行コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算されて固定される。調整完了時の値にしたい場合は &quot;&quot; で囲む。
+                   &#xA; (ex. トラックバー tb ball.png 0 0 100 横 500 v 0 100 temp_globalvar hit = (hp) ) : 登録時のhp値に固定
+                   &#xA; (ex. トラックバー tb ball.png 0 0 100 横 500 v 0 100 &quot;temp_globalvar hit = (hp)&quot; ) : 調整完了時にhp値を計算"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#trackbar">
       </explanation>
       <explanation lang="eng" name="trackbar"
-                   syntax="trackbar [name] (trackball untouched image) (trackball touched image) (trackball clicked image) [x] [y] [r] [horizontal/vertical] [length] [variable] [left val] [right val]
+                   syntax="trackbar [name] (touchableRes2 set name) (trackball untouched image) (trackball touched image) (trackball clicked image) [x] [y] [r] [horizontal/vertical] [length] [variable] [left val] [right val]
                    &#xA;(ignoreTrans) (camera_option) (command on adjustment complete)"
-                   details="ex. trackbar trackbar sys_trackball.png 370 246 105 horizontal 530 bgm 0 100
-                   &#xA;Creates a trackbar that controls BGM volume.
+                   details="ex. trackbar trackbar sys_trackball.png 370 246 105 horizontal 530 my_var 0 100
+                   &#xA;ex. trackbar trackbar sys_trackball.png 370 246 105 horizontal 530 my_var 100 0   (100 -> 0 reversed direction also works)
                    &#xA;
-                   &#xA;ex. trackbar trackbar sys_trackball.png 370 246 105 horizontal 530 bgm 0 100 sfx test_sound test.ogg
+                   &#xA;Creates a trackbar that controls the variable: 'my_var'.
+                   &#xA;
+                   &#xA;ex. trackbar trackbar sys_trackball.png 370 246 105 horizontal 530 my_var 0 100 sfx test_sound test.ogg
                    &#xA;After adjustment, runs &quot;sfx test_sound test.ogg&quot;.
                    &#xA;
                    &#xA;Parameters:
                    &#xA;- name: unique identifier
-                   &#xA;- trackball images: optional. If omitted, uses touchableRes defaults.
+                   &#xA;- touchableRes2 set name: may be given as the first optional token; it
+                   &#xA;  supplies the base resources, and any following images override
+                   &#xA;  untouched/touched/clicked in order.
+                   &#xA;- if touchableRes2 set name is not supplied, then the default resources
+                   &#xA;  are referenced from the most recent touchableRes setting
                    &#xA;- x, y: position coordinates
                    &#xA;- r (layer): higher = in front, z = r * 100
                    &#xA;- horizontal/vertical: trackbar orientation
@@ -3067,16 +3251,21 @@
                    &#xA;- left val, right val: min and max values
                    &#xA;- command on adjustment complete: optional Light.vn command to run after
                    &#xA;  the user finishes adjusting
+                   &#xA;
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it on adjustment complete.
+                   &#xA; (ex. trackbar tb ball.png 0 0 100 horizontal 500 v 0 100 temp_globalvar hit = (hp) ) : hp evaluated at registration
+                   &#xA; (ex. trackbar tb ball.png 0 0 100 horizontal 500 v 0 100 &quot;temp_globalvar hit = (hp)&quot; ) : hp evaluated on adjustment complete
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#trackbar">
       </explanation>
       <explanation lang="zhc" name="轨迹条"
                    syntax="轨迹条 [名称] (轨迹球未交互素材) (轨迹球交互素材) (轨迹球点击素材) [x] [y] [r] [横/竖] [长度] [变量名称] [左侧值] [右侧值] (忽略透明) (视图选项) (调整后执行的命令)"
-                   details="例如：轨迹条 trackbar sys_trackball.png 370 246 105 横 530 bgm 0 100
+                   details="例如：轨迹条 trackbar sys_trackball.png 370 246 105 横 530 my_var 0 100
+                   &#xA;例如：轨迹条 trackbar sys_trackball.png 370 246 105 横 530 my_var 100 0   (100 -> 0 反方向也可以)
                    &#xA;
-                   &#xA;创建一个控制背景音乐音量的轨迹条。
+                   &#xA;创建一个控制背 [my_var] 的轨迹条。
                    &#xA;
-                   &#xA;例如：轨迹条 trackbar sys_trackball.png 370 246 105 横 530 bgm 0 100 音效 test_sound test.ogg
+                   &#xA;例如：轨迹条 trackbar sys_trackball.png 370 246 105 横 530 my_var 0 100 音效 test_sound test.ogg
                    &#xA;
                    &#xA;调整后，执行&quot;音效 test_sound test.ogg&quot;。
                    &#xA;如果未指定素材，则使用&quot;交互素材设置&quot;配置。
@@ -3088,22 +3277,97 @@
                    reference="https://wikiwiki.jp/lightvn/commands/UI#trackbar">
       </explanation>
       <explanation lang="kor" name="트랙바"
-                   syntax="트랙바 [이름] (트랙볼 미터치시 리소스) (트랙볼 터치 시 리소스) (트랙볼 클릭 시 리소스) [x좌표] [y좌표] [레이어(r)] [가로/세로] [폭] [변수명] [좌측 값] [우측 값]
+                   syntax="트랙바 [이름] (터치리소스2 세트명) (트랙볼 미터치시 리소스) (트랙볼 터치 시 리소스) (트랙볼 클릭 시 리소스) [x좌표] [y좌표] [레이어(r)] [가로/세로] [폭] [변수명] [좌측 값] [우측 값]
                    &#xA; (투명무시) (카메라옵션) (조절 완료 후 실행 커맨드)"
-                   details="ex. 트랙바 trackbar sys_trackball.png370 246 105 가로 530 bgm 0 100
-                   &#xA;배경 음악 볼륨을 컨트롤하는 트랙바를 생성한다.
+                   details="ex. 트랙바 trackbar sys_trackball.png370 246 105 가로 530 my_var 0 100
+                   &#xA;ex. 트랙바 trackbar sys_trackball.png 370 246 105 가로 530 my_var 100 0   (100 -> 0 반대 방향도 가능)
                    &#xA;
-                   &#xA;ex. 트랙바 trackbar sys_trackball.png 370 246 105 가로 530 bgm 0 100 효과음 test_sound test.ogg
+                   &#xA;변수치: my_var를 컨트롤하는 트랙바를 생성한다.
+                   &#xA;
+                   &#xA;ex. 트랙바 trackbar sys_trackball.png 370 246 105 가로 530 my_var 0 100 효과음 test_sound test.ogg
                    &#xA;조절 후 &quot;효과음 test_sound test.ogg&quot;이 재생된다.
                    &#xA;
-                   &#xA;&quot;트랙볼미터치시리소스&quot; 등의 이미지가 지정되지 않았을 경우,
-                   &#xA;&quot;터치리소스&quot;의 값을 그대로 따라간다.
+                   &#xA;&quot;버튼통상그림&quot; 등의 이미지가 지정되지 않았을 경우,
+                   &#xA;&quot;터치리소스&quot;의 설정값을 그대로 따라간다.
+                   &#xA;
+                   &#xA;첫 번째 선택 토큰에 &quot;터치리소스2&quot;로 등록한 명명된 세트를 지정할 경우, 그 설정값을 기본치로 한다.
                    &#xA;
                    &#xA;변수명에 컨테이너 인덱스 지정도 가능：
                    &#xA;ex. mylist[0], mymap[&quot;key&quot;]
                    &#xA;식에 공백이 포함된 경우 따옴표로 감싸야 함：
-                   &#xA;ex. &quot;mylist[ {{ x - 1 }} ]&quot;"
+                   &#xA;ex. &quot;mylist[ {{ x - 1 }} ]&quot;
+                   &#xA;
+                   &#xA;주의: 조정 완료 후 실행 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. 조정 완료 시의 값으로 하려면 &quot;&quot;로 감싼다.
+                   &#xA; (ex. 트랙바 tb ball.png 0 0 100 가로 500 v 0 100 temp_globalvar hit = (hp) ) : 등록 시 hp값으로 고정
+                   &#xA; (ex. 트랙바 tb ball.png 0 0 100 가로 500 v 0 100 &quot;temp_globalvar hit = (hp)&quot; ) : 조정 완료 시에 hp값을 계산"
                    reference="https://wikiwiki.jp/lightvn/commands/UI#trackbar">
+      </explanation>
+    </Command>
+    <Command cmd="gauge">
+      <explanation lang="jap" name="ゲージ"
+                   syntax="ゲージ [名前] (背景画像) [画像] [x座標] [y座標] [laye(r)] [変数名] [最小値] [最大値] (カメラオプション)"
+                   details="ex. ゲージ hp_bar hp_fill.png 50 30 5 player_hp 0 100
+                   &#xA;ex. ゲージ hp_bar hp_bg.png hp_fill.png 50 30 5 player_hp 0 100
+                   &#xA;ex. ゲージ mp_bar mp_fill.png 50 60 5 player_hp 100 0 （100 &gt; 0 で右から左へ表示）
+                   &#xA;
+                   &#xA;変数 player_hp の値に応じて hp_fill.png を左から右へ表示するゲージを生成。
+                   &#xA;
+                   &#xA;表示割合 = (変数 - 最小値) / (最大値 - 最小値)（0〜1に収める）。
+                   &#xA;
+                   &#xA;・背景画像（省略可）：画像の後ろに表示。同じ座標、レイヤーは r - 1
+                   &#xA;・画像：単一の塗り画像（表示方向は下記 num1/num2 の順で決定）
+                   &#xA;・変数名：ゲージが参照する変数。コンテナのインデックス指定も可能：
+                   &#xA;ex. mylist[0]、mymap[&quot;key&quot;]
+                   &#xA;式にスペースが含まれる場合は引用符で囲む：
+                   &#xA;ex. &quot;mylist[ {{ x - 1 }} ]&quot;
+                   &#xA;・num1・num2：左端と右端の値。num1 &lt; num2 は左→右、num1 &gt; num2（例：100 0）は右→左に表示。いずれも最小値=空・最大値=満。値が下がるほど満ちるゲージは (最大値 - 変数) を参照。"
+                   reference="https://wikiwiki.jp/lightvn/commands/UI#gauge">
+      </explanation>
+      <explanation lang="eng" name="gauge"
+                   syntax="gauge [name] (background_image) [image] [x] [y] [r] [variable] [min] [max] (camera_option)"
+                   details="ex. gauge hp_bar hp_fill.png 50 30 5 player_hp 0 100
+                   &#xA;ex. gauge hp_bar hp_bg.png hp_fill.png 50 30 5 player_hp 0 100
+                   &#xA;ex. gauge mp_bar mp_fill.png 50 60 5 player_hp 100 0   (fills right-to-left)
+                   &#xA;
+                   &#xA;Creates a gauge that reveals hp_fill.png based on variable: player_hp.
+                   &#xA;
+                   &#xA;fill fraction = (variable - min) / (max - min), clamped to 0..1.
+                   &#xA;
+                   &#xA;Parameters:
+                   &#xA;- name: unique identifier
+                   &#xA;- background_image (optional): drawn behind the fill. Same x y, layer r - 1
+                   &#xA;- image: single fill image (reveal direction set by num1/num2 order below)
+                   &#xA;- x, y: position coordinates
+                   &#xA;- r (layer): higher = in front, z = r * 100
+                   &#xA;- variable: variable the gauge reads.
+                   &#xA;  Supports container indexing (e.g. mylist[0], mymap[&quot;key&quot;]).
+                   &#xA;  If the expression contains spaces, wrap in quotes:
+                   &#xA;  e.g. &quot;mylist[ {{ x - 1 }} ]&quot;
+                   &#xA;- num1, num2: the values at the left and right ends. num1 &lt; num2 fills
+                   &#xA;  left-to-right; num1 &gt; num2 (e.g. 100 0) fills right-to-left. Either way
+                   &#xA;  the value maps min=empty, max=full; for a gauge that fills as the value
+                   &#xA;  drops, track (max - value).
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/UI#gauge">
+      </explanation>
+      <explanation lang="kor" name="게이지"
+                   syntax="게이지 [이름] (배경이미지) [이미지] [x좌표] [y좌표] [레이어(r)] [변수명] [최소값] [최대값] (카메라옵션)"
+                   details="ex. 게이지 hp_bar hp_fill.png 50 30 5 player_hp 0 100
+                   &#xA;ex. 게이지 hp_bar hp_bg.png hp_fill.png 50 30 5 player_hp 0 100
+                   &#xA;ex. 게이지 mp_bar mp_fill.png 50 60 5 player_hp 100 0 （100 &gt; 0 이면 오른쪽에서 왼쪽으로 표시）
+                   &#xA;
+                   &#xA;변수 player_hp 값에 따라 hp_fill.png 를 왼쪽에서 오른쪽으로 표시하는 게이지를 생성한다.
+                   &#xA;
+                   &#xA;표시 비율 = (변수 - 최소값) / (최대값 - 최소값), 범위: 0~1로 제한.
+                   &#xA;
+                   &#xA;・배경이미지（생략 가능）：채움 이미지 뒤에 표시. 같은 좌표, 레이어는 r - 1
+                   &#xA;・이미지：단일 채움 이미지（표시 방향은 아래 num1/num2 순서로 결정）
+                   &#xA;・변수명：게이지가 참조하는 변수. 컨테이너 인덱스 지정도 가능：
+                   &#xA;ex. mylist[0], mymap[&quot;key&quot;]
+                   &#xA;식에 공백이 포함된 경우 따옴표로 감싸야 함：
+                   &#xA;ex. &quot;mylist[ {{ x - 1 }} ]&quot;
+                   &#xA;・num1・num2：왼쪽 끝과 오른쪽 끝의 값. num1 &lt; num2 는 왼쪽→오른쪽, num1 &gt; num2 (예: 100 0) 는 오른쪽→왼쪽으로 표시. 값이 내려갈수록 채워지는 게이지는 (최대값 - 변수) 를 참조."
+                   reference="https://wikiwiki.jp/lightvn/commands/UI#gauge">
       </explanation>
     </Command>
     <!--[TEXT RELATED FUNCTIONS]-->
@@ -3522,24 +3786,32 @@
     </Command>
     <Command cmd="textTableLoad">
       <explanation lang="jap" name="台詞情報登録"
-                   syntax="台詞情報登録 [ファイル経路] [次に読み込む行: 0~]"
+                   syntax="1. 台詞情報登録 [ファイル経路] [次に読み込む行: 0~]
+                   &#xA;2. 台詞情報登録 [ファイル経路] [次に読み込む行: unique_id]"
                    details="ex. 台詞情報登録 table.csv 0
+                   &#xA;ex. 台詞情報登録 table.csv greet_01   （unique_id: 'greet_01'の行）
                    &#xA;
                    &#xA;シナリオテーブルを読み込み、次に表示される行を設定する。
+                   &#xA;開始行は行番号、またはunique_id（csvの「unique_id」列の値）で指定できる。
+                   &#xA;unique_idを使用するとファイル内の行の挿入などに備えられる。
                    &#xA;
                    &#xA;注：先に「台詞情報種類」を使用して種類を指定する必要がある。
                    "
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableLoad">
       </explanation>
-      <explanation lang="eng" name="textTableLoad"
-                   syntax="textTableLoad [filepath] [next line to read: 0~]"
+      <explanation lang="eng" name="v"
+                   syntax="1. textTableLoad [filepath] [next line to read: 0~]
+                   &#xA;2. textTableLoad [filepath] [next line to read: unique_id]"
                    details="ex. textTableLoad table.csv 0
+                   &#xA;ex. textTableLoad table.csv greet_01   (row with unique_id: 'greet_01')
                    &#xA;
                    &#xA;Loads a scenario CSV file and sets the next row to read.
+                   &#xA;The start can be a row number, or a unique_id (the value under the CSV's 'unique_id' column).
+                   &#xA;Using a unique_id column can help prepare against row changes within the CSV file.
                    &#xA;
                    &#xA;Parameters:
                    &#xA;- filepath: path to the CSV file
-                   &#xA;- next line to read: row index (0-based) to start reading from
+                   &#xA;- next line to read: a row index (0-based), or a unique_id string (matches the row's 'unique_id' column)
                    &#xA;
                    &#xA;Notes:
                    &#xA;- textTableColumn must be called first to set the column.
@@ -3556,10 +3828,14 @@
                    reference="https://wikiwiki.jp/lightvn/commands/text#textTableLoad">
       </explanation>
       <explanation lang="kor" name="대사파일등록"
-                   syntax="대사파일등록 [파일 이름] [다음 읽을 행: 0~]"
+                   syntax="1. 대사파일등록 [파일 이름] [다음 읽을 행: 0~]
+                   &#xA;2. 대사파일등록 [파일 이름] [다음 읽을 행: unique_id]"
                    details="ex. 대사파일등록 table.csv 0
+                   &#xA;ex. 대사파일등록 table.csv greet_01   (unique_id로 지정)
                    &#xA;
                    &#xA;대사 파일(csv 파일)을 불러오고, 다음에 읽을 행(라인)을 지정합니다.
+                   &#xA;시작 행은 행 번호, 또는 unique_id(csv의 'unique_id' 열 값)로 지정할 수 있습니다.
+                   &#xA;unique_id 사용시 파일 내 행 추가 등에 대비할 수 있습니다.
                    &#xA;
                    &#xA;주의：먼저 &quot;대사파일열&quot;을 사용하여 열(column)을 지정해야 합니다.
                    "
@@ -3569,11 +3845,15 @@
     <Command cmd="textTableLine">
       <explanation lang="jap" name="台詞情報新文章"
                    syntax="1. 台詞情報新文章 (対象名) [ファイル経路]
-                   &#xA;2. 台詞情報新文章 (対象名) [ファイル経路] (行)"
+                   &#xA;2. 台詞情報新文章 (対象名) [ファイル経路] (行)
+                   &#xA;3. 台詞情報新文章 (対象名) [ファイル経路] (unique_id)"
                    details="ex. 台詞情報新文章 table.csv
+                   &#xA;ex. 台詞情報新文章 table.csv greet_01   （unique_idで指定）
                    &#xA;
                    &#xA;既に登録されている「ファイル経路」の台詞情報から、
                    &#xA;現在使用中の文字窓に、次の文章データを、「改ページ文章」として表示させる。
+                   &#xA;(行)は行番号、またはunique_id（「unique_id」列の値）で指定可。
+                   &#xA;unique_idを使用するとファイル内の行の挿入などに備えられる。
                    &#xA;
                    &#xA;注：先に[ファイル経路]を「台詞情報登録」で登録する必要あり。
                    &#xA;注：行を指定する場合、先に「台詞情報登録」を呼ぶ必要はない。
@@ -3586,16 +3866,20 @@
       </explanation>
       <explanation lang="eng" name="textTableLine"
                    syntax="1. textTableLine (target) [filepath]
-                   &#xA;2. textTableLine (target) [filepath] (row)"
+                   &#xA;2. textTableLine (target) [filepath] (row)
+                   &#xA;3. textTableLine (target) [filepath] (unique_id)"
                    details="ex. textTableLine table.csv
+                   &#xA;ex. textTableLine table.csv greet_01   (row with unique_id: 'greet_01')
                    &#xA;
                    &#xA;Reads the next row from a registered CSV file and displays it
                    &#xA;as new page text in the active textbox (clears previous text).
+                   &#xA;The row can be a number, or a unique_id (the value under the CSV's 'unique_id' column).
+                   &#xA;Using a unique_id column can help prepare against row changes within the CSV file.
                    &#xA;
                    &#xA;Parameters:
                    &#xA;- target: optional target textbox name
                    &#xA;- filepath: path to the registered CSV file
-                   &#xA;- row: optional specific row number to read
+                   &#xA;- row: optional. A specific row number, or a unique_id string (matches the row's 'unique_id' column)
                    &#xA;
                    &#xA;Notes:
                    &#xA;- File must be registered via textTableLoad first (unless row is specified).
@@ -3620,11 +3904,15 @@
       </explanation>
       <explanation lang="kor" name="대사파일출력"
                    syntax="1. 대사파일출력 (대상이름) [파일 이름]
-                   &#xA;2. 대사파일출력 (대상이름) [파일 이름] (행)"
+                   &#xA;2. 대사파일출력 (대상이름) [파일 이름] (행)
+                   &#xA;3. 대사파일출력 (대상이름) [파일 이름] (unique_id)"
                    details="ex. 대사파일출력 table.csv
+                   &#xA;ex. 대사파일출력 table.csv greet_01   (unique_id로 지정)
                    &#xA;
                    &#xA;미리 등록한 &quot;파일 이름&quot;에서 텍스트 데이터를 불러와,
                    &#xA;현재 활성화된 텍스트창에 다음 행을 새롭게 표시합니다.
+                   &#xA;(행)은 행 번호, 또는 unique_id('unique_id' 열 값)로 지정할 수 있습니다.
+                   &#xA;unique_id 사용시 파일 내 행 추가 등에 대비할 수 있습니다.
                    &#xA;
                    &#xA;주: 먼저 [파일 경로]를 &quot;대사파일행지정&quot;으로 등록해야 합니다. 단, 행 번호를 지정하는 경우에는 등록하지 않아도 됩니다.
                    &#xA;
@@ -3637,11 +3925,15 @@
     <Command cmd="textTableLineCont">
       <explanation lang="jap" name="台詞情報追加文章"
                    syntax="1. 台詞情報追加文章 (対象名) [ファイル経路]
-                   &#xA;2. 台詞情報追加文章 (対象名) [ファイル経路] (行)"
+                   &#xA;2. 台詞情報追加文章 (対象名) [ファイル経路] (行)
+                   &#xA;3. 台詞情報追加文章 (対象名) [ファイル経路] (unique_id)"
                    details="ex. 台詞情報追加文章 table.csv
+                   &#xA;ex. 台詞情報追加文章 table.csv greet_01   （unique_idで指定）
                    &#xA;
                    &#xA;既に登録された「ファイル経路」の台詞情報から、
                    &#xA;現在使用中の文字窓に、次の文章データを、「既存の文章に続く文章」として表示させる。
+                   &#xA;(行)は行番号、またはunique_id（「unique_id」列の値）で指定可。
+                   &#xA;unique_idを使用するとファイル内の行の挿入などに備えられる。
                    &#xA;
                    &#xA;注：先に[ファイル経路]を「台詞情報登録」で登録する必要あり。
                    &#xA;注：行を指定する場合、先に「台詞情報登録」を呼ぶ必要はない。
@@ -3654,16 +3946,20 @@
       </explanation>
       <explanation lang="eng" name="textTableLineCont"
                    syntax="1. textTableLineCont (target) [filepath]
-                   &#xA;2. textTableLineCont (target) [filepath] (row)"
+                   &#xA;2. textTableLineCont (target) [filepath] (row)
+                   &#xA;3. textTableLineCont (target) [filepath] (unique_id)"
                    details="ex. textTableLineCont table.csv
+                   &#xA;ex. textTableLineCont table.csv greet_01      (row with unique_id: 'greet_01')
                    &#xA;
                    &#xA;Reads the next row from a registered CSV file and displays it
                    &#xA;as continuing text (appended to existing text, without clearing).
+                   &#xA;The row can be a number, or a unique_id (the value under the CSV's 'unique_id' column).
+                   &#xA;Using a unique_id column can help prepare against row changes within the CSV file.
                    &#xA;
                    &#xA;Parameters:
                    &#xA;- target: optional target textbox name
                    &#xA;- filepath: path to the registered CSV file
-                   &#xA;- row: optional specific row number to read
+                   &#xA;- row: optional. A specific row number, or a unique_id string (matches the row's 'unique_id' column)
                    &#xA;
                    &#xA;Notes:
                    &#xA;- File must be registered via textTableLoad first (unless row is specified).
@@ -3688,11 +3984,14 @@
       </explanation>
       <explanation lang="kor" name="대사파일이어출력"
                    syntax="1. 대사파일이어출력 (대상 이름) [파일 이름]
-                   &#xA;2. 대사파일이어출력 (대상 이름) [파일 이름] (행)"
+                   &#xA;2. 대사파일이어출력 (대상 이름) [파일 이름] (행)&#xA;3. 대사파일이어출력 (대상 이름) [파일 이름] (unique_id)"
                    details="ex. 대사파일이어출력 table.csv
+                   &#xA;ex. 대사파일이어출력 table.csv greet_01   (unique_id로 지정)
                    &#xA;
                    &#xA;미리 등록한 &quot;파일 이름&quot;에서 텍스트 데이터를 불러와,
                    &#xA;현재 사용 중인 텍스트창에 다음 행을 기존 텍스트 뒤에 이어서 표시합니다.
+                   &#xA;(행)은 행 번호, 또는 unique_id('unique_id' 열 값)로 지정할 수 있습니다.
+                   &#xA;unique_id 사용시 파일 내 행 추가 등에 대비할 수 있습니다.
                    &#xA;
                    &#xA;주: 먼저 [파일 경로]를 &quot;대사파일행지정&quot;으로 등록해야 합니다. 단, 행 번호를 지정하는 경우에는 등록하지 않아도 됩니다.
                    &#xA;
@@ -4865,6 +5164,7 @@
                    syntax="文字窓スキン (対象名) [ファイル名 / 登録済みアニメ名] [スキンx座標] [スキンy座標] (拡大比率) (拡大比率y)"
                    details="ex. 文字窓スキン skin.png 300 400
                    &#xA;ex. 文字窓スキン skin.png 300 400 80%
+                   &#xA;ex. 文字窓スキン アウト
                    &#xA;
                    &#xA;詳細：対象文字窓を親とする、名前：「対象名 + _skin」の絵を作る。
                    &#xA;従い、スキンに追加の調整を行いたい場合には、「対象名 + _skin」を対象に
@@ -4877,6 +5177,7 @@
                    syntax="textboxSkin (target) [filepath / animation name] [x] [y] (zoom) (zoom y)"
                    details="ex. textboxSkin skin.png 300 400
                    &#xA;ex. textboxSkin skin.png 300 400 80%
+                   &#xA;ex. textboxSkin fadeout
                    &#xA;
                    &#xA;Attaches a background skin image to the textbox.
                    &#xA;
@@ -6393,11 +6694,6 @@
                    &#xA;(アニメーション自体が永久保存されるわけではない)
                    &#xA;
                    &#xA;「軽量積載」
-                   &#xA;指定される場合、RAMの使用が抑えられる形で実行される。
-                   &#xA;(個体による使用時に、全素材を読み込む)
-                   &#xA;(代わりに、使用初期に時間を消耗する)
-                   &#xA;
-                   &#xA;「軽量積載2」
                    &#xA;指定される場合、RAMの使用が更に抑えられる形で実行される。
                    &#xA;(再生時に、素材を一枚ずつ読み込む)
                    &#xA;(代わりに、再生時にFPSを消耗する)
@@ -6428,10 +6724,7 @@
                    &#xA;- transition type: 0 = instant, 1 = smooth interpolation (default)
                    &#xA;- forever: if set, resources are cached for program lifetime
                    &#xA;  (the animation itself is not permanently saved)
-                   &#xA;- cacheLight: reduces RAM usage by loading all resources when
-                   &#xA;  first used (costs startup time)
-                   &#xA;- cacheLight2: further reduces RAM by loading resources one at
-                   &#xA;  a time during playback (costs FPS during play)
+                   &#xA;- cacheLight: further reduces RAM by loading resources during playback (costs FPS during play)
                    &#xA;
                    &#xA;ex. animation anim1 2 x2 scg2.png 500 scg1.png 1500 !cg_test001.png &quot;lvRandom(1000, 4000)&quot;
                    &#xA;
@@ -6457,11 +6750,6 @@
                    &#xA;注意：动画本身不会被永久保存。
                    &#xA;
                    &#xA;「轻量加载」
-                   &#xA;如果指定该选项，将减少该指令的RAM消耗。
-                   &#xA;（在个体使用时，会加载所有素材）
-                   &#xA;（但代价是，在初始使用时需要消耗时间）
-                   &#xA;
-                   &#xA;「轻量加载2」
                    &#xA;如果指定该选项，将以进一步减少RAM使用的方式运行。
                    &#xA;（在播放时，会逐张加载素材）
                    &#xA;（但代价是，在播放时会消耗FPS）
@@ -6493,12 +6781,7 @@
                    &#xA;(단, 애니메이션 자체가 영구적으로 저장되는 것은 아님)
                    &#xA;
                    &#xA;&quot;메모리최적화&quot;
-                   &#xA;RAM 사용량을 줄이기 위해 리소스를 효율적으로 로드합니다.
-                   &#xA;명령 실행 시 모든 리소스를 한 번에 불러옵니다.
-                   &#xA;(첫 사용 시 시간이 더 소요될 수 있습니다.)
-                   &#xA;
-                   &#xA;&quot;메모리최적화2&quot;
-                   &#xA;RAM 사용량을 더 줄이기 위해 재생 시 리소스를 한 장씩 로드합니다.
+                   &#xA;RAM 사용량을 더 줄이기 위해 재생 시 리소스를 로드합니다.
                    &#xA;(재생 시 프레임 속도(FPS)가 저하될 수 있습니다.)
                    &#xA;
                    &#xA;ex. 애니등록 anim1 2 x2 scg2.png 500 scg1.png 1500 !cg_test001.png &quot;lvRandom(1000, 4000)&quot;
@@ -6580,8 +6863,7 @@
                    &#xA;  Actual display time per frame = time * frame increments
                    &#xA;- transition type: 0 = instant, 1 = smooth interpolation (default)
                    &#xA;- forever: caches resources for program lifetime
-                   &#xA;- cacheLight: reduces RAM by loading one frame at a time during
-                   &#xA;  playback (costs FPS)
+                   &#xA;- cacheLight: reduces RAM by loading frames during playback (costs FPS)
                    &#xA;
                    &#xA;Notes:
                    &#xA;- file range min/max is needed to support wrap-around playback
@@ -7003,6 +7285,9 @@
                    &#xA;注意：従い、他の個体の制御などもできてしまうなど、かなりパワフルな機能なので、
                    &#xA;自分で混乱しないように注意。
                    &#xA;
+                   &#xA;注：コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算されて固定される。実行時の値にしたい場合は &quot;&quot; で囲む。
+                   &#xA; (ex. 演出目録追加 id0 300 temp_globalvar hit = (hp) ) : 登録時のhp値に固定
+                   &#xA; (ex. 演出目録追加 id0 300 &quot;temp_globalvar hit = (hp)&quot; ) : 実行時にhp値を計算
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#tweenListAdd">
       </explanation>
@@ -7030,6 +7315,9 @@
                    &#xA;Notes:
                    &#xA;- The command can be any Light.vn command, including commands
                    &#xA;  that affect other objects. Use with care.
+                   &#xA;- For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it when the entry runs.
+                   &#xA;   (ex. tweenListAdd id0 300 temp_globalvar hit = (hp) ) : hp evaluated at registration
+                   &#xA;   (ex. tweenListAdd id0 300 &quot;temp_globalvar hit = (hp)&quot; ) : hp evaluated when the entry runs
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#tweenListAdd">
       </explanation>
@@ -7071,7 +7359,10 @@
                    &#xA;
                    &#xA;[실행 커맨드]는 Lightvn의 모든 명령어를 사용할 수 있습니다.
                    &#xA;주: 이 기능은 매우 강력하기 때문에 다른 객체를 제어할 수도 있습니다.
-                   &#xA;혼란을 방지하려면 신중히 사용하세요."
+                   &#xA;혼란을 방지하려면 신중히 사용하세요.
+                   &#xA;주의: 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. 실행 시의 값으로 하려면 &quot;&quot;로 감싼다.
+                   &#xA; (ex. 연출목록추가 id0 300 temp_globalvar hit = (hp) ) : 등록 시 hp값으로 고정
+                   &#xA; (ex. 연출목록추가 id0 300 &quot;temp_globalvar hit = (hp)&quot; ) : 실행 시에 hp값을 계산"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#tweenListAdd">
       </explanation>
     </Command>
@@ -7167,6 +7458,45 @@
                    &#xA;
                    &#xA;주: 화면 영역은 '화면영역전체' 또는 '동일계층화면영역'을 지정할 수 있으며, 지정하지 않으면 현재 화면 영역의 객체에만 적용됩니다."
                    reference="https://wikiwiki.jp/lightvn/commands/transition#finishTweens">
+      </explanation>
+    </Command>
+    <Command cmd="disableFinishTweens">
+      <explanation lang="jap" name="全変化完了無効"
+                   syntax="全変化完了無効 [true/false]"
+                   details="ex. 全変化完了無効 true
+                   &#xA;
+                   &#xA;trueの場合、全変化完了コマンドを無効化する。
+                   &#xA;
+                   &#xA;初期値はsettings.xmlの disableFinishTweensDefault で指定。
+                   &#xA;[clear] で初期値に戻る。
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#disableFinishTweens">
+      </explanation>
+      <explanation lang="eng" name="disableFinishTweens"
+                   syntax="disableFinishTweens [true/false]"
+                   details="ex. disableFinishTweens true
+                   &#xA;
+                   &#xA;When true, disables the finishTweens command (it becomes a no-op).
+                   &#xA;
+                   &#xA;Parameters:
+                   &#xA;- [true/false]
+                   &#xA;
+                   &#xA;Notes:
+                   &#xA;- Initial value comes from disableFinishTweensDefault (settings.xml)
+                   &#xA;- [clear] resets it to that default
+                   &#xA;- Value persists across save/load
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#disableFinishTweens">
+      </explanation>
+      <explanation lang="kor" name="모든연출완료비활성화"
+                   syntax="모든연출완료비활성화 [true/false]"
+                   details="ex. 모든연출완료비활성화 true
+                   &#xA;
+                   &#xA;true일 경우, 모든연출완료 명령을 비활성화.
+                   &#xA;
+                   &#xA;초기값은 settings.xml의 disableFinishTweensDefault로 지정.
+                   &#xA;[clear] 시 초기값으로 되돌아갑니다."
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#disableFinishTweens">
       </explanation>
     </Command>
     <Command cmd="shaderEffect">
@@ -7657,6 +7987,11 @@
                    details="ex. 消滅時 albert2 script filename.txt
                    &#xA;
                    &#xA;対象が消滅時、コマンドを実行する。
+                   &#xA;
+                   &#xA;注：実行コマンドを&quot;&quot;で囲まない場合、 (式) は登録時に計算されて固定される。&quot;&quot;で囲むと消滅時に計算される。
+                   &#xA;複数コマンドを繋ぐ場合 (&quot;a | b&quot;) も囲む必要がある。
+                   &#xA; (ex. 消滅時 albert2 script title.txt (hp) ) : 登録時のhp値に固定
+                   &#xA; (ex. 消滅時 albert2 &quot;script title.txt (hp)&quot; ) : 消滅時にhp値を計算
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#onDestroy">
       </explanation>
@@ -7670,6 +8005,11 @@
                    &#xA;- target(s): supports regex and comma-separated lists
                    &#xA;- command: any Light.vn command to execute on destruction
                    &#xA;- screenspace range: optional. all / sameLevel
+                   &#xA;
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it at destroy time.
+                   &#xA;Quotes must also be used to execute multiple commands: ex. (&quot;a | b&quot;).
+                   &#xA; (ex. onDestroy albert2 script title.txt (hp) ) : hp evaluated at registration
+                   &#xA; (ex. onDestroy albert2 &quot;script title.txt (hp)&quot; ) : hp evaluated at destroy time
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#onDestroy">
       </explanation>
@@ -7685,7 +8025,12 @@
                    syntax="소멸시 [대상 이름 / 대상 종류 이름(여러 개 가능)] [실행 커맨드] (화면 영역)"
                    details="ex. 소멸시 albert2 script filename.txt
                    &#xA;
-                   &#xA;대상이 소멸할 때 커맨드가 실행된다."
+                   &#xA;대상이 소멸할 때 커맨드가 실행된다.
+                   &#xA;
+                   &#xA;주의: 실행 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. &quot;&quot;로 감싸면 소멸 시 계산된다.
+                   &#xA;파이프로 복수 커맨드를 실행하고 싶을 경우에도 (&quot;a | b&quot;)도 감싸야 한다.
+                   &#xA; (ex. 소멸시 albert2 script title.txt (hp) ) : 등록 시 hp값으로 고정
+                   &#xA; (ex. 소멸시 albert2 &quot;script title.txt (hp)&quot; ) : 소멸 시에 hp값을 계산"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#onDestroy">
       </explanation>
     </Command>
@@ -9327,6 +9672,50 @@
                    reference="https://wikiwiki.jp/lightvn/commands/transition#accelerationx">
       </explanation>
     </Command>
+    <Command cmd="accelerationReset">
+      <explanation lang="jap" name="加速度初期化"
+                   syntax="加速度初期化 [対象名 (複数可)] [軸: x / y / z] (軸: x / y / z) (軸: x / y / z)"
+                   details="ex. 加速度初期化 albert y
+                   &#xA;ex. 加速度初期化 albert x y
+                   &#xA;ex. 加速度初期化 albert, kojiken x y z
+                   &#xA;
+                   &#xA;指定した加速度の蓄積速度を0にリセットする。加速度コマンド自体は維持され、以降のフレームから再び速度を積み上げる。
+                   &#xA;
+                   &#xA;主な用途: 落下中など加速度で速度が蓄積された状態で「速度y」等の瞬間速度に上書きしたい時。
+                   &#xA;
+                   &#xA;注: 演出コマンドの対象名に正規表現・カンマ区切りによる複数指定が可能。"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#accelerationReset">
+      </explanation>
+      <explanation lang="eng" name="accelerationReset"
+                   syntax="accelerationReset [target(s)] [axis: x / y / z] (axis: x / y / z) (axis: x / y / z)"
+                   details="ex. accelerationReset albert y
+                   &#xA;ex. accelerationReset albert x y
+                   &#xA;ex. accelerationReset albert, kojiken x y z
+                   &#xA;
+                   &#xA;Resets the accumulated velocity of the specified acceleration commands(s) to 0 in place. The acceleration command itself is preserved and will resume accumulating from the next frame.
+                   &#xA;
+                   &#xA;Typical use: when an object is mid-fall (acceleration has built up velocity) and you want a subsequent speedy/speedx to take effect without being immediately overridden by the accumulated acceleration, call accelerationReset first to clear the accumulator.
+                   &#xA;
+                   &#xA;Parameters:
+                   &#xA;- target(s): supports regex and comma-separated lists
+                   &#xA;- axis: one or more of x, y, z (case-insensitive)
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#accelerationReset">
+      </explanation>
+      <explanation lang="kor" name="가속도초기화"
+                   syntax="가속도초기화 [대상 이름(여러 개 가능)] [축: x / y / z] (축: x / y / z) (축: x / y / z)"
+                   details="ex. 가속도초기화 albert y
+                   &#xA;ex. 가속도초기화 albert x y
+                   &#xA;ex. 가속도초기화 albert, kojiken x y z
+                   &#xA;
+                   &#xA;지정된 가속도 커맨드의 누적된 속도를 0으로 초기화합니다. 가속도 커맨드 자체는 유지되며, 다음 프레임부터 다시 속도가 누적됩니다.
+                   &#xA;
+                   &#xA;주요 용도: 낙하 중 등 가속도로 속도가 누적된 상태에서「속도y」등 순간 속도 명령을 적용하고 싶을 때.
+                   &#xA;
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#accelerationReset">
+      </explanation>
+    </Command>
     <Command cmd="origin">
       <explanation lang="jap" name="焦点"
                    syntax="焦点 [対象名 (複数可)] [x: 0.0~1.0] [y: 0.0~1.0] (z: 0.0~1.0)"
@@ -9487,6 +9876,60 @@
                    &#xA;주: 소요 시간을 ups(units per second)로 설정하면 초당 이동 속도로 계산됩니다.
                    &#xA; (ex. 이동x2 alice 100 30ups : 100px을 &quot;초당 30px&quot; 속도로 이동)"
                    reference="https://wikiwiki.jp/lightvn/commands/transition#alpha">
+      </explanation>
+    </Command>
+    <Command cmd="alphaVar">
+      <explanation lang="jap" name="透明度変数"
+                   syntax="透明度変数 [対象名 (複数可)] [変数名 / false] (画面領域範囲)"
+                   details="ex. 透明度変数 window_skin fade_value
+                   &#xA;
+                   &#xA;対象の表示透明度に変数(0-255)が乗算されるように指定。
+                   &#xA;- 255 = そのまま, 0 = 完全に透明
+                   &#xA;- 変数が未定義の場合は全表示(255)として扱う
+                   &#xA;
+                   &#xA;引数:
+                   &#xA;- 対象名: 正規表現・カンマ区切りの複数指定が可能
+                   &#xA;- 変数名: 数値(0-255)に評価される変数または式
+                   &#xA;- 画面領域範囲: 省略可。全画面領域、同階層画面領域
+                   &#xA;
+                   &#xA;注: false を指定すると解除。
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#alphaVar">
+      </explanation>
+      <explanation lang="eng" name="alphaVar"
+                   syntax="alphaVar [target(s)] [variable / false] (screenspace range)"
+                   details="ex. alphaVar window_skin fade_value
+                   &#xA;
+                   &#xA;Binds a variable (0-255) to the target as a multiplier on its render alpha.
+                   &#xA;- 255 = unchanged, 0 = fully transparent
+                   &#xA;- an invalid variable renders at full alpha (255)
+                   &#xA;
+                   &#xA;Parameters:
+                   &#xA;- target(s): supports regex and comma-separated lists
+                   &#xA;- variable: a variable or expression that evaluates to 0-255
+                   &#xA;- screenspace range: optional. all / sameLevel
+                   &#xA;
+                   &#xA;Notes:
+                   &#xA;- false clears the binding
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#alphaVar">
+      </explanation>
+      <explanation lang="kor" name="alphaVar"
+                   syntax="alphaVar [대상 이름(여러 개 가능)] [변수명 / false] (화면 영역)"
+                   details="ex. alphaVar window_skin fade_value
+                   &#xA;
+                   &#xA;대상의 투명도에 변수(0-255)를 곱한다.
+                   &#xA;- 255 = 그대로, 0 = 완전 투명
+                   &#xA;- 변수가 정의되지 않은 경우 전체 표시(255)로 처리
+                   &#xA;
+                   &#xA;입력:
+                   &#xA;- 대상 이름: 정규표현식 및 쉼표 구분 다중 지정 지원
+                   &#xA;- 변수명: 0-255로 평가되는 변수 또는 식
+                   &#xA;- 화면 영역: 선택. 화면영역전체 / 동일계층화면영역
+                   &#xA;
+                   &#xA;주: false 를 지정하면 바인딩이 해제.
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/transition#alphaVar">
       </explanation>
     </Command>
     <Command cmd="rgb">
@@ -11659,9 +12102,9 @@
     </Command>
     <Command cmd="addColliderSphere">
       <explanation lang="jap" name="衝突範囲球形追加"
-                   syntax="1. 衝突範囲球形追加 [対象名] [x] [y] [r] [半径]
-                   &#xA;2. 衝突範囲球形追加 [対象名] [グループ名] [x] [y] [r] [半径]
-                   &#xA;3. 衝突範囲球形追加 [対象名] [名前] [グループ名] [x] [y] [r] [半径]
+                   syntax="1. 衝突範囲球形追加 [対象名] [x] [y] [r] [半径] (侵入禁止)
+                   &#xA;2. 衝突範囲球形追加 [対象名] [グループ名] [x] [y] [r] [半径] (侵入禁止)
+                   &#xA;3. 衝突範囲球形追加 [対象名] [名前] [グループ名] [x] [y] [r] [半径] (侵入禁止)
                    &#xA;  "
                    details="ex. 衝突範囲球形追加  player 0 0 0 250
                    &#xA;
@@ -11669,13 +12112,14 @@
                    &#xA;注: 名前を指定しない場合、「対象名+_collider」とつけられる。
                    &#xA;(ex. 上の場合：id0_collider）
                    &#xA;
+                   &#xA;「侵入禁止」の指定された球形衝突範囲はお互い侵入(交叉)できなくなる。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#addColliderSphere">
       </explanation>
       <explanation lang="eng" name="addColliderSphere"
-                   syntax="1. addColliderSphere [target] [x] [y] [r] [radius]
-                   &#xA;2. addColliderSphere [target] [group name] [x] [y] [r] [radius]
-                   &#xA;3. addColliderSphere [target] [name] [group name] [x] [y] [r] [radius]"
+                   syntax="1. addColliderSphere [target] [x] [y] [r] [radius] (preventEntry)
+                   &#xA;2. addColliderSphere [target] [group name] [x] [y] [r] [radius] (preventEntry)
+                   &#xA;3. addColliderSphere [target] [name] [group name] [x] [y] [r] [radius] (preventEntry)"
                    details="ex. addColliderSphere player 0 0 0 250
                    &#xA;
                    &#xA;Adds a spherical collider as a child of [target].
@@ -11686,13 +12130,15 @@
                    &#xA;- group name: collision group (defaults to [name])
                    &#xA;- x, y, r: offset from the target's center
                    &#xA;- radius: radius of the sphere
+                   &#xA;- preventEntry: if specified, sphere colliders with this flag
+                   &#xA;  cannot enter each other
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#addColliderSphere">
       </explanation>
       <explanation lang="zhc" name="添加碰撞球"
-                   syntax="1. 添加碰撞球 [目标名] [x] [y] [r] [半径]
-                   &#xA;2. 添加碰撞球 [目标名] [组名] [x] [y] [r] [半径]
-                   &#xA;3. 添加碰撞球 [目标名] [名称] [组名] [x] [y] [r] [半径]
+                   syntax="1. 添加碰撞球 [目标名] [x] [y] [r] [半径] (禁止进入)
+                   &#xA;2. 添加碰撞球 [目标名] [组名] [x] [y] [r] [半径] (禁止进入)
+                   &#xA;3. 添加碰撞球 [目标名] [名称] [组名] [x] [y] [r] [半径] (禁止进入)
                    &#xA;"
                    details="例如：添加碰撞球 player 0 0 0 250
                    &#xA;
@@ -11701,19 +12147,22 @@
                    &#xA;注：如果未指定&quot;组名&quot;，则名称将作为组名。
                    &#xA;注：如果未指定名称，则将其命名为&quot;目标名+_collider&quot;。
                    &#xA;（例如：上述情况中为id0_collider）
+                   &#xA;
+                   &#xA;指定&quot;禁止进入&quot;的碰撞球将无法互相进入（碰撞）。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#addColliderSphere">
       </explanation>
       <explanation lang="kor" name="충돌영역구형추가"
-                   syntax="1. 충돌영역구형추가 [대상 이름] [x] [y] [r] [반지름]
-                   &#xA;2. 충돌영역구형추가 [대상 이름] [그룹 이름] [x] [y] [r] [반지름]
-                   &#xA;3. 충돌영역구형추가 [대상 이름] [충돌영역 이름] [그룹 이름] [x] [y] [r] [반지름]
+                   syntax="1. 충돌영역구형추가 [대상 이름] [x] [y] [r] [반지름] (침범금지)
+                   &#xA;2. 충돌영역구형추가 [대상 이름] [그룹 이름] [x] [y] [r] [반지름] (침범금지)
+                   &#xA;3. 충돌영역구형추가 [대상 이름] [충돌영역 이름] [그룹 이름] [x] [y] [r] [반지름] (침범금지)
                    &#xA;  "
                    details="ex. 충돌영역구형추가 player 0 0 0 250
                    &#xA;
                    &#xA;주: '그룹 이름'을 지정하지 않으면, '충돌영역 이름'이 그룹 이름으로 사용됩니다.
                    &#xA;주: '충돌영역 이름'을 지정하지 않으면, '대상 이름 + _collider'이 충돌영역 이름이 됩니다.
-                   &#xA;(ex. 위의 경우 'id0_collider')"
+                   &#xA;(ex. 위의 경우 'id0_collider')
+                   &#xA;'침범금지'가 지정된 구형 충돌영역끼리는 서로 침범(교차)할 수 없습니다."
                    reference="https://wikiwiki.jp/lightvn/commands/physics#addColliderSphere">
       </explanation>
     </Command>
@@ -11853,6 +12302,7 @@
                    &#xA;コマンドを実行する。
                    &#xA;
                    &#xA;[実行コマンド]：文字列として囲むと、衝突の度に再計算される。
+                   &#xA;コマンド内の二重波括弧の式は衝突時に計算される。
                    &#xA;実行コマンドの最後に、
                    &#xA;  衝突された衝突範囲名A
                    &#xA;  衝突された衝突範囲名B
@@ -11899,6 +12349,7 @@
                    &#xA;
                    &#xA;Notes:
                    &#xA;- Wrap [command] in quotes to re-evaluate it on each collision
+                   &#xA;- Double-brace expressions in the command are evaluated at collision time
                    &#xA;- Collider names A/B follow the specified group order
                    &#xA;
                    &#xA;ex. onCollisionStart colA colB script title.txt collision_start
@@ -11937,6 +12388,7 @@
                    &#xA;id1_c 그룹의 충돌영역이 id0_c 그룹의 충돌영역과 충돌했을 때 지정된 커맨드를 실행합니다.
                    &#xA;
                    &#xA;[실행 커맨드]: 문자열로 작성하면, 충돌이 발생할 때마다 재계산되어 실행됩니다.
+                   &#xA;커맨드 내의 이중 중괄호 식은 충돌 시 계산됩니다.
                    &#xA;실행 시, 다음과 같은 정보가 커맨드에 추가됩니다:
                    &#xA;  - 충돌한 충돌영역 이름 A
                    &#xA;  - 충돌한 충돌영역 이름 B
@@ -11967,6 +12419,7 @@
                    &#xA;コマンドを実行する。
                    &#xA;
                    &#xA;[実行コマンド]：文字列として囲むと、衝突の度に再計算される。
+                   &#xA;コマンド内の二重波括弧の式は衝突時に計算される。
                    &#xA;実行コマンドの最後に、
                    &#xA;  衝突された衝突範囲名A
                    &#xA;  衝突された衝突範囲名B
@@ -11999,6 +12452,7 @@
                    &#xA;
                    &#xA;Notes:
                    &#xA;- Wrap [command] in quotes to re-evaluate it on each collision
+                   &#xA;- Double-brace expressions in the command are evaluated at collision time
                    &#xA;- Collider names A/B follow the specified group order
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#onCollisionCont">
@@ -12028,6 +12482,7 @@
                    &#xA;id1_c 그룹에 속한 충돌영역과 id0_c 그룹에 속한 충돌영역이 충돌 중인 동안 지정된 커맨드를 실행합니다.
                    &#xA;
                    &#xA;[실행 커맨드]: 문자열로 작성하면, 충돌이 발생할 때마다 재계산되어 실행됩니다.
+                   &#xA;커맨드 내의 이중 중괄호 식은 충돌 시 계산됩니다.
                    &#xA;실행 시, 다음과 같은 정보가 커맨드에 추가됩니다:
                    &#xA;  - 충돌한 충돌영역 이름 A
                    &#xA;  - 충돌한 충돌영역 이름 B
@@ -12048,6 +12503,7 @@
                    &#xA;コマンドを実行する。
                    &#xA;
                    &#xA;[実行コマンド]：文字列として囲むと、衝突の度に再計算される。
+                   &#xA;コマンド内の二重波括弧の式は衝突時に計算される。
                    &#xA;実行コマンドの最後に、
                    &#xA;  衝突された衝突範囲名A
                    &#xA;  衝突された衝突範囲名B
@@ -12080,6 +12536,7 @@
                    &#xA;
                    &#xA;Notes:
                    &#xA;- Wrap [command] in quotes to re-evaluate it on each collision
+                   &#xA;- Double-brace expressions in the command are evaluated at collision time
                    &#xA;- Collider names A/B follow the specified group order
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#onCollisionExit">
@@ -12109,6 +12566,7 @@
                    &#xA;id1_c 그룹의 충돌영역이 id0_c 그룹의 충돌영역과 충돌이 끝났을 때(분리) 지정된 커맨드를 실행합니다.
                    &#xA;
                    &#xA;[실행 커맨드]: 문자열로 작성하면, 충돌이 발생할 때마다 재계산되어 실행됩니다.
+                   &#xA;커맨드 내의 이중 중괄호 식은 충돌 시 계산됩니다.
                    &#xA;실행 시, 다음과 같은 정보가 커맨드에 추가됩니다:
                    &#xA;  - 충돌한 충돌영역 이름 A
                    &#xA;  - 충돌한 충돌영역 이름 B
@@ -12131,6 +12589,7 @@
                    &#xA;
                    &#xA;
                    &#xA;[実行コマンド]：文字列として囲むと、衝突の度に再計算される。
+                   &#xA;コマンド内の二重波括弧の式は衝突時に計算される。
                    &#xA;実行コマンドの最後に、衝突された衝突範囲名二つが「指定したグループ順に」付けられた状態で実行される。
                    &#xA;
                    &#xA;ex. 隣接方向衝突継続時 colA colB 左 スクリプト title.txt collision_start
@@ -12159,6 +12618,7 @@
                    &#xA;
                    &#xA;Notes:
                    &#xA;- Wrap [command] in quotes to re-evaluate on each trigger
+                   &#xA;- Double-brace expressions in the command are evaluated at collision time
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/physics#onFaceCollision">
       </explanation>
@@ -12193,6 +12653,7 @@
                    &#xA;[실행 커맨드]를 실행합니다.
                    &#xA;
                    &#xA;[실행 커맨드]: 문자열로 작성된 경우, 충돌이 발생할 때마다 재계산되어 실행됩니다.
+                   &#xA;커맨드 내의 이중 중괄호 식은 충돌 시 계산됩니다.
                    &#xA;실행 커맨드에는 충돌한 두 영역 이름이 지정한 그룹 순서대로 추가됩니다.
                    &#xA;
                    &#xA;ex. 인접방향충돌중일시 colA colB 좌 스크립트 title.txt collision_start
@@ -13577,7 +14038,10 @@
                    &#xA;
                    &#xA;注：キートリガーを解除させたい場合は、該当トリガー名の先にコマンドをつけない形に再登録。
                    &#xA; (ex. キートリガー r.click)
-                   &#xA;注：ボタンクリックとマウスダウンのキートリガーが同時に登録されてある場合、ボタンクリックが優先される。"
+                   &#xA;注：ボタンクリックとマウスダウンのキートリガーが同時に登録されてある場合、ボタンクリックが優先される。
+                   &#xA;注：コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算されて固定される。発動時の値にしたい場合は &quot;&quot; で囲む。
+                   &#xA; (ex. キーダウン k スクリプト 現在 処理 (体力) ) : 登録時の「体力」変数値に固定。
+                   &#xA; (ex. キーダウン k &quot;スクリプト 現在 処理 (体力)&quot; ) : 発動時に「体力」変数値を計算し反映。"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyDown">
       </explanation>
       <explanation lang="eng" name="keyDown"
@@ -13594,7 +14058,10 @@
                    &#xA;
                    &#xA;Note: to unregister a keytrigger, just register the same key but without a command
                    &#xA; (ex. keyTrigger r.click)
-                   &#xA;Note: if button clicked while mouse click keytrigger set, button clicks will override."
+                   &#xA;Note: if button clicked while mouse click keytrigger set, button clicks will override.
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it at fire time.
+                   &#xA; (ex. keyDown k script current handle (hp) ) : hp evaluated at registration
+                   &#xA; (ex. keyDown k &quot;script current handle (hp)&quot; ) : hp evaluated at fire time"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyDown">
       </explanation>
       <explanation lang="zhc" name="按键按下"
@@ -13628,7 +14095,10 @@
                    &#xA;
                    &#xA;주: 키 트리거를 해제하고 싶은 경우 해당 트리거명 다음으로 커맨드를 넣지 않고 재등록.
                    &#xA; (ex. 키트리거 r.click)
-                   &#xA;주: 버튼 클릭과 마우스 다운이 키 트리거로 동시에 등록되어 있을 경우, 버튼 클릭이 우선됩니다."
+                   &#xA;주: 버튼 클릭과 마우스 다운이 키 트리거로 동시에 등록되어 있을 경우, 버튼 클릭이 우선됩니다.
+                   &#xA;주의: 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. 발동 시의 값으로 하려면 &quot;&quot;로 감싼다.
+                   &#xA; (ex. 키다운 k 스크립트 현재 처리 (체력) ) : 커맨드 등록시의 '체력' 변수값에 고정.
+                   &#xA; (ex. 키다운 k &quot;스크립트 현재 처리 (체력)&quot;) : 커맨드 발동시에 '체력' 변수값을 계산하여 반영."
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyDown">
       </explanation>
     </Command>
@@ -13647,6 +14117,9 @@
                    &#xA;
                    &#xA;注：キートリガーを解除させたい場合は、該当トリガー名の先にコマンドをつけない形に再登録。
                    &#xA; (ex. キートリガー r.click)
+                   &#xA;注：コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算されて固定される。発動時の値にしたい場合は &quot;&quot; で囲む。
+                   &#xA; (ex. キーアップ k スクリプト 現在 処理 (体力) ) : 登録時の「体力」変数値に固定。
+                   &#xA; (ex. キーアップ k &quot;スクリプト 現在 処理 (体力)&quot; ) : 発動時に「体力」変数値を計算し反映。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyUp">
       </explanation>
@@ -13664,7 +14137,10 @@
                    &#xA;
                    &#xA;Note: to unregister a keytrigger, just register the same key but without a command
                    &#xA; (ex. keyTrigger r.click)
-                   &#xA;Note: if button clicked while mouse click keytrigger set, button clicks will override."
+                   &#xA;Note: if button clicked while mouse click keytrigger set, button clicks will override.
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it at fire time.
+                   &#xA; (ex. keyUp k script current handle (hp) ) : hp evaluated at registration
+                   &#xA; (ex. keyUp k &quot;script current handle (hp)&quot; ) : hp evaluated at fire time"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyUp">
       </explanation>
       <explanation lang="zhc" name="按键抬起"
@@ -13693,6 +14169,9 @@
                    &#xA;
                    &#xA;주: 키 트리거를 해제하고 싶은 경우 해당 트리거명 다음으로 커맨드를 넣지 않고 재등록.
                    &#xA; (ex. 키트리거 r.click)
+                   &#xA;주의: 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. 발동 시의 값으로 하려면 &quot;&quot;로 감싼다.
+                   &#xA; (ex. 키업 k 스크립트 현재 처리 (체력) ) : 커맨드 등록시의 '체력' 변수값으로 고정.
+                   &#xA; (ex. 키업 k &quot;스크립트 현재 처리 (체력)&quot;) : 커맨드 발동시에 '체력' 변수값을 계산하여 반영.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyUp">
       </explanation>
@@ -13713,6 +14192,9 @@
                    &#xA;
                    &#xA;注：キートリガーを解除させたい場合は、該当トリガー名の先にコマンドをつけない形に再登録。
                    &#xA; (ex. キートリガー r.click)
+                   &#xA;注：コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算し固定。長押し中は毎フレームその固定値が利用。押している間の値を反映したい場合は &quot;&quot; で囲む（毎フレーム再計算）。
+                   &#xA; (ex. キー長押し k スクリプト 現在 処理 (体力) ) : 登録時の「体力」に固定。
+                   &#xA; (ex. キー長押し k &quot;スクリプト 現在 処理 (体力)&quot; ) : 毎フレーム「体力」を再計算し反映。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyPress">
       </explanation>
@@ -13737,7 +14219,10 @@
                    &#xA;Parameters:
                    &#xA;- trigger name: the key or input to listen for
                    &#xA;- Light.vn command (optional): the command to execute (omit to unregister)
-                   &#xA;"
+                   &#xA;
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated once at registration and reused every frame while held; wrap the command in &quot;&quot; to re-evaluate it each frame.
+                   &#xA; (ex. keyPress k script current handle (hp) ) : hp frozen at registration
+                   &#xA; (ex. keyPress k &quot;script current handle (hp)&quot; ) : hp re-evaluated each frame"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyPress">
       </explanation>
       <explanation lang="zhc" name="按键长按"
@@ -13771,6 +14256,9 @@
                    &#xA;
                    &#xA;주: 키 트리거를 해제하고 싶은 경우 해당 트리거명 다음으로 커맨드를 넣지 않고 재등록.
                    &#xA; (ex. 키트리거 r.click)
+                   &#xA;주의: 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정되고 누르는 동안 매 프레임 그 고정값이 사용된다. 누르는 동안의 값을 반영하려면 &quot;&quot;로 감싼다(매 프레임 재계산).
+                   &#xA; (ex. 키누르기 k 스크립트 현재 처리 (체력) ) : 등록시의 '체력' 값으로 고정.
+                   &#xA; (ex. 키누르기 k &quot;스크립트 현재 처리 (체력)&quot; ) : 매 프레임 '체력'을 계산하여 반영.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/script#keyPress">
       </explanation>
@@ -14493,8 +14981,9 @@
     </Command>
     <Command cmd="bgm">
       <explanation lang="jap" name="背景音"
-                   syntax="背景音 (個体名) [ファイル名] (反復)"
+                   syntax="背景音 (個体名) [ファイル名] (音量数値変数) (on/off変数：true/false) (反復)"
                    details="ex. 背景音 bgm1.ogg 反復
+                   &#xA;ex. 背景音 bgm1.ogg char_vol char_vol_on
                    &#xA;
                    &#xA;背景音の個体名：vn_sysBGM
                    &#xA;
@@ -14502,7 +14991,9 @@
                    &#xA;名前変更 背景音 bgm_fade | アウト bgm_fade 800
                    &#xA;背景音0 new.ogg | イン 背景音 800
                    &#xA;
-                   &#xA;最終音量：Master x BGM x 音量コマンド
+                   &#xA;最終音量：Master x BGM x （あれば音量数値変数）x 音量コマンド
+                   &#xA;
+                   &#xA;on/off変数：trueでない場合、音量をゼロにする。
                    &#xA;
                    &#xA;注:コマンドに'0'を付けると音量0の状態で表示される。
                    &#xA; (ex. 背景音0 bgm.ogg)
@@ -14514,12 +15005,15 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#bgm">
       </explanation>
       <explanation lang="eng" name="bgm"
-                   syntax="bgm (name) [filepath] (repeat)"
+                   syntax="bgm (name) [filepath] (volume variable) (on/off variable) (repeat)"
                    details="ex. bgm bgm1.ogg repeat
+                   &#xA;ex. bgm music bgm1.ogg char_vol char_vol_on
                    &#xA;
                    &#xA;TIP: cross fading
                    &#xA;nameChange bgm bgm_fade | fadeout bgm_fade 800
                    &#xA;bgm0 new.ogg | fadein bgm 800
+                   &#xA;
+                   &#xA;Final volume: Master x BGM x (volume variable, if set) x volume command
                    &#xA;
                    &#xA;Suffix: '0' starts play at volume 0.
                    &#xA; (ex. bgm0 bgm.ogg)
@@ -14529,6 +15023,8 @@
                    &#xA;Parameters:
                    &#xA;- name (optional): object name. If omitted, the filepath is used as the name.
                    &#xA;- filepath: audio file to play.
+                   &#xA;- volume variable (optional): variable name controlling volume multiplier.
+                   &#xA;- on/off variable (optional): variable name (true/false) to mute when not true.
                    &#xA;- repeat (optional): loop the BGM."
                    reference="https://wikiwiki.jp/lightvn/commands/media#bgm">
       </explanation>
@@ -14550,8 +15046,9 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#bgm">
       </explanation>
       <explanation lang="kor" name="배경음"
-                   syntax="배경음 (객체명) [파일명] (반복)"
+                   syntax="배경음 (객체명) [파일명] (음량수치변수) (on/off변수: true/false) (반복)"
                    details="ex. 배경음 bgm1.ogg 반
+                   &#xA;ex. 배경음 bgm1.ogg char_vol char_vol_on
                    &#xA;
                    &#xA;배경음의 객체명: vn_sysBGM
                    &#xA;
@@ -14559,7 +15056,9 @@
                    &#xA;이름변경 배경음 bgm_fade | 아웃 bgm_fade 800
                    &#xA;배경음0 new.ogg | 인 배경 800
                    &#xA;
-                   &#xA;최종음량: Master x BGM x 음량 커맨드
+                   &#xA;최종음량: Master x BGM x (존재한다면 음량수치변수) x 음량 커맨드
+                   &#xA;
+                   &#xA;on/off 변수: true가 아닌 경우 음량을 0으로 설정.
                    &#xA;
                    &#xA;주: 커맨드에 '0'을 붙이면 음량이 0인 상태로 재생됨.
                    &#xA; (ex. 배경음0 bgm.ogg)
@@ -14573,10 +15072,13 @@
     </Command>
     <Command cmd="soundEffect">
       <explanation lang="jap" name="効果音"
-                   syntax="効果音 [名前] [ファイル名] (反復)"
+                   syntax="効果音 [名前] [ファイル名] (音量数値変数) (on/off変数：true/false) (反復)"
                    details="ex. 効果音 roar roar.ogg 反復
+                   &#xA;ex. 効果音 roar roar.ogg char_vol char_vol_on
                    &#xA;
-                   &#xA;最終音量：Master x SFX x 音量コマンド
+                   &#xA;最終音量：Master x SFX x （あれば音量数値変数）x 音量コマンド
+                   &#xA;
+                   &#xA;on/off変数：trueでない場合、音量をゼロにする。
                    &#xA;
                    &#xA;注:コマンドに'0'を付けると音量0の状態で再生される。
                    &#xA; (ex. 背景音0 bgm.ogg)
@@ -14586,8 +15088,11 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#soundEffect">
       </explanation>
       <explanation lang="eng" name="soundEffect"
-                   syntax="soundEffect [name] [filepath] (repeat)"
+                   syntax="soundEffect [name] [filepath] (volume variable) (on/off variable) (repeat)"
                    details="ex. soundEffect roar roar.ogg repeat
+                   &#xA;ex. soundEffect roar roar.ogg char_vol char_vol_on
+                   &#xA;
+                   &#xA;Final volume: Master x SFX x (volume variable, if set) x volume command
                    &#xA;
                    &#xA;Suffix: '0' starts play at volume 0.
                    &#xA; (ex. bgm0 bgm.ogg)
@@ -14595,6 +15100,8 @@
                    &#xA;Parameters:
                    &#xA;- name: object name for this sound effect.
                    &#xA;- filepath: audio file to play.
+                   &#xA;- volume variable (optional): variable name controlling volume multiplier.
+                   &#xA;- on/off variable (optional): variable name (true/false) to mute when not true.
                    &#xA;- repeat (optional): loop the sound effect."
                    reference="https://wikiwiki.jp/lightvn/commands/media#soundEffect">
       </explanation>
@@ -14610,10 +15117,13 @@
                    reference="https://wikiwiki.jp/lightvn/commands/media#soundEffect">
       </explanation>
       <explanation lang="kor" name="효과음"
-                   syntax="효과음 [이름] [파일명] (반복)"
+                   syntax="효과음 [이름] [파일명] (음량수치변수) (on/off변수: true/false) (반복)"
                    details="ex. 효과음 roar roar.ogg 반복
+                   &#xA;ex. 효과음 roar roar.ogg char_vol char_vol_on
                    &#xA;
-                   &#xA;최종음량: Master x SFX x 음량 커맨드
+                   &#xA;최종음량: Master x SFX x (존재한다면 음량수치변수) x 음량 커맨드
+                   &#xA;
+                   &#xA;on/off 변수: true가 아닌 경우 음량을 0으로 설정.
                    &#xA;
                    &#xA;주: 커맨드에 '0'을 붙이면 음량이 0인 상태로 재생됨.
                    &#xA; (ex. 배경음0 bgm.ogg)
@@ -14646,6 +15156,8 @@
                    syntax="voice [name] [filepath] (volume variable) (on/off variable) (noBacklogAddition)"
                    details="ex. voice voice ep0-3.ogg
                    &#xA;ex. voice voice ep0-3.ogg char_vol
+                   &#xA;
+                   &#xA;Final volume: Master x Voice x (volume variable, if set) x volume command
                    &#xA;
                    &#xA;Suffix: '0' starts play at volume 0.
                    &#xA; (ex. bgm0 bgm.ogg)
@@ -14743,6 +15255,8 @@
                    details="ex. bgvoice bgv0 ep0-3.ogg
                    &#xA;ex. bgvoice bgv0 ep0-3.ogg none voice_boy :
                    &#xA;when voice files that start with 'voice_boy' play, will make this bgvoice's volume temporarily zero
+                   &#xA;
+                   &#xA;Final volume: Master x Voice x (volume variable, if set) x volume command
                    &#xA;
                    &#xA;Suffix: '0' starts play at volume 0.
                    &#xA; (ex. bgm0 bgm.ogg)
@@ -15319,7 +15833,10 @@
                    details="ex. 音源確認機 checker vn_sysBGM 3000 システムメッセージ &quot;fufu&quot;
                    &#xA;
                    &#xA;対象の現在再生時間が「対象の時間」を超える場合、「コマンド」を実行する。
-                   &#xA;実行後、個体は消滅する。"
+                   &#xA;実行後、個体は消滅する。
+                   &#xA;注：コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算されて固定される。発動時の値にしたい場合は &quot;&quot; で囲む。
+                   &#xA; (ex. 音源確認機 c bgm 3000 temp_globalvar x = (hp) ) : 登録時のhp値に固定
+                   &#xA; (ex. 音源確認機 c bgm 3000 &quot;temp_globalvar x = (hp)&quot; ) : 発動時のhp値を計算"
                    reference="https://wikiwiki.jp/lightvn/commands/media#soundChecker">
       </explanation>
       <explanation lang="eng" name="soundChecker"
@@ -15333,7 +15850,11 @@
                    &#xA;- name: object name for this checker.
                    &#xA;- target: name of the audio object to monitor.
                    &#xA;- threshold time: trigger time in ms.
-                   &#xA;- command: Light.vn command to execute when triggered."
+                   &#xA;- command: Light.vn command to execute when triggered.
+                   &#xA;
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it at trigger time.
+                   &#xA; (ex. soundChecker c bgm 3000 temp_globalvar x = (hp) ) : hp evaluated at registration
+                   &#xA; (ex. soundChecker c bgm 3000 &quot;temp_globalvar x = (hp)&quot; ) : hp evaluated at trigger time"
                    reference="https://wikiwiki.jp/lightvn/commands/media#soundChecker">
       </explanation>
       <explanation lang="zhc" name="音源检查器"
@@ -15349,7 +15870,10 @@
                    details="ex. 음원확인기 checker vn_sysBGM 3000 시스템메시지 &quot;fufu&quot;
                    &#xA;
                    &#xA;대상의 현재 재생 시간이 &quot;목표시간&quot;을 넘을 경우 &quot;커맨드&quot;를 실행.
-                   &#xA;실행 후 객체는 소멸됨."
+                   &#xA;실행 후 객체는 소멸됨.
+                   &#xA;주의: 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. 발동 시의 값으로 하려면 &quot;&quot;로 감싼다.
+                   &#xA; (ex. 음원확인기 c bgm 3000 temp_globalvar x = (hp) ) : 등록 시 hp값으로 고정
+                   &#xA; (ex. 음원확인기 c bgm 3000 &quot;temp_globalvar x = (hp)&quot; ) : 발동 시에 hp값을 계산"
                    reference="https://wikiwiki.jp/lightvn/commands/media#soundChecker">
       </explanation>
     </Command>
@@ -15626,11 +16150,15 @@
     </Command>
     <Command cmd="objvar">
       <explanation lang="jap" name="個体変数"
-                   syntax="個体変数 [変数名] [指定・演算] [数値/変数名]"
+                   syntax="個体変数 (対象) [変数名] [指定・演算] [数値/変数名]"
                    details="ex. 個体変数 state = patrol
                    &#xA;
                    &#xA;個体スクリプト内でのみ使用可能。
                    &#xA;個体に紐付いた変数を定義する。
+                   &#xA;
+                   &#xA;ex. 個体変数 (相手) hp -= 10
+                   &#xA;- 他の個体の変数を書き換える。対象は名前・変数・式が使える。
+                   &#xA;- この形式はどのスクリプトからでも使用可能。
                    &#xA;
                    &#xA;参照: lvGetObjVar(&quot;個体名&quot;, &quot;変数名&quot;)
                    &#xA;存在確認: lvExistsObjVar(&quot;個体名&quot;, &quot;変数名&quot;)
@@ -15638,7 +16166,7 @@
                    reference="https://wikiwiki.jp/lightvn/commands/script#objvar">
       </explanation>
       <explanation lang="eng" name="objvar"
-                   syntax="objvar [name] [operator] [value]"
+                   syntax="objvar (target) [name] [operator] [value]"
                    details="Defines a variable scoped to the current object.
                    &#xA;Can only be used inside an objscript.
                    &#xA;
@@ -15648,8 +16176,13 @@
                    &#xA;ex. objvar hp -= 10
                    &#xA;- Subtracts 10 from the object's &quot;hp&quot; variable.
                    &#xA;
+                   &#xA;ex. objvar (opponent) hp -= 10
+                   &#xA;- Writes ANOTHER object's variable. The target may be a name, a var, or an expression.
+                   &#xA;- The target form works from any script, not only an objscript.
+                   &#xA;
                    &#xA;Parameters:
-                   &#xA;- name: variable name (scoped to this object)
+                   &#xA;- target (optional): object whose variable to write; omit for this object
+                   &#xA;- name: variable name (scoped to the object)
                    &#xA;- operator: = += -= *= /=
                    &#xA;- value: number or string value
                    &#xA;
@@ -15662,11 +16195,15 @@
                    reference="https://wikiwiki.jp/lightvn/commands/script#objvar">
       </explanation>
       <explanation lang="kor" name="객체변수"
-                   syntax="객체변수 [변수명] [연산] [값]"
+                   syntax="객체변수 (대상) [변수명] [연산] [값]"
                    details="ex. 객체변수 state = patrol
                    &#xA;
                    &#xA;객체스크립트 내에서만 사용 가능합니다.
                    &#xA;객체에 연결된 변수를 정의합니다.
+                   &#xA;
+                   &#xA;ex. 객체변수 (상대) hp -= 10
+                   &#xA;- 다른 객체의 변수를 씁니다. 대상은 이름·변수·식이 될 수 있습니다.
+                   &#xA;- 이 형식은 어떤 스크립트에서도 사용할 수 있습니다.
                    &#xA;
                    &#xA;참조: lvGetObjVar(&quot;객체명&quot;, &quot;변수명&quot;)
                    &#xA;존재 확인: lvExistsObjVar(&quot;객체명&quot;, &quot;변수명&quot;)
@@ -16461,6 +16998,7 @@
                    &#xA;
                    &#xA;{}を複数個所に置くことも可能。
                    &#xA;
+                   &#xA;注：実行コマンド内の (式) は &quot;&quot; で囲めば結果変化時に計算され、囲まないと登録時に固定される（確認式の結果は {} で渡す）。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#varChecker">
       </explanation>
@@ -16481,7 +17019,8 @@
                    &#xA;Parameters:
                    &#xA;- name: object name for this checker.
                    &#xA;- expression: a calculation expression to evaluate each frame (e.g. &quot;status + 100&quot;).
-                   &#xA;- command on change: Light.vn command to execute when the result changes. Use {} for the result value."
+                   &#xA;- command on change: Light.vn command to execute when the result changes. Use {} for the result value.
+                   &#xA;Note: an (expr) inside the command is evaluated on change when the command is wrapped in &quot;&quot;, or fixed at registration if not (the checked result itself is passed via {})."
                    reference="https://wikiwiki.jp/lightvn/commands/var#varChecker">
       </explanation>
       <explanation lang="zhc" name="变量检查"
@@ -16513,6 +17052,7 @@
                    &#xA;
                    &#xA;{}를 여러 곳에 두는 것도 가능.
                    &#xA;
+                   &#xA;주: 실행 커맨드 내의 (식)은 &quot;&quot;로 감싸면 결과 변화시마다 재계산되고, 감싸지 않으면 등록 시점에 고정됨 (확인식 결과는 {}로 전달).
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/var#varChecker">
       </explanation>
@@ -17143,8 +17683,9 @@
     </Command>
     <Command cmd="save">
       <explanation lang="jap" name="セーブ"
-                   syntax="セーブ [スロット番号] (保存スクショ 横幅) (保存スクショ 縦幅)"
+                   syntax="セーブ [スロット番号/名前] (保存スクショ 横幅) (保存スクショ 縦幅)"
                    details="ex. セーブ 5 245 130
+                   &#xA;ex. セーブ chapter1
                    &#xA;
                    &#xA;既にセーブファイルが存在する場合、上書きを確認するダイアログを生成。
                    &#xA;
@@ -17154,8 +17695,9 @@
                    reference="https://wikiwiki.jp/lightvn/commands/system#save">
       </explanation>
       <explanation lang="eng" name="save"
-                   syntax="save [slot number] (screenshot width) (screenshot height)"
+                   syntax="save [slot] (screenshot width) (screenshot height)"
                    details="ex. save 5 245 130
+                   &#xA;ex. save chapter1
                    &#xA;
                    &#xA;If a save file already exists in the slot, a
                    &#xA;confirmation dialog is shown before overwriting.
@@ -17164,7 +17706,7 @@
                    &#xA;no screenshot is saved with the save data.
                    &#xA;
                    &#xA;Parameters:
-                   &#xA;- slot number: save slot index (0 or higher).
+                   &#xA;- slot: a number, or a name using [A-Za-z0-9_-] (case-insensitive).
                    &#xA;- screenshot width (optional): width of saved screenshot thumbnail.
                    &#xA;- screenshot height (optional): height of saved screenshot thumbnail."
                    reference="https://wikiwiki.jp/lightvn/commands/system#save">
@@ -17179,8 +17721,9 @@
                    reference="https://wikiwiki.jp/lightvn/commands/system#save">
       </explanation>
       <explanation lang="kor" name="세이브"
-                   syntax="세이브 [슬롯 번호] (썸네일 가로폭) (썸네일 세로폭)"
+                   syntax="세이브 [슬롯 번호/이름] (썸네일 가로폭) (썸네일 세로폭)"
                    details="ex. 세이브 5 245 130
+                   &#xA;ex. 세이브 chapter1
                    &#xA;
                    &#xA;이미 세이브 파일이 존재하는 경우 덮어쓰기 확인창을 생성.
                    &#xA;
@@ -17192,22 +17735,24 @@
     </Command>
     <Command cmd="load">
       <explanation lang="jap" name="ロード"
-                   syntax="ロード [スロット番号]"
+                   syntax="ロード [スロット番号/名前]"
                    details="ex. ロード 5
+                   &#xA;ex. ロード chapter1
                    &#xA;
                    &#xA;該当セーブファイルが存在する場合、ロードを確認するダイアログを生成し肯定の場合ロードする。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#load">
       </explanation>
       <explanation lang="eng" name="load"
-                   syntax="load [slot number]"
+                   syntax="load [slot]"
                    details="ex. load 5
+                   &#xA;ex. load chapter1
                    &#xA;
                    &#xA;If the save file exists, shows a confirmation dialog.
                    &#xA;If confirmed, loads the save data.
                    &#xA;
                    &#xA;Parameters:
-                   &#xA;- slot number: save slot index to load from."
+                   &#xA;- slot: the number or name the save was written with (case-insensitive)."
                    reference="https://wikiwiki.jp/lightvn/commands/system#load">
       </explanation>
       <explanation lang="zhc" name="加载"
@@ -17218,8 +17763,9 @@
                    reference="https://wikiwiki.jp/lightvn/commands/system#load">
       </explanation>
       <explanation lang="kor" name="로드"
-                   syntax="로드 [슬롯 번호]"
+                   syntax="로드 [슬롯 번호/이름]"
                    details="ex. 로드 5
+                   &#xA;ex. 로드 chapter1
                    &#xA;
                    &#xA;해당 세이브 파일이 존재하는 경우, 로드 확인창을 생성하여 긍정할 경우 불러옴.
                    &#xA;"
@@ -17228,22 +17774,24 @@
     </Command>
     <Command cmd="savedelete">
       <explanation lang="jap" name="セーブ削除"
-                   syntax="セーブ削除 [スロット番号]"
+                   syntax="セーブ削除 [スロット番号/名前]"
                    details="ex. セーブ削除 5
+                   &#xA;ex. セーブ削除 chapter1
                    &#xA;
                    &#xA;該当セーブファイルが存在する場合、削除を確認するダイアログを生成。肯定の場合削除する。
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#savedelete">
       </explanation>
       <explanation lang="eng" name="savedelete"
-                   syntax="savedelete [slot number]"
+                   syntax="savedelete [slot]"
                    details="ex. savedelete 5
+                   &#xA;ex. savedelete chapter1
                    &#xA;
                    &#xA;If the save file exists, shows a confirmation dialog.
                    &#xA;If confirmed, deletes the save data.
                    &#xA;
                    &#xA;Parameters:
-                   &#xA;- slot number: save slot index to delete."
+                   &#xA;- slot: the number or name the save was written with (case-insensitive)."
                    reference="https://wikiwiki.jp/lightvn/commands/system#savedelete">
       </explanation>
       <explanation lang="zhc" name="删除保存"
@@ -17254,12 +17802,42 @@
                    reference="https://wikiwiki.jp/lightvn/commands/system#savedelete">
       </explanation>
       <explanation lang="kor" name="세이브삭제"
-                   syntax="세이브삭제 [슬롯 번호]"
+                   syntax="세이브삭제 [슬롯 번호/이름]"
                    details="ex. 세이브삭제 5
+                   &#xA;ex. 세이브삭제 chapter1
                    &#xA;
                    &#xA;해당 파일이 존재하는 경우, 삭제 확인창을 생성. 긍정하면 삭제.
                    &#xA;"
                    reference="https://wikiwiki.jp/lightvn/commands/system#savedelete">
+      </explanation>
+    </Command>
+    <Command cmd="continueAutoSave">
+      <explanation lang="jap" name="最後自動セーブ"
+                   syntax="最後自動セーブ [true/false]"
+                   details="ex. 最後自動セーブ true
+                   &#xA;
+                   &#xA;trueの場合: アプリ終了時に 'saveslot_continue' スロットへ自動セーブする。
+                   &#xA;- ロードは `ロード _continue` で行う。
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#continueAutoSave">
+      </explanation>
+      <explanation lang="eng" name="continueAutoSave"
+                   syntax="continueAutoSave [true/false]"
+                   details="ex. continueAutoSave true
+                   &#xA;
+                   &#xA;When true: the app auto-saves a 'saveslot_continue' slot on exit.
+                   &#xA;- Load it back with `load _continue` (e.g. a title-screen Continue button).
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#continueAutoSave">
+      </explanation>
+      <explanation lang="kor" name="마지막자동세이브"
+                   syntax="마지막자동세이브 [true/false]"
+                   details="ex. 마지막자동세이브 true
+                   &#xA;
+                   &#xA;true: 앱 종료 시 'saveslot_continue' 슬롯에 자동 저장.
+                   &#xA;- 불러오기는 `로드 _continue` 로 수행.
+                   &#xA;"
+                   reference="https://wikiwiki.jp/lightvn/commands/system#continueAutoSave">
       </explanation>
     </Command>
     <Command cmd="deleteglobalinfo">
@@ -18154,7 +18732,11 @@
     <Command cmd="dialog">
       <explanation lang="jap" name="ダイアログ"
                    syntax="ダイアログ　[文字列:ダイアログメッセージ] (YES選択時コマンド)"
-                   details="ex. ダイアログ &quot;タイトルへ戻りますか？&quot; ジャンプ tut_text.txt"
+                   details="ex. ダイアログ &quot;タイトルへ戻りますか？&quot; ジャンプ tut_text.txt
+                   &#xA;
+                   &#xA;注：YES選択時コマンドを &quot;&quot; で囲まない場合、中の (式) は登録時に計算されて固定される。YES選択時の値にしたい場合は &quot;&quot; で囲む。
+                   &#xA; (ex. ダイアログ &quot;msg&quot; temp_globalvar hit = (hp) ) : 登録時のhp値に固定
+                   &#xA; (ex. ダイアログ &quot;msg&quot; &quot;temp_globalvar hit = (hp)&quot; ) : YES選択時にhp値を計算"
                    reference="https://wikiwiki.jp/lightvn/commands/system#dialog">
       </explanation>
       <explanation lang="eng" name="dialog"
@@ -18166,7 +18748,11 @@
                    &#xA;
                    &#xA;Parameters:
                    &#xA;- message: dialog message string.
-                   &#xA;- command on YES (optional): Light.vn command to execute on YES."
+                   &#xA;- command on YES (optional): Light.vn command to execute on YES.
+                   &#xA;
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it on YES.
+                   &#xA; (ex. dialog &quot;msg&quot; temp_globalvar hit = (hp) ) : hp evaluated at registration
+                   &#xA; (ex. dialog &quot;msg&quot; &quot;temp_globalvar hit = (hp)&quot; ) : hp evaluated on YES"
                    reference="https://wikiwiki.jp/lightvn/commands/system#dialog">
       </explanation>
       <explanation lang="zhc" name="对话框"
@@ -18176,7 +18762,11 @@
       </explanation>
       <explanation lang="kor" name="대화창"
                    syntax="대화창 [문자열: 대화창 메시지] (YES 선택시 커맨드)"
-                   details="ex. 대화창 &quot;타이틀로 돌아갈까요?&quot; 점프 tut_text.txt"
+                   details="ex. 대화창 &quot;타이틀로 돌아갈까요?&quot; 점프 tut_text.txt
+                   &#xA;
+                   &#xA;주의: YES 선택시 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. YES 선택 시의 값으로 하려면 &quot;&quot;로 감싼다.
+                   &#xA; (ex. 대화창 &quot;msg&quot; temp_globalvar hit = (hp) ) : 등록 시 hp값으로 고정
+                   &#xA; (ex. 대화창 &quot;msg&quot; &quot;temp_globalvar hit = (hp)&quot; ) : YES 선택 시에 hp값을 계산"
                    reference="https://wikiwiki.jp/lightvn/commands/system#dialog">
       </explanation>
     </Command>
@@ -18221,7 +18811,9 @@
                    &#xA;"
                    details="ex. 砂時計 timer0 1500 反復 スクリプト textbox_sample.txt timer_func
                    &#xA;
-                   &#xA;[コマンド]：文字列として囲むと、毎回再計算される。
+                   &#xA;[コマンド]：&quot;&quot; で囲まない場合、(式) は登録時に計算し固定。発動（時間経過）ごとの値にしたい場合は &quot;&quot; で囲む（毎回再計算）。
+                   &#xA; (ex. 砂時計 t 1000 反復 変数 x = (体力) ) : 登録時の「体力」値に固定。
+                   &#xA; (ex. 砂時計 t 1000 反復 &quot;変数 x = (体力)&quot; ) : 発動ごとに「体力」値を計算。
                    &#xA;
                    &#xA;更新同期) 時間間隔を考えるのが面倒な人用。100ミリ秒。
                    &#xA;
@@ -18236,8 +18828,9 @@
                    &#xA;3. timer8 [name] [command]"
                    details="ex. timer timer0 1500 repeat script textbox_sample.txt timer_func
                    &#xA;
-                   &#xA;[command]: If wrapped in quotes, it is re-evaluated
-                   &#xA;each time the timer fires.
+                   &#xA;[command]: for an unquoted command, any (expr) is evaluated once at registration; wrap the command in &quot;&quot; to re-evaluate it each time the timer fires.
+                   &#xA; (ex. timer t 1000 repeat var x = (hp) ) : hp fixed at registration
+                   &#xA; (ex. timer t 1000 repeat &quot;var x = (hp)&quot; ) : hp re-evaluated each fire
                    &#xA;
                    &#xA;onUpdate: Shorthand for a 100ms interval.
                    &#xA;
@@ -18271,7 +18864,9 @@
                    &#xA;"
                    details="ex. 타이머 timer0 1500 반복 스크립트 textbox_sample.txt timer_func
                    &#xA;
-                   &#xA;[커맨드]：문자열로 취급할 경우 매회 재계산됨.
+                   &#xA;[커맨드]：&quot;&quot;로 감싸지 않을 경우 (식)은 등록 시점에 고정. 발동(시간 경과)마다의 값을 쓰려면 &quot;&quot;로 감쌀 것(매번 재계산).
+                   &#xA; (ex. 타이머 t 1000 반복 변수 x = (체력) ) : 등록시의 '체력' 값으로 고정.
+                   &#xA; (ex. 타이머 t 1000 반복 &quot;변수 x = (체력)&quot; ) : 발동마다 '체력' 값을 재계산.
                    &#xA;
                    &#xA;업데이트시) 시간 간격을 생각하기에 귀찮은 분들용. 100ms.
                    &#xA;
@@ -18301,6 +18896,7 @@
                    &#xA;演出加速度
                    &#xA;演出加速度色
                    &#xA;演出加速度カメラ
+                   &#xA;全変化完了無効
                    &#xA;
                    &#xA;個体深度計算
                    &#xA;カメラ基準個体描画
@@ -18351,6 +18947,7 @@
                    &#xA;tweenMethodDefault
                    &#xA;tweenMethodDefaultColour
                    &#xA;tweenMethodDefaultCamera
+                   &#xA;disableFinishTweens
                    &#xA;
                    &#xA;objectDepthTest
                    &#xA;objectSortByCameraZ
@@ -18442,6 +19039,7 @@
                    &#xA;연출가속도
                    &#xA;연출가속도색
                    &#xA;연출가속도카메라
+                   &#xA;모든연출완료비활성화
                    &#xA;
                    &#xA;객체심도계산
                    &#xA;카메라기준객체렌더링
@@ -18724,7 +19322,10 @@
                    &#xA;
                    &#xA;ロード後に該当スクリプトを実行する。
                    &#xA;
-                   &#xA;注：コマンドをつけない場合、既存登録コマンドが解除される。"
+                   &#xA;注：コマンドをつけない場合、既存登録コマンドが解除される。
+                   &#xA;注：コマンドを&quot;&quot;で囲まない場合、中の (式) は登録時に計算されて固定される。&quot;&quot;で囲むとイベント発生時に計算される。
+                   &#xA; (ex. イベント save 前 temp_globalvar snap = (hp) ) : 登録時のhp値に固定
+                   &#xA; (ex. イベント save 前 &quot;temp_globalvar snap = (hp)&quot; ) : イベント発生時にhp値を計算"
                    reference="https://wikiwiki.jp/lightvn/commands/system#event">
       </explanation>
       <explanation lang="eng" name="event"
@@ -18739,7 +19340,11 @@
                    &#xA;Parameters:
                    &#xA;- event name: name of the event to hook (e.g. load, rollback).
                    &#xA;- before/after: whether to run before or after the event.
-                   &#xA;- command (optional): Light.vn command to execute. Omit to unregister."
+                   &#xA;- command (optional): Light.vn command to execute. Omit to unregister.
+                   &#xA;
+                   &#xA;Note: For unquoted commands, any (expr) is evaluated at registration; wrap the command in &quot;&quot; to evaluate it when the event fires.
+                   &#xA; (ex. event save before temp_globalvar snap = (hp) ) : hp evaluated at registration
+                   &#xA; (ex. event save before &quot;temp_globalvar snap = (hp)&quot; ) : hp evaluated when the event fires"
                    reference="https://wikiwiki.jp/lightvn/commands/system#event">
       </explanation>
       <explanation lang="zhc" name="事件"
@@ -18757,7 +19362,10 @@
                    &#xA;
                    &#xA;로드 후 해당 스크립트를 실행함.
                    &#xA;
-                   &#xA;주: 커맨드를 붙이지 않는 경우 기존 등록 커맨드가 해제됨."
+                   &#xA;주: 커맨드를 붙이지 않는 경우 기존 등록 커맨드가 해제됨.
+                   &#xA;주의: 커맨드를 &quot;&quot;로 감싸지 않을 경우, (식)은 등록 시 계산되어 고정된다. &quot;&quot;로 감싸면 이벤트 발생 시 계산된다.
+                   &#xA; (ex. 이벤트 save 앞 temp_globalvar snap = (hp) ) : 등록 시 hp값으로 고정
+                   &#xA; (ex. 이벤트 save 앞 &quot;temp_globalvar snap = (hp)&quot; ) : 이벤트 발생 시에 hp값을 계산"
                    reference="https://wikiwiki.jp/lightvn/commands/system#event">
       </explanation>
     </Command>
@@ -22158,23 +22766,27 @@
     </Command>
     <Command name="lvTextTableLine">
       <explanation lang="jap" name="lvTextTableLine"
-                   syntax="lvTextTableLine(文字列：csvファイルパス、数字：行番号)"
+                   syntax="1. lvTextTableLine(文字列：csvファイルパス、数字：行番号)
+                   &#xA;2. lvTextTableLine(文字列：csvファイルパス、文字列：unique_id)"
                    details="ex. lvTextTableLine(&quot;tables/me.csv&quot;, 2)
+                   &#xA;ex. lvTextTableLine(&quot;tables/me.csv&quot;, &quot;greet_01&quot;)   （unique_idで指定）
                    &#xA;
-                   &#xA;該当csvの行番号の結果を返還する。
+                   &#xA;該当csvの行（行番号、またはunique_id列の値）の結果を返還する。
                    &#xA;
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvTextTableLine">
       </explanation>
       <explanation lang="eng" name="lvTextTableLine"
-                   syntax="lvTextTableLine(string: csv filepath, number: row)"
+                   syntax="1. lvTextTableLine(string: csv filepath, number: row)
+                   &#xA;2. lvTextTableLine(string: csv filepath, string: unique_id)"
                    details="ex. lvTextTableLine(&quot;table/me.csv&quot;, 2)
+                   &#xA;ex. lvTextTableLine(&quot;table/me.csv&quot;, &quot;greet_01&quot;)   (by unique_id)
                    &#xA;
-                   &#xA;return text of the corresponding row in the csv
+                   &#xA;return text of the corresponding row (by row number, or by a unique_id string) in the csv
                    &#xA;
                    &#xA;Parameters:
                    &#xA;- csv filepath: the path to the CSV file (relative to Scripts directory).
-                   &#xA;- row: the row number (integer) to retrieve.
+                   &#xA;- row: the row number (integer), or a unique_id string, to retrieve.
                    &#xA;
                    &#xA;Returns: the text content of the specified row."
                    reference="https://wikiwiki.jp/lightvn/funcs#lvTextTableLine">
@@ -22189,10 +22801,12 @@
                  reference="https://wikiwiki.jp/lightvn/funcs#lvTextTableLine">
       </explanation>
       <explanation lang="kor" name="lvTextTableLine"
-                   syntax="lvTextTableLine(문자열: csv경로, 숫자: 행)"
+                   syntax="1. lvTextTableLine(문자열: csv경로, 숫자: 행)
+                   &#xA;2. lvTextTableLine(문자열: csv경로, 문자열: unique_id)"
                    details="ex. lvTextTableLine(&quot;table/me.csv&quot;, 2)
+                   &#xA;ex. lvTextTableLine(&quot;table/me.csv&quot;, &quot;greet_01&quot;)   (unique_id로 지정)
                    &#xA;
-                   &#xA;해당 파일의 행을 반환
+                   &#xA;해당 파일의 행(행 번호, 또는 unique_id 열 값)을 반환
                    &#xA;
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvTextTableLine">
@@ -22278,6 +22892,70 @@
                    &#xA;
                    &#xA;return: number"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvTextBoundsH">
+      </explanation>
+    </Command>
+    <Command name="lvTextBoundsW2">
+      <explanation lang="jap" name="lvTextBoundsW2"
+                   syntax="lvTextBoundsW2(文字列：文字・文字窓名)"
+                   details="ex. lvTextBoundsW2(&quot;文字王&quot;)
+                   &#xA;
+                   &#xA;対象の文字・文字窓のバウンディングボックスの横幅を返還（ルビ含む）。
+                   &#xA;
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextBoundsW2">
+      </explanation>
+      <explanation lang="eng" name="lvTextBoundsW2"
+                   syntax="lvTextBoundsW2(name)"
+                   details="ex. lvTextBoundsW2(&quot;fufu&quot;)
+                   &#xA;
+                   &#xA;return text bound width of text object [name], including ruby
+                   &#xA;
+                   &#xA;Parameters:
+                   &#xA;- name: the name of a text or textbox object.
+                   &#xA;
+                   &#xA;Returns: the width of the tight text bounding box, including ruby (furigana)."
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextBoundsW2">
+      </explanation>
+      <explanation lang="kor" name="lvTextBoundsW2"
+                   syntax="lvTextBoundsW2(문자열: 문자·대사창 이름)"
+                   details="ex. lvTextBoundsW2(&quot;문자왕&quot;)
+                   &#xA;
+                   &#xA;대상의 문자·대사창 바운딩 박스 가로폭을 반환 (루비 포함).
+                   &#xA;
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextBoundsW2">
+      </explanation>
+    </Command>
+    <Command name="lvTextBoundsH2">
+      <explanation lang="jap" name="lvTextBoundsH2"
+                   syntax="lvTextBoundsH2(文字列：文字・文字窓名)"
+                   details="ex. lvTextBoundsH2(&quot;文字王&quot;)
+                   &#xA;
+                   &#xA;対象の文字・文字窓のバウンディングボックスの縦幅を返還（ルビ含む）。
+                   &#xA;
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextBoundsH2">
+      </explanation>
+      <explanation lang="eng" name="lvTextBoundsH2"
+                   syntax="lvTextBoundsH2(name)"
+                   details="ex. lvTextBoundsH2(&quot;fufu&quot;)
+                   &#xA;
+                   &#xA;return text bound height of text object [name], including ruby
+                   &#xA;
+                   &#xA;Parameters:
+                   &#xA;- name: the name of a text or textbox object.
+                   &#xA;
+                   &#xA;Returns: the height of the tight text bounding box, including ruby (furigana)."
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextBoundsH2">
+      </explanation>
+      <explanation lang="kor" name="lvTextBoundsH2"
+                   syntax="lvTextBoundsH2(문자열: 문자·대사창 이름)"
+                   details="ex. lvTextBoundsH2(&quot;문자왕&quot;)
+                   &#xA;
+                   &#xA;대상의 문자·대사창 바운딩 박스 세로폭을 반환 (루비 포함).
+                   &#xA;
+                   &#xA;return: number"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvTextBoundsH2">
       </explanation>
     </Command>
     <Command name="lvMediaOffset">
@@ -22539,40 +23217,48 @@
     </Command>
     <Command name="lvSaveExists">
       <explanation lang="jap" name="lvSaveExists"
-                   syntax="lvSaveExists(数字: データ番号)"
+                   syntax="1. lvSaveExists(数字: セーブ名)
+                   &#xA;2. lvSaveExists(string: セーブ名)"
                    details="ex. lvSaveExists(30)
+                   &#xA;ex. lvSaveExists(&quot;chapter1&quot;)
                    &#xA;
-                   &#xA;指定された数字のセーブデータが存在していればtrue。
+                   &#xA;指定された名前（数字も可）のセーブデータが存在していればtrue。
                    &#xA;
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveExists">
       </explanation>
       <explanation lang="eng" name="lvSaveExists"
-                   syntax="lvSaveExists(number: slot)"
+                   syntax="1. lvSaveExists(number: save slot)
+                   &#xA;2. lvSaveExists(string: save slot)"
                    details="ex. lvSaveExists(30)
+                   &#xA;ex. lvSaveExists(&quot;chapter1&quot;)
                    &#xA;
                    &#xA;return if [slot] data exists.
                    &#xA;
                    &#xA;Parameters:
-                   &#xA;- slot: the save slot number (>= 0).
+                   &#xA;- slot: the save name -- a number or a name (chars A-Za-z0-9_-, max 64).
                    &#xA;
                    &#xA;Returns: true if save data exists for the given slot."
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveExists">
       </explanation>
       <explanation lang="zhc" name="lvSaveExists"
-                   syntax="lvSaveExists(数字: 数据编号)"
+                   syntax="1. lvSaveExists(数字: 存档名)
+                   &#xA;2. lvSaveExists(string: 存档名)"
                    details="例如：lvSaveExists(30)
+                   &#xA;例如：lvSaveExists(&quot;chapter1&quot;)
                    &#xA;
-                   &#xA;如果存在指定编号的保存数据，则返回true。
+                   &#xA;如果存在指定名称（数字亦可）的存档数据，则返回true。
                    &#xA;
                    &#xA;返回：布尔值"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveExists">
       </explanation>
       <explanation lang="kor" name="lvSaveExists"
-                   syntax="lvSaveExists(숫자: 데이터 번호)"
+                   syntax="1. lvSaveExists(숫자: 세이브 이름)
+                   &#xA;2. lvSaveExists(string: 세이브 이름)"
                    details="ex. lvSaveExists(30)
+                   &#xA;ex. lvSaveExists(&quot;chapter1&quot;)
                    &#xA;
-                   &#xA;지정된 숫자의 세이브 데이터가 존재한다면 true.
+                   &#xA;지정된 이름(숫자도 가능)의 세이브 데이터가 존재한다면 true.
                    &#xA;
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveExists">
@@ -22580,41 +23266,49 @@
     </Command>
     <Command name="lvSaveImagePath">
       <explanation lang="jap" name="lvSaveImagePath"
-                   syntax="lvSaveImagePath(数字: データ番号)"
+                   syntax="1. lvSaveImagePath(数字: セーブ名)
+                   &#xA;2. lvSaveImagePath(string: セーブ名)"
                    details="ex. lvSaveImagePath(30)
+                   &#xA;ex. lvSaveImagePath(&quot;chapter1&quot;)
                    &#xA;
-                   &#xA;指定された数字のセーブデータが存在していれば、スクリーンショット画像のパスを。
+                   &#xA;指定された名前（数字も可）のセーブデータが存在していれば、スクリーンショット画像のパスを。
                    &#xA;存在しない場合は、&quot;&quot;
                    &#xA;
                    &#xA;return: string"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveImagePath">
       </explanation>
       <explanation lang="eng" name="lvSaveImagePath"
-                   syntax="lvSaveImagePath(number: slot)"
+                   syntax="1. lvSaveImagePath(number: save slot)
+                   &#xA;2. lvSaveImagePath(string: save slot)"
                    details="ex. lvSaveImagePath(30)
+                   &#xA;ex. lvSaveImagePath(&quot;chapter1&quot;)
                    &#xA;
                    &#xA;return the screenshot filepath of [slot] if data exists.
                    &#xA;
                    &#xA;Parameters:
-                   &#xA;- slot: the save slot number (>= 0).
+                   &#xA;- slot: the save name -- a number or a name (chars A-Za-z0-9_-, max 64).
                    &#xA;
                    &#xA;Returns: the screenshot image path, or empty string if it does not exist."
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveImagePath">
       </explanation>
       <explanation lang="zhc" name="lvSaveImagePath"
-                   syntax="lvSaveImagePath(数字: 数据编号)"
+                   syntax="1. lvSaveImagePath(数字: 存档名)
+                   &#xA;2. lvSaveImagePath(string: 存档名)"
                    details="例如：lvSaveImagePath(30)
+                   &#xA;例如：lvSaveImagePath(&quot;chapter1&quot;)
                    &#xA;
-                   &#xA;如果存在指定编号的保存数据，返回截图图像路径。如果不存在，返回&quot;&quot;。
+                   &#xA;如果存在指定名称（数字亦可）的存档数据，返回截图图像路径。如果不存在，返回&quot;&quot;。
                    &#xA;
                    &#xA;返回：字符串"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveImagePath">
       </explanation>
       <explanation lang="kor" name="lvSaveImagePath"
-                   syntax="lvSaveImagePath(숫자: 데이터 번호)"
+                   syntax="1. lvSaveImagePath(숫자: 세이브 이름)
+                   &#xA;2. lvSaveImagePath(string: 세이브 이름)"
                    details="ex. lvSaveImagePath(30)
+                   &#xA;ex. lvSaveImagePath(&quot;chapter1&quot;)
                    &#xA;
-                   &#xA;지정된 숫자의 세이브 데이터가 존재한다면 썸네일 이미지 경로를,
+                   &#xA;지정된 이름(숫자도 가능)의 세이브 데이터가 존재한다면 썸네일 이미지 경로를,
                    &#xA;존재하지 않을 경우에는 &quot;&quot;를 반환.
                    &#xA;
                    &#xA;return: string"
@@ -22623,8 +23317,10 @@
     </Command>
     <Command name="lvSaveInfo">
       <explanation lang="jap" name="lvSaveInfo"
-                   syntax="lvSaveInfo(数字: データ番号, string: 取得したいAttribute名)"
+                   syntax="1. lvSaveInfo(数字: セーブ名, string: 取得したいAttribute名)
+                   &#xA;2. lvSaveInfo(string: セーブ名, string: 取得したいAttribute名)"
                    details="ex. lvSaveInfo(30, &quot;fufu&quot;)
+                   &#xA;ex. lvSaveInfo(&quot;chapter1&quot;, &quot;fufu&quot;)
                    &#xA;
                    &#xA;該当セーブデータのInfoの中の「取得したいAttribute名」の値を文字列として取得。
                    &#xA;存在しない場合は、&quot;&quot;
@@ -22633,22 +23329,26 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveInfo">
       </explanation>
       <explanation lang="eng" name="lvSaveInfo"
-                   syntax="lvSaveInfo(number: slot, string: name)"
+                   syntax="1. lvSaveInfo(number: save slot, string: name)
+                   &#xA;2. lvSaveInfo(string: save slot, string: name)"
                    details="ex. lvSaveInfo(30, &quot;a&quot;)
+                   &#xA;ex. lvSaveInfo(&quot;chapter1&quot;, &quot;a&quot;)
                    &#xA;
                    &#xA;return [name] within Info of save [slot] data if exists.
                    &#xA;if none, return &quot;&quot;
                    &#xA;
                    &#xA;Parameters:
-                   &#xA;- slot: the save slot number (>= 0).
+                   &#xA;- slot: the save name -- a number or a name (chars A-Za-z0-9_-, max 64).
                    &#xA;- name: the attribute name to retrieve from the save Info node.
                    &#xA;
                    &#xA;Returns: the attribute value as a string, or empty string if not found."
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveInfo">
       </explanation>
       <explanation lang="zhc" name="lvSaveInfo"
-                   syntax="lvSaveInfo(数字: 数据编号, string: 需要获取的属性名)"
+                   syntax="1. lvSaveInfo(数字: 存档名, string: 需要获取的属性名)
+                   &#xA;2. lvSaveInfo(string: 存档名, string: 需要获取的属性名)"
                    details="例如：lvSaveInfo(30, &quot;属性名&quot;)
+                   &#xA;例如：lvSaveInfo(&quot;chapter1&quot;, &quot;属性名&quot;)
                    &#xA;
                    &#xA;获取指定保存数据中&quot;需要获取的属性名&quot;的值。如果不存在，返回&quot;&quot;。
                    &#xA;
@@ -22656,8 +23356,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveInfo">
       </explanation>
       <explanation lang="kor" name="lvSaveInfo"
-                   syntax="lvSaveInfo(숫자: 데이터 번호, string: 취득하고자 하는 Attribute명)"
+                   syntax="1. lvSaveInfo(숫자: 세이브 이름, string: 취득하고자 하는 Attribute명)
+                   &#xA;2. lvSaveInfo(string: 세이브 이름, string: 취득하고자 하는 Attribute명)"
                    details="ex. lvSaveInfo(30, &quot;fufu&quot;)
+                   &#xA;ex. lvSaveInfo(&quot;chapter1&quot;, &quot;fufu&quot;)
                    &#xA;
                    &#xA;해당 세이브 데이터의 Info 중 &quot;취득하고자 하는 Attribute명&quot; 값을 문자열로 취득.
                    &#xA;존재하지 않는 경우 &quot;&quot;로 반환.
@@ -22668,8 +23370,10 @@
     </Command>
     <Command name="lvSaveGetDataVar">
       <explanation lang="jap" name="lvSaveGetDataVar"
-                   syntax="lvSaveInfo(数字: データ番号, string: 取得したい保存変数名)"
-                   details="ex. lvSaveInfo(30, &quot;fufu&quot;)
+                   syntax="1. lvSaveGetDataVar(数字: セーブ名, string: 取得したい保存変数名)
+                   &#xA;2. lvSaveGetDataVar(string: セーブ名, string: 取得したい保存変数名)"
+                   details="ex. lvSaveGetDataVar(30, &quot;fufu&quot;)
+                   &#xA;ex. lvSaveGetDataVar(&quot;chapter1&quot;, &quot;fufu&quot;)
                    &#xA;
                    &#xA;該当セーブデータの指定名の保存変数の値を取得。
                    &#xA;存在しない場合は、&quot;&quot;
@@ -22678,22 +23382,26 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveGetDataVar">
       </explanation>
       <explanation lang="eng" name="lvSaveGetDataVar"
-                   syntax="lvSaveGetDataVar(number: slot, string: name)"
-                   details="ex. lvSaveInfo(30, &quot;a&quot;)
+                   syntax="1. lvSaveGetDataVar(number: save slot, string: name)
+                   &#xA;2. lvSaveGetDataVar(string: save slot, string: name)"
+                   details="ex. lvSaveGetDataVar(30, &quot;a&quot;)
+                   &#xA;ex. lvSaveGetDataVar(&quot;chapter1&quot;, &quot;a&quot;)
                    &#xA;
                    &#xA;return a datavar with [name] from [slot] data.
                    &#xA;if none exists, return &quot;&quot;
                    &#xA;
                    &#xA;Parameters:
-                   &#xA;- slot: the save slot number (>= 0).
+                   &#xA;- slot: the save name -- a number or a name (chars A-Za-z0-9_-, max 64).
                    &#xA;- name: the datavar name to retrieve.
                    &#xA;
                    &#xA;Returns: the datavar value, or empty string if not found."
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveGetDataVar">
       </explanation>
       <explanation lang="zhc" name="lvSaveGetDataVar"
-                   syntax="lvSaveGetDataVar(数字: 数据编号, string: 需要获取的保存变量名)"
+                   syntax="1. lvSaveGetDataVar(数字: 存档名, string: 需要获取的保存变量名)
+                   &#xA;2. lvSaveGetDataVar(string: 存档名, string: 需要获取的保存变量名)"
                    details="例如：lvSaveGetDataVar(30, &quot;变量名&quot;)
+                   &#xA;例如：lvSaveGetDataVar(&quot;chapter1&quot;, &quot;变量名&quot;)
                    &#xA;
                    &#xA;获取指定保存数据中&quot;需要获取的保存变量名&quot;的值。如果不存在，返回&quot;&quot;。
                    &#xA;
@@ -22701,8 +23409,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveGetDataVar">
       </explanation>
       <explanation lang="kor" name="lvSaveGetDataVar"
-                   syntax="lvSaveInfo(숫자: 데이터 번호, string: 취득하고자 하는 보존변수명)"
-                   details="ex. lvSaveInfo(30, &quot;fufu&quot;)
+                   syntax="1. lvSaveGetDataVar(숫자: 세이브 이름, string: 취득하고자 하는 보존변수명)
+                   &#xA;2. lvSaveGetDataVar(string: 세이브 이름, string: 취득하고자 하는 보존변수명)"
+                   details="ex. lvSaveGetDataVar(30, &quot;fufu&quot;)
+                   &#xA;ex. lvSaveGetDataVar(&quot;chapter1&quot;, &quot;fufu&quot;)
                    &#xA;
                    &#xA;해당 세이브 데이터에서 지정한 이름의 보존변수 값을 취득.
                    &#xA;존재하지 않는 경우 &quot;&quot;로 반환.
@@ -22713,8 +23423,10 @@
     </Command>
     <Command name="lvSaveSetDataVar">
       <explanation lang="jap" name="lvSaveSetDataVar"
-                   syntax="lvSaveSetDataVar(数字: データ番号, string: 変数名, 変数)"
+                   syntax="1. lvSaveSetDataVar(数字: セーブ名, string: 変数名, 変数)
+                   &#xA;2. lvSaveSetDataVar(string: セーブ名, string: 変数名, 変数)"
                    details="ex. lvSaveSetDataVar(30, &quot;ロック中&quot;, true)
+                   &#xA;ex. lvSaveSetDataVar(&quot;chapter1&quot;, &quot;ロック中&quot;, true)
                    &#xA;
                    &#xA;該当セーブデータの保存変数として「変数」に「変数名」をつけて保存。
                    &#xA;
@@ -22723,14 +23435,16 @@
                    &#xA;return: void"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveSetDataVar">
       </explanation>
-      <explanation lang="eng" name="lvSaveGetDataVar"
-                   syntax="lvSaveGetDataVar(number: slot, string: name, any: value)"
-                   details="ex. lvSaveInfo(30, &quot;a&quot;)
+      <explanation lang="eng" name="lvSaveSetDataVar"
+                   syntax="1. lvSaveSetDataVar(number: save slot, string: name, any: value)
+                   &#xA;2. lvSaveSetDataVar(string: save slot, string: name, any: value)"
+                   details="ex. lvSaveSetDataVar(30, &quot;a&quot;, true)
+                   &#xA;ex. lvSaveSetDataVar(&quot;chapter1&quot;, &quot;a&quot;, true)
                    &#xA;
                    &#xA;add datavar [name, value] to [slot] data.
                    &#xA;
                    &#xA;Parameters:
-                   &#xA;- slot: the save slot number (>= 0).
+                   &#xA;- slot: the save name -- a number or a name (chars A-Za-z0-9_-, max 64).
                    &#xA;- name: the datavar name to set.
                    &#xA;- value: the value to store.
                    &#xA;
@@ -22738,8 +23452,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveSetDataVar">
       </explanation>
       <explanation lang="zhc" name="lvSaveSetDataVar"
-                   syntax="lvSaveSetDataVar(数字: 数据编号, string: 变量名, 变量)"
+                   syntax="1. lvSaveSetDataVar(数字: 存档名, string: 变量名, 变量)
+                   &#xA;2. lvSaveSetDataVar(string: 存档名, string: 变量名, 变量)"
                    details="例如：lvSaveSetDataVar(30, &quot;锁定中&quot;, true)
+                   &#xA;例如：lvSaveSetDataVar(&quot;chapter1&quot;, &quot;锁定中&quot;, true)
                    &#xA;
                    &#xA;将指定保存数据中的变量以&quot;变量名&quot;保存为&quot;变量&quot;。
                    &#xA;
@@ -22749,8 +23465,10 @@
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSaveSetDataVar">
       </explanation>
       <explanation lang="kor" name="lvSaveSetDataVar"
-                   syntax="lvSaveSetDataVar(숫자: 데이터 번호, string: 변수명, 변수)"
+                   syntax="1. lvSaveSetDataVar(숫자: 세이브 이름, string: 변수명, 변수)
+                   &#xA;2. lvSaveSetDataVar(string: 세이브 이름, string: 변수명, 변수)"
                    details="ex. lvSaveSetDataVar(30, &quot;잠금중&quot;, true)
+                   &#xA;ex. lvSaveSetDataVar(&quot;chapter1&quot;, &quot;잠금중&quot;, true)
                    &#xA;
                    &#xA;해당 세이브 데이터에 입력한 &quot;변수&quot;를 &quot;변수명&quot;을 붙여서 보존변수로 저장.
                    &#xA;
@@ -23625,6 +24343,37 @@
                    &#xA;
                    &#xA;return: bool"
                    reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_IsPausingLowerScripts ">
+      </explanation>
+    </Command>
+    <Command name="lvSystem::DisableFinishTweens">
+      <explanation lang="jap" name="lvSystem::DisableFinishTweens"
+                   syntax="lvSystem::DisableFinishTweens()"
+                   details="ex. lvSystem::DisableFinishTweens()
+                   &#xA;
+                   &#xA;「全変化完了無効」コマンドが有効化されていれば、true
+                   &#xA;
+                   &#xA;return: bool"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_DisableFinishTweens">
+      </explanation>
+      <explanation lang="eng" name="lvSystem::DisableFinishTweens"
+                   syntax="lvSystem::DisableFinishTweens()"
+                   details="ex. lvSystem::DisableFinishTweens()
+                   &#xA;
+                   &#xA;return the current disableFinishTweens state
+                   &#xA;
+                   &#xA;Parameters: (none)
+                   &#xA;
+                   &#xA;return: bool"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_DisableFinishTweens">
+      </explanation>
+      <explanation lang="kor" name="lvSystem::DisableFinishTweens"
+                   syntax="lvSystem::DisableFinishTweens()"
+                   details="ex. lvSystem::DisableFinishTweens()
+                   &#xA;
+                   &#xA;[모든연출완료비활성화] 명령이 활성화되어 있으면 true
+                   &#xA;
+                   &#xA;return: bool"
+                   reference="https://wikiwiki.jp/lightvn/funcs#lvSystem_DisableFinishTweens">
       </explanation>
     </Command>
     <!--[LIGHT VN LUA FUNCTIONS]-->
